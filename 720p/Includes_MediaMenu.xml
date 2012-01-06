@@ -1025,7 +1025,7 @@
       <altlabel>$LOCALIZE[31102] [B]2[/B]</altlabel>
       <onclick>Skin.ToggleSetting(altoverlayinfowall)</onclick>
       <usealttexture>Skin.HasSetting(altoverlayinfowall)</usealttexture>
-      <visible>Control.IsVisible(514)</visible>
+      <visible>Control.IsVisible(551)|Control.IsVisible(560)|Control.IsVisible(51)|Control.IsVisible(512)|Control.IsVisible(500)|Control.IsVisible(514)</visible>
     </control>
   </include>
 

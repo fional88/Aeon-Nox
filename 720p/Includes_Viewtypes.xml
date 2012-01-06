@@ -543,7 +543,7 @@
         <align>center</align>
         <aligny>center</aligny>
         <font>Font_Info_Caps</font>
-        <textcolor>floor</textcolor>
+        <textcolor>$VAR[FlagDiffuseVar]</textcolor>
         <shadowcolor>floorshadow</shadowcolor>
         <label>[UPPERCASE]$VAR[SecondLabelVar][/UPPERCASE]</label>
       </control>
@@ -561,7 +561,7 @@
       <font>Font_ShowcaseMainLabel2_Caps</font>
       <scroll>true</scroll>
       <scrollspeed>50</scrollspeed>
-      <textcolor>floor</textcolor>
+      <textcolor>$VAR[FlagDiffuseVar]</textcolor>
       <shadowcolor>floorshadow</shadowcolor>
       <label>[UPPERCASE]$VAR[FirstLabelVar][/UPPERCASE]</label>
       <visible>!ControlGroup(9000).HasFocus|Skin.HasSetting(breadcrumb)</visible>
@@ -575,7 +575,7 @@
       <include>Animation_OpenCloseZoom_New</include>
       <include>Animation_VisibleChange200</include>
       <font>Font_ShowcaseMainLabel2_Caps</font>
-      <textcolor>floor</textcolor>
+      <textcolor>$VAR[FlagDiffuseVar]</textcolor>
       <shadowcolor>floorshadow</shadowcolor>
       <label>[UPPERCASE]$INFO[Container.NumItems] $LOCALIZE[31025] | $LOCALIZE[31024] $INFO[Container.CurrentPage]/$INFO[Container.NumPages][/UPPERCASE]</label>
       <visible>ControlGroup(9000).HasFocus+!Skin.HasSetting(breadcrumb)</visible>

@@ -670,15 +670,19 @@
         <posx>0</posx>
         <visible>Weather.IsFetched</visible>
         <animation effect="slide" start="0,0" end="0,-315" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(timehomehigh)">Conditional</animation>
-        <control type="image">
-          <description>Weather image</description>
-          <posx>21</posx>
-          <posy>2</posy>
-          <width>25</width>
-          <height>25</height>
-          <aspectratio>keep</aspectratio>
-          <texture>$INFO[Window(weather).Property(Current.ConditionIcon)]</texture>
-        </control>
+      <control type="multiimage">
+        <description>day icon</description>
+        <posx>21</posx>
+        <posy>2</posy>
+        <height>25</height>
+        <width>25</width>
+        <timeperimage>75</timeperimage>
+        <randomize>false</randomize>
+        <fadetime>0</fadetime>
+        <imagepath>$INFO[Skin.String(AnimatedWeatherIconsDir)]$INFO[Window(weather).Property(Current.FanartCode)]</imagepath>
+        <aspectratio>keep</aspectratio>
+        <visible>Skin.HasSetting(homepageWeatheranimated) + !Skin.HasSetting(PdaWeatherIcons)</visible>
+      </control>       
         <control type="label">
           <description>time label</description>
           <posx>54</posx>

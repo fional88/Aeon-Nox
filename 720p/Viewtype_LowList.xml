@@ -659,13 +659,13 @@
             <aspectratio scalediffuse="false">scale</aspectratio>
           </control>
           <control type="image">
-            <posx>0</posx>
-            <posy>240</posy>
-            <width>280</width>
-            <height>60</height>
+            <posx>10</posx>
+            <posy>110</posy>
+            <width>250</width>
+            <height>250</height>
             <aspectratio scalediffuse="true">keep</aspectratio>
             <fadetime>400</fadetime>
-            <texture diffuse="thumbs/banner_mask.png" background="true">$INFO[ListItem.Path,,../banner.jpg]</texture>
+            <texture diffuse="thumbs/banner_mask.png" background="true">$INFO[ListItem.Path,,../clearart.png]</texture>
             <visible>!Skin.HasSetting(highlist)</visible>
           </control>
 

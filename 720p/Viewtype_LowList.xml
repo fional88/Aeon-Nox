@@ -659,8 +659,6 @@
             <texture background="true" flipy="true" diffuse="thumbs/multiplex_tvmaskreflect.png">$INFO[ListItem.Icon]</texture>
             <aspectratio scalediffuse="false">scale</aspectratio>
           </control>
-          <control type="group">
-            <visible>!Skin.HasSetting(highlist)</visible>
           <control type="image">
             <posx>10</posx>
             <posy>110</posy>
@@ -669,15 +667,7 @@
             <aspectratio scalediffuse="true">keep</aspectratio>
             <fadetime>400</fadetime>
             <texture diffuse="thumbs/banner_mask.png" background="true">$INFO[ListItem.Path,,../clearart.png]</texture>
-            <control type="image">
-              <posx>0</posx>
-              <posy>-110</posy>
-              <width>250</width>
-              <height>250</height>
-              <aspectratio>stretch</aspectratio>
-              <fadetime>400</fadetime>
-              <texture diffuse="thumbs/banner_mask.png">featured/panel_featured_overlay.png</texture>
-            </control>
+            <visible>!Skin.HasSetting(highlist)</visible>
           </control>
 
         </control>

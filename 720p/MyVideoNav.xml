@@ -159,7 +159,7 @@
         <onright condition="Control.IsVisible(508)">Control.Move(508,1)</onright>
         <ondown>50</ondown>
         <onback>50</onback>
-        <onclick>PlayMedia($INFO[ListItem.FileNameAndPath])</onclick>
+        <onclick>PlayMedia($ESCINFO[ListItem.FileNameAndPath])</onclick>
         <visible>true</visible>
       </control>
       <control type="button" id="7002">
@@ -169,7 +169,7 @@
         <onright condition="!Skin.HasSetting(kioskmode)">9000</onright>
         <ondown>Control.Move(511,1)</ondown>
         <onback>50</onback>
-        <onclick>PlayMedia($INFO[ListItem.FileNameAndPath])</onclick>
+        <onclick>PlayMedia($ESCINFO[ListItem.FileNameAndPath])</onclick>
         <visible>Control.IsVisible(511)</visible>
       </control>
       <control type="button" id="7001">
@@ -183,8 +183,8 @@
         <ondown>50</ondown>
         <onback>50</onback>
         <onup>9000</onup>
-        <onclick condition="!Skin.HasSetting(fstrailer)">PlayMedia($INFO[ListItem.Trailer],1)</onclick>
-        <onclick condition="Skin.HasSetting(fstrailer)">PlayMedia($INFO[ListItem.Trailer])</onclick>
+        <onclick condition="!Skin.HasSetting(fstrailer)">PlayMedia($ESCINFO[ListItem.Trailer],1)</onclick>
+        <onclick condition="Skin.HasSetting(fstrailer)">PlayMedia($ESCINFO[ListItem.Trailer])</onclick>
         <onclick>SetFocus(50)</onclick>
         <font>-</font>
         <label>-</label>
@@ -205,7 +205,6 @@
       <include>Animation_HideBreadCrumbs</include>
       <include>Breadcrumbs_BackBar</include>
       <control type="group">
-        <visible>!Player.HasMedia|!IsEmpty(Window(videolibrary).Property(tvtunesIsAlive))</visible>
         <control type="grouplist">
           <posx>15</posx>
           <posy>0</posy>
@@ -237,7 +236,9 @@
       <include>Breadcrumbs_Furniture</include>
     </control>
 
-    <include>Furniture_NowPlayingWidget</include>
+    <include condition="!Skin.HasSetting(GlobalNowPlaying)">Furniture_NowPlayingWidget</include>
+    <include condition="!Skin.HasSetting(breadcrumb)">TrailerLabel</include>
+    <include condition="!Skin.HasSetting(breadcrumb) + Skin.HasSetting(GlobalRSS)">GlobalRSS</include>
     <include condition="Skin.HasSetting(globaltime)">Furniture_Clock</include>
     <include condition="!Skin.HasSetting(kioskmode)">Media_Menu</include>
   </controls>

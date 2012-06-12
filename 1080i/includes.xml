@@ -37,6 +37,7 @@
     <include file="Includes_MainMenu.xml" />
     <include file="Includes_PVR.xml" />
     <include file="Includes_Widget2.xml" />
+    <include file="Includes_CustomizerWindow.xml" />
     <include name="VideoBackground">
         <control type="group">
             <visible>Player.HasVideo + [Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(506) | Control.IsVisible(511) | Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(514) | Control.IsVisible(516) | Control.IsVisible(500) | Control.IsVisible(510) | Control.IsVisible(57) | [[Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(508)] + !Control.IsVisible(7550)] | [[Control.IsVisible(509) | Control.IsVisible(513)] + !Control.IsVisible(7679)]]</visible>
@@ -115,6 +116,7 @@
             <description>extrafanart</description>
             <randomize>true</randomize>
             <imagepath background="true">$INFO[Skin.String(ArtistsLogosPath)]$INFO[MusicPlayer.Artist,,/extrafanart]</imagepath>
+            <aspectratio align="center" aligny="center">scale</aspectratio>
             <visible>Player.HasAudio + Skin.HasSetting(musicfanarthome)</visible>
             <include>Animation_VisibleChange400</include>
             <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
@@ -126,9 +128,10 @@
             <fadetime>600</fadetime>
             <description>extrafanart</description>
             <randomize>true</randomize>
-            <imagepath background="true" diffuse="thumbs/boxes/cdcover_mask.png">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+            <imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
             <visible>Player.HasAudio + Skin.HasSetting(artistslideshowhome)</visible>
             <include>Animation_VisibleChange400</include>
+            <aspectratio align="center" aligny="center">keep</aspectratio>
             <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
             <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
         </control>

@@ -314,7 +314,7 @@
                     <height>3</height>
                     <font>Font_Condensed20</font>
                     <align>left</align>
-                    <textcolor>white</textcolor>
+                    <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                     <shadowcolor>-</shadowcolor>
                     <textoffsetx>0</textoffsetx>
                     <label>$VAR[RSSFeedVar]</label>
@@ -336,7 +336,7 @@
                     <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                     <shadowcolor>-</shadowcolor>
                     <textoffsetx>5</textoffsetx>
-                    <label>$INFO[Window(Home).Property(peopleborntoday.1.name)][COLOR=grey]$INFO[Window.Property(peopleborntoday.1.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.2.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.2.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.3.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.3.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.4.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.4.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.5.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.5.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.6.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.6.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.7.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.7.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.8.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.8.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.9.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.9.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.10.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.10.job), • ][/COLOR]</label>
+                    <label>$INFO[Window(Home).Property(peopleborntoday.1.name)][COLOR=ffaaaaaa]$INFO[Window.Property(peopleborntoday.1.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.2.name), | ][COLOR=ffaaaaaa]$INFO[Window.Property(peopleborntoday.2.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.3.name), | ][COLOR=ffaaaaaa]$INFO[Window.Property(peopleborntoday.3.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.4.name), | ][COLOR=ffaaaaaa]$INFO[Window.Property(peopleborntoday.4.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.5.name), | ][COLOR=ffaaaaaa]$INFO[Window.Property(peopleborntoday.5.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.6.name), | ][COLOR=ffaaaaaa]$INFO[Window.Property(peopleborntoday.6.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.7.name), | ][COLOR=ffaaaaaa]$INFO[Window.Property(peopleborntoday.7.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.8.name), | ][COLOR=ffaaaaaa]$INFO[Window.Property(peopleborntoday.8.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.9.name), | ][COLOR=ffaaaaaa]$INFO[Window.Property(peopleborntoday.9.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.10.name), | ][COLOR=ffaaaaaa]$INFO[Window.Property(peopleborntoday.10.job), • ][/COLOR]</label>
                     <scroll>true</scroll>
                     <wrapmultiline>false</wrapmultiline>
                     <scrollspeed>50</scrollspeed>
@@ -397,7 +397,7 @@
                     <height>3</height>
                     <font>Font_Condensed20</font>
                     <align>left</align>
-                    <textcolor>a9000000</textcolor>
+                    <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                     <shadowcolor>-</shadowcolor>
                     <textoffsetx>0</textoffsetx>
                     <label>$VAR[RSSFeedVar]</label>
@@ -2739,15 +2739,16 @@
                 </control>
                 <control type="group">
                     <visible>Substring(Control.GetLabel(4321),concertspanel)</visible>
+					<include>Animation_VisibleChange400</include>
 					<control type="panel" id="5010">
                         <posx>27</posx>
                         <posy>26</posy>
-                        <width>1596</width>
-                        <height>360</height>
+                        <width>1595</width>
+                        <height>348</height>
+						<orientation>horizontal</orientation>
                         <include>Animation_VisibleChange400</include>
-                        <animation effect="fade" start="100" end="0" time="0" condition="!Substring(Control.GetLabel(4321),panel)">Conditional</animation>
-                        <onleft>9000</onleft>
-                        <onright>9000</onright>
+                        <onleft>5010</onleft>
+                        <onright>5010</onright>
 						<preloaditems>2</preloaditems>
                         <onup condition="!IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">SetFocus(6010)</onup>
                         <onup condition="!Skin.HasSetting(lowermainmenu)">SetFocus(9000)</onup>
@@ -2756,12 +2757,12 @@
                         <onback>9000</onback>
 						<pagecontrol>-</pagecontrol>
 						<scrolltime>200</scrolltime>
-						<itemlayout height="121" width="399">
+						<itemlayout height="116" width="399">
 							<control type="image">
 								<posx>0</posx>
 								<posy>0</posy>
 								<width>399</width>
-								<height>110</height>
+								<height>116</height>
 								<texture border="5">button-nofocus.png</texture>
 							</control>
 							<control type="label">
@@ -2806,12 +2807,12 @@
 								<shadowcolor>black</shadowcolor>
 							</control>
 						</itemlayout>
-						<focusedlayout height="121" width="399">
+						<focusedlayout height="116" width="399">
 							<control type="image">
 								<posx>0</posx>
 								<posy>0</posy>
 								<width>399</width>
-								<height>110</height>
+								<height>116</height>
 								<visible>!Control.HasFocus(5010)</visible>
 								<texture border="3">button-nofocus.png</texture>
 							</control>
@@ -2819,7 +2820,7 @@
 								<posx>0</posx>
 								<posy>0</posy>
 								<width>399</width>
-								<height>110</height>
+								<height>116</height>
 								<visible>Control.HasFocus(5010)</visible>
 								<texture>views/tripanel/listselect_fo.png</texture>
 								<colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
@@ -4705,7 +4706,7 @@
                         <control type="button" id="5035">
                             <description>RANDOMIZE</description>
                             <label>$LOCALIZE[31087]</label>
-                            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&method='Random'&sort='Added'&limit=10)</onclick>
+                            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&method='Random'&sort='Added'&limit=8)</onclick>
                             <include>HiddenObject</include>
                             <visible>Substring(Control.GetLabel(4321),randompics)</visible>
                             <onback>ClearProperty(PanelWidgetInfo,Home)</onback>

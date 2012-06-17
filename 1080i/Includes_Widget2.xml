@@ -2653,6 +2653,15 @@
                         <label>$INFO[Container(6010).ListItem.Label2]</label>
                         <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
+                    <control type="image">
+                        <posx>1261</posx>
+                        <posy>10</posy>
+                        <width>300</width>
+                        <height>116</height>
+                        <aspectratio>keep</aspectratio>
+                        <fadetime>400</fadetime>
+                        <texture background="true">$INFO[Container(6010).ListItem.Property(RootPath),,/logo.png]</texture>
+                    </control>
                     <control type="grouplist" id="6020">
                         <description>Trailer + Play + Return button</description>
                         <posx>-100</posx>
@@ -2873,6 +2882,15 @@
                         <label>$INFO[Container(6010).ListItem.Property(Plot)]</label>
                         <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
+                    <control type="image">
+                        <posx>1261</posx>
+                        <posy>10</posy>
+                        <width>300</width>
+                        <height>116</height>
+                        <aspectratio>keep</aspectratio>
+                        <fadetime>400</fadetime>
+                        <texture background="true">$INFO[Container(6010).ListItem.Property(RootPath),,/logo.png]</texture>
+                    </control>
                     <control type="grouplist" id="6021">
                         <description>Play + Return button</description>
                         <posx>-100</posx>
@@ -3030,6 +3048,15 @@
                         <label fallback="414">$INFO[Container(6010).ListItem.Property(Album_Description)]</label>
                         <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                         <visible>Substring(Control.GetLabel(4325),watchlistmusic)</visible>
+                    </control>
+                    <control type="image">
+                        <posx>1261</posx>
+                        <posy>10</posy>
+                        <width>300</width>
+                        <height>116</height>
+                        <aspectratio>keep</aspectratio>
+                        <fadetime>400</fadetime>
+                        <texture background="true">$INFO[Skin.String(ArtistsLogosPath)]$INFO[Container(6010).ListItem.Label2,,/logo.png]</texture>
                     </control>
                     <control type="grouplist" id="6030">
                         <description>Play + Return button</description>
@@ -3287,7 +3314,7 @@
             </control>
         </control>
     </include>
-  <include name="Custom1Widget2Poster">
+    <include name="Custom1Widget2Poster">
         <item>
             <label>$INFO[Window(Home).Property(SecondCustomHomeItem1.1.Title)]</label>
             <label2>$INFO[Window(Home).Property(SecondCustomHomeItem1.1.Plot)]</label2>
@@ -3299,6 +3326,8 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.Path)]</property>
+            <property name="Resolution">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.Resolution)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.1.Title)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3312,6 +3341,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.2.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem1.2.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem1.2.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.2.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.2.Title)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3325,6 +3355,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.3.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem1.3.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem1.3.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.3.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.3.Title)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3338,6 +3369,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.4.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem1.4.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem1.4.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.4.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.4.Title)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3351,6 +3383,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.5.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem1.5.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem1.5.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.5.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.5.Title)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3364,6 +3397,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.6.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem1.6.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem1.6.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.6.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.6.Title)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3377,6 +3411,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.7.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem1.7.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem1.7.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.7.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.7.Title)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3390,6 +3425,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.8.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem1.8.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem1.8.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.8.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.8.Title)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
     </include>
@@ -3404,6 +3440,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.Rootpath)]</property>
+			<property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.1.EpisodeTitle)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3416,6 +3454,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem1.2.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.2.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem1.2.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.2.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem1.2.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.2.EpisodeTitle)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3428,6 +3468,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem1.3.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.3.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem1.3.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.3.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem1.3.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.3.EpisodeTitle)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3440,6 +3482,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem1.4.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.4.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem1.4.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.4.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem1.4.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.4.EpisodeTitle)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3452,6 +3496,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem1.5.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.5.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem1.5.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.5.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem1.5.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.5.EpisodeTitle)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3464,6 +3510,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem1.6.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.6.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem1.6.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.6.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem1.6.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.6.EpisodeTitle)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3476,6 +3524,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem1.7.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.7.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem1.7.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.7.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem1.7.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.7.EpisodeTitle)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3488,6 +3538,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem1.8.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.8.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem1.8.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.8.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem1.8.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.8.EpisodeTitle)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
     </include>
@@ -3500,6 +3552,8 @@
             <property name="Year">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.Year)]</property>
             <property name="Rating">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.Rating)]</property>
             <property name="ArtistPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.ArtistPath)]</property>
+            <property name="AlbumPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.AlbumPath)]</property>
+            <property name="PlayPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.PlayPath)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.Fanart)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.1.Artist)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
@@ -3593,6 +3647,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem2.1.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem2.1.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem2.1.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem2.1.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem2.1.Title)) + Container(9000).HasFocus(102)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3606,6 +3661,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem2.2.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem2.2.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem2.2.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem2.2.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem2.2.Title)) + Container(9000).HasFocus(102)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3619,6 +3675,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem2.3.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem2.3.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem2.3.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem2.3.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem2.3.Title)) + Container(9000).HasFocus(102)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3632,6 +3689,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem2.4.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem2.4.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem2.4.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem2.4.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem2.4.Title)) + Container(9000).HasFocus(102)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3645,6 +3703,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem2.5.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem2.5.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem2.5.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem2.5.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem2.5.Title)) + Container(9000).HasFocus(102)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3658,6 +3717,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem2.6.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem2.6.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem2.6.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem2.6.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem2.6.Title)) + Container(9000).HasFocus(102)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3671,6 +3731,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem2.7.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem2.7.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem2.7.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem2.7.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem2.7.Title)) + Container(9000).HasFocus(102)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3684,6 +3745,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem2.8.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem2.8.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem2.8.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem2.8.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem2.8.Title)) + Container(9000).HasFocus(102)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
     </include>
@@ -3698,6 +3760,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem2.1.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem2.1.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem2.1.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem2.1.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem2.1.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem2.1.EpisodeTitle)) + Container(9000).HasFocus(102)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3710,6 +3774,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem2.2.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem2.2.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem2.2.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem2.2.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem2.2.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem2.2.EpisodeTitle)) + Container(9000).HasFocus(102)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3722,6 +3788,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem2.3.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem2.3.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem2.3.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem2.3.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem2.3.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem2.3.EpisodeTitle)) + Container(9000).HasFocus(102)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3734,6 +3802,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem2.4.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem2.4.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem2.4.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem2.4.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem2.4.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem2.4.EpisodeTitle)) + Container(9000).HasFocus(102)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3746,6 +3816,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem2.5.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem2.5.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem2.5.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem2.5.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem2.5.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem2.5.EpisodeTitle)) + Container(9000).HasFocus(102)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3758,6 +3830,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem2.6.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem2.6.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem2.6.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem2.6.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem2.6.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem2.6.EpisodeTitle)) + Container(9000).HasFocus(102)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3770,6 +3844,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem2.7.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem2.7.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem2.7.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem2.7.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem2.7.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem2.7.EpisodeTitle)) + Container(9000).HasFocus(102)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3782,6 +3858,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem2.8.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem2.8.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem2.8.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem2.8.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem2.8.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem2.8.EpisodeTitle)) + Container(9000).HasFocus(102)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
     </include>
@@ -3887,6 +3965,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem3.1.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem3.1.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem3.1.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem3.1.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem3.1.Title)) + Container(9000).HasFocus(103)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3900,6 +3979,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem3.2.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem3.2.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem3.2.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem3.2.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem3.2.Title)) + Container(9000).HasFocus(103)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3913,6 +3993,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem3.3.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem3.3.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem3.3.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem3.3.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem3.3.Title)) + Container(9000).HasFocus(103)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3926,6 +4007,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem3.4.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem3.4.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem3.4.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem3.4.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem3.4.Title)) + Container(9000).HasFocus(103)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3939,6 +4021,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem3.5.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem3.5.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem3.5.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem3.5.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem3.5.Title)) + Container(9000).HasFocus(103)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3952,6 +4035,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem3.6.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem3.6.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem3.6.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem3.6.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem3.6.Title)) + Container(9000).HasFocus(103)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3965,6 +4049,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem3.7.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem3.7.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem3.7.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem3.7.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem3.7.Title)) + Container(9000).HasFocus(103)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3978,6 +4063,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem3.8.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem3.8.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem3.8.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem3.8.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem3.8.Title)) + Container(9000).HasFocus(103)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
     </include>
@@ -3992,6 +4078,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem3.1.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem3.1.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem3.1.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem3.1.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem3.1.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem3.1.EpisodeTitle)) + Container(9000).HasFocus(103)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4004,6 +4092,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem3.2.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem3.2.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem3.2.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem3.2.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem3.2.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem3.2.EpisodeTitle)) + Container(9000).HasFocus(103)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4016,6 +4106,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem3.3.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem3.3.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem3.3.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem3.3.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem3.3.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem3.3.EpisodeTitle)) + Container(9000).HasFocus(103)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4028,6 +4120,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem3.4.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem3.4.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem3.4.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem3.4.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem3.4.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem3.4.EpisodeTitle)) + Container(9000).HasFocus(103)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4040,6 +4134,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem3.5.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem3.5.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem3.5.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem3.5.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem3.5.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem3.5.EpisodeTitle)) + Container(9000).HasFocus(103)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4052,6 +4148,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem3.6.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem3.6.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem3.6.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem3.6.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem3.6.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem3.6.EpisodeTitle)) + Container(9000).HasFocus(103)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4064,6 +4162,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem3.7.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem3.7.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem3.7.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem3.7.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem3.7.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem3.7.EpisodeTitle)) + Container(9000).HasFocus(103)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4076,6 +4176,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem3.8.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem3.8.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem3.8.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem3.8.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem3.8.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem3.8.EpisodeTitle)) + Container(9000).HasFocus(103)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
     </include>
@@ -4181,6 +4283,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem4.1.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem4.1.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem4.1.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem4.1.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem4.1.Title)) + Container(9000).HasFocus(104)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4194,6 +4297,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem4.2.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem4.2.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem4.2.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem4.2.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem4.2.Title)) + Container(9000).HasFocus(104)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4207,6 +4311,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem4.3.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem4.3.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem4.3.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem4.3.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem4.3.Title)) + Container(9000).HasFocus(104)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4220,6 +4325,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem4.4.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem4.4.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem4.4.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem4.4.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem4.4.Title)) + Container(9000).HasFocus(104)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4233,6 +4339,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem4.5.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem4.5.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem4.5.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem4.5.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem4.5.Title)) + Container(9000).HasFocus(104)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4246,6 +4353,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem4.6.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem4.6.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem4.6.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem4.6.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem4.6.Title)) + Container(9000).HasFocus(104)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4259,6 +4367,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem4.7.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem4.7.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem4.7.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem4.7.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem4.7.Title)) + Container(9000).HasFocus(104)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4272,6 +4381,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem4.8.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem4.8.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem4.8.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem4.8.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem4.8.Title)) + Container(9000).HasFocus(104)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
     </include>
@@ -4286,6 +4396,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem4.1.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem4.1.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem4.1.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem4.1.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem4.1.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem4.1.EpisodeTitle)) + Container(9000).HasFocus(104)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4298,6 +4410,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem4.2.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem4.2.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem4.2.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem4.2.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem4.2.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem4.2.EpisodeTitle)) + Container(9000).HasFocus(104)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4310,6 +4424,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem4.3.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem4.3.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem4.3.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem4.3.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem4.3.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem4.3.EpisodeTitle)) + Container(9000).HasFocus(104)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4322,6 +4438,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem4.4.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem4.4.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem4.4.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem4.4.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem4.4.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem4.4.EpisodeTitle)) + Container(9000).HasFocus(104)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4334,6 +4452,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem4.5.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem4.5.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem4.5.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem4.5.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem4.5.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem4.5.EpisodeTitle)) + Container(9000).HasFocus(104)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4346,6 +4466,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem4.6.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem4.6.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem4.6.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem4.6.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem4.6.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem4.6.EpisodeTitle)) + Container(9000).HasFocus(104)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4358,6 +4480,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem4.7.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem4.7.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem4.7.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem4.7.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem4.7.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem4.7.EpisodeTitle)) + Container(9000).HasFocus(104)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4370,6 +4494,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem4.8.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem4.8.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem4.8.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem4.8.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem4.8.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem4.8.EpisodeTitle)) + Container(9000).HasFocus(104)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
     </include>
@@ -4475,6 +4601,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem5.1.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem5.1.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem5.1.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem5.1.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem5.1.Title)) + Container(9000).HasFocus(105)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4488,6 +4615,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem5.2.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem5.2.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem5.2.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem5.2.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem5.2.Title)) + Container(9000).HasFocus(105)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4501,6 +4629,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem5.3.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem5.3.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem5.3.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem5.3.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem5.3.Title)) + Container(9000).HasFocus(105)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4514,6 +4643,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem5.4.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem5.4.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem5.4.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem5.4.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem5.4.Title)) + Container(9000).HasFocus(105)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4527,6 +4657,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem5.5.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem5.5.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem5.5.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem5.5.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem5.5.Title)) + Container(9000).HasFocus(105)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4540,6 +4671,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem5.6.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem5.6.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem5.6.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem5.6.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem5.6.Title)) + Container(9000).HasFocus(105)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4553,6 +4685,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem5.7.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem5.7.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem5.7.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem5.7.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem5.7.Title)) + Container(9000).HasFocus(105)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4566,6 +4699,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem5.8.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem5.8.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem5.8.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem5.8.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem5.8.Title)) + Container(9000).HasFocus(105)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
     </include>
@@ -4580,6 +4714,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem5.1.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem5.1.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem5.1.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem5.1.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem5.1.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem5.1.EpisodeTitle)) + Container(9000).HasFocus(105)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4592,6 +4728,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem5.2.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem5.2.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem5.2.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem5.2.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem5.2.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem5.2.EpisodeTitle)) + Container(9000).HasFocus(105)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4604,6 +4742,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem5.3.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem5.3.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem5.3.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem5.3.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem5.3.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem5.3.EpisodeTitle)) + Container(9000).HasFocus(105)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4616,6 +4756,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem5.4.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem5.4.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem5.4.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem5.4.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem5.4.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem5.4.EpisodeTitle)) + Container(9000).HasFocus(105)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4628,6 +4770,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem5.5.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem5.5.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem5.5.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem5.5.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem5.5.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem5.5.EpisodeTitle)) + Container(9000).HasFocus(105)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4640,6 +4784,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem5.6.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem5.6.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem5.6.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem5.6.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem5.6.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem5.6.EpisodeTitle)) + Container(9000).HasFocus(105)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4652,6 +4798,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem5.7.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem5.7.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem5.7.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem5.7.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem5.7.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem5.7.EpisodeTitle)) + Container(9000).HasFocus(105)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4664,6 +4812,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem5.8.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem5.8.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem5.8.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem5.8.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem5.8.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem5.8.EpisodeTitle)) + Container(9000).HasFocus(105)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
     </include>
@@ -4769,6 +4919,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem6.1.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem6.1.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem6.1.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem6.1.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem6.1.Title)) + Container(9000).HasFocus(106)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4782,6 +4933,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem6.2.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem6.2.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem6.2.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem6.2.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem6.2.Title)) + Container(9000).HasFocus(106)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4795,6 +4947,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem6.3.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem6.3.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem6.3.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem6.3.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem6.3.Title)) + Container(9000).HasFocus(106)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4808,6 +4961,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem6.4.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem6.4.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem6.4.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem6.4.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem6.4.Title)) + Container(9000).HasFocus(106)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4821,6 +4975,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem6.5.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem6.5.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem6.5.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem6.5.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem6.5.Title)) + Container(9000).HasFocus(106)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4834,6 +4989,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem6.6.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem6.6.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem6.6.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem6.6.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem6.6.Title)) + Container(9000).HasFocus(106)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4847,6 +5003,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem6.7.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem6.7.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem6.7.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem6.7.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem6.7.Title)) + Container(9000).HasFocus(106)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4860,6 +5017,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem6.8.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem6.8.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem6.8.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem6.8.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem6.8.Title)) + Container(9000).HasFocus(106)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
     </include>
@@ -4874,6 +5032,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem6.1.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem6.1.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem6.1.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem6.1.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem6.1.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem6.1.EpisodeTitle)) + Container(9000).HasFocus(106)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4886,6 +5046,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem6.2.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem6.2.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem6.2.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem6.2.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem6.2.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem6.2.EpisodeTitle)) + Container(9000).HasFocus(106)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4898,6 +5060,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem6.3.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem6.3.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem6.3.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem6.3.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem6.3.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem6.3.EpisodeTitle)) + Container(9000).HasFocus(106)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4910,6 +5074,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem6.4.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem6.4.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem6.4.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem6.4.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem6.4.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem6.4.EpisodeTitle)) + Container(9000).HasFocus(106)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4922,6 +5088,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem6.5.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem6.5.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem6.5.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem6.5.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem6.5.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem6.5.EpisodeTitle)) + Container(9000).HasFocus(106)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4934,6 +5102,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem6.6.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem6.6.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem6.6.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem6.6.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem6.6.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem6.6.EpisodeTitle)) + Container(9000).HasFocus(106)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4946,6 +5116,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem6.7.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem6.7.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem6.7.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem6.7.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem6.7.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem6.7.EpisodeTitle)) + Container(9000).HasFocus(106)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -4958,6 +5130,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem6.8.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem6.8.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem6.8.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem6.8.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem6.8.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem6.8.EpisodeTitle)) + Container(9000).HasFocus(106)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
     </include>
@@ -5063,6 +5237,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem7.1.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem7.1.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem7.1.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem7.1.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem7.1.Title)) + Container(9000).HasFocus(107)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5076,6 +5251,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem7.2.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem7.2.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem7.2.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem7.2.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem7.2.Title)) + Container(9000).HasFocus(107)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5089,6 +5265,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem7.3.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem7.3.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem7.3.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem7.3.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem7.3.Title)) + Container(9000).HasFocus(107)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5102,6 +5279,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem7.4.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem7.4.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem7.4.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem7.4.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem7.4.Title)) + Container(9000).HasFocus(107)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5115,6 +5293,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem7.5.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem7.5.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem7.5.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem7.5.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem7.5.Title)) + Container(9000).HasFocus(107)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5128,6 +5307,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem7.6.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem7.6.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem7.6.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem7.6.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem7.6.Title)) + Container(9000).HasFocus(107)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5141,6 +5321,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem7.7.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem7.7.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem7.7.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem7.7.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem7.7.Title)) + Container(9000).HasFocus(107)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5154,6 +5335,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem7.8.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem7.8.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem7.8.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem7.8.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem7.8.Title)) + Container(9000).HasFocus(107)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
     </include>
@@ -5168,6 +5350,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem7.1.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem7.1.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem7.1.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem7.1.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem7.1.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem7.1.EpisodeTitle)) + Container(9000).HasFocus(107)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5180,6 +5364,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem7.2.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem7.2.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem7.2.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem7.2.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem7.2.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem7.2.EpisodeTitle)) + Container(9000).HasFocus(107)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5192,6 +5378,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem7.3.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem7.3.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem7.3.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem7.3.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem7.3.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem7.3.EpisodeTitle)) + Container(9000).HasFocus(107)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5204,6 +5392,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem7.4.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem7.4.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem7.4.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem7.4.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem7.4.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem7.4.EpisodeTitle)) + Container(9000).HasFocus(107)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5216,6 +5406,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem7.5.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem7.5.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem7.5.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem7.5.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem7.5.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem7.5.EpisodeTitle)) + Container(9000).HasFocus(107)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5228,6 +5420,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem7.6.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem7.6.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem7.6.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem7.6.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem7.6.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem7.6.EpisodeTitle)) + Container(9000).HasFocus(107)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5240,6 +5434,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem7.7.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem7.7.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem7.7.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem7.7.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem7.7.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem7.7.EpisodeTitle)) + Container(9000).HasFocus(107)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5252,6 +5448,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem7.8.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem7.8.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem7.8.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem7.8.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem7.8.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem7.8.EpisodeTitle)) + Container(9000).HasFocus(107)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
     </include>
@@ -5357,6 +5555,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem8.1.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem8.1.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem8.1.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem8.1.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem8.1.Title)) + Container(9000).HasFocus(108)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5370,6 +5569,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem8.2.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem8.2.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem8.2.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem8.2.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem8.2.Title)) + Container(9000).HasFocus(108)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5383,6 +5583,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem8.3.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem8.3.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem8.3.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem8.3.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem8.3.Title)) + Container(9000).HasFocus(108)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5396,6 +5597,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem8.4.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem8.4.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem8.4.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem8.4.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem8.4.Title)) + Container(9000).HasFocus(108)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5409,6 +5611,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem8.5.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem8.5.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem8.5.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem8.5.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem8.5.Title)) + Container(9000).HasFocus(108)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5422,6 +5625,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem8.6.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem8.6.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem8.6.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem8.6.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem8.6.Title)) + Container(9000).HasFocus(108)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5435,6 +5639,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem8.7.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem8.7.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem8.7.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem8.7.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem8.7.Title)) + Container(9000).HasFocus(108)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5448,6 +5653,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem8.8.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem8.8.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem8.8.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem8.8.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem8.8.Title)) + Container(9000).HasFocus(108)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
     </include>
@@ -5462,6 +5668,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem8.1.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem8.1.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem8.1.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem8.1.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem8.1.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem8.1.EpisodeTitle)) + Container(9000).HasFocus(108)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5474,6 +5682,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem8.2.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem8.2.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem8.2.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem8.2.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem8.2.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem8.2.EpisodeTitle)) + Container(9000).HasFocus(108)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5486,6 +5696,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem8.3.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem8.3.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem8.3.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem8.3.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem8.3.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem8.3.EpisodeTitle)) + Container(9000).HasFocus(108)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5498,6 +5710,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem8.4.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem8.4.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem8.4.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem8.4.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem8.4.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem8.4.EpisodeTitle)) + Container(9000).HasFocus(108)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5510,6 +5724,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem8.5.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem8.5.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem8.5.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem8.5.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem8.5.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem8.5.EpisodeTitle)) + Container(9000).HasFocus(108)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5522,6 +5738,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem8.6.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem8.6.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem8.6.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem8.6.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem8.6.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem8.6.EpisodeTitle)) + Container(9000).HasFocus(108)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5534,6 +5752,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem8.7.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem8.7.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem8.7.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem8.7.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem8.7.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem8.7.EpisodeTitle)) + Container(9000).HasFocus(108)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5546,6 +5766,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem8.8.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem8.8.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem8.8.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem8.8.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem8.8.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem8.8.EpisodeTitle)) + Container(9000).HasFocus(108)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
     </include>
@@ -5651,6 +5873,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem9.1.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem9.1.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem9.1.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem9.1.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem9.1.Title)) + Container(9000).HasFocus(109)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5664,6 +5887,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem9.2.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem9.2.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem9.2.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem9.2.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem9.2.Title)) + Container(9000).HasFocus(109)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5677,6 +5901,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem9.3.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem9.3.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem9.3.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem9.3.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem9.3.Title)) + Container(9000).HasFocus(109)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5690,6 +5915,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem9.4.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem9.4.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem9.4.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem9.4.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem9.4.Title)) + Container(9000).HasFocus(109)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5703,6 +5929,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem9.5.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem9.5.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem9.5.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem9.5.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem9.5.Title)) + Container(9000).HasFocus(109)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5716,6 +5943,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem9.6.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem9.6.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem9.6.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem9.6.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem9.6.Title)) + Container(9000).HasFocus(109)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5729,6 +5957,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem9.7.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem9.7.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem9.7.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem9.7.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem9.7.Title)) + Container(9000).HasFocus(109)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5742,6 +5971,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem9.8.Fanart)]</property>
             <property name="Trailer">$INFO[Window(Home).Property(SecondCustomHomeItem9.8.Trailer)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem9.8.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem9.8.Rootpath)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem9.8.Title)) + Container(9000).HasFocus(109)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
     </include>
@@ -5756,6 +5986,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem9.1.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem9.1.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem9.1.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem9.1.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem9.1.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem9.1.EpisodeTitle)) + Container(9000).HasFocus(109)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5768,6 +6000,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem9.2.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem9.2.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem9.2.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem9.2.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem9.2.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem9.2.EpisodeTitle)) + Container(9000).HasFocus(109)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5780,6 +6014,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem9.3.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem9.3.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem9.3.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem9.3.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem9.3.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem9.3.EpisodeTitle)) + Container(9000).HasFocus(109)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5792,6 +6028,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem9.4.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem9.4.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem9.4.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem9.4.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem9.4.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem9.4.EpisodeTitle)) + Container(9000).HasFocus(109)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5804,6 +6042,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem9.5.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem9.5.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem9.5.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem9.5.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem9.5.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem9.5.EpisodeTitle)) + Container(9000).HasFocus(109)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5816,6 +6056,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem9.6.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem9.6.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem9.6.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem9.6.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem9.6.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem9.6.EpisodeTitle)) + Container(9000).HasFocus(109)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5828,6 +6070,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem9.7.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem9.7.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem9.7.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem9.7.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem9.7.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem9.7.EpisodeTitle)) + Container(9000).HasFocus(109)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -5840,6 +6084,8 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondCustomHomeItem9.8.EpisodeNo)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem9.8.Fanart)]</property>
             <property name="Path">$INFO[Window(Home).Property(SecondCustomHomeItem9.8.Path)]</property>
+            <property name="RootPath">$INFO[Window(Home).Property(SecondCustomHomeItem9.8.Rootpath)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(SecondCustomHomeItem9.8.RunningTime)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem9.8.EpisodeTitle)) + Container(9000).HasFocus(109)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
     </include>
@@ -7962,11 +8208,11 @@
                                 <visible>Control.HasFocus(6010)</visible>
                             </control>
                         </focusedlayout>
-                        <itemlayout height="450" width="228" condition="Substring(Control.GetLabel(4325),panel2,right) + [Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo) | Substring(Control.GetLabel(4325),actors)]">
+                        <itemlayout height="450" width="532" condition="Substring(Control.GetLabel(4325),panel2,right) + [Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo) | Substring(Control.GetLabel(4325),actors)]">
                             <control type="image">
                                 <description>Main Icon</description>
                                 <posx>21</posx>
-                                <posy>12</posy>
+                                <posy>42</posy>
                                 <width>183</width>
                                 <height>275</height>
                                 <fadetime>IconCrossfadeTime</fadetime>
@@ -7977,7 +8223,7 @@
                             <control type="image">
                                 <description>Main Icon Glass overlay</description>
                                 <posx>1.5</posx>
-                                <posy>-7.5</posy>
+                                <posy>22.5</posy>
                                 <width>222</width>
                                 <height>313</height>
                                 <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
@@ -7985,14 +8231,50 @@
                                 <bordersize>19.5</bordersize>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                             </control>
+                    <control type="label">
+                        <posx>200</posx>
+                        <posy>25</posy>
+                        <width>340</width>
+                        <height>50</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>Font_Reg24</font>
+                        <textcolor>white2</textcolor>
+                        <shadowcolor>-</shadowcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                        <textoffsetx>15</textoffsetx>
+                    </control>
+                    <control type="label">
+                        <posx>200</posx>
+                        <posy>78</posy>
+                        <width>340</width>
+                        <height>30</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>Font_Condensed22</font>
+                        <textcolor>grey2</textcolor>
+                        <shadowcolor>-</shadowcolor>
+                        <label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(RunningTime), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
+                        <textoffsetx>15</textoffsetx>
+                    </control>
+                        <control type="textbox">
+                            <posx>215</posx>
+                            <posy>112</posy>
+                            <width>300</width>
+                            <height>205</height>
+                            <align>left</align>
+                            <label>$INFO[ListItem.Label2]</label>
+                            <font>Font_Condensed20</font>
+                            <include>listcolornofocus</include>
+                            <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
+                        </control>
                         </itemlayout>
-                        <focusedlayout height="450" width="228" condition="Substring(Control.GetLabel(4325),panel2,right) + [Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo) | Substring(Control.GetLabel(4325),actors)] ">
+                        <focusedlayout height="450" width="532" condition="Substring(Control.GetLabel(4325),panel2,right) + [Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo) | Substring(Control.GetLabel(4325),actors)] ">
                             <control type="group">
-                                <animation effect="zoom" center="102,80" start="100" end="120" time="300" tween="sine" easing="out" reversible="false">Focus</animation>
                                 <control type="image">
                                     <description>Main Icon</description>
                                     <posx>21</posx>
-                                    <posy>12</posy>
+                                    <posy>42</posy>
                                     <width>183</width>
                                     <height>275</height>
                                     <fadetime>IconCrossfadeTime</fadetime>
@@ -8001,7 +8283,7 @@
                                 </control>
                                 <control type="image">
                                     <posx>1.5</posx>
-                                    <posy>-7.5</posy>
+                                    <posy>22.5</posy>
                                     <width>222</width>
                                     <height>313</height>
                                     <description>Main Icon Glass overlay</description>
@@ -8010,6 +8292,53 @@
                                     <bordersize>19.5</bordersize>
                                     <aspectratio scalediffuse="false">stretch</aspectratio>
                                 </control>
+                            </control>
+						<control type="label">
+							<posx>200</posx>
+							<posy>25</posy>
+							<width>340</width>
+							<height>50</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_Reg24</font>
+							<textcolor>white2</textcolor>
+							<shadowcolor>-</shadowcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<textoffsetx>15</textoffsetx>
+						</control>
+						<control type="label">
+							<posx>200</posx>
+							<posy>78</posy>
+							<width>340</width>
+							<height>30</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_Condensed22</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>-</shadowcolor>
+							<label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(RunningTime), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
+							<textoffsetx>15</textoffsetx>
+						</control>
+							<control type="textbox">
+								<posx>215</posx>
+								<posy>112</posy>
+								<width>300</width>
+								<height>205</height>
+								<align>left</align>
+								<label>$INFO[ListItem.Label2]</label>
+								<font>Font_Condensed20</font>
+								<include>listcolornofocus</include>
+								<autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
+							</control>
+                            <control type="image">
+                                <posx>0</posx>
+                                <posy>20</posy>
+                                <width>532</width>
+                                <height>319</height>
+								<aspectratio>stretch</aspectratio>
+                                <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
+                                <texture border="5">views/addonwall_select.png</texture>
+                                <visible>Control.HasFocus(6010)</visible>
                             </control>
                         </focusedlayout>
                         <content>
@@ -8072,22 +8401,7 @@
                         <textoffsetx>15</textoffsetx>
                         <label>$VAR[PanelWidget2Label1Var]</label>
                         <visible>!Stringcompare(Control.Getlabel(4321),Control.Getlabel(4325))</visible>
-                        <visible>!Substring(Control.Getlabel(4325),panel2,right)</visible>
 			    	</control>
-                    <control type="label">
-                        <posx>0</posx>
-                        <posy>345</posy>
-                        <width>1650</width>
-                        <height>25</height>
-                        <font>Font_Condensed22_Caps</font>
-                        <textcolor>bbe5e5e5</textcolor>
-                        <shadowcolor>black</shadowcolor>
-                        <align>center</align>
-                        <aligny>center</aligny>
-                        <textoffsetx>15</textoffsetx>
-                        <label>$VAR[Widget2TitleLabelVar]</label>
-                        <visible>Substring(Control.Getlabel(4325),panel2,right)</visible>
-                    </control>
                 </control>
 	</include>
 </includes>

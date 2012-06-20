@@ -2384,20 +2384,21 @@
                         <itemgap>0</itemgap>
                         <aligny>center</aligny>
                         <scrolltime>0</scrolltime>
-                        <onup condition="Container(5019).HasFocus(1) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon1,home)</onup>
-                        <onup condition="Container(5019).HasFocus(2) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon2,home)</onup>
-                        <onup condition="Container(5019).HasFocus(3) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon3,home)</onup>
-                        <onup condition="Container(5019).HasFocus(4) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon4,home)</onup>
-                        <onup condition="Container(5019).HasFocus(5) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon5,home)</onup>
-                        <onup condition="Skin.HasSetting(lowermainmenu)">ActivateWindow(1137)</onup>
-                        <ondown condition="Skin.HasSetting(lowermainmenu)">9000</ondown>
+                        <onup>9000</onup>
+                        <onup condition="!IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">4445</onup>
+                        <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5019).HasFocus(1) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon1,home)</onup>
+                        <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5019).HasFocus(2) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon2,home)</onup>
+                        <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5019).HasFocus(3) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon3,home)</onup>
+                        <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5019).HasFocus(4) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon4,home)</onup>
+                        <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5019).HasFocus(5) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon5,home)</onup>
+                        <onup condition="IsEmpty(Control.GetLabel(4325)) + !Skin.HasSetting(lowermainmenu)">ActivateWindow(1137)</onup>
+                        <ondown>9000</ondown>
                         <ondown condition="Container(5019).HasFocus(1) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon1,home)</ondown>
                         <ondown condition="Container(5019).HasFocus(2) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon2,home)</ondown>
                         <ondown condition="Container(5019).HasFocus(3) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon3,home)</ondown>
                         <ondown condition="Container(5019).HasFocus(4) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon4,home)</ondown>
                         <ondown condition="Container(5019).HasFocus(5) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon5,home)</ondown>
                         <ondown condition="!Skin.HasSetting(lowermainmenu)">ActivateWindow(1137)</ondown>
-                        <onup condition="!Skin.HasSetting(lowermainmenu)">9000</onup>
                         <orientation>horizontal</orientation>
                         <itemlayout width="319" height="360">
                             <control type="group">
@@ -2566,20 +2567,21 @@
                         <itemgap>0</itemgap>
                         <aligny>center</aligny>
                         <scrolltime>0</scrolltime>
-                        <onup condition="Container(5020).HasFocus(1) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon6,home)</onup>
-                        <onup condition="Container(5020).HasFocus(2) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon7,home)</onup>
-                        <onup condition="Container(5020).HasFocus(3) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon8,home)</onup>
-                        <onup condition="Container(5020).HasFocus(4) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon9,home)</onup>
-                        <onup condition="Container(5020).HasFocus(5) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon10,home)</onup>
-                        <onup condition="Skin.HasSetting(lowermainmenu)">ActivateWindow(1137)</onup>
-                        <ondown condition="Skin.HasSetting(lowermainmenu)">9000</ondown>
+                        <onup>9000</onup>
+                        <onup condition="!IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">4445</onup>
+                        <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5020).HasFocus(1) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon6,home)</onup>
+                        <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5020).HasFocus(2) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon7,home)</onup>
+                        <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5020).HasFocus(3) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon8,home)</onup>
+                        <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5020).HasFocus(4) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon9,home)</onup>
+                        <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5020).HasFocus(5) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon10,home)</onup>
+                        <onup condition="IsEmpty(Control.GetLabel(4325)) + !Skin.HasSetting(lowermainmenu)">ActivateWindow(1137)</onup>
+                        <ondown>9000</ondown>
                         <ondown condition="Container(5020).HasFocus(1) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon6,home)</ondown>
                         <ondown condition="Container(5020).HasFocus(2) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon7,home)</ondown>
                         <ondown condition="Container(5020).HasFocus(3) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon8,home)</ondown>
                         <ondown condition="Container(5020).HasFocus(4) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon9,home)</ondown>
                         <ondown condition="Container(5020).HasFocus(5) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon10,home)</ondown>
                         <ondown condition="!Skin.HasSetting(lowermainmenu)">ActivateWindow(1137)</ondown>
-                        <onup condition="!Skin.HasSetting(lowermainmenu)">9000</onup>
                         <orientation>horizontal</orientation>
                         <itemlayout width="319" height="360">
                             <control type="group">
@@ -4654,7 +4656,6 @@
                         <textcolor>ccffffff</textcolor>
                         <label fallback="414">$INFO[Container(5010).ListItem.Property(Album_Description)]</label>
                         <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
-                        <visible>Substring(Control.GetLabel(4321),watchlistmusic)</visible>
                     </control>
                     <control type="image">
                         <posx>1261</posx>
@@ -5516,142 +5517,161 @@
                             </control>
                         </focusedlayout>
                         <itemlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),songs) | Substring(Control.GetLabel(4321),watchlistmusic)]">
-                            <control type="group">
-                           
-            <control type="image">
-                <posx>20</posx>
-                <posy>15</posy>
-                <height>320</height>
-                <width>340</width>
-                <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
-            </control>
-            <control type="image">
-                <posx>0</posx>
-                <posy>-5</posy>
-                <height>360</height>
-                <width>380</width>
-                <aspectratio scalediffuse="false" align="center">scale</aspectratio>
-                <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_noreflect.png</texture>
-                <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
-                <bordersize>20</bordersize>
-            </control>
-                                
-            <control type="image">
-                <posx>400</posx>
-                <posy>55</posy>
-                <height>320</height>
-                <width>340</width>
-                <texture>$INFO[ListItem.Property(ArtistPath)]/logo.png</texture>
-                <visible>Substring(Control.GetLabel(4321),custom)</visible>
-            </control>                   
-                                
-                    <control type="label">
-                        <posx>370</posx>
-                        <posy>25</posy>
-                        <width>420</width>
-                        <height>50</height>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Reg24</font>
-                        <textcolor>white2</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <label>$INFO[ListItem.Label]</label>
-                        <textoffsetx>15</textoffsetx>
-                    </control>
-                    <control type="label">
-                        <posx>370</posx>
-                        <posy>78</posy>
-                        <width>420</width>
-                        <height>30</height>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Condensed22</font>
-                        <textcolor>grey2</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <label>$INFO[ListItem.Label2]$INFO[ListItem.Property(Rating), • ]</label>
-                        <textoffsetx>15</textoffsetx>
-                    </control>
-                        <control type="textbox">
-                            <posx>385</posx>
-                            <posy>112</posy>
-                            <width>400</width>
-                            <height>205</height>
-                            <align>left</align>
-                            <label>$INFO[ListItem.Property(Album_Description)]</label>
-                            <font>Font_Condensed20</font>
-                            <include>listcolornofocus</include>
-                            <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
-                        </control>
+                            <control type="group">        
+                                <control type="image">
+                                    <posx>20</posx>
+                                    <posy>15</posy>
+                                    <height>320</height>
+                                    <width>340</width>
+                                    <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
+                                </control>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>-5</posy>
+                                    <height>360</height>
+                                    <width>380</width>
+                                    <aspectratio scalediffuse="false" align="center">scale</aspectratio>
+                                    <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_noreflect.png</texture>
+                                    <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
+                                    <bordersize>20</bordersize>
+                                </control>
+                                <control type="image">
+                                    <posx>400</posx>
+                                    <posy>95</posy>
+                                    <height>320</height>
+                                    <width>340</width>
+                                    <texture background="true">$INFO[ListItem.Property(ArtistPath),,/logo.png]</texture>
+                                    <visible>IsEmpty(ListItem.Property(Album_Description)) + Substring(Control.GetLabel(4321),custom)</visible>
+                                </control>                             
+                                <control type="label">
+                                    <posx>370</posx>
+                                    <posy>25</posy>
+                                    <width>420</width>
+                                    <height>50</height>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+                                    <font>Font_Reg24</font>
+                                    <textcolor>white2</textcolor>
+                                    <shadowcolor>-</shadowcolor>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <textoffsetx>15</textoffsetx>
+                                </control>
+                                <control type="label">
+                                    <posx>370</posx>
+                                    <posy>78</posy>
+                                    <width>420</width>
+                                    <height>30</height>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+                                    <font>Font_Condensed22</font>
+                                    <textcolor>grey2</textcolor>
+                                    <shadowcolor>-</shadowcolor>
+                                    <label>$INFO[ListItem.Label2]</label>
+                                    <textoffsetx>15</textoffsetx>
+                                </control>
+                                <control type="label">
+                                    <posx>370</posx>
+                                    <posy>112</posy>
+                                    <width>420</width>
+                                    <height>30</height>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+                                    <font>Font_Condensed22</font>
+                                    <textcolor>grey2</textcolor>
+                                    <shadowcolor>-</shadowcolor>
+                                    <label>$INFO[ListItem.Property(Year)]</label>
+                                    <textoffsetx>15</textoffsetx>
+                                </control>
+                                <control type="textbox">
+                                    <posx>385</posx>
+                                    <posy>144</posy>
+                                    <width>400</width>
+                                    <height>175</height>
+                                    <align>left</align>
+                                    <label>$INFO[ListItem.Property(Album_Description)]</label>
+                                    <font>Font_Condensed20</font>
+                                    <include>listcolornofocus</include>
+                                    <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
+                                </control>
                             </control>
                         </itemlayout>
                         <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),songs) | Substring(Control.GetLabel(4321),watchlistmusic)]">
-         <control type="group">
-                           
-            <control type="image">
-                <posx>20</posx>
-                <posy>15</posy>
-                <height>320</height>
-                <width>340</width>
-                <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
-            </control>
-            <control type="image">
-                <posx>0</posx>
-                <posy>-5</posy>
-                <height>360</height>
-                <width>380</width>
-                <aspectratio scalediffuse="false" align="center">scale</aspectratio>
-                <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_noreflect.png</texture>
-                <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
-                <bordersize>20</bordersize>
-            </control>
-                                
-            <control type="image">
-                <posx>400</posx>
-                <posy>55</posy>
-                <height>320</height>
-                <width>340</width>
-                <texture>$INFO[ListItem.Property(ArtistPath)]/logo.png</texture>
-                <visible>Substring(Control.GetLabel(4321),custom)</visible>
-            </control>               
-                                
-                                
-                    <control type="label">
-                        <posx>370</posx>
-                        <posy>25</posy>
-                        <width>420</width>
-                        <height>50</height>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Reg24</font>
-                        <textcolor>white2</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <label>$INFO[ListItem.Label]</label>
-                        <textoffsetx>15</textoffsetx>
-                    </control>
-                    <control type="label">
-                        <posx>370</posx>
-                        <posy>78</posy>
-                        <width>420</width>
-                        <height>30</height>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Condensed22</font>
-                        <textcolor>grey2</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <label>$INFO[ListItem.Label2]$INFO[ListItem.Property(Rating), • ]</label>
-                        <textoffsetx>15</textoffsetx>
-                    </control>
-                        <control type="textbox">
-                            <posx>385</posx>
-                            <posy>112</posy>
-                            <width>400</width>
-                            <height>205</height>
-                            <align>left</align>
-                            <label>$INFO[ListItem.Property(Album_Description)]</label>
-                            <font>Font_Condensed20</font>
-                            <include>listcolornofocus</include>
-                            <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
-                        </control>
+                            <control type="group">        
+                                <control type="image">
+                                    <posx>20</posx>
+                                    <posy>15</posy>
+                                    <height>320</height>
+                                    <width>340</width>
+                                    <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
+                                </control>
+                                <control type="image">
+                                    <posx>0</posx>
+                                    <posy>-5</posy>
+                                    <height>360</height>
+                                    <width>380</width>
+                                    <aspectratio scalediffuse="false" align="center">scale</aspectratio>
+                                    <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_noreflect.png</texture>
+                                    <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
+                                    <bordersize>20</bordersize>
+                                </control>
+                                <control type="image">
+                                    <posx>400</posx>
+                                    <posy>95</posy>
+                                    <height>320</height>
+                                    <width>340</width>
+                                    <texture background="true">$INFO[ListItem.Property(ArtistPath),,/logo.png]</texture>
+                                    <visible>IsEmpty(ListItem.Property(Album_Description)) + Substring(Control.GetLabel(4321),custom)</visible>
+                                </control>                             
+                                <control type="label">
+                                    <posx>370</posx>
+                                    <posy>25</posy>
+                                    <width>420</width>
+                                    <height>50</height>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+                                    <font>Font_Reg24</font>
+                                    <textcolor>white2</textcolor>
+                                    <shadowcolor>-</shadowcolor>
+                                    <label>$INFO[ListItem.Label]</label>
+                                    <textoffsetx>15</textoffsetx>
+                                </control>
+                                <control type="label">
+                                    <posx>370</posx>
+                                    <posy>78</posy>
+                                    <width>420</width>
+                                    <height>30</height>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+                                    <font>Font_Condensed22</font>
+                                    <textcolor>grey2</textcolor>
+                                    <shadowcolor>-</shadowcolor>
+                                    <label>$INFO[ListItem.Label2]</label>
+                                    <textoffsetx>15</textoffsetx>
+                                </control>
+                                <control type="label">
+                                    <posx>370</posx>
+                                    <posy>112</posy>
+                                    <width>420</width>
+                                    <height>30</height>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+                                    <font>Font_Condensed22</font>
+                                    <textcolor>grey2</textcolor>
+                                    <shadowcolor>-</shadowcolor>
+                                    <label>$INFO[ListItem.Property(Year)]</label>
+                                    <textoffsetx>15</textoffsetx>
+                                </control>
+                                <control type="textbox">
+                                    <posx>385</posx>
+                                    <posy>144</posy>
+                                    <width>400</width>
+                                    <height>175</height>
+                                    <align>left</align>
+                                    <label>$INFO[ListItem.Property(Album_Description)]</label>
+                                    <font>Font_Condensed20</font>
+                                    <include>listcolornofocus</include>
+                                    <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
+                                </control>
                             </control>
                             <control type="image">
                                 <posx>0</posx>

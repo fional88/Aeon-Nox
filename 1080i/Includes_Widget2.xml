@@ -453,26 +453,13 @@
                     <control type="textbox">
                         <posx>120</posx>
                         <posy>120</posy>
-                        <width>388</width>
+                        <width>688</width>
                         <height>150</height>
                         <font>Font_Reg18</font>
                         <textcolor>abFFFFFF</textcolor>
                         <align>justify</align>
                         <aligny>top</aligny>
-                        <label fallback="-">$INFO[Container(7000).ListItem.Property(Summary)]</label>
-                        <visible>Stringcompare(Control.GetLabel(4325),randomaddons)</visible>
-                    </control>
-                    <control type="textbox">
-                        <posx>120</posx>
-                        <posy>120</posy>
-                        <width>388</width>
-                        <height>150</height>
-                        <font>Font_Reg18</font>
-                        <textcolor>abFFFFFF</textcolor>
-                        <align>justify</align>
-                        <aligny>top</aligny>
-                        <label fallback="-">$INFO[Container(7000).ListItem.Property(Album_Description)]</label>
-                        <visible>Substring(Control.GetLabel(4325),music)</visible>
+                        <label fallback="-">$INFO[Container(7000).ListItem.Property(Summary)]$INFO[Container(7000).ListItem.Property(Album_Description)]$INFO[Container(7000).ListItem.Property(Artist_Description)]</label>
                     </control>
                 </control>
                 <control type="image">
@@ -3072,8 +3059,9 @@
                             <description>Play</description>
                             <label>$LOCALIZE[208]</label>
                             <include>HiddenObject</include>
+                            <onclick condition="Substring(Control.GetLabel(4325),artist)">ActivateWindow(music,$ESCINFO[Container(6010).ListItem.Property(Path)],return)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4325),song)">PlayMedia($ESCINFO[Container(6010).ListItem.Property(Path)])</onclick>
-                            <onclick condition="!Substring(Control.GetLabel(4325),song)">$INFO[Container(6010).ListItem.Property(Path)]</onclick>
+                            <onclick condition="!Substring(Control.GetLabel(4325),song) + !Substring(Control.GetLabel(4325),artist)">$INFO[Container(6010).ListItem.Property(Path)]</onclick>
                             <onback>ClearProperty(PanelWidget2Info,Home)</onback>
                             <onback>SetFocus(6010)</onback>
                             <onup>ClearProperty(PanelWidget2Info,Home)</onup>
@@ -3547,6 +3535,7 @@
             <property name="ArtistPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.ArtistPath)]</property>
             <property name="AlbumPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.AlbumPath)]</property>
             <property name="PlayPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.PlayPath)]</property>
+            <property name="Album_Description">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.Album_Description)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.1.Fanart)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.1.Artist)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
@@ -3558,6 +3547,7 @@
             <property name="Year">$INFO[Window(Home).Property(SecondCustomHomeItem1.2.Year)]</property>
             <property name="Rating">$INFO[Window(Home).Property(SecondCustomHomeItem1.2.Rating)]</property>
             <property name="ArtistPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.2.ArtistPath)]</property>
+            <property name="Album_Description">$INFO[Window(Home).Property(SecondCustomHomeItem1.2.Album_Description)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.2.Fanart)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.2.Artist)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
@@ -3569,6 +3559,7 @@
             <property name="Year">$INFO[Window(Home).Property(SecondCustomHomeItem1.3.Year)]</property>
             <property name="Rating">$INFO[Window(Home).Property(SecondCustomHomeItem1.3.Rating)]</property>
             <property name="ArtistPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.3.ArtistPath)]</property>
+            <property name="Album_Description">$INFO[Window(Home).Property(SecondCustomHomeItem1.3.Album_Description)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.3.Fanart)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.3.Artist)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
@@ -3581,6 +3572,7 @@
             <property name="Rating">$INFO[Window(Home).Property(SecondCustomHomeItem1.4.Rating)]</property>
             <property name="ArtistPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.4.ArtistPath)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.4.Fanart)]</property>
+            <property name="Album_Description">$INFO[Window(Home).Property(SecondCustomHomeItem1.4.Album_Description)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.4.Artist)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
         <item>
@@ -3591,6 +3583,7 @@
             <property name="Year">$INFO[Window(Home).Property(SecondCustomHomeItem1.5.Year)]</property>
             <property name="Rating">$INFO[Window(Home).Property(SecondCustomHomeItem1.5.Rating)]</property>
             <property name="ArtistPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.5.ArtistPath)]</property>
+            <property name="Album_Description">$INFO[Window(Home).Property(SecondCustomHomeItem1.5.Album_Description)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.5.Fanart)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.5.Artist)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
@@ -3602,6 +3595,7 @@
             <property name="Year">$INFO[Window(Home).Property(SecondCustomHomeItem1.6.Year)]</property>
             <property name="Rating">$INFO[Window(Home).Property(SecondCustomHomeItem1.6.Rating)]</property>
             <property name="ArtistPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.6.ArtistPath)]</property>
+            <property name="Album_Description">$INFO[Window(Home).Property(SecondCustomHomeItem1.6.Album_Description)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.6.Fanart)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.6.Artist)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
@@ -3613,6 +3607,7 @@
             <property name="Year">$INFO[Window(Home).Property(SecondCustomHomeItem1.7.Year)]</property>
             <property name="Rating">$INFO[Window(Home).Property(SecondCustomHomeItem1.7.Rating)]</property>
             <property name="ArtistPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.7.ArtistPath)]</property>
+            <property name="Album_Description">$INFO[Window(Home).Property(SecondCustomHomeItem1.7.Album_Description)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.7.Fanart)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.7.Artist)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
@@ -3624,6 +3619,7 @@
             <property name="Year">$INFO[Window(Home).Property(SecondCustomHomeItem1.8.Year)]</property>
             <property name="Rating">$INFO[Window(Home).Property(SecondCustomHomeItem1.8.Rating)]</property>
             <property name="ArtistPath">$INFO[Window(Home).Property(SecondCustomHomeItem1.8.ArtistPath)]</property>
+            <property name="Album_Description">$INFO[Window(Home).Property(SecondCustomHomeItem1.8.Album_Description)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(SecondCustomHomeItem1.8.Fanart)]</property>
             <visible>!IsEmpty(Window(Home).Property(SecondCustomHomeItem1.8.Artist)) + Container(9000).HasFocus(101)+ Substring(Control.GetLabel(4325),custom)</visible>
         </item>
@@ -7457,7 +7453,7 @@
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.9.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.9.Title)]</label>
-            <label2>$INFO[Window(Home).Property(RandomArtist.9.Artist)]</label2>
+            <label2>$INFO[Window(Home).Property(RandomArtist.9.Genre)]</label2>
             <property name="Artist_Description">$INFO[Window(Home).Property(RandomArtist.9.Artist_Description)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.9.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.9.Fanart)]</property>
@@ -7468,7 +7464,7 @@
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.10.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.10.Title)]</label>
-            <label2>$INFO[Window(Home).Property(RandomArtist.10.Artist)]</label2>
+            <label2>$INFO[Window(Home).Property(RandomArtist.10.Genre)]</label2>
             <property name="Artist_Description">$INFO[Window(Home).Property(RandomArtist.10.Artist_Description)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.10.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.10.Fanart)]</property>
@@ -7479,7 +7475,7 @@
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.11.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.11.Title)]</label>
-            <label2>$INFO[Window(Home).Property(RandomArtist.11.Artist)]</label2>
+            <label2>$INFO[Window(Home).Property(RandomArtist.11.Genre)]</label2>
             <property name="Artist_Description">$INFO[Window(Home).Property(RandomArtist.11.Artist_Description)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.11.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.11.Fanart)]</property>
@@ -7490,7 +7486,7 @@
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.12.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.12.Title)]</label>
-            <label2>$INFO[Window(Home).Property(RandomArtist.12.Artist)]</label2>
+            <label2>$INFO[Window(Home).Property(RandomArtist.12.Genre)]</label2>
             <property name="Artist_Description">$INFO[Window(Home).Property(RandomArtist.12.Artist_Description)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.12.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.12.Fanart)]</property>
@@ -7501,7 +7497,7 @@
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.13.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.13.Title)]</label>
-            <label2>$INFO[Window(Home).Property(RandomArtist.13.Artist)]</label2>
+            <label2>$INFO[Window(Home).Property(RandomArtist.13.Genre)]</label2>
             <property name="Artist_Description">$INFO[Window(Home).Property(RandomArtist.13.Artist_Description)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.13.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.13.Fanart)]</property>
@@ -7512,7 +7508,7 @@
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.14.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.14.Title)]</label>
-            <label2>$INFO[Window(Home).Property(RandomArtist.14.Artist)]</label2>
+            <label2>$INFO[Window(Home).Property(RandomArtist.14.Genre)]</label2>
             <property name="Artist_Description">$INFO[Window(Home).Property(RandomArtist.14.Artist_Description)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.14.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.14.Fanart)]</property>
@@ -7523,7 +7519,7 @@
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.15.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.15.Title)]</label>
-            <label2>$INFO[Window(Home).Property(RandomArtist.15.Artist)]</label2>
+            <label2>$INFO[Window(Home).Property(RandomArtist.15.Genre)]</label2>
             <property name="Artist_Description">$INFO[Window(Home).Property(RandomArtist.15.Artist_Description)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.15.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.15.Fanart)]</property>
@@ -7534,7 +7530,7 @@
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.16.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.16.Title)]</label>
-            <label2>$INFO[Window(Home).Property(RandomArtist.16.Artist)]</label2>
+            <label2>$INFO[Window(Home).Property(RandomArtist.16.Genre)]</label2>
             <property name="Artist_Description">$INFO[Window(Home).Property(RandomArtist.16.Artist_Description)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.16.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.16.Fanart)]</property>
@@ -8024,6 +8020,7 @@
                                 <posy>5</posy>
                                 <width>218</width>
                                 <height>340</height>
+                                <aspectratio scalediffuse="false" align="center">scale</aspectratio>
                                 <texture background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
                                 <aspectratio>scale</aspectratio>
                             </control>
@@ -8589,6 +8586,7 @@
                                     <posx>20</posx>
                                     <posy>15</posy>
                                     <height>320</height>
+                                    <aspectratio scalediffuse="false">scale</aspectratio>
                                     <width>340</width>
                                     <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
                                 </control>
@@ -8667,6 +8665,7 @@
                                 <control type="image">
                                     <posx>20</posx>
                                     <posy>15</posy>
+                                    <aspectratio scalediffuse="false">scale</aspectratio>
                                     <height>320</height>
                                     <width>340</width>
                                     <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>

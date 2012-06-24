@@ -2870,7 +2870,7 @@
 							</control>
 						</focusedlayout>
 						<content>
-							<include>ConcertsPanelContent</include>
+							<include condition="Substring(Skin.String(widgetlist),concerts) | Window.IsActive(1124)">ConcertsPanelContent</include>
 						</content>
 					</control>
                 </control>
@@ -4207,7 +4207,7 @@
                     <onfocus condition="Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo) | Substring(Control.GetLabel(4321),actors)">SetFocus(5020)</onfocus>
                     <onfocus condition="Substring(Control.GetLabel(4321),tv)">SetFocus(5021)</onfocus>
                     <onfocus condition="Substring(Control.GetLabel(4321),addons)">SetFocus(5040)</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4321),album) | Substring(Control.GetLabel(4321),song) | Substring(Control.GetLabel(4321),watchlistmusic) | Substring(Control.GetLabel(4321),pics)">SetFocus(5030)</onfocus>
+                    <onfocus condition="Substring(Control.GetLabel(4321),album) | Substring(Control.GetLabel(4321),song)  | Substring(Control.GetLabel(4321),artist) | Substring(Control.GetLabel(4321),watchlistmusic) | Substring(Control.GetLabel(4321),pics)">SetFocus(5030)</onfocus>
                 </control>
                 <control type="group">
                     <posx>27</posx>
@@ -4595,7 +4595,7 @@
                     <posy>26</posy>
                     <width>1596</width>
                     <height>350</height>
-                    <visible>Substring(Control.GetLabel(4321),album) | Substring(Control.GetLabel(4321),song) | Substring(Control.GetLabel(4321),watchlistmusic) | Substring(Control.GetLabel(4321),pics)</visible>
+                    <visible>Substring(Control.GetLabel(4321),album) | Substring(Control.GetLabel(4321),song) | Substring(Control.GetLabel(4321),artist) | Substring(Control.GetLabel(4321),watchlistmusic) | Substring(Control.GetLabel(4321),pics)</visible>
                     <control type="image">
                         <description>Main Icon</description>
                         <posx>5</posx>
@@ -4668,7 +4668,7 @@
                         <aligny>top</aligny>
                         <font>Font_Condensed22</font>
                         <textcolor>ccffffff</textcolor>
-                        <label fallback="414">$INFO[Container(5010).ListItem.Property(Album_Description)]</label>
+                        <label fallback="414">$VAR[WidgetTextboxVar]</label>
                         <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                         <visible>!Substring(Control.GetLabel(4321),pics)</visible>
                     </control>
@@ -4699,11 +4699,12 @@
                         <orientation>horizontal</orientation>
                         <itemgap>50</itemgap>
                         <control type="button" id="5032">
-                            <description>Play</description>
+                            <description>Play / Open</description>
                             <label>$LOCALIZE[208]</label>
                             <include>HiddenObject</include>
+                            <onclick condition="Substring(Control.GetLabel(4321),artist)">ActivateWindow(music,$ESCINFO[Container(5010).ListItem.Property(Path)],return)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4321),song)">PlayMedia($ESCINFO[Container(5010).ListItem.Property(Path)])</onclick>
-                            <onclick condition="!Substring(Control.GetLabel(4321),song)">$INFO[Container(5010).ListItem.Property(Path)]</onclick>
+                            <onclick condition="!Substring(Control.GetLabel(4321),song) + !Substring(Control.GetLabel(4321),artist)">$INFO[Container(5010).ListItem.Property(Path)]</onclick>
                             <onback>ClearProperty(PanelWidgetInfo,Home)</onback>
                             <onback>SetFocus(5010)</onback>
                             <onup>ClearProperty(PanelWidgetInfo,Home)</onup>
@@ -5006,7 +5007,7 @@
                                 <visible>Control.HasFocus(5010)</visible>
                             </control>
                         </focusedlayout>
-                        <itemlayout width="319" height="360" condition="Substring(Control.GetLabel(4321),panel,right) + [Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),songs) | Substring(Control.GetLabel(4321),watchlistmusic)]">
+                        <itemlayout width="319" height="360" condition="Substring(Control.GetLabel(4321),panel,right) + [Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),artists) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),songs) | Substring(Control.GetLabel(4321),watchlistmusic)]">
                             <control type="group">
                                 <control type="image">
                                     <description>Main Icon</description>
@@ -5043,7 +5044,7 @@
                                 </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="319" height="360" condition="Substring(Control.GetLabel(4321),panel,right) + [Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),songs) | Substring(Control.GetLabel(4321),watchlistmusic)]">
+                        <focusedlayout width="319" height="360" condition="Substring(Control.GetLabel(4321),panel,right) + [Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),artists) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),songs) | Substring(Control.GetLabel(4321),watchlistmusic)]">
                             <control type="group">
                                 <control type="image">
                                     <description>Main Icon</description>
@@ -5531,13 +5532,14 @@
                                 <visible>Control.HasFocus(5010)</visible>
                             </control>
                         </focusedlayout>
-                        <itemlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),songs) | Substring(Control.GetLabel(4321),watchlistmusic)]">
+                        <itemlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),artists) | Substring(Control.GetLabel(4321),songs) | Substring(Control.GetLabel(4321),watchlistmusic)]">
                             <control type="group">        
                                 <control type="image">
                                     <posx>20</posx>
                                     <posy>15</posy>
                                     <height>320</height>
                                     <width>340</width>
+                                    <aspectratio scalediffuse="false" align="center">scale</aspectratio>
                                     <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
                                 </control>
                                 <control type="image">
@@ -5603,18 +5605,19 @@
                                     <width>400</width>
                                     <height>175</height>
                                     <align>left</align>
-                                    <label>$INFO[ListItem.Property(Album_Description)]</label>
+                                    <label>$INFO[ListItem.Property(Album_Description)]$INFO[ListItem.Property(Artist_Description)]</label>
                                     <font>Font_Condensed20</font>
                                     <include>listcolornofocus</include>
                                     <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
                                 </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),songs) | Substring(Control.GetLabel(4321),watchlistmusic)]">
+                        <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),artists) | Substring(Control.GetLabel(4321),songs) | Substring(Control.GetLabel(4321),watchlistmusic)]">
                             <control type="group">        
                                 <control type="image">
                                     <posx>20</posx>
                                     <posy>15</posy>
+                                    <aspectratio scalediffuse="false" align="center">scale</aspectratio>
                                     <height>320</height>
                                     <width>340</width>
                                     <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
@@ -5682,7 +5685,7 @@
                                     <width>400</width>
                                     <height>175</height>
                                     <align>left</align>
-                                    <label>$INFO[ListItem.Property(Album_Description)]</label>
+                                    <label>$INFO[ListItem.Property(Album_Description)]$INFO[ListItem.Property(Artist_Description)]</label>
                                     <font>Font_Condensed20</font>
                                     <include>listcolornofocus</include>
                                     <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
@@ -5716,6 +5719,7 @@
                             <include condition="Substring(Skin.String(widgetlist),randomsongspanel) | Window.IsActive(1124)">RandomSongsItems</include>
                             <include condition="Substring(Skin.String(widgetlist),recentsongspanel) | Window.IsActive(1124)">LatestSongsItems</include>
                             <include condition="Substring(Skin.String(widgetlist),randomalbumspanel) | Window.IsActive(1124)">RandomAlbumsItems</include>
+                            <include condition="Substring(Skin.String(widgetlist),randomartistspanel) | Window.IsActive(1124)">RandomArtistsItems</include>
                             <include condition="Substring(Skin.String(widgetlist),recentalbumspanel) | Window.IsActive(1124)">LatestAlbumsItems</include>
                             <include condition="Substring(Skin.String(widgetlist),watchlistmusicpanel) | Window.IsActive(1124)">WatchlistMusicItems</include>
                             <include condition="Substring(Skin.String(widgetlist),actorspanel) | Window.IsActive(1124)">BornActorsItems</include>

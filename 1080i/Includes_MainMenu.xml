@@ -74,6 +74,80 @@
             <visible>Container(9000).HasFocus(1) + Skin.HasSetting(ProgramsSub8) + !IsEmpty(Skin.String(ProgramsSub8.Label))</visible>
         </item>
     </include>
+    <include name="CustomSubsWeather">
+        <item id="90161">
+            <label>$INFO[Skin.String(WeatherSub1.Label)]</label>
+            <thumb>$INFO[Skin.String(WeatherSub1.MultiFanart)]</thumb>
+            <onclick condition="!stringcompare(Skin.String(WeatherSub1.Type),4) + !stringcompare(Skin.String(WeatherSub1.Type),5) + !stringcompare(Skin.String(WeatherSub1.Type),6) + !stringcompare(Skin.String(WeatherSub1.Type),7)">RunAddon($INFO[Skin.String(WeatherSub1.Path)])</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub1.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(WeatherSub1.Path)],return)</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub1.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(WeatherSub1.Path)],return)</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub1.Type),6) | Stringcompare(Skin.String(WeatherSub1.Type),7)">$INFO[Skin.String(WeatherSub1.Path)]</onclick>
+            <visible>Container(9000).HasFocus(6) + Skin.HasSetting(WeatherSub1) + !IsEmpty(Skin.String(WeatherSub1.Label))</visible>
+        </item>
+        <item id="90162">
+            <label>$INFO[Skin.String(WeatherSub2.Label)]</label>
+            <thumb>$INFO[Skin.String(WeatherSub2.MultiFanart)]</thumb>
+            <onclick condition="!stringcompare(Skin.String(WeatherSub2.Type),4) + !stringcompare(Skin.String(WeatherSub2.Type),5) + !stringcompare(Skin.String(WeatherSub2.Type),6) + !stringcompare(Skin.String(WeatherSub2.Type),7)">RunAddon($INFO[Skin.String(WeatherSub2.Path)])</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub2.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(WeatherSub2.Path)],return)</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub2.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(WeatherSub2.Path)],return)</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub2.Type),6) | Stringcompare(Skin.String(WeatherSub2.Type),7)">$INFO[Skin.String(WeatherSub2.Path)]</onclick>
+            <visible>Container(9000).HasFocus(6) + Skin.HasSetting(WeatherSub2) + !IsEmpty(Skin.String(WeatherSub2.Label))</visible>
+        </item>
+        <item id="90163">
+            <label>$INFO[Skin.String(WeatherSub3.Label)]</label>
+            <thumb>$INFO[Skin.String(WeatherSub3.MultiFanart)]</thumb>
+            <onclick condition="!stringcompare(Skin.String(WeatherSub3.Type),4) + !stringcompare(Skin.String(WeatherSub3.Type),5) + !stringcompare(Skin.String(WeatherSub3.Type),6) + !stringcompare(Skin.String(WeatherSub3.Type),7)">RunAddon($INFO[Skin.String(WeatherSub3.Path)])</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub3.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(WeatherSub3.Path)],return)</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub3.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(WeatherSub3.Path)],return)</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub3.Type),6) | Stringcompare(Skin.String(WeatherSub3.Type),7)">$INFO[Skin.String(WeatherSub3.Path)]</onclick>
+            <visible>Container(9000).HasFocus(6) + Skin.HasSetting(WeatherSub3) + !IsEmpty(Skin.String(WeatherSub3.Label))</visible>
+        </item>
+        <item id="90164">
+            <label>$INFO[Skin.String(WeatherSub4.Label)]</label>
+            <thumb>$INFO[Skin.String(WeatherSub4.MultiFanart)]</thumb>
+            <onclick condition="!stringcompare(Skin.String(WeatherSub4.Type),4) + !stringcompare(Skin.String(WeatherSub4.Type),5) + !stringcompare(Skin.String(WeatherSub4.Type),6) + !stringcompare(Skin.String(WeatherSub4.Type),7)">RunAddon($INFO[Skin.String(WeatherSub4.Path)])</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub4.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(WeatherSub4.Path)],return)</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub4.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(WeatherSub4.Path)],return)</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub4.Type),6) | Stringcompare(Skin.String(WeatherSub4.Type),7)">$INFO[Skin.String(WeatherSub4.Path)]</onclick>
+            <visible>Container(9000).HasFocus(6) + Skin.HasSetting(WeatherSub4) + !IsEmpty(Skin.String(WeatherSub4.Label))</visible>
+        </item>
+        <item id="90165">
+            <label>$INFO[Skin.String(WeatherSub5.Label)]</label>
+            <thumb>$INFO[Skin.String(WeatherSub5.MultiFanart)]</thumb>
+            <onclick condition="!stringcompare(Skin.String(WeatherSub5.Type),4) + !stringcompare(Skin.String(WeatherSub5.Type),5) + !stringcompare(Skin.String(WeatherSub5.Type),6) + !stringcompare(Skin.String(WeatherSub5.Type),7)">RunAddon($INFO[Skin.String(WeatherSub5.Path)])</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub5.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(WeatherSub5.Path)],return)</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub5.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(WeatherSub5.Path)],return)</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub5.Type),6) | Stringcompare(Skin.String(WeatherSub5.Type),7)">$INFO[Skin.String(WeatherSub5.Path)]</onclick>
+            <visible>Container(9000).HasFocus(6) + Skin.HasSetting(WeatherSub5) + !IsEmpty(Skin.String(WeatherSub5.Label))</visible>
+        </item>
+        <item id="90166">
+            <label>$INFO[Skin.String(WeatherSub6.Label)]</label>
+            <thumb>$INFO[Skin.String(WeatherSub6.MultiFanart)]</thumb>
+            <onclick condition="!stringcompare(Skin.String(WeatherSub6.Type),4) + !stringcompare(Skin.String(WeatherSub6.Type),5) + !stringcompare(Skin.String(WeatherSub6.Type),6) + !stringcompare(Skin.String(WeatherSub6.Type),7)">RunAddon($INFO[Skin.String(WeatherSub6.Path)])</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub6.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(WeatherSub6.Path)],return)</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub6.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(WeatherSub6.Path)],return)</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub6.Type),6) | Stringcompare(Skin.String(WeatherSub6.Type),7)">$INFO[Skin.String(WeatherSub6.Path)]</onclick>
+            <visible>Container(9000).HasFocus(6) + Skin.HasSetting(WeatherSub6) + !IsEmpty(Skin.String(WeatherSub6.Label))</visible>
+        </item>
+        <item id="90167">
+            <label>$INFO[Skin.String(WeatherSub7.Label)]</label>
+            <thumb>$INFO[Skin.String(WeatherSub7.MultiFanart)]</thumb>
+            <onclick condition="!stringcompare(Skin.String(WeatherSub7.Type),4) + !stringcompare(Skin.String(WeatherSub7.Type),5) + !stringcompare(Skin.String(WeatherSub7.Type),6) + !stringcompare(Skin.String(WeatherSub7.Type),7)">RunAddon($INFO[Skin.String(WeatherSub7.Path)])</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub7.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(WeatherSub7.Path)],return)</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub7.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(WeatherSub7.Path)],return)</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub7.Type),6) | Stringcompare(Skin.String(WeatherSub7.Type),7)">$INFO[Skin.String(WeatherSub7.Path)]</onclick>
+            <visible>Container(9000).HasFocus(6) + Skin.HasSetting(WeatherSub7) + !IsEmpty(Skin.String(WeatherSub7.Label))</visible>
+        </item>
+        <item id="90168">
+            <label>$INFO[Skin.String(WeatherSub8.Label)]</label>
+            <thumb>$INFO[Skin.String(WeatherSub8.MultiFanart)]</thumb>
+            <onclick condition="!stringcompare(Skin.String(WeatherSub8.Type),4) + !stringcompare(Skin.String(WeatherSub8.Type),5) + !stringcompare(Skin.String(WeatherSub8.Type),6) + !stringcompare(Skin.String(WeatherSub8.Type),7)">RunAddon($INFO[Skin.String(WeatherSub8.Path)])</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub8.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(WeatherSub8.Path)],return)</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub8.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(WeatherSub8.Path)],return)</onclick>
+            <onclick condition="stringcompare(Skin.String(WeatherSub8.Type),6) | Stringcompare(Skin.String(WeatherSub8.Type),7)">$INFO[Skin.String(WeatherSub8.Path)]</onclick>
+            <visible>Container(9000).HasFocus(6) + Skin.HasSetting(WeatherSub8) + !IsEmpty(Skin.String(WeatherSub8.Label))</visible>
+        </item>
+    </include>
     <include name="CustomSubsMusic">
         <item id="90121">
             <label>$INFO[Skin.String(CustomMusicSub1.Label)]</label>
@@ -1668,6 +1742,15 @@
             </control>
         </focusedlayout>
         <content>
+            <include condition="Skin.HasSetting(CustomHomeItem1.Enable) + Stringcompare(Skin.String(CustomHomeItem1.Position),0)">CustomMainMenuItem1</include>
+            <include condition="Skin.HasSetting(CustomHomeItem2.Enable) + Stringcompare(Skin.String(CustomHomeItem2.Position),0)">CustomMainMenuItem2</include>
+            <include condition="Skin.HasSetting(CustomHomeItem3.Enable) + Stringcompare(Skin.String(CustomHomeItem3.Position),0)">CustomMainMenuItem3</include>
+            <include condition="Skin.HasSetting(CustomHomeItem4.Enable) + Stringcompare(Skin.String(CustomHomeItem4.Position),0)">CustomMainMenuItem4</include>
+            <include condition="Skin.HasSetting(CustomHomeItem5.Enable) + Stringcompare(Skin.String(CustomHomeItem5.Position),0)">CustomMainMenuItem5</include>
+            <include condition="Skin.HasSetting(CustomHomeItem6.Enable) + Stringcompare(Skin.String(CustomHomeItem6.Position),0)">CustomMainMenuItem6</include>
+            <include condition="Skin.HasSetting(CustomHomeItem7.Enable) + Stringcompare(Skin.String(CustomHomeItem7.Position),0)">CustomMainMenuItem7</include>
+            <include condition="Skin.HasSetting(CustomHomeItem8.Enable) + Stringcompare(Skin.String(CustomHomeItem8.Position),0)">CustomMainMenuItem8</include>
+            <include condition="Skin.HasSetting(CustomHomeItem9.Enable) + Stringcompare(Skin.String(CustomHomeItem9.Position),0)">CustomMainMenuItem9</include>
             <include condition="!Skin.HasSetting(HomeMenuNoPicturesButton)">PicturesMainMenu</include>
             <include condition="Skin.HasSetting(CustomHomeItem1.Enable) + Stringcompare(Skin.String(CustomHomeItem1.Position),1)">CustomMainMenuItem1</include>
             <include condition="Skin.HasSetting(CustomHomeItem2.Enable) + Stringcompare(Skin.String(CustomHomeItem2.Position),1)">CustomMainMenuItem2</include>
@@ -1933,6 +2016,7 @@
             <!--Shutdown-->
             <include condition="!Skin.HasSetting(HomeMenuNoShutdownButton)">DefaultShutdownSubMenu</include>
             <!-- Weather -->
+            <include condition="!Skin.HasSetting(HomeMenuNoWeatherButton)">CustomSubsWeather</include>
             <!--CustomSubs-->
             <include condition="Skin.HasSetting(CustomHomeItem1.Enable) + [!IsEmpty(Skin.String(CustomSub1_1.Path)) | !IsEmpty(Skin.String(CustomSub1_2.Path)) | !IsEmpty(Skin.String(CustomSub1_3.Path)) | !IsEmpty(Skin.String(CustomSub1_4.Path)) | !IsEmpty(Skin.String(CustomSub1_5.Path))]">Custom1Subs</include>
             <include condition="Skin.HasSetting(CustomHomeItem2.Enable) + [!IsEmpty(Skin.String(CustomSub2_1.Path)) | !IsEmpty(Skin.String(CustomSub2_2.Path)) | !IsEmpty(Skin.String(CustomSub2_3.Path)) | !IsEmpty(Skin.String(CustomSub2_4.Path)) | !IsEmpty(Skin.String(CustomSub2_5.Path))]">Custom2Subs</include>
@@ -3356,6 +3440,151 @@
                 <property name="DisableIcon">close.png</property>
                 <visible>Container(9000).HasFocus(1) + !Skin.HasSetting(ProgramsSub8)</visible>
             </item>
+            <!--Weather-->
+            <item id="90651">
+                <description>Button1</description>
+                <label fallback="CUSTOM 1">$INFO[Skin.String(WeatherSub1.Label)]</label>
+                <onclick>Skin.SetString(MenuItem,WeatherSub1)</onclick>
+                <onclick>ActivateWindow(1136)</onclick>
+                <icon fallback="special://skin/backgrounds/weather.jpg">$INFO[Skin.String(WeatherSub1.MultiFanart)]</icon>
+                <thumb>-</thumb>
+                <visible>Container(9000).HasFocus(6) + Skin.HasSetting(WeatherSub1)</visible>
+            </item>
+            <item id="90651">
+                <description>Button1</description>
+                <label fallback="CUSTOM 1">$INFO[Skin.String(WeatherSub1.Label)]</label>
+                <onclick>Skin.SetString(MenuItem,WeatherSub1)</onclick>
+                <onclick>ActivateWindow(1136)</onclick>
+                <icon fallback="special://skin/backgrounds/weather.jpg">$INFO[Skin.String(WeatherSub1.MultiFanart)]</icon>
+                <property name="DisableIcon">close.png</property>
+                <visible>Container(9000).HasFocus(6) + !Skin.HasSetting(WeatherSub1)</visible>
+            </item>
+            <item id="90652">
+                <description>Button1</description>
+                <label fallback="CUSTOM 2">$INFO[Skin.String(WeatherSub2.Label)]</label>
+                <onclick>Skin.SetString(MenuItem,WeatherSub2)</onclick>
+                <onclick>ActivateWindow(1136)</onclick>
+                <icon fallback="special://skin/backgrounds/weather.jpg">$INFO[Skin.String(WeatherSub2.MultiFanart)]</icon>
+                <thumb>-</thumb>
+                <visible>Container(9000).HasFocus(6) + Skin.HasSetting(WeatherSub2)</visible>
+            </item>
+            <item id="90652">
+                <description>Button1</description>
+                <label fallback="CUSTOM 2">$INFO[Skin.String(WeatherSub2.Label)]</label>
+                <onclick>Skin.SetString(MenuItem,WeatherSub2)</onclick>
+                <onclick>ActivateWindow(1136)</onclick>
+                <icon fallback="special://skin/backgrounds/weather.jpg">$INFO[Skin.String(WeatherSub2.MultiFanart)]</icon>
+                <property name="DisableIcon">close.png</property>
+                <visible>Container(9000).HasFocus(6) + !Skin.HasSetting(WeatherSub2)</visible>
+            </item>
+            <item id="90653">
+                <description>Button1</description>
+                <label fallback="CUSTOM 3">$INFO[Skin.String(WeatherSub3.Label)]</label>
+                <onclick>Skin.SetString(MenuItem,WeatherSub3)</onclick>
+                <onclick>ActivateWindow(1136)</onclick>
+                <icon fallback="special://skin/backgrounds/weather.jpg">$INFO[Skin.String(WeatherSub3.MultiFanart)]</icon>
+                <thumb>-</thumb>
+                <visible>Container(9000).HasFocus(6) + Skin.HasSetting(WeatherSub3)</visible>
+            </item>
+            <item id="90653">
+                <description>Button1</description>
+                <label fallback="CUSTOM 3">$INFO[Skin.String(WeatherSub3.Label)]</label>
+                <onclick>Skin.SetString(MenuItem,WeatherSub3)</onclick>
+                <onclick>ActivateWindow(1136)</onclick>
+                <icon fallback="special://skin/backgrounds/weather.jpg">$INFO[Skin.String(WeatherSub3.MultiFanart)]</icon>
+                <property name="DisableIcon">close.png</property>
+                <visible>Container(9000).HasFocus(6) + !Skin.HasSetting(WeatherSub3)</visible>
+            </item>
+            <item id="90654">
+                <description>Button1</description>
+                <label fallback="CUSTOM 4">$INFO[Skin.String(WeatherSub4.Label)]</label>
+                <onclick>Skin.SetString(MenuItem,WeatherSub4)</onclick>
+                <onclick>ActivateWindow(1136)</onclick>
+                <icon fallback="special://skin/backgrounds/weather.jpg">$INFO[Skin.String(WeatherSub4.MultiFanart)]</icon>
+                <thumb>-</thumb>
+                <visible>Container(9000).HasFocus(6) + Skin.HasSetting(WeatherSub4)</visible>
+            </item>
+            <item id="90654">
+                <description>Button1</description>
+                <label fallback="CUSTOM 4">$INFO[Skin.String(WeatherSub4.Label)]</label>
+                <onclick>Skin.SetString(MenuItem,WeatherSub4)</onclick>
+                <onclick>ActivateWindow(1136)</onclick>
+                <icon fallback="special://skin/backgrounds/weather.jpg">$INFO[Skin.String(WeatherSub4.MultiFanart)]</icon>
+                <property name="DisableIcon">close.png</property>
+                <visible>Container(9000).HasFocus(6) + !Skin.HasSetting(WeatherSub4)</visible>
+            </item>
+            <item id="90655">
+                <description>Button1</description>
+                <label fallback="CUSTOM 5">$INFO[Skin.String(WeatherSub5.Label)]</label>
+                <onclick>Skin.SetString(MenuItem,WeatherSub5)</onclick>
+                <onclick>ActivateWindow(1136)</onclick>
+                <icon fallback="special://skin/backgrounds/weather.jpg">$INFO[Skin.String(WeatherSub5.MultiFanart)]</icon>
+                <thumb>-</thumb>
+                <visible>Container(9000).HasFocus(6) + Skin.HasSetting(WeatherSub5)</visible>
+            </item>
+            <item id="90655">
+                <description>Button1</description>
+                <label fallback="CUSTOM 5">$INFO[Skin.String(WeatherSub5.Label)]</label>
+                <onclick>Skin.SetString(MenuItem,WeatherSub5)</onclick>
+                <onclick>ActivateWindow(1136)</onclick>
+                <icon fallback="special://skin/backgrounds/weather.jpg">$INFO[Skin.String(WeatherSub5.MultiFanart)]</icon>
+                <property name="DisableIcon">close.png</property>
+                <visible>Container(9000).HasFocus(6) + !Skin.HasSetting(WeatherSub5)</visible>
+            </item>
+            <item id="90656">
+                <description>Button1</description>
+                <label fallback="CUSTOM 6">$INFO[Skin.String(WeatherSub6.Label)]</label>
+                <onclick>Skin.SetString(MenuItem,WeatherSub6)</onclick>
+                <onclick>ActivateWindow(1136)</onclick>
+                <icon fallback="special://skin/backgrounds/weather.jpg">$INFO[Skin.String(WeatherSub6.MultiFanart)]</icon>
+                <thumb>-</thumb>
+                <visible>Container(9000).HasFocus(6) + Skin.HasSetting(WeatherSub6)</visible>
+            </item>
+            <item id="90656">
+                <description>Button1</description>
+                <label fallback="CUSTOM 6">$INFO[Skin.String(WeatherSub6.Label)]</label>
+                <onclick>Skin.SetString(MenuItem,WeatherSub6)</onclick>
+                <onclick>ActivateWindow(1136)</onclick>
+                <icon fallback="special://skin/backgrounds/weather.jpg">$INFO[Skin.String(WeatherSub6.MultiFanart)]</icon>
+                <property name="DisableIcon">close.png</property>
+                <visible>Container(9000).HasFocus(6) + !Skin.HasSetting(WeatherSub6)</visible>
+            </item>
+            <item id="90657">
+                <description>Button1</description>
+                <label fallback="CUSTOM 7">$INFO[Skin.String(WeatherSub7.Label)]</label>
+                <onclick>Skin.SetString(MenuItem,WeatherSub7)</onclick>
+                <onclick>ActivateWindow(1136)</onclick>
+                <icon fallback="special://skin/backgrounds/weather.jpg">$INFO[Skin.String(WeatherSub7.MultiFanart)]</icon>
+                <thumb>-</thumb>
+                <visible>Container(9000).HasFocus(6) + Skin.HasSetting(WeatherSub7)</visible>
+            </item>
+            <item id="90657">
+                <description>Button1</description>
+                <label fallback="CUSTOM 7">$INFO[Skin.String(WeatherSub7.Label)]</label>
+                <onclick>Skin.SetString(MenuItem,WeatherSub7)</onclick>
+                <onclick>ActivateWindow(1136)</onclick>
+                <icon fallback="special://skin/backgrounds/weather.jpg">$INFO[Skin.String(WeatherSub7.MultiFanart)]</icon>
+                <property name="DisableIcon">close.png</property>
+                <visible>Container(9000).HasFocus(6) + !Skin.HasSetting(WeatherSub7)</visible>
+            </item>
+            <item id="90658">
+                <description>Button1</description>
+                <label fallback="CUSTOM 8">$INFO[Skin.String(WeatherSub8.Label)]</label>
+                <onclick>Skin.SetString(MenuItem,WeatherSub8)</onclick>
+                <onclick>ActivateWindow(1136)</onclick>
+                <icon fallback="special://skin/backgrounds/weather.jpg">$INFO[Skin.String(WeatherSub8.MultiFanart)]</icon>
+                <thumb>-</thumb>
+                <visible>Container(9000).HasFocus(6) + Skin.HasSetting(WeatherSub8)</visible>
+            </item>
+            <item id="90658">
+                <description>Button1</description>
+                <label fallback="CUSTOM 8">$INFO[Skin.String(WeatherSub8.Label)]</label>
+                <onclick>Skin.SetString(MenuItem,WeatherSub8)</onclick>
+                <onclick>ActivateWindow(1136)</onclick>
+                <icon fallback="special://skin/backgrounds/weather.jpg">$INFO[Skin.String(WeatherSub8.MultiFanart)]</icon>
+                <property name="DisableIcon">close.png</property>
+                <visible>Container(9000).HasFocus(6) + !Skin.HasSetting(WeatherSub8)</visible>
+            </item>
             <!--Settings-->
             <item id="90800">
                 <description>Button1</description>
@@ -4666,28 +4895,29 @@
                 <itemlayout width="614" height="30"></itemlayout>
                 <focusedlayout width="614" height="30"></focusedlayout>
                 <content>
-                    <include condition="Substring(Skin.String(backgroundlist),randommovies) | Window.IsActive(1124)">RandomMoviesBackgrounds</include>
-                    <include condition="Substring(Skin.String(backgroundlist),recentmovies) | Window.IsActive(1124)">LatestMoviesBackgrounds</include>
-                    <include condition="Substring(Skin.String(backgroundlist),recenttv) | Window.IsActive(1124)">LatestTVBackgrounds</include>
-                    <include condition="Substring(Skin.String(backgroundlist),randomtv) | Window.IsActive(1124)">RandomTVBackgrounds</include>
-                    <include condition="Substring(Skin.String(backgroundlist),recentalbums) | Window.IsActive(1124)">LatestAlbumsBackgrounds</include>
-                    <include condition="Substring(Skin.String(backgroundlist),randomalbums) | Window.IsActive(1124)">RandomAlbumsBackgrounds</include>
-                    <include condition="Substring(Skin.String(backgroundlist),recentmusicvideos) | Window.IsActive(1124)">LatestMusicVideosBackgrounds</include>
-                    <include condition="Substring(Skin.String(backgroundlist),randommusicvideos) | Window.IsActive(1124)">RandomMusicVideosBackgrounds</include>
-                    <include condition="[Substring(Skin.String(CustomHomeItem1.MultiFanart),widgetfanart) + [Substring(Skin.String(CustomHomeItem1.Widget),custom) | Substring(Skin.String(CustomHomeItem1.Widget2),custom)]] | Window.IsActive(1124)">CustomHomeItem1Backgrounds</include>
-                    <include condition="[Substring(Skin.String(CustomHomeItem2.MultiFanart),widgetfanart) + [Substring(Skin.String(CustomHomeItem2.Widget),custom) | Substring(Skin.String(CustomHomeItem2.Widget2),custom)]] | Window.IsActive(1124)">CustomHomeItem2Backgrounds</include>
-                    <include condition="[Substring(Skin.String(CustomHomeItem3.MultiFanart),widgetfanart) + [Substring(Skin.String(CustomHomeItem3.Widget),custom) | Substring(Skin.String(CustomHomeItem3.Widget2),custom)]] | Window.IsActive(1124)">CustomHomeItem3Backgrounds</include>
-                    <include condition="[Substring(Skin.String(CustomHomeItem4.MultiFanart),widgetfanart) + [Substring(Skin.String(CustomHomeItem4.Widget),custom) | Substring(Skin.String(CustomHomeItem4.Widget2),custom)]] | Window.IsActive(1124)">CustomHomeItem4Backgrounds</include>
-                    <include condition="[Substring(Skin.String(CustomHomeItem5.MultiFanart),widgetfanart) + [Substring(Skin.String(CustomHomeItem5.Widget),custom) | Substring(Skin.String(CustomHomeItem5.Widget2),custom)]] | Window.IsActive(1124)">CustomHomeItem5Backgrounds</include>
-                    <include condition="[Substring(Skin.String(CustomHomeItem6.MultiFanart),widgetfanart) + [Substring(Skin.String(CustomHomeItem6.Widget),custom) | Substring(Skin.String(CustomHomeItem6.Widget2),custom)]] | Window.IsActive(1124)">CustomHomeItem6Backgrounds</include>
-                    <include condition="[Substring(Skin.String(CustomHomeItem7.MultiFanart),widgetfanart) + [Substring(Skin.String(CustomHomeItem7.Widget),custom) | Substring(Skin.String(CustomHomeItem7.Widget2),custom)]] | Window.IsActive(1124)">CustomHomeItem7Backgrounds</include>
-                    <include condition="[Substring(Skin.String(CustomHomeItem8.MultiFanart),widgetfanart) + [Substring(Skin.String(CustomHomeItem8.Widget),custom) | Substring(Skin.String(CustomHomeItem8.Widget2),custom)]] | Window.IsActive(1124)">CustomHomeItem8Backgrounds</include>
-                    <include condition="[Substring(Skin.String(CustomHomeItem9.MultiFanart),widgetfanart) + [Substring(Skin.String(CustomHomeItem9.Widget),custom) | Substring(Skin.String(CustomHomeItem9.Widget2),custom)]] | Window.IsActive(1124)">CustomHomeItem9Backgrounds</include>
-                    <include condition="Substring(Skin.String(backgroundlist),inprogressmovies) | Window.IsActive(1124)">WatchlistMoviesBackgrounds</include>
-                    <include condition="Substring(Skin.String(backgroundlist),watchlistmusic) | Window.IsActive(1124)">WatchlistAlbumsBackgrounds</include>
-                    <include condition="Substring(Skin.String(backgroundlist),watchlisttv) | Window.IsActive(1124)">WatchlistTVBackgrounds</include>
-                    <include condition="Substring(Skin.String(backgroundlist),recentpics) | Window.IsActive(1124)">LatestPicturesBackgrounds</include>
-                    <include condition="Substring(Skin.String(backgroundlist),randompics) | Window.IsActive(1124)">RandomPicturesBackgrounds</include>
+                    <include condition="Substring(Skin.String(backgroundlist),randommovies)">RandomMoviesBackgrounds</include>
+                    <include condition="Substring(Skin.String(backgroundlist),recentmovies)">LatestMoviesBackgrounds</include>
+                    <include condition="Substring(Skin.String(backgroundlist),recenttv)">LatestTVBackgrounds</include>
+                    <include condition="Substring(Skin.String(backgroundlist),randomtv)">RandomTVBackgrounds</include>
+                    <include condition="Substring(Skin.String(backgroundlist),recentalbums)">LatestAlbumsBackgrounds</include>
+                    <include condition="Substring(Skin.String(backgroundlist),randomalbums)">RandomAlbumsBackgrounds</include>
+                    <include condition="Substring(Skin.String(backgroundlist),recentmusicvideos)">LatestMusicVideosBackgrounds</include>
+                    <include condition="Substring(Skin.String(backgroundlist),randommusicvideos)">RandomMusicVideosBackgrounds</include>
+                    <include condition="[Substring(Skin.String(CustomHomeItem1.MultiFanart),widgetfanart) + [Substring(Skin.String(CustomHomeItem1.Widget),custom) | Substring(Skin.String(CustomHomeItem1.Widget2),custom)]]">CustomHomeItem1Backgrounds</include>
+                    <include condition="[Substring(Skin.String(CustomHomeItem2.MultiFanart),widgetfanart) + [Substring(Skin.String(CustomHomeItem2.Widget),custom) | Substring(Skin.String(CustomHomeItem2.Widget2),custom)]]">CustomHomeItem2Backgrounds</include>
+                    <include condition="[Substring(Skin.String(CustomHomeItem3.MultiFanart),widgetfanart) + [Substring(Skin.String(CustomHomeItem3.Widget),custom) | Substring(Skin.String(CustomHomeItem3.Widget2),custom)]]">CustomHomeItem3Backgrounds</include>
+                    <include condition="[Substring(Skin.String(CustomHomeItem4.MultiFanart),widgetfanart) + [Substring(Skin.String(CustomHomeItem4.Widget),custom) | Substring(Skin.String(CustomHomeItem4.Widget2),custom)]]">CustomHomeItem4Backgrounds</include>
+                    <include condition="[Substring(Skin.String(CustomHomeItem5.MultiFanart),widgetfanart) + [Substring(Skin.String(CustomHomeItem5.Widget),custom) | Substring(Skin.String(CustomHomeItem5.Widget2),custom)]]">CustomHomeItem5Backgrounds</include>
+                    <include condition="[Substring(Skin.String(CustomHomeItem6.MultiFanart),widgetfanart) + [Substring(Skin.String(CustomHomeItem6.Widget),custom) | Substring(Skin.String(CustomHomeItem6.Widget2),custom)]]">CustomHomeItem6Backgrounds</include>
+                    <include condition="[Substring(Skin.String(CustomHomeItem7.MultiFanart),widgetfanart) + [Substring(Skin.String(CustomHomeItem7.Widget),custom) | Substring(Skin.String(CustomHomeItem7.Widget2),custom)]]">CustomHomeItem7Backgrounds</include>
+                    <include condition="[Substring(Skin.String(CustomHomeItem8.MultiFanart),widgetfanart) + [Substring(Skin.String(CustomHomeItem8.Widget),custom) | Substring(Skin.String(CustomHomeItem8.Widget2),custom)]]">CustomHomeItem8Backgrounds</include>
+                    <include condition="[Substring(Skin.String(CustomHomeItem9.MultiFanart),widgetfanart) + [Substring(Skin.String(CustomHomeItem9.Widget),custom) | Substring(Skin.String(CustomHomeItem9.Widget2),custom)]]">CustomHomeItem9Backgrounds</include>
+                    <include condition="Substring(Skin.String(backgroundlist),inprogressmovies)">WatchlistMoviesBackgrounds</include>
+                    <include condition="Substring(Skin.String(backgroundlist),watchlistmusic)">WatchlistAlbumsBackgrounds</include>
+                    <include condition="Substring(Skin.String(backgroundlist),watchlisttv)">WatchlistTVBackgrounds</include>
+                    <include condition="Substring(Skin.String(backgroundlist),recentpics)">LatestPicturesBackgrounds</include>
+                    <include condition="Substring(Skin.String(backgroundlist),randompics)">RandomPicturesBackgrounds</include>
+                    <include condition="Window.IsActive(1124)">1124Backgrounds</include>
                 </content>
             </control>
             <control type="label" id="4325">
@@ -5779,11 +6009,299 @@
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.8.Path)]</property>
             <visible>Substring(Control.GetLabel(4322),recentpics)</visible>
         </item>
+    </include> 
+    <include name="1124Backgrounds">
+        <item>
+            <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMovie.1.Path)])</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(LatestMovie.1.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),recentmovies)</visible>
+            <visible>!IsEmpty(Window(Home).Property(LatestMovie.1.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMovie.2.Path)])</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(LatestMovie.2.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),recentmovies)</visible>
+            <visible>!IsEmpty(Window(Home).Property(LatestMovie.2.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.1.Path)])</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.1.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),randommovies)</visible>
+            <visible>!IsEmpty(Window(Home).Property(RandomMovie.1.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.2.Path)])</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.2.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),randommovies)</visible>
+            <visible>!IsEmpty(Window(Home).Property(RandomMovie.2.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestEpisode.1.Path)])</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(LatestEpisode.1.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),recenttv)</visible>
+            <visible>!IsEmpty(Window(Home).Property(LatestEpisode.1.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestEpisode.2.Path)])</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(LatestEpisode.2.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),recenttv)</visible>
+            <visible>!IsEmpty(Window(Home).Property(LatestEpisode.2.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomEpisode.1.Path)])</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.1.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),randomtv)</visible>
+            <visible>!IsEmpty(Window(Home).Property(RandomEpisode.1.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomEpisode.2.Path)])</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.2.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),randomtv)</visible>
+            <visible>!IsEmpty(Window(Home).Property(RandomEpisode.2.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestAlbum.1.Path)])</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(LatestAlbum.1.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),recentalbums)</visible>
+            <visible>!IsEmpty(Window(Home).Property(LatestAlbum.1.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestAlbum.2.Path)])</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(LatestAlbum.2.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),recentalbums)</visible>
+            <visible>!IsEmpty(Window(Home).Property(LatestAlbum.2.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomAlbum.1.Path)])</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.1.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),randomalbums)</visible>
+            <visible>!IsEmpty(Window(Home).Property(RandomAlbum.1.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomAlbum.2.Path)])</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.2.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),randomalbums)</visible>
+            <visible>!IsEmpty(Window(Home).Property(RandomAlbum.2.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMusicVideo.1.Path)])</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.1.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),recentmusicvideos)</visible>
+            <visible>!IsEmpty(Window(Home).Property(LatestMusicVideo.1.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMusicVideo.2.Path)])</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.2.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),recentmusicvideos)</visible>
+            <visible>!IsEmpty(Window(Home).Property(LatestMusicVideo.2.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMusicVideo.1.Path)])</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomMusicVideo.1.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),randommusicvideos)</visible>
+            <visible>!IsEmpty(Window(Home).Property(RandomMusicVideo.1.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMusicVideo.2.Path)])</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomMusicVideo.2.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),randommusicvideos)</visible>
+            <visible>!IsEmpty(Window(Home).Property(RandomMusicVideo.2.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(CustomHomeItem1.1.Fanart)]</property>
+            <visible>[Substring(Control.GetLabel(4321),custom) | Substring(Control.GetLabel(4325),custom)] + Stringcompare(Control.GetLabel(4322),widgetfanart) + Container(9000).HasFocus(101)</visible>
+            <visible>!IsEmpty(Window(Home).Property(CustomHomeItem1.1.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(CustomHomeItem1.2.Fanart)]</property>
+            <visible>[Substring(Control.GetLabel(4321),custom) | Substring(Control.GetLabel(4325),custom)] + Stringcompare(Control.GetLabel(4322),widgetfanart) + Container(9000).HasFocus(101)</visible>
+            <visible>!IsEmpty(Window(Home).Property(CustomHomeItem1.2.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(CustomHomeItem2.1.Fanart)]</property>
+            <visible>[Substring(Control.GetLabel(4321),custom) | Substring(Control.GetLabel(4325),custom)] + Stringcompare(Control.GetLabel(4322),widgetfanart) + Container(9000).HasFocus(102)</visible>
+            <visible>!IsEmpty(Window(Home).Property(CustomHomeItem2.1.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(CustomHomeItem2.2.Fanart)]</property>
+            <visible>[Substring(Control.GetLabel(4321),custom) | Substring(Control.GetLabel(4325),custom)] + Stringcompare(Control.GetLabel(4322),widgetfanart) + Container(9000).HasFocus(102)</visible>
+            <visible>!IsEmpty(Window(Home).Property(CustomHomeItem2.2.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(CustomHomeItem3.1.Fanart)]</property>
+            <visible>[Substring(Control.GetLabel(4321),custom) | Substring(Control.GetLabel(4325),custom)] + Stringcompare(Control.GetLabel(4322),widgetfanart) + Container(9000).HasFocus(103)</visible>
+            <visible>!IsEmpty(Window(Home).Property(CustomHomeItem3.1.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(CustomHomeItem3.2.Fanart)]</property>
+            <visible>[Substring(Control.GetLabel(4321),custom) | Substring(Control.GetLabel(4325),custom)] + Stringcompare(Control.GetLabel(4322),widgetfanart) + Container(9000).HasFocus(103)</visible>
+            <visible>!IsEmpty(Window(Home).Property(CustomHomeItem3.2.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(CustomHomeItem4.1.Fanart)]</property>
+            <visible>[Substring(Control.GetLabel(4321),custom) | Substring(Control.GetLabel(4325),custom)] + Stringcompare(Control.GetLabel(4322),widgetfanart) + Container(9000).HasFocus(104)</visible>
+            <visible>!IsEmpty(Window(Home).Property(CustomHomeItem4.1.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(CustomHomeItem4.2.Fanart)]</property>
+            <visible>[Substring(Control.GetLabel(4321),custom) | Substring(Control.GetLabel(4325),custom)] + Stringcompare(Control.GetLabel(4322),widgetfanart) + Container(9000).HasFocus(104)</visible>
+            <visible>!IsEmpty(Window(Home).Property(CustomHomeItem4.2.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(CustomHomeItem5.1.Fanart)]</property>
+            <visible>[Substring(Control.GetLabel(4321),custom) | Substring(Control.GetLabel(4325),custom)] + Stringcompare(Control.GetLabel(4322),widgetfanart) + Container(9000).HasFocus(105)</visible>
+            <visible>!IsEmpty(Window(Home).Property(CustomHomeItem5.1.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(CustomHomeItem5.2.Fanart)]</property>
+            <visible>[Substring(Control.GetLabel(4321),custom) | Substring(Control.GetLabel(4325),custom)] + Stringcompare(Control.GetLabel(4322),widgetfanart) + Container(9000).HasFocus(105)</visible>
+            <visible>!IsEmpty(Window(Home).Property(CustomHomeItem5.2.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(CustomHomeItem6.1.Fanart)]</property>
+            <visible>[Substring(Control.GetLabel(4321),custom) | Substring(Control.GetLabel(4325),custom)] + Stringcompare(Control.GetLabel(4322),widgetfanart) + Container(9000).HasFocus(106)</visible>
+            <visible>!IsEmpty(Window(Home).Property(CustomHomeItem6.1.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(CustomHomeItem6.2.Fanart)]</property>
+            <visible>[Substring(Control.GetLabel(4321),custom) | Substring(Control.GetLabel(4325),custom)] + Stringcompare(Control.GetLabel(4322),widgetfanart) + Container(9000).HasFocus(106)</visible>
+            <visible>!IsEmpty(Window(Home).Property(CustomHomeItem6.2.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(CustomHomeItem7.1.Fanart)]</property>
+            <visible>[Substring(Control.GetLabel(4321),custom) | Substring(Control.GetLabel(4325),custom)] + Stringcompare(Control.GetLabel(4322),widgetfanart) + Container(9000).HasFocus(107)</visible>
+            <visible>!IsEmpty(Window(Home).Property(CustomHomeItem7.1.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(CustomHomeItem7.2.Fanart)]</property>
+            <visible>[Substring(Control.GetLabel(4321),custom) | Substring(Control.GetLabel(4325),custom)] + Stringcompare(Control.GetLabel(4322),widgetfanart) + Container(9000).HasFocus(107)</visible>
+            <visible>!IsEmpty(Window(Home).Property(CustomHomeItem7.2.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(CustomHomeItem8.1.Fanart)]</property>
+            <visible>[Substring(Control.GetLabel(4321),custom) | Substring(Control.GetLabel(4325),custom)] + Stringcompare(Control.GetLabel(4322),widgetfanart) + Container(9000).HasFocus(108)</visible>
+            <visible>!IsEmpty(Window(Home).Property(CustomHomeItem8.1.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(CustomHomeItem8.2.Fanart)]</property>
+            <visible>[Substring(Control.GetLabel(4321),custom) | Substring(Control.GetLabel(4325),custom)] + Stringcompare(Control.GetLabel(4322),widgetfanart) + Container(9000).HasFocus(108)</visible>
+            <visible>!IsEmpty(Window(Home).Property(CustomHomeItem8.2.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(CustomHomeItem9.1.Fanart)]</property>
+            <visible>[Substring(Control.GetLabel(4321),custom) | Substring(Control.GetLabel(4325),custom)] + Stringcompare(Control.GetLabel(4322),widgetfanart) + Container(9000).HasFocus(109)</visible>
+            <visible>!IsEmpty(Window(Home).Property(CustomHomeItem9.1.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(CustomHomeItem9.2.Fanart)]</property>
+            <visible>[Substring(Control.GetLabel(4321),custom) | Substring(Control.GetLabel(4325),custom)] + Stringcompare(Control.GetLabel(4322),widgetfanart) + Container(9000).HasFocus(109)</visible>
+            <visible>!IsEmpty(Window(Home).Property(CustomHomeItem9.2.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(WatchList_Movie.1.Fanart)]</property>
+            <visible>Substring(Control.GetLabel(4322),inprogressmovies)</visible>
+            <visible>!IsEmpty(Window(Home).Property(WatchList_Movie.1.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(WatchList_Movie.2.Fanart)]</property>
+            <visible>Substring(Control.GetLabel(4322),inprogressmovies)</visible>
+            <visible>!IsEmpty(Window(Home).Property(WatchList_Movie.2.Fanart))</visible>
+        </item>
+        <item>
+            <property name="Fanart">$INFO[Window(Home).Property(WatchList_Album.1.Fanart)]</property>
+            <onclick>-</onclick>
+            <visible>!IsEmpty(Window(Home).Property(WatchList_Album.1.Fanart))</visible>
+            <visible>Substring(Control.GetLabel(4322),watchlistmusic)</visible>
+        </item>
+        <item>
+            <property name="Fanart">$INFO[Window(Home).Property(WatchList_Album.2.Fanart)]</property>
+            <visible>!IsEmpty(Window(Home).Property(WatchList_Album.2.Fanart))</visible>
+            <onclick>-</onclick>
+            <visible>Substring(Control.GetLabel(4322),watchlistmusic)</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(WatchList_Episode.1.Fanart)]</property>
+            <visible>Substring(Control.GetLabel(4322),watchlisttv)</visible>
+            <visible>!IsEmpty(Window(Home).Property(WatchList_Episode.1.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(WatchList_Episode.2.Fanart)]</property>
+            <visible>Substring(Control.GetLabel(4322),watchlisttv)</visible>
+            <visible>!IsEmpty(Window(Home).Property(WatchList_Episode.2.Fanart))</visible>
+        </item>
+        <item>
+			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&method='Random'&current=1)</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.1.Path)]</property>
+            <visible>Substring(Control.GetLabel(4322),randompics)</visible>
+        </item>
+        <item>
+			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&method='Random'&current=2)</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.2.Path)]</property>
+            <visible>Substring(Control.GetLabel(4322),randompics)</visible>
+        </item>
+        <item>
+			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&method='Latest'&current=1)</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.1.Path)]</property>
+            <visible>Substring(Control.GetLabel(4322),recentpics)</visible>
+        </item>
+        <item>
+			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&method='Latest'&current=2)</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.2.Path)]</property>
+            <visible>Substring(Control.GetLabel(4322),recentpics)</visible>
+        </item>
     </include>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <include name="FocusPosition4">
         <focusposition>4</focusposition>
     </include>
     <include name="FocusPosition2">
         <focusposition>2</focusposition>
+    </include>
+    <include name="WorldWeatherIcons">
+        <control type="group">
+			<visible>StringCompare(Control.GetLabel(4322),googleweather2)</visible>
+			<include>VisibleFadeEffect</include>
+            <include>Animation_WindowFade200</include>
+			<include>WeatherWorldGroup2601</include>
+			<include>WeatherWorldGroup2602</include>
+			<include>WeatherWorldGroup2603</include>
+			<include>WeatherWorldGroup2604</include>
+			<include>WeatherWorldGroup2605</include>
+			<include>WeatherWorldGroup2606</include>
+			<include>WeatherWorldGroup2607</include>
+			<include>WeatherWorldGroup2608</include>
+			<include>WeatherWorldGroup2609</include>
+		</control>
     </include>
 </includes>

@@ -83,6 +83,7 @@
         </control>
         <!-- Home Fullscreen Video -->
         <include>CommonMediaPlayingBackground</include>
+        <include condition="Substring(Skin.String(backgroundlist),googleweather2) + System.HasAddon(script.widget.weatherworld)">WorldWeatherIcons</include>
         <control type="group">
             <visible>Skin.HasSetting(Glowbar_Home)</visible>
             <include>Animation_VisibleChange400</include>

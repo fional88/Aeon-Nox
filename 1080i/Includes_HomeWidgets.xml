@@ -2386,7 +2386,7 @@
                         <itemgap>0</itemgap>
                         <aligny>center</aligny>
                         <scrolltime>0</scrolltime>
-                        <onup>9000</onup>
+                        <onup condition="IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">9000</onup>
                         <onup condition="!IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">4445</onup>
                         <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5019).HasFocus(1) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon1,home)</onup>
                         <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5019).HasFocus(2) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon2,home)</onup>
@@ -2569,7 +2569,7 @@
                         <itemgap>0</itemgap>
                         <aligny>center</aligny>
                         <scrolltime>0</scrolltime>
-                        <onup>9000</onup>
+                        <onup condition="IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">9000</onup>
                         <onup condition="!IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">4445</onup>
                         <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5020).HasFocus(1) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon6,home)</onup>
                         <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5020).HasFocus(2) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon7,home)</onup>
@@ -2872,9 +2872,16 @@
 							</control>
 						</focusedlayout>
 						<content>
-							<include condition="Substring(Skin.String(widgetlist),concerts) | Window.IsActive(1124)">ConcertsPanelContent</include>
+							<include condition="Substring(Skin.String(widgetlist),concerts)">ConcertsPanelContent1124</include>
+							<include condition="Substring(Skin.String(widgetlist),concerts)">ConcertsPanelContent</include>
 						</content>
 					</control>
+                </control>
+                <control type="group">
+                                    <visible>Substring(Control.GetLabel(4321),googlepanel)</visible>
+					<include>Animation_VisibleChange400</include>
+                <include condition="Window.IsActive(1124)| Substring(Skin.String(widgetlist),googlepanel)">GooglePanelWidget</include>
+
                 </control>
                 <control type="group">
                     <visible>Substring(Control.GetLabel(4321),featured)</visible>
@@ -5704,51 +5711,78 @@
                             </control>
                         </focusedlayout>
                         <content>
-                            <include condition="Substring(Skin.String(widgetlist),recentmoviespanel) | Window.IsActive(1124)">LatestMoviesItems</include>
-                            <include condition="Substring(Skin.String(widgetlist),randommoviespanel) | Window.IsActive(1124)">RandomMoviesItems</include>
-                            <include condition="Substring(Skin.String(widgetlist),recentmusicvideospanel) | Window.IsActive(1124)">MusicvideoLatestItems</include>
-                            <include condition="Substring(Skin.String(widgetlist),randommusicvideospanel) | Window.IsActive(1124)">MusicvideoRandomItems</include>
-                            <include condition="Substring(Skin.String(widgetlist),inprogressmoviespanel) | Window.IsActive(1124)">WatchlistMoviesItems</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem1.Widget),moviescustompanel) + Skin.HasSetting(CustomHomeItem1.Enable)] | Window.IsActive(1124)">Custom1WidgetPoster</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem2.Widget),moviescustompanel) + Skin.HasSetting(CustomHomeItem2.Enable)] | Window.IsActive(1124)">Custom2WidgetPoster</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem3.Widget),moviescustompanel) + Skin.HasSetting(CustomHomeItem3.Enable)] | Window.IsActive(1124)">Custom3WidgetPoster</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem4.Widget),moviescustompanel) + Skin.HasSetting(CustomHomeItem4.Enable)] | Window.IsActive(1124)">Custom4WidgetPoster</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem5.Widget),moviescustompanel) + Skin.HasSetting(CustomHomeItem5.Enable)] | Window.IsActive(1124)">Custom5WidgetPoster</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem6.Widget),moviescustompanel) + Skin.HasSetting(CustomHomeItem6.Enable)] | Window.IsActive(1124)">Custom6WidgetPoster</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem7.Widget),moviescustompanel) + Skin.HasSetting(CustomHomeItem7.Enable)] | Window.IsActive(1124)">Custom7WidgetPoster</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem8.Widget),moviescustompanel) + Skin.HasSetting(CustomHomeItem8.Enable)] | Window.IsActive(1124)">Custom8WidgetPoster</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem9.Widget),moviescustompanel) + Skin.HasSetting(CustomHomeItem9.Enable)] | Window.IsActive(1124)">Custom9WidgetPoster</include>
-                            <include condition="Substring(Skin.String(widgetlist),randomsongspanel) | Window.IsActive(1124)">RandomSongsItems</include>
-                            <include condition="Substring(Skin.String(widgetlist),recentsongspanel) | Window.IsActive(1124)">LatestSongsItems</include>
-                            <include condition="Substring(Skin.String(widgetlist),randomalbumspanel) | Window.IsActive(1124)">RandomAlbumsItems</include>
-                            <include condition="Substring(Skin.String(widgetlist),randomartistspanel) | Window.IsActive(1124)">RandomArtistsItems</include>
-                            <include condition="Substring(Skin.String(widgetlist),recentalbumspanel) | Window.IsActive(1124)">LatestAlbumsItems</include>
-                            <include condition="Substring(Skin.String(widgetlist),watchlistmusicpanel) | Window.IsActive(1124)">WatchlistMusicItems</include>
-                            <include condition="Substring(Skin.String(widgetlist),actorspanel) | Window.IsActive(1124)">BornActorsItems</include>
-                            <include condition="Substring(Skin.String(widgetlist),randomaddonspanel) | Window.IsActive(1124)">RandomAddonsItems</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem1.Widget),albumscustompanel) + Skin.HasSetting(CustomHomeItem1.Enable)] | Window.IsActive(1124)">Custom1WidgetSquare</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem2.Widget),albumscustompanel) + Skin.HasSetting(CustomHomeItem2.Enable)] | Window.IsActive(1124)">Custom2WidgetSquare</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem3.Widget),albumscustompanel) + Skin.HasSetting(CustomHomeItem3.Enable)] | Window.IsActive(1124)">Custom3WidgetSquare</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem4.Widget),albumscustompanel) + Skin.HasSetting(CustomHomeItem4.Enable)] | Window.IsActive(1124)">Custom4WidgetSquare</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem5.Widget),albumscustompanel) + Skin.HasSetting(CustomHomeItem5.Enable)] | Window.IsActive(1124)">Custom5WidgetSquare</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem6.Widget),albumscustompanel) + Skin.HasSetting(CustomHomeItem6.Enable)] | Window.IsActive(1124)">Custom6WidgetSquare</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem7.Widget),albumscustompanel) + Skin.HasSetting(CustomHomeItem7.Enable)] | Window.IsActive(1124)">Custom7WidgetSquare</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem8.Widget),albumscustompanel) + Skin.HasSetting(CustomHomeItem8.Enable)] | Window.IsActive(1124)">Custom8WidgetSquare</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem9.Widget),albumscustompanel) + Skin.HasSetting(CustomHomeItem9.Enable)] | Window.IsActive(1124)">Custom9WidgetSquare</include>
-                            <include condition="Substring(Skin.String(widgetlist),recenttvpanel) | Window.IsActive(1124)">LatestEpisodesItems</include>
-                            <include condition="Substring(Skin.String(widgetlist),randomtvpanel) | Window.IsActive(1124)">RandomEpisodesItems</include>
-                            <include condition="Substring(Skin.String(widgetlist),watchlisttvpanel) | Window.IsActive(1124)">WatchListTVItems</include>
-                            <include condition="Substring(Skin.String(widgetlist),randompics) | Window.IsActive(1124)">RandomPicturesItems</include>
-                            <include condition="Substring(Skin.String(widgetlist),recentpics) | Window.IsActive(1124)">LatestPicturesItems</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem1.Widget),tvcustompanel) + Skin.HasSetting(CustomHomeItem1.Enable)] | Window.IsActive(1124)">Custom1WidgetEpisode</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem2.Widget),tvcustompanel) + Skin.HasSetting(CustomHomeItem2.Enable)] | Window.IsActive(1124)">Custom2WidgetEpisode</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem3.Widget),tvcustompanel) + Skin.HasSetting(CustomHomeItem3.Enable)] | Window.IsActive(1124)">Custom3WidgetEpisode</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem4.Widget),tvcustompanel) + Skin.HasSetting(CustomHomeItem4.Enable)] | Window.IsActive(1124)">Custom4WidgetEpisode</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem5.Widget),tvcustompanel) + Skin.HasSetting(CustomHomeItem5.Enable)] | Window.IsActive(1124)">Custom5WidgetEpisode</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem6.Widget),tvcustompanel) + Skin.HasSetting(CustomHomeItem6.Enable)] | Window.IsActive(1124)">Custom6WidgetEpisode</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem7.Widget),tvcustompanel) + Skin.HasSetting(CustomHomeItem7.Enable)] | Window.IsActive(1124)">Custom7WidgetEpisode</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem8.Widget),tvcustompanel) + Skin.HasSetting(CustomHomeItem8.Enable)] | Window.IsActive(1124)">Custom8WidgetEpisode</include>
-                            <include condition="[SubString(Skin.String(CustomHomeItem9.Widget),tvcustompanel) + Skin.HasSetting(CustomHomeItem9.Enable)] | Window.IsActive(1124)">Custom9WidgetEpisode</include>
+                            <include condition="!Window.IsActive(1124) + Substring(Skin.String(widgetlist),recentmoviespanel)">LatestMoviesItems</include>
+                            <include condition="!Window.IsActive(1124) + Substring(Skin.String(widgetlist),randommoviespanel)">RandomMoviesItems</include>
+                            <include condition="!Window.IsActive(1124) + Substring(Skin.String(widgetlist),recentmusicvideospanel)">MusicvideoLatestItems</include>
+                            <include condition="!Window.IsActive(1124) + Substring(Skin.String(widgetlist),randommusicvideospanel)">MusicvideoRandomItems</include>
+                            <include condition="!Window.IsActive(1124) + Substring(Skin.String(widgetlist),inprogressmoviespanel)">WatchlistMoviesItems</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem1.Widget),moviescustompanel) + Skin.HasSetting(CustomHomeItem1.Enable)]">Custom1WidgetPoster</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem2.Widget),moviescustompanel) + Skin.HasSetting(CustomHomeItem2.Enable)]">Custom2WidgetPoster</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem3.Widget),moviescustompanel) + Skin.HasSetting(CustomHomeItem3.Enable)]">Custom3WidgetPoster</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem4.Widget),moviescustompanel) + Skin.HasSetting(CustomHomeItem4.Enable)]">Custom4WidgetPoster</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem5.Widget),moviescustompanel) + Skin.HasSetting(CustomHomeItem5.Enable)]">Custom5WidgetPoster</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem6.Widget),moviescustompanel) + Skin.HasSetting(CustomHomeItem6.Enable)]">Custom6WidgetPoster</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem7.Widget),moviescustompanel) + Skin.HasSetting(CustomHomeItem7.Enable)]">Custom7WidgetPoster</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem8.Widget),moviescustompanel) + Skin.HasSetting(CustomHomeItem8.Enable)]">Custom8WidgetPoster</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem9.Widget),moviescustompanel) + Skin.HasSetting(CustomHomeItem9.Enable)]">Custom9WidgetPoster</include>
+                            <include condition="!Window.IsActive(1124) + Substring(Skin.String(widgetlist),randomsongspanel)">RandomSongsItems</include>
+                            <include condition="!Window.IsActive(1124) + Substring(Skin.String(widgetlist),recentsongspanel)">LatestSongsItems</include>
+                            <include condition="!Window.IsActive(1124) + Substring(Skin.String(widgetlist),randomalbumspanel)">RandomAlbumsItems</include>
+                            <include condition="!Window.IsActive(1124) + Substring(Skin.String(widgetlist),randomartistspanel)">RandomArtistsItems</include>
+                            <include condition="!Window.IsActive(1124) + Substring(Skin.String(widgetlist),recentalbumspanel)">LatestAlbumsItems</include>
+                            <include condition="!Window.IsActive(1124) + Substring(Skin.String(widgetlist),watchlistmusicpanel)">WatchlistMusicItems</include>
+                            <include condition="!Window.IsActive(1124) + Substring(Skin.String(widgetlist),actorspanel)">BornActorsItems</include>
+                            <include condition="!Window.IsActive(1124) + Substring(Skin.String(widgetlist),randomaddonspanel)">RandomAddonsItems</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem1.Widget),albumscustompanel) + Skin.HasSetting(CustomHomeItem1.Enable)]">Custom1WidgetSquare</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem2.Widget),albumscustompanel) + Skin.HasSetting(CustomHomeItem2.Enable)]">Custom2WidgetSquare</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem3.Widget),albumscustompanel) + Skin.HasSetting(CustomHomeItem3.Enable)]">Custom3WidgetSquare</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem4.Widget),albumscustompanel) + Skin.HasSetting(CustomHomeItem4.Enable)]">Custom4WidgetSquare</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem5.Widget),albumscustompanel) + Skin.HasSetting(CustomHomeItem5.Enable)]">Custom5WidgetSquare</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem6.Widget),albumscustompanel) + Skin.HasSetting(CustomHomeItem6.Enable)]">Custom6WidgetSquare</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem7.Widget),albumscustompanel) + Skin.HasSetting(CustomHomeItem7.Enable)]">Custom7WidgetSquare</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem8.Widget),albumscustompanel) + Skin.HasSetting(CustomHomeItem8.Enable)]">Custom8WidgetSquare</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem9.Widget),albumscustompanel) + Skin.HasSetting(CustomHomeItem9.Enable)]">Custom9WidgetSquare</include>
+                            <include condition="!Window.IsActive(1124) + Substring(Skin.String(widgetlist),recenttvpanel)">LatestEpisodesItems</include>
+                            <include condition="!Window.IsActive(1124) + Substring(Skin.String(widgetlist),randomtvpanel)">RandomEpisodesItems</include>
+                            <include condition="!Window.IsActive(1124) + Substring(Skin.String(widgetlist),watchlisttvpanel)">WatchListTVItems</include>
+                            <include condition="!Window.IsActive(1124) + Substring(Skin.String(widgetlist),randompics)">RandomPicturesItems</include>
+                            <include condition="!Window.IsActive(1124) + Substring(Skin.String(widgetlist),recentpics)">LatestPicturesItems</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem1.Widget),tvcustompanel) + Skin.HasSetting(CustomHomeItem1.Enable)]">Custom1WidgetEpisode</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem2.Widget),tvcustompanel) + Skin.HasSetting(CustomHomeItem2.Enable)]">Custom2WidgetEpisode</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem3.Widget),tvcustompanel) + Skin.HasSetting(CustomHomeItem3.Enable)]">Custom3WidgetEpisode</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem4.Widget),tvcustompanel) + Skin.HasSetting(CustomHomeItem4.Enable)]">Custom4WidgetEpisode</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem5.Widget),tvcustompanel) + Skin.HasSetting(CustomHomeItem5.Enable)]">Custom5WidgetEpisode</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem6.Widget),tvcustompanel) + Skin.HasSetting(CustomHomeItem6.Enable)]">Custom6WidgetEpisode</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem7.Widget),tvcustompanel) + Skin.HasSetting(CustomHomeItem7.Enable)]">Custom7WidgetEpisode</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem8.Widget),tvcustompanel) + Skin.HasSetting(CustomHomeItem8.Enable)]">Custom8WidgetEpisode</include>
+                            <include condition="!Window.IsActive(1124) + [SubString(Skin.String(CustomHomeItem9.Widget),tvcustompanel) + Skin.HasSetting(CustomHomeItem9.Enable)]">Custom9WidgetEpisode</include>
+                            <include condition="Window.IsActive(1124)">LatestMoviesItems1124</include>       
+                            <include condition="Window.IsActive(1124)">RandomMoviesItems1124</include>
+                            <include condition="Window.IsActive(1124)">MusicvideoLatestItems1124</include>
+                            <include condition="Window.IsActive(1124)">MusicvideoRandomItems1124</include>
+                            <include condition="Window.IsActive(1124)">WatchlistMoviesItems1124</include>
+                            <include condition="Window.IsActive(1124)">Custom1Widget1124</include>
+                            <include condition="Window.IsActive(1124)">Custom2Widget1124</include>
+                            <include condition="Window.IsActive(1124)">Custom3Widget1124</include>
+                            <include condition="Window.IsActive(1124)">Custom4Widget1124</include>
+                            <include condition="Window.IsActive(1124)">Custom5Widget1124</include>
+                            <include condition="Window.IsActive(1124)">Custom6Widget1124</include>
+                            <include condition="Window.IsActive(1124)">Custom7Widget1124</include>
+                            <include condition="Window.IsActive(1124)">Custom8Widget1124</include>
+                            <include condition="Window.IsActive(1124)">Custom9Widget1124</include>
+                            <include condition="Window.IsActive(1124)">RandomSongsItems1124</include>
+                            <include condition="Window.IsActive(1124)">LatestSongsItems1124</include>
+                            <include condition="Window.IsActive(1124)">RandomAlbumsItems1124</include>
+                            <include condition="Window.IsActive(1124)">RandomArtistsItems1124</include>
+                            <include condition="Window.IsActive(1124)">LatestAlbumsItems1124</include>
+                            <include condition="Window.IsActive(1124)">WatchlistMusicItems1124</include>
+                            <include condition="Window.IsActive(1124)">LatestEpisodesItems1124</include>
+                            <include condition="Window.IsActive(1124)">RandomEpisodesItems1124</include>
+                            <include condition="Window.IsActive(1124)">RandomPicturesItems1124</include>
+                            <include condition="Window.IsActive(1124)">LatestPicturesItems1124</include>
+                            <include condition="Window.IsActive(1124)">BornActorsItems1124</include>
+                            <include condition="Window.IsActive(1124)">RandomAddonsItems1124</include>
+                            <include condition="Window.IsActive(1124)">WatchListTVItems1124</include>
                         </content>
                     </control>
                     <control type="label">
@@ -5766,7 +5800,7 @@
                     </control>
                 </control>
 	</include>
-	<include name="ConcertsPanelContent">
+	<include name="ConcertsPanelContent1124">
 							<item id="1">
 								<label>$INFO[Window(Home).Property(NearEvents.1.Artists)]</label>
 								<label2>$INFO[Window(Home).Property(NearEvents.1.Date)]</label2>
@@ -5887,6 +5921,8 @@
 								<onclick>Dialog.Close(1139)</onclick>
 								<visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),11)</visible>
 							</item>
+	</include>
+	<include name="ConcertsPanelContent">                     
 							<item id="13">
 								<label>$INFO[Window(Home).Property(NearEvents.13.Artists)]</label>
 								<label2>$INFO[Window(Home).Property(NearEvents.13.Date)]</label2>
@@ -6397,5 +6433,59 @@
                                     <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.8.Library)],return)</onclick>
                                     <visible>!IsEmpty(Window(Home).Property(NextAired.8.Label))</visible>
                                 </item>
+    </include>
+    <include name="GooglePanelWidget">
+                <control type="group">
+               <control type="group">
+					<control type="label">
+						<posx>190</posx>
+						<posy>68</posy>
+						<width>200</width>
+						<height>300</height>
+						<align>right</align>
+						<textcolor>$VAR[SubTitleColorVar]</textcolor>
+						<label>Temperature[CR]$LOCALIZE[402][CR]$LOCALIZE[406][CR]$LOCALIZE[403][CR]$LOCALIZE[405][CR]Condition[CR]Coordinates</label>
+					</control>
+					<control type="label">
+						<posx>200</posx>
+						<posy>68</posy>
+						<width>250</width>
+						<height>300</height>
+						<label>$INFO[Window(weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits][CR]$INFO[Window(weather).Property(Current.FeelsLike)]$INFO[System.TemperatureUnits][CR]$INFO[Window(weather).Property(Current.Humidity)][CR]$INFO[Window(weather).Property(Current.UVIndex)][CR]$INFO[Window(weather).Property(Current.DewPoint)]$INFO[System.TemperatureUnits][CR]$INFO[Window(weather).Property(Current.Condition)][CR]$INFO[Window(weather).Property(Current.Location.Latitude)] $INFO[Window(weather).Property(Current.Location.Longitude)]</label>
+					</control>
+					<control type="label">
+						<posx>560</posx>
+						<posy>68</posy>
+						<width>150</width>
+						<height>300</height>
+						<align>right</align>
+						<textcolor>$VAR[SubTitleColorVar]</textcolor>
+						<label>$LOCALIZE[404][CR]Sun Length[CR]Sunrise[CR]Sunset[CR]Moonrise[CR]Moon Phase[CR]Sun Diff</label>
+					</control>
+					<control type="label">
+						<posx>570</posx>
+						<posy>68</posy>
+						<width>250</width>
+						<height>300</height>
+						<label>$INFO[Window(weather).Property(Current.Wind)][CR]$INFO[Window(weather).Property(Current.Sun.Length)][CR]$INFO[Window(weather).Property(Current.Sunrise)][CR]$INFO[Window(weather).Property(Current.Sunset)][CR]$INFO[Window(weather).Property(Current.Moonrise)][CR]$INFO[Window(weather).Property(Current.Moon.Phase)][CR]$INFO[Window(weather).Property(Current.Location.Latitude)] $INFO[Window(weather).Property(Current.Sun.Diff)]</label>
+					</control>
+                <control type="image">
+                    <posx>900</posx>
+                    <posy>22</posy>
+                    <width>400</width>
+                    <height>356</height>
+                    <aspectratio aligny="center">scale</aspectratio>
+                    <texture background="true">$INFO[Window(weather).Property(Current.Earth.Phase.Image)]</texture>
+                </control>
+                <control type="image">
+                    <posx>1220</posx>
+                    <posy>22</posy>
+                    <width>400</width>
+                    <height>356</height>
+                    <aspectratio aligny="center">scale</aspectratio>
+                    <texture background="true">$INFO[Window(weather).Property(Current.Moon.Phase.Image)]</texture>
+                </control>
+                </control>
+                </control> 
     </include>
 </includes>

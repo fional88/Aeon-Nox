@@ -2999,7 +2999,20 @@
 						</control>
 						<control type="label">
 							<posx>200</posx>
-							<posy>78</posy>
+							<posy>70</posy>
+							<width>340</width>
+							<height>50</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_Condensed22</font>
+							<textcolor>white2</textcolor>
+							<shadowcolor>-</shadowcolor>
+							<label>$INFO[ListItem.Property(NextTitle)]</label>
+							<textoffsetx>15</textoffsetx>
+						</control>
+						<control type="label">
+							<posx>200</posx>
+							<posy>112</posy>
 							<width>340</width>
 							<height>30</height>
 							<align>left</align>
@@ -3007,16 +3020,16 @@
 							<font>Font_Condensed22</font>
 							<textcolor>grey2</textcolor>
 							<shadowcolor>-</shadowcolor>
-							<label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(RunningTime), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
+							<label>$INFO[ListItem.Property(NextNumber)]$INFO[ListItem.Property(RunningTime), • , $LOCALIZE[12391]]</label>
 							<textoffsetx>15</textoffsetx>
 						</control>
 							<control type="textbox">
 								<posx>215</posx>
-								<posy>112</posy>
+								<posy>146</posy>
 								<width>300</width>
 								<height>205</height>
 								<align>left</align>
-								<label>$INFO[ListItem.Label2]</label>
+								<label>$INFO[ListItem.Label2][CR]$INFO[ListItem.Property(Network)][CR][CR]Previous Episode:[CR]$INFO[ListItem.Property(LatestTitle)] $INFO[ListItem.Property(LatestDate), •][CR]</label>
 								<font>Font_Condensed20</font>
 								<include>listcolornofocus</include>
 								<autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
@@ -4511,15 +4524,15 @@
                         <control type="button" id="50190">
                             <description>RANDOMIZE</description>
                             <label>$LOCALIZE[31087]</label>
-                            <onclick condition="Container(9000).HasFocus(101)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem1.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem1)</onclick>
-                            <onclick condition="Container(9000).HasFocus(102)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem2.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem2)</onclick>
-                            <onclick condition="Container(9000).HasFocus(103)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem3.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem3)</onclick>
-                            <onclick condition="Container(9000).HasFocus(104)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem4.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem4)</onclick>
-                            <onclick condition="Container(9000).HasFocus(105)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem5.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem5)</onclick>
-                            <onclick condition="Container(9000).HasFocus(106)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem6.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem6)</onclick>
-                            <onclick condition="Container(9000).HasFocus(107)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem7.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem7)</onclick>
-                            <onclick condition="Container(9000).HasFocus(108)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem8.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem8)</onclick>
-                            <onclick condition="Container(9000).HasFocus(109)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem9.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem9)</onclick>
+                            <onclick condition="Container(9000).HasFocus(101)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem1.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem1)</onclick>
+                            <onclick condition="Container(9000).HasFocus(102)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem2.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem2)</onclick>
+                            <onclick condition="Container(9000).HasFocus(103)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem3.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem3)</onclick>
+                            <onclick condition="Container(9000).HasFocus(104)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem4.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem4)</onclick>
+                            <onclick condition="Container(9000).HasFocus(105)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem5.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem5)</onclick>
+                            <onclick condition="Container(9000).HasFocus(106)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem6.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem6)</onclick>
+                            <onclick condition="Container(9000).HasFocus(107)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem7.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem7)</onclick>
+                            <onclick condition="Container(9000).HasFocus(108)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem8.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem8)</onclick>
+                            <onclick condition="Container(9000).HasFocus(109)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem9.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem9)</onclick>
                             <include>HiddenObject</include>
                             <visible>Substring(Control.GetLabel(4321),random) + Substring(Control.GetLabel(4321),custom)</visible>
                             <onback>ClearProperty(PanelWidgetInfo,Home)</onback>
@@ -4910,7 +4923,7 @@
                         <control type="button" id="5035">
                             <description>RANDOMIZE</description>
                             <label>$LOCALIZE[31087]</label>
-                            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&method='Random'&sort='Added'&limit=8)</onclick>
+                            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onclick>
                             <include>HiddenObject</include>
                             <visible>Substring(Control.GetLabel(4321),randompics)</visible>
                             <onback>ClearProperty(PanelWidgetInfo,Home)</onback>
@@ -5185,7 +5198,7 @@
                                     <width>309</width>
                                     <height>309</height>
                                     <texture background="true">DefaultAlbumCover.png</texture>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
                                     <info>ListItem.Icon</info>
                                 </control>
                                 <control type="label">
@@ -5222,7 +5235,7 @@
                                     <width>309</width>
                                     <height>309</height>
                                     <texture background="true">DefaultAlbumCover.png</texture>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
                                     <info>ListItem.Icon</info>
                                 </control>
                                 <control type="label">
@@ -5472,7 +5485,8 @@
                         </itemlayout>
                         <focusedlayout height="450" width="532" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo) | Substring(Control.GetLabel(4321),actors)] ">
                             <control type="group">
-                                <control type="image">
+                                  <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
+                               <control type="image">
                                     <description>Main Icon</description>
                                     <posx>21</posx>
                                     <posy>42</posy>
@@ -5619,6 +5633,8 @@
                         </itemlayout>
                         <focusedlayout width="798" height="340" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),pics)]">
                             <control type="group">
+                            <control type="group">
+                                 <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
                                 <control type="image">
                                     <texture background="true" diffuse="thumbs/multiplex_tvmask.png">$INFO[ListItem.Icon]</texture>
                                     <aspectratio scalediffuse="false">scale</aspectratio>
@@ -5640,6 +5656,7 @@
                                     <texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass.png</texture>
                                     <bordersize>9</bordersize>
                                 </control>
+                            </control>
                                 <control type="label">
                                     <posx>15</posx>
                                     <posy>305</posy>
@@ -5782,25 +5799,29 @@
                             </control>
                         </itemlayout>
                         <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),artists) | Substring(Control.GetLabel(4321),songs) | Substring(Control.GetLabel(4321),watchlistmusic)]">
-                            <control type="group">        
-                                <control type="image">
-                                    <posx>20</posx>
-                                    <posy>15</posy>
-                                    <aspectratio scalediffuse="false" align="center">scale</aspectratio>
-                                    <height>320</height>
-                                    <width>340</width>
-                                    <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
+                            <control type="group"> 
+                                <control type="group">
+                                 <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
+                                    <control type="image">
+                                        <posx>20</posx>
+                                        <posy>15</posy>
+                                        <aspectratio scalediffuse="false" align="center">scale</aspectratio>
+                                        <height>320</height>
+                                        <width>340</width>
+                                        <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <posx>0</posx>
+                                        <posy>-5</posy>
+                                        <height>360</height>
+                                        <width>380</width>
+                                        <aspectratio scalediffuse="false" align="center">scale</aspectratio>
+                                        <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_noreflect.png</texture>
+                                        <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
+                                        <bordersize>20</bordersize>
+                                    </control>
                                 </control>
-                                <control type="image">
-                                    <posx>0</posx>
-                                    <posy>-5</posy>
-                                    <height>360</height>
-                                    <width>380</width>
-                                    <aspectratio scalediffuse="false" align="center">scale</aspectratio>
-                                    <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_noreflect.png</texture>
-                                    <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
-                                    <bordersize>20</bordersize>
-                                </control>
+
                                 <control type="image">
                                     <posx>400</posx>
                                     <posy>95</posy>
@@ -6605,7 +6626,7 @@
 						<height>300</height>
 						<align>right</align>
 						<textcolor>$VAR[SubTitleColorVar]</textcolor>
-						<label>Temperature[CR]$LOCALIZE[402][CR]$LOCALIZE[406][CR]$LOCALIZE[403][CR]$LOCALIZE[405][CR]Condition[CR]Coordinates</label>
+						<label>$LOCALIZE[42257][CR]$LOCALIZE[402][CR]$LOCALIZE[406][CR]$LOCALIZE[403][CR]$LOCALIZE[405][CR]$LOCALIZE[42258][CR]$LOCALIZE[42259]</label>
 					</control>
 					<control type="label">
 						<posx>200</posx>
@@ -6939,6 +6960,7 @@
                     <height>342</height>
                     <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
                     <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                    
                 </control>
             </control>
             <control type="group">
@@ -6963,6 +6985,7 @@
                     <width>375</width>
                     <height>342</height>
                     <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                    
                     <texture background="true">thumbs/boxes/cd_glass.png</texture>
                 </control>
             </control>
@@ -6987,7 +7010,8 @@
                     <posy>0</posy>
                     <width>375</width>
                     <height>342</height>
-                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>                    
+
                     <texture background="true">thumbs/boxes/cd_glass.png</texture>
                 </control>
             </control>
@@ -7012,7 +7036,8 @@
                     <posy>0</posy>
                     <width>375</width>
                     <height>342</height>
-                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>                    
+
                     <texture background="true">thumbs/boxes/cd_glass.png</texture>
                 </control>
             </control>
@@ -7037,7 +7062,8 @@
                     <posy>0</posy>
                     <width>375</width>
                     <height>342</height>
-                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>                    
+
                     <texture background="true">thumbs/boxes/cd_glass.png</texture>
                 </control>
             </control>
@@ -7062,7 +7088,8 @@
                     <posy>0</posy>
                     <width>375</width>
                     <height>342</height>
-                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>                    
+
                     <texture background="true">thumbs/boxes/cd_glass.png</texture>
                 </control>
             </control>
@@ -7087,7 +7114,8 @@
                     <posy>0</posy>
                     <width>375</width>
                     <height>342</height>
-                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>                    
+
                     <texture background="true">thumbs/boxes/cd_glass.png</texture>
                 </control>
             </control>
@@ -7112,7 +7140,8 @@
                     <posy>0</posy>
                     <width>375</width>
                     <height>342</height>
-                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>                    
+
                     <texture background="true">thumbs/boxes/cd_glass.png</texture>
                 </control>
             </control>
@@ -7137,7 +7166,8 @@
                     <posy>0</posy>
                     <width>375</width>
                     <height>342</height>
-                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>                    
+
                     <texture background="true">thumbs/boxes/cd_glass.png</texture>
                 </control>
             </control>
@@ -7162,8 +7192,179 @@
                     <posy>0</posy>
                     <width>375</width>
                     <height>342</height>
-                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>                    
+
                     <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                </control>
+            </control>
+            </control>
+        </control>
+    </include>
+    <include name="LiveNoCasesbackground">
+        <control type="group">
+            <animation effect="fade" time="600">VisibleChange</animation>
+            <include>Animation_WindowFade250</include>
+            <visible>Substring(Control.GetLabel(4322),nocase,left)</visible>
+            <control type="group">
+                <posx>-200</posx>
+            <control type="group">
+                <description>CD Case 1</description>
+                <posx>1120</posx>
+                <posy>700</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="9" end="9" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>400</width>
+                    <height>400</height>
+                    <fadetime>600</fadetime>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase1Var]</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 2</description>
+                <posx>700</posx>
+                <posy>0</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="65" end="65" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>400</width>
+                    <height>400</height>
+                    <fadetime>600</fadetime>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase2Var]</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 3</description>
+                <posx>430</posx>
+                <posy>150</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="10" end="10" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>400</width>
+                    <height>400</height>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase3Var]</texture>
+                    <fadetime>600</fadetime>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 4</description>
+                <posx>1600</posx>
+                <posy>200</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="-20" end="-20" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>400</width>
+                    <height>400</height>
+                    <fadetime>600</fadetime>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase4Var]</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 5</description>
+                <posx>1000</posx>
+                <posy>100</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="25" end="25" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>400</width>
+                    <height>400</height>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase5Var]</texture>
+                    <fadetime>600</fadetime>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 6</description>
+                <posx>1950</posx>
+                <posy>-100</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="75" end="75" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>400</width>
+                    <height>400</height>
+                    <fadetime>600</fadetime>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase6Var]</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 7</description>
+                <posx>1700</posx>
+                <posy>800</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="45" end="45" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>400</width>
+                    <height>400</height>
+                    <fadetime>600</fadetime>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase7Var]</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 8</description>
+                <posx>1470</posx>
+                <posy>510</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="-15" end="-15" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>400</width>
+                    <fadetime>600</fadetime>
+                    <height>400</height>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase8Var]</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 9</description>
+                <posx>1050</posx>
+                <posy>400</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="-10" end="-10" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>400</width>
+                    <height>400</height>
+                    <fadetime>600</fadetime>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase9Var]</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 10</description>
+                <posx>600</posx>
+                <posy>400</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="3" end="3" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>400</width>
+                    <height>400</height>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase10Var]</texture>
+                    <fadetime>600</fadetime>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
                 </control>
             </control>
             </control>

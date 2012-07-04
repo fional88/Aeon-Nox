@@ -1295,46 +1295,48 @@
                                 <bordersize>19.5</bordersize>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                             </control>
-                    <control type="label">
-                        <posx>200</posx>
-                        <posy>25</posy>
-                        <width>340</width>
-                        <height>50</height>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Reg24</font>
-                        <textcolor>white2</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <label>$INFO[ListItem.Label]</label>
-                        <textoffsetx>15</textoffsetx>
-                    </control>
-                    <control type="label">
-                        <posx>200</posx>
-                        <posy>78</posy>
-                        <width>340</width>
-                        <height>30</height>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Condensed22</font>
-                        <textcolor>grey2</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(RunningTime), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
-                        <textoffsetx>15</textoffsetx>
-                    </control>
-                        <control type="textbox">
-                            <posx>215</posx>
-                            <posy>112</posy>
-                            <width>300</width>
-                            <height>205</height>
-                            <align>left</align>
-                            <label>$INFO[ListItem.Label2]</label>
-                            <font>Font_Condensed20</font>
-                            <include>listcolornofocus</include>
-                            <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
-                        </control>
+	<control type="label">
+							<posx>200</posx>
+							<posy>31</posy>
+							<width>340</width>
+							<height>50</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_ShowcaseMainLabel2</font>
+							<textcolor>white2</textcolor>
+							<shadowcolor>-</shadowcolor>
+							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+							<textoffsetx>15</textoffsetx>
+						</control>
+						<control type="label">
+							<posx>200</posx>
+							<posy>70</posy>
+							<width>340</width>
+							<height>50</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_Condensed20</font>
+							<textcolor>white2</textcolor>
+							<shadowcolor>-</shadowcolor>
+							<label>$INFO[ListItem.Property(NextNumber)]: $INFO[ListItem.Property(NextTitle)]</label>
+							<textoffsetx>15</textoffsetx>
+						</control>
+							<control type="textbox">
+								<posx>215</posx>
+								<posy>146</posy>
+								<width>300</width>
+								<height>205</height>
+								<align>left</align>
+								<label>$INFO[ListItem.Label2][CR]$INFO[ListItem.Property(RunningTime),, $LOCALIZE[12391] • ]$INFO[ListItem.Property(Network)][CR][CR]Previous Episode:[CR]$INFO[ListItem.Property(LatestTitle)] $INFO[ListItem.Property(LatestDate), •][CR]</label>
+								<font>Font_Condensed18</font>
+								<include>listcolornofocus</include>
+								<autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
+							</control>
                         </itemlayout>
                         <focusedlayout height="450" width="532">
                             <control type="group">
+                                                             <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
+
                                 <control type="image">
                                     <description>Main Icon</description>
                                     <posx>21</posx>
@@ -1357,40 +1359,40 @@
                                     <aspectratio scalediffuse="false">stretch</aspectratio>
                                 </control>
                             </control>
-						<control type="label">
+	<control type="label">
 							<posx>200</posx>
-							<posy>25</posy>
+							<posy>31</posy>
 							<width>340</width>
 							<height>50</height>
 							<align>left</align>
 							<aligny>center</aligny>
-							<font>Font_Reg24</font>
+							<font>Font_ShowcaseMainLabel2</font>
 							<textcolor>white2</textcolor>
 							<shadowcolor>-</shadowcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 							<textoffsetx>15</textoffsetx>
 						</control>
 						<control type="label">
 							<posx>200</posx>
-							<posy>78</posy>
+							<posy>70</posy>
 							<width>340</width>
-							<height>30</height>
+							<height>50</height>
 							<align>left</align>
 							<aligny>center</aligny>
-							<font>Font_Condensed22</font>
-							<textcolor>grey2</textcolor>
+							<font>Font_Condensed20</font>
+							<textcolor>white2</textcolor>
 							<shadowcolor>-</shadowcolor>
-							<label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(RunningTime), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
+							<label>$INFO[ListItem.Property(NextNumber)]: $INFO[ListItem.Property(NextTitle)]</label>
 							<textoffsetx>15</textoffsetx>
 						</control>
 							<control type="textbox">
 								<posx>215</posx>
-								<posy>112</posy>
+								<posy>146</posy>
 								<width>300</width>
 								<height>205</height>
 								<align>left</align>
-								<label>$INFO[ListItem.Label2]</label>
-								<font>Font_Condensed20</font>
+								<label>$INFO[ListItem.Label2][CR]$INFO[ListItem.Property(RunningTime),, $LOCALIZE[12391] • ]$INFO[ListItem.Property(Network)][CR][CR]Previous Episode:[CR]$INFO[ListItem.Property(LatestTitle)] $INFO[ListItem.Property(LatestDate), •][CR]</label>
+								<font>Font_Condensed18</font>
 								<include>listcolornofocus</include>
 								<autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
 							</control>
@@ -2746,6 +2748,7 @@
                     <include>HiddenObject</include>
                     <onfocus condition="Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo) | Substring(Control.GetLabel(4325),actors)">SetFocus(6020)</onfocus>
                     <onfocus condition="Substring(Control.GetLabel(4325),tv)">SetFocus(6021)</onfocus>
+                    <onfocus condition="Substring(Control.GetLabel(4325),babe)">SetFocus(22223)</onfocus>
                     <onfocus condition="Substring(Control.GetLabel(4325),addons)">SetFocus(6040)</onfocus>
                     <onfocus condition="Substring(Control.GetLabel(4325),album) | Substring(Control.GetLabel(4325),artist) | Substring(Control.GetLabel(4325),song) | Substring(Control.GetLabel(4325),watchlistmusic) | Substring(Control.GetLabel(4325),pics)">SetFocus(6030)</onfocus>
                 </control>
@@ -8519,6 +8522,7 @@
                         </itemlayout>
                         <focusedlayout height="450" width="532" condition="Substring(Control.GetLabel(4325),panel2,right) + [Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo) | Substring(Control.GetLabel(4325),actors)] ">
                             <control type="group">
+                                 <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
                                 <control type="image">
                                     <description>Main Icon</description>
                                     <posx>21</posx>
@@ -8666,6 +8670,8 @@
                         </itemlayout>
                         <focusedlayout width="798" height="340" condition="Substring(Control.GetLabel(4325),panel2,right) + [Substring(Control.GetLabel(4325),tv) | Substring(Control.GetLabel(4325),pics)]">
                             <control type="group">
+                                                            <control type="group">
+                                 <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
                                 <control type="image">
                                     <texture background="true" diffuse="thumbs/multiplex_tvmask.png">$INFO[ListItem.Icon]</texture>
                                     <aspectratio scalediffuse="false">scale</aspectratio>
@@ -8686,6 +8692,7 @@
                                     <aspectratio scalediffuse="false">scale</aspectratio>
                                     <texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass.png</texture>
                                     <bordersize>9</bordersize>
+                                </control>
                                 </control>
                                 <control type="label">
                                     <posx>15</posx>
@@ -8829,7 +8836,9 @@
                             </control>
                         </itemlayout>
                         <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4325),panel2,right) + [Substring(Control.GetLabel(4325),addons) | Substring(Control.GetLabel(4325),albums) | Substring(Control.GetLabel(4325),artists) | Substring(Control.GetLabel(4325),songs) | Substring(Control.GetLabel(4325),watchlistmusic)]">
-                            <control type="group">        
+                            <control type="group"> 
+                                                            <control type="group">
+                                 <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
                                 <control type="image">
                                     <posx>20</posx>
                                     <posy>15</posy>
@@ -8848,6 +8857,7 @@
                                     <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
                                     <bordersize>20</bordersize>
                                 </control>
+                              </control>
                                 <control type="image">
                                     <posx>400</posx>
                                     <posy>95</posy>

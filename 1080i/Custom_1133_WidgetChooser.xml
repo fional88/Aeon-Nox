@@ -116,6 +116,7 @@
                             <label>$LOCALIZE[231]</label>
                             <onclick condition="!Skin.HasSetting(widget2)">Skin.Reset(ItemToEdit.Widget)</onclick>
                             <onclick condition="Skin.HasSetting(widget2)">Skin.Reset(ItemToEdit.Widget2)</onclick>
+                            <onclick>Dialog.Close(1133)</onclick>
                         </item>
                         <item>
                             <label>$LOCALIZE[31323]</label>
@@ -132,7 +133,7 @@
                             <visible>Library.HasContent(movies)</visible>
                         </item>
                         <item>
-                            <label>$LOCALIZE[20395]</label>
+                            <label>$LOCALIZE[42272]</label>
                             <onclick condition="!Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget,featuredmovies)</onclick>
                             <onclick condition="Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget2,featuredmovies)</onclick>
                             <visible>Library.HasContent(movies)</visible>
@@ -263,7 +264,7 @@
                             <visible>Library.HasContent(tvshows)</visible>
                         </item>
                         <item>
-                            <label>$LOCALIZE[20395]</label>
+                            <label>$LOCALIZE[42273]</label>
                             <onclick condition="!Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget,featuredtv)</onclick>
                             <onclick condition="Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget2,featuredtv)</onclick>
                             <visible>Library.HasContent(tvshows)</visible>
@@ -386,7 +387,7 @@
                             <visible>Library.HasContent(music)</visible>
                         </item>
                         <item>
-                            <label>$LOCALIZE[20395]</label>
+                            <label>$LOCALIZE[42274]</label>
                             <visible>Library.HasContent(music)</visible>
                             <onclick condition="!Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget,featuredmusic)</onclick>
                             <onclick condition="Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget,featuredmusic2)</onclick>
@@ -526,14 +527,12 @@
                             <onclick condition="Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget2,weather)</onclick>
                             <onclick>Dialog.Close(1133)</onclick>
                             <visible>!IsEmpty(Weather.Plugin)</visible>
-                            <visible>[!Substring(Skin.String(ItemToEdit.Widget2),weather) + !Skin.HasSetting(widget2)] | [!Substring(Skin.String(ItemToEdit.Widget),weather) + Skin.HasSetting(widget2)]</visible>
                         </item>
                         <item>
                             <label>$LOCALIZE[31642]</label>
                             <onclick condition="!Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget,weatherpda)</onclick>
                             <onclick condition="Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget2,weatherpda)</onclick>
                             <onclick>Dialog.Close(1133)</onclick>
-                            <visible>[!Substring(Skin.String(ItemToEdit.Widget2),weather) + !Skin.HasSetting(widget2)] | [!Substring(Skin.String(ItemToEdit.Widget),weather) + Skin.HasSetting(widget2)]</visible>
                             <visible>System.HasAddon(weather.fanart.pda.style) + !IsEmpty(Weather.Plugin)</visible>
                         </item>
                         <item>

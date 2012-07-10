@@ -8,15 +8,7 @@
             <visible>![Skin.HasSetting(DisableWidgets) + Window.IsActive(home)]</visible>
             <visible>![IsEmpty(Control.GetLabel(4323)) + Window.IsActive(home) + Substring(Control.GetLabel(4325),custom) + [Container(9000).HasFocus(101) | Container(9000).HasFocus(102) | Container(9000).HasFocus(103) | Container(9000).HasFocus(104) | Container(9000).HasFocus(105) | Container(9000).HasFocus(106) | Container(9000).HasFocus(107) | Container(9000).HasFocus(108) | Container(9000).HasFocus(109)]]</visible>
             <visible>!Substring(Control.GetLabel(4325),weather) + !Substring(Control.GetLabel(4325),featured) + !Window.IsActive(1120) + !Substring(Control.GetLabel(4325),panel) + !IsEmpty(Control.GetLabel(4325))</visible>
-            <animation type="Visible" reversible="true">
-                <effect type="zoom" start="150" end="100" center="960,540" time="500" tween="cubic" easing="out" />
-                <effect type="fade" start="0" end="100" time="300" />
-            </animation>
-            <animation type="Hidden" reversible="true">
-                <effect type="fade" start="100" end="0" time="300" />
-                <effect type="zoom" start="100" end="130" center="960,540" time="300" tween="cubic" easing="in" />
-            </animation>
-            <include>VisibleFadeEffect</include>
+            <include>Animation_Widgets</include>
             <animation effect="slide" time="200" start="0,0" end="0,-38" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow)">Conditional</animation>
             <!--Unfocused widget-->
             <control type="group">
@@ -714,27 +706,9 @@
             <visible>![IsEmpty(Window(Home).Property(NextAired.1.Label)) + Substring(Control.GetLabel(4325),nextairedpanel)]</visible>
             <visible>![IsEmpty(Window(Home).Property(WatchList_Movie.1.Label)) + Substring(Control.GetLabel(4325),inprogressmovies)]</visible>
             <visible>![Skin.HasSetting(DisableWidgets) + Window.IsActive(home)]</visible>
-            <animation type="WindowOpen" reversible="false" condition="Window.Previous(Startup)">
-                <effect type="zoom" start="100,0" end="100,100" center="960,415" delay="500" time="1000" tween="cubic" easing="out" />
-            </animation>
-            <animation type="WindowOpen" reversible="false" condition="!Window.Previous(Startup)">
-                <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" easing="out" />
-                <effect type="fade" start="50" end="100" time="300" />
-            </animation>
-            <animation type="WindowClose" reversible="false">
-                <effect type="fade" start="100" end="0" time="300" />
-                <effect type="zoom" start="100" end="130" center="960,540" time="300" tween="cubic" easing="in" />
-            </animation>
+            <include>Animation_Widgets</include>
             <animation type="Conditional" condition="true">
                 <effect type="fade" start="100" end="90" time="500" tween="cubic" easing="inout" />
-            </animation>
-            <animation type="Visible" reversible="true">
-                <effect type="zoom" start="150" end="100" center="960,540" time="500" tween="cubic" easing="out" />
-                <effect type="fade" start="0" end="100" time="300" />
-            </animation>
-            <animation type="Hidden" reversible="true">
-                <effect type="fade" start="100" end="0" time="300" />
-                <effect type="zoom" start="100" end="130" center="960,540" time="300" tween="cubic" easing="in" />
             </animation>
             <control type="group">
                 <posx>0</posx>
@@ -868,7 +842,7 @@
                                 <width>319</width>
                                 <height>319</height>
                                 <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                                <texture border="5">views/addonwall_select.png</texture>
+                                <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                                 <visible>Control.HasFocus(6019)</visible>
                             </control>
                         </focusedlayout>
@@ -1045,7 +1019,7 @@
                                 <width>319</width>
                                 <height>319</height>
                                 <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                                <texture border="5">views/addonwall_select.png</texture>
+                                <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                                 <visible>Control.HasFocus(6020)</visible>
                             </control>
                         </focusedlayout>
@@ -1405,7 +1379,7 @@
                                 <height>319</height>
                                 <aspectratio>stretch</aspectratio>
                                 <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                                <texture border="5">views/addonwall_select.png</texture>
+                                <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                                 <visible>Control.HasFocus(6010)</visible>
                             </control>
                         </focusedlayout>
@@ -1888,7 +1862,7 @@
                     <width>624</width>
                     <height>350</height>
                     <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                    <texture border="5">views/addonwall_select.png</texture>
+                    <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                     <visible>Control.HasFocus(6010) + SubString(Control.GetLabel(4325),featured)</visible>
                 </control>
                 <control type="image">
@@ -1897,7 +1871,7 @@
                     <width>350</width>
                     <height>350</height>
                     <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                    <texture border="5">views/addonwall_select.png</texture>
+                    <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                     <visible>Control.HasFocus(6011) | Control.HasFocus(6002)</visible>
                     <animation effect="fade" start="100" end="50" time="1500" condition="Control.HasFocus(6002)" pulse="true">Conditional</animation>
                 </control>
@@ -1907,7 +1881,7 @@
                     <width>624</width>
                     <height>350</height>
                     <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                    <texture border="5">views/addonwall_select.png</texture>
+                    <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                     <visible>Control.HasFocus(6012)</visible>
                 </control>
                 <control type="image">
@@ -5554,7 +5528,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.1.Fanart)]</property>
             <property name="Artist">$INFO[Window(Home).Property(LatestMusicVideo.1.Artist)]</property>
             <property name="Path">$INFO[Window(Home).Property(LatestMusicVideo.1.Path)]</property>
-            <visible>Substring(Control.GetLabel(4325),recentmusicvideos) + !SubString(Control.GetLabel(4325),custom)</visible>
+            <visible>Substring(Control.GetLabel(4325),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(LatestMusicVideo.2.Title)]</label>
@@ -5567,7 +5541,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.2.Fanart)]</property>
             <property name="Artist">$INFO[Window(Home).Property(LatestMusicVideo.2.Artist)]</property>
             <property name="Path">$INFO[Window(Home).Property(LatestMusicVideo.2.Path)]</property>
-            <visible>Substring(Control.GetLabel(4325),recentmusicvideos) + !SubString(Control.GetLabel(4325),custom)</visible>
+            <visible>Substring(Control.GetLabel(4325),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(LatestMusicVideo.3.Title)]</label>
@@ -5580,7 +5554,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.3.Fanart)]</property>
             <property name="Artist">$INFO[Window(Home).Property(LatestMusicVideo.3.Artist)]</property>
             <property name="Path">$INFO[Window(Home).Property(LatestMusicVideo.3.Path)]</property>
-            <visible>Substring(Control.GetLabel(4325),recentmusicvideos) + !SubString(Control.GetLabel(4325),custom)</visible>
+            <visible>Substring(Control.GetLabel(4325),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(LatestMusicVideo.4.Title)]</label>
@@ -5593,7 +5567,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.4.Fanart)]</property>
             <property name="Artist">$INFO[Window(Home).Property(LatestMusicVideo.4.Artist)]</property>
             <property name="Path">$INFO[Window(Home).Property(LatestMusicVideo.4.Path)]</property>
-            <visible>Substring(Control.GetLabel(4325),recentmusicvideos) + !SubString(Control.GetLabel(4325),custom)</visible>
+            <visible>Substring(Control.GetLabel(4325),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(LatestMusicVideo.5.Title)]</label>
@@ -5606,7 +5580,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.5.Fanart)]</property>
             <property name="Artist">$INFO[Window(Home).Property(LatestMusicVideo.5.Artist)]</property>
             <property name="Path">$INFO[Window(Home).Property(LatestMusicVideo.5.Path)]</property>
-            <visible>Substring(Control.GetLabel(4325),recentmusicvideos) + !SubString(Control.GetLabel(4325),custom)</visible>
+            <visible>Substring(Control.GetLabel(4325),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(LatestMusicVideo.6.Title)]</label>
@@ -5619,7 +5593,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.6.Fanart)]</property>
             <property name="Artist">$INFO[Window(Home).Property(LatestMusicVideo.6.Artist)]</property>
             <property name="Path">$INFO[Window(Home).Property(LatestMusicVideo.6.Path)]</property>
-            <visible>Substring(Control.GetLabel(4325),recentmusicvideos) + !SubString(Control.GetLabel(4325),custom)</visible>
+            <visible>Substring(Control.GetLabel(4325),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(LatestMusicVideo.7.Title)]</label>
@@ -5632,7 +5606,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.7.Fanart)]</property>
             <property name="Artist">$INFO[Window(Home).Property(LatestMusicVideo.7.Artist)]</property>
             <property name="Path">$INFO[Window(Home).Property(LatestMusicVideo.7.Path)]</property>
-            <visible>Substring(Control.GetLabel(4325),recentmusicvideos) + !SubString(Control.GetLabel(4325),custom)</visible>
+            <visible>Substring(Control.GetLabel(4325),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(LatestMusicVideo.8.Title)]</label>
@@ -5645,7 +5619,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.8.Fanart)]</property>
             <property name="Artist">$INFO[Window(Home).Property(LatestMusicVideo.8.Artist)]</property>
             <property name="Path">$INFO[Window(Home).Property(LatestMusicVideo.8.Path)]</property>
-            <visible>Substring(Control.GetLabel(4325),recentmusicvideos) + !SubString(Control.GetLabel(4325),custom)</visible>
+            <visible>Substring(Control.GetLabel(4325),recentmusicvideos)</visible>
         </item>
     </include>
     <include name="MusicvideoRandomItems2">
@@ -6832,7 +6806,7 @@
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.9.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.9.Fanart)]</property>
             <onclick>ActivateWindow(MusicLibrary,$INFO[Window(Home).Property(RandomArtist.9.Path)])</onclick>
-            <visible>Substring(Control.GetLabel(4325),randomartists) + !SubString(Control.GetLabel(4325),custom)</visible>
+            <visible>Substring(Control.GetLabel(4325),randomartists)</visible>
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
@@ -6843,7 +6817,7 @@
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.10.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.10.Fanart)]</property>
             <onclick>ActivateWindow(MusicLibrary,$INFO[Window(Home).Property(RandomArtist.10.Path)])</onclick>
-            <visible>Substring(Control.GetLabel(4325),randomartists) + !SubString(Control.GetLabel(4325),custom)</visible>
+            <visible>Substring(Control.GetLabel(4325),randomartists)</visible>
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
@@ -6854,7 +6828,7 @@
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.11.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.11.Fanart)]</property>
             <onclick>ActivateWindow(MusicLibrary,$INFO[Window(Home).Property(RandomArtist.11.Path)])</onclick>
-            <visible>Substring(Control.GetLabel(4325),randomartists) + !SubString(Control.GetLabel(4325),custom)</visible>
+            <visible>Substring(Control.GetLabel(4325),randomartists)</visible>
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
@@ -6865,7 +6839,7 @@
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.12.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.12.Fanart)]</property>
             <onclick>ActivateWindow(MusicLibrary,$INFO[Window(Home).Property(RandomArtist.12.Path)])</onclick>
-            <visible>Substring(Control.GetLabel(4325),randomartists) + !SubString(Control.GetLabel(4325),custom)</visible>
+            <visible>Substring(Control.GetLabel(4325),randomartists)</visible>
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
@@ -6876,7 +6850,7 @@
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.13.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.13.Fanart)]</property>
             <onclick>ActivateWindow(MusicLibrary,$INFO[Window(Home).Property(RandomArtist.13.Path)])</onclick>
-            <visible>Substring(Control.GetLabel(4325),randomartists) + !SubString(Control.GetLabel(4325),custom)</visible>
+            <visible>Substring(Control.GetLabel(4325),randomartists)</visible>
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
@@ -6887,7 +6861,7 @@
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.14.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.14.Fanart)]</property>
             <onclick>ActivateWindow(MusicLibrary,$INFO[Window(Home).Property(RandomArtist.14.Path)])</onclick>
-            <visible>Substring(Control.GetLabel(4325),randomartists) + !SubString(Control.GetLabel(4325),custom)</visible>
+            <visible>Substring(Control.GetLabel(4325),randomartists)</visible>
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
@@ -6898,7 +6872,7 @@
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.15.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.15.Fanart)]</property>
             <onclick>ActivateWindow(MusicLibrary,$INFO[Window(Home).Property(RandomArtist.15.Path)])</onclick>
-            <visible>Substring(Control.GetLabel(4325),randomartists) + !SubString(Control.GetLabel(4325),custom)</visible>
+            <visible>Substring(Control.GetLabel(4325),randomartists)</visible>
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
@@ -6909,7 +6883,7 @@
             <property name="Path">$INFO[Window(Home).Property(RandomArtist.16.Path)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.16.Fanart)]</property>
             <onclick>ActivateWindow(MusicLibrary,$INFO[Window(Home).Property(RandomArtist.16.Path)])</onclick>
-            <visible>Substring(Control.GetLabel(4325),randomartists) + !SubString(Control.GetLabel(4325),custom)</visible>
+            <visible>Substring(Control.GetLabel(4325),randomartists)</visible>
         </item>
     </include>
     <include name="WatchListTVItems2">
@@ -7425,7 +7399,7 @@
                         <width>228</width>
                         <height>350</height>
                         <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
                 </focusedlayout>
@@ -7513,7 +7487,7 @@
                         <width>319</width>
                         <height>319</height>
                         <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
                 </focusedlayout>
@@ -7658,7 +7632,7 @@
                         <width>399</width>
                         <height>350</height>
                         <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
                 </focusedlayout>
@@ -7792,7 +7766,7 @@
                         <height>319</height>
                         <aspectratio>stretch</aspectratio>
                         <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
                 </focusedlayout>
@@ -7954,7 +7928,7 @@
                         <width>798</width>
                         <height>350</height>
                         <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
                 </focusedlayout>
@@ -8126,7 +8100,7 @@
                         <width>798</width>
                         <height>350</height>
                         <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
                 </focusedlayout>

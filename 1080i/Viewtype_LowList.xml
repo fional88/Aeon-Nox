@@ -550,7 +550,7 @@
                 <visible>Player.HasVideo</visible>
                 <animation effect="slide" tween="cubic" easing="inout" time="1300" start="-1200,0" end="0,0" delay="1000">Visible</animation>
                 <animation effect="slide" tween="cubic" easing="inout" time="1300" start="-1200,0" end="0,0" delay="1000">WindowOpen</animation>
-                <animation effect="slide" start="0,0" end="0,-165" time="150" condition="Skin.HasSetting(nohighlist) | Control.HasFocus(7002)">Conditional</animation>
+                <animation effect="slide" start="0,0" end="0,-165" time="150" condition="!Skin.HasSetting(nohighlist) | Control.HasFocus(7002)">Conditional</animation>
                 <include>Animation_CommonFade</include>
                 <control type="image">
                     <description>gradient</description>
@@ -628,7 +628,7 @@
                         <width>459</width>
                         <height>720</height>
                         <aspectratio scalediffuse="false">stretch</aspectratio>
-                        <texture background="true" fallback="thumbs/boxes/default_case.png">thumbs/boxes/$VAR[CaseLabelVar]/$INFO[ListItem.VideoResolution]p.png</texture>
+                        <texture background="true" fallback="thumbs/boxes/default_case.png">thumbs/boxes/$VAR[CaseLabelVar]/$VAR[GlobalCaseVar]</texture>
                         <bordertexture border="2">thumbs/boxes/case_border.png</bordertexture>
                         <fadetime>400</fadetime>
                     </control>

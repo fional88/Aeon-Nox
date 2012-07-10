@@ -422,7 +422,7 @@
     <string id="42014">Click on menu items to see available options</string>
     <string id="42015">Play some Music to get live Preview of Settings</string>
     <string id="42016">Needs "Additional Artist Info" activated in Artistslideshow Plugin</string>
-    <string id="42017">Welcome to Aeon Nox 3.0</string>
+    <string id="42017">Welcome to Aeon Nox 3.5</string>
     <string id="42018">Visit XBMC.org Forums for support</string>
 
 
@@ -509,7 +509,7 @@
     <string id="42273">Mixed TV</string>
     <string id="42274">Mixed Music</string>
     <string id="42275">No Content for this Area</string>
-
+    <string id="42276">Do you want to see some videos introducing [CR]Aeon Nox 3.5 and its new features?</string>
 
 
 </strings>

@@ -18,7 +18,7 @@
             <texture>common/black.png</texture>
             <animation effect="fade" start="0" end="100" time="700">WindowOpen</animation>
             <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
-            <visible>Substring(Window(home).Property(CustomYesNoDialog),Icon)</visible>
+            <visible>Substring(Window(home).Property(CustomYesNoDialog),Icon) | StringCompare(Window(home).Property(CustomYesNoDialog),Setup3.5)</visible>
         </control>
         <control type="group">
             <animation effect="slide" start="0,0" end="0,-338" time="0" condition="Window.IsActive(1124)">Conditional</animation>
@@ -51,7 +51,7 @@
                     <height>60</height>
                     <texture>osd/osd_settings_buttonnf.png</texture>
                 </control>
-                <control type="label" id="1">
+                <control type="label">
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>780</width>
@@ -61,7 +61,9 @@
                     <aligny>center</aligny>
                     <font>Font_Reg18</font>
                     <scroll>true</scroll>
+                    <label>42017</label>
                     <textoffsetx>45</textoffsetx>
+                    <visible>StringCompare(Window(home).Property(CustomYesNoDialog),Setup3.5)</visible>
                 </control>
                 <control type="label" id="4">
                     <posx>0</posx>
@@ -173,6 +175,7 @@
                     <align>center</align>
                     <textoffsetx>30</textoffsetx>
                     <textoffsety />
+                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Setup3.5)">ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=Aeon Nox Git 3.something How-to/Demo,return)</onclick>
                     <!-- iconpanel -->
                     <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon1)">Skin.Reset(IconPanelItem1.Label)</onclick>
                     <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon1)">Skin.Reset(IconPanelItem1.Icon)</onclick>
@@ -297,7 +300,7 @@
                     <align>center</align>
                     <textoffsetx>30</textoffsetx>
                     <textoffsety />
-                    <visible>!Substring(Window(Home).Property(CustomYesNoDialog),Icon)</visible>
+                    <visible>!Substring(Window(Home).Property(CustomYesNoDialog),Icon) + !Substring(Window(Home).Property(CustomYesNoDialog),Setup3.5)</visible>
                     <!-- widget style -->
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmovies)">Skin.SetString(ItemToEdit.Widget,recentmoviespanel2)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommovies)">Skin.SetString(ItemToEdit.Widget,randommoviespanel2)</onfocus>

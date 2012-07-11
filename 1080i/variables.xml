@@ -72,7 +72,7 @@
         <value condition="[Window.IsActive(musiclibrary) | Window.IsActive(musicosd) | Window.IsActive(musicfiles) | Window.IsActive(visualisation)] + !IsEmpty(Skin.String(diffuse_music))">$INFO[Skin.String(diffuse_music)]</value>
         <value condition="[Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)] + !IsEmpty(Skin.String(diffuse_programs))">$INFO[Skin.String(diffuse_programs)]</value>
         <value condition="Window.IsActive(pictures) + !IsEmpty(Skin.String(diffuse_pictures))">$INFO[Skin.String(diffuse_pictures)]</value>
-        <value condition="[Window.IsActive(startup) | Window.IsActive(home) | Window.IsActive(1124)] + !IsEmpty(Skin.String(diffuse_mainmenu))">$INFO[Skin.String(diffuse_mainmenu)]</value>
+        <value condition="[Window.IsActive(startup) | Window.IsActive(home) | Window.IsActive(1124) | Window.IsActive(1158)] + !IsEmpty(Skin.String(diffuse_mainmenu))">$INFO[Skin.String(diffuse_mainmenu)]</value>
         <value condition="Window.IsActive(addonbrowser) + !IsEmpty(Skin.String(diffuse_addons))">$INFO[Skin.String(diffuse_addons)]</value>
         <value condition="Window.IsActive(musicplaylist) + !IsEmpty(Skin.String(diffuse_musicplaylist))">$INFO[Skin.String(diffuse_musicplaylist)]</value>
         <value condition="Window.IsActive(videoplaylist) + !IsEmpty(Skin.String(diffuse_videoplaylist))">$INFO[Skin.String(diffuse_videoplaylist)]</value>
@@ -80,7 +80,7 @@
         <value condition="[Window.IsActive(1115) | Window.IsActive(script-globalsearch-main.xml)] + !IsEmpty(Skin.String(diffuse_featured))">$INFO[Skin.String(diffuse_featured)]</value>
         <value condition="[Window.IsActive(1111) | Window.IsActive(settings) | Window.IsActive(systeminfo) | Window.IsActive(picturessettings) | Window.IsActive(programssettings) | Window.IsActive(weathersettings) | Window.IsActive(musicsettings) | Window.IsActive(systemsettings) | Window.IsActive(videossettings) | Window.IsActive(networksettings) | Window.IsActive(appearancesettings) | Window.IsActive(profiles) | Window.IsActive(filemanager) | Window.IsActive(10020)] + !IsEmpty(Skin.String(diffuse_settings))">$INFO[Skin.String(diffuse_settings)]</value>
         <value condition="Window.IsActive(600) + !IsEmpty(Skin.String(diffuse_PVR))">$INFO[Skin.String(diffuse_PVR)]</value>
-        <value>FFFFFFFF</value>
+        <value>FF6db9e5</value>
     </variable>
     <variable name="ColorDiffuseVar">
         <value condition="Skin.HasSetting(randomcolor)">$VAR[DayTimeColorVar]</value>
@@ -373,6 +373,10 @@
         <value condition="Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(Episodes)">special://skin/backgrounds/fallback_tvshows.jpg</value>
         <value condition="Container.Content(MusicVideos) | Container.Content(Artists) | Container.Content(Albums)">special://skin/backgrounds/music/</value>
         <value condition="Container.Content(addons)">special://skin/backgrounds/addons/</value>
+        <value>special://skin/backgrounds/videos/</value>
+    </variable>
+    <variable name="NowPlayingBackGroundVar">
+        <value condition="ControlGroup(450).HasFocus">special://skin/backgrounds/music/</value>
         <value>special://skin/backgrounds/videos/</value>
     </variable>
     <variable name="BigFanListVar">
@@ -684,6 +688,9 @@
         <value condition="Substring(Container(9000).ListItem.Property(Widget),nextaired)">$LOCALIZE[42219]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),babe)">$LOCALIZE[42220]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),google)">$LOCALIZE[42221]</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget),rsspanel1)">$LOCALIZE[42280] 1</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget),rsspanel2)">$LOCALIZE[42280] 2</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget),rsspanel3)">$LOCALIZE[42280] 3</value>
     </variable>
     <variable name="BGColorTextureVar">
         <value condition="[Window.IsActive(1122) | Window.IsActive(1123)]">$INFO[Skin.String(ItemToEdit.Color),common/,.png]</value>
@@ -713,6 +720,9 @@
         <value condition="Substring(Skin.String(ItemToEdit.Widget),nextaired)">$LOCALIZE[42219]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget),babe)">$LOCALIZE[42220]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget),google)">$LOCALIZE[42221]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),rsspanel1)">$LOCALIZE[42280] 1</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),rsspanel2)">$LOCALIZE[42280] 2</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),rsspanel3)">$LOCALIZE[42280] 3</value>
         <value>$LOCALIZE[16018]</value>
     </variable>
     <variable name="Widget2TypeLabelVar">
@@ -739,6 +749,9 @@
         <value condition="Substring(Container(9000).ListItem.Property(Widget2),nextaired)">$LOCALIZE[42219]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget2),babe)">$LOCALIZE[42220]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget2),google)">$LOCALIZE[42221]</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget2),rsspanel1)">$LOCALIZE[42280] 1</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget2),rsspanel2)">$LOCALIZE[42280] 2</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget2),rsspanel3)">$LOCALIZE[42280] 3</value>
     </variable>
     <variable name="Widget2TypeLabelVar1124">
         <value condition="SubString(Skin.String(ItemToEdit.Widget2),recentmovies)">$LOCALIZE[31323]</value>
@@ -761,6 +774,12 @@
         <value condition="Substring(Skin.String(ItemToEdit.Widget2),recentpics)">$LOCALIZE[42215]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget2),concerts)">$LOCALIZE[42218]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget2),randomartists)">$LOCALIZE[42217]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),nextaired)">$LOCALIZE[42219]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),babe)">$LOCALIZE[42220]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),google)">$LOCALIZE[42221]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),rsspanel1)">$LOCALIZE[42280] 1</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),rsspanel2)">$LOCALIZE[42280] 2</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),rsspanel3)">$LOCALIZE[42280] 3</value>
         <value>$LOCALIZE[16018]</value>
     </variable>
     <variable name="PanelWidgetLabel1Var">

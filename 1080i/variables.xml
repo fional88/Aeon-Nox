@@ -119,20 +119,22 @@
         <value>$LOCALIZE[13009]</value>
     </variable>
     <variable name="SpotColorVar">
-        <value condition="!Skin.HasSetting(randomcolor) + [Window.IsActive(1128) | Window.IsActive(1138)] + StringCompare(Skin.String(diffuse_color),FFFFFFFF)">diffuse_white</value>
-        <value condition="!Skin.HasSetting(randomcolor) + [Window.IsActive(1128) | Window.IsActive(1138)] + !StringCompare(Skin.String(diffuse_color),FFFFFFFF)">$VAR[SelectedColorVar]</value>
-        <value condition="!Skin.HasSetting(randomcolor) + [Window.IsActive(videos) | Window.IsActive(script-NextAired-TVGuide.xml)] + StringCompare(Skin.String(diffuse_videolibrary),FFFFFFFF)">diffuse_white</value>
-        <value condition="!Skin.HasSetting(randomcolor) + [Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)] + StringCompare(Skin.String(diffuse_music),FFFFFFFF)">diffuse_white</value>
-        <value condition="!Skin.HasSetting(randomcolor) + [Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)] + StringCompare(Skin.String(diffuse_programs),FFFFFFFF)">diffuse_white</value>
-        <value condition="!Skin.HasSetting(randomcolor) + Window.IsActive(pictures) + StringCompare(Skin.String(diffuse_pictures),FFFFFFFF)">diffuse_white</value>
-        <value condition="!Skin.HasSetting(randomcolor) + Window.IsActive(addonbrowser) + StringCompare(Skin.String(diffuse_addons),FFFFFFFF)">diffuse_white</value>
-        <value condition="!Skin.HasSetting(randomcolor) + Window.IsActive(musicplaylist) + StringCompare(Skin.String(diffuse_musicplaylist),FFFFFFFF)">diffuse_white</value>
-        <value condition="!Skin.HasSetting(randomcolor) + Window.IsActive(videoplaylist) + StringCompare(Skin.String(diffuse_videoplaylist),FFFFFFFF)">diffuse_white</value>
-        <value condition="!Skin.HasSetting(randomcolor) + Window.IsActive(weather) + StringCompare(Skin.String(diffuse_weather),FFFFFFFF)">diffuse_white</value>
-        <value condition="!Skin.HasSetting(randomcolor) + [Window.IsActive(1115) | Window.IsActive(script-globalsearch-main.xml)] + StringCompare(Skin.String(diffuse_featured),FFFFFFFF)">diffuse_white</value>
-        <value condition="!Skin.HasSetting(randomcolor) + [Window.IsActive(1111) | Window.IsActive(settings) | Window.IsActive(picturessettings) | Window.IsActive(programssettings) | Window.IsActive(weathersettings) | Window.IsActive(musicsettings) | Window.IsActive(systemsettings) | Window.IsActive(videossettings) | Window.IsActive(networksettings) | Window.IsActive(appearancesettings) | Window.IsActive(profiles) | Window.IsActive(filemanager)] + StringCompare(Skin.String(diffuse_settings),FFFFFFFF)">diffuse_white</value>
-        <value condition="!Skin.HasSetting(randomcolor) + Window.IsActive(600) + StringCompare(Skin.String(diffuse_PVR),FFFFFFFF)">diffuse_white</value>
-        <value>$VAR[SelectedColorVar]</value>
+        <value condition="Skin.HasSetting(randomcolor)">$VAR[DayTimeColorVar]</value>
+        <value condition="[Window.IsActive(1128) | Window.IsActive(1138)] + StringCompare(Skin.String(diffuse_color),FFFFFFFF)">diffuse_white</value>
+        <value condition="[Window.IsActive(1128) | Window.IsActive(1138)] + !StringCompare(Skin.String(diffuse_color),FFFFFFFF)">$VAR[SelectedColorVar]</value>
+        <value condition="[Window.IsActive(fullscreeninfo) | Window.IsActive(fullscreenvideo) | Window.IsActive(videoosd) | Window.IsActive(videos) | Window.IsActive(script-NextAired-TVGuide.xml) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)| Window.IsActive(videobookmarks)] + StringCompare(Skin.String(diffuse_videolibrary),FFFFFFFF)">diffuse_white</value>
+        <value condition="[Window.IsActive(musiclibrary) | Window.IsActive(musicosd) | Window.IsActive(musicfiles) | Window.IsActive(visualisation)] + StringCompare(Skin.String(diffuse_music),FFFFFFFF)">diffuse_white</value>
+        <value condition="[Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)] + StringCompare(Skin.String(diffuse_programs),FFFFFFFF)">diffuse_white</value>
+        <value condition="Window.IsActive(pictures) + StringCompare(Skin.String(diffuse_pictures),FFFFFFFF)">diffuse_white</value>
+        <value condition="[Window.IsActive(startup) | Window.IsActive(home) | Window.IsActive(1124) | Window.IsActive(1158)] + StringCompare(Skin.String(diffuse_mainmenu),FFFFFFFF)">diffuse_white</value>
+        <value condition="Window.IsActive(addonbrowser) + StringCompare(Skin.String(diffuse_addons),FFFFFFFF)">diffuse_white</value>
+        <value condition="Window.IsActive(musicplaylist) + StringCompare(Skin.String(diffuse_musicplaylist),FFFFFFFF)">diffuse_white</value>
+        <value condition="Window.IsActive(videoplaylist) + StringCompare(Skin.String(diffuse_videoplaylist),FFFFFFFF)">diffuse_white</value>
+        <value condition="Window.IsActive(weather) + StringCompare(Skin.String(diffuse_weather),FFFFFFFF)">diffuse_white</value>
+        <value condition="[Window.IsActive(1115) | Window.IsActive(script-globalsearch-main.xml)] + StringCompare(Skin.String(diffuse_featured),FFFFFFFF)">diffuse_white</value>
+        <value condition="[Window.IsActive(1111) | Window.IsActive(settings) | Window.IsActive(picturessettings) | Window.IsActive(programssettings) | Window.IsActive(weathersettings) | Window.IsActive(musicsettings) | Window.IsActive(systemsettings) | Window.IsActive(videossettings) | Window.IsActive(networksettings) | Window.IsActive(appearancesettings) | Window.IsActive(profiles) | Window.IsActive(filemanager)] + StringCompare(Skin.String(diffuse_settings),FFFFFFFF)">diffuse_white</value>
+        <value condition="Window.IsActive(600) + StringCompare(Skin.String(diffuse_PVR),FFFFFFFF)">diffuse_white</value>
+        <value>$VAR[AreaColorVar]</value>
     </variable>
     <variable name="TitleColorVar">
         <value condition="![Window.IsActive(home) | Window.IsActive(1124)] + Skin.HasSetting(colortext)">$VAR[ColorDiffuseVar]</value>
@@ -682,15 +684,16 @@
         <value condition="Substring(Container(9000).ListItem.Property(Widget),randommusicvideo)">$LOCALIZE[31091]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),actor)">$LOCALIZE[31336]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),watchlistmusic)">$LOCALIZE[31326]</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget),concerts)">$LOCALIZE[42218]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),randompics)">$LOCALIZE[42216]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),recentpics)">$LOCALIZE[42215]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),randomartists)">$LOCALIZE[42217]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),nextaired)">$LOCALIZE[42219]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),babe)">$LOCALIZE[42220]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),google)">$LOCALIZE[42221]</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget),rsspanel1)">$LOCALIZE[42280] 1</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget),rsspanel2)">$LOCALIZE[42280] 2</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget),rsspanel3)">$LOCALIZE[42280] 3</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget),rss1)">$LOCALIZE[42280] 1</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget),rss2)">$LOCALIZE[42280] 2</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget),rss3)">$LOCALIZE[42280] 3</value>
     </variable>
     <variable name="BGColorTextureVar">
         <value condition="[Window.IsActive(1122) | Window.IsActive(1123)]">$INFO[Skin.String(ItemToEdit.Color),common/,.png]</value>
@@ -720,9 +723,12 @@
         <value condition="Substring(Skin.String(ItemToEdit.Widget),nextaired)">$LOCALIZE[42219]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget),babe)">$LOCALIZE[42220]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget),google)">$LOCALIZE[42221]</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget),rsspanel1)">$LOCALIZE[42280] 1</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget),rsspanel2)">$LOCALIZE[42280] 2</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget),rsspanel3)">$LOCALIZE[42280] 3</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),rss1)">$LOCALIZE[42280] 1</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),rss2)">$LOCALIZE[42280] 2</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),rss3)">$LOCALIZE[42280] 3</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),featuredmusic)">$LOCALIZE[42274]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),featuredtv)">$LOCALIZE[42273]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),featuredmovies)">$LOCALIZE[42272]</value>
         <value>$LOCALIZE[16018]</value>
     </variable>
     <variable name="Widget2TypeLabelVar">
@@ -749,9 +755,9 @@
         <value condition="Substring(Container(9000).ListItem.Property(Widget2),nextaired)">$LOCALIZE[42219]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget2),babe)">$LOCALIZE[42220]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget2),google)">$LOCALIZE[42221]</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget2),rsspanel1)">$LOCALIZE[42280] 1</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget2),rsspanel2)">$LOCALIZE[42280] 2</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget2),rsspanel3)">$LOCALIZE[42280] 3</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget2),rss1)">$LOCALIZE[42280] 1</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget2),rss2)">$LOCALIZE[42280] 2</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget2),rss3)">$LOCALIZE[42280] 3</value>
     </variable>
     <variable name="Widget2TypeLabelVar1124">
         <value condition="SubString(Skin.String(ItemToEdit.Widget2),recentmovies)">$LOCALIZE[31323]</value>
@@ -777,9 +783,12 @@
         <value condition="Substring(Skin.String(ItemToEdit.Widget2),nextaired)">$LOCALIZE[42219]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget2),babe)">$LOCALIZE[42220]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget2),google)">$LOCALIZE[42221]</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget2),rsspanel1)">$LOCALIZE[42280] 1</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget2),rsspanel2)">$LOCALIZE[42280] 2</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget2),rsspanel3)">$LOCALIZE[42280] 3</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),rss1)">$LOCALIZE[42280] 1</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),rss2)">$LOCALIZE[42280] 2</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),rss3)">$LOCALIZE[42280] 3</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),featuredmusic)">$LOCALIZE[42274]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),featuredtv)">$LOCALIZE[42273]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),featuredmovies)">$LOCALIZE[42272]</value>
         <value>$LOCALIZE[16018]</value>
     </variable>
     <variable name="PanelWidgetLabel1Var">
@@ -1549,7 +1558,7 @@
         <value condition="Container.Content(episodes) + Skin.HasSetting(showcaseinfoonep) + Skin.HasSetting(infopaneautoep)">$LOCALIZE[31194]</value>
         <value condition="Container.Content(episodes) + Skin.HasSetting(showcaseinfoonep) + !Skin.HasSetting(infopaneautoep)">$LOCALIZE[31429]</value>
         <value condition="[Container.Content(tvshows) + !Stringcompare(Skin.String(actualViewtype),banners)] | Container.Content(seasons) | Container.Content(episodes)">$LOCALIZE[413]</value>
-        <value condition="[Container.Content(tvshows) + Stringcompare(Skin.String(actualViewtype),banners)] ">$LOCALIZE[474]</value>
+        <value condition="[Container.Content(tvshows) + Stringcompare(Skin.String(actualViewtype),banners)]">$LOCALIZE[474]</value>
         <value condition="[Container.Content(movies) | Container.Content(musicvideos)] + Skin.HasSetting(showcaseinfoon) + Skin.HasSetting(infopaneauto)">$LOCALIZE[31194]</value>
         <value condition="[Container.Content(movies) | Container.Content(musicvideos)] + Skin.HasSetting(showcaseinfoon) + !Skin.HasSetting(infopaneauto)">$LOCALIZE[31429]</value>
         <value condition="Window.IsActive(musiclibrary) + Skin.HasSetting(infopanelmusic) + Skin.HasSetting(infopaneautomusic)">$LOCALIZE[31194]</value>

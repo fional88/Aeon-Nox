@@ -6,7 +6,6 @@
             <posy>668</posy>
             <width>1920</width>
             <height>825</height>
-            <visible>![Skin.HasSetting(DisableWidgets) + Window.IsActive(home)]</visible>
             <visible>[Substring(Control.GetLabel(4321),featured) | Substring(Control.GetLabel(4321),panel)] + !Window.IsActive(1120)</visible>
             <include>Animation_Widgets</include>
             <animation type="Conditional" condition="true">
@@ -17,14 +16,6 @@
             <animation effect="slide" start="0,0" end="0,-31" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow) + !Skin.HasSetting(DisableRSS)">Conditional</animation>
             <control type="group">
                 <posx>0</posx>
-                <animation type="Conditional" condition="!IsEmpty(Window(Home).Property(PanelWidgetInfo))" reversible="false">
-                    <include condition="Skin.HasSetting(lowermainmenu)">Animation_PanelFlipUp2</include>
-                    <include condition="!Skin.HasSetting(lowermainmenu)">Animation_PanelFlipDown2</include>
-                </animation>
-                <animation type="Conditional" condition="IsEmpty(Window(Home).Property(PanelWidgetInfo))" reversible="false">
-                    <include condition="Skin.HasSetting(lowermainmenu)">Animation_PanelFlipDown1</include>
-                    <include condition="!Skin.HasSetting(lowermainmenu)">Animation_PanelFlipUp1</include>
-                </animation>
                 <control type="image">
                     <posx>0</posx>
                     <posy>0</posy>
@@ -81,16 +72,6 @@
                                     <label>$INFO[ListItem.Label]</label>
                                     <textoffsetx>15</textoffsetx>
                                 </control>
-                                <control type="image">
-                                    <posx>5</posx>
-                                    <posy>5</posy>
-                                    <width>309</width>
-                                    <height>309</height>
-                                    <colordiffuse>99FFFFFF</colordiffuse>
-                                    <texture>common/black.png</texture>
-                                    <include>Animation_VisibleChange400</include>
-                                    <visible>Control.HasFocus(5019)</visible>
-                                </control>
                             </control>
                         </itemlayout>
                         <focusedlayout width="319" height="360">
@@ -117,21 +98,6 @@
                                     <shadowcolor>-</shadowcolor>
                                     <label>$INFO[ListItem.Label]</label>
                                     <textoffsetx>15</textoffsetx>
-                                    <visible>!Control.HasFocus(5019)</visible>
-                                </control>
-                                <control type="label">
-                                    <posx>159</posx>
-                                    <posy>309</posy>
-                                    <width>309</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <aligny>center</aligny>
-                                    <font>Font_Condensed20</font>
-                                    <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                                    <shadowcolor>-</shadowcolor>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <textoffsetx>15</textoffsetx>
-                                    <visible>Control.HasFocus(5019)</visible>
                                 </control>
                             </control>
                         </focusedlayout>
@@ -200,7 +166,6 @@
                         <aligny>center</aligny>
                         <textoffsetx>15</textoffsetx>
                         <label>$LOCALIZE[31069] 1</label>
-                        <visible>!Window.IsActive(home)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -226,16 +191,6 @@
                                     <texture background="true">DefaultAddon.png</texture>
                                     <aspectratio scalediffuse="false">scale</aspectratio>
                                     <info>ListItem.Icon</info>
-                                </control>
-                                <control type="image">
-                                    <posx>5</posx>
-                                    <posy>5</posy>
-                                    <width>309</width>
-                                    <height>309</height>
-                                    <colordiffuse>99FFFFFF</colordiffuse>
-                                    <texture>common/black.png</texture>
-                                    <include>Animation_VisibleChange400</include>
-                                    <visible>Control.HasFocus(5020)</visible>
                                 </control>
                                 <control type="label">
                                     <posx>159</posx>
@@ -276,21 +231,6 @@
                                     <shadowcolor>-</shadowcolor>
                                     <label>$INFO[ListItem.Label]</label>
                                     <textoffsetx>15</textoffsetx>
-                                    <visible>!Control.HasFocus(5020)</visible>
-                                </control>
-                                <control type="label">
-                                    <posx>159</posx>
-                                    <posy>309</posy>
-                                    <width>309</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <aligny>center</aligny>
-                                    <font>Font_Condensed20</font>
-                                    <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                                    <shadowcolor>-</shadowcolor>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <textoffsetx>15</textoffsetx>
-                                    <visible>Control.HasFocus(5020)</visible>
                                 </control>
                             </control>
                         </focusedlayout>
@@ -359,7 +299,6 @@
                         <aligny>center</aligny>
                         <textoffsetx>15</textoffsetx>
                         <label>$LOCALIZE[31069] 2</label>
-                        <visible>!Window.IsActive(home)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -430,17 +369,7 @@
                                 <posy>0</posy>
                                 <width>399</width>
                                 <height>110</height>
-                                <visible>!Control.HasFocus(5010)</visible>
                                 <texture border="3">button-nofocus.png</texture>
-                            </control>
-                            <control type="image">
-                                <posx>0</posx>
-                                <posy>0</posy>
-                                <width>399</width>
-                                <height>110</height>
-                                <visible>Control.HasFocus(5010)</visible>
-                                <texture>views/tripanel/listselect_fo.png</texture>
-                                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                             </control>
                             <control type="label">
                                 <posx>10</posx>
@@ -633,106 +562,7 @@
                 <control type="group">
                     <visible>Substring(Control.GetLabel(4321),googlepanel)</visible>
                     <include>Animation_VisibleChange400</include>
-                    <include condition="Window.IsActive(1124)| Substring(Skin.String(widgetlist),googlepanel)">GooglePanelWidget</include>
-                </control>
-      <control type="group">
-                    <visible>Substring(Control.GetLabel(4321),rsspanel)</visible>
-                    <include>Animation_VisibleChange400</include>
-                    <control type="panel" id="5010">
-                        <posx>27</posx>
-                        <posy>26</posy>
-                        <width>1595</width>
-                        <height>348</height>
-                        <orientation>horizontal</orientation>
-                        <include>Animation_VisibleChange400</include>
-                        <preloaditems>2</preloaditems>
-                        <onback>9000</onback>
-                        <pagecontrol>-</pagecontrol>
-                        <scrolltime>200</scrolltime>
-                 <itemlayout width="399" height="340">
-                    <control type="group">
-                        <control type="image">
-                            <description>Main Icon</description>
-                            <posx>5</posx>
-                            <posy>5</posy>
-                            <width>389</width>
-                            <height>340</height>
-                            <texture background="true" fallback="DefaultTVShows.png">$INFO[ListItem.Thumb]</texture>
-                            <aspectratio>scale</aspectratio>
-                        </control>
-                        <control type="image">
-                            <description>black</description>
-                            <posx>5</posx>
-                            <posy>275</posy>
-                            <width>389</width>
-                            <height>70</height>
-                            <texture>common/black.png</texture>
-                            <colordiffuse>BBFFFFFF</colordiffuse>
-                        </control>
-                        <control type="textbox">
-                            <posx>5</posx>
-                            <posy>272</posy>
-                            <width>389</width>
-                            <height>65</height>
-                            <align>left</align>
-                            <font>Font_Condensed18</font>
-                            <textcolor>white2</textcolor>
-                            <shadowcolor>-</shadowcolor>
-                            <label>$INFO[ListItem.Label]</label>
-                            <textoffsetx>15</textoffsetx>
-                        </control>
-                        <control type="image">
-                            <posx>5</posx>
-                            <posy>5</posy>
-                            <width>389</width>
-                            <height>340</height>
-                            <colordiffuse>99FFFFFF</colordiffuse>
-                            <texture>common/black.png</texture>
-                            <include>Animation_VisibleChange400</include>
-                            <visible>Control.HasFocus(5010)</visible>
-                        </control>
-                    </control>
-                </itemlayout>
-                <focusedlayout width="399" height="340">
-                    <control type="group">
-                        <control type="image">
-                            <description>Main Icon</description>
-                            <posx>5</posx>
-                            <posy>5</posy>
-                            <width>389</width>
-                            <height>340</height>
-                            <texture background="true" fallback="DefaultTVShows.png">$INFO[ListItem.Thumb]</texture>
-                            <aspectratio>scale</aspectratio>
-                        </control>
-                        <control type="image">
-                            <description>black</description>
-                            <posx>5</posx>
-                            <posy>275</posy>
-                            <width>389</width>
-                            <height>70</height>
-                            <texture>common/black.png</texture>
-                            <colordiffuse>BBFFFFFF</colordiffuse>
-                        </control>
-                        <control type="textbox">
-                                  <posx>5</posx>
-                            <posy>272</posy>
-                            <width>389</width>
-                            <height>65</height>
-                            <align>left</align>
-                            <font>Font_Condensed18</font>
-                            <textcolor>white2</textcolor>
-                            <shadowcolor>-</shadowcolor>
-                            <label>$INFO[ListItem.Label]</label>
-                            <textoffsetx>15</textoffsetx>
-                        </control>
-                    </control>
-                </focusedlayout>
-                        <content>
-                            <include>RSS1WidgetContent1124</include>
-                            <include>RSS2WidgetContent1124</include>
-                            <include>RSS3WidgetContent1124</include>
-                        </content>
-                    </control>
+                    <include>GooglePanelWidget</include>
                 </control>
                 <control type="group">
                     <visible>Substring(Control.GetLabel(4321),featured)</visible>
@@ -752,10 +582,6 @@
                         <aligny>center</aligny>
                         <textoffsetx>15</textoffsetx>
                         <label>[UPPERCASE]$LOCALIZE[31163][/UPPERCASE]</label>
-                    </control>
-                    <control type="button" id="5010">
-                        <include>HiddenObject</include>
-                        <visible>SubString(Control.GetLabel(4321),featured)</visible>
                     </control>
                     <control type="wraplist" id="5001">
                         <visible>Stringcompare(Control.GetLabel(4321),featuredtv) | Stringcompare(Control.GetLabel(4321),featuredmovies) | Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
@@ -909,21 +735,6 @@
                         <shadowcolor>-</shadowcolor>
                         <label>$INFO[Container(5001).ListItem.Label]$INFO[Container(5001).ListItem.Label2, - ]</label>
                         <textoffsetx>15</textoffsetx>
-                        <visible>!Control.HasFocus(5010) + !Control.HasFocus(5001)</visible>
-                    </control>
-                    <control type="label">
-                        <posx>0</posx>
-                        <posy>300</posy>
-                        <width>466</width>
-                        <height>40</height>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Condensed18</font>
-                        <textcolor>$VAR[SelectedColorVar]</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <label>$INFO[Container(5001).ListItem.Label]$INFO[Container(5001).ListItem.Label2, - ]</label>
-                        <textoffsetx>15</textoffsetx>
-                        <visible>Control.HasFocus(5010) | Control.HasFocus(5001)</visible>
                     </control>
                     <control type="image">
                         <posx>466</posx>
@@ -931,25 +742,6 @@
                         <width>138</width>
                         <height>12</height>
                         <texture>$INFO[Container(5001).ListItem.Property(NavItem),featured/panel_mid/]</texture>
-                    </control>
-                    <control type="image">
-                        <posx>466</posx>
-                        <posy>315</posy>
-                        <width>138</width>
-                        <height>12</height>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                        <visible>Control.HasFocus(5010) + Skin.HasSetting(Glowbar_Home)</visible>
-                        <texture>$INFO[Container(5001).ListItem.Property(NavItem),featured/panel_mid/]</texture>
-                    </control>
-                    <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>614</width>
-                        <height>340</height>
-                        <colordiffuse>99FFFFFF</colordiffuse>
-                        <texture>common/black.png</texture>
-                        <include>Animation_VisibleChange400</include>
-                        <visible>SubString(Control.GetLabel(4321),featured) + [Control.HasFocus(5011) | Control.HasFocus(5012)]</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -958,9 +750,6 @@
                     <include>Animation_VisibleChange400</include>
                     <posy>31</posy>
                     <posx>655</posx>
-                    <control type="button" id="5011">
-                        <include>HiddenObject</include>
-                    </control>
                     <control type="wraplist" id="5002">
                         <visible>Substring(Control.GetLabel(4321),featured)</visible>
                         <include>Animation_VisibleChange400</include>
@@ -1080,21 +869,6 @@
                         <textcolor>white</textcolor>
                         <shadowcolor>-</shadowcolor>
                         <label>$INFO[Container(5002).ListItem.Label]</label>
-                        <visible>![Control.HasFocus(5011) | Control.HasFocus(5002)]</visible>
-                        <textoffsetx>15</textoffsetx>
-                    </control>
-                    <control type="label">
-                        <posx>0</posx>
-                        <posy>300</posy>
-                        <width>246</width>
-                        <height>40</height>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Condensed18</font>
-                        <textcolor>$VAR[SelectedColorVar]</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <label>$INFO[Container(5002).ListItem.Label]</label>
-                        <visible>Control.HasFocus(5011) | Control.HasFocus(5002)</visible>
                         <textoffsetx>15</textoffsetx>
                     </control>
                     <control type="image">
@@ -1103,25 +877,6 @@
                         <width>84</width>
                         <height>12</height>
                         <texture>$INFO[Container(5002).ListItem.Property(NavItem),featured/panel_right/]</texture>
-                    </control>
-                    <control type="image">
-                        <posx>246</posx>
-                        <posy>315</posy>
-                        <width>84</width>
-                        <height>12</height>
-                        <texture>$INFO[Container(5002).ListItem.Property(NavItem),featured/panel_right/]</texture>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                        <visible>Control.HasFocus(5011) + Skin.HasSetting(Glowbar_Home)</visible>
-                    </control>
-                    <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>614</width>
-                        <height>340</height>
-                        <colordiffuse>99FFFFFF</colordiffuse>
-                        <texture>common/black.png</texture>
-                        <include>Animation_VisibleChange400</include>
-                        <visible>SubString(Control.GetLabel(4321),featured) + [Control.HasFocus(5010) | Control.HasFocus(5012)]</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -1142,9 +897,6 @@
                         <aligny>center</aligny>
                         <textoffsetx>15</textoffsetx>
                         <label>[UPPERCASE]$LOCALIZE[31334][/UPPERCASE]</label>
-                    </control>
-                    <control type="button" id="5012">
-                        <include>HiddenObject</include>
                     </control>
                     <control type="wraplist" id="5003">
                         <visible>Substring(Control.GetLabel(4321),featured)</visible>
@@ -1292,21 +1044,6 @@
                         <shadowcolor>-</shadowcolor>
                         <label>$INFO[Container(5003).ListItem.Label]$INFO[Container(5003).ListItem.Label2, - ]</label>
                         <textoffsetx>15</textoffsetx>
-                        <visible>![Control.HasFocus(5012) | Control.HasFocus(5003)]</visible>
-                    </control>
-                    <control type="label">
-                        <posx>0</posx>
-                        <posy>300</posy>
-                        <width>466</width>
-                        <height>40</height>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Condensed18</font>
-                        <textcolor>$VAR[SelectedColorVar]</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <label>$INFO[Container(5003).ListItem.Label]$INFO[Container(5003).ListItem.Label2, - ]</label>
-                        <textoffsetx>15</textoffsetx>
-                        <visible>Control.HasFocus(5012) | Control.HasFocus(5003)</visible>
                     </control>
                     <control type="image">
                         <posx>466</posx>
@@ -1314,25 +1051,6 @@
                         <width>138</width>
                         <height>12</height>
                         <texture>$INFO[Container(5003).ListItem.Property(NavItem),featured/panel_mid/]</texture>
-                    </control>
-                    <control type="image">
-                        <posx>466</posx>
-                        <posy>315</posy>
-                        <width>138</width>
-                        <height>12</height>
-                        <texture>$INFO[Container(5003).ListItem.Property(NavItem),featured/panel_mid/]</texture>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                        <visible>Control.HasFocus(5012) + Skin.HasSetting(Glowbar_Home)</visible>
-                    </control>
-                    <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>614</width>
-                        <height>340</height>
-                        <colordiffuse>99FFFFFF</colordiffuse>
-                        <texture>common/black.png</texture>
-                        <include>Animation_VisibleChange400</include>
-                        <visible>SubString(Control.GetLabel(4321),featured) + [Control.HasFocus(5010) | Control.HasFocus(5011)]</visible>
                     </control>
                 </control>
                 <control type="image">
@@ -1354,21 +1072,12 @@
             <width>1920</width>
             <height>825</height>
             <visible>[Substring(Control.GetLabel(4325),featured) | Substring(Control.GetLabel(4325),panel)] + !Window.IsActive(1120)</visible>
-            <visible>![Skin.HasSetting(DisableWidgets) + Window.IsActive(home)]</visible>
             <include>Animation_Widgets</include>
             <animation type="Conditional" condition="true">
                 <effect type="fade" start="100" end="90" time="500" tween="cubic" easing="inout" />
             </animation>
             <control type="group">
                 <posx>0</posx>
-                <animation type="Conditional" condition="!IsEmpty(Window(Home).Property(PanelWidgetInfo))" reversible="false">
-                    <include condition="Skin.HasSetting(lowermainmenu)">Animation_PanelFlipUp2</include>
-                    <include condition="!Skin.HasSetting(lowermainmenu)">Animation_PanelFlipDown2</include>
-                </animation>
-                <animation type="Conditional" condition="IsEmpty(Window(Home).Property(PanelWidgetInfo))" reversible="false">
-                    <include condition="Skin.HasSetting(lowermainmenu)">Animation_PanelFlipDown1</include>
-                    <include condition="!Skin.HasSetting(lowermainmenu)">Animation_PanelFlipUp1</include>
-                </animation>
                 <control type="image">
                     <posx>0</posx>
                     <posy>0</posy>
@@ -1425,16 +1134,6 @@
                                     <label>$INFO[ListItem.Label]</label>
                                     <textoffsetx>15</textoffsetx>
                                 </control>
-                                <control type="image">
-                                    <posx>5</posx>
-                                    <posy>5</posy>
-                                    <width>309</width>
-                                    <height>309</height>
-                                    <colordiffuse>99FFFFFF</colordiffuse>
-                                    <texture>common/black.png</texture>
-                                    <include>Animation_VisibleChange400</include>
-                                    <visible>Control.HasFocus(6019)</visible>
-                                </control>
                             </control>
                         </itemlayout>
                         <focusedlayout width="319" height="360">
@@ -1461,21 +1160,6 @@
                                     <shadowcolor>-</shadowcolor>
                                     <label>$INFO[ListItem.Label]</label>
                                     <textoffsetx>15</textoffsetx>
-                                    <visible>!Control.HasFocus(6019)</visible>
-                                </control>
-                                <control type="label">
-                                    <posx>159</posx>
-                                    <posy>309</posy>
-                                    <width>309</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <aligny>center</aligny>
-                                    <font>Font_Condensed20</font>
-                                    <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                                    <shadowcolor>-</shadowcolor>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <textoffsetx>15</textoffsetx>
-                                    <visible>Control.HasFocus(6019)</visible>
                                 </control>
                             </control>
                         </focusedlayout>
@@ -1544,7 +1228,6 @@
                         <aligny>center</aligny>
                         <textoffsetx>15</textoffsetx>
                         <label>$LOCALIZE[31069] 1</label>
-                        <visible>!Window.IsActive(home)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -1570,16 +1253,6 @@
                                     <texture background="true">DefaultAddon.png</texture>
                                     <aspectratio scalediffuse="false">scale</aspectratio>
                                     <info>ListItem.Icon</info>
-                                </control>
-                                <control type="image">
-                                    <posx>5</posx>
-                                    <posy>5</posy>
-                                    <width>309</width>
-                                    <height>309</height>
-                                    <colordiffuse>99FFFFFF</colordiffuse>
-                                    <texture>common/black.png</texture>
-                                    <include>Animation_VisibleChange400</include>
-                                    <visible>Control.HasFocus(6020)</visible>
                                 </control>
                                 <control type="label">
                                     <posx>159</posx>
@@ -1620,21 +1293,6 @@
                                     <shadowcolor>-</shadowcolor>
                                     <label>$INFO[ListItem.Label]</label>
                                     <textoffsetx>15</textoffsetx>
-                                    <visible>!Control.HasFocus(6020)</visible>
-                                </control>
-                                <control type="label">
-                                    <posx>159</posx>
-                                    <posy>309</posy>
-                                    <width>309</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <aligny>center</aligny>
-                                    <font>Font_Condensed20</font>
-                                    <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                                    <shadowcolor>-</shadowcolor>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <textoffsetx>15</textoffsetx>
-                                    <visible>Control.HasFocus(6020)</visible>
                                 </control>
                             </control>
                         </focusedlayout>
@@ -1703,7 +1361,6 @@
                         <aligny>center</aligny>
                         <textoffsetx>15</textoffsetx>
                         <label>$LOCALIZE[31069] 2</label>
-                        <visible>!Window.IsActive(home)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -1774,17 +1431,7 @@
                                 <posy>0</posy>
                                 <width>399</width>
                                 <height>110</height>
-                                <visible>!Control.HasFocus(6010)</visible>
                                 <texture border="3">button-nofocus.png</texture>
-                            </control>
-                            <control type="image">
-                                <posx>0</posx>
-                                <posy>0</posy>
-                                <width>399</width>
-                                <height>110</height>
-                                <visible>Control.HasFocus(6010)</visible>
-                                <texture>views/tripanel/listselect_fo.png</texture>
-                                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                             </control>
                             <control type="label">
                                 <posx>10</posx>
@@ -1977,106 +1624,7 @@
                 <control type="group">
                     <visible>Substring(Control.GetLabel(4325),googlepanel)</visible>
                     <include>Animation_VisibleChange400</include>
-                    <include condition="Window.IsActive(1124)| Substring(Skin.String(widget2list),googlepanel)">GooglePanelWidget</include>
-                </control>
-      <control type="group">
-                    <visible>Substring(Control.GetLabel(4325),rsspanel)</visible>
-                    <include>Animation_VisibleChange400</include>
-                    <control type="panel" id="6010">
-                        <posx>27</posx>
-                        <posy>26</posy>
-                        <width>1595</width>
-                        <height>348</height>
-                        <orientation>horizontal</orientation>
-                        <include>Animation_VisibleChange400</include>
-                        <preloaditems>2</preloaditems>
-                        <onback>9000</onback>
-                        <pagecontrol>-</pagecontrol>
-                        <scrolltime>200</scrolltime>
-                 <itemlayout width="399" height="340">
-                    <control type="group">
-                        <control type="image">
-                            <description>Main Icon</description>
-                            <posx>5</posx>
-                            <posy>5</posy>
-                            <width>389</width>
-                            <height>340</height>
-                            <texture background="true" fallback="DefaultTVShows.png">$INFO[ListItem.Thumb]</texture>
-                            <aspectratio>scale</aspectratio>
-                        </control>
-                        <control type="image">
-                            <description>black</description>
-                            <posx>5</posx>
-                            <posy>275</posy>
-                            <width>389</width>
-                            <height>70</height>
-                            <texture>common/black.png</texture>
-                            <colordiffuse>BBFFFFFF</colordiffuse>
-                        </control>
-                        <control type="textbox">
-                            <posx>5</posx>
-                            <posy>272</posy>
-                            <width>389</width>
-                            <height>65</height>
-                            <align>left</align>
-                            <font>Font_Condensed18</font>
-                            <textcolor>white2</textcolor>
-                            <shadowcolor>-</shadowcolor>
-                            <label>$INFO[ListItem.Label]</label>
-                            <textoffsetx>15</textoffsetx>
-                        </control>
-                        <control type="image">
-                            <posx>5</posx>
-                            <posy>5</posy>
-                            <width>389</width>
-                            <height>340</height>
-                            <colordiffuse>99FFFFFF</colordiffuse>
-                            <texture>common/black.png</texture>
-                            <include>Animation_VisibleChange400</include>
-                            <visible>Control.HasFocus(5010)</visible>
-                        </control>
-                    </control>
-                </itemlayout>
-                <focusedlayout width="399" height="340">
-                    <control type="group">
-                        <control type="image">
-                            <description>Main Icon</description>
-                            <posx>5</posx>
-                            <posy>5</posy>
-                            <width>389</width>
-                            <height>340</height>
-                            <texture background="true" fallback="DefaultTVShows.png">$INFO[ListItem.Thumb]</texture>
-                            <aspectratio>scale</aspectratio>
-                        </control>
-                        <control type="image">
-                            <description>black</description>
-                            <posx>5</posx>
-                            <posy>275</posy>
-                            <width>389</width>
-                            <height>70</height>
-                            <texture>common/black.png</texture>
-                            <colordiffuse>BBFFFFFF</colordiffuse>
-                        </control>
-                        <control type="textbox">
-                                  <posx>5</posx>
-                            <posy>272</posy>
-                            <width>389</width>
-                            <height>65</height>
-                            <align>left</align>
-                            <font>Font_Condensed18</font>
-                            <textcolor>white2</textcolor>
-                            <shadowcolor>-</shadowcolor>
-                            <label>$INFO[ListItem.Label]</label>
-                            <textoffsetx>15</textoffsetx>
-                        </control>
-                    </control>
-                </focusedlayout>
-                        <content>
-                            <include>RSS1Widget2Content1124</include>
-                            <include>RSS2Widget2Content1124</include>
-                            <include>RSS3Widget2Content1124</include>
-                        </content>
-                    </control>
+                    <include>GooglePanelWidget</include>
                 </control>
                 <control type="group">
                     <visible>Substring(Control.GetLabel(4325),featured)</visible>
@@ -2096,12 +1644,6 @@
                         <aligny>center</aligny>
                         <textoffsetx>15</textoffsetx>
                         <label>[UPPERCASE]$LOCALIZE[31163][/UPPERCASE]</label>
-                    </control>
-                    <control type="button" id="6010">
-                        <include>HiddenObject</include>
-                        <onclick condition="Stringcompare(Control.GetLabel(4325),featuredmusic)">$INFO[Container(6001).ListItem.Property(Path)]</onclick>
-                        <onfocus>CancelAlarm(HomeTileLeft,true)</onfocus>
-                        <visible>SubString(Control.GetLabel(4325),featured)</visible>
                     </control>
                     <control type="wraplist" id="6001">
                         <visible>Stringcompare(Control.GetLabel(4325),featuredtv) | Stringcompare(Control.GetLabel(4325),featuredmovies) | Stringcompare(Control.GetLabel(4325),featuredmusic)</visible>
@@ -2255,21 +1797,6 @@
                         <shadowcolor>-</shadowcolor>
                         <label>$INFO[Container(6001).ListItem.Label]$INFO[Container(6001).ListItem.Label2, - ]</label>
                         <textoffsetx>15</textoffsetx>
-                        <visible>!Control.HasFocus(6010) + !Control.HasFocus(6001)</visible>
-                    </control>
-                    <control type="label">
-                        <posx>0</posx>
-                        <posy>300</posy>
-                        <width>466</width>
-                        <height>40</height>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Condensed18</font>
-                        <textcolor>$VAR[SelectedColorVar]</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <label>$INFO[Container(6001).ListItem.Label]$INFO[Container(6001).ListItem.Label2, - ]</label>
-                        <textoffsetx>15</textoffsetx>
-                        <visible>Control.HasFocus(6010) | Control.HasFocus(6001)</visible>
                     </control>
                     <control type="image">
                         <posx>466</posx>
@@ -2277,25 +1804,6 @@
                         <width>138</width>
                         <height>12</height>
                         <texture>$INFO[Container(6001).ListItem.Property(NavItem),featured/panel_mid/]</texture>
-                    </control>
-                    <control type="image">
-                        <posx>466</posx>
-                        <posy>315</posy>
-                        <width>138</width>
-                        <height>12</height>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                        <visible>Control.HasFocus(6010) + Skin.HasSetting(Glowbar_Home)</visible>
-                        <texture>$INFO[Container(6001).ListItem.Property(NavItem),featured/panel_mid/]</texture>
-                    </control>
-                    <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>614</width>
-                        <height>340</height>
-                        <colordiffuse>99FFFFFF</colordiffuse>
-                        <texture>common/black.png</texture>
-                        <include>Animation_VisibleChange400</include>
-                        <visible>SubString(Control.GetLabel(4325),featured) + [Control.HasFocus(6011) | Control.HasFocus(6012)]</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -2304,9 +1812,6 @@
                     <include>Animation_VisibleChange400</include>
                     <posy>31</posy>
                     <posx>655</posx>
-                    <control type="button" id="6011">
-                        <include>HiddenObject</include>
-                    </control>
                     <control type="wraplist" id="6002">
                         <visible>Substring(Control.GetLabel(4325),featured)</visible>
                         <include>Animation_VisibleChange400</include>
@@ -2426,21 +1931,6 @@
                         <textcolor>white</textcolor>
                         <shadowcolor>-</shadowcolor>
                         <label>$INFO[Container(6002).ListItem.Label]</label>
-                        <visible>![Control.HasFocus(6011) | Control.HasFocus(6002)]</visible>
-                        <textoffsetx>15</textoffsetx>
-                    </control>
-                    <control type="label">
-                        <posx>0</posx>
-                        <posy>300</posy>
-                        <width>246</width>
-                        <height>40</height>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Condensed18</font>
-                        <textcolor>$VAR[SelectedColorVar]</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <label>$INFO[Container(6002).ListItem.Label]</label>
-                        <visible>Control.HasFocus(6011) | Control.HasFocus(6002)</visible>
                         <textoffsetx>15</textoffsetx>
                     </control>
                     <control type="image">
@@ -2449,25 +1939,6 @@
                         <width>84</width>
                         <height>12</height>
                         <texture>$INFO[Container(6002).ListItem.Property(NavItem),featured/panel_right/]</texture>
-                    </control>
-                    <control type="image">
-                        <posx>246</posx>
-                        <posy>315</posy>
-                        <width>84</width>
-                        <height>12</height>
-                        <texture>$INFO[Container(6002).ListItem.Property(NavItem),featured/panel_right/]</texture>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                        <visible>Control.HasFocus(6011) + Skin.HasSetting(Glowbar_Home)</visible>
-                    </control>
-                    <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>614</width>
-                        <height>340</height>
-                        <colordiffuse>99FFFFFF</colordiffuse>
-                        <texture>common/black.png</texture>
-                        <include>Animation_VisibleChange400</include>
-                        <visible>SubString(Control.GetLabel(4325),featured) + [Control.HasFocus(6010) | Control.HasFocus(6012)]</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -2488,10 +1959,6 @@
                         <aligny>center</aligny>
                         <textoffsetx>15</textoffsetx>
                         <label>[UPPERCASE]$LOCALIZE[31334][/UPPERCASE]</label>
-                    </control>
-                    <control type="button" id="6012">
-                        <include>HiddenObject</include>
-                        <onfocus>CancelAlarm(HomeTileRight,true)</onfocus>
                     </control>
                     <control type="wraplist" id="6003">
                         <visible>Substring(Control.GetLabel(4325),featured)</visible>
@@ -2645,21 +2112,6 @@
                         <shadowcolor>-</shadowcolor>
                         <label>$INFO[Container(6003).ListItem.Label]$INFO[Container(6003).ListItem.Label2, - ]</label>
                         <textoffsetx>15</textoffsetx>
-                        <visible>![Control.HasFocus(6012) | Control.HasFocus(6003)]</visible>
-                    </control>
-                    <control type="label">
-                        <posx>0</posx>
-                        <posy>300</posy>
-                        <width>466</width>
-                        <height>40</height>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Condensed18</font>
-                        <textcolor>$VAR[SelectedColorVar]</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <label>$INFO[Container(6003).ListItem.Label]$INFO[Container(6003).ListItem.Label2, - ]</label>
-                        <textoffsetx>15</textoffsetx>
-                        <visible>Control.HasFocus(6012) | Control.HasFocus(6003)</visible>
                     </control>
                     <control type="image">
                         <posx>466</posx>
@@ -2667,25 +2119,6 @@
                         <width>138</width>
                         <height>12</height>
                         <texture>$INFO[Container(6003).ListItem.Property(NavItem),featured/panel_mid/]</texture>
-                    </control>
-                    <control type="image">
-                        <posx>466</posx>
-                        <posy>315</posy>
-                        <width>138</width>
-                        <height>12</height>
-                        <texture>$INFO[Container(6003).ListItem.Property(NavItem),featured/panel_mid/]</texture>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                        <visible>Control.HasFocus(6012) + Skin.HasSetting(Glowbar_Home)</visible>
-                    </control>
-                    <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>614</width>
-                        <height>340</height>
-                        <colordiffuse>99FFFFFF</colordiffuse>
-                        <texture>common/black.png</texture>
-                        <include>Animation_VisibleChange400</include>
-                        <visible>SubString(Control.GetLabel(4325),featured) + [Control.HasFocus(6010) | Control.HasFocus(6011)]</visible>
                     </control>
                 </control>
                 <control type="image">
@@ -2703,7 +2136,6 @@
         <control type="group" id="8998">
             <posx>1542</posx>
             <posy>678</posy>
-            <visible>![IsEmpty(Control.GetLabel(4323)) + Window.IsActive(home) + Substring(Control.GetLabel(4321),custom) + [Container(9000).HasFocus(101) | Container(9000).HasFocus(102) | Container(9000).HasFocus(103) | Container(9000).HasFocus(104) | Container(9000).HasFocus(105) | Container(9000).HasFocus(106) | Container(9000).HasFocus(107) | Container(9000).HasFocus(108) | Container(9000).HasFocus(109)]]</visible>
             <visible>!Substring(Control.GetLabel(4321),weather) + !Substring(Control.GetLabel(4321),featured) + !Window.IsActive(1120) + !Substring(Control.GetLabel(4321),panel) + !IsEmpty(Control.GetLabel(4321))</visible>
             <include>Animation_Widgets</include>
             <animation effect="slide" start="0,0" end="0,-270" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
@@ -2884,7 +2316,7 @@
                         <fadetime>800</fadetime>
                         <animation effect="fade" time="300">Visible</animation>
                         <animation effect="fade" time="50">Hidden</animation>
-                        <visible>Substring(Control.GetLabel(4321),tv)</visible>
+                        <visible>Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),rss)</visible>
                     </control>
                     <control type="image">
                         <texture background="true" fallback="DefaultVideoCover.png">$INFO[Container(8000).ListItem.Property(Fanart)]</texture>
@@ -3419,6 +2851,24 @@
                             <property name="Path">$INFO[Window(Home).Property(MyPicsDBLatest.1.Path)]</property>
                             <visible>Substring(Control.GetLabel(4321),recentpics)</visible>
                         </item>
+					<item>
+						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS1.RSS.1.Media)])</onclick>
+						<label>$INFO[Window(home).Property(RSS1.RSS.1.Title)]</label>
+						<icon>$INFO[Window(home).Property(RSS1.RSS.1.Image.1)]</icon>
+                        <visible>Substring(Control.GetLabel(4321),rss1)</visible>
+					</item>
+					<item>
+						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS2.RSS.1.Media)])</onclick>
+						<label>$INFO[Window(home).Property(RSS2.RSS.1.Title)]</label>
+						<icon>$INFO[Window(home).Property(RSS2.RSS.1.Image.1)]</icon>
+                        <visible>Substring(Control.GetLabel(4321),rss2)</visible>
+					</item>
+					<item>
+						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS3.RSS.1.Media)])</onclick>
+						<label>$INFO[Window(home).Property(RSS3.RSS.1.Title)]</label>
+						<icon>$INFO[Window(home).Property(RSS3.RSS.1.Image.1)]</icon>
+                        <visible>Substring(Control.GetLabel(4321),rss3)</visible>
+					</item>
                     </content>
                 </control>
             </control>
@@ -3429,8 +2879,6 @@
             <posx>1542</posx>
             <posy>18</posy>
             <animation effect="slide" start="0,0" end="0,40" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            <visible>![Skin.HasSetting(DisableWidgets) + Window.IsActive(home)]</visible>
-            <visible>![IsEmpty(Control.GetLabel(4323)) + Window.IsActive(home) + Substring(Control.GetLabel(4325),custom) + [Container(9000).HasFocus(101) | Container(9000).HasFocus(102) | Container(9000).HasFocus(103) | Container(9000).HasFocus(104) | Container(9000).HasFocus(105) | Container(9000).HasFocus(106) | Container(9000).HasFocus(107) | Container(9000).HasFocus(108) | Container(9000).HasFocus(109)]]</visible>
             <visible>!Substring(Control.GetLabel(4325),weather) + !Substring(Control.GetLabel(4325),featured) + !Window.IsActive(1120) + !Substring(Control.GetLabel(4325),panel) + !IsEmpty(Control.GetLabel(4325))</visible>
             <include>Animation_Widgets</include>
             <animation effect="slide" time="200" start="0,0" end="0,-38" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow)">Conditional</animation>
@@ -3608,7 +3056,7 @@
                         <fadetime>800</fadetime>
                         <animation effect="fade" time="300">Visible</animation>
                         <animation effect="fade" time="50">Hidden</animation>
-                        <visible>Substring(Control.GetLabel(4325),tv)</visible>
+                        <visible>Substring(Control.GetLabel(4325),tv) | Substring(Control.GetLabel(4325),rss)</visible>
                     </control>
                     <control type="image">
                         <texture background="true" fallback="DefaultVideoCover.png">$INFO[Container(7000).ListItem.Property(Fanart)]</texture>
@@ -3906,6 +3354,24 @@
                             <property name="Path">$INFO[Window(Home).Property(MyPicsDBLatest.1.Path)]</property>
                             <visible>Substring(Control.GetLabel(4325),recentpics)</visible>
                           </item>
+					<item>
+						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS1.RSS.1.Media)])</onclick>
+						<label>$INFO[Window(home).Property(RSS1.RSS.1.Title)]</label>
+						<icon>$INFO[Window(home).Property(RSS1.RSS.1.Image.1)]</icon>
+                        <visible>Substring(Control.GetLabel(4325),rss1)</visible>
+					</item>
+					<item>
+						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS2.RSS.1.Media)])</onclick>
+						<label>$INFO[Window(home).Property(RSS2.RSS.1.Title)]</label>
+						<icon>$INFO[Window(home).Property(RSS2.RSS.1.Image.1)]</icon>
+                        <visible>Substring(Control.GetLabel(4325),rss2)</visible>
+					</item>
+					<item>
+						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS3.RSS.1.Media)])</onclick>
+						<label>$INFO[Window(home).Property(RSS3.RSS.1.Title)]</label>
+						<icon>$INFO[Window(home).Property(RSS3.RSS.1.Image.1)]</icon>
+                        <visible>Substring(Control.GetLabel(4325),rss3)</visible>
+					</item>
                     </content>
                 </control>
             </control>

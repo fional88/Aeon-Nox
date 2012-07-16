@@ -582,6 +582,19 @@
                     <visible>!Skin.HasSetting(usecaseslowlist) + [!Container.Content(episodes) | Control.HasFocus(7002)]</visible>
                     <animation effect="fade" time="150" start="0" end="100">Visible</animation>
                     <animation effect="fade" time="150" start="100" end="0">Hidden</animation>
+        <control type="image">
+        <posx>-34</posx>
+        <posy>-172</posy>
+        <width>467</width>
+        <height>682</height>
+        <align>center</align>
+        <bordersize>18</bordersize>
+        <aspectratio>stretch</aspectratio>
+            <include>Animation_VisibleChange400</include>
+            <visible>Skin.HasSetting(ExtendedGlowMode) + !Skin.HasSetting(DisableGlowbar)</visible>
+        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            <texture background="true" fallback="DefaultVideoBigPoster.png">thumbs/thumb_glass_shadow.png</texture>
+        </control>
                     <control type="image">
                         <description>POSTER icon</description>
                         <posx>0</posx>
@@ -628,7 +641,7 @@
                         <width>459</width>
                         <height>720</height>
                         <aspectratio scalediffuse="false">stretch</aspectratio>
-                        <texture background="true" fallback="thumbs/boxes/default_case.png">thumbs/boxes/$VAR[CaseLabelVar]/$VAR[GlobalCaseVar]</texture>
+                        <texture background="true" fallback="thumbs/boxes/default_case.png">thumbs/boxes/tvshows/$VAR[GlobalCaseVar]</texture>
                         <bordertexture border="2">thumbs/boxes/case_border.png</bordertexture>
                         <fadetime>400</fadetime>
                     </control>

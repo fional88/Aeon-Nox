@@ -2054,6 +2054,30 @@
                                 <animation effect="zoom" end="-892,0,1920,1080" time="800" tween="cubic" easing="out" reversible="true" condition="!IsEmpty(Window(weather).Property(FSMap))">Conditional</animation>
                                 <aspectratio>keep</aspectratio>
                             </control>
+                            <control type="image">
+                                <posx>80</posx>
+                                <posy>682</posy>
+                                <width>816</width>
+                                <height>122</height>
+                                <texture>weather/whitepanel.png</texture>
+                                <aspectratio>keep</aspectratio>
+                            </control>
+                            <control type="image">
+                                <posx>27</posx>
+                                <posy>722</posy>
+                                <width>506</width>
+                                <height>42</height>
+                                <texture>weather/key1.png</texture>
+                                <aspectratio>keep</aspectratio>
+                            </control>
+                            <control type="image">
+                                <posx>427</posx>
+                                <posy>722</posy>
+                                <width>506</width>
+                                <height>42</height>
+                                <texture>weather/key2.png</texture>
+                                <aspectratio>keep</aspectratio>
+                            </control>
                             <control type="button" id="5">
                                 <include>HiddenObject</include>
                                 <onleft>ClearProperty(FSMap,weather)</onleft>
@@ -2922,7 +2946,7 @@
                         <label>5</label>
                         <onclick>ActivateWindow(MyWeatherSettings)</onclick>
                     </control>
-                    <control type="button" id="25">
+                    <control type="button" id="2250">
                         <description>Around the world</description>
                         <include>Objects_MediaMenuButtonAlt</include>
                         <label>42246</label>
@@ -3007,6 +3031,7 @@
                             <effect type="fade" start="0" end="100" delay="400" time="200" reversible="true" />
                         </animation>
                         <visible>Skin.HasSetting(ExtendedWeatherInfo)</visible>
+                        <visible>SubString(Weather.Plugin,weather.wunderground)</visible>
                     </control>    
                     <control type="button" id="1601">
                         <description>Backdrop options label</description>

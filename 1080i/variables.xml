@@ -541,7 +541,8 @@
     </variable>
     <variable name="TVShowLogoVar">
         <value condition="Container.Content(episodes)">$INFO[ListItem.path,,../logo.png]</value>
-        <value condition="Container.Content(artists)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/logo.png]</value>
+        <value condition="Container.Content(albums) + Substring(Container.FolderPath,musicdb://2/)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[Container.FolderName,,/logo.png]</value>
+        <value condition="Container.Content(artists) | Container.Content(albums) | Container.Content(songs)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/logo.png]</value>
         <value>$INFO[ListItem.Path,,logo.png]</value>
     </variable>
     <variable name="TVShowClearArtVar">
@@ -609,12 +610,6 @@
         <value condition="Container(9000).HasFocus(21) + PVR.IsRecording">$LOCALIZE[19158] $INFO[PVR.NowRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] • [B][COLOR=FF48D1CC]$INFO[PVR.NowRecordingTitle][/COLOR][/B] [B][COLOR=white]($INFO[PVR.NowRecordingChannel, ])[/COLOR][/B]</value>
         <value condition="Container(9000).HasFocus(21) + PVR.HasNonRecordingTimer">$LOCALIZE[19157] $INFO[PVR.NextRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] • $INFO[PVR.NextRecordingTitle, [B][COLOR=white],[/COLOR][/B]]$INFO[PVR.NextRecordingChannel, - [B][COLOR=white],[/COLOR][/B]]</value>
         <value condition="Window.IsActive(1131)">$LOCALIZE[31683]</value>
-    </variable>
-    <variable name="RSSFeedVar">
-        <value condition="Player.HasAudio + Skin.HasSetting(alternativerss)">$INFO[MusicPlayer.Property(Album_Description),$LOCALIZE[10523]: [COLOR ffaaaaaa],[/COLOR]]$INFO[MusicPlayer.Property(Artist_Description),$LOCALIZE[21887]: [COLOR ffaaaaaa],[/COLOR]]</value>
-        <value condition="Player.HasAudio + !Skin.HasSetting(alternativerss)">$INFO[MusicPlayer.Property(Album_Description),$LOCALIZE[10523]: [COLOR a9000000],[/COLOR]]$INFO[MusicPlayer.Property(Artist_Description),$LOCALIZE[21887]: [COLOR a9000000],[/COLOR]]</value>
-        <value condition="Player.HasVideo + !IsEmpty(VideoPlayer.Plot)">$INFO[VideoPlayer.Plot]</value>
-        <value></value>
     </variable>
     <variable name="FurniturePositionVar">
         <value condition="Stringcompare(Window.Property(actualItem),TimePanel) + Skin.HasSetting(timehomehigh)">$LOCALIZE[31617]</value>
@@ -1587,6 +1582,9 @@
     </variable>
     <variable name="CustomItemFanartLabelVar">
         <value condition="IsEmpty(Skin.String(ItemToEdit.MultiFanart))">$LOCALIZE[571]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.MultiFanart),dvdcase,left)">$LOCALIZE[42224]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.MultiFanart),nocase,left)">$LOCALIZE[42226]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.MultiFanart),case,left)">$LOCALIZE[42225]</value>
         <value condition="Substring(Skin.String(ItemToEdit.MultiFanart),weather)">$LOCALIZE[31035]</value>
         <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),recentmovies)">$LOCALIZE[31323]</value>
         <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),randommovies)">$LOCALIZE[31222]</value>

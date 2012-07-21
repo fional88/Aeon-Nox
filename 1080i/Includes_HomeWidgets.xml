@@ -5926,14 +5926,14 @@
                     <height>300</height>
                     <align>right</align>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                    <label>$LOCALIZE[42257][CR]$LOCALIZE[402][CR]$LOCALIZE[406][CR]$LOCALIZE[403][CR]$LOCALIZE[405][CR]$LOCALIZE[42258][CR]Pressure</label>
+                    <label>$LOCALIZE[402][CR]Precipitation[CR]$LOCALIZE[406][CR]$LOCALIZE[403][CR]$LOCALIZE[405][CR]Pressure[CR]Moon Phase</label>
                 </control>
                 <control type="label">
                     <posx>200</posx>
                     <posy>68</posy>
                     <width>250</width>
                     <height>300</height>
-                    <label>$INFO[Window(weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits][CR]$INFO[Window(weather).Property(Current.FeelsLike)]$INFO[System.TemperatureUnits][CR]$INFO[Window(weather).Property(Current.Humidity)][CR]$INFO[Window(weather).Property(Current.UVIndex)][CR]$INFO[Window(weather).Property(Current.DewPoint)]$INFO[System.TemperatureUnits][CR]$INFO[Window(weather).Property(Current.Condition)][CR]$INFO[Window(weather).Property(Current.Location.Latitude)] $INFO[Window(weather).Property(Current.Pressure)]</label>
+                    <label>$INFO[Window(weather).Property(Current.FeelsLike)]$INFO[System.TemperatureUnits][CR]$INFO[Window(weather).Property(Current.Precipitation)][CR]$INFO[Window(weather).Property(Current.Humidity)][CR]$INFO[Window(weather).Property(Current.UVIndex)][CR]$INFO[Window(weather).Property(Current.DewPoint)]$INFO[System.TemperatureUnits][CR]$INFO[Window(weather).Property(Current.Location.Latitude)] $INFO[Window(weather).Property(Current.Pressure)][CR]$INFO[Window(weather).Property(Today.MoonPhase)]</label>
                 </control>
                 <control type="label">
                     <posx>600</posx>
@@ -5942,14 +5942,14 @@
                     <height>300</height>
                     <align>right</align>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                    <label>$LOCALIZE[404][CR]Visibility[CR]Sunrise[CR]Sunset[CR]Moon Phase[CR]Average Day (Low)[CR]Average Day (High)</label>
+                    <label>$LOCALIZE[42258][CR]$LOCALIZE[404][CR]Visibility[CR]Sunrise[CR]Sunset[CR]Average Low[CR]Average High</label>
                 </control>
                 <control type="label">
                     <posx>610</posx>
                     <posy>68</posy>
                     <width>250</width>
                     <height>300</height>
-                    <label>$INFO[Window(weather).Property(Current.Wind)][CR]$INFO[Window(weather).Property(Current.Visibility)][CR]$INFO[Window(weather).Property(Today.Sunrise)][CR]$INFO[Window(weather).Property(Today.Sunset)][CR]$INFO[Window(weather).Property(Today.MoonPhase)][CR]$INFO[Window(weather).Property(Today.AvgLowTemperature)][CR]$INFO[Window(weather).Property(Today.AvgHighTemperature)]</label>
+                    <label>$INFO[Window(weather).Property(Current.Condition)][CR]$INFO[Window(weather).Property(Current.Wind)][CR]$INFO[Window(weather).Property(Current.Visibility)][CR]$INFO[Window(weather).Property(Today.Sunrise)][CR]$INFO[Window(weather).Property(Today.Sunset)][CR]$INFO[Window(weather).Property(Today.AvgLowTemperature)][CR]$INFO[Window(weather).Property(Today.AvgHighTemperature)]</label>
                 </control>
                 <control type="image">
                     <posx>900</posx>
@@ -5975,25 +5975,25 @@
                                     <aspectratio>keep</aspectratio>
                                     <aligny>center</aligny>
                                 </control>
-                      <control type="image">
-                                <posx>1110</posx>
-                                <posy>320</posy>
-                                <width>426</width>
-                                <height>47</height>
+						<control type="image">
+                                <posx>45</posx>
+                                <posy>323</posy>
+                                <height>50</height>
+                                <width>805</width>
                                 <texture>weather/whitepanel.png</texture>
-                                <aspectratio>stretch</aspectratio>
+                                <aspectratio>stretch</aspectratio> 
                             </control>
-<!--                             <control type="image">
-                                <posx>1100</posx>
-                                <posy>312</posy>
+                             <control type="image">
+                                <posx>1</posx>
+                                <posy>328</posy>
                                 <width>506</width>
                                 <height>42</height>
                                 <texture>weather/key1.png</texture>
                                 <aspectratio>keep</aspectratio>
-                            </control> -->
+                            </control> 
                             <control type="image">
-                                <posx>1070</posx>
-                                <posy>322</posy>
+                                <posx>381</posx>
+                                <posy>327</posy>
                                 <width>506</width>
                                 <height>42</height>
                                 <texture>weather/key2.png</texture>

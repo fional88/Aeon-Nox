@@ -6357,6 +6357,7 @@
             <thumb>$INFO[Window(Home).Property(RandomAlbum.9.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.9.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.9.Artist)]</label2>
+            <property name="Description">$INFO[Window(Home).Property(RandomAlbum.9.Album_Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.9.Rating)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomAlbum.9.Path)]</property>
             <property name="Year">$INFO[Window(Home).Property(RandomAlbum.9.Year)]</property>
@@ -6371,6 +6372,7 @@
             <thumb>$INFO[Window(Home).Property(RandomAlbum.10.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.10.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.10.Artist)]</label2>
+            <property name="Description">$INFO[Window(Home).Property(RandomAlbum.10.Album_Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.10.Rating)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomAlbum.10.Path)]</property>
             <property name="Year">$INFO[Window(Home).Property(RandomAlbum.10.Year)]</property>
@@ -6385,6 +6387,7 @@
             <thumb>$INFO[Window(Home).Property(RandomAlbum.11.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.11.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.11.Artist)]</label2>
+            <property name="Description">$INFO[Window(Home).Property(RandomAlbum.11.Album_Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.11.Rating)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomAlbum.11.Path)]</property>
             <property name="Year">$INFO[Window(Home).Property(RandomAlbum.11.Year)]</property>
@@ -6399,6 +6402,7 @@
             <thumb>$INFO[Window(Home).Property(RandomAlbum.12.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.12.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.12.Artist)]</label2>
+            <property name="Description">$INFO[Window(Home).Property(RandomAlbum.12.Album_Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.12.Rating)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomAlbum.12.Path)]</property>
             <property name="Year">$INFO[Window(Home).Property(RandomAlbum.12.Year)]</property>
@@ -6413,6 +6417,7 @@
             <thumb>$INFO[Window(Home).Property(RandomAlbum.13.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.13.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.13.Artist)]</label2>
+            <property name="Description">$INFO[Window(Home).Property(RandomAlbum.13.Album_Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.13.Rating)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomAlbum.13.Path)]</property>
             <property name="Year">$INFO[Window(Home).Property(RandomAlbum.13.Year)]</property>
@@ -6427,6 +6432,7 @@
             <thumb>$INFO[Window(Home).Property(RandomAlbum.14.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.14.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.14.Artist)]</label2>
+            <property name="Description">$INFO[Window(Home).Property(RandomAlbum.14.Album_Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.14.Rating)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomAlbum.14.Path)]</property>
             <property name="Year">$INFO[Window(Home).Property(RandomAlbum.14.Year)]</property>
@@ -6441,6 +6447,7 @@
             <thumb>$INFO[Window(Home).Property(RandomAlbum.15.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.15.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.15.Artist)]</label2>
+            <property name="Description">$INFO[Window(Home).Property(RandomAlbum.15.Album_Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.15.Rating)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomAlbum.15.Path)]</property>
             <property name="Year">$INFO[Window(Home).Property(RandomAlbum.15.Year)]</property>
@@ -6455,6 +6462,7 @@
             <thumb>$INFO[Window(Home).Property(RandomAlbum.16.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.16.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.16.Artist)]</label2>
+            <property name="Description">$INFO[Window(Home).Property(RandomAlbum.16.Album_Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.16.Rating)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomAlbum.16.Path)]</property>
             <property name="Year">$INFO[Window(Home).Property(RandomAlbum.16.Year)]</property>
@@ -7353,7 +7361,6 @@
                 <onback>ClearProperty(PanelWidget2Info,Home)</onback>
                 <onback>9000</onback>
                 <viewtype label="535">list</viewtype>
-                <preloaditems>2</preloaditems>
                 <pagecontrol>-</pagecontrol>
                 <scrolltime tween="quadratic" easing="out">400</scrolltime>
                 <itemlayout width="228" height="340" condition="Substring(Control.GetLabel(4325),panel,right) + [Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo) | Substring(Control.GetLabel(4325),actors)]">
@@ -7935,7 +7942,7 @@
                             <height>320</height>
                             <aspectratio scalediffuse="false">scale</aspectratio>
                             <width>340</width>
-                            <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
+                            <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png" background="true">$INFO[ListItem.Icon]</texture>
                         </control>
                         <control type="image">
                             <posx>0</posx>
@@ -7947,14 +7954,14 @@
                             <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
                             <bordersize>20</bordersize>
                         </control>
-                        <control type="image">
+<!--                         <control type="image">
                             <posx>400</posx>
                             <posy>95</posy>
                             <height>320</height>
                             <width>340</width>
                             <texture background="true">$INFO[ListItem.Property(ArtistPath),,/logo.png]</texture>
                             <visible>IsEmpty(ListItem.Property(Album_Description)) + Substring(Control.GetLabel(4325),custom)</visible>
-                        </control>
+                        </control> -->
                         <control type="label">
                             <posx>370</posx>
                             <posy>25</posy>
@@ -8017,7 +8024,7 @@
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <height>320</height>
                                 <width>340</width>
-                                <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
+                                <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png" background="true">$INFO[ListItem.Icon]</texture>
                             </control>
                             <control type="image">
                                 <posx>0</posx>
@@ -8030,14 +8037,14 @@
                                 <bordersize>20</bordersize>
                             </control>
                         </control>
-                        <control type="image">
+<!--                         <control type="image">
                             <posx>400</posx>
                             <posy>95</posy>
                             <height>320</height>
                             <width>340</width>
                             <texture background="true">$INFO[ListItem.Property(ArtistPath),,/logo.png]</texture>
                             <visible>IsEmpty(ListItem.Property(Album_Description)) + Substring(Control.GetLabel(4325),custom)</visible>
-                        </control>
+                        </control> -->
                         <control type="label">
                             <posx>370</posx>
                             <posy>25</posy>

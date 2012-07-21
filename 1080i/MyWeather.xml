@@ -186,7 +186,7 @@
                         <posx>278</posx>
                         <posy>-120</posy>
                         <control type="label">
-                            <description>current dew label</description>
+                            <description>current chance of precip</description>
                             <posx>255</posx>
                             <posy>645</posy>
                             <width>255</width>
@@ -194,7 +194,7 @@
                             <font>Font_Reg20</font>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <label>$LOCALIZE[405] :</label>
+                            <label>Precip. Chance :</label>
                             <textcolor>grey2</textcolor>
                         </control>
                         <control type="label">
@@ -210,7 +210,7 @@
                             <textcolor>grey2</textcolor>
                         </control>
                         <control type="label">
-                            <description>current Pressure label</description>
+                            <description>current Precipitation label</description>
                             <posx>255</posx>
                             <posy>735</posy>
                             <width>255</width>
@@ -218,7 +218,7 @@
                             <font>Font_Reg20</font>
                             <align>right</align>
                             <aligny>center</aligny>
-                            <label>$LOCALIZE[31940] :</label>
+                            <label>Precipitation :</label>
                             <textcolor>grey2</textcolor>
                         </control>
                         <control type="label">
@@ -270,7 +270,19 @@
                             <textcolor>grey2</textcolor>
                         </control>
                         <control type="label">
-                            <description>current dew Value</description>
+                            <description>current moonphase label</description>
+                            <posx>255</posx>
+                            <posy>960</posy>
+                            <width>255</width>
+                            <height>52</height>
+                            <font>Font_Reg20</font>
+                            <align>right</align>
+                            <aligny>center</aligny>
+                            <label>Moon Phase :</label>
+                            <textcolor>grey2</textcolor>
+                        </control>
+                        <control type="label">
+                            <description>current precip chance Value</description>
                             <posx>278</posx>
                             <posy>645</posy>
                             <width>450</width>
@@ -278,7 +290,7 @@
                             <font>Font_Reg20</font>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <label>$INFO[Window.Property(Current.DewPoint)]$INFO[System.TemperatureUnits]</label>
+                            <info>Window.Property(36Hour.1.ChancePrecipitation)</info>
                             <textcolor>white2</textcolor>
                         </control>
                         <control type="label">
@@ -294,7 +306,7 @@
                             <textcolor>white2</textcolor>
                         </control>
                         <control type="label">
-                            <description>current UV Index Value</description>
+                            <description>current Precip Chance</description>
                             <posx>278</posx>
                             <posy>735</posy>
                             <width>450</width>
@@ -302,7 +314,7 @@
                             <font>Font_Reg20</font>
                             <align>left</align>
                             <aligny>center</aligny>
-                            <info>Window.Property(Current.Pressure)</info>
+                            <info>Window.Property(Current.Precipitation)</info>
                             <textcolor>white2</textcolor>
                         </control>
                         <control type="label">
@@ -342,7 +354,7 @@
                             <textcolor>white2</textcolor>
                         </control>
                         <control type="label">
-                            <description>current Sunrise Value</description>
+                            <description>current Sunset Value</description>
                             <posx>278</posx>
                             <posy>915</posy>
                             <width>450</width>
@@ -351,6 +363,18 @@
                             <align>left</align>
                             <aligny>center</aligny>
                             <info>Window.Property(Today.Sunset)</info>
+                            <textcolor>white2</textcolor>
+                        </control>
+						<control type="label">
+                            <description>current moon phase Value</description>
+                            <posx>278</posx>
+                            <posy>960</posy>
+                            <width>450</width>
+                            <height>52</height>
+                            <font>Font_Reg20</font>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <info>Window.Property(Today.MoonPhase)</info>
                             <textcolor>white2</textcolor>
                         </control>
                     </control>

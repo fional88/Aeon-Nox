@@ -248,7 +248,7 @@
                     <font>Font_Condensed22_Caps</font>
                     <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                     <shadowcolor>-</shadowcolor>
-                    <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] [COLOR grey] •  $INFO[Window(Weather).Property(Current.Humidity)][/COLOR]</label>
+                    <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] [COLOR grey] •  $INFO[Window(Weather).Property(36Hour.1.ChancePrecipitation)][/COLOR]</label>
                 </control>
                 <control type="image">
                     <description>Weather image</description>
@@ -5926,14 +5926,14 @@
                     <height>300</height>
                     <align>right</align>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                    <label>$LOCALIZE[402][CR]Visibility[CR]Precipitation[CR]$LOCALIZE[406][CR]$LOCALIZE[405][CR]$LOCALIZE[403][CR]Pressure</label>
+                    <label>$LOCALIZE[402][CR]Visibility[CR]Precipitation[CR]$LOCALIZE[406][CR]Dew Point[CR]UV Index[CR]Pressure</label>
                 </control>
                 <control type="label">
                     <posx>200</posx>
                     <posy>68</posy>
                     <width>250</width>
                     <height>300</height>
-                    <label>$INFO[Window(weather).Property(Current.FeelsLike)]$INFO[System.TemperatureUnits][CR]$INFO[Window(weather).Property(Current.Visibility)][CR]$INFO[Window(weather).Property(Current.Precipitation)][CR]$INFO[Window(weather).Property(Current.Humidity)][CR]$INFO[Window(weather).Property(Current.DewPoint)]$INFO[System.TemperatureUnits][CR]$INFO[Window(weather).Property(Current.UVIndex)][CR]$INFO[Window(weather).Property(Current.Location.Latitude)] $INFO[Window(weather).Property(Current.Pressure)]</label>
+                    <label>$INFO[Window(weather).Property(Current.FeelsLike)]$INFO[System.TemperatureUnits][CR]$INFO[Window(weather).Property(Current.Visibility)][CR]$INFO[Window(weather).Property(Current.Precipitation)][CR]$INFO[Window(weather).Property(Current.Humidity)][CR]$INFO[Window(weather).Property(Current.DewPoint)]$INFO[System.TemperatureUnits][CR]$INFO[Window(weather).Property(Current.UVIndex)][CR]$INFO[Window(weather).Property(Current.Pressure)]</label>
                 </control>
                 <control type="label">
                     <posx>600</posx>
@@ -5942,7 +5942,7 @@
                     <height>300</height>
                     <align>right</align>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                    <label>Precip. Chance[CR]$LOCALIZE[404][CR]Sunrise[CR]Sunset[CR]Moon Phase[CR]Average Low[CR]Average High</label>
+                    <label>Precip. Chance[CR]Wind Direction[CR]Sunrises at[CR]Sunsets at[CR]Moon Phase[CR]Average Low[CR]Average High</label>
                 </control>
                 <control type="label">
                     <posx>610</posx>

@@ -5942,7 +5942,7 @@
                     <height>300</height>
                     <align>right</align>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                    <label>Chance of Rain[CR]$LOCALIZE[404][CR]Sunrise[CR]Sunset[CR]Moon Phase[CR]Average Low[CR]Average High</label>
+                    <label>Precip. Chance[CR]$LOCALIZE[404][CR]Sunrise[CR]Sunset[CR]Moon Phase[CR]Average Low[CR]Average High</label>
                 </control>
                 <control type="label">
                     <posx>610</posx>

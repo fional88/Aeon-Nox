@@ -5516,14 +5516,14 @@
                     <height>300</height>
                     <align>right</align>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                    <label>Precip. Chance[CR]Wind Direction[CR]Sunrises at[CR]Sunsets at[CR]Moon Phase[CR]Average Low[CR]Average High</label>
+                    <label>Precip. Chance[CR]Wind Direction[CR]Sunrises at[CR]Sunsets at[CR]Moon Phase[CR]Average High[CR]Average Low</label>
                 </control>
                 <control type="label">
                     <posx>610</posx>
                     <posy>68</posy>
                     <width>250</width>
                     <height>300</height>
-                    <label>$INFO[Window(weather).Property(36Hour.1.ChancePrecipitation)][CR]$INFO[Window(weather).Property(Current.Wind)][CR]$INFO[Window(weather).Property(Today.Sunrise)][CR]$INFO[Window(weather).Property(Today.Sunset)][CR]$INFO[Window(weather).Property(Today.MoonPhase)][CR]$INFO[Window(weather).Property(Today.AvgLowTemperature)][CR]$INFO[Window(weather).Property(Today.AvgHighTemperature)]</label>
+                    <label>$INFO[Window(weather).Property(36Hour.1.ChancePrecipitation)][CR]$INFO[Window(weather).Property(Current.Wind)][CR]$INFO[Window(weather).Property(Today.Sunrise)][CR]$INFO[Window(weather).Property(Today.Sunset)][CR]$INFO[Window(weather).Property(Today.MoonPhase)][CR]$INFO[Window(weather).Property(Today.AvgHighTemperature)][CR]$INFO[Window(weather).Property(Today.AvgLowTemperature)]</label>
                 </control>
                 <control type="image">
                     <posx>900</posx>

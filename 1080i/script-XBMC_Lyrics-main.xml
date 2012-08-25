@@ -28,7 +28,6 @@
                 <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
             </control>
             <control type="label">
-                <description>header label</description>
                 <posx>82</posx>
                 <posy>15</posy>
                 <width>1754</width>
@@ -43,7 +42,6 @@
             </control>
             <!-- ** Required ** Do not change <id> or <type> (Text box for lyrics) -->
             <control type="textbox" id="100">
-                <description>textarea</description>
                 <posx>82</posx>
                 <posy>150</posy>
                 <width>1754</width>
@@ -66,12 +64,9 @@
                 <texturedown>settings/spin-down.png</texturedown>
                 <textureupfocus>settings/spin-up-focus.png</textureupfocus>
                 <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
-                <font>Font_Reg18</font>
-                <textcolor>FF929191</textcolor>
+                <textcolor>grey</textcolor>
                 <focusedcolor>white</focusedcolor>
                 <spinposx>-4</spinposx>
-                <spinwidth>42</spinwidth>
-                <spinheight>65</spinheight>
                 <textoffsetx>0</textoffsetx>
                 <aligny>center</aligny>
                 <reverse>yes</reverse>
@@ -80,7 +75,6 @@
                 <onright>130</onright>
                 <ondown>101</ondown>
                 <onup>101</onup>
-                <showonepage>true</showonepage>
                 <visible>Control.IsVisible(100)</visible>
                 <animation effect="fade" time="1000">WindowOpen</animation>
                 <animation effect="fade" time="200">WindowClose</animation>
@@ -108,8 +102,7 @@
                         <font>Font_Reg20</font>
                         <aligny>center</aligny>
                         <align>center</align>
-                        <textcolor>FF929191</textcolor>
-                        <align>left</align>
+                        <textcolor>grey</textcolor>
                         <info>ListItem.Label</info>
                     </control>
                 </itemlayout>
@@ -122,8 +115,7 @@
                         <font>Font_Reg20</font>
                         <aligny>center</aligny>
                         <align>center</align>
-                        <textcolor>FF929191</textcolor>
-                        <align>left</align>
+                        <textcolor>grey</textcolor>
                         <label>$INFO[ListItem.Label]</label>
                         <visible>!Control.HasFocus(110)</visible>
                     </control>
@@ -135,8 +127,7 @@
                         <font>Font_Reg20</font>
                         <aligny>center</aligny>
                         <align>center</align>
-                        <textcolor>FF929191</textcolor>
-                        <align>left</align>
+                        <textcolor>grey</textcolor>
                         <label fallback="--">$INFO[ListItem.Label]</label>
                         <visible>Control.HasFocus(110)</visible>
                         <animation type="Focus" reversible="false">
@@ -154,8 +145,7 @@
                         <font>Font_Reg20</font>
                         <aligny>center</aligny>
                         <align>center</align>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <align>left</align>
+                        <textcolor>white</textcolor>
                         <label fallback="--">$INFO[ListItem.Label]</label>
                         <visible>Control.HasFocus(110)</visible>
                         <animation type="Focus" reversible="false">
@@ -168,7 +158,6 @@
                 </focusedlayout>
             </control>
             <control type="spincontrolex" id="111">
-                <description>Default spincontrolex</description>
                 <posx>1425</posx>
                 <posy>6</posy>
                 <height>62</height>
@@ -176,12 +165,9 @@
                 <texturedown>settings/spin-down.png</texturedown>
                 <textureupfocus>settings/spin-up-focus.png</textureupfocus>
                 <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
-                <font>Font_Reg18</font>
-                <textcolor>FF929191</textcolor>
-                <focusedcolor>FFFFFFFF</focusedcolor>
+                <textcolor>grey</textcolor>
+                <focusedcolor>white</focusedcolor>
                 <spinposx>-4</spinposx>
-                <spinwidth>42</spinwidth>
-                <spinheight>65</spinheight>
                 <textoffsetx>0</textoffsetx>
                 <aligny>center</aligny>
                 <reverse>yes</reverse>
@@ -190,13 +176,11 @@
                 <onright>130</onright>
                 <ondown>110</ondown>
                 <onup>110</onup>
-                <showonepage>true</showonepage>
                 <visible>Control.IsVisible(110)</visible>
                 <animation effect="fade" time="1000">WindowOpen</animation>
                 <animation effect="fade" time="200">WindowClose</animation>
             </control>
             <control type="label" id="2">
-                <description>Pick label</description>
                 <posx>82</posx>
                 <posy>150</posy>
                 <width>1754</width>
@@ -205,7 +189,7 @@
                 <aligny>center</aligny>
                 <font>Font_Reg38</font>
                 <label>CHOOSE SONG</label>
-                <textcolor>FFFFFFFF</textcolor>
+                <textcolor>white</textcolor>
                 <visible>Control.IsVisible(120) + ![Control.IsVisible(100) | Control.IsVisible(110)]</visible>
             </control>
             <!-- ** Required ** Do not change <id> or <type> (Song Chooser if it gets it wrong) -->
@@ -236,9 +220,8 @@
                         <width>1724</width>
                         <height>60</height>
                         <font>Font_Reg38</font>
-                        <align>left</align>
                         <aligny>center</aligny>
-                        <textcolor>FFFFFFFF</textcolor>
+                        <textcolor>white</textcolor>
                         <info>ListItem.Label</info>
                     </control>
                 </itemlayout>
@@ -265,15 +248,13 @@
                         <width>1724</width>
                         <height>60</height>
                         <font>Font_Reg38</font>
-                        <align>left</align>
                         <aligny>center</aligny>
-                        <textcolor>FFFFFFFF</textcolor>
+                        <textcolor>white</textcolor>
                         <info>ListItem.Label</info>
                     </control>
                 </focusedlayout>
             </control>
             <control type="spincontrolex" id="121">
-                <description>Default spincontrolex</description>
                 <posx>1425</posx>
                 <posy>6</posy>
                 <height>62</height>
@@ -281,12 +262,9 @@
                 <texturedown>settings/spin-down.png</texturedown>
                 <textureupfocus>settings/spin-up-focus.png</textureupfocus>
                 <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
-                <font>Font_Reg18</font>
-                <textcolor>FF929191</textcolor>
-                <focusedcolor>FFFFFFFF</focusedcolor>
+                <textcolor>grey</textcolor>
+                <focusedcolor>white</focusedcolor>
                 <spinposx>-4</spinposx>
-                <spinwidth>42</spinwidth>
-                <spinheight>65</spinheight>
                 <textoffsetx>0</textoffsetx>
                 <aligny>center</aligny>
                 <reverse>yes</reverse>
@@ -295,26 +273,23 @@
                 <onright>130</onright>
                 <ondown>120</ondown>
                 <onup>120</onup>
-                <showonepage>true</showonepage>
                 <visible>Control.IsVisible(120)</visible>
                 <animation effect="fade" time="1000">WindowOpen</animation>
                 <animation effect="fade" time="200">WindowClose</animation>
             </control>
             <control type="button" id="130">
-                <description>Scraper label</description>
                 <posx>75</posx>
                 <posy>15</posy>
                 <width>600</width>
                 <height>45</height>
                 <texturefocus>-</texturefocus>
                 <texturenofocus>-</texturenofocus>
-                <focusedcolor>$VAR[SelectedColorVar]</focusedcolor>
-                <label>[UPPERCASE][COLOR=FF929191]$INFO[Skin.String(LyricScript_Path)][/COLOR] - [COLOR=FFFFFFFF]$INFO[Control.GetLabel(200)][/COLOR][/UPPERCASE]</label>
+                <focusedcolor>$VAR[ColorDiffuseVar]</focusedcolor>
+                <label>[UPPERCASE][COLOR=grey]$INFO[Skin.String(LyricScript_Path)][/COLOR] - [COLOR=FFFFFFFF]$INFO[Control.GetLabel(200)][/COLOR][/UPPERCASE]</label>
                 <onleft>101</onleft>
                 <onright>110</onright>
                 <onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
                 <font>Font_Bold20_Caps</font>
-                <align>left</align>
                 <aligny>center</aligny>
                 <textoffsetx>30</textoffsetx>
                 <animation effect="fade" time="1000">WindowOpen</animation>
@@ -322,7 +297,6 @@
             </control>
             <control type="label" id="200">
                 <include>HiddenObject</include>
-                <description>Scraper label</description>
                 <visible>true</visible>
             </control>
         </control>

@@ -29,7 +29,7 @@
                 <height>330</height>
                 <texture>dialogs/dialog_back_shadow.png</texture>
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                <visible>[Skin.HasSetting(Glowbar_Home) + [Window.IsActive(home) | Window.IsActive(startup)]] | [!Skin.HasSetting(DisableGlowbar) + ![Window.IsActive(home) | Window.IsActive(startup)]]</visible>
+                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <include>PanelGlowFade</include>
             </control>
             <control type="image">
@@ -44,10 +44,9 @@
                 <posy>0</posy>
                 <width>780</width>
                 <height>78</height>
-                <textcolor>$VAR[SelectedColorVar]</textcolor>
+                <textcolor>$VAR[FontColorVar]</textcolor>
                 <align>center</align>
                 <aligny>center</aligny>
-                <font>Font_Reg18</font>
                 <scroll>true</scroll>
                 <textoffsetx>45</textoffsetx>
             </control>
@@ -60,9 +59,8 @@
                     <posy>0</posy>
                     <width>780</width>
                     <height>60</height>
-                    <textcolor>abFFFFFF</textcolor>
+                    <textcolor>white3</textcolor>
                     <align>center</align>
-                    <font>Font_Reg18</font>
                     <scroll>true</scroll>
                     <textoffsetx>45</textoffsetx>
                     <wrapmultiline>true</wrapmultiline>
@@ -72,9 +70,8 @@
                     <posy>0</posy>
                     <width>780</width>
                     <height>60</height>
-                    <textcolor>abFFFFFF</textcolor>
+                    <textcolor>white3</textcolor>
                     <align>center</align>
-                    <font>Font_Reg18</font>
                     <wrapmultiline>true</wrapmultiline>
                     <scroll>true</scroll>
                     <textoffsetx>45</textoffsetx>
@@ -84,24 +81,21 @@
                     <posy>0</posy>
                     <width>780</width>
                     <height>60</height>
-                    <textcolor>abFFFFFF</textcolor>
+                    <textcolor>white3</textcolor>
                     <align>center</align>
-                    <font>Font_Reg18</font>
                     <wrapmultiline>true</wrapmultiline>
                     <scroll>true</scroll>
                     <textoffsetx>45</textoffsetx>
                 </control>
             </control>
             <control type="button" id="10">
-                <description>No</description>
                 <posx>278</posx>
                 <posy>258</posy>
                 <width>225</width>
                 <height>45</height>
-                <font>Font_Reg18</font>
                 <label>186</label>
                 <textcolor>grey2</textcolor>
-                <focusedcolor>abFFFFFF</focusedcolor>
+                <focusedcolor>white3</focusedcolor>
                 <disabledcolor>80FFFFFF</disabledcolor>
                 <align>center</align>
                 <textoffsetx>30</textoffsetx>

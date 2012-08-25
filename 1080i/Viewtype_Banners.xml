@@ -103,7 +103,6 @@
                         <height>105</height>
                         <aligny>center</aligny>
                         <align>center</align>
-                        <textcolor>white</textcolor>
                         <label>$INFO[ListItem.Label]</label>
                         <font>Font_Bold24</font>
                     </control>
@@ -132,9 +131,10 @@
                         <posy>8</posy>
                         <width>548</width>
                         <height>105</height>
-                        <colordiffuse>55FFFFFF</colordiffuse>
+                        <animation effect="fade" start="100" end="50" time="50" condition="true">Conditional</animation>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture diffuse="thumbs/banner_mask.png">common/black.png</texture>
+                        <colordiffuse>black</colordiffuse>
+                        <texture diffuse="thumbs/banner_mask.png">common/white.png</texture>
                     </control>
                 </itemlayout>
                 <focusedlayout width="562" height="120" condition="!Skin.HasSetting(AltBannerPlex)">
@@ -155,7 +155,6 @@
                             <height>105</height>
                             <aligny>center</aligny>
                             <align>center</align>
-                            <textcolor>white</textcolor>
                             <label>$INFO[ListItem.Label]</label>
                             <font>Font_Bold24</font>
                         </control>
@@ -184,7 +183,6 @@
                             <posy>-4</posy>
                             <width>572</width>
                             <height>129</height>
-                            <aspectratio>stretch</aspectratio>
                             <texture diffuse="thumbs/banner_mask.png">common/blank.png</texture>
                             <bordersize>12</bordersize>
                             <bordertexture border="12">thumbs/banner_shadow.png</bordertexture>
@@ -200,7 +198,6 @@
                         <height>104</height>
                         <aligny>center</aligny>
                         <align>center</align>
-                        <textcolor>white</textcolor>
                         <label>$INFO[ListItem.Label]</label>
                         <font>Font_Bold24</font>
                     </control>
@@ -209,7 +206,6 @@
                         <posy>0</posy>
                         <width>562</width>
                         <height>104</height>
-                        <aspectratio>stretch</aspectratio>
                         <texture background="true">$VAR[BannerVar]</texture>
                     </control>
                     <control type="image">
@@ -230,7 +226,6 @@
                         <width>562</width>
                         <height>104</height>
                         <colordiffuse>99FFFFFF</colordiffuse>
-                        <aspectratio>stretch</aspectratio>
                         <texture>common/black.png</texture>
                     </control>
                     <control type="image">
@@ -238,7 +233,6 @@
                         <posy>0</posy>
                         <width>562</width>
                         <height>104</height>
-                        <aspectratio>stretch</aspectratio>
                         <texture background="true">thumbs/banner_shadow_in.png</texture>
                     </control>
                 </itemlayout>
@@ -251,8 +245,7 @@
                             <posy>0</posy>
                             <width>562</width>
                             <height>104</height>
-                            <colordiffuse>DDFFFFFF</colordiffuse>
-                            <aspectratio>stretch</aspectratio>
+                            <colordiffuse>white6</colordiffuse>
                             <texture>common/black.png</texture>
                         </control>
                         <control type="label">
@@ -262,7 +255,6 @@
                             <height>104</height>
                             <aligny>center</aligny>
                             <align>center</align>
-                            <textcolor>white</textcolor>
                             <label>$INFO[ListItem.Label]</label>
                             <font>Font_Bold24</font>
                         </control>
@@ -271,7 +263,6 @@
                             <posy>-7</posy>
                             <width>576</width>
                             <height>118</height>
-                            <aspectratio>stretch</aspectratio>
                             <texture background="true">$VAR[BannerVar]</texture>
                             <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                             <bordersize>7</bordersize>
@@ -293,7 +284,6 @@
                             <posy>0</posy>
                             <width>562</width>
                             <height>104</height>
-                            <aspectratio>stretch</aspectratio>
                             <texture background="true">thumbs/banner_shadow_in.png</texture>
                             <animation effect="fade" time="150" delay="150" start="100" end="0">Focus</animation>
                         </control>

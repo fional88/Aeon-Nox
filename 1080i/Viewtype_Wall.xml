@@ -24,7 +24,6 @@
             <posy>-2</posy>
             <width>192</width>
             <height>277</height>
-            <aspectratio>stretch</aspectratio>
             <fadetime>IconCrossfadeTime2</fadetime>
             <texture>wall/boxes/wall_movie_overlay.png</texture>
             <visible>Skin.HasSetting(wallcases)</visible>
@@ -46,7 +45,6 @@
             <posy>1</posy>
             <width>208</width>
             <height>204</height>
-            <aspectratio>stretch</aspectratio>
             <fadetime>IconCrossfadeTime2</fadetime>
             <texture>wall/boxes/wall_overlay.png</texture>
             <visible>!Container.Content(artists)</visible>
@@ -78,7 +76,6 @@
                 <width>265</width>
                 <height>185</height>
                 <fadetime>IconCrossfadeTime2</fadetime>
-                <aspectratio>stretch</aspectratio>
                 <bordersize>5</bordersize>
                 <texture background="true">common/black.png</texture>
                 <colordiffuse>44FFFFFF</colordiffuse>
@@ -89,8 +86,7 @@
                     <posx>0</posx>
                     <posy>195</posy>
                     <width>276</width>
-                    <align>left</align>
-                    <font>Font_Condensed18</font>
+                    <font>Font_Reg15</font>
                     <textoffsetx>15</textoffsetx>
                     <textcolor>grey2</textcolor>
                     <shadowcolor>-</shadowcolor>
@@ -101,7 +97,7 @@
                     <posy>195</posy>
                     <width>276</width>
                     <align>right</align>
-                    <font>Font_Condensed18</font>
+                    <font>Font_Reg15</font>
                     <textoffsetx>15</textoffsetx>
                     <textcolor>grey2</textcolor>
                     <shadowcolor>-</shadowcolor>
@@ -111,8 +107,7 @@
                     <posx>0</posx>
                     <posy>230</posy>
                     <width>276</width>
-                    <align>left</align>
-                    <font>Font_Condensed18</font>
+                    <font>Font_Reg15</font>
                     <textoffsetx>15</textoffsetx>
                     <textcolor>grey2</textcolor>
                     <shadowcolor>-</shadowcolor>
@@ -125,7 +120,7 @@
                 <posy>210</posy>
                 <width>276</width>
                 <align>center</align>
-                <font>Font_Condensed18</font>
+                <font>Font_Reg15</font>
                 <textoffsetx>15</textoffsetx>
                 <textcolor>grey2</textcolor>
                 <shadowcolor>-</shadowcolor>
@@ -140,8 +135,9 @@
                 <height>268</height>
                 <fadetime>IconCrossfadeTime2</fadetime>
                 <aspectratio>keep</aspectratio>
-                <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <texture border="5">views/addonwall_select.png</texture>
+                <include>Animation_VisibleChange200</include>
             </control>
             <control type="image">
                 <posx>5</posx>
@@ -160,8 +156,7 @@
                     <posx>0</posx>
                     <posy>195</posy>
                     <width>276</width>
-                    <align>left</align>
-                    <font>Font_Condensed18</font>
+                    <font>Font_Reg15</font>
                     <textoffsetx>15</textoffsetx>
                     <textcolor>white2</textcolor>
                     <shadowcolor>-</shadowcolor>
@@ -172,7 +167,7 @@
                     <posy>195</posy>
                     <width>276</width>
                     <align>right</align>
-                    <font>Font_Condensed18</font>
+                    <font>Font_Reg15</font>
                     <textoffsetx>15</textoffsetx>
                     <textcolor>white2</textcolor>
                     <shadowcolor>-</shadowcolor>
@@ -182,8 +177,7 @@
                     <posx>0</posx>
                     <posy>230</posy>
                     <width>276</width>
-                    <align>left</align>
-                    <font>Font_Condensed18</font>
+                    <font>Font_Reg15</font>
                     <textoffsetx>15</textoffsetx>
                     <textcolor>white2</textcolor>
                     <shadowcolor>-</shadowcolor>
@@ -196,9 +190,9 @@
                 <posy>210</posy>
                 <width>276</width>
                 <align>center</align>
-                <font>Font_Condensed18</font>
+                <font>Font_Reg15</font>
                 <textoffsetx>15</textoffsetx>
-                <textcolor>$VAR[TitleColorVar]</textcolor>
+                <textcolor>$VAR[FontColorVar]</textcolor>
                 <shadowcolor>-</shadowcolor>
                 <label>$INFO[ListItem.Label]</label>
             </control>
@@ -221,7 +215,6 @@
                     <height>146</height>
                     <aligny>center</aligny>
                     <align>center</align>
-                    <textcolor>white</textcolor>
                     <label>$INFO[ListItem.Label]</label>
                     <font>Font_Bold24</font>
                 </control>
@@ -248,9 +241,10 @@
                     <width>831</width>
                     <height>161</height>
                     <aspectratio align="center">stretch</aspectratio>
-                    <texture>common/black.png</texture>
+                    <texture>common/white.png</texture>
+                    <animation effect="fade" start="100" end="50" time="50" condition="true">Conditional</animation>
                     <bordersize>5</bordersize>
-                    <colordiffuse>55FFFFFF</colordiffuse>
+                    <colordiffuse>black</colordiffuse>
                 </control>
             </control>
         </itemlayout>
@@ -263,7 +257,7 @@
                     <height>161</height>
                     <aspectratio align="center">stretch</aspectratio>
                     <texture>common/black.png</texture>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     <bordertexture border="5">views/addonwall_select.png</bordertexture>
                     <bordersize>5</bordersize>
                 </control>
@@ -274,7 +268,6 @@
                     <height>146</height>
                     <aligny>center</aligny>
                     <align>center</align>
-                    <textcolor>white</textcolor>
                     <label>$INFO[ListItem.Label]</label>
                     <font>Font_Bold24</font>
                 </control>
@@ -306,7 +299,7 @@
                 <height>268</height>
                 <include>Animation_VisibleChange200</include>
                 <visible>Skin.HasSetting(ExtendedGlowMode)</visible>
-                <colordiffuse>55FFFFFF</colordiffuse>
+                <animation effect="fade" start="100" end="50" time="50" condition="true">Conditional</animation>
                 <texture>common/black.png</texture>
             </control>
         </itemlayout>
@@ -370,7 +363,6 @@
             <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
             <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-            <showonepage>true</showonepage>
             <orientation>vertical</orientation>
             <onleft>500</onleft>
             <onright>9000</onright>

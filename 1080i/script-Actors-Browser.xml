@@ -10,8 +10,9 @@
     <controls>
         <control type="image">
             <include>FullscreenDimensions</include>
-            <colordiffuse>CCFFFFFF</colordiffuse>
-            <texture>common/black.png</texture>
+            <colordiffuse>black</colordiffuse>
+            <texture>common/white.png</texture>
+            <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
             <animation effect="fade" start="0" end="100" time="2700" reversible="false">WindowOpen</animation>
             <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
         </control>
@@ -59,22 +60,15 @@
                     <width>579</width>
                     <font>Font_Bold28</font>
                     <align>center</align>
-                    <textcolor>AAFFFFFF</textcolor>
+                    <textcolor>white3</textcolor>
                 </control>
             </control>
-            <control type="image">
-                <posx>90</posx>
-                <posy>110</posy>
-                <width>1138</width>
-                <height>970</height>
-                <texture>views/listpanel_back.png</texture>
-            </control>
+            <include>FileBrowserPanel</include>
             <control type="scrollbar" id="60">
                 <posx>1200</posx>
                 <posy>158</posy>
                 <width>46</width>
                 <height>728</height>
-                <showonepage>false</showonepage>
                 <texturesliderbackground>-</texturesliderbackground>
                 <texturesliderbar>-</texturesliderbar>
                 <texturesliderbarfocus>-</texturesliderbarfocus>
@@ -115,8 +109,7 @@
                         <height>60</height>
                         <font>Font_Reg19</font>
                         <aligny>center</aligny>
-                        <textcolor>60FFFFFF</textcolor>
-                        <selectedcolor>$VAR[SelectedColorVar]</selectedcolor>
+                        <textcolor>bcicon</textcolor>
                         <info>ListItem.Label</info>
                     </control>
                     <control type="label">
@@ -127,8 +120,7 @@
                         <font>Font_Reg19</font>
                         <aligny>center</aligny>
                         <align>right</align>
-                        <textcolor>60FFFFFF</textcolor>
-                        <selectedcolor>$VAR[SelectedColorVar]</selectedcolor>
+                        <textcolor>bcicon</textcolor>
                         <info>ListItem.Label2</info>
                     </control>
                     <control type="image">
@@ -153,7 +145,7 @@
                         <width>1117</width>
                         <height>58</height>
                         <texture>views/tripanel/listselect_fo.png</texture>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <animation effect="fade" start="100" end="50" time="200" condition="!Control.HasFocus(450)">Conditional</animation>
                     </control>
                     <control type="label">
@@ -164,7 +156,6 @@
                         <font>Font_Reg19</font>
                         <aligny>center</aligny>
                         <textcolor>white6</textcolor>
-                        <selectedcolor>$VAR[SelectedColorVar]</selectedcolor>
                         <info>ListItem.Label</info>
                     </control>
                     <control type="label">
@@ -176,7 +167,6 @@
                         <aligny>center</aligny>
                         <align>right</align>
                         <textcolor>white6</textcolor>
-                        <selectedcolor>$VAR[SelectedColorVar]</selectedcolor>
                         <info>ListItem.Label2</info>
                     </control>
                     <control type="image">
@@ -216,8 +206,7 @@
                         <height>60</height>
                         <font>Font_Reg19</font>
                         <aligny>center</aligny>
-                        <textcolor>60FFFFFF</textcolor>
-                        <selectedcolor>$VAR[SelectedColorVar]</selectedcolor>
+                        <textcolor>bcicon</textcolor>
                         <info>ListItem.Label</info>
                     </control>
                     <control type="label">
@@ -228,8 +217,7 @@
                         <font>Font_Reg19</font>
                         <aligny>center</aligny>
                         <align>right</align>
-                        <textcolor>60FFFFFF</textcolor>
-                        <selectedcolor>$VAR[SelectedColorVar]</selectedcolor>
+                        <textcolor>bcicon</textcolor>
                         <info>ListItem.Label2</info>
                     </control>
                     <control type="image">
@@ -254,7 +242,7 @@
                         <width>1117</width>
                         <height>58</height>
                         <texture>views/tripanel/listselect_fo.png</texture>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <animation effect="fade" start="100" end="50" time="200" condition="!Control.HasFocus(451)">Conditional</animation>
                     </control>
                     <control type="label">
@@ -265,7 +253,6 @@
                         <font>Font_Reg19</font>
                         <aligny>center</aligny>
                         <textcolor>white6</textcolor>
-                        <selectedcolor>$VAR[SelectedColorVar]</selectedcolor>
                         <info>ListItem.Label</info>
                     </control>
                     <control type="label">
@@ -277,7 +264,6 @@
                         <aligny>center</aligny>
                         <align>right</align>
                         <textcolor>white6</textcolor>
-                        <selectedcolor>$VAR[SelectedColorVar]</selectedcolor>
                         <info>ListItem.Label2</info>
                     </control>
                     <control type="image">
@@ -308,16 +294,15 @@
                     <width>279</width>
                     <height>80</height>
                     <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     <font>Font_Reg22</font>
                     <label>186</label>
                     <align>center</align>
                     <aligny>top</aligny>
                     <textoffsety>16</textoffsety>
-                    <textcolor>FFb3b3b3</textcolor>
-                    <focusedcolor>FFFFFFFF</focusedcolor>
-                    <selectedcolor>FF262728</selectedcolor>
-                    <disabledcolor>FF5a5a5a</disabledcolor>
+                    <textcolor>white2</textcolor>
+                    <focusedcolor>white</focusedcolor>
+                    <disabledcolor>grey</disabledcolor>
                 </control>
                 <control type="button" id="414">
                     <posx>0</posx>
@@ -325,16 +310,15 @@
                     <width>279</width>
                     <height>80</height>
                     <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     <font>Font_Reg22</font>
                     <label>222</label>
                     <align>center</align>
                     <aligny>top</aligny>
                     <textoffsety>16</textoffsety>
-                    <textcolor>FFb3b3b3</textcolor>
-                    <focusedcolor>FFFFFFFF</focusedcolor>
-                    <selectedcolor>FF262728</selectedcolor>
-                    <disabledcolor>FF5a5a5a</disabledcolor>
+                    <textcolor>white2</textcolor>
+                    <focusedcolor>white</focusedcolor>
+                    <disabledcolor>grey</disabledcolor>
                 </control>
                 <control type="button" id="415">
                     <posx>0</posx>
@@ -342,16 +326,15 @@
                     <width>279</width>
                     <height>80</height>
                     <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     <font>Font_Reg22</font>
                     <label>119</label>
                     <align>center</align>
                     <aligny>top</aligny>
                     <textoffsety>16</textoffsety>
-                    <textcolor>FFb3b3b3</textcolor>
-                    <focusedcolor>FFFFFFFF</focusedcolor>
-                    <selectedcolor>FF262728</selectedcolor>
-                    <disabledcolor>FF5a5a5a</disabledcolor>
+                    <textcolor>white2</textcolor>
+                    <focusedcolor>white</focusedcolor>
+                    <disabledcolor>grey</disabledcolor>
                 </control>
                 <control type="radiobutton" id="416">
                     <posx>0</posx>
@@ -359,16 +342,16 @@
                     <width>279</width>
                     <height>80</height>
                     <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     <font>Font_Reg22</font>
                     <label>749</label>
                     <align>center</align>
                     <aligny>top</aligny>
                     <textoffsety>16</textoffsety>
-                    <textcolor>FFb3b3b3</textcolor>
-                    <focusedcolor>FFFFFFFF</focusedcolor>
+                    <textcolor>white2</textcolor>
+                    <focusedcolor>white</focusedcolor>
                     <selectedcolor>FF7b7b7b</selectedcolor>
-                    <disabledcolor>FF5a5a5a</disabledcolor>
+                    <disabledcolor>grey</disabledcolor>
                     <textureradiofocus>-</textureradiofocus>
                     <textureradionofocus>-</textureradionofocus>
                 </control>
@@ -403,7 +386,7 @@
                     <include>PanelGlowFade</include>
                     <texture>dialogs/dialog_back_shadow.png</texture>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <visible>[Skin.HasSetting(Glowbar_Home) + [Window.IsActive(home) | Window.IsActive(startup)]] | [!Skin.HasSetting(DisableGlowbar) + ![Window.IsActive(home) | Window.IsActive(startup)]]</visible>
+                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
                 <control type="image">
                     <posx>15</posx>
@@ -413,7 +396,6 @@
                     <texture>osd/osd_settings_buttonnf.png</texture>
                 </control>
                 <control type="label" id="1011">
-                    <description>fake heading label</description>
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>0</width>
@@ -426,10 +408,9 @@
                     <posy>0</posy>
                     <width>780</width>
                     <height>78</height>
-                    <textcolor>$VAR[SelectedColorVar]</textcolor>
+                    <textcolor>$VAR[FontColorVar]</textcolor>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <font>Font_Reg18</font>
                     <scroll>true</scroll>
                     <textoffsetx>45</textoffsetx>
                     <label>$INFO[Control.GetLabel(1011)] $INFO[Control.GetLabel(1015),- ,%]</label>
@@ -443,9 +424,7 @@
                         <posy>0</posy>
                         <width>780</width>
                         <height>45</height>
-                        <textcolor>abFFFFFF</textcolor>
-                        <align>left</align>
-                        <font>Font_Reg18</font>
+                        <textcolor>white3</textcolor>
                         <scroll>true</scroll>
                         <textoffsetx>45</textoffsetx>
                     </control>
@@ -454,9 +433,7 @@
                         <posy>0</posy>
                         <width>780</width>
                         <height>45</height>
-                        <textcolor>abFFFFFF</textcolor>
-                        <align>left</align>
-                        <font>Font_Reg18</font>
+                        <textcolor>white3</textcolor>
                         <scroll>true</scroll>
                         <textoffsetx>45</textoffsetx>
                     </control>
@@ -465,15 +442,12 @@
                         <posy>0</posy>
                         <width>780</width>
                         <height>45</height>
-                        <textcolor>abFFFFFF</textcolor>
-                        <align>left</align>
-                        <font>Font_Reg18</font>
+                        <textcolor>white3</textcolor>
                         <scroll>true</scroll>
                         <textoffsetx>45</textoffsetx>
                     </control>
                 </control>
                 <control type="progress" id="1015">
-                    <description>Progressbar</description>
                     <posx>45</posx>
                     <posy>225</posy>
                     <width>690</width>
@@ -486,16 +460,14 @@
                     <overlaytexture>-</overlaytexture>
                 </control>
                 <control type="button" id="1010">
-                    <description>No</description>
                     <posx>278</posx>
                     <posy>258</posy>
                     <width>225</width>
                     <height>45</height>
-                    <font>Font_Reg18</font>
                     <label>222</label>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     <textcolor>grey2</textcolor>
-                    <focusedcolor>abFFFFFF</focusedcolor>
+                    <focusedcolor>white3</focusedcolor>
                     <disabledcolor>80FFFFFF</disabledcolor>
                     <align>center</align>
                     <textoffsetx>30</textoffsetx>

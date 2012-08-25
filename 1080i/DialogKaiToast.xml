@@ -14,19 +14,20 @@
             <animation effect="slide" start="0,0" end="0,-870" time="0" condition="VideoPlayer.IsFullscreen | [[Window.IsActive(home) | Window.IsActive(1124)]+ Skin.HasSetting(lowermainmenu)]">Conditional</animation>
             <animation effect="slide" start="0,0" end="0,470" time="0" condition="[Window.IsActive(home) + Skin.HasSetting(lowermainmenu) + Window.IsActive(1128)]">Conditional</animation>
             <control type="image" id="400">
-                <posx>14</posx>
+                <posx>16</posx>
                 <posy>14</posy>
                 <width>110</width>
                 <height>110</height>
-                <texture>dialogs/exclam_icon.png</texture>
+                <texture>dialogs/exclamation.png</texture>
+                <aspectratio aligny="top">keep</aspectratio>
                 <animation effect="fade" start="50" time="1000" condition="true" pulse="true">Conditional</animation>
-            </control>
+			</control>
             <control type="label" id="401">
                 <posy>33</posy>
                 <posx>158</posx>
                 <width>564</width>
                 <height>32</height>
-                <textcolor>abFFFFFF</textcolor>
+                <textcolor>white3</textcolor>
                 <align>center</align>
                 <font>Font_Bold18</font>
                 <scroll>true</scroll>
@@ -36,9 +37,8 @@
                 <posx>158</posx>
                 <width>564</width>
                 <height>32</height>
-                <textcolor>abFFFFFF</textcolor>
+                <textcolor>white3</textcolor>
                 <align>center</align>
-                <font>Font_Reg18</font>
                 <scroll>true</scroll>
             </control>
         </control>

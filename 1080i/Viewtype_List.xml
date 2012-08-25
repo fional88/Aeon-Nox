@@ -30,20 +30,19 @@
             <include>Animation_ListSlideRight</include>
             <visible>!Skin.HasSetting(roundedcovers)</visible>
             <visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(genres) | Container.Content(musicvideos) | [Window.IsActive(programs) + !Container.Content(addons)]]</visible>
-        <control type="image">
-        <posx>-39</posx>
-        <posy>-53</posy>
-        <width>587</width>
-        <height>868</height>
-        <align>center</align>
-        <bordersize>18</bordersize>
-        <aspectratio>stretch</aspectratio>
-        <include>PanelGlowFade</include>
-            <include>Animation_VisibleChange400</include>
-            <visible>Skin.HasSetting(ExtendedGlowMode) + !Skin.HasSetting(DisableGlowbar)</visible>
-        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-            <texture background="true" fallback="DefaultVideoBigPoster.png">thumbs/thumb_glass_shadow.png</texture>
-        </control>
+            <control type="image">
+                <posx>-39</posx>
+                <posy>-53</posy>
+                <width>587</width>
+                <height>868</height>
+                <align>center</align>
+                <bordersize>18</bordersize>
+                <include>PanelGlowFade</include>
+                <include>Animation_VisibleChange400</include>
+                <visible>Skin.HasSetting(ExtendedGlowMode) + !Skin.HasSetting(DisableGlowbar)</visible>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                <texture background="true" fallback="DefaultVideoBigPoster.png">thumbs/thumb_glass_shadow.png</texture>
+            </control>
             <control type="image">
                 <posx>-19</posx>
                 <posy>-19</posy>
@@ -61,12 +60,11 @@
                 <width>510</width>
                 <height>765</height>
                 <aspectratio scalediffuse="false">scale</aspectratio>
-                <colordiffuse>white6</colordiffuse>
+                <colordiffuse>d0FFFFFF</colordiffuse>
                 <fadetime>IconCrossfadeTime2</fadetime>
                 <texture diffuse="thumbs/movieposter_mask_reflect.png" flipy="true" background="true" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
             </control>
             <control type="image">
-                <description>POSTER icon</description>
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>510</width>
@@ -84,33 +82,7 @@
             <control type="group">
                 <posy>-20</posy>
                 <include>Animation_ListSlideLeft</include>
-                <control type="image">
-                    <posx>90</posx>
-                    <posy>110</posy>
-                    <width>1138</width>
-                    <height>970</height>
-                    <texture>views/listpanel_back_shadow.png</texture>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <include>Animation_VisibleChange400</include>
-                    <include>PanelGlowFade</include>
-                </control>
-                <control type="image">
-                    <posx>90</posx>
-                    <posy>110</posy>
-                    <width>1138</width>
-                    <height>970</height>
-                    <texture>views/listpanel_back.png</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                </control>
-                <control type="image">
-                    <posx>90</posx>
-                    <posy>954</posy>
-                    <width>1138</width>
-                    <height>349</height>
-                    <texture>views/listpanel_back_reflection.png</texture>
-                </control>
-                <include condition="Skin.HasSetting(effect_bg)">BG_Effect_List_Panel</include>
+                <include>ListPanel</include>
                 <control type="group">
                     <visible>!Skin.HasSetting(slimlist)</visible>
                     <control type="image">
@@ -177,21 +149,21 @@
                 </control>
                 <control type="list" id="50">
                     <posx>90</posx>
-                    <posy>158</posy>
+                    <posy>164</posy>
                     <width>1140</width>
-                    <height>788</height>
-                    <onleft condition="!IsEmpty(ListItem.Trailer)">SetFocus(1801)</onleft>
-                    <onleft condition="IsEmpty(ListItem.Trailer)">9000</onleft>
+                    <height>800</height>
+                    <onleft condition="!IsEmpty(ListItem.Trailer) + !Skin.HasSetting(trailerincontextmenu)">SetFocus(1801)</onleft>
+                    <onleft condition="IsEmpty(ListItem.Trailer) | Skin.HasSetting(trailerincontextmenu)">9000</onleft>
                     <onup>50</onup>
                     <ondown>50</ondown>
                     <onright>62</onright>
                     <viewtype label="535">list</viewtype>
                     <pagecontrol>62</pagecontrol>
                     <scrolltime tween="quadratic" easing="out">200</scrolltime>
-                    <itemlayout height="98" condition="!Skin.HasSetting(slimlist) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(albums) | Container.Content(songs)]">
+                    <itemlayout height="100" condition="!Skin.HasSetting(slimlist) + [[Container.Content(movies) + !SubString(Container.FolderPath,videodb://1/7/)] | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(albums) | Container.Content(songs)]">
                         <control type="image">
                             <posx>0</posx>
-                            <posy>38</posy>
+                            <posy>40</posy>
                             <height>60</height>
                             <width>1140</width>
                             <texture>osd/osd_settings_buttonnf.png</texture>
@@ -202,7 +174,7 @@
                             <width>120</width>
                             <height>82</height>
                             <aspectratio>keep</aspectratio>
-                            <colordiffuse>dcbdbdbd</colordiffuse>
+                            <colordiffuse>grey</colordiffuse>
                             <texture>$VAR[ListImage1Var]</texture>
                         </control>
                         <control type="label">
@@ -231,7 +203,6 @@
                             <posy>54</posy>
                             <width>720</width>
                             <height>36</height>
-                            <font>Font_Reg18</font>
                             <aligny>center</aligny>
                             <include>detailcolornofocus</include>
                             <label>$VAR[ListLabel2Var]</label>
@@ -259,13 +230,13 @@
                             <label>$VAR[ListLabel4Var]</label>
                         </control>
                         <control type="image">
-                            <description>Rating</description>
                             <posx>900</posx>
                             <posy>54</posy>
                             <width>170</width>
                             <height>27</height>
                             <texture>$VAR[ListImage2Var]</texture>
-                            <colordiffuse>dcbdbdbd</colordiffuse>
+                            <colordiffuse>grey</colordiffuse>
+                            <aspectratio>keep</aspectratio>
                         </control>
                         <control type="image">
                             <posx>1072</posx>
@@ -276,10 +247,10 @@
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
                     </itemlayout>
-                    <focusedlayout height="98" condition="!Skin.HasSetting(slimlist) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(albums) | Container.Content(songs)]">
+                    <focusedlayout height="100" condition="!Skin.HasSetting(slimlist) + [[Container.Content(movies) + !SubString(Container.FolderPath,videodb://1/7/)] | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(albums) | Container.Content(songs)]">
                         <control type="image">
                             <posx>0</posx>
-                            <posy>38</posy>
+                            <posy>40</posy>
                             <height>60</height>
                             <width>1140</width>
                             <texture>osd/osd_settings_buttonnf.png</texture>
@@ -288,8 +259,8 @@
                             <posx>10</posx>
                             <posy>-1</posy>
                             <width>1118</width>
-                            <height>98</height>
-                            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                            <height>100</height>
+                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                             <texture>views/tripanel/listselect_fo.png</texture>
                             <animation effect="fade" start="100" end="25" tween="sine" easing="inout" time="300" condition="!Control.HasFocus(50)">Conditional</animation>
                         </control>
@@ -299,7 +270,7 @@
                             <width>120</width>
                             <height>82</height>
                             <aspectratio>keep</aspectratio>
-                            <colordiffuse>dcffffff</colordiffuse>
+                            <colordiffuse>white6</colordiffuse>
                             <texture>$VAR[ListImage1Var]</texture>
                         </control>
                         <control type="label">
@@ -328,7 +299,6 @@
                             <posy>54</posy>
                             <width>720</width>
                             <height>36</height>
-                            <font>Font_Reg18</font>
                             <aligny>center</aligny>
                             <include>listcolornofocus</include>
                             <label>$VAR[ListLabel2Var]</label>
@@ -356,13 +326,13 @@
                             <label>$VAR[ListLabel4Var]</label>
                         </control>
                         <control type="image">
-                            <description>Rating</description>
                             <posx>900</posx>
                             <posy>54</posy>
                             <width>170</width>
                             <height>27</height>
                             <texture>$VAR[ListImage2Var]</texture>
-                            <colordiffuse>dcffffff</colordiffuse>
+                            <colordiffuse>white6</colordiffuse>
+                            <aspectratio>keep</aspectratio>
                         </control>
                         <control type="image">
                             <posx>1072</posx>
@@ -372,10 +342,10 @@
                             <info>ListItem.Overlay</info>
                         </control>
                     </focusedlayout>
-                    <itemlayout height="98" condition="!Skin.HasSetting(slimlist)">
+                    <itemlayout height="100" condition="!Skin.HasSetting(slimlist)">
                         <control type="image">
                             <posx>0</posx>
-                            <posy>38</posy>
+                            <posy>40</posy>
                             <height>60</height>
                             <width>1140</width>
                             <texture>osd/osd_settings_buttonnf.png</texture>
@@ -401,18 +371,18 @@
                             <label>$INFO[ListItem.Label2]</label>
                         </control>
                         <control type="image">
-                            <posx>1032</posx>
+                            <posx>1072</posx>
                             <posy>28</posy>
-                            <width>120</width>
+                            <width>45</width>
                             <height>45</height>
                             <info>ListItem.Overlay</info>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
                     </itemlayout>
-                    <focusedlayout height="98" condition="!Skin.HasSetting(slimlist)">
+                    <focusedlayout height="100" condition="!Skin.HasSetting(slimlist)">
                         <control type="image">
                             <posx>0</posx>
-                            <posy>38</posy>
+                            <posy>40</posy>
                             <height>60</height>
                             <width>1140</width>
                             <texture>osd/osd_settings_buttonnf.png</texture>
@@ -421,8 +391,8 @@
                             <posx>10</posx>
                             <posy>-1</posy>
                             <width>1118</width>
-                            <height>98</height>
-                            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                            <height>100</height>
+                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                             <texture>views/tripanel/listselect_fo.png</texture>
                             <animation effect="fade" start="100" end="25" tween="sine" easing="inout" time="300" condition="!Control.HasFocus(50)">Conditional</animation>
                         </control>
@@ -448,17 +418,17 @@
                             <label>$INFO[ListItem.Label2]</label>
                         </control>
                         <control type="image">
-                            <posx>1032</posx>
+                            <posx>1072</posx>
                             <posy>28</posy>
-                            <width>120</width>
+                            <width>45</width>
                             <height>45</height>
                             <info>ListItem.Overlay</info>
                         </control>
                     </focusedlayout>
-                    <itemlayout height="60" condition="Skin.HasSetting(slimlist)">
+                    <itemlayout height="61.5" condition="Skin.HasSetting(slimlist)">
                         <control type="image">
                             <posx>0</posx>
-                            <posy>0</posy>
+                            <posy>1.5</posy>
                             <height>60</height>
                             <width>1142</width>
                             <texture>osd/osd_settings_buttonnf.png</texture>
@@ -494,21 +464,21 @@
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
                     </itemlayout>
-                    <focusedlayout height="60" condition="Skin.HasSetting(slimlist)">
+                    <focusedlayout height="61.5" condition="Skin.HasSetting(slimlist)">
                         <control type="image">
                             <posx>0</posx>
-                            <posy>0</posy>
+                            <posy>1.5</posy>
                             <height>60</height>
                             <width>1142</width>
                             <texture>osd/osd_settings_buttonnf.png</texture>
                         </control>
                         <control type="image">
                             <posx>10</posx>
-                            <posy>0</posy>
+                            <posy>-1</posy>
                             <width>1116</width>
-                            <height>58</height>
+                            <height>61.5</height>
                             <texture>views/tripanel/listselect_fo.png</texture>
-                            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                             <animation effect="fade" start="100" end="25" tween="sine" easing="inout" time="300" condition="!Control.HasFocus(50)">Conditional</animation>
                         </control>
                         <control type="label">
@@ -547,7 +517,6 @@
                     <posy>158</posy>
                     <width>46</width>
                     <height>780</height>
-                    <showonepage>false</showonepage>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     <texturesliderbackground>-</texturesliderbackground>
                     <texturesliderbar>-</texturesliderbar>
@@ -558,8 +527,8 @@
                     <onup>62</onup>
                     <ondown>62</ondown>
                     <onleft>50</onleft>
-                    <onright condition="!IsEmpty(ListItem.Trailer)">SetFocus(1801)</onright>
-                    <onright condition="IsEmpty(ListItem.Trailer)">9000</onright>
+                    <onright condition="!IsEmpty(ListItem.Trailer) + !Skin.HasSetting(trailerincontextmenu)">SetFocus(1801)</onright>
+                    <onright condition="IsEmpty(ListItem.Trailer) | Skin.HasSetting(trailerincontextmenu)">9000</onright>
                 </control>
                 <control type="label" id="161">
                     <posx>158</posx>
@@ -567,9 +536,8 @@
                     <width>450</width>
                     <height>62</height>
                     <font>Font_Reg15</font>
-                    <align>left</align>
                     <aligny>center</aligny>
-                    <textcolor>ff969696</textcolor>
+                    <textcolor>grey</textcolor>
                     <label>$INFO[Container(50).NumItems] $VAR[ItemLabelVar]$INFO[Container(50).Totaltime, (,)]</label>
                     <visible>!Container.Content(movies)</visible>
                 </control>
@@ -579,9 +547,8 @@
                     <width>450</width>
                     <height>62</height>
                     <font>Font_Reg15</font>
-                    <align>left</align>
                     <aligny>center</aligny>
-                    <textcolor>ff969696</textcolor>
+                    <textcolor>grey</textcolor>
                     <label>$INFO[Container(50).NumItems] $VAR[ItemLabelVar]</label>
                     <visible>Container.Content(movies) + Skin.HasSetting(ClassicTopBar)</visible>
                 </control>
@@ -593,7 +560,7 @@
                     <font>Font_Reg15</font>
                     <align>center</align>
                     <aligny>center</aligny>
-                    <textcolor>ff969696</textcolor>
+                    <textcolor>grey</textcolor>
                     <label>$INFO[Container(50).CurrentPage,$LOCALIZE[31024] ]/$INFO[Container(50).NumPages]</label>
                     <visible>Skin.HasSetting(ClassicTopBar)</visible>
                 </control>
@@ -631,20 +598,19 @@
                 <posy>165</posy>
                 <include>Animation_ListSlideRight</include>
                 <visible>![Control.IsVisible(40002) | Control.IsVisible(40003)] + !Container.Content(years)</visible>
-       <control type="image">
-        <posx>-36</posx>
-        <posy>225</posy>
-        <width>582</width>
-        <height>578</height>
-        <align>center</align>
-        <bordersize>18</bordersize>
-        <aspectratio>stretch</aspectratio>
-        <include>PanelGlowFade</include>
-            <include>Animation_VisibleChange400</include>
-            <visible>Skin.HasSetting(ExtendedGlowMode) + !Skin.HasSetting(DisableGlowbar)</visible>
-        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                <texture background="true">thumbs/boxes/cd_shadow_light_shadow.png</texture>
-        </control>
+                <control type="image">
+                    <posx>-36</posx>
+                    <posy>225</posy>
+                    <width>582</width>
+                    <height>578</height>
+                    <align>center</align>
+                    <bordersize>18</bordersize>
+                    <include>PanelGlowFade</include>
+                    <include>Animation_VisibleChange400</include>
+                    <visible>Skin.HasSetting(ExtendedGlowMode) + !Skin.HasSetting(DisableGlowbar)</visible>
+                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    <texture background="true">thumbs/boxes/cd_shadow_light_shadow.png</texture>
+                </control>
                 <control type="image">
                     <posx>0</posx>
                     <posy>255</posy>
@@ -661,11 +627,10 @@
                     <height>510</height>
                     <aspectratio scalediffuse="false">scale</aspectratio>
                     <fadetime>IconCrossfadeTime2</fadetime>
-                    <colordiffuse>white6</colordiffuse>
+                    <colordiffuse>d0FFFFFF</colordiffuse>
                     <texture diffuse="thumbs/cdcover_mask_reflect.png" flipy="true" background="true" fallback="DefaultAlbumCover.png">$VAR[ListAlbumVar]</texture>
                 </control>
                 <control type="image">
-                    <description>POSTER icon</description>
                     <posx>-20</posx>
                     <posy>235</posy>
                     <width>550</width>
@@ -679,5 +644,35 @@
             </control>
             <include condition="Window.IsActive(videos)">FloorFlagsList</include>
         </control>
+    </include>
+    <include name="ListPanel">
+                <control type="image">
+                    <posx>92</posx>
+                    <posy>110</posy>
+                    <width>1132</width>
+                    <height>1028</height>
+                    <texture>wall/wall_bg_glow.png</texture>
+                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    <include>Animation_VisibleChange400</include>
+                    <include>PanelGlowFade</include>
+                </control>
+                <control type="image">
+                    <posx>92</posx>
+                    <posy>110</posy>
+                    <width>1132</width>
+                    <height>1030</height>
+                    <texture>wall/wall_bg.png</texture>
+                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>92</posx>
+                    <posy>110</posy>
+                    <width>1132</width>
+                    <height>1030</height>
+                    <texture>wall/wall_bg_reflection.png</texture>
+                </control>
+                                <include condition="Skin.HasSetting(effect_bg)">BG_Effect_List_Panel</include>
+
     </include>
 </includes>

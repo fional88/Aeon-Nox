@@ -6,8 +6,9 @@
             <include>Animation_CommonFade</include>
             <control type="image">
                 <include>FullscreenDimensions</include>
-                <texture>common/black.png</texture>
-                <colordiffuse>aaffffff</colordiffuse>
+                <texture>common/white.png</texture>
+                <colordiffuse>black</colordiffuse>
+                <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
                 <animation effect="fade" time="250">WindowOpen</animation>
                 <animation effect="fade" time="250">WindowClose</animation>
                 <animation effect="fade" start="0" end="100" time="200">Visible</animation>
@@ -23,7 +24,6 @@
                     <effect type="slide" end="127" time="400" easing="in" tween="cubic" />
                 </animation>
                 <control type="image">
-                    <description>Panel</description>
                     <posx>108</posx>
                     <posy>30</posy>
                     <width>1708</width>
@@ -64,7 +64,7 @@
                     <onup>518</onup>
                     <ondown>518</ondown>
                     <orientation>vertical</orientation>
-                    <viewtype label="InfoPanel">list</viewtype>
+                    <viewtype label="31166">list</viewtype>
                     <pagecontrol>68</pagecontrol>
                     <scrolltime tween="quadratic" easing="out">200</scrolltime>
                     <preloaditems>2</preloaditems>
@@ -135,21 +135,19 @@
                             </control>
                         </control>
                         <control type="image">
-                            <description>Main Icon</description>
                             <posx>21</posx>
                             <posy>22</posy>
                             <width>223</width>
                             <height>335</height>
                             <fadetime>IconCrossfadeTime</fadetime>
                             <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
                         </control>
                         <control type="image">
                             <posx>1.5</posx>
                             <posy>2.5</posy>
                             <width>262</width>
                             <height>373</height>
-                            <description>Main Icon Glass overlay</description>
                             <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
                             <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                             <bordersize>19.5</bordersize>
@@ -163,7 +161,6 @@
                                 <posy>30</posy>
                                 <width>1500</width>
                                 <height>50</height>
-                                <align>left</align>
                                 <aligny>center</aligny>
                                 <font>Font_Reg38_Caps</font>
                                 <textcolor>white2</textcolor>
@@ -172,7 +169,6 @@
                                 <textoffsetx>15</textoffsetx>
                             </control>
                             <control type="image">
-                                <description>IMDB rating</description>
                                 <posx>390</posx>
                                 <posy>84</posy>
                                 <width>226</width>
@@ -186,9 +182,8 @@
                                 <posy>84</posy>
                                 <width>1500</width>
                                 <height>30</height>
-                                <align>left</align>
                                 <aligny>center</aligny>
-                                <font>Font_Condensed22</font>
+                                <font>Font_Reg19</font>
                                 <textcolor>grey2</textcolor>
                                 <shadowcolor>-</shadowcolor>
                                 <label>$INFO[ListItem.Year, • ]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</label>
@@ -201,8 +196,8 @@
                                 <height>155</height>
                                 <align>justify</align>
                                 <aligny>top</aligny>
-                                <font>Font_Condensed22</font>
-                                <textcolor>ccffffff</textcolor>
+                                <font>Font_Reg19</font>
+                                <textcolor>white6</textcolor>
                                 <label>$VAR[GlobalPlotVar]</label>
                                 <autoscroll>false</autoscroll>
                             </control>
@@ -215,7 +210,6 @@
                                 <posy>30</posy>
                                 <width>1650</width>
                                 <height>50</height>
-                                <align>left</align>
                                 <aligny>center</aligny>
                                 <font>Font_Reg38_Caps</font>
                                 <textcolor>white2</textcolor>
@@ -224,7 +218,6 @@
                                 <textoffsetx>15</textoffsetx>
                             </control>
                             <control type="image">
-                                <description>IMDB rating</description>
                                 <posx>235</posx>
                                 <posy>84</posy>
                                 <width>226</width>
@@ -238,9 +231,8 @@
                                 <posy>84</posy>
                                 <width>1500</width>
                                 <height>30</height>
-                                <align>left</align>
                                 <aligny>center</aligny>
-                                <font>Font_Condensed22</font>
+                                <font>Font_Reg19</font>
                                 <textcolor>grey2</textcolor>
                                 <shadowcolor>-</shadowcolor>
                                 <label>$INFO[ListItem.Year, • ]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</label>
@@ -253,8 +245,8 @@
                                 <height>155</height>
                                 <align>justify</align>
                                 <aligny>top</aligny>
-                                <font>Font_Condensed22</font>
-                                <textcolor>ccffffff</textcolor>
+                                <font>Font_Reg19</font>
+                                <textcolor>white6</textcolor>
                                 <label>$VAR[GlobalPlotVar]</label>
                                 <autoscroll>false</autoscroll>
                             </control>
@@ -266,7 +258,7 @@
                             <posx>0</posx>
                             <width>1940</width>
                             <height>360</height>
-                            <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
+                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                             <bordersize>5</bordersize>
                             <texture>views/tripanel/listselect_fo.png</texture>
                         </control>
@@ -329,21 +321,19 @@
                         <control type="group">
                             <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
                             <control type="image">
-                                <description>Main Icon</description>
                                 <posx>21</posx>
                                 <posy>22</posy>
                                 <width>223</width>
                                 <height>335</height>
                                 <fadetime>IconCrossfadeTime</fadetime>
                                 <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
                             </control>
                             <control type="image">
                                 <posx>1.5</posx>
                                 <posy>2.5</posy>
                                 <width>262</width>
                                 <height>373</height>
-                                <description>Main Icon Glass overlay</description>
                                 <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
                                 <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                                 <bordersize>19.5</bordersize>
@@ -358,7 +348,6 @@
                                 <posy>30</posy>
                                 <width>1500</width>
                                 <height>50</height>
-                                <align>left</align>
                                 <aligny>center</aligny>
                                 <font>Font_Reg38_Caps</font>
                                 <textcolor>white2</textcolor>
@@ -367,7 +356,6 @@
                                 <textoffsetx>15</textoffsetx>
                             </control>
                             <control type="image">
-                                <description>IMDB rating</description>
                                 <posx>390</posx>
                                 <posy>84</posy>
                                 <width>226</width>
@@ -381,9 +369,8 @@
                                 <posy>84</posy>
                                 <width>1500</width>
                                 <height>30</height>
-                                <align>left</align>
                                 <aligny>center</aligny>
-                                <font>Font_Condensed22</font>
+                                <font>Font_Reg19</font>
                                 <textcolor>grey2</textcolor>
                                 <shadowcolor>-</shadowcolor>
                                 <label>$INFO[ListItem.Year, • ]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</label>
@@ -396,8 +383,8 @@
                                 <height>155</height>
                                 <align>justify</align>
                                 <aligny>top</aligny>
-                                <font>Font_Condensed22</font>
-                                <textcolor>ccffffff</textcolor>
+                                <font>Font_Reg19</font>
+                                <textcolor>white6</textcolor>
                                 <label>$VAR[GlobalPlotVar]</label>
                                 <autoscroll>false</autoscroll>
                             </control>
@@ -410,7 +397,6 @@
                                 <posy>30</posy>
                                 <width>1650</width>
                                 <height>50</height>
-                                <align>left</align>
                                 <aligny>center</aligny>
                                 <font>Font_Reg38_Caps</font>
                                 <textcolor>white2</textcolor>
@@ -419,7 +405,6 @@
                                 <textoffsetx>15</textoffsetx>
                             </control>
                             <control type="image">
-                                <description>IMDB rating</description>
                                 <posx>235</posx>
                                 <posy>84</posy>
                                 <width>226</width>
@@ -433,9 +418,8 @@
                                 <posy>84</posy>
                                 <width>1500</width>
                                 <height>30</height>
-                                <align>left</align>
                                 <aligny>center</aligny>
-                                <font>Font_Condensed22</font>
+                                <font>Font_Reg19</font>
                                 <textcolor>grey2</textcolor>
                                 <shadowcolor>-</shadowcolor>
                                 <label>$INFO[ListItem.Year, • ]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</label>
@@ -448,8 +432,8 @@
                                 <height>155</height>
                                 <align>justify</align>
                                 <aligny>top</aligny>
-                                <font>Font_Condensed22</font>
-                                <textcolor>ccffffff</textcolor>
+                                <font>Font_Reg19</font>
+                                <textcolor>white6</textcolor>
                                 <label>$VAR[GlobalPlotVar]</label>
                                 <autoscroll>false</autoscroll>
                             </control>
@@ -518,7 +502,6 @@
                             <height>45</height>
                             <width>1240</width>
                             <label>$INFO[ListItem.Label]</label>
-                            <align>left</align>
                             <aligny>center</aligny>
                             <font>Font_Bold24</font>
                             <textcolor>grey2</textcolor>
@@ -531,7 +514,6 @@
                             <height>30</height>
                             <width>1240</width>
                             <label>$INFO[ListItem.Label2,• ]</label>
-                            <align>left</align>
                             <aligny>center</aligny>
                             <font>Font_Reg20</font>
                             <textcolor>grey2</textcolor>
@@ -540,7 +522,6 @@
                             <textoffsetx>10</textoffsetx>
                         </control>
                         <control type="image">
-                            <description>IMDB rating</description>
                             <posx>372</posx>
                             <posy>56</posy>
                             <width>226</width>
@@ -554,7 +535,6 @@
                             <posy>90</posy>
                             <width>1470</width>
                             <height>116</height>
-                            <font>Font_Reg18</font>
                             <align>justify</align>
                             <textcolor>grey2</textcolor>
                             <pagecontrol>-</pagecontrol>
@@ -577,7 +557,7 @@
                             <posx>0</posx>
                             <width>1940</width>
                             <height>220</height>
-                            <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
+                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                             <bordersize>5</bordersize>
                             <texture>views/tripanel/listselect_fo.png</texture>
                         </control>
@@ -629,13 +609,11 @@
                             <include>OverlayVisibility0</include>
                         </control>
                         <control type="label">
-                            <description>Title label</description>
                             <posx>400</posx>
                             <posy>10</posy>
                             <height>45</height>
                             <width>1240</width>
                             <label>$INFO[ListItem.Label]</label>
-                            <align>left</align>
                             <aligny>center</aligny>
                             <font>Font_Bold24</font>
                             <textcolor>white2</textcolor>
@@ -648,7 +626,6 @@
                             <height>30</height>
                             <width>1240</width>
                             <label>$INFO[ListItem.Label2,• ]</label>
-                            <align>left</align>
                             <aligny>center</aligny>
                             <font>Font_Reg20</font>
                             <textcolor>white2</textcolor>
@@ -657,7 +634,6 @@
                             <textoffsetx>10</textoffsetx>
                         </control>
                         <control type="image">
-                            <description>IMDB rating</description>
                             <posx>372</posx>
                             <posy>56</posy>
                             <width>226</width>
@@ -671,7 +647,6 @@
                             <posy>90</posy>
                             <width>1470</width>
                             <height>116</height>
-                            <font>Font_Reg18</font>
                             <align>justify</align>
                             <textcolor>white2</textcolor>
                             <pagecontrol>-</pagecontrol>
@@ -726,7 +701,6 @@
                 <include>Objects_CommonSettingsScrollbar</include>
                 <onleft>518</onleft>
                 <onright>9000</onright>
-                <showonepage>false</showonepage>
                 <orientation>vertical</orientation>
                 <animation effect="slide" start="0" end="-833" time="0" condition="Skin.HasSetting(fspanelfanart)">Conditional</animation>
                 <visible>!Skin.HasSetting(fspanelbackground)</visible>
@@ -739,7 +713,7 @@
             <posx>0</posx>
             <width>970</width>
             <height>360</height>
-            <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
+            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
             <bordersize>5</bordersize>
             <texture>views/tripanel/listselect_fo.png</texture>
         </control>
@@ -802,21 +776,19 @@
         <control type="group">
             <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
             <control type="image">
-                <description>Main Icon</description>
                 <posx>21</posx>
                 <posy>22</posy>
                 <width>223</width>
                 <height>335</height>
                 <fadetime>IconCrossfadeTime</fadetime>
                 <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
-                <aspectratio scalediffuse="false">stretch</aspectratio>
+                <aspectratio scalediffuse="false">scale</aspectratio>
             </control>
             <control type="image">
                 <posx>1.5</posx>
                 <posy>2.5</posy>
                 <width>262</width>
                 <height>373</height>
-                <description>Main Icon Glass overlay</description>
                 <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
                 <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                 <bordersize>19.5</bordersize>
@@ -839,17 +811,38 @@
                 <label>$INFO[ListItem.Label]</label>
                 <textoffsetx>15</textoffsetx>
             </control>
-            <control type="label">
-                <posx>650</posx>
+   <control type="label">
+                <posx>589</posx>
                 <posy>74</posy>
                 <width>600</width>
                 <height>30</height>
-                <align>center</align>
+                <align>right</align>
                 <aligny>center</aligny>
-                <font>Font_Condensed22</font>
+                <font>Font_Reg19</font>
                 <textcolor>grey2</textcolor>
                 <shadowcolor>-</shadowcolor>
-                <label>$INFO[ListItem.Year]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]$INFO[ListItem.Rating, • ]</label>
+                <label>$INFO[ListItem.Year,, • ]</label>
+                <textoffsetx>15</textoffsetx>
+            </control>
+                                        <control type="image">
+                                <posx>575</posx>
+                                <posy>78</posy>
+                                <width>150</width>
+                                <height>30</height>
+                                <colordiffuse>grey</colordiffuse>
+                                <texture>$INFO[ListItem.Rating,stars/,.png]</texture>
+                            </control>
+            <control type="label">
+                <posx>707</posx>
+                <posy>74</posy>
+                <width>600</width>
+                <height>30</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <font>Font_Reg19</font>
+                <textcolor>grey2</textcolor>
+                <shadowcolor>-</shadowcolor>
+                <label>$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</label>
                 <textoffsetx>15</textoffsetx>
             </control>
             <control type="textbox">
@@ -859,8 +852,8 @@
                 <height>195</height>
                 <align>justify</align>
                 <aligny>top</aligny>
-                <font>Font_Condensed22</font>
-                <textcolor>ccffffff</textcolor>
+                <font>Font_Reg19</font>
+                <textcolor>white6</textcolor>
                 <label>$VAR[GlobalPlotOutlineVar]</label>
                 <autoscroll>false</autoscroll>
             </control>
@@ -873,7 +866,6 @@
                 <posy>30</posy>
                 <width>660</width>
                 <height>50</height>
-                <align>left</align>
                 <aligny>center</aligny>
                 <font>Font_Reg38_Caps</font>
                 <textcolor>white2</textcolor>
@@ -882,7 +874,6 @@
                 <textoffsetx>15</textoffsetx>
             </control>
             <control type="image">
-                <description>IMDB rating</description>
                 <posx>235</posx>
                 <posy>84</posy>
                 <width>226</width>
@@ -894,11 +885,10 @@
             <control type="label">
                 <posx>415</posx>
                 <posy>84</posy>
-                <width>1500</width>
+                <width>570</width>
                 <height>30</height>
-                <align>left</align>
                 <aligny>center</aligny>
-                <font>Font_Condensed22</font>
+                <font>Font_Reg19</font>
                 <textcolor>grey2</textcolor>
                 <shadowcolor>-</shadowcolor>
                 <label>$INFO[ListItem.Year, • ]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</label>
@@ -911,8 +901,8 @@
                 <height>155</height>
                 <align>justify</align>
                 <aligny>top</aligny>
-                <font>Font_Condensed22</font>
-                <textcolor>ccffffff</textcolor>
+                <font>Font_Reg19</font>
+                <textcolor>white6</textcolor>
                 <label>$VAR[GlobalPlotVar]</label>
                 <autoscroll>false</autoscroll>
             </control>
@@ -973,21 +963,19 @@
             </control>
         </control>
         <control type="image">
-            <description>Main Icon</description>
             <posx>21</posx>
             <posy>22</posy>
             <width>223</width>
             <height>335</height>
             <fadetime>IconCrossfadeTime</fadetime>
             <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
-            <aspectratio scalediffuse="false">stretch</aspectratio>
+            <aspectratio scalediffuse="false">scale</aspectratio>
         </control>
         <control type="image">
             <posx>1.5</posx>
             <posy>2.5</posy>
             <width>262</width>
             <height>373</height>
-            <description>Main Icon Glass overlay</description>
             <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
             <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
             <bordersize>19.5</bordersize>
@@ -1009,17 +997,38 @@
                 <label>$INFO[ListItem.Label]</label>
                 <textoffsetx>15</textoffsetx>
             </control>
-            <control type="label">
-                <posx>650</posx>
+   <control type="label">
+                <posx>589</posx>
                 <posy>74</posy>
                 <width>600</width>
                 <height>30</height>
-                <align>center</align>
+                <align>right</align>
                 <aligny>center</aligny>
-                <font>Font_Condensed22</font>
+                <font>Font_Reg19</font>
                 <textcolor>grey2</textcolor>
                 <shadowcolor>-</shadowcolor>
-                <label>$INFO[ListItem.Year]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]$INFO[ListItem.Rating, • ]</label>
+                <label>$INFO[ListItem.Year,, • ]</label>
+                <textoffsetx>15</textoffsetx>
+            </control>
+                                        <control type="image">
+                                <posx>575</posx>
+                                <posy>78</posy>
+                                <width>150</width>
+                                <height>30</height>
+                                <colordiffuse>grey</colordiffuse>
+                                <texture>$INFO[ListItem.Rating,stars/,.png]</texture>
+                            </control>
+            <control type="label">
+                <posx>707</posx>
+                <posy>74</posy>
+                <width>600</width>
+                <height>30</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <font>Font_Reg19</font>
+                <textcolor>grey2</textcolor>
+                <shadowcolor>-</shadowcolor>
+                <label>$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</label>
                 <textoffsetx>15</textoffsetx>
             </control>
             <control type="textbox">
@@ -1029,8 +1038,8 @@
                 <height>195</height>
                 <align>justify</align>
                 <aligny>top</aligny>
-                <font>Font_Condensed22</font>
-                <textcolor>ccffffff</textcolor>
+                <font>Font_Reg19</font>
+                <textcolor>white6</textcolor>
                 <label>$VAR[GlobalPlotOutlineVar]</label>
                 <autoscroll>false</autoscroll>
             </control>
@@ -1043,7 +1052,6 @@
                 <posy>30</posy>
                 <width>660</width>
                 <height>50</height>
-                <align>left</align>
                 <aligny>center</aligny>
                 <font>Font_Reg38_Caps</font>
                 <textcolor>white2</textcolor>
@@ -1052,7 +1060,6 @@
                 <textoffsetx>15</textoffsetx>
             </control>
             <control type="image">
-                <description>IMDB rating</description>
                 <posx>235</posx>
                 <posy>84</posy>
                 <width>226</width>
@@ -1064,11 +1071,10 @@
             <control type="label">
                 <posx>415</posx>
                 <posy>84</posy>
-                <width>1500</width>
+                <width>570</width>
                 <height>30</height>
-                <align>left</align>
                 <aligny>center</aligny>
-                <font>Font_Condensed22</font>
+                <font>Font_Reg19</font>
                 <textcolor>grey2</textcolor>
                 <shadowcolor>-</shadowcolor>
                 <label>$INFO[ListItem.Year, • ]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</label>
@@ -1081,8 +1087,8 @@
                 <height>155</height>
                 <align>justify</align>
                 <aligny>top</aligny>
-                <font>Font_Condensed22</font>
-                <textcolor>ccffffff</textcolor>
+                <font>Font_Reg19</font>
+                <textcolor>white6</textcolor>
                 <label>$VAR[GlobalPlotVar]</label>
                 <autoscroll>false</autoscroll>
             </control>
@@ -1094,7 +1100,7 @@
             <posx>0</posx>
             <width>970</width>
             <height>220</height>
-            <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
+            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
             <bordersize>5</bordersize>
             <texture>views/tripanel/listselect_fo.png</texture>
         </control>
@@ -1146,13 +1152,11 @@
             <include>OverlayVisibility0</include>
         </control>
         <control type="label">
-            <description>Title label</description>
             <posx>400</posx>
             <posy>10</posy>
             <height>45</height>
             <width>1240</width>
             <label>$INFO[ListItem.Label]</label>
-            <align>left</align>
             <aligny>center</aligny>
             <font>Font_Bold24</font>
             <textcolor>white2</textcolor>
@@ -1165,7 +1169,6 @@
             <height>30</height>
             <width>1240</width>
             <label>$INFO[ListItem.Label2,• ]</label>
-            <align>left</align>
             <aligny>center</aligny>
             <font>Font_Reg20</font>
             <textcolor>white2</textcolor>
@@ -1174,7 +1177,6 @@
             <visible>Container.Content(tvshows)</visible>
         </control>
         <control type="image">
-            <description>IMDB rating</description>
             <posx>372</posx>
             <posy>56</posy>
             <width>226</width>
@@ -1188,7 +1190,6 @@
             <posy>90</posy>
             <width>500</width>
             <height>116</height>
-            <font>Font_Reg18</font>
             <align>justify</align>
             <textcolor>white2</textcolor>
             <pagecontrol>-</pagecontrol>
@@ -1259,7 +1260,6 @@
             <height>45</height>
             <width>1240</width>
             <label>$INFO[ListItem.Label]</label>
-            <align>left</align>
             <aligny>center</aligny>
             <font>Font_Bold24</font>
             <textcolor>grey2</textcolor>
@@ -1272,7 +1272,6 @@
             <height>30</height>
             <width>1240</width>
             <label>$INFO[ListItem.Label2,• ]</label>
-            <align>left</align>
             <aligny>center</aligny>
             <font>Font_Reg20</font>
             <textcolor>grey2</textcolor>
@@ -1281,7 +1280,6 @@
             <visible>Container.Content(tvshows)</visible>
         </control>
         <control type="image">
-            <description>IMDB rating</description>
             <posx>372</posx>
             <posy>56</posy>
             <width>226</width>
@@ -1295,7 +1293,6 @@
             <posy>90</posy>
             <width>500</width>
             <height>116</height>
-            <font>Font_Reg18</font>
             <align>justify</align>
             <textcolor>grey2</textcolor>
             <pagecontrol>-</pagecontrol>

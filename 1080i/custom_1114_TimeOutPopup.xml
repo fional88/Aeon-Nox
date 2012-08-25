@@ -34,8 +34,7 @@
                 <posy>75</posy>
                 <width>147</width>
                 <align>center</align>
-                <textcolor>abFFFFFF</textcolor>
-                <font>Font_Reg18</font>
+                <textcolor>white3</textcolor>
                 <label>[B]1[/B]</label>
                 <texturefocus>-</texturefocus>
                 <texturenofocus>-</texturenofocus>
@@ -58,8 +57,7 @@
                 <posy>75</posy>
                 <width>147</width>
                 <align>center</align>
-                <textcolor>abFFFFFF</textcolor>
-                <font>Font_Reg18</font>
+                <textcolor>white3</textcolor>
                 <label>[B]2[/B]</label>
                 <scroll>true</scroll>
                 <onclick>Skin.SetBool(2sec)</onclick>
@@ -82,8 +80,7 @@
                 <posy>75</posy>
                 <width>147</width>
                 <align>center</align>
-                <textcolor>abFFFFFF</textcolor>
-                <font>Font_Reg18</font>
+                <textcolor>white3</textcolor>
                 <label>[B]3[/B]</label>
                 <scroll>true</scroll>
                 <onclick>Skin.SetBool(3sec)</onclick>
@@ -106,8 +103,7 @@
                 <posy>75</posy>
                 <width>147</width>
                 <align>center</align>
-                <textcolor>abFFFFFF</textcolor>
-                <font>Font_Reg18</font>
+                <textcolor>white3</textcolor>
                 <label>[B]4[/B]</label>
                 <scroll>true</scroll>
                 <onclick>Skin.SetBool(4sec)</onclick>
@@ -130,8 +126,7 @@
                 <posy>75</posy>
                 <width>147</width>
                 <align>center</align>
-                <textcolor>abFFFFFF</textcolor>
-                <font>Font_Reg18</font>
+                <textcolor>white3</textcolor>
                 <label>[B]5[/B]</label>
                 <scroll>true</scroll>
                 <onclick>Skin.SetBool(5sec)</onclick>
@@ -150,7 +145,6 @@
                 <visible allowhiddenfocus="true">Control.HasFocus(14)</visible>
             </control>
             <control type="image">
-                <description>left arrow</description>
                 <posx>292</posx>
                 <posy>93</posy>
                 <width>30</width>
@@ -160,7 +154,6 @@
                 <include>Animation_CommonFade</include>
             </control>
             <control type="image">
-                <description>right arrow</description>
                 <posx>483</posx>
                 <posy>93</posy>
                 <width>30</width>

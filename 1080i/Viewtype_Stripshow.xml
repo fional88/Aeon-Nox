@@ -31,10 +31,9 @@
                 <height>57</height>
                 <width>930</width>
                 <font>Font_Reg17</font>
-                <textcolor>white</textcolor>
                 <aligny>center</aligny>
                 <align>right</align>
-                <label fallback="312577">$INFO[ListItem.PictureResolution,[COLOR abFFFFFF]$LOCALIZE[21805]: [/COLOR]]</label>
+                <label fallback="312577">$INFO[ListItem.PictureResolution,[COLOR white3]$LOCALIZE[21805]: [/COLOR]]</label>
             </control>
             <control type="label">
                 <posx>1890</posx>
@@ -42,10 +41,9 @@
                 <height>57</height>
                 <width>930</width>
                 <font>Font_Reg17</font>
-                <textcolor>white</textcolor>
                 <aligny>center</aligny>
                 <align>right</align>
-                <label fallback="312577">$INFO[ListItem.PictureDateTime,[COLOR abFFFFFF]$LOCALIZE[21803]: [/COLOR]]</label>
+                <label fallback="312577">$INFO[ListItem.PictureDateTime,[COLOR white3]$LOCALIZE[21803]: [/COLOR]]</label>
             </control>
             <control type="label">
                 <posx>30</posx>
@@ -53,10 +51,8 @@
                 <height>57</height>
                 <width>930</width>
                 <font>Font_Reg17</font>
-                <textcolor>white</textcolor>
                 <aligny>center</aligny>
-                <align>left</align>
-                <label fallback="312577">$INFO[ListItem.Label,[COLOR abFFFFFF]$LOCALIZE[21800]: [/COLOR]]</label>
+                <label fallback="312577">$INFO[ListItem.Label,[COLOR white3]$LOCALIZE[21800]: [/COLOR]]</label>
             </control>
             <control type="label">
                 <posx>30</posx>
@@ -64,10 +60,8 @@
                 <height>57</height>
                 <width>930</width>
                 <font>Font_Reg17</font>
-                <textcolor>white</textcolor>
                 <aligny>center</aligny>
-                <align>left</align>
-                <label fallback="312577">$INFO[ListItem.Size,[COLOR abFFFFFF]$LOCALIZE[21802]: [/COLOR]]</label>
+                <label fallback="312577">$INFO[ListItem.Size,[COLOR white3]$LOCALIZE[21802]: [/COLOR]]</label>
             </control>
         </control>
         <control type="group">
@@ -80,9 +74,7 @@
                 <height>57</height>
                 <width>930</width>
                 <font>Font_Reg17</font>
-                <textcolor>white</textcolor>
                 <aligny>center</aligny>
-                <align>left</align>
                 <label fallback="312577">$INFO[ListItem.Label]</label>
             </control>
         </control>
@@ -182,7 +174,6 @@
                 <textureslidernibfocus>views/scrollBarNib.png</textureslidernibfocus>
                 <onup>517</onup>
                 <ondown>195</ondown>
-                <showonepage>false</showonepage>
                 <orientation>horizontal</orientation>
             </control>
             <control type="image">

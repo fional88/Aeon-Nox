@@ -2,13 +2,14 @@
 <window id="25">
     <defaultcontrol always="true">50</defaultcontrol>
     <onload condition="System.HasAddon(script.tvtunes) + IsEmpty(Window(Home).Property(DontRunTVShowScripts))">XBMC.RunScript(script.tvtunes,backend=True)</onload>
+    <backgroundcolor>black</backgroundcolor>
     <onload condition="System.HasAddon(script.tv.show.next.aired) + IsEmpty(Window(Home).Property(DontRunTVShowScripts)) + !Skin.HasSetting(NextAiredInfo)">RunScript(script.tv.show.next.aired,backend=True)</onload>
     <allowoverlay>no</allowoverlay>
-    <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include><include condition="!Skin.HasSetting(firstrun3.5)">AutoConfig3.5</include>
+    <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
+    
     <views>50,52,57,500,501,503,504,505,508,509,510,511,512,514,516</views>
     <controls>
         <control type="group">
-            <description>Fanart</description>
             <visible>!Control.IsVisible(516)</visible>
             <control type="multiimage" id="8861">
                 <width>0</width>
@@ -91,7 +92,6 @@
             <include condition="!Skin.HasSetting(DisableEpisodeVL) + IsEmpty(Window(Home).Property(DontRunTVShowScripts))">Viewtype_Episode</include>
         </control>
         <control type="group">
-            <description>Invisible buttons for trailer</description>
             <control type="button" id="7000">
                 <include>HiddenObject</include>
                 <onfocus condition="[[Skin.HasSetting(showcaseinfoon) + Container.Content(movies)] | [Skin.HasSetting(showcaseinfoonep) + Container.Content(episodes)] | [Skin.HasSetting(showcaseinfoontv) + [Container.Content(tvshows) | Container.Content(seasons)]]] + [Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(508)]">SetFocus(9000)</onfocus>
@@ -129,7 +129,6 @@
         <include condition="!Skin.HasSetting(DisablePostersVL) | !Skin.HasSetting(DisableShiftVL) |!Skin.HasSetting(DisableTriPanelVL)">Posters_Furniture</include>
         <include>Furniture_DarkGradient</include>
         <control type="group">
-            <description>Breadcrumbs</description>
             <include>Animation_HideBreadCrumbs</include>
             <include>Breadcrumbs_BackBar</include>
             <control type="group">
@@ -137,17 +136,14 @@
                     <posx>22</posx>
                     <posy>0</posy>
                     <width>750</width>
-                    <align>left</align>
                     <visible></visible>
                     <itemgap>0</itemgap>
                     <orientation>horizontal</orientation>
                     <visible>Skin.HasSetting(breadcrumbslabel)</visible>
                     <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying) + IsEmpty(Window(videolibrary).Property(tvtunesIsAlive))]</visible>
                     <control type="image">
-                        <description>Items Icon</description>
                         <width>54</width>
                         <height>38</height>
-                        <aspectratio>stretch</aspectratio>
                         <texture>common/logo_movies.png</texture>
                         <include>BreadcrumbsIcon</include>
                         <animation effect="slide" start="0,0" end="-9,0" time="0" condition="true">Conditional</animation>

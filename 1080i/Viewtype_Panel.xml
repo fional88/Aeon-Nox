@@ -38,6 +38,7 @@
                 <height>1010</height>
                 <texture background="true">settings/settings_intframe_bottom.png</texture>
                 <include>Animation_SettingsInternalPanel</include>
+                <visible>![Skin.HasSetting(panelinfo) + Container.Content(movies)]</visible>
             </control>
             <control type="group">
                 <visible>![Skin.HasSetting(panelinfo) + Container.Content(movies)] | Player.HasVideo</visible>

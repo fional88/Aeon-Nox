@@ -42,6 +42,9 @@
             <include>ShowcaseInfoPaneMusic</include>
         </control>
         <control type="group">
+                <animation effect="slide" start="0,0" end="0,650" time="700" easing="out" tween="quadratic" condition="Control.HasFocus(109)">Conditional</animation>
+        <control type="group">
+
             <include>CommonRootView</include>
             <!-- view id = 50 -->
             <include>ShowcaseQuadrate</include>
@@ -76,6 +79,7 @@
         </control>
         <include>FloorLabels</include>
         <include>Furniture_DarkGradient</include>
+        </control>
         <control type="group">
             <include>Animation_HideBreadCrumbs</include>
             <include>Breadcrumbs_BackBar</include>

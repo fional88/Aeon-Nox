@@ -27,6 +27,9 @@
         </control>
         <include>WallPanel</include>
         <control type="group">
+                <animation effect="slide" start="0,0" end="0,650" time="700" easing="out" tween="quadratic" condition="Control.HasFocus(109)">Conditional</animation>
+        <control type="group">
+
             <include>CommonRootView</include>
             <!-- view id = 50 -->
             <include condition="Skin.HasSetting(pictures)">ShowcaseQuadrate</include>
@@ -47,6 +50,7 @@
         <control type="group">
             <visible>!Control.IsVisible(517)</visible>
             <include>Furniture_DarkGradient</include>
+        </control>
         </control>
         <control type="group">
             <include>Animation_HideBreadCrumbs</include>

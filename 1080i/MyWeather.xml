@@ -4,7 +4,6 @@
     <backgroundcolor>black</backgroundcolor>
     <allowoverlay>no</allowoverlay>
     <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
-    
     <onunload>ClearProperty(FSMap,weather)</onunload>
     <controls>
         <control type="multiimage">
@@ -44,7 +43,6 @@
         <control type="group">
             <include>Animation_OpenClose_Furniture</include>
             <control type="image">
-                <posx>0</posx>
                 <posy>472</posy>
                 <width>1920</width>
                 <height>608</height>
@@ -62,8 +60,6 @@
                 <visible>Skin.HasSetting(darkinfopane)</visible>
             </control>
             <control type="image">
-                <posx>0</posx>
-                <posy>0</posy>
                 <width>696</width>
                 <height>1080</height>
                 <texture>views/showcase_vignette.png</texture>
@@ -72,7 +68,6 @@
             </control>
             <control type="image">
                 <posx>1224</posx>
-                <posy>0</posy>
                 <width>696</width>
                 <height>1080</height>
                 <visible>true</visible>
@@ -379,7 +374,6 @@
                             <height>540</height>
                             <orientation>vertical</orientation>
                             <pagecontrol>60</pagecontrol>
-                            
                             <scrolltime>200</scrolltime>
                             <onleft>9000</onleft>
                             <onup>7500</onup>
@@ -435,7 +429,6 @@
                                     <label>$INFO[ListItem.Property(LowTemperature),[COLOR grey2]$LOCALIZE[418]: [/COLOR]]</label>
                                 </control>
                                 <control type="image">
-                                    <posx>0</posx>
                                     <posy>75</posy>
                                     <height>60</height>
                                     <width>840</width>
@@ -444,8 +437,6 @@
                             </itemlayout>
                             <focusedlayout width="840" height="135">
                                 <control type="image">
-                                    <posx>0</posx>
-                                    <posy>0</posy>
                                     <width>834</width>
                                     <height>135</height>
                                     <texture>views/tripanel/listselect_fo.png</texture>
@@ -684,7 +675,6 @@
                             <height>540</height>
                             <orientation>vertical</orientation>
                             <pagecontrol>60</pagecontrol>
-                            
                             <scrolltime>200</scrolltime>
                             <onleft>9000</onleft>
                             <onup>7502</onup>
@@ -739,7 +729,6 @@
                                     <label>[COLOR grey2]$LOCALIZE[31948]: [/COLOR]$INFO[ListItem.Property(ChancePrecipitation)]</label>
                                 </control>
                                 <control type="image">
-                                    <posx>0</posx>
                                     <posy>75</posy>
                                     <height>60</height>
                                     <width>840</width>
@@ -748,8 +737,6 @@
                             </itemlayout>
                             <focusedlayout width="840" height="135">
                                 <control type="image">
-                                    <posx>0</posx>
-                                    <posy>0</posy>
                                     <width>834</width>
                                     <height>135</height>
                                     <texture>views/tripanel/listselect_fo.png</texture>
@@ -846,7 +833,6 @@
                             <height>540</height>
                             <orientation>vertical</orientation>
                             <pagecontrol>60</pagecontrol>
-                            
                             <scrolltime>200</scrolltime>
                             <onleft>9000</onleft>
                             <onup>7503</onup>
@@ -902,7 +888,6 @@
                                     <label>$INFO[ListItem.Property(LowTemperature),[COLOR grey2]$LOCALIZE[418]: [/COLOR]]</label>
                                 </control>
                                 <control type="image">
-                                    <posx>0</posx>
                                     <posy>75</posy>
                                     <height>60</height>
                                     <width>840</width>
@@ -911,8 +896,6 @@
                             </itemlayout>
                             <focusedlayout width="840" height="135">
                                 <control type="image">
-                                    <posx>0</posx>
-                                    <posy>0</posy>
                                     <width>834</width>
                                     <height>135</height>
                                     <texture>views/tripanel/listselect_fo.png</texture>
@@ -1022,7 +1005,6 @@
                             <height>786</height>
                             <orientation>vertical</orientation>
                             <pagecontrol>60</pagecontrol>
-                            
                             <scrolltime>200</scrolltime>
                             <onleft>9000</onleft>
                             <onup>7504</onup>
@@ -1077,7 +1059,6 @@
                                     <label>$INFO[ListItem.Property(FeelsLike),[COLOR grey2]$LOCALIZE[402]: [/COLOR]]</label>
                                 </control>
                                 <control type="image">
-                                    <posx>0</posx>
                                     <posy>75</posy>
                                     <height>60</height>
                                     <width>840</width>
@@ -1086,8 +1067,6 @@
                             </itemlayout>
                             <focusedlayout width="840" height="135">
                                 <control type="image">
-                                    <posx>0</posx>
-                                    <posy>0</posy>
                                     <width>834</width>
                                     <height>135</height>
                                     <texture>views/tripanel/listselect_fo.png</texture>
@@ -1574,8 +1553,6 @@
                                 <scrolltime>200</scrolltime>
                                 <itemlayout height="60" width="878">
                                     <control type="image">
-                                        <posx>0</posx>
-                                        <posy>0</posy>
                                         <height>60</height>
                                         <width>878</width>
                                         <texture>osd/osd_settings_buttonnf.png</texture>
@@ -1589,7 +1566,6 @@
                                     </control>
                                     <control type="label">
                                         <posx>120</posx>
-                                        <posy>0</posy>
                                         <width>810</width>
                                         <height>60</height>
                                         <include>listcolornofocus</include>
@@ -1599,15 +1575,11 @@
                                 </itemlayout>
                                 <focusedlayout height="60" width="878">
                                     <control type="image">
-                                        <posx>0</posx>
-                                        <posy>0</posy>
                                         <height>60</height>
                                         <width>878</width>
                                         <texture>osd/osd_settings_buttonnf.png</texture>
                                     </control>
                                     <control type="image">
-                                        <posx>0</posx>
-                                        <posy>0</posy>
                                         <width>834</width>
                                         <height>60</height>
                                         <texture>views/tripanel/listselect_fo.png</texture>
@@ -1623,7 +1595,6 @@
                                     </control>
                                     <control type="label">
                                         <posx>120</posx>
-                                        <posy>0</posy>
                                         <width>810</width>
                                         <height>60</height>
                                         <include>listcolorfocus</include>
@@ -1981,7 +1952,6 @@
                             <control type="group">
                                 <control type="image">
                                     <posx>370</posx>
-                                    <posy>0</posy>
                                     <width>1500</width>
                                     <height>50</height>
                                     <texture border="15,0,0,0" flipx="true">dialogs/context_middle.png</texture>
@@ -1993,7 +1963,6 @@
                                 </control>
                                 <control type="image">
                                     <posx>-100</posx>
-                                    <posy>0</posy>
                                     <width>1620</width>
                                     <height>1080</height>
                                     <fadetime>1000</fadetime>
@@ -2055,7 +2024,6 @@
                             <height>222</height>
                             <pagecontrol>60</pagecontrol>
                             <orientation>horizontal</orientation>
-                            
                             <scrolltime>200</scrolltime>
                             <onup>7500</onup>
                             <ondown>7500</ondown>
@@ -2064,7 +2032,6 @@
                             <itemlayout width="210" height="195">
                                 <control type="label">
                                     <posx>105</posx>
-                                    <posy>0</posy>
                                     <width>210</width>
                                     <height>34</height>
                                     <font>Font_Reg18_Caps</font>
@@ -2095,7 +2062,6 @@
                             <focusedlayout width="210" height="195">
                                 <control type="label">
                                     <posx>105</posx>
-                                    <posy>0</posy>
                                     <width>210</width>
                                     <height>34</height>
                                     <font>Font_Reg18_Caps</font>
@@ -2199,7 +2165,6 @@
                     </control>
                 </control>
                 <control type="fadelabel">
-                    <posx>0</posx>
                     <posy>1030</posy>
                     <width>1920</width>
                     <height>20</height>
@@ -2334,7 +2299,6 @@
                             <visible>!IsEmpty(Window.Property(Current.Sunrise))</visible>
                             <control type="label">
                                 <posx>255</posx>
-                                <posy>0</posy>
                                 <width>255</width>
                                 <height>52</height>
                                 <font>Font_Reg20</font>
@@ -2345,7 +2309,6 @@
                             </control>
                             <control type="label">
                                 <posx>278</posx>
-                                <posy>0</posy>
                                 <width>450</width>
                                 <height>52</height>
                                 <font>Font_Reg20</font>
@@ -2360,7 +2323,6 @@
                             <visible>!IsEmpty(Window.Property(Current.Sunset))</visible>
                             <control type="label">
                                 <posx>255</posx>
-                                <posy>0</posy>
                                 <width>255</width>
                                 <height>52</height>
                                 <font>Font_Reg20</font>
@@ -2371,7 +2333,6 @@
                             </control>
                             <control type="label">
                                 <posx>278</posx>
-                                <posy>0</posy>
                                 <width>450</width>
                                 <height>52</height>
                                 <font>Font_Reg20</font>
@@ -2385,7 +2346,6 @@
                             <visible>!IsEmpty(Window.Property(Current.Moon.Phase))</visible>
                             <control type="label">
                                 <posx>255</posx>
-                                <posy>0</posy>
                                 <width>255</width>
                                 <height>52</height>
                                 <font>Font_Reg20</font>
@@ -2396,7 +2356,6 @@
                             </control>
                             <control type="label">
                                 <posx>278</posx>
-                                <posy>0</posy>
                                 <width>450</width>
                                 <height>52</height>
                                 <font>Font_Reg20</font>
@@ -2444,7 +2403,6 @@
                     <height>546</height>
                     <orientation>vertical</orientation>
                     <pagecontrol>60</pagecontrol>
-                    
                     <scrolltime tween="quadratic" easing="out">200</scrolltime>
                     <onleft>9000</onleft>
                     <onup>7510</onup>
@@ -2500,7 +2458,6 @@
                             <label>$INFO[ListItem.Property(LowTemp),[COLOR grey2]$LOCALIZE[418]: [/COLOR]]</label>
                         </control>
                         <control type="image">
-                            <posx>0</posx>
                             <posy>76</posy>
                             <height>60</height>
                             <width>840</width>
@@ -2509,15 +2466,12 @@
                     </itemlayout>
                     <focusedlayout width="840" height="136">
                         <control type="image">
-                            <posx>0</posx>
                             <posy>76</posy>
                             <height>60</height>
                             <width>840</width>
                             <texture>osd/osd_settings_buttonnf.png</texture>
                         </control>
                         <control type="image">
-                            <posx>0</posx>
-                            <posy>0</posy>
                             <width>837</width>
                             <height>136</height>
                             <texture>views/tripanel/listselect_fo.png</texture>
@@ -2700,7 +2654,6 @@
             <control type="group">
                 <control type="grouplist">
                     <posx>22</posx>
-                    <posy>0</posy>
                     <width>750</width>
                     <visible>Skin.HasSetting(breadcrumbslabel)</visible>
                     <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)]</visible>
@@ -2728,7 +2681,6 @@
         <include>Furniture_NowPlayingWidget</include>
         <!---MEDIA MENU-->
         <control type="group" id="9000">
-            <posy>0</posy>
             <control type="group">
                 <include>Media_Menu_Furniture</include>
                 <control type="group">
@@ -2744,8 +2696,6 @@
                     </animation>
                     <include>Animation_MediaMenuSlide2</include>
                     <control type="grouplist" id="9003">
-                        <posx>0</posx>
-                        <posy>0</posy>
                         <width>450</width>
                         <height>1080</height>
                         <itemgap>0</itemgap>
@@ -2920,7 +2870,7 @@
                 </control>
             </control>
         </control>
-              <control type="button">
+        <control type="button">
             <include>HiddenObject</include>
             <hitrect x="-50" y="0" w="50" h="1080" />
             <onfocus>SetFocus(9000)</onfocus>

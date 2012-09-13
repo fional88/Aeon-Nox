@@ -548,6 +548,7 @@
                         <itemgap>0</itemgap>
                         <orientation>vertical</orientation>
                         <animation effect="fade" time="400">VisibleChange</animation>
+                        <visible>Skin.HasSetting(itemsplaylist) | Window.IsActive(visualisation)</visible>
                         <control type="label">
                             <width>900</width>
                             <height>45</height>
@@ -575,7 +576,7 @@
                                 <height>26</height>
                                 <aligny>left</aligny>
                                 <textcolor>white3</textcolor>
-                                <label>$INFO[MusicPlayer.Offset(1).Artist]:</label>
+                                <label>$INFO[MusicPlayer.Offset(1).Artist,,:]</label>
                                 <font>Font_Reg15_Caps</font>
                             </control>
                             <control type="label">
@@ -606,7 +607,7 @@
                                 <height>26</height>
                                 <aligny>left</aligny>
                                 <textcolor>white3</textcolor>
-                                <label>$INFO[MusicPlayer.Offset(2).Artist]:</label>
+                                <label>$INFO[MusicPlayer.Offset(2).Artist,,:]</label>
                                 <font>Font_Reg15_Caps</font>
                             </control>
                             <control type="label">
@@ -637,7 +638,7 @@
                                 <height>26</height>
                                 <aligny>left</aligny>
                                 <textcolor>white3</textcolor>
-                                <label>$INFO[MusicPlayer.Offset(3).Artist]:</label>
+                                <label>$INFO[MusicPlayer.Offset(3).Artist,,:]</label>
                                 <font>Font_Reg15_Caps</font>
                             </control>
                             <control type="label">
@@ -668,7 +669,7 @@
                                 <height>26</height>
                                 <aligny>left</aligny>
                                 <textcolor>white3</textcolor>
-                                <label>$INFO[MusicPlayer.Offset(4).Artist]:</label>
+                                <label>$INFO[MusicPlayer.Offset(4).Artist,,:]</label>
                                 <font>Font_Reg15_Caps</font>
                             </control>
                             <control type="label">
@@ -699,7 +700,7 @@
                                 <height>26</height>
                                 <aligny>left</aligny>
                                 <textcolor>white3</textcolor>
-                                <label>$INFO[MusicPlayer.Offset(5).Artist]:</label>
+                                <label>$INFO[MusicPlayer.Offset(5).Artist,,:]</label>
                                 <font>Font_Reg15_Caps</font>
                             </control>
                             <control type="label">
@@ -717,6 +718,7 @@
                             <height>30</height>
                             <itemgap>3</itemgap>
                             <orientation>horizontal</orientation>
+                            <visible>![Skin.HasSetting(fiveitemsplaylist) + [Window.IsActive(home) | Window.IsActive(1158)]]</visible>
                             <control type="label">
                                 <width min="30" max="60">auto</width>
                                 <height>26</height>
@@ -730,7 +732,7 @@
                                 <height>26</height>
                                 <aligny>left</aligny>
                                 <textcolor>white3</textcolor>
-                                <label>$INFO[MusicPlayer.Offset(6).Artist]:</label>
+                                <label>$INFO[MusicPlayer.Offset(6).Artist,,:]</label>
                                 <font>Font_Reg15_Caps</font>
                             </control>
                             <control type="label">
@@ -748,6 +750,7 @@
                             <height>30</height>
                             <itemgap>3</itemgap>
                             <orientation>horizontal</orientation>
+                            <visible>![Skin.HasSetting(fiveitemsplaylist) + [Window.IsActive(home) | Window.IsActive(1158)]]</visible>
                             <control type="label">
                                 <width min="30" max="60">auto</width>
                                 <height>26</height>
@@ -761,7 +764,7 @@
                                 <height>26</height>
                                 <aligny>left</aligny>
                                 <textcolor>white3</textcolor>
-                                <label>$INFO[MusicPlayer.Offset(7).Artist]:</label>
+                                <label>$INFO[MusicPlayer.Offset(7).Artist,,:]</label>
                                 <font>Font_Reg15_Caps</font>
                             </control>
                             <control type="label">
@@ -779,6 +782,7 @@
                             <height>30</height>
                             <itemgap>3</itemgap>
                             <orientation>horizontal</orientation>
+                            <visible>![Skin.HasSetting(fiveitemsplaylist) + [Window.IsActive(home) | Window.IsActive(1158)]]</visible>
                             <control type="label">
                                 <width min="30" max="60">auto</width>
                                 <height>26</height>
@@ -792,7 +796,7 @@
                                 <height>26</height>
                                 <aligny>left</aligny>
                                 <textcolor>white3</textcolor>
-                                <label>$INFO[MusicPlayer.Offset(8).Artist]:</label>
+                                <label>$INFO[MusicPlayer.Offset(8).Artist,,:]</label>
                                 <font>Font_Reg15_Caps</font>
                             </control>
                             <control type="label">
@@ -810,6 +814,7 @@
                             <height>30</height>
                             <itemgap>3</itemgap>
                             <orientation>horizontal</orientation>
+                            <visible>![Skin.HasSetting(fiveitemsplaylist) + [Window.IsActive(home) | Window.IsActive(1158)]]</visible>
                             <control type="label">
                                 <width min="30" max="60">auto</width>
                                 <height>26</height>
@@ -823,7 +828,7 @@
                                 <height>26</height>
                                 <aligny>left</aligny>
                                 <textcolor>white3</textcolor>
-                                <label>$INFO[MusicPlayer.Offset(9).Artist]:</label>
+                                <label>$INFO[MusicPlayer.Offset(9).Artist,,:]</label>
                                 <font>Font_Reg15_Caps</font>
                             </control>
                             <control type="label">
@@ -840,6 +845,7 @@
                             <width>610</width>
                             <height>30</height>
                             <itemgap>3</itemgap>
+                            <visible>![Skin.HasSetting(fiveitemsplaylist) + [Window.IsActive(home) | Window.IsActive(1158)]]</visible>
                             <orientation>horizontal</orientation>
                             <control type="label">
                                 <width min="30" max="60">auto</width>
@@ -854,7 +860,7 @@
                                 <height>26</height>
                                 <aligny>left</aligny>
                                 <textcolor>white3</textcolor>
-                                <label>$INFO[MusicPlayer.Offset(10).Artist]:</label>
+                                <label>$INFO[MusicPlayer.Offset(10).Artist,,:]</label>
                                 <font>Font_Reg15_Caps</font>
                             </control>
                             <control type="label">
@@ -886,7 +892,7 @@
                                 <height>26</height>
                                 <aligny>left</aligny>
                                 <textcolor>white3</textcolor>
-                                <label>$INFO[MusicPlayer.Offset(11).Artist]:</label>
+                                <label>$INFO[MusicPlayer.Offset(11).Artist,,:]</label>
                                 <font>Font_Reg15_Caps</font>
                             </control>
                             <control type="label">
@@ -918,7 +924,7 @@
                                 <height>26</height>
                                 <aligny>left</aligny>
                                 <textcolor>white3</textcolor>
-                                <label>$INFO[MusicPlayer.Offset(12).Artist]:</label>
+                                <label>$INFO[MusicPlayer.Offset(12).Artist,,:]</label>
                                 <font>Font_Reg15_Caps</font>
                             </control>
                             <control type="label">
@@ -950,7 +956,7 @@
                                 <height>26</height>
                                 <aligny>left</aligny>
                                 <textcolor>white3</textcolor>
-                                <label>$INFO[MusicPlayer.Offset(13).Artist]:</label>
+                                <label>$INFO[MusicPlayer.Offset(13).Artist,,:]</label>
                                 <font>Font_Reg15_Caps</font>
                             </control>
                             <control type="label">

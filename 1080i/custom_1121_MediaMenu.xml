@@ -385,9 +385,11 @@
                     <info>ListItem.Label</info>
                 </control>
                 <control type="image">
-                    <width>219</width>
-                    <height>115</height>
-                    <texture>$INFO[ListItem.Property(DisableIcon)]</texture>
+                    <posx>60</posx>
+                    <posy>7</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <texture>close.png</texture><visible>stringcompare(ListItem.Property(DisableIcon),1)</visible>
                 </control>
             </itemlayout>
             <focusedlayout width="219" height="115">
@@ -425,9 +427,11 @@
                     <info>ListItem.Label</info>
                 </control>
                 <control type="image">
-                    <width>219</width>
-                    <height>115</height>
-                    <texture>$INFO[ListItem.Property(DisableIcon)]</texture>
+                  <posx>60</posx>
+                    <posy>7</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <texture>close.png</texture><visible>stringcompare(ListItem.Property(DisableIcon),1)</visible>
                 </control>
             </focusedlayout>
             <content>
@@ -435,154 +439,73 @@
                     <label fallback="31502">$INFO[Skin.String(QuickNavItem1.Label)]</label>
                     <icon>-</icon>
                     <thumb fallback="special://skin/extras/BigIcons/Film.png">$INFO[Skin.String(QuickNavItem1.MultiFanart)]</thumb>
+                    <property name="DisableIcon">$INFO[Skin.String(QuickNavItem1.Disable)]</property>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem1)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
-                    <visible>!Skin.HasSetting(QuickNavItem1)</visible>
-                </item>
-                <item>
-                    <label fallback="31502">$INFO[Skin.String(QuickNavItem1.Label)]</label>
-                    <icon>-</icon>
-                    <thumb fallback="special://skin/extras/BigIcons/Film.png">$INFO[Skin.String(QuickNavItem1.MultiFanart)]</thumb>
-                    <property name="DisableIcon">close.png</property>
-                    <onclick>Skin.SetString(MenuItem,QuickNavItem1)</onclick>
-                    <onclick>ActivateWindow(1136)</onclick>
-                    <visible>Skin.HasSetting(QuickNavItem1)</visible>
                 </item>
                 <item>
                     <label fallback="31503">$INFO[Skin.String(QuickNavItem2.Label)]</label>
                     <icon>-</icon>
                     <thumb fallback="special://skin/extras/BigIcons/Television.png">$INFO[Skin.String(QuickNavItem2.MultiFanart)]</thumb>
+                    <property name="DisableIcon">$INFO[Skin.String(QuickNavItem2.Disable)]</property>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem2)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
-                    <visible>!Skin.HasSetting(QuickNavItem2)</visible>
-                </item>
-                <item>
-                    <label fallback="31503">$INFO[Skin.String(QuickNavItem2.Label)]</label>
-                    <icon>-</icon>
-                    <thumb fallback="special://skin/extras/BigIcons/Television.png">$INFO[Skin.String(QuickNavItem2.MultiFanart)]</thumb>
-                    <property name="DisableIcon">close.png</property>
-                    <onclick>Skin.SetString(MenuItem,QuickNavItem2)</onclick>
-                    <onclick>ActivateWindow(1136)</onclick>
-                    <visible>Skin.HasSetting(QuickNavItem2)</visible>
                 </item>
                 <item>
                     <label fallback="31501">$INFO[Skin.String(QuickNavItem3.Label)]</label>
                     <icon>-</icon>
                     <thumb fallback="special://skin/extras/BigIcons/Headphone.png">$INFO[Skin.String(QuickNavItem3.MultiFanart)]</thumb>
+                    <property name="DisableIcon">$INFO[Skin.String(QuickNavItem3.Disable)]</property>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem3)</onclick>
-                    <onclick>ActivateWindow(1136)</onclick>
-                    <visible>!Skin.HasSetting(QuickNavItem3)</visible>
-                </item>
-                <item>
-                    <label fallback="31501">$INFO[Skin.String(QuickNavItem3.Label)]</label>
-                    <icon>-</icon>
-                    <thumb fallback="special://skin/extras/BigIcons/Headphone.png">$INFO[Skin.String(QuickNavItem3.MultiFanart)]</thumb>
-                    <property name="DisableIcon">close.png</property>
-                    <onclick>Skin.SetString(MenuItem,QuickNavItem3)</onclick>
-                    <onclick>ActivateWindow(1136)</onclick>
-                    <visible>Skin.HasSetting(QuickNavItem3)</visible>
-                </item>
-                <item>
-                    <label fallback="20389">$INFO[Skin.String(QuickNavItem4.Label)]</label>
-                    <icon>-</icon>
-                    <thumb fallback="special://skin/extras/BigIcons/Media.png">$INFO[Skin.String(QuickNavItem4.MultiFanart)]</thumb>
-                    <onclick>Skin.SetString(MenuItem,QuickNavItem4)</onclick>
-                    <visible>!Skin.HasSetting(QuickNavItem4)</visible>
                     <onclick>ActivateWindow(1136)</onclick>
                 </item>
                 <item>
                     <label fallback="20389">$INFO[Skin.String(QuickNavItem4.Label)]</label>
                     <icon>-</icon>
                     <thumb fallback="special://skin/extras/BigIcons/Media.png">$INFO[Skin.String(QuickNavItem4.MultiFanart)]</thumb>
-                    <property name="DisableIcon">close.png</property>
+                    <property name="DisableIcon">$INFO[Skin.String(QuickNavItem4.Disable)]</property>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem4)</onclick>
-                    <visible>Skin.HasSetting(QuickNavItem4)</visible>
                     <onclick>ActivateWindow(1136)</onclick>
                 </item>
                 <item>
                     <label fallback="1036">$INFO[Skin.String(QuickNavItem5.Label)]</label>
                     <icon>-</icon>
                     <thumb fallback="special://skin/extras/BigIcons/Star.png">$INFO[Skin.String(QuickNavItem5.MultiFanart)]</thumb>
+                    <property name="DisableIcon">$INFO[Skin.String(QuickNavItem5.Disable)]</property>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem5)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
-                    <visible>!Skin.HasSetting(QuickNavItem5)</visible>
-                </item>
-                <item>
-                    <label fallback="1036">$INFO[Skin.String(QuickNavItem5.Label)]</label>
-                    <icon>-</icon>
-                    <thumb fallback="special://skin/extras/BigIcons/Star.png">$INFO[Skin.String(QuickNavItem5.MultiFanart)]</thumb>
-                    <property name="DisableIcon">close.png</property>
-                    <onclick>Skin.SetString(MenuItem,QuickNavItem5)</onclick>
-                    <onclick>ActivateWindow(1136)</onclick>
-                    <visible>Skin.HasSetting(QuickNavItem5)</visible>
                 </item>
                 <item>
                     <label fallback="1037">$INFO[Skin.String(QuickNavItem6.Label)]</label>
                     <icon>-</icon>
                     <thumb fallback="special://skin/extras/BigIcons/Monitor.png">$INFO[Skin.String(QuickNavItem6.MultiFanart)]</thumb>
+                    <property name="DisableIcon">$INFO[Skin.String(QuickNavItem6.Disable)]</property>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem6)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
-                    <visible>!Skin.HasSetting(QuickNavItem6)</visible>
-                </item>
-                <item>
-                    <label fallback="1037">$INFO[Skin.String(QuickNavItem6.Label)]</label>
-                    <icon>-</icon>
-                    <thumb fallback="special://skin/extras/BigIcons/Monitor.png">$INFO[Skin.String(QuickNavItem6.MultiFanart)]</thumb>
-                    <property name="DisableIcon">close.png</property>
-                    <onclick>Skin.SetString(MenuItem,QuickNavItem6)</onclick>
-                    <onclick>ActivateWindow(1136)</onclick>
-                    <visible>Skin.HasSetting(QuickNavItem6)</visible>
                 </item>
                 <item>
                     <label fallback="31507">$INFO[Skin.String(QuickNavItem7.Label)]</label>
                     <icon>-</icon>
                     <thumb fallback="special://skin/extras/BigIcons/Puzzle.png">$INFO[Skin.String(QuickNavItem7.MultiFanart)]</thumb>
+                    <property name="DisableIcon">$INFO[Skin.String(QuickNavItem7.Disable)]</property>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem7)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
-                    <visible>!Skin.HasSetting(QuickNavItem7)</visible>
-                </item>
-                <item>
-                    <label fallback="31507">$INFO[Skin.String(QuickNavItem7.Label)]</label>
-                    <icon>-</icon>
-                    <thumb fallback="special://skin/extras/BigIcons/Puzzle.png">$INFO[Skin.String(QuickNavItem7.MultiFanart)]</thumb>
-                    <property name="DisableIcon">close.png</property>
-                    <onclick>Skin.SetString(MenuItem,QuickNavItem7)</onclick>
-                    <onclick>ActivateWindow(1136)</onclick>
-                    <visible>Skin.HasSetting(QuickNavItem7)</visible>
                 </item>
                 <item>
                     <label fallback="137">$INFO[Skin.String(QuickNavItem8.Label)]</label>
                     <icon>-</icon>
                     <thumb fallback="special://skin/extras/BigIcons/Search.png">$INFO[Skin.String(QuickNavItem8.MultiFanart)]</thumb>
+                    <property name="DisableIcon">$INFO[Skin.String(QuickNavItem8.Disable)]</property>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem8)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
-                    <visible>!Skin.HasSetting(QuickNavItem8)</visible>
-                </item>
-                <item>
-                    <label fallback="137">$INFO[Skin.String(QuickNavItem8.Label)]</label>
-                    <icon>-</icon>
-                    <thumb fallback="special://skin/extras/BigIcons/Search.png">$INFO[Skin.String(QuickNavItem8.MultiFanart)]</thumb>
-                    <property name="DisableIcon">close.png</property>
-                    <onclick>Skin.SetString(MenuItem,QuickNavItem8)</onclick>
-                    <onclick>ActivateWindow(1136)</onclick>
-                    <visible>Skin.HasSetting(QuickNavItem8)</visible>
                 </item>
                 <item>
                     <label fallback="559">$INFO[Skin.String(QuickNavItem9.Label)]</label>
                     <icon>-</icon>
+                    <property name="DisableIcon">$INFO[Skin.String(QuickNavItem9.Disable)]</property>
                     <thumb fallback="special://skin/extras/BigIcons/Format.png">$INFO[Skin.String(QuickNavItem9.MultiFanart)]</thumb>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem9)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
-                    <visible>!Skin.HasSetting(QuickNavItem9)</visible>
-                </item>
-                <item>
-                    <label fallback="559">$INFO[Skin.String(QuickNavItem9.Label)]</label>
-                    <icon>-</icon>
-                    <property name="DisableIcon">close.png</property>
-                    <thumb fallback="special://skin/extras/BigIcons/Format.png">$INFO[Skin.String(QuickNavItem9.MultiFanart)]</thumb>
-                    <onclick>Skin.SetString(MenuItem,QuickNavItem9)</onclick>
-                    <onclick>ActivateWindow(1136)</onclick>
-                    <visible>Skin.HasSetting(QuickNavItem9)</visible>
                 </item>
             </content>
         </control>

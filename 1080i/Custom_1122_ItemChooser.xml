@@ -8,170 +8,189 @@
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(ItemToEdit.Path,$INFO[Skin.String(CustomHomeItem1.Path)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(ItemToEdit.Widget,$INFO[Skin.String(CustomHomeItem1.Widget)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(ItemToEdit.Widget2,$INFO[Skin.String(CustomHomeItem1.Widget2)])</onload>
-    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(ItemToEdit.Color,$INFO[Skin.String(CustomHomeItem1.Color)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(ItemToEdit.Disable,$INFO[Skin.String(CustomHomeItem1.Disable)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(ItemToEdit.Icon,$INFO[Skin.String(CustomHomeItem1.Icon)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(ItemToEdit.Position,$INFO[Skin.String(CustomHomeItem1.Position)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(ItemToEdit.InfoLine,$INFO[Skin.String(CustomHomeItem1.InfoLine)])</onload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(CustomHomeItem1.Type,$INFO[Skin.String(ItemToEdit.Type)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(CustomHomeItem1.MultiFanart,$INFO[Skin.String(ItemToEdit.MultiFanart)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(CustomHomeItem1.Label,$INFO[Skin.String(ItemToEdit.Label)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(CustomHomeItem1.Path,$INFO[Skin.String(ItemToEdit.Path)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(CustomHomeItem1.Widget,$INFO[Skin.String(ItemToEdit.Widget)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(CustomHomeItem1.Widget2,$INFO[Skin.String(ItemToEdit.Widget2)])</onunload>
-    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(CustomHomeItem1.Color,$INFO[Skin.String(ItemToEdit.Color)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(CustomHomeItem1.Disable,$INFO[Skin.String(ItemToEdit.Disable)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(CustomHomeItem1.Icon,$INFO[Skin.String(ItemToEdit.Icon)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(CustomHomeItem1.Position,$INFO[Skin.String(ItemToEdit.Position)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem1)">Skin.SetString(CustomHomeItem1.InfoLine,$INFO[Skin.String(ItemToEdit.InfoLine)])</onunload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(ItemToEdit.Type,$INFO[Skin.String(CustomHomeItem2.Type)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(ItemToEdit.MultiFanart,$INFO[Skin.String(CustomHomeItem2.MultiFanart)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(ItemToEdit.Label,$INFO[Skin.String(CustomHomeItem2.Label)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(ItemToEdit.Path,$INFO[Skin.String(CustomHomeItem2.Path)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(ItemToEdit.Widget,$INFO[Skin.String(CustomHomeItem2.Widget)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(ItemToEdit.Widget2,$INFO[Skin.String(CustomHomeItem2.Widget2)])</onload>
-    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(ItemToEdit.Color,$INFO[Skin.String(CustomHomeItem2.Color)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(ItemToEdit.Disable,$INFO[Skin.String(CustomHomeItem2.Disable)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(ItemToEdit.Icon,$INFO[Skin.String(CustomHomeItem2.Icon)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(ItemToEdit.Position,$INFO[Skin.String(CustomHomeItem2.Position)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(ItemToEdit.InfoLine,$INFO[Skin.String(CustomHomeItem2.InfoLine)])</onload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(CustomHomeItem2.Type,$INFO[Skin.String(ItemToEdit.Type)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(CustomHomeItem2.MultiFanart,$INFO[Skin.String(ItemToEdit.MultiFanart)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(CustomHomeItem2.Label,$INFO[Skin.String(ItemToEdit.Label)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(CustomHomeItem2.Path,$INFO[Skin.String(ItemToEdit.Path)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(CustomHomeItem2.Widget,$INFO[Skin.String(ItemToEdit.Widget)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(CustomHomeItem2.Widget2,$INFO[Skin.String(ItemToEdit.Widget2)])</onunload>
-    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(CustomHomeItem2.Color,$INFO[Skin.String(ItemToEdit.Color)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(CustomHomeItem2.Disable,$INFO[Skin.String(ItemToEdit.Disable)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(CustomHomeItem2.Icon,$INFO[Skin.String(ItemToEdit.Icon)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(CustomHomeItem2.Position,$INFO[Skin.String(ItemToEdit.Position)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem2)">Skin.SetString(CustomHomeItem2.InfoLine,$INFO[Skin.String(ItemToEdit.InfoLine)])</onunload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(ItemToEdit.Type,$INFO[Skin.String(CustomHomeItem3.Type)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(ItemToEdit.MultiFanart,$INFO[Skin.String(CustomHomeItem3.MultiFanart)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(ItemToEdit.Label,$INFO[Skin.String(CustomHomeItem3.Label)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(ItemToEdit.Path,$INFO[Skin.String(CustomHomeItem3.Path)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(ItemToEdit.Widget,$INFO[Skin.String(CustomHomeItem3.Widget)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(ItemToEdit.Widget2,$INFO[Skin.String(CustomHomeItem3.Widget2)])</onload>
-    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(ItemToEdit.Color,$INFO[Skin.String(CustomHomeItem3.Color)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(ItemToEdit.Disable,$INFO[Skin.String(CustomHomeItem3.Disable)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(ItemToEdit.Icon,$INFO[Skin.String(CustomHomeItem3.Icon)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(ItemToEdit.Position,$INFO[Skin.String(CustomHomeItem3.Position)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(ItemToEdit.InfoLine,$INFO[Skin.String(CustomHomeItem3.InfoLine)])</onload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(CustomHomeItem3.Type,$INFO[Skin.String(ItemToEdit.Type)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(CustomHomeItem3.MultiFanart,$INFO[Skin.String(ItemToEdit.MultiFanart)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(CustomHomeItem3.Label,$INFO[Skin.String(ItemToEdit.Label)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(CustomHomeItem3.Path,$INFO[Skin.String(ItemToEdit.Path)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(CustomHomeItem3.Widget,$INFO[Skin.String(ItemToEdit.Widget)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(CustomHomeItem3.Widget2,$INFO[Skin.String(ItemToEdit.Widget2)])</onunload>
-    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(CustomHomeItem3.Color,$INFO[Skin.String(ItemToEdit.Color)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(CustomHomeItem3.Disable,$INFO[Skin.String(ItemToEdit.Disable)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(CustomHomeItem3.Icon,$INFO[Skin.String(ItemToEdit.Icon)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(CustomHomeItem3.Position,$INFO[Skin.String(ItemToEdit.Position)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem3)">Skin.SetString(CustomHomeItem3.InfoLine,$INFO[Skin.String(ItemToEdit.InfoLine)])</onunload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(ItemToEdit.Type,$INFO[Skin.String(CustomHomeItem4.Type)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(ItemToEdit.MultiFanart,$INFO[Skin.String(CustomHomeItem4.MultiFanart)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(ItemToEdit.Label,$INFO[Skin.String(CustomHomeItem4.Label)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(ItemToEdit.Path,$INFO[Skin.String(CustomHomeItem4.Path)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(ItemToEdit.Widget,$INFO[Skin.String(CustomHomeItem4.Widget)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(ItemToEdit.Widget2,$INFO[Skin.String(CustomHomeItem4.Widget2)])</onload>
-    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(ItemToEdit.Color,$INFO[Skin.String(CustomHomeItem4.Color)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(ItemToEdit.Disable,$INFO[Skin.String(CustomHomeItem4.Disable)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(ItemToEdit.Icon,$INFO[Skin.String(CustomHomeItem4.Icon)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(ItemToEdit.Position,$INFO[Skin.String(CustomHomeItem4.Position)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(ItemToEdit.InfoLine,$INFO[Skin.String(CustomHomeItem4.InfoLine)])</onload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(CustomHomeItem4.Type,$INFO[Skin.String(ItemToEdit.Type)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(CustomHomeItem4.MultiFanart,$INFO[Skin.String(ItemToEdit.MultiFanart)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(CustomHomeItem4.Label,$INFO[Skin.String(ItemToEdit.Label)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(CustomHomeItem4.Path,$INFO[Skin.String(ItemToEdit.Path)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(CustomHomeItem4.Widget,$INFO[Skin.String(ItemToEdit.Widget)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(CustomHomeItem4.Widget2,$INFO[Skin.String(ItemToEdit.Widget2)])</onunload>
-    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(CustomHomeItem4.Color,$INFO[Skin.String(ItemToEdit.Color)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(CustomHomeItem4.Disable,$INFO[Skin.String(ItemToEdit.Disable)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(CustomHomeItem4.Icon,$INFO[Skin.String(ItemToEdit.Icon)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(CustomHomeItem4.Position,$INFO[Skin.String(ItemToEdit.Position)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem4)">Skin.SetString(CustomHomeItem4.InfoLine,$INFO[Skin.String(ItemToEdit.InfoLine)])</onunload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(ItemToEdit.Type,$INFO[Skin.String(CustomHomeItem5.Type)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(ItemToEdit.MultiFanart,$INFO[Skin.String(CustomHomeItem5.MultiFanart)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(ItemToEdit.Label,$INFO[Skin.String(CustomHomeItem5.Label)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(ItemToEdit.Path,$INFO[Skin.String(CustomHomeItem5.Path)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(ItemToEdit.Widget,$INFO[Skin.String(CustomHomeItem5.Widget)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(ItemToEdit.Widget2,$INFO[Skin.String(CustomHomeItem5.Widget2)])</onload>
-    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(ItemToEdit.Color,$INFO[Skin.String(CustomHomeItem5.Color)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(ItemToEdit.Disable,$INFO[Skin.String(CustomHomeItem5.Disable)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(ItemToEdit.Icon,$INFO[Skin.String(CustomHomeItem5.Icon)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(ItemToEdit.Position,$INFO[Skin.String(CustomHomeItem5.Position)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(ItemToEdit.InfoLine,$INFO[Skin.String(CustomHomeItem5.InfoLine)])</onload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(CustomHomeItem5.Type,$INFO[Skin.String(ItemToEdit.Type)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(CustomHomeItem5.MultiFanart,$INFO[Skin.String(ItemToEdit.MultiFanart)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(CustomHomeItem5.Label,$INFO[Skin.String(ItemToEdit.Label)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(CustomHomeItem5.Path,$INFO[Skin.String(ItemToEdit.Path)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(CustomHomeItem5.Widget,$INFO[Skin.String(ItemToEdit.Widget)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(CustomHomeItem5.Widget2,$INFO[Skin.String(ItemToEdit.Widget2)])</onunload>
-    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(CustomHomeItem5.Color,$INFO[Skin.String(ItemToEdit.Color)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(CustomHomeItem5.Disable,$INFO[Skin.String(ItemToEdit.Disable)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(CustomHomeItem5.Icon,$INFO[Skin.String(ItemToEdit.Icon)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(CustomHomeItem5.Position,$INFO[Skin.String(ItemToEdit.Position)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem5)">Skin.SetString(CustomHomeItem5.InfoLine,$INFO[Skin.String(ItemToEdit.InfoLine)])</onunload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(ItemToEdit.Type,$INFO[Skin.String(CustomHomeItem6.Type)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(ItemToEdit.MultiFanart,$INFO[Skin.String(CustomHomeItem6.MultiFanart)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(ItemToEdit.Label,$INFO[Skin.String(CustomHomeItem6.Label)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(ItemToEdit.Path,$INFO[Skin.String(CustomHomeItem6.Path)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(ItemToEdit.Widget,$INFO[Skin.String(CustomHomeItem6.Widget)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(ItemToEdit.Widget2,$INFO[Skin.String(CustomHomeItem6.Widget2)])</onload>
-    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(ItemToEdit.Color,$INFO[Skin.String(CustomHomeItem6.Color)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(ItemToEdit.Disable,$INFO[Skin.String(CustomHomeItem6.Disable)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(ItemToEdit.Icon,$INFO[Skin.String(CustomHomeItem6.Icon)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(ItemToEdit.Position,$INFO[Skin.String(CustomHomeItem6.Position)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(ItemToEdit.InfoLine,$INFO[Skin.String(CustomHomeItem6.InfoLine)])</onload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(CustomHomeItem6.Type,$INFO[Skin.String(ItemToEdit.Type)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(CustomHomeItem6.MultiFanart,$INFO[Skin.String(ItemToEdit.MultiFanart)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(CustomHomeItem6.Label,$INFO[Skin.String(ItemToEdit.Label)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(CustomHomeItem6.Path,$INFO[Skin.String(ItemToEdit.Path)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(CustomHomeItem6.Widget,$INFO[Skin.String(ItemToEdit.Widget)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(CustomHomeItem6.Widget2,$INFO[Skin.String(ItemToEdit.Widget2)])</onunload>
-    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(CustomHomeItem6.Color,$INFO[Skin.String(ItemToEdit.Color)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(CustomHomeItem6.Disable,$INFO[Skin.String(ItemToEdit.Disable)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(CustomHomeItem6.Icon,$INFO[Skin.String(ItemToEdit.Icon)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(CustomHomeItem6.Position,$INFO[Skin.String(ItemToEdit.Position)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem6)">Skin.SetString(CustomHomeItem6.InfoLine,$INFO[Skin.String(ItemToEdit.InfoLine)])</onunload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(ItemToEdit.Type,$INFO[Skin.String(CustomHomeItem7.Type)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(ItemToEdit.MultiFanart,$INFO[Skin.String(CustomHomeItem7.MultiFanart)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(ItemToEdit.Label,$INFO[Skin.String(CustomHomeItem7.Label)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(ItemToEdit.Path,$INFO[Skin.String(CustomHomeItem7.Path)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(ItemToEdit.Widget,$INFO[Skin.String(CustomHomeItem7.Widget)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(ItemToEdit.Widget2,$INFO[Skin.String(CustomHomeItem7.Widget2)])</onload>
-    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(ItemToEdit.Color,$INFO[Skin.String(CustomHomeItem7.Color)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(ItemToEdit.Disable,$INFO[Skin.String(CustomHomeItem7.Disable)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(ItemToEdit.Icon,$INFO[Skin.String(CustomHomeItem7.Icon)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(ItemToEdit.Position,$INFO[Skin.String(CustomHomeItem7.Position)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(ItemToEdit.InfoLine,$INFO[Skin.String(CustomHomeItem7.InfoLine)])</onload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(CustomHomeItem7.Type,$INFO[Skin.String(ItemToEdit.Type)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(CustomHomeItem7.MultiFanart,$INFO[Skin.String(ItemToEdit.MultiFanart)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(CustomHomeItem7.Label,$INFO[Skin.String(ItemToEdit.Label)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(CustomHomeItem7.Path,$INFO[Skin.String(ItemToEdit.Path)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(CustomHomeItem7.Widget,$INFO[Skin.String(ItemToEdit.Widget)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(CustomHomeItem7.Widget2,$INFO[Skin.String(ItemToEdit.Widget2)])</onunload>
-    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(CustomHomeItem7.Color,$INFO[Skin.String(ItemToEdit.Color)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(CustomHomeItem7.Disable,$INFO[Skin.String(ItemToEdit.Disable)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(CustomHomeItem7.Icon,$INFO[Skin.String(ItemToEdit.Icon)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(CustomHomeItem7.Position,$INFO[Skin.String(ItemToEdit.Position)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem7)">Skin.SetString(CustomHomeItem7.InfoLine,$INFO[Skin.String(ItemToEdit.InfoLine)])</onunload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(ItemToEdit.Type,$INFO[Skin.String(CustomHomeItem8.Type)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(ItemToEdit.MultiFanart,$INFO[Skin.String(CustomHomeItem8.MultiFanart)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(ItemToEdit.Label,$INFO[Skin.String(CustomHomeItem8.Label)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(ItemToEdit.Path,$INFO[Skin.String(CustomHomeItem8.Path)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(ItemToEdit.Widget,$INFO[Skin.String(CustomHomeItem8.Widget)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(ItemToEdit.Widget2,$INFO[Skin.String(CustomHomeItem8.Widget2)])</onload>
-    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(ItemToEdit.Color,$INFO[Skin.String(CustomHomeItem8.Color)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(ItemToEdit.Disable,$INFO[Skin.String(CustomHomeItem8.Disable)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(ItemToEdit.Icon,$INFO[Skin.String(CustomHomeItem8.Icon)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(ItemToEdit.Position,$INFO[Skin.String(CustomHomeItem8.Position)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(ItemToEdit.InfoLine,$INFO[Skin.String(CustomHomeItem8.InfoLine)])</onload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(CustomHomeItem8.Type,$INFO[Skin.String(ItemToEdit.Type)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(CustomHomeItem8.MultiFanart,$INFO[Skin.String(ItemToEdit.MultiFanart)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(CustomHomeItem8.Label,$INFO[Skin.String(ItemToEdit.Label)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(CustomHomeItem8.Path,$INFO[Skin.String(ItemToEdit.Path)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(CustomHomeItem8.Widget,$INFO[Skin.String(ItemToEdit.Widget)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(CustomHomeItem8.Widget2,$INFO[Skin.String(ItemToEdit.Widget2)])</onunload>
-    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(CustomHomeItem8.Color,$INFO[Skin.String(ItemToEdit.Color)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(CustomHomeItem8.Disable,$INFO[Skin.String(ItemToEdit.Disable)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(CustomHomeItem8.Icon,$INFO[Skin.String(ItemToEdit.Icon)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(CustomHomeItem8.Position,$INFO[Skin.String(ItemToEdit.Position)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem8)">Skin.SetString(CustomHomeItem8.InfoLine,$INFO[Skin.String(ItemToEdit.InfoLine)])</onunload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(ItemToEdit.Type,$INFO[Skin.String(CustomHomeItem9.Type)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(ItemToEdit.MultiFanart,$INFO[Skin.String(CustomHomeItem9.MultiFanart)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(ItemToEdit.Label,$INFO[Skin.String(CustomHomeItem9.Label)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(ItemToEdit.Path,$INFO[Skin.String(CustomHomeItem9.Path)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(ItemToEdit.Widget,$INFO[Skin.String(CustomHomeItem9.Widget)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(ItemToEdit.Widget2,$INFO[Skin.String(CustomHomeItem9.Widget2)])</onload>
-    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(ItemToEdit.Color,$INFO[Skin.String(CustomHomeItem9.Color)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(ItemToEdit.Disable,$INFO[Skin.String(CustomHomeItem9.Disable)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(ItemToEdit.Icon,$INFO[Skin.String(CustomHomeItem9.Icon)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(ItemToEdit.Position,$INFO[Skin.String(CustomHomeItem9.Position)])</onload>
+    <onload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(ItemToEdit.InfoLine,$INFO[Skin.String(CustomHomeItem9.InfoLine)])</onload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(CustomHomeItem9.Type,$INFO[Skin.String(ItemToEdit.Type)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(CustomHomeItem9.MultiFanart,$INFO[Skin.String(ItemToEdit.MultiFanart)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(CustomHomeItem9.Label,$INFO[Skin.String(ItemToEdit.Label)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(CustomHomeItem9.Path,$INFO[Skin.String(ItemToEdit.Path)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(CustomHomeItem9.Widget,$INFO[Skin.String(ItemToEdit.Widget)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(CustomHomeItem9.Widget2,$INFO[Skin.String(ItemToEdit.Widget2)])</onunload>
-    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(CustomHomeItem9.Color,$INFO[Skin.String(ItemToEdit.Color)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(CustomHomeItem9.Disable,$INFO[Skin.String(ItemToEdit.Disable)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(CustomHomeItem9.Icon,$INFO[Skin.String(ItemToEdit.Icon)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(CustomHomeItem9.Position,$INFO[Skin.String(ItemToEdit.Position)])</onunload>
+    <onunload condition="Stringcompare(Skin.String(MenuItem),CustomHomeItem9)">Skin.SetString(CustomHomeItem9.InfoLine,$INFO[Skin.String(ItemToEdit.InfoLine)])</onunload>
     <onunload>Skin.Reset(ItemToEdit.Label)</onunload>
     <onunload>Skin.Reset(ItemToEdit.MultiFanart)</onunload>
     <onunload>Skin.Reset(ItemToEdit.Path)</onunload>
     <onunload>Skin.Reset(ItemToEdit.Type)</onunload>
     <onunload>Skin.Reset(ItemToEdit.Widget)</onunload>
     <onunload>Skin.Reset(ItemToEdit.Widget2)</onunload>
-    <onunload>Skin.Reset(ItemToEdit.Color)</onunload>
+    <onunload>Skin.Reset(ItemToEdit.Disable)</onunload>
     <onunload>Skin.Reset(ItemToEdit.Icon)</onunload>
+    <onunload>Skin.Reset(ItemToEdit.InfoLine)</onunload>
     <onunload>Skin.Reset(ItemToEdit.Position)</onunload>
     <onunload condition="Skin.HasSetting(mainmenuicons)">Control.Move(9000,14)</onunload>
     <onunload condition="Skin.HasSetting(mainmenuicons)">AlarmClock(Test3,Dialog.Close(1156),00:01,silent)</onunload>
@@ -249,13 +268,13 @@
                     </control>
                     <control type="button">
                         <include>Objects_CustomizerInfoButton</include>
-                        <label>$LOCALIZE[42204]:</label>
-                        <label2>[COLOR white]$INFO[Skin.String(ItemToEdit.Color)][/COLOR]</label2>
+                        <label>$LOCALIZE[42205]:</label>
+                        <label2>[COLOR white]$INFO[Skin.String(ItemToEdit.Position)][/COLOR]</label2>
                     </control>
                     <control type="button">
                         <include>Objects_CustomizerInfoButton</include>
-                        <label>$LOCALIZE[42205]:</label>
-                        <label2>[COLOR white]$INFO[Skin.String(ItemToEdit.Position)][/COLOR]</label2>
+                        <label>$LOCALIZE[31683]:</label>
+                        <label2>[COLOR white]$INFO[Skin.String(ItemToEdit.InfoLine)][/COLOR]</label2>
                     </control>
                     <control type="image">
                         <posx>100</posx>
@@ -278,68 +297,12 @@
                         <orientation>vertical</orientation>
                         <visible>!Window.IsActive(1134)</visible>
                         <include>Animation_VisibleChange200</include>
-                        <control type="radiobutton" id="11">
+                        <control type="radiobutton" id="7">
                             <label>$LOCALIZE[24021]</label>
                             <include>Objects_CustomizerSettingsButton</include>
-                            <onclick>Skin.ToggleSetting(CustomHomeItem1.Enable)</onclick>
-                            <selected>!Skin.HasSetting(CustomHomeItem1.Enable)</selected>
-                            <visible>Stringcompare(Skin.String(MenuItem),CustomHomeItem1)</visible>
-                        </control>
-                        <control type="radiobutton" id="12">
-                            <label>$LOCALIZE[24021]</label>
-                            <include>Objects_CustomizerSettingsButton</include>
-                            <onclick>Skin.ToggleSetting(CustomHomeItem2.Enable)</onclick>
-                            <selected>!Skin.HasSetting(CustomHomeItem2.Enable)</selected>
-                            <visible>Stringcompare(Skin.String(MenuItem),CustomHomeItem2)</visible>
-                        </control>
-                        <control type="radiobutton" id="13">
-                            <label>$LOCALIZE[24021]</label>
-                            <include>Objects_CustomizerSettingsButton</include>
-                            <onclick>Skin.ToggleSetting(CustomHomeItem3.Enable)</onclick>
-                            <selected>!Skin.HasSetting(CustomHomeItem3.Enable)</selected>
-                            <visible>Stringcompare(Skin.String(MenuItem),CustomHomeItem3)</visible>
-                        </control>
-                        <control type="radiobutton" id="14">
-                            <label>$LOCALIZE[24021]</label>
-                            <include>Objects_CustomizerSettingsButton</include>
-                            <onclick>Skin.ToggleSetting(CustomHomeItem4.Enable)</onclick>
-                            <selected>!Skin.HasSetting(CustomHomeItem4.Enable)</selected>
-                            <visible>Stringcompare(Skin.String(MenuItem),CustomHomeItem4)</visible>
-                        </control>
-                        <control type="radiobutton" id="15">
-                            <label>$LOCALIZE[24021]</label>
-                            <include>Objects_CustomizerSettingsButton</include>
-                            <onclick>Skin.ToggleSetting(CustomHomeItem5.Enable)</onclick>
-                            <selected>!Skin.HasSetting(CustomHomeItem5.Enable)</selected>
-                            <visible>Stringcompare(Skin.String(MenuItem),CustomHomeItem5)</visible>
-                        </control>
-                        <control type="radiobutton" id="16">
-                            <label>$LOCALIZE[24021]</label>
-                            <include>Objects_CustomizerSettingsButton</include>
-                            <onclick>Skin.ToggleSetting(CustomHomeItem6.Enable)</onclick>
-                            <selected>!Skin.HasSetting(CustomHomeItem6.Enable)</selected>
-                            <visible>Stringcompare(Skin.String(MenuItem),CustomHomeItem6)</visible>
-                        </control>
-                        <control type="radiobutton" id="17">
-                            <label>$LOCALIZE[24021]</label>
-                            <include>Objects_CustomizerSettingsButton</include>
-                            <onclick>Skin.ToggleSetting(CustomHomeItem7.Enable)</onclick>
-                            <selected>!Skin.HasSetting(CustomHomeItem7.Enable)</selected>
-                            <visible>Stringcompare(Skin.String(MenuItem),CustomHomeItem7)</visible>
-                        </control>
-                        <control type="radiobutton" id="18">
-                            <label>$LOCALIZE[24021]</label>
-                            <include>Objects_CustomizerSettingsButton</include>
-                            <onclick>Skin.ToggleSetting(CustomHomeItem8.Enable)</onclick>
-                            <selected>!Skin.HasSetting(CustomHomeItem8.Enable)</selected>
-                            <visible>Stringcompare(Skin.String(MenuItem),CustomHomeItem8)</visible>
-                        </control>
-                        <control type="radiobutton" id="19">
-                            <label>$LOCALIZE[24021]</label>
-                            <include>Objects_CustomizerSettingsButton</include>
-                            <onclick>Skin.ToggleSetting(CustomHomeItem9.Enable)</onclick>
-                            <selected>!Skin.HasSetting(CustomHomeItem9.Enable)</selected>
-                            <visible>Stringcompare(Skin.String(MenuItem),CustomHomeItem9)</visible>
+                            <onclick condition="IsEmpty(Skin.String(ItemToEdit.Disable))">Skin.SetString(ItemToEdit.Disable,1)</onclick>
+                            <onclick condition="!IsEmpty(Skin.String(ItemToEdit.Disable))">Skin.Reset(ItemToEdit.Disable)</onclick>
+                            <selected>!IsEmpty(Skin.String(ItemToEdit.Disable))</selected>
                         </control>
                         <control type="button" id="20">
                             <label>$LOCALIZE[41156]</label>
@@ -372,12 +335,6 @@
                             <label>$LOCALIZE[31680]</label>
                             <onclick>ActivateWindow(1134)</onclick>
                         </control>
-                        <control type="button" id="27">
-                            <include>Objects_CustomizerSettingsButton</include>
-                            <label>42206</label>
-                            <onclick>SetProperty(skincolor,menuitem,1124)</onclick>
-                            <onclick>ActivateWindow(1138)</onclick>
-                        </control>
                         <control type="button" id="28">
                             <include>Objects_CustomizerSettingsButton</include>
                             <label>42207</label>
@@ -399,7 +356,8 @@
                             <onclick>Skin.Reset(ItemToEdit.Widget)</onclick>
                             <onclick>Skin.Reset(ItemToEdit.Widget2)</onclick>
                             <onclick>Skin.Reset(ItemToEdit.Icon)</onclick>
-                            <onclick>Skin.Reset(ItemToEdit.Color)</onclick>
+                            <onclick>Skin.Reset(ItemToEdit.Disable)</onclick>
+                            <onclick>Skin.Reset(ItemToEdit.InfoLine)</onclick>
                             <onclick>Skin.Reset(ItemToEdit.Position)</onclick>
                         </control>
                     </control>

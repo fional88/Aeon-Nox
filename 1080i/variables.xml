@@ -213,17 +213,11 @@
         <value condition="Skin.HasSetting(DisableGlowbar) + Skin.HasSetting(ExtendedGlowMode)">$LOCALIZE[31085]</value>
         <value>$LOCALIZE[106]</value>
     </variable>
-    <variable name="ExtraColorLabelVar">
-        <value condition="Skin.HasSetting(colortext) + !Skin.HasSetting(colordialogs)">$LOCALIZE[31083]</value>
-        <value condition="Skin.HasSetting(colortext) + Skin.HasSetting(colordialogs)">$LOCALIZE[31083] &amp; $LOCALIZE[31084]</value>
-        <value condition="!Skin.HasSetting(colortext) + Skin.HasSetting(colordialogs)">$LOCALIZE[31084]</value>
-        <value>$LOCALIZE[31032]</value>
-    </variable>
     <variable name="SourceFlagVar">
         <value condition="[SubString(ListItem.filename,PDTV) | SubString(ListItem.filename,sdtv) | SubString(ListItem.filename,sd tv)]">sdtv</value>
         <value condition="[SubString(ListItem.Filename,hdtv) | SubString(ListItem.Filename,hd tv)]">hdtv</value>
         <value condition="[SubString(ListItem.Filename,hddvd) | SubString(ListItem.Filename,hd-dvd)]">hddvd</value>
-        <value condition="[SubString(ListItem.Filename,bluray) | SubString(ListItem.Filename,blu-ray) | SubString(ListItem.Filename,bdrip) | SubString(ListItem.Filename,brrip)] + [SubString(ListItem.Filename,.3D.) | SubString(ListItem.Filename,BD3D)]">bluray3d</value>
+        <value condition="[SubString(ListItem.Filename,bluray) | SubString(ListItem.Filename,blu-ray) | SubString(ListItem.Filename,bdrip) | SubString(ListItem.Filename,brrip)] + [SubString(ListItem.Filename,.3D.) | SubString(ListItem.Filename,3DBD)]">bluray3d</value>
         <value condition="[SubString(ListItem.Filename,bluray) | SubString(ListItem.Filename,blu-ray) | SubString(ListItem.Filename,bdrip) | SubString(ListItem.Filename,brrip)]">bluray</value>
         <value condition="SubString(ListItem.Filename,dvb)">dvb</value>
         <value condition="SubString(ListItem.Filename,web-dl)">web-dl</value>
@@ -234,7 +228,7 @@
         <value condition="[SubString(Player.Filenameandpath,PDTV) | SubString(Player.Filenameandpath,sdtv)]">sdtv</value>
         <value condition="SubString(Player.Filenameandpath,hdtv)">hdtv</value>
         <value condition="[SubString(Player.Filenameandpath,hddvd) | SubString(Player.Filenameandpath,hd-dvd)]">hddvd</value>
-        <value condition="[SubString(Player.Filenameandpath,bluray) | SubString(Player.Filenameandpath,blu-ray) | SubString(Player.Filenameandpath,bdrip) | SubString(Player.Filenameandpath,brrip)] + [SubString(Player.Filenameandpath,.3D.) | SubString(Player.Filenameandpath,BD3D)]">bluray3d</value>
+        <value condition="[SubString(Player.Filenameandpath,bluray) | SubString(Player.Filenameandpath,blu-ray) | SubString(Player.Filenameandpath,bdrip) | SubString(Player.Filenameandpath,brrip)] + [SubString(Player.Filenameandpath,.3D.) | SubString(Player.Filenameandpath,3DBD)]">bluray3d</value>
         <value condition="[SubString(Player.Filenameandpath,bluray) | SubString(Player.Filenameandpath,blu-ray) | SubString(Player.Filenameandpath,bdrip) | SubString(Player.Filenameandpath,brrip)]">bluray</value>
         <value condition="SubString(Player.Filenameandpath,dvb)">dvb</value>
         <value condition="SubString(Player.Filenameandpath,web-dl)">web-dl</value>
@@ -636,6 +630,7 @@
         <value condition="Stringcompare(Container(9000).ListItem.Property(InfoLine),recentpics)">[COLOR grey]$LOCALIZE[42292]:[/COLOR] $INFO[Window(Home).Property(MyPicsDBLatest.Categories)][COLOR grey] • $LOCALIZE[42290]:[/COLOR] $INFO[Window(Home).Property(MyPicsDBLatest.Collections)][COLOR grey] • $LOCALIZE[42291]:[/COLOR] $INFO[Window(Home).Property(MyPicsDBLatest.Folders)]</value>
         <value condition="Stringcompare(Container(9000).ListItem.Property(InfoLine),PVR) + PVR.IsRecording">$LOCALIZE[19158] $INFO[PVR.NowRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] • [B][COLOR=FF48D1CC]$INFO[PVR.NowRecordingTitle][/COLOR][/B] [B][COLOR=white]($INFO[PVR.NowRecordingChannel, ])[/COLOR][/B]</value>
         <value condition="Stringcompare(Container(9000).ListItem.Property(InfoLine),PVR) + PVR.HasNonRecordingTimer">$LOCALIZE[19157] $INFO[PVR.NextRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] • $INFO[PVR.NextRecordingTitle, [B][COLOR=white],[/COLOR][/B]]$INFO[PVR.NextRecordingChannel, - [B][COLOR=white],[/COLOR][/B]]</value>
+        <value condition="Substring(Container(9000).ListItem.Property(InfoLine),weather)">[COLOR grey]$INFO[Window(Weather).Property(Current.Condition)] • $LOCALIZE[402]: [/COLOR]$INFO[Window(weather).Property(Current.FeelsLike)] $INFO[System.TemperatureUnits][COLOR grey] • $LOCALIZE[406]:[/COLOR] $INFO[Window(weather).Property(Current.Humidity)]</value>
         <value condition="Substring(Container(9000).ListItem.Property(InfoLine),custom)">$VAR[CustomLibraryStatsVar]</value>
         <value condition="Window.IsActive(1131)">$LOCALIZE[31683]</value>
         <value></value>
@@ -682,6 +677,7 @@
         <value condition="Stringcompare(Container(9000).ListItem.Property(InfoLine),musicvideos)">[COLOR grey]$LOCALIZE[20389]:[/COLOR] $INFO[Window(Home).Property(MusicVideos.Count)][COLOR grey]   •   $LOCALIZE[16101]:[/COLOR] $INFO[Window(Home).Property(MusicVideos.UnWatched)]</value>
         <value condition="Stringcompare(Container(9000).ListItem.Property(InfoLine),randompics)">[COLOR grey]$LOCALIZE[42292]:[/COLOR] $INFO[Window(Home).Property(MyPicsDBRandom.Categories)][COLOR grey] • $LOCALIZE[42290]:[/COLOR] $INFO[Window(Home).Property(MyPicsDBRandom.Collections)][COLOR grey] • $LOCALIZE[42291]:[/COLOR] $INFO[Window(Home).Property(MyPicsDBRandom.Folders)]</value>
         <value condition="Stringcompare(Container(9000).ListItem.Property(InfoLine),recentpics)">[COLOR grey]$LOCALIZE[42292]:[/COLOR] $INFO[Window(Home).Property(MyPicsDBLatest.Categories)][COLOR grey] • $LOCALIZE[42290]:[/COLOR] $INFO[Window(Home).Property(MyPicsDBLatest.Collections)][COLOR grey] • $LOCALIZE[42291]:[/COLOR] $INFO[Window(Home).Property(MyPicsDBLatest.Folders)]</value>
+        <value condition="Substring(Container(9000).ListItem.Property(InfoLine),weather)">[COLOR grey]$LOCALIZE[402]: [/COLOR]$INFO[Window(weather).Property(Current.FeelsLike)] $INFO[System.TemperatureUnits][COLOR grey] • $LOCALIZE[406]:[/COLOR] $INFO[Window(weather).Property(Current.Humidity)]</value>
         <value condition="Stringcompare(Container(9000).ListItem.Property(InfoLine),PVR) + PVR.IsRecording">$LOCALIZE[19158] $INFO[PVR.NowRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] • [B][COLOR=FF48D1CC]$INFO[PVR.NowRecordingTitle][/COLOR][/B] [B][COLOR=white]($INFO[PVR.NowRecordingChannel, ])[/COLOR][/B]</value>
         <value condition="Stringcompare(Container(9000).ListItem.Property(InfoLine),PVR) + PVR.HasNonRecordingTimer">$LOCALIZE[19157] $INFO[PVR.NextRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] • $INFO[PVR.NextRecordingTitle, [B][COLOR=white],[/COLOR][/B]]$INFO[PVR.NextRecordingChannel, - [B][COLOR=white],[/COLOR][/B]]</value>
         <value condition="Substring(Container(9000).ListItem.Property(InfoLine),custom)">$VAR[CustomShortLibraryStatsVar]</value>
@@ -1390,8 +1386,8 @@
     <variable name="PosterVar">
         <value condition="Stringcompare(ListItem.label,..)">DefaultFolderBack.png</value>
         <value condition="Skin.HasSetting(TVShowsUsePoster) + Container.Content(tvshows)">$INFO[ListItem.FileNameAndPath,,poster.jpg]</value>
-        <value condition="Container.Content(episodes) + [[Skin.HasSetting(TVShowsUsePoster) + IsEmpty(Container.SeasonThumb)] | SubString(Container.FolderPath,videodb://5/)]">$INFO[ListItem.Path,,../poster.jpg]</value>
-        <value condition="Container.Content(episodes) + !Skin.HasSetting(TVShowsUsePoster) + IsEmpty(Container.SeasonThumb)">$INFO[Container.TvshowThumb]</value>
+        <value condition="Container.Content(episodes) + [Skin.HasSetting(TVShowsUsePoster) + IsEmpty(Container.SeasonThumb)]">$INFO[ListItem.Path,,../poster.jpg]</value>
+        <value condition="Container.Content(episodes) + !Skin.HasSetting(TVShowsUsePoster) + IsEmpty(Container.SeasonThumb)">$INFO[ListItem.Property(TVShowThumb)]</value>
         <value condition="Container.Content(episodes) + !IsEmpty(Container.SeasonThumb)">$INFO[Container.SeasonThumb]</value>
         <value>$INFO[ListItem.Icon]</value>
     </variable>
@@ -1402,8 +1398,8 @@
     <variable name="PosterVar2">
         <value condition="Stringcompare(ListItem.label,..)">DefaultFolderBack.png</value>
         <value condition="Skin.HasSetting(TVShowsUsePoster) + Container.Content(tvshows)">$INFO[ListItem.Path,,poster.jpg]</value>
-        <value condition="Container.Content(episodes) + [[Skin.HasSetting(TVShowsUsePoster) + IsEmpty(Container.SeasonThumb)] | SubString(Container.FolderPath,videodb://5/)]">$INFO[ListItem.Path,,../poster.jpg]</value>
-        <value condition="Container.Content(episodes) + !Skin.HasSetting(TVShowsUsePoster) + IsEmpty(Container.SeasonThumb)">$INFO[Container.TvshowThumb]</value>
+        <value condition="Container.Content(episodes) + [Skin.HasSetting(TVShowsUsePoster) + IsEmpty(Container.SeasonThumb)]">$INFO[ListItem.Path,,../poster.jpg]</value>
+        <value condition="Container.Content(episodes) + !Skin.HasSetting(TVShowsUsePoster) + IsEmpty(Container.SeasonThumb)">$INFO[ListItem.Property(TVShowThumb)]</value>
         <value condition="Container.Content(episodes) + !IsEmpty(Container.SeasonThumb)">$INFO[Container.SeasonThumb]</value>
         <value>$INFO[ListItem.Thumb]</value>
     </variable>
@@ -1411,9 +1407,8 @@
         <value condition="Stringcompare(ListItem.label,..)">DefaultFolderBack.png</value>
         <value condition="Container.Content(genres)">$INFO[ListItem.Label,special://skin/extras/genre/video/icons/,.jpg]</value>
         <value condition="Skin.HasSetting(TVShowsUsePoster) + Container.Content(tvshows)">$INFO[ListItem.Path,,poster.jpg]</value>
-        <value condition="!Control.IsVisible(50) + SubString(Container.FolderPath,videodb://5/)">$INFO[ListItem.Path,,../poster.jpg]</value>
         <value condition="!Control.IsVisible(50) + Container.Content(episodes) + !IsEmpty(Container.SeasonThumb)">$INFO[Container.SeasonThumb]</value>
-        <value condition="!Control.IsVisible(50) + Container.Content(episodes) + IsEmpty(Container.SeasonThumb)">$INFO[Container.TvShowThumb]</value>
+        <value condition="!Control.IsVisible(50) + Container.Content(episodes) + IsEmpty(Container.SeasonThumb)">$INFO[ListItem.Property(TVShowThumb)]</value>
         <value>$INFO[ListItem.Icon]</value>
     </variable>
     <variable name="IconYearGenreVar">

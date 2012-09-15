@@ -588,13 +588,8 @@
                             <item>
                                 <label>$INFO[Window(Home).Property(WatchList_Episode.1.Label)]</label>
                                 <label2>$INFO[Window(Home).Property(WatchList_Episode.1.EpisodeNo)]</label2>
-                                <property name="Path">$INFO[Window(Home).Property(WatchList_Episode.1.Path)]</property>
                                 <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(WatchList_Episode.1.Thumb)]</icon>
-                                <thumb>$INFO[Window(Home).Property(WatchList_Episode.1.Fanart)]</thumb>
                                 <property name="NavItem">item1.png</property>
-                                <property name="Plot">$INFO[Window(Home).Property(WatchList_Episode.1.Plot)]</property>
-                                <property name="Rating">$INFO[Window(Home).Property(WatchList_Episode.1.Rating)]</property>
-                                <property name="EpisodeNumber">$INFO[Window(Home).Property(WatchList_Episode.1.EpisodeNo)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(WatchList_Episode.1.Fanart)]</property>
                                 <onclick>PlayMedia($ESCINFO[Window(Home).Property(WatchList_Episode.1.Path)])</onclick>
                                 <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
@@ -602,44 +597,27 @@
                             <item>
                                 <label>$INFO[Window(Home).Property(WatchList_Episode.2.Label)]</label>
                                 <label2>$INFO[Window(Home).Property(WatchList_Episode.2.EpisodeNo)]</label2>
-                                <property name="Path">$INFO[Window(Home).Property(WatchList_Episode.2.Path)]</property>
                                 <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(WatchList_Episode.2.Thumb)]</icon>
-                                <thumb>$INFO[Window(Home).Property(WatchList_Episode.2.Fanart)]</thumb>
                                 <property name="NavItem">item2.png</property>
-                                <property name="Plot">$INFO[Window(Home).Property(WatchList_Episode.2.Plot)]</property>
-                                <property name="Rating">$INFO[Window(Home).Property(WatchList_Episode.2.Rating)]</property>
-                                <property name="EpisodeNumber">$INFO[Window(Home).Property(WatchList_Episode.2.EpisodeNo)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(WatchList_Episode.2.Fanart)]</property>
                                 <onclick>PlayMedia($ESCINFO[Window(Home).Property(WatchList_Episode.2.Path)])</onclick>
                                 <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
                             </item>
                             <item>
                                 <label>$INFO[Window(Home).Property(RandomMovie.1.Title)]</label>
-                                <label2>-</label2>
-                                <property name="Path">$INFO[Window(Home).Property(RandomMovie.1.Path)]</property>
                                 <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomMovie.1.Thumb)]</icon>
-                                <thumb>$INFO[Window(Home).Property(RandomMovie.1.Fanart)]</thumb>
                                 <property name="NavItem">item1.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(RandomMovie.1.Rating)]</property>
                                 <property name="Year">$INFO[Window(Home).Property(RandomMovie.1.Year)]</property>
-                                <property name="RunningTime">$INFO[Window(Home).Property(RandomMovie.1.RunningTime)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.1.Fanart)]</property>
-                                <property name="Trailer">$INFO[Window(Home).Property(RandomMovie.1.Trailer)]</property>
                                 <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.1.Path)])</onclick>
                                 <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
                             </item>
                             <item>
                                 <label>$INFO[Window(Home).Property(RandomMovie.2.Title)]</label>
-                                <label2>-</label2>
-                                <property name="Path">$INFO[Window(Home).Property(RandomMovie.2.Path)]</property>
                                 <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomMovie.2.Thumb)]</icon>
-                                <thumb>$INFO[Window(Home).Property(RandomMovie.2.Fanart)]</thumb>
                                 <property name="NavItem">item2.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(RandomMovie.2.Rating)]</property>
                                 <property name="Year">$INFO[Window(Home).Property(RandomMovie.2.Year)]</property>
-                                <property name="RunningTime">$INFO[Window(Home).Property(RandomMovie.2.RunningTime)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.2.Fanart)]</property>
-                                <property name="Trailer">$INFO[Window(Home).Property(RandomMovie.2.Trailer)]</property>
                                 <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.2.Path)])</onclick>
                                 <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
                             </item>
@@ -649,8 +627,6 @@
                                 <label>$INFO[Window(Home).Property(RandomAlbum.1.Title)]</label>
                                 <label2>$INFO[Window(Home).Property(RandomAlbum.1.Artist)]</label2>
                                 <property name="NavItem">item1.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.1.Rating)]</property>
-                                <property name="Album">$INFO[Window(Home).Property(RandomAlbum.1.Album)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.1.Fanart)]</property>
                                 <onclick>PlayList.Clear</onclick>
                                 <property name="Path">$INFO[Window(Home).Property(RandomAlbum.1.Path)]</property>
@@ -662,8 +638,6 @@
                                 <label>$INFO[Window(Home).Property(RandomAlbum.2.Title)]</label>
                                 <label2>$INFO[Window(Home).Property(RandomAlbum.2.Artist)]</label2>
                                 <property name="NavItem">item2.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.2.Rating)]</property>
-                                <property name="Album">$INFO[Window(Home).Property(RandomAlbum.2.Album)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.2.Fanart)]</property>
                                 <onclick>PlayList.Clear</onclick>
                                 <property name="Path">$INFO[Window(Home).Property(RandomAlbum.2.Path)]</property>
@@ -740,12 +714,8 @@
                             <item>
                                 <label>$INFO[Window(Home).Property(WatchList_Album.1.Label)]</label>
                                 <label2>$INFO[Window(Home).Property(WatchList_Album.1.Artist)]</label2>
-                                <property name="Path">$INFO[Window(Home).Property(WatchList_Album.1.Path)]</property>
-                                <icon>$INFO[Window(Home).Property(WatchList_Album.1.Thumb)]</icon>
                                 <thumb>$INFO[Window(Home).Property(WatchList_Album.1.Thumb)]</thumb>
                                 <property name="NavItem">item1.png</property>
-                                <property name="Description">$INFO[Window(Home).Property(WatchList_Album.1.Album_Description)]</property>
-                                <property name="Rating">$INFO[Window(Home).Property(WatchList_Album.1.Rating)]</property>
                                 <property name="Year">$INFO[Window(Home).Property(WatchList_Album.1.Year)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(WatchList_Album.1.Fanart)]</property>
                                 <onclick>-</onclick>
@@ -754,12 +724,8 @@
                             <item>
                                 <label>$INFO[Window(Home).Property(WatchList_Album.2.Label)]</label>
                                 <label2>$INFO[Window(Home).Property(WatchList_Album.2.Artist)]</label2>
-                                <property name="Path">$INFO[Window(Home).Property(WatchList_Album.2.Path)]</property>
-                                <icon>$INFO[Window(Home).Property(WatchList_Album.2.Thumb)]</icon>
                                 <thumb>$INFO[Window(Home).Property(WatchList_Album.2.Thumb)]</thumb>
                                 <property name="NavItem">item2.png</property>
-                                <property name="Description">$INFO[Window(Home).Property(WatchList_Album.2.Album_Description)]</property>
-                                <property name="Rating">$INFO[Window(Home).Property(WatchList_Album.2.Rating)]</property>
                                 <property name="Year">$INFO[Window(Home).Property(WatchList_Album.2.Year)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(WatchList_Album.2.Fanart)]</property>
                                 <onclick>-</onclick>
@@ -869,41 +835,29 @@
                             <item>
                                 <label>$INFO[Window(Home).Property(LatestMovie.1.Title)]</label>
                                 <label2>-</label2>
-                                <property name="Path">$INFO[Window(Home).Property(LatestMovie.1.Path)]</property>
                                 <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(LatestMovie.1.Thumb)]</icon>
-                                <thumb>$INFO[Window(Home).Property(LatestMovie.1.Fanart)]</thumb>
                                 <property name="NavItem">item1.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(LatestMovie.1.Rating)]</property>
                                 <property name="Year">$INFO[Window(Home).Property(LatestMovie.1.Year)]</property>
-                                <property name="RunningTime">$INFO[Window(Home).Property(LatestMovie.1.RunningTime)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(LatestMovie.1.Fanart)]</property>
-                                <property name="Trailer">$INFO[Window(Home).Property(LatestMovie.1.Trailer)]</property>
                                 <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMovie.1.Path)])</onclick>
                                 <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
                             </item>
                             <item>
                                 <label>$INFO[Window(Home).Property(LatestMovie.2.Title)]</label>
                                 <label2>-</label2>
-                                <property name="Path">$INFO[Window(Home).Property(LatestMovie.2.Path)]</property>
                                 <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(LatestMovie.2.Thumb)]</icon>
-                                <thumb>$INFO[Window(Home).Property(LatestMovie.2.Fanart)]</thumb>
                                 <property name="NavItem">item2.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(LatestMovie.2.Rating)]</property>
                                 <property name="Year">$INFO[Window(Home).Property(LatestMovie.2.Year)]</property>
-                                <property name="RunningTime">$INFO[Window(Home).Property(LatestMovie.2.RunningTime)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(LatestMovie.2.Fanart)]</property>
-                                <property name="Trailer">$INFO[Window(Home).Property(LatestMovie.2.Trailer)]</property>
                                 <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMovie.2.Path)])</onclick>
                                 <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
                             </item>
                             <item>
                                 <label>$INFO[Window(Home).Property(LatestEpisode.1.EpisodeTitle)]</label>
                                 <label2>$INFO[Window(Home).Property(LatestEpisode.1.EpisodeNo)]</label2>
-                                <property name="Path">$INFO[Window(Home).Property(LatestEpisode.1.Path)]</property>
                                 <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(LatestEpisode.1.Thumb)]</icon>
                                 <thumb>$INFO[Window(Home).Property(LatestEpisode.1.Fanart)]</thumb>
                                 <property name="NavItem">item1.png</property>
-                                <property name="EpisodeNumber">$INFO[Window(Home).Property(LatestEpisode.1.EpisodeNo)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(LatestEpisode.1.Fanart)]</property>
                                 <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestEpisode.1.Path)])</onclick>
                                 <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
@@ -911,11 +865,9 @@
                             <item>
                                 <label>$INFO[Window(Home).Property(LatestEpisode.2.EpisodeTitle)]</label>
                                 <label2>$INFO[Window(Home).Property(LatestEpisode.2.EpisodeNo)]</label2>
-                                <property name="Path">$INFO[Window(Home).Property(LatestEpisode.2.Path)]</property>
                                 <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(LatestEpisode.2.Thumb)]</icon>
                                 <thumb>$INFO[Window(Home).Property(LatestEpisode.2.Fanart)]</thumb>
                                 <property name="NavItem">item2.png</property>
-                                <property name="EpisodeNumber">$INFO[Window(Home).Property(LatestEpisode.2.EpisodeNo)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(LatestEpisode.2.Fanart)]</property>
                                 <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestEpisode.2.Path)])</onclick>
                                 <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
@@ -926,8 +878,6 @@
                                 <label>$INFO[Window(Home).Property(LatestAlbum.1.Title)]</label>
                                 <label2>$INFO[Window(Home).Property(LatestAlbum.1.Artist)]</label2>
                                 <property name="NavItem">item1.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(LatestAlbum.1.Rating)]</property>
-                                <property name="Album">$INFO[Window(Home).Property(LatestAlbum.1.Album)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(LatestAlbum.1.Fanart)]</property>
                                 <onclick>PlayList.Clear</onclick>
                                 <property name="Path">$INFO[Window(Home).Property(LatestAlbum.1.Path)]</property>
@@ -939,11 +889,12 @@
                                 <label>$INFO[Window(Home).Property(LatestAlbum.2.Title)]</label>
                                 <label2>$INFO[Window(Home).Property(LatestAlbum.2.Artist)]</label2>
                                 <property name="NavItem">item2.png</property>
-                                <property name="Album">$INFO[Window(Home).Property(LatestAlbum.2.Album)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(LatestAlbum.2.Fanart)]</property>
                                 <onclick>PlayList.Clear</onclick>
+                                <property name="Path">$INFO[Window(Home).Property(LatestAlbum.2.Path)]</property>
                                 <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
                             </item>
+
                         </content>
                     </control>
                     <control type="label">
@@ -1558,16 +1509,11 @@
                             </control>
                         </focusedlayout>
                         <content>
-                            <item>
+                         <item>
                                 <label>$INFO[Window(Home).Property(WatchList_Episode.1.Label)]</label>
                                 <label2>$INFO[Window(Home).Property(WatchList_Episode.1.EpisodeNo)]</label2>
-                                <property name="Path">$INFO[Window(Home).Property(WatchList_Episode.1.Path)]</property>
                                 <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(WatchList_Episode.1.Thumb)]</icon>
-                                <thumb>$INFO[Window(Home).Property(WatchList_Episode.1.Fanart)]</thumb>
                                 <property name="NavItem">item1.png</property>
-                                <property name="Plot">$INFO[Window(Home).Property(WatchList_Episode.1.Plot)]</property>
-                                <property name="Rating">$INFO[Window(Home).Property(WatchList_Episode.1.Rating)]</property>
-                                <property name="EpisodeNumber">$INFO[Window(Home).Property(WatchList_Episode.1.EpisodeNo)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(WatchList_Episode.1.Fanart)]</property>
                                 <onclick>PlayMedia($ESCINFO[Window(Home).Property(WatchList_Episode.1.Path)])</onclick>
                                 <visible>Stringcompare(Control.GetLabel(4325),featuredtv)</visible>
@@ -1575,44 +1521,27 @@
                             <item>
                                 <label>$INFO[Window(Home).Property(WatchList_Episode.2.Label)]</label>
                                 <label2>$INFO[Window(Home).Property(WatchList_Episode.2.EpisodeNo)]</label2>
-                                <property name="Path">$INFO[Window(Home).Property(WatchList_Episode.2.Path)]</property>
                                 <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(WatchList_Episode.2.Thumb)]</icon>
-                                <thumb>$INFO[Window(Home).Property(WatchList_Episode.2.Fanart)]</thumb>
                                 <property name="NavItem">item2.png</property>
-                                <property name="Plot">$INFO[Window(Home).Property(WatchList_Episode.2.Plot)]</property>
-                                <property name="Rating">$INFO[Window(Home).Property(WatchList_Episode.2.Rating)]</property>
-                                <property name="EpisodeNumber">$INFO[Window(Home).Property(WatchList_Episode.2.EpisodeNo)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(WatchList_Episode.2.Fanart)]</property>
                                 <onclick>PlayMedia($ESCINFO[Window(Home).Property(WatchList_Episode.2.Path)])</onclick>
                                 <visible>Stringcompare(Control.GetLabel(4325),featuredtv)</visible>
                             </item>
                             <item>
                                 <label>$INFO[Window(Home).Property(RandomMovie.1.Title)]</label>
-                                <label2>-</label2>
-                                <property name="Path">$INFO[Window(Home).Property(RandomMovie.1.Path)]</property>
                                 <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomMovie.1.Thumb)]</icon>
-                                <thumb>$INFO[Window(Home).Property(RandomMovie.1.Fanart)]</thumb>
                                 <property name="NavItem">item1.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(RandomMovie.1.Rating)]</property>
                                 <property name="Year">$INFO[Window(Home).Property(RandomMovie.1.Year)]</property>
-                                <property name="RunningTime">$INFO[Window(Home).Property(RandomMovie.1.RunningTime)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.1.Fanart)]</property>
-                                <property name="Trailer">$INFO[Window(Home).Property(RandomMovie.1.Trailer)]</property>
                                 <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.1.Path)])</onclick>
                                 <visible>Stringcompare(Control.GetLabel(4325),featuredmovies)</visible>
                             </item>
                             <item>
                                 <label>$INFO[Window(Home).Property(RandomMovie.2.Title)]</label>
-                                <label2>-</label2>
-                                <property name="Path">$INFO[Window(Home).Property(RandomMovie.2.Path)]</property>
                                 <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomMovie.2.Thumb)]</icon>
-                                <thumb>$INFO[Window(Home).Property(RandomMovie.2.Fanart)]</thumb>
                                 <property name="NavItem">item2.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(RandomMovie.2.Rating)]</property>
                                 <property name="Year">$INFO[Window(Home).Property(RandomMovie.2.Year)]</property>
-                                <property name="RunningTime">$INFO[Window(Home).Property(RandomMovie.2.RunningTime)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.2.Fanart)]</property>
-                                <property name="Trailer">$INFO[Window(Home).Property(RandomMovie.2.Trailer)]</property>
                                 <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.2.Path)])</onclick>
                                 <visible>Stringcompare(Control.GetLabel(4325),featuredmovies)</visible>
                             </item>
@@ -1622,8 +1551,6 @@
                                 <label>$INFO[Window(Home).Property(RandomAlbum.1.Title)]</label>
                                 <label2>$INFO[Window(Home).Property(RandomAlbum.1.Artist)]</label2>
                                 <property name="NavItem">item1.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.1.Rating)]</property>
-                                <property name="Album">$INFO[Window(Home).Property(RandomAlbum.1.Album)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.1.Fanart)]</property>
                                 <onclick>PlayList.Clear</onclick>
                                 <property name="Path">$INFO[Window(Home).Property(RandomAlbum.1.Path)]</property>
@@ -1635,8 +1562,6 @@
                                 <label>$INFO[Window(Home).Property(RandomAlbum.2.Title)]</label>
                                 <label2>$INFO[Window(Home).Property(RandomAlbum.2.Artist)]</label2>
                                 <property name="NavItem">item2.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.2.Rating)]</property>
-                                <property name="Album">$INFO[Window(Home).Property(RandomAlbum.2.Album)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.2.Fanart)]</property>
                                 <onclick>PlayList.Clear</onclick>
                                 <property name="Path">$INFO[Window(Home).Property(RandomAlbum.2.Path)]</property>
@@ -1713,12 +1638,8 @@
                             <item>
                                 <label>$INFO[Window(Home).Property(WatchList_Album.1.Label)]</label>
                                 <label2>$INFO[Window(Home).Property(WatchList_Album.1.Artist)]</label2>
-                                <property name="Path">$INFO[Window(Home).Property(WatchList_Album.1.Path)]</property>
-                                <icon>$INFO[Window(Home).Property(WatchList_Album.1.Thumb)]</icon>
                                 <thumb>$INFO[Window(Home).Property(WatchList_Album.1.Thumb)]</thumb>
                                 <property name="NavItem">item1.png</property>
-                                <property name="Description">$INFO[Window(Home).Property(WatchList_Album.1.Album_Description)]</property>
-                                <property name="Rating">$INFO[Window(Home).Property(WatchList_Album.1.Rating)]</property>
                                 <property name="Year">$INFO[Window(Home).Property(WatchList_Album.1.Year)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(WatchList_Album.1.Fanart)]</property>
                                 <onclick>-</onclick>
@@ -1727,12 +1648,8 @@
                             <item>
                                 <label>$INFO[Window(Home).Property(WatchList_Album.2.Label)]</label>
                                 <label2>$INFO[Window(Home).Property(WatchList_Album.2.Artist)]</label2>
-                                <property name="Path">$INFO[Window(Home).Property(WatchList_Album.2.Path)]</property>
-                                <icon>$INFO[Window(Home).Property(WatchList_Album.2.Thumb)]</icon>
                                 <thumb>$INFO[Window(Home).Property(WatchList_Album.2.Thumb)]</thumb>
                                 <property name="NavItem">item2.png</property>
-                                <property name="Description">$INFO[Window(Home).Property(WatchList_Album.2.Album_Description)]</property>
-                                <property name="Rating">$INFO[Window(Home).Property(WatchList_Album.2.Rating)]</property>
                                 <property name="Year">$INFO[Window(Home).Property(WatchList_Album.2.Year)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(WatchList_Album.2.Fanart)]</property>
                                 <onclick>-</onclick>
@@ -1842,43 +1759,29 @@
                             <item>
                                 <label>$INFO[Window(Home).Property(LatestMovie.1.Title)]</label>
                                 <label2>-</label2>
-                                <property name="Path">$INFO[Window(Home).Property(LatestMovie.1.Path)]</property>
                                 <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(LatestMovie.1.Thumb)]</icon>
-                                <thumb>$INFO[Window(Home).Property(LatestMovie.1.Fanart)]</thumb>
                                 <property name="NavItem">item1.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(LatestMovie.1.Rating)]</property>
                                 <property name="Year">$INFO[Window(Home).Property(LatestMovie.1.Year)]</property>
-                                <property name="RunningTime">$INFO[Window(Home).Property(LatestMovie.1.RunningTime)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(LatestMovie.1.Fanart)]</property>
-                                <property name="Trailer">$INFO[Window(Home).Property(LatestMovie.1.Trailer)]</property>
                                 <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMovie.1.Path)])</onclick>
                                 <visible>Stringcompare(Control.GetLabel(4325),featuredmovies)</visible>
                             </item>
                             <item>
                                 <label>$INFO[Window(Home).Property(LatestMovie.2.Title)]</label>
                                 <label2>-</label2>
-                                <property name="Path">$INFO[Window(Home).Property(LatestMovie.2.Path)]</property>
                                 <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(LatestMovie.2.Thumb)]</icon>
-                                <thumb>$INFO[Window(Home).Property(LatestMovie.2.Fanart)]</thumb>
                                 <property name="NavItem">item2.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(LatestMovie.2.Rating)]</property>
                                 <property name="Year">$INFO[Window(Home).Property(LatestMovie.2.Year)]</property>
-                                <property name="RunningTime">$INFO[Window(Home).Property(LatestMovie.2.RunningTime)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(LatestMovie.2.Fanart)]</property>
-                                <property name="Trailer">$INFO[Window(Home).Property(LatestMovie.2.Trailer)]</property>
                                 <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMovie.2.Path)])</onclick>
                                 <visible>Stringcompare(Control.GetLabel(4325),featuredmovies)</visible>
                             </item>
                             <item>
                                 <label>$INFO[Window(Home).Property(LatestEpisode.1.EpisodeTitle)]</label>
                                 <label2>$INFO[Window(Home).Property(LatestEpisode.1.EpisodeNo)]</label2>
-                                <property name="Path">$INFO[Window(Home).Property(LatestEpisode.1.Path)]</property>
                                 <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(LatestEpisode.1.Thumb)]</icon>
                                 <thumb>$INFO[Window(Home).Property(LatestEpisode.1.Fanart)]</thumb>
                                 <property name="NavItem">item1.png</property>
-                                <property name="Plot">$INFO[Window(Home).Property(LatestEpisode.1.Plot)]</property>
-                                <property name="Rating">$INFO[Window(Home).Property(LatestEpisode.1.Rating)]</property>
-                                <property name="EpisodeNumber">$INFO[Window(Home).Property(LatestEpisode.1.EpisodeNo)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(LatestEpisode.1.Fanart)]</property>
                                 <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestEpisode.1.Path)])</onclick>
                                 <visible>Stringcompare(Control.GetLabel(4325),featuredtv)</visible>
@@ -1886,13 +1789,9 @@
                             <item>
                                 <label>$INFO[Window(Home).Property(LatestEpisode.2.EpisodeTitle)]</label>
                                 <label2>$INFO[Window(Home).Property(LatestEpisode.2.EpisodeNo)]</label2>
-                                <property name="Path">$INFO[Window(Home).Property(LatestEpisode.2.Path)]</property>
                                 <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(LatestEpisode.2.Thumb)]</icon>
                                 <thumb>$INFO[Window(Home).Property(LatestEpisode.2.Fanart)]</thumb>
                                 <property name="NavItem">item2.png</property>
-                                <property name="Plot">$INFO[Window(Home).Property(LatestEpisode.2.Plot)]</property>
-                                <property name="Rating">$INFO[Window(Home).Property(LatestEpisode.2.Rating)]</property>
-                                <property name="EpisodeNumber">$INFO[Window(Home).Property(LatestEpisode.2.EpisodeNo)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(LatestEpisode.2.Fanart)]</property>
                                 <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestEpisode.2.Path)])</onclick>
                                 <visible>Stringcompare(Control.GetLabel(4325),featuredtv)</visible>
@@ -1903,8 +1802,6 @@
                                 <label>$INFO[Window(Home).Property(LatestAlbum.1.Title)]</label>
                                 <label2>$INFO[Window(Home).Property(LatestAlbum.1.Artist)]</label2>
                                 <property name="NavItem">item1.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(LatestAlbum.1.Rating)]</property>
-                                <property name="Album">$INFO[Window(Home).Property(LatestAlbum.1.Album)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(LatestAlbum.1.Fanart)]</property>
                                 <onclick>PlayList.Clear</onclick>
                                 <property name="Path">$INFO[Window(Home).Property(LatestAlbum.1.Path)]</property>
@@ -1916,8 +1813,6 @@
                                 <label>$INFO[Window(Home).Property(LatestAlbum.2.Title)]</label>
                                 <label2>$INFO[Window(Home).Property(LatestAlbum.2.Artist)]</label2>
                                 <property name="NavItem">item2.png</property>
-                                <property name="Rating">$INFO[Window(Home).Property(LatestAlbum.2.Rating)]</property>
-                                <property name="Album">$INFO[Window(Home).Property(LatestAlbum.2.Album)]</property>
                                 <property name="Fanart">$INFO[Window(Home).Property(LatestAlbum.2.Fanart)]</property>
                                 <onclick>PlayList.Clear</onclick>
                                 <property name="Path">$INFO[Window(Home).Property(LatestAlbum.2.Path)]</property>

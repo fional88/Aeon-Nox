@@ -208,8 +208,7 @@
                     <width min="15" max="1920">auto</width>
                     <font>Font_Info_Caps</font>
                     <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                    <shadowcolor>-</shadowcolor>
-                    <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] [COLOR grey] •  $INFO[Window(Weather).Property(36Hour.1.ChancePrecipitation)][/COLOR]</label>
+                     <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] [COLOR grey] •  $INFO[Window(Weather).Property(36Hour.1.ChancePrecipitation)][/COLOR]</label>
                 </control>
                 <control type="label">
                     <height>36</height>

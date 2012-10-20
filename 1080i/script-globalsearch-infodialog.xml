@@ -5,6 +5,8 @@
     <animation effect="fade" time="250">WindowClose</animation>
     <coordinates>
         <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
     </coordinates>
     <controls>
         <control type="list" id="100">
@@ -22,8 +24,6 @@
             <width>1160</width>
             <font>Font_Reg38_Caps</font>
             <label>$INFO[Container(100).ListItem.Label]</label>
-            <align>left</align>
-            <aligny>center</aligny>
         </control>
         <control type="image">
             <posx>1350</posx>
@@ -1158,9 +1158,7 @@
                 <posy>397</posy>
                 <width>1160</width>
                 <height>260</height>
-                <align>justify</align>
                 <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                <pagecontrol>-</pagecontrol>
                 <label>$INFO[Container(100).ListItem.Property(Plot),$LOCALIZE[207]: [COLOR white2],[/COLOR]]</label>
                 <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 <visible>Control.IsVisible(110) | Control.IsVisible(120) | Control.IsVisible(150)</visible>
@@ -1169,9 +1167,7 @@
                 <posy>307</posy>
                 <width>1160</width>
                 <height>330</height>
-                <align>justify</align>
                 <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                <pagecontrol>-</pagecontrol>
                 <label>$INFO[Container(100).ListItem.Property(Plot),$LOCALIZE[207]: [COLOR white2],[/COLOR]]</label>
                 <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 <visible>Control.IsVisible(140)</visible>
@@ -1180,9 +1176,7 @@
                 <posy>396</posy>
                 <width>1160</width>
                 <height>330</height>
-                <align>justify</align>
                 <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                <pagecontrol>-</pagecontrol>
                 <label>$INFO[Container(100).ListItem.Property(Artist_Description),$LOCALIZE[207]: [COLOR white2],[/COLOR]]</label>
                 <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 <visible>Control.IsVisible(160)</visible>
@@ -1191,9 +1185,7 @@
                 <posy>396</posy>
                 <width>1160</width>
                 <height>330</height>
-                <align>justify</align>
                 <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                <pagecontrol>-</pagecontrol>
                 <label>$INFO[Container(100).ListItem.Property(Comment),$LOCALIZE[569]: [COLOR white2],[/COLOR]]</label>
                 <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 <visible>Control.IsVisible(180)</visible>
@@ -1202,9 +1194,7 @@
                 <posy>396</posy>
                 <width>1160</width>
                 <height>330</height>
-                <align>justify</align>
                 <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                <pagecontrol>-</pagecontrol>
                 <label>$INFO[Container(100).ListItem.Property(Album_Description),$LOCALIZE[183]: [COLOR white2],[/COLOR]]</label>
                 <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 <visible>Control.IsVisible(170)</visible>
@@ -1215,7 +1205,6 @@
             <posy>190</posy>
             <width>570</width>
             <height>768</height>
-            <itemgap>0</itemgap>
             <onleft>190</onleft>
             <onright>190</onright>
             <onup>195</onup>
@@ -1233,7 +1222,6 @@
                 <focusedcolor>white2</focusedcolor>
                 <textoffsety>18</textoffsety>
                 <textoffsetx>20</textoffsetx>
-                <aligny>center</aligny>
             </control>
             <control type="button" id="192">
                 <label>-</label>
@@ -1247,7 +1235,6 @@
                 <focusedcolor>white2</focusedcolor>
                 <textoffsety>18</textoffsety>
                 <textoffsetx>20</textoffsetx>
-                <aligny>center</aligny>
             </control>
             <control type="button" id="193">
                 <label>-</label>
@@ -1261,7 +1248,6 @@
                 <focusedcolor>white2</focusedcolor>
                 <textoffsety>18</textoffsety>
                 <textoffsetx>20</textoffsetx>
-                <aligny>center</aligny>
             </control>
         </control>
     </controls>

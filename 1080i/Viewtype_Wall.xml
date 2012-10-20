@@ -13,7 +13,6 @@
             <posy>-2</posy>
             <width>192</width>
             <height>277</height>
-            <fadetime>IconCrossfadeTime2</fadetime>
             <texture>wall/boxes/wall_movie_overlay.png</texture>
             <visible>Skin.HasSetting(wallcases)</visible>
         </control>
@@ -27,13 +26,11 @@
             <height>182</height>
             <texture background="true" diffuse="thumbs/boxes/cdcover_mask.png" fallback="DefaultAudio.png">$VAR[ListAlbumVar]</texture>
             <aspectratio scalediffuse="false">scale</aspectratio>
-            <fadetime>500</fadetime>
         </control>
         <control type="image">
             <posy>1</posy>
             <width>208</width>
             <height>204</height>
-            <fadetime>IconCrossfadeTime2</fadetime>
             <texture>wall/boxes/wall_overlay.png</texture>
             <visible>!Container.Content(artists)</visible>
         </control>
@@ -51,7 +48,6 @@
                 <posx>5</posx>
                 <width>265</width>
                 <height>185</height>
-                <fadetime>IconCrossfadeTime2</fadetime>
                 <aspectratio aligny="top">keep</aspectratio>
                 <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
                 <bordersize>5</bordersize>
@@ -61,7 +57,6 @@
                 <posx>5</posx>
                 <width>265</width>
                 <height>185</height>
-                <fadetime>IconCrossfadeTime2</fadetime>
                 <bordersize>5</bordersize>
                 <texture background="true">common/black.png</texture>
                 <colordiffuse>44FFFFFF</colordiffuse>
@@ -74,7 +69,6 @@
                     <font>Font_Reg15</font>
                     <textoffsetx>15</textoffsetx>
                     <textcolor>grey2</textcolor>
-                    <shadowcolor>-</shadowcolor>
                     <label>$INFO[ListItem.Label2]</label>
                 </control>
                 <control type="label">
@@ -85,7 +79,6 @@
                     <font>Font_Reg15</font>
                     <textoffsetx>15</textoffsetx>
                     <textcolor>grey2</textcolor>
-                    <shadowcolor>-</shadowcolor>
                     <label>$INFO[ListItem.Rating]</label>
                 </control>
                 <control type="label">
@@ -94,7 +87,6 @@
                     <font>Font_Reg15</font>
                     <textoffsetx>15</textoffsetx>
                     <textcolor>grey2</textcolor>
-                    <shadowcolor>-</shadowcolor>
                     <label>$INFO[ListItem.Label]</label>
                 </control>
             </control>
@@ -107,7 +99,6 @@
                 <font>Font_Reg15</font>
                 <textoffsetx>15</textoffsetx>
                 <textcolor>grey2</textcolor>
-                <shadowcolor>-</shadowcolor>
                 <label>$INFO[ListItem.Label]</label>
             </control>
         </itemlayout>
@@ -115,7 +106,6 @@
             <control type="image">
                 <width>275</width>
                 <height>268</height>
-                <fadetime>IconCrossfadeTime2</fadetime>
                 <aspectratio>keep</aspectratio>
                 <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                 <texture border="5">views/addonwall_select.png</texture>
@@ -125,7 +115,6 @@
                 <posx>5</posx>
                 <width>265</width>
                 <height>185</height>
-                <fadetime>IconCrossfadeTime2</fadetime>
                 <aspectratio aligny="top">keep</aspectratio>
                 <bordertexture border="5">thumbs/bordershadow4.png</bordertexture>
                 <bordersize>5</bordersize>
@@ -138,8 +127,6 @@
                     <width>276</width>
                     <font>Font_Reg15</font>
                     <textoffsetx>15</textoffsetx>
-                    <textcolor>white2</textcolor>
-                    <shadowcolor>-</shadowcolor>
                     <label>$INFO[ListItem.Label2]</label>
                 </control>
                 <control type="label">
@@ -149,8 +136,6 @@
                     <align>right</align>
                     <font>Font_Reg15</font>
                     <textoffsetx>15</textoffsetx>
-                    <textcolor>white2</textcolor>
-                    <shadowcolor>-</shadowcolor>
                     <label>$INFO[ListItem.Rating]</label>
                 </control>
                 <control type="label">
@@ -158,8 +143,6 @@
                     <width>276</width>
                     <font>Font_Reg15</font>
                     <textoffsetx>15</textoffsetx>
-                    <textcolor>white2</textcolor>
-                    <shadowcolor>-</shadowcolor>
                     <label>$INFO[ListItem.Label]</label>
                 </control>
             </control>
@@ -172,11 +155,10 @@
                 <font>Font_Reg15</font>
                 <textoffsetx>15</textoffsetx>
                 <textcolor>$VAR[FontColorVar]</textcolor>
-                <shadowcolor>-</shadowcolor>
                 <label>$INFO[ListItem.Label]</label>
             </control>
         </focusedlayout>
-        <itemlayout height="161" width="831" condition="Container.Content(tvshows) + Skin.HasSetting(TVWallBanner)">
+        <itemlayout height="161" width="831" condition="[Container.Content(movies) + Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + Skin.HasSetting(TVWallBanner)]">
             <control type="group">
                 <control type="image">
                     <width>831</width>
@@ -190,7 +172,6 @@
                     <posy>8</posy>
                     <width>816</width>
                     <height>146</height>
-                    <aligny>center</aligny>
                     <align>center</align>
                     <label>$INFO[ListItem.Label]</label>
                     <font>Font_Bold24</font>
@@ -221,7 +202,7 @@
                 </control>
             </control>
         </itemlayout>
-        <focusedlayout height="161" width="831" condition="Container.Content(tvshows) + Skin.HasSetting(TVWallBanner)">
+        <focusedlayout height="161" width="831" condition="[Container.Content(movies) + Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + Skin.HasSetting(TVWallBanner)]">
             <control type="group">
                 <control type="image">
                     <width>831</width>
@@ -237,7 +218,6 @@
                     <posy>8</posy>
                     <width>816</width>
                     <height>146</height>
-                    <aligny>center</aligny>
                     <align>center</align>
                     <label>$INFO[ListItem.Label]</label>
                     <font>Font_Bold24</font>
@@ -259,7 +239,7 @@
                 </control>
             </control>
         </focusedlayout>
-        <itemlayout width="185" height="268" condition="Container.Content(movies) | [Container.Content(tvshows) + !Skin.HasSetting(TVWallBanner)] | Container.Content(seasons) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Skin.HasSetting(comics)]">
+        <itemlayout width="185" height="268" condition="[[Container.Content(movies) + !Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + !Skin.HasSetting(TVWallBanner)] | Container.Content(seasons) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Skin.HasSetting(comics)]]">
             <control type="image">
                 <posx>-14</posx>
                 <posy>-14</posy>
@@ -268,7 +248,6 @@
                 <texture background="true" diffuse="wall/wall_movie_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
                 <aspectratio scalediffuse="false">scale</aspectratio>
                 <bordersize>18</bordersize>
-                <fadetime>500</fadetime>
             </control>
             <include>MovieWallIcons</include>
             <control type="image">
@@ -283,7 +262,7 @@
                 <texture diffuse="wall/wall_movie_mask.png">common/black.png</texture>
             </control>
         </itemlayout>
-        <focusedlayout width="185" height="268" condition="Container.Content(movies) | [Container.Content(tvshows) + !Skin.HasSetting(TVWallBanner)] | Container.Content(seasons) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Skin.HasSetting(comics)]">
+        <focusedlayout width="185" height="268" condition="[[Container.Content(movies) + !Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + !Skin.HasSetting(TVWallBanner)] | Container.Content(seasons) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Skin.HasSetting(comics)]]">
             <control type="group">
                 <animation type="Focus" reversible="false">
                     <effect type="zoom" center="auto" start="100" end="140" time="400" easing="out" tween="cubic" reversible="false" />
@@ -301,7 +280,6 @@
                     <aspectratio scalediffuse="false">scale</aspectratio>
                     <bordertexture border="18">thumbs/poster_shadow.png</bordertexture>
                     <bordersize>18</bordersize>
-                    <fadetime>500</fadetime>
                 </control>
                 <include>MovieWallIcons</include>
             </control>
@@ -348,13 +326,6 @@
             <posy>132</posy>
             <width>46</width>
             <height>802</height>
-            <texturesliderbackground>-</texturesliderbackground>
-            <texturesliderbar>-</texturesliderbar>
-            <texturesliderbarfocus>-</texturesliderbarfocus>
-            <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
-            <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
-            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-            <orientation>vertical</orientation>
             <onleft>500</onleft>
             <onright>9000</onright>
         </control>
@@ -380,8 +351,7 @@
     <include name="Viewtype_Wall">
         <control type="group">
             <visible>Control.IsVisible(500)</visible>
-            <include>Animation_VisibleChange200</include>
-            <include>Animation_OpenCloseZoom_New</include>
+            <include>Animation_Widgets</include>
             <control type="image">
                 <posx>147</posx>
                 <posy>147</posy>
@@ -389,7 +359,7 @@
                 <height>765</height>
                 <texture background="true">wall/wall_movie_squares.png</texture>
                 <include>Animation_CommonFade</include>
-                <visible>[Container.Content(movies) | [Container.Content(tvshows) + !Skin.HasSetting(TVWallBanner)] | Container.Content(seasons) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Skin.HasSetting(comics)]]</visible>
+                <visible>[Container.Content(movies) + !Skin.HasSetting(MovieWallBanner)] | [Container.Content(tvshows) + !Skin.HasSetting(TVWallBanner)] | Container.Content(seasons) | Container.Content(musicvideos) | [Window.IsActive(videolibrary) + Container.Content(genres)] | [Window.IsActive(pictures) + Skin.HasSetting(comics)]</visible>
                 <animation effect="zoom" end="113" center="960,600" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(wallfullscreen)">Conditional</animation>
             </control>
             <control type="image">
@@ -411,7 +381,6 @@
                 <width>1622</width>
                 <height>5</height>
                 <align>center</align>
-                <aligny>center</aligny>
                 <font>Font_ShowcaseMainLabel2_Caps</font>
                 <textcolor>floor</textcolor>
                 <shadowcolor>floorshadow</shadowcolor>

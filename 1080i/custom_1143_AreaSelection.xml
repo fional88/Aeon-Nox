@@ -30,15 +30,11 @@
                 <posy>240</posy>
                 <width>900</width>
                 <height>540</height>
-                <itemgap>0</itemgap>
                 <aligny>center</aligny>
                 <scrolltime>0</scrolltime>
                 <orientation>vertical</orientation>
                 <onright>20</onright>
-                <animation effect="fade" time="200">Visible</animation>
-                <animation effect="fade" time="200">Hidden</animation>
-                <animation effect="fade" time="200">WindowOpen</animation>
-                <animation effect="fade" time="200">WindowClose</animation>
+                <include>Animation_WindowFade250</include>
                 <itemlayout height="60" width="300">
                     <control type="image">
                         <width>300</width>
@@ -49,7 +45,6 @@
                     <control type="label">
                         <width>300</width>
                         <height>60</height>
-                        <aligny>center</aligny>
                         <textoffsetx>10</textoffsetx>
                         <font>Font_Reg19</font>
                         <textcolor>grey2</textcolor>
@@ -68,11 +63,9 @@
                         <control type="label">
                             <width>300</width>
                             <height>60</height>
-                            <aligny>center</aligny>
                             <textoffsetx>10</textoffsetx>
                             <scroll>true</scroll>
                             <font>Font_Reg19</font>
-                            <textcolor>white2</textcolor>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                     </control>
@@ -86,7 +79,6 @@
                         </control>
                         <control type="label">
                             <width>300</width>
-                            <aligny>center</aligny>
                             <textoffsetx>10</textoffsetx>
                             <font>Font_Reg19</font>
                             <textcolor>grey2</textcolor>
@@ -220,6 +212,20 @@
                         <onclick>Skin.SetString(ItemToEdit.Path,ReplaceWindow(MusicLibrary))</onclick>
                     </item>
                     <item>
+                        <label>$LOCALIZE[42252] (Artists)</label>
+                        <onclick>Skin.SetString(ItemToEdit.Type,7)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.Label,$LOCALIZE[42252])</onclick>
+                        <onclick>Dialog.Close(1143)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.Path,ReplaceWindow(MusicLibrary,artists,return))</onclick>
+                    </item>
+                    <item>
+                        <label>$LOCALIZE[42252] (Root)</label>
+                        <onclick>Skin.SetString(ItemToEdit.Type,7)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.Label,$LOCALIZE[42252])</onclick>
+                        <onclick>Dialog.Close(1143)</onclick>
+                        <onclick>Skin.SetString(ItemToEdit.Path,ReplaceWindow(MusicLibrary,root,return))</onclick>
+                    </item>
+                    <item>
                         <label>42253</label>
                         <onclick>Skin.SetString(ItemToEdit.Type,7)</onclick>
                         <onclick>Skin.SetString(ItemToEdit.Label,$LOCALIZE[42253])</onclick>
@@ -232,7 +238,6 @@
                         <onclick>Skin.SetString(ItemToEdit.Label,$LOCALIZE[42254])</onclick>
                         <onclick>Dialog.Close(1143)</onclick>
                         <onclick>Skin.SetString(ItemToEdit.Path,ReplaceWindow(PVR))</onclick>
-                        <visible>System.GetBool(pvrmanager.enabled)</visible>
                     </item>
                     <item>
                         <label>42218</label>

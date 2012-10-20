@@ -12,9 +12,11 @@
         <effect type="zoom" start="100" end="130" center="960,540" time="300" tween="cubic" easing="in" />
     </animation>
     <controls>
-        <include>CommonSettingsBackground</include>
-        <include>CommonMediaPlayingBackground</include>
-        <include>Furniture_SettingsFloor</include>
+        <control type="group">
+            <include>CommonSettingsBackground</include>
+            <include>CommonMediaPlayingBackground</include>
+            <include>Furniture_SettingsFloor</include>
+        </control>
         <control type="group">
             <animation effect="zoom" end="91" center="960,360" time="400" tween="cubic" easing="inout" condition="true">Conditional</animation>
             <visible>![Window.isVisible(ProfileSettings) | Window.IsVisible(LockSettings)]</visible>
@@ -24,12 +26,10 @@
                 <posy>195</posy>
                 <width>750</width>
                 <height>567</height>
-                <itemgap>0</itemgap>
                 <onleft>9001</onleft>
                 <onright>9001</onright>
                 <onup>2</onup>
                 <ondown>2</ondown>
-                <pagecontrol>-</pagecontrol>
                 <scrolltime>300</scrolltime>
                 <itemlayout height="74" width="570">
                     <control type="label">
@@ -37,8 +37,7 @@
                         <width>306</width>
                         <height>74</height>
                         <font>Font_Bold20</font>
-                        <include>detailcolornofocus</include>
-                        <aligny>center</aligny>
+                        <textcolor>grey2</textcolor>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
                 </itemlayout>
@@ -55,8 +54,6 @@
                         <width>306</width>
                         <height>74</height>
                         <font>Font_Bold20</font>
-                        <include>listcolornofocus</include>
-                        <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
                 </focusedlayout>
@@ -84,7 +81,6 @@
                 <font>Font_ShowcaseMainLabel2</font>
                 <label>$LOCALIZE[10034]</label>
                 <align>center</align>
-                <aligny>center</aligny>
                 <shadowcolor>black</shadowcolor>
             </control>
         </control>
@@ -97,7 +93,6 @@
                     <width>750</width>
                     <visible>Skin.HasSetting(breadcrumbslabel)</visible>
                     <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)]</visible>
-                    <itemgap>0</itemgap>
                     <orientation>horizontal</orientation>
                     <control type="image">
                         <width>54</width>

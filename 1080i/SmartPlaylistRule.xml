@@ -3,6 +3,8 @@
     <defaultcontrol always="true">15</defaultcontrol>
     <coordinates>
         <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
     </coordinates>
     <include>Animation_DialogPopup</include>
     <controls>
@@ -56,7 +58,6 @@
                     <texturenofocus>settings/settings_separator.png</texturenofocus>
                     <disabledcolor>white2</disabledcolor>
                     <textoffsetx>30</textoffsetx>
-                    <aligny>center</aligny>
                     <enable>no</enable>
                 </control>
                 <control type="spincontrolex" id="15">
@@ -72,14 +73,7 @@
                     <texturenofocus>settings/settings_radiobuttonoff3.png</texturenofocus>
                     <textoffsetx>0</textoffsetx>
                     <include>Default_SettingButton</include>
-                    <textureup>settings/spin-up.png</textureup>
-                    <texturedown>settings/spin-down.png</texturedown>
-                    <textureupfocus>settings/spin-up-focus.png</textureupfocus>
-                    <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
-                    <disabledcolor>60d0d0d0</disabledcolor>
-                    <aligny>center</aligny>
                     <spinposx>-2</spinposx>
-                    <reverse>yes</reverse>
                 </control>
                 <control type="spincontrolex" id="16">
                     <posx>744</posx>
@@ -94,14 +88,7 @@
                     <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
                     <textoffsetx>0</textoffsetx>
                     <include>Default_SettingButton</include>
-                    <textureup>settings/spin-up.png</textureup>
-                    <texturedown>settings/spin-down.png</texturedown>
-                    <textureupfocus>settings/spin-up-focus.png</textureupfocus>
-                    <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
-                    <disabledcolor>60d0d0d0</disabledcolor>
-                    <aligny>center</aligny>
                     <spinposx>-2</spinposx>
-                    <reverse>yes</reverse>
                 </control>
             </control>
             <control type="edit" id="17">
@@ -113,11 +100,9 @@
                 <font>Font_Reg20</font>
                 <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                 <texturenofocus>settings/settings_radiobuttonoff3.png</texturenofocus>
-                <focusedcolor>white</focusedcolor>
                 <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                 <textoffsetx>30</textoffsetx>
                 <hinttext>21420</hinttext>
-                <aligny>center</aligny>
                 <onup>9001</onup>
                 <onleft>17</onleft>
                 <onright>9000</onright>
@@ -133,11 +118,9 @@
                 <font>Font_Reg20</font>
                 <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                 <texturenofocus>settings/settings_radiobuttonoff3.png</texturenofocus>
-                <focusedcolor>white</focusedcolor>
                 <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                 <textoffsetx>30</textoffsetx>
                 <hinttext>21420</hinttext>
-                <aligny>center</aligny>
                 <onup>17</onup>
                 <onleft>9000</onleft>
                 <onright>20</onright>
@@ -148,7 +131,6 @@
                 <posy>105</posy>
                 <width>326</width>
                 <height>741</height>
-                <itemgap>0</itemgap>
                 <onleft>18</onleft>
                 <onright>9001</onright>
                 <onup>9000</onup>
@@ -162,10 +144,8 @@
                     <texturenofocus>-</texturenofocus>
                     <label>186</label>
                     <font>Font_Bold20_Caps</font>
-                    <focusedcolor>white</focusedcolor>
                     <textoffsety>18</textoffsety>
                     <textoffsetx>20</textoffsetx>
-                    <aligny>center</aligny>
                     <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                 </control>
                 <control type="button" id="19">
@@ -177,10 +157,8 @@
                     <texturenofocus>-</texturenofocus>
                     <label>222</label>
                     <font>Font_Bold20_Caps</font>
-                    <focusedcolor>white</focusedcolor>
                     <textoffsety>18</textoffsety>
                     <textoffsetx>20</textoffsetx>
-                    <aligny>center</aligny>
                     <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                 </control>
             </control>

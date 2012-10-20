@@ -2,9 +2,11 @@
 <window>
     <allowoverlay>no</allowoverlay>
     <defaultcontrol always="true">9000</defaultcontrol>
-    <backgroundcolor>black</backgroundcolor>
+    <backgroundcolor>backgroundcolor</backgroundcolor>
     <coordinates>
         <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
     </coordinates>
     <controls>
         <!-- Main Group -->
@@ -76,7 +78,6 @@
                         <onright>200</onright>
                         <onup>9000</onup>
                         <ondown>9000</ondown>
-                        <pagecontrol>-</pagecontrol>
                         <scrolltime tween="quadratic" easing="out">200</scrolltime>
                         <itemlayout height="74" width="570">
                             <control type="label">
@@ -84,8 +85,7 @@
                                 <width>389</width>
                                 <height>74</height>
                                 <font>Font_Bold20</font>
-                                <include>detailcolornofocus</include>
-                                <aligny>center</aligny>
+                                <textcolor>grey2</textcolor>
                                 <label>$INFO[ListItem.Label]</label>
                             </control>
                             <control type="label">
@@ -94,9 +94,8 @@
                                 <height>74</height>
                                 <font>Font_Bold20</font>
                                 <textcolor>$VAR[TitleColorVar]</textcolor>
-                                <include>detailcolornofocus</include>
+                                <textcolor>grey2</textcolor>
                                 <align>right</align>
-                                <aligny>center</aligny>
                                 <label>[B]$INFO[ListItem.Label2][/B]</label>
                             </control>
                         </itemlayout>
@@ -113,8 +112,6 @@
                                 <width>389</width>
                                 <height>74</height>
                                 <font>Font_Bold20</font>
-                                <include>listcolornofocus</include>
-                                <aligny>center</aligny>
                                 <label>$INFO[ListItem.Label]</label>
                             </control>
                             <control type="label">
@@ -122,9 +119,7 @@
                                 <width>389</width>
                                 <height>74</height>
                                 <font>Font_Bold20</font>
-                                <include>listcolornofocus</include>
                                 <align>right</align>
-                                <aligny>center</aligny>
                                 <label>[B]$INFO[ListItem.Label2][/B]</label>
                             </control>
                         </focusedlayout>
@@ -133,69 +128,57 @@
                                 <label>$LOCALIZE[20342]</label>
                                 <label2>$INFO[Control.GetLabel(110)]</label2>
                                 <onclick>-</onclick>
-                                <icon>-</icon>
                                 <visible>!IsEmpty(Control.GetLabel(110))</visible>
                             </item>
                             <item id="2">
                                 <label>$LOCALIZE[20343]</label>
                                 <label2>$INFO[Control.GetLabel(120)]</label2>
                                 <onclick>-</onclick>
-                                <icon>-</icon>
                                 <visible>!IsEmpty(Control.GetLabel(120))</visible>
                             </item>
                             <item id="3">
                                 <label>$LOCALIZE[33054]</label>
                                 <label2>$INFO[Control.GetLabel(130)]</label2>
                                 <onclick>-</onclick>
-                                <icon>-</icon>
                                 <visible>!IsEmpty(Control.GetLabel(130))</visible>
                             </item>
                             <item id="4">
                                 <label>$LOCALIZE[20360]</label>
                                 <label2>$INFO[Control.GetLabel(140)]</label2>
                                 <onclick>-</onclick>
-                                <icon>-</icon>
                                 <visible>!IsEmpty(Control.GetLabel(140))</visible>
                             </item>
                             <item id="5">
                                 <label>$LOCALIZE[20389]</label>
                                 <label2>$INFO[Control.GetLabel(150)]</label2>
                                 <onclick>-</onclick>
-                                <icon>-</icon>
                                 <visible>!IsEmpty(Control.GetLabel(150))</visible>
                             </item>
                             <item id="6">
                                 <label>$LOCALIZE[133]</label>
                                 <label2>$INFO[Control.GetLabel(160)]</label2>
                                 <onclick>-</onclick>
-                                <icon>-</icon>
                                 <visible>!IsEmpty(Control.GetLabel(160))</visible>
                             </item>
                             <item id="7">
                                 <label>$LOCALIZE[132]</label>
                                 <label2>$INFO[Control.GetLabel(170)]</label2>
                                 <onclick>-</onclick>
-                                <icon>-</icon>
                                 <visible>!IsEmpty(Control.GetLabel(170))</visible>
                             </item>
                             <item id="8">
                                 <label>$LOCALIZE[134]</label>
                                 <label2>$INFO[Control.GetLabel(180)]</label2>
                                 <onclick>-</onclick>
-                                <icon>-</icon>
                                 <visible>!IsEmpty(Control.GetLabel(180))</visible>
                             </item>
                             <item id="9">
                                 <label>$ADDON[script.globalsearch 32299]</label>
-                                <label2>-</label2>
                                 <onclick>SendClick(198)</onclick>
-                                <icon>-</icon>
                             </item>
                             <item id="10">
                                 <label>31066</label>
-                                <label2>-</label2>
                                 <onclick>Dialog.Close(all,true)</onclick>
-                                <icon>-</icon>
                                 <visible>Control.IsVisible(199)</visible>
                             </item>
                         </content>
@@ -243,10 +226,7 @@
                                         <control type="label">
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Label]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -254,10 +234,7 @@
                                             <posy>49</posy>
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Genre)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -265,10 +242,7 @@
                                             <posy>98</posy>
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(Duration), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -279,8 +253,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll>false</autoscroll>
                                             <visible>IsEmpty(ListItem.Property(Plotoutline)</visible>
@@ -292,8 +264,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Plotoutline)]</label>
                                             <autoscroll>false</autoscroll>
                                         </control>
@@ -331,10 +301,7 @@
                                         <control type="label">
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Label]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -342,10 +309,7 @@
                                             <posy>49</posy>
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Genre)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -353,10 +317,7 @@
                                             <posy>98</posy>
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(Duration), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -367,8 +328,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll) + Control.HasFocus(111)</autoscroll>
                                             <visible>IsEmpty(ListItem.Property(Plotoutline)</visible>
@@ -380,8 +339,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Plotoutline)]</label>
                                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll) + Control.HasFocus(111)</autoscroll>
                                         </control>
@@ -431,10 +388,7 @@
                                         <control type="label">
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Label]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -442,10 +396,7 @@
                                             <posy>49</posy>
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Genre)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -453,10 +404,7 @@
                                             <posy>98</posy>
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(Episode), • , [LOWERCASE]$LOCALIZE[20360][/LOWERCASE]]$INFO[ListItem.Property(Rating), • ]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -467,8 +415,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll>false</autoscroll>
                                             <visible>IsEmpty(ListItem.Property(Plotoutline)</visible>
@@ -480,8 +426,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Plotoutline)]</label>
                                             <autoscroll>false</autoscroll>
                                         </control>
@@ -519,10 +463,7 @@
                                         <control type="label">
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Label]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -530,10 +471,7 @@
                                             <posy>49</posy>
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Genre)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -541,10 +479,7 @@
                                             <posy>98</posy>
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(Episode), • , [LOWERCASE]$LOCALIZE[20360][/LOWERCASE]]$INFO[ListItem.Property(Rating), • ]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -555,8 +490,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll) + Control.HasFocus(121)</autoscroll>
                                             <visible>IsEmpty(ListItem.Property(Plotoutline)</visible>
@@ -568,8 +501,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Plotoutline)]</label>
                                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll) + Control.HasFocus(121)</autoscroll>
                                         </control>
@@ -618,10 +549,7 @@
                                         <control type="label">
                                             <width>612</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Label]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -629,10 +557,7 @@
                                             <posy>49</posy>
                                             <width>612</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Genre)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -640,10 +565,7 @@
                                             <posy>98</posy>
                                             <width>612</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(Duration), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -654,8 +576,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll>false</autoscroll>
                                         </control>
@@ -692,10 +612,7 @@
                                         <control type="label">
                                             <width>612</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Label]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -703,10 +620,7 @@
                                             <posy>49</posy>
                                             <width>612</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Genre)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -714,10 +628,7 @@
                                             <posy>98</posy>
                                             <width>612</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(Duration), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -728,8 +639,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll) + Control.HasFocus(131)</autoscroll>
                                         </control>
@@ -779,10 +688,7 @@
                                         <control type="label">
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Label]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -790,10 +696,7 @@
                                             <posy>49</posy>
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(TvShowTitle)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -801,10 +704,7 @@
                                             <posy>98</posy>
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Premiered)]$INFO[ListItem.Property(Duration), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -815,8 +715,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll>false</autoscroll>
                                         </control>
@@ -854,10 +752,7 @@
                                         <control type="label">
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Label]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -865,10 +760,7 @@
                                             <posy>49</posy>
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(TvShowTitle)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -876,10 +768,7 @@
                                             <posy>98</posy>
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Premiered)]$INFO[ListItem.Property(Duration), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -890,8 +779,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll) + Control.HasFocus(141)</autoscroll>
                                         </control>
@@ -941,10 +828,7 @@
                                         <control type="label">
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Label]$INFO[ListItem.Property(Artist), - ]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -952,10 +836,7 @@
                                             <posy>49</posy>
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Genre)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -963,10 +844,7 @@
                                             <posy>98</posy>
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(Duration), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -977,8 +855,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll>false</autoscroll>
                                         </control>
@@ -1016,10 +892,7 @@
                                         <control type="label">
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Label]$INFO[ListItem.Property(Artist), - ]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1027,10 +900,7 @@
                                             <posy>49</posy>
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Genre)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1038,10 +908,7 @@
                                             <posy>98</posy>
                                             <width>1108</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(Duration), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1052,8 +919,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll) + Control.HasFocus(151)</autoscroll>
                                         </control>
@@ -1103,10 +968,7 @@
                                         <control type="label">
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Label]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1114,10 +976,7 @@
                                             <posy>49</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Artist_Genre)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1125,10 +984,7 @@
                                             <posy>98</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Artist_YearsActive)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1166,10 +1022,7 @@
                                         <control type="label">
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Label]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1177,10 +1030,7 @@
                                             <posy>49</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Artist_Genre)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1188,10 +1038,7 @@
                                             <posy>98</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Artist_YearsActive)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1241,10 +1088,7 @@
                                         <control type="label">
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Label]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1252,10 +1096,7 @@
                                             <posy>49</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Artist)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1263,10 +1104,7 @@
                                             <posy>98</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Genre)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1274,10 +1112,7 @@
                                             <posy>147</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Year),, • ]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1285,10 +1120,7 @@
                                             <posy>196</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Album_label)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1335,10 +1167,7 @@
                                         <control type="label">
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Label]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1346,10 +1175,7 @@
                                             <posy>49</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Artist)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1357,10 +1183,7 @@
                                             <posy>98</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Genre)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1368,10 +1191,7 @@
                                             <posy>147</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Year),, • ]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1379,10 +1199,7 @@
                                             <posy>196</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Album_label)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1441,10 +1258,7 @@
                                         <control type="label">
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Label]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1452,10 +1266,7 @@
                                             <posy>49</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Artist)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1463,10 +1274,7 @@
                                             <posy>98</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Album)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1474,10 +1282,7 @@
                                             <posy>245</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Year),, • ]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1485,10 +1290,7 @@
                                             <posy>147</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Duration)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1505,10 +1307,7 @@
                                             <posy>196</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Genre)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1546,10 +1345,7 @@
                                         <control type="label">
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Label]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1557,10 +1353,7 @@
                                             <posy>49</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Artist)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1568,10 +1361,7 @@
                                             <posy>98</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Album)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1579,10 +1369,7 @@
                                             <posy>245</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Year),, • ]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1590,10 +1377,7 @@
                                             <posy>147</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Duration)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1610,10 +1394,7 @@
                                             <posy>196</posy>
                                             <width>379</width>
                                             <height>45</height>
-                                            <aligny>center</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
-                                            <shadowcolor>-</shadowcolor>
                                             <label>$INFO[ListItem.Property(Genre)]</label>
                                             <textoffsetx>22</textoffsetx>
                                         </control>
@@ -1670,7 +1451,6 @@
                         <width>750</width>
                         <visible>Skin.HasSetting(breadcrumbslabel)</visible>
                         <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)]</visible>
-                        <itemgap>0</itemgap>
                         <orientation>horizontal</orientation>
                         <control type="image">
                             <width>38</width>
@@ -1707,5 +1487,6 @@
             </control>
             <include>Furniture_NowPlayingWidget</include>
         </control>
+        <include>ContextMenuOverlay</include>
     </controls>
 </window>

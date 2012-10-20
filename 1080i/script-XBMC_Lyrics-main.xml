@@ -4,6 +4,8 @@
     <defaultcontrol always="false">101</defaultcontrol>
     <coordinates>
         <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
     </coordinates>
     <controls>
         <control type="group">
@@ -31,7 +33,6 @@
                 <textcolor>white6</textcolor>
                 <label>24013</label>
                 <align>center</align>
-                <aligny>center</aligny>
                 <animation effect="fade" time="1000">WindowOpen</animation>
                 <animation effect="fade" time="200">WindowClose</animation>
             </control>
@@ -55,16 +56,9 @@
                 <posx>1425</posx>
                 <posy>6</posy>
                 <height>62</height>
-                <textureup>settings/spin-up.png</textureup>
-                <texturedown>settings/spin-down.png</texturedown>
-                <textureupfocus>settings/spin-up-focus.png</textureupfocus>
-                <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
                 <textcolor>grey</textcolor>
-                <focusedcolor>white</focusedcolor>
                 <spinposx>-4</spinposx>
                 <textoffsetx>0</textoffsetx>
-                <aligny>center</aligny>
-                <reverse>yes</reverse>
                 <subtype>page</subtype>
                 <onleft>130</onleft>
                 <onright>130</onright>
@@ -94,7 +88,6 @@
                         <width>1754</width>
                         <height>38</height>
                         <font>Font_Reg20</font>
-                        <aligny>center</aligny>
                         <align>center</align>
                         <textcolor>grey</textcolor>
                         <info>ListItem.Label</info>
@@ -106,7 +99,6 @@
                         <width>1754</width>
                         <height>38</height>
                         <font>Font_Reg20</font>
-                        <aligny>center</aligny>
                         <align>center</align>
                         <textcolor>grey</textcolor>
                         <label>$INFO[ListItem.Label]</label>
@@ -117,7 +109,6 @@
                         <width>1754</width>
                         <height>38</height>
                         <font>Font_Reg20</font>
-                        <aligny>center</aligny>
                         <align>center</align>
                         <textcolor>grey</textcolor>
                         <label fallback="--">$INFO[ListItem.Label]</label>
@@ -134,7 +125,6 @@
                         <width>1754</width>
                         <height>38</height>
                         <font>Font_Reg20</font>
-                        <aligny>center</aligny>
                         <align>center</align>
                         <textcolor>white</textcolor>
                         <label fallback="--">$INFO[ListItem.Label]</label>
@@ -152,16 +142,9 @@
                 <posx>1425</posx>
                 <posy>6</posy>
                 <height>62</height>
-                <textureup>settings/spin-up.png</textureup>
-                <texturedown>settings/spin-down.png</texturedown>
-                <textureupfocus>settings/spin-up-focus.png</textureupfocus>
-                <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
                 <textcolor>grey</textcolor>
-                <focusedcolor>white</focusedcolor>
                 <spinposx>-4</spinposx>
                 <textoffsetx>0</textoffsetx>
-                <aligny>center</aligny>
-                <reverse>yes</reverse>
                 <subtype>page</subtype>
                 <onleft>110</onleft>
                 <onright>130</onright>
@@ -177,9 +160,8 @@
                 <width>1754</width>
                 <height>478</height>
                 <align>center</align>
-                <aligny>center</aligny>
-                <font>Font_Reg38</font>
-                <label>CHOOSE SONG</label>
+                <font>Font_Reg38_Caps</font>
+                <label>42333</label>
                 <textcolor>white</textcolor>
                 <visible>Control.IsVisible(120) + ![Control.IsVisible(100) | Control.IsVisible(110)]</visible>
             </control>
@@ -208,7 +190,6 @@
                         <width>1724</width>
                         <height>60</height>
                         <font>Font_Reg38</font>
-                        <aligny>center</aligny>
                         <textcolor>white</textcolor>
                         <info>ListItem.Label</info>
                     </control>
@@ -231,7 +212,6 @@
                         <width>1724</width>
                         <height>60</height>
                         <font>Font_Reg38</font>
-                        <aligny>center</aligny>
                         <textcolor>white</textcolor>
                         <info>ListItem.Label</info>
                     </control>
@@ -241,16 +221,9 @@
                 <posx>1425</posx>
                 <posy>6</posy>
                 <height>62</height>
-                <textureup>settings/spin-up.png</textureup>
-                <texturedown>settings/spin-down.png</texturedown>
-                <textureupfocus>settings/spin-up-focus.png</textureupfocus>
-                <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
                 <textcolor>grey</textcolor>
-                <focusedcolor>white</focusedcolor>
                 <spinposx>-4</spinposx>
                 <textoffsetx>0</textoffsetx>
-                <aligny>center</aligny>
-                <reverse>yes</reverse>
                 <subtype>page</subtype>
                 <onleft>130</onleft>
                 <onright>130</onright>
@@ -268,22 +241,18 @@
                 <texturefocus>-</texturefocus>
                 <texturenofocus>-</texturenofocus>
                 <focusedcolor>$VAR[ColorDiffuseVar]</focusedcolor>
-                <label>[UPPERCASE][COLOR=grey]$INFO[Skin.String(LyricScript_Path)][/COLOR] - [COLOR=FFFFFFFF]$INFO[Control.GetLabel(200)][/COLOR][/UPPERCASE]</label>
+                <label>[COLOR=grey]$INFO[Skin.String(LyricScript_Path)][/COLOR] - [COLOR=FFFFFFFF]$INFO[Control.GetLabel(200)][/COLOR]</label>
                 <onleft>101</onleft>
                 <onright>110</onright>
                 <onclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
                 <font>Font_Bold20_Caps</font>
-                <aligny>center</aligny>
                 <textoffsetx>30</textoffsetx>
                 <animation effect="fade" time="1000">WindowOpen</animation>
                 <animation effect="fade" time="200">WindowClose</animation>
             </control>
             <control type="label" id="200">
                 <include>HiddenObject</include>
-                <visible>true</visible>
             </control>
         </control>
-        <!-- ** Required ** Do not change <id> or <type> -->
-        <!-- ** Required ** Do not change <id> or <type> -->
     </controls>
 </window>

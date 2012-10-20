@@ -26,6 +26,7 @@
     <include name="Banners">
         <control type="group">
             <visible>Control.IsVisible(508)</visible>
+            <animation effect="slide" tween="cubic" easing="in" time="500" start="0,806" end="0,0">VisibleChange</animation>
             <include>Animation_OpenCloseZoom</include>
             <control type="group">
                 <include>Animation_VisibleChange400</include>
@@ -86,7 +87,7 @@
                 <scrolltime tween="cubic" easing="out">300</scrolltime>
                 <focusposition>2</focusposition>
                 <preloaditems>2</preloaditems>
-                <visible>Container.Content(TVShows)</visible>
+                <visible>Container.Content(TVShows) | Container.Content(movies)</visible>
                 <itemlayout width="562" height="120" condition="!Skin.HasSetting(AltBannerPlex)">
                     <control type="image">
                         <posx>8</posx>
@@ -101,7 +102,6 @@
                         <posy>8</posy>
                         <width>528</width>
                         <height>105</height>
-                        <aligny>center</aligny>
                         <align>center</align>
                         <label>$INFO[ListItem.Label]</label>
                         <font>Font_Bold24</font>
@@ -152,7 +152,6 @@
                             <posy>8</posy>
                             <width>528</width>
                             <height>105</height>
-                            <aligny>center</aligny>
                             <align>center</align>
                             <label>$INFO[ListItem.Label]</label>
                             <font>Font_Bold24</font>
@@ -193,7 +192,6 @@
                         <posx>281</posx>
                         <width>562</width>
                         <height>104</height>
-                        <aligny>center</aligny>
                         <align>center</align>
                         <label>$INFO[ListItem.Label]</label>
                         <font>Font_Bold24</font>
@@ -238,7 +236,6 @@
                             <posx>281</posx>
                             <width>562</width>
                             <height>104</height>
-                            <aligny>center</aligny>
                             <align>center</align>
                             <label>$INFO[ListItem.Label]</label>
                             <font>Font_Bold24</font>
@@ -279,7 +276,7 @@
                 <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 <include>Animation_VisibleChange400</include>
                 <visible>Skin.HasSetting(AltBannerPlex)</visible>
-                <animation effect="fade" time="200" delay="150" start="100" end="40" condition="Skin.HasSetting(showcaseinfoontv) | Skin.HasSetting(infopaneautotv)">Conditional</animation>
+                <animation effect="fade" time="200" delay="150" start="100" end="40" condition="Control.IsVisible(7550)">Conditional</animation>
             </control>
         </control>
     </include>

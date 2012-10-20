@@ -13,7 +13,7 @@
         <control type="group">
             <control type="image">
                 <include>FullscreenDimensions</include>
-                <texture background="true" fallback="special://skin/backgrounds/fallback_music.jpg">$INFO[ListItem.Property(Fanart_Image)]</texture>
+                <texture background="true" fallback="special://skin/backgrounds/fallback_music.jpg">$INFO[ListItem.Art(fanart)]</texture>
                 <aspectratio>scale</aspectratio>
             </control>
             <control type="image">
@@ -145,7 +145,6 @@
                         <posy>-134</posy>
                         <width>485</width>
                         <height>198</height>
-                        <align>justify</align>
                         <font>Font_Reg19</font>
                         <pagecontrol>60</pagecontrol>
                         <autoscroll delay="15000" time="5000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
@@ -173,7 +172,6 @@
                                 <label fallback="N/A">$INFO[ListItem.Genre]</label>
                                 <textcolor>grey2</textcolor>
                                 <shadowcolor>black</shadowcolor>
-                                <scrollout>false</scrollout>
                                 <pauseatend>1000</pauseatend>
                             </control>
                         </control>
@@ -196,7 +194,6 @@
                                 <label fallback="N/A">$INFO[ListItem.Duration]</label>
                                 <textcolor>grey2</textcolor>
                                 <shadowcolor>black</shadowcolor>
-                                <scrollout>false</scrollout>
                                 <pauseatend>1000</pauseatend>
                             </control>
                         </control>
@@ -219,7 +216,6 @@
                                 <label fallback="13170">$INFO[ListItem.PlayCount]$INFO[ListItem.LastPlayed, ($LOCALIZE[568]: ,)]</label>
                                 <textcolor>grey2</textcolor>
                                 <shadowcolor>black</shadowcolor>
-                                <scrollout>false</scrollout>
                                 <pauseatend>1000</pauseatend>
                             </control>
                         </control>
@@ -242,7 +238,6 @@
                                 <label fallback="N/A">$INFO[ListItem.Path]</label>
                                 <textcolor>grey2</textcolor>
                                 <shadowcolor>black</shadowcolor>
-                                <scrollout>false</scrollout>
                                 <pauseatend>1000</pauseatend>
                             </control>
                         </control>
@@ -265,7 +260,6 @@
                                 <label fallback="N/A">$INFO[ListItem.FileName]</label>
                                 <textcolor>grey2</textcolor>
                                 <shadowcolor>black</shadowcolor>
-                                <scrollout>false</scrollout>
                                 <pauseatend>1000</pauseatend>
                             </control>
                         </control>
@@ -340,7 +334,6 @@
                 <itemgap>40</itemgap>
                 <orientation>horizontal</orientation>
                 <control type="label">
-                    <textcolor>white2</textcolor>
                     <font>Font_Reg19_Caps</font>
                     <shadowcolor>black</shadowcolor>
                     <include>BreadcrumbsLabel</include>
@@ -349,7 +342,6 @@
                     <visible>Control.IsEnabled(10) + Control.IsVisible(10)</visible>
                 </control>
                 <control type="label">
-                    <textcolor>white2</textcolor>
                     <font>Font_Reg19_Caps</font>
                     <shadowcolor>black</shadowcolor>
                     <include>BreadcrumbsLabel</include>
@@ -358,7 +350,6 @@
                     <visible>Control.IsEnabled(11) + Control.IsVisible(11)</visible>
                 </control>
                 <control type="label">
-                    <textcolor>white2</textcolor>
                     <font>Font_Reg19_Caps</font>
                     <shadowcolor>black</shadowcolor>
                     <include>BreadcrumbsLabel</include>
@@ -367,7 +358,6 @@
                     <visible>Control.IsEnabled(12) + Control.IsVisible(12)</visible>
                 </control>
                 <control type="label">
-                    <textcolor>white2</textcolor>
                     <font>Font_Reg19_Caps</font>
                     <shadowcolor>black</shadowcolor>
                     <include>BreadcrumbsLabel</include>

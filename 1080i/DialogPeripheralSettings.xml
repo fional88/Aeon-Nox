@@ -24,7 +24,6 @@
                 <posy>120</posy>
                 <width>1065</width>
                 <height>668</height>
-                <itemgap>0</itemgap>
                 <pagecontrol>60</pagecontrol>
                 <onleft>9000</onleft>
                 <onright>60</onright>
@@ -37,29 +36,15 @@
                 <width>98</width>
                 <height>680</height>
                 <texturesliderbackground>views/scrollbarbacklist.png</texturesliderbackground>
-                <texturesliderbar>-</texturesliderbar>
-                <texturesliderbarfocus>-</texturesliderbarfocus>
-                <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
-                <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
-                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <onleft>5</onleft>
                 <onright>9000</onright>
                 <ondown>60</ondown>
                 <onup>60</onup>
-                <orientation>vertical</orientation>
             </control>
         </control>
         <control type="sliderex" id="10">
             <width>570</width>
-            <height>60</height>
             <font>Font_Info</font>
-            <textoffsetx>30</textoffsetx>
-            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-            <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
-            <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
-            <texturesliderbar>osd/osd_slider_bg_settings.png</texturesliderbar>
-            <textureslidernib>osd/osd_slider_nib_nf.png</textureslidernib>
-            <textureslidernibfocus>osd/osd_slider_nib.png</textureslidernibfocus>
         </control>
         <control type="button" id="7">
             <font>Font_Info</font>
@@ -75,29 +60,19 @@
             <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
             <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
             <textcolor>white3</textcolor>
-            <focusedcolor>white</focusedcolor>
             <radioposx>945</radioposx>
             <textoffsetx>30</textoffsetx>
-            <aligny>center</aligny>
             <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
         </control>
         <control type="spincontrolex" id="9">
             <height>62</height>
             <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
             <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
-            <textureup>settings/spin-up.png</textureup>
-            <texturedown>settings/spin-down.png</texturedown>
-            <textureupfocus>settings/spin-up-focus.png</textureupfocus>
-            <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
             <font>Font_Info</font>
-            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
             <textcolor>white3</textcolor>
-            <focusedcolor>white</focusedcolor>
             <spinposx>-8</spinposx>
             <textoffsetx>30</textoffsetx>
-            <aligny>center</aligny>
             <alignx>center</alignx>
-            <reverse>yes</reverse>
             <subtype>text</subtype>
         </control>
         <control type="image" id="11">
@@ -112,19 +87,16 @@
                 <width>252</width>
                 <height>96</height>
                 <align>center</align>
-                <aligny>center</aligny>
                 <label>186</label>
                 <width>324</width>
                 <height>87</height>
                 <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                 <texturenofocus>-</texturenofocus>
                 <font>Font_Bold22</font>
-                <textcolor>white2</textcolor>
                 <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                 <focusedcolor>FF262728</focusedcolor>
                 <textoffsety>18</textoffsety>
                 <textoffsetx>40</textoffsetx>
-                <aligny>center</aligny>
                 <onleft>5</onleft>
                 <onright>5</onright>
                 <onup>29</onup>
@@ -136,7 +108,6 @@
                 <width>252</width>
                 <height>96</height>
                 <align>center</align>
-                <aligny>center</aligny>
                 <label>222</label>
                 <width>324</width>
                 <height>87</height>
@@ -144,11 +115,9 @@
                 <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                 <texturenofocus>-</texturenofocus>
                 <font>Font_Bold22</font>
-                <textcolor>white2</textcolor>
                 <focusedcolor>FF262728</focusedcolor>
                 <textoffsety>18</textoffsety>
                 <textoffsetx>40</textoffsetx>
-                <aligny>center</aligny>
                 <onleft>5</onleft>
                 <onright>5</onright>
                 <onup>50</onup>
@@ -160,7 +129,6 @@
                 <width>252</width>
                 <height>96</height>
                 <align>center</align>
-                <aligny>center</aligny>
                 <label>409</label>
                 <width>324</width>
                 <height>87</height>
@@ -168,11 +136,9 @@
                 <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                 <texturenofocus>-</texturenofocus>
                 <font>Font_Bold22</font>
-                <textcolor>white2</textcolor>
                 <focusedcolor>FF262728</focusedcolor>
                 <textoffsety>18</textoffsety>
                 <textoffsetx>40</textoffsetx>
-                <aligny>center</aligny>
                 <onleft>5</onleft>
                 <onright>5</onright>
                 <onup>28</onup>

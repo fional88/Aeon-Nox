@@ -3,6 +3,8 @@
     <defaultcontrol always="true">3</defaultcontrol>
     <coordinates>
         <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
     </coordinates>
     <include>Animation_DialogPopup</include>
     <controls>
@@ -34,7 +36,6 @@
                 <posy>52</posy>
                 <width>837</width>
                 <height>62</height>
-                <aligny>center</aligny>
                 <textcolor>white3</textcolor>
                 <label>20344</label>
                 <textoffsetx>30</textoffsetx>
@@ -45,7 +46,6 @@
                 <posy>52</posy>
                 <width>837</width>
                 <height>62</height>
-                <aligny>center</aligny>
                 <textcolor>white</textcolor>
                 <label>20344</label>
                 <textoffsetx>30</textoffsetx>
@@ -57,22 +57,15 @@
                 <posy>51</posy>
                 <width>837</width>
                 <height>62</height>
-                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                 <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
-                <textureup>settings/spin-up.png</textureup>
-                <texturedown>settings/spin-down.png</texturedown>
-                <textureupfocus>settings/spin-up-focus.png</textureupfocus>
-                <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
+                <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                 <textcolor>white3</textcolor>
-                <focusedcolor>white</focusedcolor>
                 <spinposx>-18</spinposx>
                 <textoffsetx>0</textoffsetx>
                 <onup>5</onup>
                 <ondown>5</ondown>
                 <onleft>28</onleft>
                 <onright>4</onright>
-                <aligny>center</aligny>
                 <subtype>text</subtype>
             </control>
             <control type="list" id="4">
@@ -97,7 +90,6 @@
                         <width>292</width>
                         <height>62</height>
                         <textcolor>grey3</textcolor>
-                        <aligny>center</aligny>
                         <align>center</align>
                         <info>ListItem.Label</info>
                     </control>
@@ -119,8 +111,6 @@
                         <posx>146</posx>
                         <width>292</width>
                         <height>62</height>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                         <align>center</align>
                         <info>ListItem.Label</info>
                     </control>
@@ -140,7 +130,6 @@
                 <posy>114</posy>
                 <width>837</width>
                 <height>310</height>
-                <itemgap>0</itemgap>
                 <onup>3</onup>
                 <ondown>3</ondown>
                 <onleft>28</onleft>
@@ -153,9 +142,7 @@
                 <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                 <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
                 <textcolor>white3</textcolor>
-                <focusedcolor>white</focusedcolor>
                 <textoffsetx>30</textoffsetx>
-                <aligny>center</aligny>
             </control>
             <control type="radiobutton" id="8">
                 <width>748</width>
@@ -164,10 +151,8 @@
                 <texturenofocus>dialogs/setcontent_button_nofocus.png</texturenofocus>
                 <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                 <textcolor>white3</textcolor>
-                <focusedcolor>white</focusedcolor>
                 <radioposx>724</radioposx>
                 <textoffsetx>30</textoffsetx>
-                <aligny>center</aligny>
             </control>
             <control type="button" id="6">
                 <posx>1000</posx>
@@ -176,8 +161,6 @@
                 <height>62</height>
                 <font>Font_Reg19</font>
                 <label>5</label>
-                <textcolor>white2</textcolor>
-                <focusedcolor>white</focusedcolor>
                 <textoffsetx>30</textoffsetx>
                 <onleft>4</onleft>
                 <onright>3</onright>
@@ -194,8 +177,6 @@
                 <height>62</height>
                 <font>Font_Reg19</font>
                 <label>186</label>
-                <textcolor>white2</textcolor>
-                <focusedcolor>white</focusedcolor>
                 <textoffsetx>30</textoffsetx>
                 <onleft>4</onleft>
                 <onright>3</onright>
@@ -212,8 +193,6 @@
                 <height>62</height>
                 <font>Font_Reg19</font>
                 <label>222</label>
-                <textcolor>white2</textcolor>
-                <focusedcolor>white</focusedcolor>
                 <textoffsetx>30</textoffsetx>
                 <onleft>4</onleft>
                 <onright>3</onright>

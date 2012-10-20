@@ -1,15 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="1119">
+    <onload condition="stringcompare(Skin.String(actualViewtype),showcasemovies)">SetProperty(Viewtype,501)</onload>
+    <onload condition="stringcompare(Skin.String(actualViewtype),landscape)">SetProperty(Viewtype,503)</onload>
+    <onload condition="stringcompare(Skin.String(actualViewtype),showcasedvd)">SetProperty(Viewtype,504)</onload>
+    <onload condition="stringcompare(Skin.String(actualViewtype),banners)">SetProperty(Viewtype,508)</onload>
+    <onload condition="Container.Content(tvshows)">SetProperty(Area,TV)</onload>
+    <onload condition="Container.Content(movies)">SetProperty(Area,Movies)</onload>
     <defaultcontrol always="true">450</defaultcontrol>
     <zorder>0</zorder>
     <coordinates>
         <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
     </coordinates>
     <controls>
         <control type="panel" id="450">
             <width>300</width>
             <height>1080</height>
-            <itemgap>0</itemgap>
             <orientation>vertical</orientation>
             <onleft>Dialog.Close(1119)</onleft>
             <onleft>ActivateWindow(1126)</onleft>
@@ -38,7 +45,6 @@
                     <width>279</width>
                     <height>30</height>
                     <align>center</align>
-                    <aligny>center</aligny>
                     <font>Font_Reg19</font>
                     <textcolor>bcicon</textcolor>
                     <info>ListItem.Label</info>
@@ -56,7 +62,6 @@
                     <width>279</width>
                     <height>30</height>
                     <align>center</align>
-                    <aligny>center</aligny>
                     <font>Font_Reg19</font>
                     <info>ListItem.Label</info>
                 </control>
@@ -66,145 +71,26 @@
                     <label>$LOCALIZE[31198]</label>
                     <icon>views/extrathumbs.png</icon>
                     <thumb>views/extrathumbs_focus.png</thumb>
-                    <onclick>Skin.SetBool(extrathumbs)</onclick>
-                    <onclick>Skin.Reset(fanartinfopane)</onclick>
-                    <onclick>Skin.Reset(posterinfopane)</onclick>
-                    <onclick>Skin.Reset(fourthumbs)</onclick>
-                    <visible>stringcompare(Skin.String(actualViewtype),showcasemovies) + Container.Content(movies)</visible>
+                    <onclick>Skin.SetString(InfoPanel$INFO[Window.Property(Area)]$INFO[Window.Property(Viewtype)],extrathumbs)</onclick>
+                    <visible>Container.Content(movies)</visible>
                 </item>
                 <item id="2">
                     <label>$LOCALIZE[20445]</label>
                     <icon>views/fanart.png</icon>
                     <thumb>views/fanart_focus.png</thumb>
-                    <onclick>Skin.SetBool(fanartinfopane)</onclick>
-                    <onclick>Skin.Reset(extrathumbs)</onclick>
-                    <onclick>Skin.Reset(posterinfopane)</onclick>
-                    <onclick>Skin.Reset(fourthumbs)</onclick>
-                    <visible>stringcompare(Skin.String(actualViewtype),showcasemovies) + Container.Content(movies)</visible>
+                    <onclick>Skin.SetString(InfoPanel$INFO[Window.Property(Area)]$INFO[Window.Property(Viewtype)],fanart)</onclick>
                 </item>
                 <item id="3">
                     <label>$LOCALIZE[31271]</label>
                     <icon>views/poster.png</icon>
                     <thumb>views/poster_focus.png</thumb>
-                    <onclick>Skin.SetBool(posterinfopane)</onclick>
-                    <onclick>Skin.Reset(extrathumbs)</onclick>
-                    <onclick>Skin.Reset(fanartinfopane)</onclick>
-                    <onclick>Skin.Reset(fourthumbs)</onclick>
-                    <visible>stringcompare(Skin.String(actualViewtype),showcasemovies) + Container.Content(movies)</visible>
+                    <onclick>Skin.SetString(InfoPanel$INFO[Window.Property(Area)]$INFO[Window.Property(Viewtype)],poster)</onclick>
                 </item>
                 <item id="4">
                     <label>$LOCALIZE[31287]</label>
                     <icon>views/fourthumbs.png</icon>
                     <thumb>views/fourthumbs_focus.png</thumb>
-                    <onclick>Skin.SetBool(fourthumbs)</onclick>
-                    <onclick>Skin.Reset(extrathumbs)</onclick>
-                    <onclick>Skin.Reset(fanartinfopane)</onclick>
-                    <onclick>Skin.Reset(posterinfopane)</onclick>
-                    <visible>stringcompare(Skin.String(actualViewtype),showcasemovies) + Container.Content(movies)</visible>
-                </item>
-                <item id="5">
-                    <label>$LOCALIZE[31198]</label>
-                    <icon>views/extrathumbs.png</icon>
-                    <thumb>views/extrathumbs_focus.png</thumb>
-                    <onclick>Skin.SetBool(extrathumbs503)</onclick>
-                    <onclick>Skin.Reset(fanartinfopane503)</onclick>
-                    <onclick>Skin.Reset(posterinfopane503)</onclick>
-                    <onclick>Skin.Reset(fourthumbs503)</onclick>
-                    <visible>stringcompare(Skin.String(actualViewtype),landscape) + Container.Content(movies)</visible>
-                </item>
-                <item id="6">
-                    <label>$LOCALIZE[20445]</label>
-                    <icon>views/fanart.png</icon>
-                    <thumb>views/fanart_focus.png</thumb>
-                    <onclick>Skin.SetBool(fanartinfopane503)</onclick>
-                    <onclick>Skin.Reset(extrathumbs503)</onclick>
-                    <onclick>Skin.Reset(posterinfopane503)</onclick>
-                    <onclick>Skin.Reset(fourthumbs503)</onclick>
-                    <visible>stringcompare(Skin.String(actualViewtype),landscape) + Container.Content(movies)</visible>
-                </item>
-                <item id="7">
-                    <label>$LOCALIZE[31271]</label>
-                    <icon>views/poster.png</icon>
-                    <thumb>views/poster_focus.png</thumb>
-                    <onclick>Skin.SetBool(posterinfopane503)</onclick>
-                    <onclick>Skin.Reset(extrathumbs503)</onclick>
-                    <onclick>Skin.Reset(fanartinfopane503)</onclick>
-                    <onclick>Skin.Reset(fourthumbs503)</onclick>
-                    <visible>stringcompare(Skin.String(actualViewtype),landscape) + Container.Content(movies)</visible>
-                </item>
-                <item id="8">
-                    <label>$LOCALIZE[31287]</label>
-                    <icon>views/fourthumbs.png</icon>
-                    <thumb>views/fourthumbs_focus.png</thumb>
-                    <onclick>Skin.SetBool(fourthumbs503)</onclick>
-                    <onclick>Skin.Reset(extrathumbs503)</onclick>
-                    <onclick>Skin.Reset(fanartinfopane503)</onclick>
-                    <onclick>Skin.Reset(posterinfopane503)</onclick>
-                    <visible>stringcompare(Skin.String(actualViewtype),landscape) + Container.Content(movies)</visible>
-                </item>
-                <item id="9">
-                    <label>$LOCALIZE[31198]</label>
-                    <icon>views/extrathumbs.png</icon>
-                    <thumb>views/extrathumbs_focus.png</thumb>
-                    <onclick>Skin.SetBool(extrathumbs504)</onclick>
-                    <onclick>Skin.Reset(fanartinfopane504)</onclick>
-                    <onclick>Skin.Reset(posterinfopane504)</onclick>
-                    <onclick>Skin.Reset(fourthumbs504)</onclick>
-                    <visible>stringcompare(Skin.String(actualViewtype),showcasedvd) + Container.Content(movies)</visible>
-                </item>
-                <item id="10">
-                    <label>$LOCALIZE[20445]</label>
-                    <icon>views/fanart.png</icon>
-                    <thumb>views/fanart_focus.png</thumb>
-                    <onclick>Skin.SetBool(fanartinfopane504)</onclick>
-                    <onclick>Skin.Reset(extrathumbs504)</onclick>
-                    <onclick>Skin.Reset(posterinfopane504)</onclick>
-                    <onclick>Skin.Reset(fourthumbs504)</onclick>
-                    <visible>stringcompare(Skin.String(actualViewtype),showcasedvd) + Container.Content(movies)</visible>
-                </item>
-                <item id="11">
-                    <label>$LOCALIZE[31271]</label>
-                    <icon>views/poster.png</icon>
-                    <thumb>views/poster_focus.png</thumb>
-                    <onclick>Skin.SetBool(posterinfopane504)</onclick>
-                    <onclick>Skin.Reset(extrathumbs504)</onclick>
-                    <onclick>Skin.Reset(fanartinfopane504)</onclick>
-                    <onclick>Skin.Reset(fourthumbs504)</onclick>
-                    <visible>stringcompare(Skin.String(actualViewtype),showcasedvd) + Container.Content(movies)</visible>
-                </item>
-                <item id="12">
-                    <label>$LOCALIZE[31287]</label>
-                    <icon>views/fourthumbs.png</icon>
-                    <thumb>views/fourthumbs_focus.png</thumb>
-                    <onclick>Skin.SetBool(fourthumbs504)</onclick>
-                    <onclick>Skin.Reset(extrathumbs504)</onclick>
-                    <onclick>Skin.Reset(fanartinfopane504)</onclick>
-                    <onclick>Skin.Reset(posterinfopane504)</onclick>
-                    <visible>stringcompare(Skin.String(actualViewtype),showcasedvd) + Container.Content(movies)</visible>
-                </item>
-                <item id="13">
-                    <label>$LOCALIZE[31460]</label>
-                    <icon>views/fourthumbs.png</icon>
-                    <thumb>views/fourthumbs_focus.png</thumb>
-                    <onclick>Skin.SetBool(tvthumbsinfopane)</onclick>
-                    <onclick>Skin.Reset(tvposterinfopane)</onclick>
-                    <visible>Container.Content(tvshows)</visible>
-                </item>
-                <item id="14">
-                    <label>$LOCALIZE[20445]</label>
-                    <icon>views/fanart.png</icon>
-                    <thumb>views/fanart_focus.png</thumb>
-                    <onclick>Skin.Reset(tvposterinfopane)</onclick>
-                    <onclick>Skin.Reset(tvthumbsinfopane)</onclick>
-                    <visible>Container.Content(tvshows)</visible>
-                </item>
-                <item id="15">
-                    <label>$LOCALIZE[31271]</label>
-                    <icon>views/poster.png</icon>
-                    <thumb>views/poster_focus.png</thumb>
-                    <onclick>Skin.SetBool(tvposterinfopane)</onclick>
-                    <onclick>Skin.Reset(tvthumbsinfopane)</onclick>
-                    <visible>Container.Content(tvshows)</visible>
+                    <onclick>Skin.SetString(InfoPanel$INFO[Window.Property(Area)]$INFO[Window.Property(Viewtype)],fourthumbs)</onclick>
                 </item>
             </content>
         </control>
@@ -219,10 +105,8 @@
             <alttexturefocus>views/tripanel/listselect_fo.png</alttexturefocus>
             <textcolor>grey2</textcolor>
             <focusedcolor>white6</focusedcolor>
-            <disabledcolor>grey3</disabledcolor>
             <textoffsetx>10</textoffsetx>
             <textoffsety>2</textoffsety>
-            <aligny>center</aligny>
             <onup>450</onup>
             <ondown>450</ondown>
             <onleft>Dialog.Close(1119)</onleft>

@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<window>
-    <id>123</id>
+<window id="122">
     <defaultcontrol>2</defaultcontrol>
     <coordinates>
         <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
     </coordinates>
     <animation type="WindowOpen" reversible="false">
         <effect type="zoom" start="80" end="100" center="960,540" easing="out" tween="back" time="300" />
@@ -14,9 +15,9 @@
         <effect type="fade" start="100" end="0" time="300" />
     </animation>
     <control type="image">
-        <posx>300</posx>
+        <posx>357</posx>
         <posy>180</posy>
-        <width>1322</width>
+        <width>1208</width>
         <height>722</height>
         <texture>osd/osd_settings_back_glow.png</texture>
         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
@@ -27,10 +28,10 @@
     </control>
     <controls>
         <control type="image">
-            <posx>300</posx>
+            <posx>357</posx>
             <posy>180</posy>
             <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-            <width>1322</width>
+            <width>1208</width>
             <height>722</height>
             <texture>osd/osd_settings_back.png</texture>
         </control>
@@ -39,9 +40,8 @@
             <posy>225</posy>
             <width>600</width>
             <height>60</height>
-            <font>Font_Info</font>
+            <font>Font_Bold19</font>
             <label>$LOCALIZE[13406]</label>
-            <aligny>center</aligny>
         </control>
         <control type="label" id="4">
             <posx>375</posx>
@@ -49,7 +49,6 @@
             <width>1172</width>
             <height>600</height>
             <align>center</align>
-            <aligny>center</aligny>
             <label>13390</label>
             <font>Font_Info</font>
         </control>
@@ -75,7 +74,6 @@
                     <width>1082</width>
                     <height>60</height>
                     <textcolor>grey</textcolor>
-                    <aligny>center</aligny>
                     <font>Font_Info</font>
                     <info>ListItem.Label</info>
                 </control>
@@ -91,7 +89,6 @@
                     <posx>45</posx>
                     <width>1082</width>
                     <height>60</height>
-                    <aligny>center</aligny>
                     <font>Font_Info</font>
                     <info>ListItem.Label</info>
                 </control>

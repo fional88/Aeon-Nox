@@ -3,10 +3,12 @@
     <defaultcontrol>10</defaultcontrol>
     <include condition="!Skin.HasTheme(White)">ColorConfigDefaultTheme</include>
     <include condition="Skin.HasTheme(White)">ColorConfigWhiteTheme</include>
-    <onunload condition="Window.IsActive(home) | Window.IsActive(1115)">ActivateWindow(1111)</onunload>
+    <onunload condition="Window.IsActive(home) | Window.IsActive(1115)">ActivateWindow(skinsettings)</onunload>
     <zorder>0</zorder>
     <coordinates>
         <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
     </coordinates>
     <include>Animation_DialogPopup</include>
     <controls>
@@ -49,10 +51,9 @@
                     <disabledcolor>$VAR[FontColorVar]</disabledcolor>
                     <textoffsetx>15</textoffsetx>
                     <textoffsety>0</textoffsety>
-                    <aligny>center</aligny>
-                    <font>Font_Reg15_Caps</font>
+                    <font>Font_Bold15_Caps</font>
                     <include>Animation_CommonFade</include>
-                    <label>[UPPERCASE][B]$LOCALIZE[31176][/UPPERCASE][/B]</label>
+                    <label>$LOCALIZE[31176]</label>
                     <enable>no</enable>
                 </control>
                 <control type="button" id="13">
@@ -93,22 +94,22 @@
                     <disabledcolor>$VAR[FontColorVar]</disabledcolor>
                     <textoffsetx>15</textoffsetx>
                     <textoffsety>0</textoffsety>
-                    <aligny>center</aligny>
-                    <font>Font_Reg15_Caps</font>
+                    <font>Font_Bold15_Caps</font>
                     <include>Animation_CommonFade</include>
-                    <label>[UPPERCASE][B]$LOCALIZE[42285][/UPPERCASE][/B]</label>
+                    <label>$LOCALIZE[42285]</label>
                     <enable>no</enable>
                 </control>
                 <control type="button" id="11">
                     <include>ColorChooserButton</include>
                     <label>$LOCALIZE[31178]</label>
+                    <onclick>SetProperty(colordialog,diffuse_color,1124)</onclick>
                     <onclick>ActivateWindow(1138)</onclick>
                     <enable>!Skin.HasSetting(randomcolor)</enable>
                 </control>
                 <control type="button" id="12">
                     <include>ColorChooserButton</include>
                     <label>$LOCALIZE[31192]</label>
-                    <onclick>SetProperty(skincolor,font,1124)</onclick>
+                    <onclick>SetProperty(colordialog,font_color,1124)</onclick>
                     <onclick>ActivateWindow(1138)</onclick>
                 </control>
                 <control type="button" id="17">
@@ -131,7 +132,7 @@
             </control>
             <control type="image">
                 <posx>670</posx>
-                <posy>360</posy>
+                <posy>335</posy>
                 <width>50</width>
                 <height>50</height>
                 <texture>common/white.png</texture>
@@ -139,7 +140,7 @@
             </control>
             <control type="image">
                 <posx>670</posx>
-                <posy>425</posy>
+                <posy>395</posy>
                 <width>50</width>
                 <height>50</height>
                 <texture>common/white.png</texture>

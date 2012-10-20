@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window id="4">
     <defaultcontrol always="true">9000</defaultcontrol>
-    <backgroundcolor>black</backgroundcolor>
+    <backgroundcolor>backgroundcolor</backgroundcolor>
     <allowoverlay>no</allowoverlay>
     <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
-    <animation type="WindowOpen" reversible="false" condition="!Window.Previous(SettingsCategory.xml) + !Window.Previous(1111) + !Window.Previous(10007)">
+    <animation type="WindowOpen" reversible="false" condition="![Window.Previous(SettingsCategory.xml) | Window.Previous(10007) | Window.Previous(skinsettings)]">
         <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" easing="out" />
         <effect type="fade" start="0" end="100" time="300" />
     </animation>
-    <animation type="WindowClose" reversible="false" condition="!Window.Next(SettingsCategory.xml) + !Window.Next(1111) + !Window.Next(10007)">
+    <animation type="WindowClose" reversible="false" condition="![Window.Next(SettingsCategory.xml) | Window.Next(10007) | Window.Next(skinsettings)]">
         <effect type="fade" start="100" end="0" time="300" />
         <effect type="zoom" start="100" end="130" center="960,540" time="300" tween="cubic" easing="in" />
     </animation>
@@ -29,15 +29,13 @@
                 <onright>9001</onright>
                 <onup>9000</onup>
                 <ondown>9000</ondown>
-                <pagecontrol>-</pagecontrol>
                 <itemlayout height="74" width="570">
                     <control type="label">
                         <posx>30</posx>
                         <width>389</width>
                         <height>74</height>
                         <font>Font_Bold20</font>
-                        <include>detailcolornofocus</include>
-                        <aligny>center</aligny>
+                        <textcolor>grey2</textcolor>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
                 </itemlayout>
@@ -54,8 +52,6 @@
                         <width>389</width>
                         <height>74</height>
                         <font>Font_Bold20</font>
-                        <include>listcolornofocus</include>
-                        <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
                 </focusedlayout>
@@ -125,7 +121,7 @@
                     </item>
                     <item id="9">
                         <label>166</label>
-                        <onclick>ActivateWindow(1111)</onclick>
+                        <onclick>ActivateWindow(skinsettings)</onclick>
                         <icon>special://skin/backgrounds/skinsetting.jpg</icon>
                         <property name="description">$LOCALIZE[31407]</property>
                     </item>
@@ -143,10 +139,9 @@
                 <posx>555</posx>
                 <posy>810</posy>
                 <width>1200</width>
-                <height>160</height>
+                <height>210</height>
                 <font>Font_Reg20</font>
                 <label>$INFO[Container(9000).ListItem.Property(description)]</label>
-                <shadowcolor>-</shadowcolor>
             </control>
             <include>Furniture_SettingsInternalFrontPanel</include>
         </control>
@@ -159,7 +154,6 @@
                     <width>750</width>
                     <visible>Skin.HasSetting(breadcrumbslabel)</visible>
                     <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)]</visible>
-                    <itemgap>0</itemgap>
                     <orientation>horizontal</orientation>
                     <control type="image">
                         <width>54</width>

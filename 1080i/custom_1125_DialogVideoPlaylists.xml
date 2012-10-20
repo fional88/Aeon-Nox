@@ -3,22 +3,12 @@
     <defaultcontrol always="true">451</defaultcontrol>
     <coordinates>
         <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
     </coordinates>
+    <onload>RunScript(script.playlists,type=video)</onload>
     <include>Animation_DialogPopup2</include>
     <controls>
-        <control type="button" id="451">
-            <posx>-30</posx>
-            <posy>-30</posy>
-            <width>1</width>
-            <height>1</height>
-            <label>-</label>
-            <font>-</font>
-            <texturenofocus>-</texturenofocus>
-            <texturefocus>-</texturefocus>
-            <onfocus condition="!IsEmpty(Window(1124).Property(video))">RunScript(script.playlists,type=video)</onfocus>
-            <onfocus condition="IsEmpty(Window(1124).Property(video))">RunScript(script.playlists,type=music)</onfocus>
-            <onfocus>SetFocus(450)</onfocus>
-        </control>
         <include>DialogBackFade</include>
         <include condition="Skin.HasSetting(effect_bg)">BG_Effect_Home</include>
         <control type="image">
@@ -38,6 +28,36 @@
             <height>722</height>
             <texture>osd/osd_settings_back.png</texture>
             <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+        </control>
+        <control type="button" id="451">
+            <posx>200</posx>
+            <posy>200</posy>
+            <width>175</width>
+            <height>45</height>
+            <label>31907</label>
+            <textcolor>grey2</textcolor>
+            <focusedcolor>white3</focusedcolor>
+            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            <onclick>RunScript(script.playlists,type=video)</onclick>
+            <ondown>SetFocus(450)</ondown>
+            <onup>SetFocus(450)</onup>
+            <onleft>SetFocus(452)</onleft>
+            <onright>SetFocus(452)</onright>
+        </control>
+        <control type="button" id="452">
+            <posx>600</posx>
+            <posy>200</posy>
+            <width>175</width>
+            <height>45</height>
+            <label>31501</label>
+            <textcolor>grey2</textcolor>
+            <focusedcolor>white3</focusedcolor>
+            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            <onclick>RunScript(script.playlists,type=music)</onclick>
+            <ondown>SetFocus(450)</ondown>
+            <onup>SetFocus(450)</onup>
+            <onleft>SetFocus(451)</onleft>
+            <onright>SetFocus(451)</onright>
         </control>
         <control type="image">
             <posx>375</posx>
@@ -60,7 +80,6 @@
             <height>60</height>
             <font>Font_Bold19</font>
             <label>$LOCALIZE[20012]</label>
-            <aligny>center</aligny>
             <visible>!IsEmpty(Window(1124).Property(video))</visible>
         </control>
         <control type="label">
@@ -70,7 +89,6 @@
             <height>60</height>
             <font>Font_Bold19</font>
             <label>$LOCALIZE[20011]</label>
-            <aligny>center</aligny>
             <visible>IsEmpty(Window(1124).Property(video))</visible>
         </control>
         <control type="list" id="450">
@@ -95,7 +113,6 @@
                     <width>1082</width>
                     <height>60</height>
                     <textcolor>grey</textcolor>
-                    <aligny>center</aligny>
                     <font>Font_Reg19</font>
                     <info>ListItem.Label</info>
                 </control>
@@ -111,7 +128,6 @@
                     <posx>45</posx>
                     <width>1082</width>
                     <height>60</height>
-                    <aligny>center</aligny>
                     <font>Font_Reg19</font>
                     <info>ListItem.Label</info>
                 </control>
@@ -123,7 +139,6 @@
                     <onclick>Skin.SetString($INFO[Skin.String(HomeMenuPlaylist_Label)],)</onclick>
                     <onclick>Dialog.Close(1125)</onclick>
                     <onclick>SetFocus(9000)</onclick>
-                    <visible>true</visible>
                 </item>
                 <item id="1">
                     <label>$INFO[Window(0).Property(ScriptPlaylist.1.name)]</label>

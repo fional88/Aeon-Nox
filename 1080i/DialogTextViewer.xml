@@ -9,11 +9,9 @@
                 <posx>358</posx>
                 <posy>120</posy>
                 <width>1491</width>
-                <textcolor>white2</textcolor>
                 <font>Font_ShowcaseMainLabel2</font>
                 <label>$INFO[ListItem.Property(Addon.Name),$LOCALIZE[24003] - ]</label>
                 <align>center</align>
-                <aligny>center</aligny>
             </control>
             <control type="textbox" id="5">
                 <posx>432</posx>
@@ -22,7 +20,6 @@
                 <height>789</height>
                 <label>-</label>
                 <font>Font_Reg20</font>
-                <align>justify</align>
                 <shadowcolor>black</shadowcolor>
                 <pagecontrol>61</pagecontrol>
             </control>
@@ -31,7 +28,7 @@
                 <posy>180</posy>
                 <width>46</width>
                 <height>795</height>
-                <include>CommonVerticalScrollbar</include>
+                <texturesliderbackground>views/scrollbarbacklist.png</texturesliderbackground>
                 <onleft>61</onleft>
                 <onright>61</onright>
                 <ondown>61</ondown>

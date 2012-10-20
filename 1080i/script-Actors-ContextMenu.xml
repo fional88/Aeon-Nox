@@ -5,6 +5,8 @@
     <include>Animation_DialogZoom</include>
     <coordinates>
         <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
     </coordinates>
     <controls>
         <include condition="Skin.HasSetting(effect_bg)">BG_Effect_Home</include>
@@ -12,7 +14,6 @@
             <posx>729</posx>
             <width>462</width>
             <height>1080</height>
-            <itemgap>0</itemgap>
             <onleft>800</onleft>
             <onright>800</onright>
             <onup>800</onup>

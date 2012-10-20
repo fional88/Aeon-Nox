@@ -4302,7 +4302,7 @@
             <control type="group">
                 <control type="label">
                     <posx>190</posx>
-                    <posy>68</posy>
+                    <posy>30</posy>
                     <width>200</width>
                     <height>300</height>
                     <align>right</align>
@@ -4311,14 +4311,14 @@
                 </control>
                 <control type="label">
                     <posx>200</posx>
-                    <posy>68</posy>
+                    <posy>30</posy>
                     <width>250</width>
                     <height>300</height>
                     <label>$INFO[Window(weather).Property(Current.FeelsLike)]$INFO[System.TemperatureUnits][CR]$INFO[Window(weather).Property(Current.Visibility)][CR]$INFO[Window(weather).Property(Current.Precipitation)][CR]$INFO[Window(weather).Property(Current.Humidity)][CR]$INFO[Window(weather).Property(Current.DewPoint)]$INFO[System.TemperatureUnits][CR]$INFO[Window(weather).Property(Current.UVIndex)][CR]$INFO[Window(weather).Property(Current.Pressure)]</label>
                 </control>
                 <control type="label">
                     <posx>600</posx>
-                    <posy>68</posy>
+                    <posy>30</posy>
                     <width>200</width>
                     <height>300</height>
                     <align>right</align>
@@ -4327,7 +4327,7 @@
                 </control>
                 <control type="label">
                     <posx>610</posx>
-                    <posy>68</posy>
+                    <posy>30</posy>
                     <width>250</width>
                     <height>300</height>
                     <label>$INFO[Window(weather).Property(36Hour.1.ChancePrecipitation)][CR]$INFO[Window(weather).Property(Current.Wind)][CR]$INFO[Window(weather).Property(Today.Sunrise)][CR]$INFO[Window(weather).Property(Today.Sunset)][CR]$INFO[Window(weather).Property(Today.MoonPhase)][CR]$INFO[Window(weather).Property(Today.AvgHighTemperature)][CR]$INFO[Window(weather).Property(Today.AvgLowTemperature)]</label>

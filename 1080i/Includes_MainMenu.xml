@@ -654,7 +654,7 @@
             <visible>Substring(Control.GetLabel(4327),shutdown) + IsEmpty(Skin.String(ShutdownSub1)) + System.HasAlarm(shutdowntimer)</visible>
         </item>
         <item>
-            <label>$LOCALIZE[13016]</label>
+            <label>Power Off</label>
             <onclick>XBMC.Powerdown()</onclick>
             <visible>Substring(Control.GetLabel(4327),shutdown) + IsEmpty(Skin.String(ShutdownSub8)) + System.CanPowerDown</visible>
         </item>
@@ -2663,7 +2663,7 @@
                 <visible>Substring(Control.GetLabel(4327),shutdown)</visible>
             </item>
             <item>
-                <label>$LOCALIZE[13016]</label>
+                <label>Power Off</label>
                 <onclick condition="IsEmpty(Skin.String(ShutdownSub8))">Skin.SetString(ShutdownSub8,1)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(ShutdownSub8))">Skin.Reset(ShutdownSub8)</onclick>
                 <property name="DisableIcon">$INFO[Skin.String(ShutdownSub8)]</property>

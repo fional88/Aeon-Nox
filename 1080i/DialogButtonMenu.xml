@@ -41,7 +41,7 @@
                     <visible>System.ShowExitButton</visible>
                 </control>
                 <control type="button" id="2">
-                    <label>$LOCALIZE[13016]</label>
+                    <label>Power Off</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <onclick>XBMC.Powerdown()</onclick>
                     <visible>System.CanPowerDown</visible>
@@ -114,7 +114,7 @@
                     <onclick>ActivateWindow(Favourites)</onclick>
                 </control>
                 <control type="button" id="21">
-                    <label>$LOCALIZE[13016]</label>
+                    <label>Power Off</label>
                     <include>Objects_ShutdownMenuButton</include>
                     <visible>!System.CanPowerDown</visible>
                 </control>

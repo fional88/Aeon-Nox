@@ -764,30 +764,22 @@
     <include name="DefaultSubLiveTV">
         <item>
             <label>19023</label>
-            <onclick>ActivateWindow(PVR)</onclick>
-            <onclick>Setfocus(32)</onclick>
-            <onclick>Setfocus(11)</onclick>
+            <onclick>ActivateWindowAndFocus(PVR, 32,0, 11,0)</onclick>
             <visible>Substring(Control.GetLabel(4327),pvr)</visible>
         </item>
         <item>
             <label>19024</label>
-            <onclick>ActivateWindow(PVR)</onclick>
-            <onclick>Setfocus(33)</onclick>
-            <onclick>Setfocus(12)</onclick>
+            <onclick>ActivateWindowAndFocus(PVR, 33,0, 12,0)</onclick>
             <visible>Substring(Control.GetLabel(4327),pvr)</visible>
         </item>
         <item>
             <label>19163</label>
-            <onclick>ActivateWindow(PVR)</onclick>
-            <onclick>Setfocus(34)</onclick>
-            <onclick>Setfocus(13)</onclick>
+            <onclick>ActivateWindowAndFocus(PVR, 34,0, 13,0)</onclick>
             <visible>Substring(Control.GetLabel(4327),pvr)</visible>
         </item>
         <item>
             <label>19040</label>
-            <onclick>ActivateWindow(PVR)</onclick>
-            <onclick>Setfocus(35)</onclick>
-            <onclick>Setfocus(14)</onclick>
+            <onclick>ActivateWindowAndFocus(PVR, 35,0, 14,0)</onclick>
             <visible>Substring(Control.GetLabel(4327),pvr)</visible>
         </item>
     </include>
@@ -3029,6 +3021,7 @@
                     <include condition="Substring(Skin.String(backgroundlist),recenttv)">LatestTVBackgrounds</include>
                     <include condition="Substring(Skin.String(backgroundlist),randomtv)">RandomTVBackgrounds</include>
                     <include condition="Substring(Skin.String(backgroundlist),recentalbums)">LatestAlbumsBackgrounds</include>
+                    <include condition="Substring(Skin.String(backgroundlist),randomartists)">RandomArtistsBackgrounds</include>
                     <include condition="Substring(Skin.String(backgroundlist),recentmusicvideos)">LatestMusicVideosBackgrounds</include>
                     <include condition="Substring(Skin.String(backgroundlist),randommusicvideos)">RandomMusicVideosBackgrounds</include>
                     <include condition="Substring(Skin.String(backgroundlist),1custom)">CustomHomeItem1Backgrounds</include>
@@ -3038,7 +3031,7 @@
                     <include condition="Substring(Skin.String(backgroundlist),5custom)">CustomHomeItem5Backgrounds</include>
                     <include condition="Substring(Skin.String(backgroundlist),6custom)">CustomHomeItem6Backgrounds</include>
                     <include condition="Substring(Skin.String(backgroundlist),watchlistmovies)">WatchlistMoviesBackgrounds</include>
-                    <include condition="Substring(Skin.String(backgroundlist),watchlistmusic)">WatchlistAlbumsBackgrounds</include>
+                    <include condition="Substring(Skin.String(backgroundlist),watchlistalbums)">WatchlistAlbumsBackgrounds</include>
                     <include condition="Substring(Skin.String(backgroundlist),watchlisttv)">WatchlistTVBackgrounds</include>
                     <include condition="Substring(Skin.String(backgroundlist),recentpics)">LatestPicturesBackgrounds</include>
                     <include condition="Substring(Skin.String(backgroundlist),randompics)">RandomPicturesBackgrounds</include>
@@ -3061,37 +3054,37 @@
     </include>
     <include name="LatestMoviesBackgrounds">
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RecentMovie.3.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.3.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recentmovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecentMovie.3.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RecentMovie.4.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.4.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recentmovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecentMovie.4.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RecentMovie.5.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.5.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recentmovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecentMovie.5.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RecentMovie.6.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.6.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recentmovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecentMovie.6.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RecentMovie.7.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.7.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recentmovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecentMovie.7.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RecentMovie.8.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.8.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recentmovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecentMovie.8.Fanart))</visible>
@@ -3099,37 +3092,37 @@
     </include>
     <include name="RandomMoviesBackgrounds">
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.3.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.3.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),randommovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RandomMovie.3.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.4.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.4.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),randommovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RandomMovie.4.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.5.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.5.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),randommovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RandomMovie.5.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.6.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.6.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),randommovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RandomMovie.6.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.7.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.7.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),randommovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RandomMovie.7.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.8.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.8.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),randommovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RandomMovie.8.Fanart))</visible>
@@ -3137,37 +3130,37 @@
     </include>
     <include name="LatestTVBackgrounds">
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestEpisode.3.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(LatestEpisode.3.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recenttv)</visible>
             <visible>!IsEmpty(Window(Home).Property(LatestEpisode.3.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestEpisode.4.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(LatestEpisode.4.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recenttv)</visible>
             <visible>!IsEmpty(Window(Home).Property(LatestEpisode.4.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestEpisode.5.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(LatestEpisode.5.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recenttv)</visible>
             <visible>!IsEmpty(Window(Home).Property(LatestEpisode.5.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestEpisode.6.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(LatestEpisode.6.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recenttv)</visible>
             <visible>!IsEmpty(Window(Home).Property(LatestEpisode.6.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestEpisode.7.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(LatestEpisode.7.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recenttv)</visible>
             <visible>!IsEmpty(Window(Home).Property(LatestEpisode.7.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestEpisode.8.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(LatestEpisode.8.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recenttv)</visible>
             <visible>!IsEmpty(Window(Home).Property(LatestEpisode.8.Fanart))</visible>
@@ -3175,37 +3168,37 @@
     </include>
     <include name="RandomTVBackgrounds">
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomEpisode.3.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.3.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),randomtv)</visible>
             <visible>!IsEmpty(Window(Home).Property(RandomEpisode.3.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomEpisode.4.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.4.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),randomtv)</visible>
             <visible>!IsEmpty(Window(Home).Property(RandomEpisode.4.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomEpisode.5.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.5.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),randomtv)</visible>
             <visible>!IsEmpty(Window(Home).Property(RandomEpisode.5.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomEpisode.6.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.6.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),randomtv)</visible>
             <visible>!IsEmpty(Window(Home).Property(RandomEpisode.6.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomEpisode.7.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.7.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),randomtv)</visible>
             <visible>!IsEmpty(Window(Home).Property(RandomEpisode.7.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomEpisode.8.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.8.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),randomtv)</visible>
             <visible>!IsEmpty(Window(Home).Property(RandomEpisode.8.Fanart))</visible>
@@ -3213,37 +3206,37 @@
     </include>
     <include name="LatestAlbumsBackgrounds">
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RecentAlbum.3.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RecentAlbum.3.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recentalbums)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecentAlbum.3.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RecentAlbum.4.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RecentAlbum.4.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recentalbums)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecentAlbum.4.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RecentAlbum.5.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RecentAlbum.5.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recentalbums)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecentAlbum.5.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RecentAlbum.6.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RecentAlbum.6.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recentalbums)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecentAlbum.6.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RecentAlbum.7.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RecentAlbum.7.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recentalbums)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecentAlbum.7.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RecentAlbum.8.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RecentAlbum.8.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recentalbums)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecentAlbum.8.Fanart))</visible>
@@ -3251,37 +3244,37 @@
     </include>
     <include name="LatestMusicVideosBackgrounds">
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMusicVideo.3.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.3.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recentmusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(LatestMusicVideo.3.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMusicVideo.4.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.4.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recentmusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(LatestMusicVideo.4.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMusicVideo.5.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.5.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recentmusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(LatestMusicVideo.5.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMusicVideo.6.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.6.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recentmusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(LatestMusicVideo.6.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMusicVideo.7.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.7.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recentmusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(LatestMusicVideo.7.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(LatestMusicVideo.8.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(LatestMusicVideo.8.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),recentmusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(LatestMusicVideo.8.Fanart))</visible>
@@ -3289,40 +3282,78 @@
     </include>
     <include name="RandomMusicVideosBackgrounds">
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMusicVideo.3.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMusicVideo.3.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),randommusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(RandomMusicVideo.3.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMusicVideo.4.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMusicVideo.4.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),randommusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(RandomMusicVideo.4.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMusicVideo.5.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMusicVideo.5.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),randommusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(RandomMusicVideo.5.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMusicVideo.6.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMusicVideo.6.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),randommusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(RandomMusicVideo.6.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMusicVideo.7.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMusicVideo.7.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),randommusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(RandomMusicVideo.7.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMusicVideo.8.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMusicVideo.8.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),randommusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(RandomMusicVideo.8.Fanart))</visible>
+        </item>
+    </include>
+    <include name="RandomArtistsBackgrounds">
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.3.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),randomartists)</visible>
+            <visible>!IsEmpty(Window(Home).Property(RandomArtist.3.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.4.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),randomartists)</visible>
+            <visible>!IsEmpty(Window(Home).Property(RandomArtist.4.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.5.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),randomartists)</visible>
+            <visible>!IsEmpty(Window(Home).Property(RandomArtist.5.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.6.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),randomartists)</visible>
+            <visible>!IsEmpty(Window(Home).Property(RandomArtist.6.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.7.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),randomartists)</visible>
+            <visible>!IsEmpty(Window(Home).Property(RandomArtist.7.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.8.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),randomartists)</visible>
+            <visible>!IsEmpty(Window(Home).Property(RandomArtist.8.Fanart))</visible>
         </item>
     </include>
     <include name="CustomHomeItem1Backgrounds">
@@ -3339,7 +3370,7 @@
             <visible>!IsEmpty(Window(Home).Property(SmartPlaylist1.4.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(SmartPlaylist1.5.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist1.5.Fanart)]</property>
             <visible>Substring(Control.GetLabel(4322),1custom)</visible>
             <visible>!IsEmpty(Window(Home).Property(SmartPlaylist1.5.Fanart))</visible>
@@ -3377,7 +3408,7 @@
             <visible>!IsEmpty(Window(Home).Property(SmartPlaylist2.4.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(SmartPlaylist2.5.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist2.5.Fanart)]</property>
             <visible>Substring(Control.GetLabel(4322),2custom)</visible>
             <visible>!IsEmpty(Window(Home).Property(SmartPlaylist2.5.Fanart))</visible>
@@ -3415,7 +3446,7 @@
             <visible>!IsEmpty(Window(Home).Property(SmartPlaylist3.4.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(SmartPlaylist3.5.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist3.5.Fanart)]</property>
             <visible>Substring(Control.GetLabel(4322),3custom)</visible>
             <visible>!IsEmpty(Window(Home).Property(SmartPlaylist3.5.Fanart))</visible>
@@ -3453,7 +3484,7 @@
             <visible>!IsEmpty(Window(Home).Property(SmartPlaylist4.4.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(SmartPlaylist4.5.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist4.5.Fanart)]</property>
             <visible>Substring(Control.GetLabel(4322),4custom)</visible>
             <visible>!IsEmpty(Window(Home).Property(SmartPlaylist4.5.Fanart))</visible>
@@ -3491,7 +3522,7 @@
             <visible>!IsEmpty(Window(Home).Property(SmartPlaylist5.4.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(SmartPlaylist5.5.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist5.5.Fanart)]</property>
             <visible>Substring(Control.GetLabel(4322),5custom)</visible>
             <visible>!IsEmpty(Window(Home).Property(SmartPlaylist5.5.Fanart))</visible>
@@ -3529,7 +3560,7 @@
             <visible>!IsEmpty(Window(Home).Property(SmartPlaylist6.4.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(SmartPlaylist6.5.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist6.5.Fanart)]</property>
             <visible>Substring(Control.GetLabel(4322),6custom)</visible>
             <visible>!IsEmpty(Window(Home).Property(SmartPlaylist6.5.Fanart))</visible>
@@ -3596,37 +3627,37 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedAlbum.3.Fanart)]</property>
             <visible>!IsEmpty(Window(Home).Property(RecommendedAlbum.3.Fanart))</visible>
             <onclick>-</onclick>
-            <visible>Substring(Control.GetLabel(4322),watchlistmusic)</visible>
+            <visible>Substring(Control.GetLabel(4322),watchlistalbums)</visible>
         </item>
         <item>
             <visible>!IsEmpty(Window(Home).Property(RecommendedAlbum.4.Fanart))</visible>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedAlbum.4.Fanart)]</property>
             <onclick>-</onclick>
-            <visible>Substring(Control.GetLabel(4322),watchlistmusic)</visible>
+            <visible>Substring(Control.GetLabel(4322),watchlistalbums)</visible>
         </item>
         <item>
             <visible>!IsEmpty(Window(Home).Property(RecommendedAlbum.5.Fanart))</visible>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedAlbum.5.Fanart)]</property>
             <onclick>-</onclick>
-            <visible>Substring(Control.GetLabel(4322),watchlistmusic)</visible>
+            <visible>Substring(Control.GetLabel(4322),watchlistalbums)</visible>
         </item>
         <item>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedAlbum.6.Fanart)]</property>
             <visible>!IsEmpty(Window(Home).Property(RecommendedAlbum.6.Fanart))</visible>
             <onclick>-</onclick>
-            <visible>Substring(Control.GetLabel(4322),watchlistmusic)</visible>
+            <visible>Substring(Control.GetLabel(4322),watchlistalbums)</visible>
         </item>
         <item>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedAlbum.7.Fanart)]</property>
             <visible>!IsEmpty(Window(Home).Property(RecommendedAlbum.7.Fanart))</visible>
             <onclick>-</onclick>
-            <visible>Substring(Control.GetLabel(4322),watchlistmusic)</visible>
+            <visible>Substring(Control.GetLabel(4322),watchlistalbums)</visible>
         </item>
         <item>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedAlbum.8.Fanart)]</property>
             <visible>!IsEmpty(Window(Home).Property(RecommendedAlbum.8.Fanart))</visible>
             <onclick>-</onclick>
-            <visible>Substring(Control.GetLabel(4322),watchlistmusic)</visible>
+            <visible>Substring(Control.GetLabel(4322),watchlistalbums)</visible>
         </item>
     </include>
     <include name="WatchlistTVBackgrounds">
@@ -3669,96 +3700,96 @@
     </include>
     <include name="RandomPicturesBackgrounds">
         <item>
-            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Random'&amp;current=3)</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.3.Path)]</property>
             <visible>Substring(Control.GetLabel(4322),randompics)</visible>
         </item>
         <item>
-            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Random'&amp;current=4)</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.4.Path)]</property>
             <visible>Substring(Control.GetLabel(4322),randompics)</visible>
         </item>
         <item>
-            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Random'&amp;current=5)</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.5.Path)]</property>
             <visible>Substring(Control.GetLabel(4322),randompics)</visible>
         </item>
         <item>
-            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Random'&amp;current=6)</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.6.Path)]</property>
             <visible>Substring(Control.GetLabel(4322),randompics)</visible>
         </item>
         <item>
-            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Random'&amp;current=7)</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.7.Path)]</property>
             <visible>Substring(Control.GetLabel(4322),randompics)</visible>
         </item>
         <item>
-            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Random'&amp;current=8)</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.8.Path)]</property>
             <visible>Substring(Control.GetLabel(4322),randompics)</visible>
         </item>
     </include>
     <include name="LatestPicturesBackgrounds">
         <item>
-            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=3)</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.3.Path)]</property>
             <visible>Substring(Control.GetLabel(4322),recentpics)</visible>
         </item>
         <item>
-            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=4)</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.4.Path)]</property>
             <visible>Substring(Control.GetLabel(4322),recentpics)</visible>
         </item>
         <item>
-            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=5)</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.5.Path)]</property>
             <visible>Substring(Control.GetLabel(4322),recentpics)</visible>
         </item>
         <item>
-            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=6)</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.6.Path)]</property>
             <visible>Substring(Control.GetLabel(4322),recentpics)</visible>
         </item>
         <item>
-            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=7)</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.7.Path)]</property>
             <visible>Substring(Control.GetLabel(4322),recentpics)</visible>
         </item>
         <item>
-            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=8)</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.8.Path)]</property>
             <visible>Substring(Control.GetLabel(4322),recentpics)</visible>
         </item>
     </include>
     <include name="DailyBabeBackgrounds">
         <item>
-            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=1)</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">http://dailybabenews.com/images/babe_03-$INFO[System.Date(dd)]-2012.jpg</property>
             <visible>Substring(Control.GetLabel(4322),dailybabe)</visible>
         </item>
         <item>
-            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=2)</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">http://dailybabenews.com/images/babe_04-$INFO[System.Date(dd)]-2012.jpg</property>
             <visible>Substring(Control.GetLabel(4322),dailybabe)</visible>
         </item>
         <item>
-            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=1)</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">http://dailybabenews.com/images/babe_05-$INFO[System.Date(dd)]-2012.jpg</property>
             <visible>Substring(Control.GetLabel(4322),dailybabe)</visible>
         </item>
         <item>
-            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=2)</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">http://dailybabenews.com/images/babe_06-$INFO[System.Date(dd)]-2012.jpg</property>
             <visible>Substring(Control.GetLabel(4322),dailybabe)</visible>
         </item>
         <item>
-            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=2)</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">http://dailybabenews.com/images/babe_07-$INFO[System.Date(dd)]-2012.jpg</property>
             <visible>Substring(Control.GetLabel(4322),dailybabe)</visible>
         </item>
         <item>
-            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=2)</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">http://dailybabenews.com/images/babe_08-$INFO[System.Date(dd)]-2012.jpg</property>
             <visible>Substring(Control.GetLabel(4322),dailybabe)</visible>
         </item>
@@ -3777,7 +3808,7 @@
             <visible>!IsEmpty(Window(Home).Property(LatestMovie.2.Fanart))</visible>
         </item>
         <item>
-            <onclick>PlayMedia($ESCINFO[Window(Home).Property(RandomMovie.1.Path)])</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.1.Fanart)]</property>
             <visible>Stringcompare(Control.GetLabel(4322),randommovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RandomMovie.1.Fanart))</visible>
@@ -3860,6 +3891,19 @@
             <visible>Stringcompare(Control.GetLabel(4322),randommusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(RandomMusicVideo.2.Fanart))</visible>
         </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.1.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),randomartists)</visible>
+            <visible>!IsEmpty(Window(Home).Property(RandomArtist.1.Fanart))</visible>
+        </item>
+        <item>
+            <onclick>-</onclick>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.2.Fanart)]</property>
+            <visible>Stringcompare(Control.GetLabel(4322),randomartists)</visible>
+            <visible>!IsEmpty(Window(Home).Property(RandomArtist.2.Fanart))</visible>
+        </item>
+        
         <item>
             <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist1.1.Fanart)]</property>
@@ -3948,13 +3992,13 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedAlbum.1.Fanart)]</property>
             <onclick>-</onclick>
             <visible>!IsEmpty(Window(Home).Property(RecommendedAlbum.1.Fanart))</visible>
-            <visible>Substring(Control.GetLabel(4322),watchlistmusic)</visible>
+            <visible>Substring(Control.GetLabel(4322),watchlistalbums)</visible>
         </item>
         <item>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedAlbum.2.Fanart)]</property>
             <visible>!IsEmpty(Window(Home).Property(RecommendedAlbum.2.Fanart))</visible>
             <onclick>-</onclick>
-            <visible>Substring(Control.GetLabel(4322),watchlistmusic)</visible>
+            <visible>Substring(Control.GetLabel(4322),watchlistalbums)</visible>
         </item>
         <item>
             <onclick>-</onclick>
@@ -3969,7 +4013,7 @@
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.2.Fanart))</visible>
         </item>
         <item>
-            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Random'&amp;current=1)</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.1.Path)]</property>
             <visible>Substring(Control.GetLabel(4322),randompics)</visible>
         </item>
@@ -3994,7 +4038,7 @@
             <visible>Substring(Control.GetLabel(4322),dailybabe)</visible>
         </item>
         <item>
-            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=2)</onclick>
+            <onclick>-</onclick>
             <property name="Fanart">http://dailybabenews.com/images/babe_$INFO[System.Date(mm)]-$INFO[System.Date(dd)]-2012.jpg</property>
             <visible>Substring(Control.GetLabel(4322),dailybabe)</visible>
         </item>

@@ -8,7 +8,7 @@
     </coordinates>
     <animation type="WindowOpen" reversible="false">
         <effect type="zoom" start="150" end="100" center="960,540" time="500" tween="cubic" easing="out" />
-        <effect type="fade" start="0" end="100" time="250" />
+        <effect type="fade" end="100" time="250" />
     </animation>
     <animation type="WindowClose" reversible="false">
         <effect type="fade" start="100" end="0" time="300" />
@@ -18,8 +18,7 @@
         <!-- gameinfoviewgamelist -->
         <control type="group" id="1000">
             <control type="wraplist" id="59">
-                <width>0</width>
-                <height>0</height>
+                <include>HiddenObject</include>
                 <onleft>3000</onleft>
                 <onright>3000</onright>
                 <onup>3000</onup>
@@ -31,7 +30,6 @@
         </control>
         <control type="image">
             <include>FullscreenDimensions</include>
-            <fadetime>600</fadetime>
             <texture background="true">$INFO[ListItem.Property(background)]</texture>
             <aspectratio>scale</aspectratio>
         </control>
@@ -68,7 +66,6 @@
                 <width>445</width>
                 <height>250</height>
                 <aspectratio>keep</aspectratio>
-                <fadetime>400</fadetime>
                 <texture background="true">$INFO[ListItem.Property(gameinfoupperleft)]</texture>
                 <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                 <bordersize>7</bordersize>
@@ -78,7 +75,6 @@
                 <width>445</width>
                 <height>250</height>
                 <aspectratio>keep</aspectratio>
-                <fadetime>400</fadetime>
                 <texture background="true">$INFO[ListItem.Property(gameinfolowerleft)]</texture>
                 <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                 <bordersize>7</bordersize>
@@ -90,7 +86,6 @@
                 <width>445</width>
                 <height>250</height>
                 <aspectratio>keep</aspectratio>
-                <fadetime>400</fadetime>
                 <texture background="true">$INFO[ListItem.Property(gameinfoupperright)]</texture>
                 <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                 <bordersize>7</bordersize>
@@ -100,7 +95,6 @@
                 <width>445</width>
                 <height>250</height>
                 <aspectratio>keep</aspectratio>
-                <fadetime>400</fadetime>
                 <texture background="true">$INFO[ListItem.Property(gameinfolowerright)]</texture>
                 <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                 <bordersize>7</bordersize>
@@ -130,10 +124,6 @@
             </control>
         </control>
         <control type="grouplist" id="5000">
-            <posx>-100</posx>
-            <posy>-150</posy>
-            <width>0</width>
-            <height>0</height>
             <onleft>5000</onleft>
             <onright>50</onright>
             <onup>IncreaseRating</onup>
@@ -147,7 +137,7 @@
             <control type="button" id="3001">
                 <label>Play video</label>
                 <include>HiddenObject</include>
-                <onclick>XBMC.PlayMedia($INFO[ListItem.Property(gameplayinfo)],1)</onclick>
+                <onclick>PlayMedia($INFO[ListItem.Property(gameplayinfo)],1)</onclick>
                 <visible>!IsEmpty(ListItem.Property(autoplayvideoinfo)) + !IsEmpty(ListItem.Property(gameplayinfo))</visible>
             </control>
         </control>
@@ -213,6 +203,7 @@
                     <control type="grouplist">
                         <posx>500</posx>
                         <posy>-80</posy>
+                        <itemgap>10</itemgap>
                         <width>778</width>
                         <orientation>horizontal</orientation>
                         <control type="label">
@@ -230,12 +221,14 @@
                             <textcolor>grey2</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
                         <posx>500</posx>
                         <posy>-32</posy>
                         <width>778</width>
+                        <itemgap>10</itemgap>
                         <orientation>horizontal</orientation>
                         <control type="label">
                             <width min="50" max="400">auto</width>
@@ -252,11 +245,13 @@
                             <textcolor>grey2</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
                         <posx>500</posx>
                         <posy>16</posy>
+                        <itemgap>10</itemgap>
                         <width>778</width>
                         <orientation>horizontal</orientation>
                         <control type="label">
@@ -274,12 +269,14 @@
                             <textcolor>grey2</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
                         <posx>500</posx>
                         <posy>64</posy>
                         <width>778</width>
+                        <itemgap>10</itemgap>
                         <orientation>horizontal</orientation>
                         <control type="label">
                             <width min="50" max="400">auto</width>
@@ -296,11 +293,13 @@
                             <textcolor>grey2</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                     <control type="grouplist">
                         <posx>500</posx>
                         <posy>112</posy>
+                        <itemgap>10</itemgap>
                         <width>778</width>
                         <orientation>horizontal</orientation>
                         <control type="label">
@@ -318,6 +317,7 @@
                             <textcolor>grey2</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <pauseatend>1000</pauseatend>
+                            <aligny>bottom</aligny>
                         </control>
                     </control>
                 </control>

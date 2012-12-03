@@ -5,7 +5,7 @@
     <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
     <animation type="WindowOpen" reversible="false" condition="![Window.Previous(SettingsCategory.xml) | Window.Previous(1116) | Window.Previous(settings)]">
         <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" easing="out" />
-        <effect type="fade" start="0" end="100" time="300" />
+        <effect type="fade" end="100" time="300" />
     </animation>
     <animation type="WindowClose" reversible="false" condition="![Window.Next(SettingsCategory.xml) | Window.Next(1116) | Window.Next(settings)]">
         <effect type="fade" start="100" end="0" time="300" />
@@ -75,6 +75,10 @@
                         <label>470</label>
                         <onclick>-</onclick>
                     </item>
+                    <item id="10">
+                        <label>Paths</label>
+                        <onclick>-</onclick>
+                    </item>
                 </content>
             </control>
             <control type="label">
@@ -130,13 +134,6 @@
                         <onclick>Skin.ToggleSetting(quicklistmenu)</onclick>
                         <selected>Skin.HasSetting(quicklistmenu)</selected>
                     </control>
-                    <control type="button" id="306">
-                        <label>$LOCALIZE[31378]</label>
-                        <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(ArtistsLogosPath)][/COLOR]</label2>
-                        <include>Default_SettingButton</include>
-                        <onclick>Skin.Reset(ArtistsLogosPath)</onclick>
-                        <onclick>Skin.SetPath(ArtistsLogosPath)</onclick>
-                    </control>
                     <control type="button" id="261">
                         <label>$LOCALIZE[31186]:</label>
                         <label2>[COLOR $VAR[FontColorVar]]$VAR[KioskModeLabelVar][/COLOR]</label2>
@@ -152,15 +149,8 @@
                         <onclick>Skin.ToggleSetting(effect_bg)</onclick>
                         <selected>Skin.HasSetting(effect_bg)</selected>
                     </control>
-                    <control type="radiobutton" id="286">
-                        <label>31638</label>
-                        <include>Default_SettingRadioButton</include>
-                        <onclick>Skin.ToggleSetting(NextAiredInfo)</onclick>
-                        <selected>!Skin.HasSetting(NextAiredInfo)</selected>
-                    </control>
                     <control type="radiobutton" id="107">
                         <label>21398</label>
-                        <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(Startup_Playlist_Path)][/COLOR]</label2>
                         <include>Default_SettingRadioButton</include>
                         <onclick>Skin.ToggleSetting(Use_Startup_Playlist)</onclick>
                         <selected>Skin.HasSetting(Use_Startup_Playlist)</selected>
@@ -170,7 +160,7 @@
                         <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(Startup_Playlist_Path)][/COLOR]</label2>
                         <include>Default_SettingRadioButton</include>
                         <onclick>Skin.SetFile(Startup_Playlist_Path,.m3u|.xsp,t:\playlists\music\)</onclick>
-                        <visible>Skin.HasSetting(Use_Startup_Playlist)</visible>
+                        <enable>Skin.HasSetting(Use_Startup_Playlist)</enable>
                     </control>
                 </control>
                 <control type="grouplist" id="9002">
@@ -474,20 +464,20 @@
                         <onclick>Addon.OpenSettings(script.randomandlastitems)</onclick>
                         <visible>System.HasAddon(script.randomandlastitems)</visible>
                     </control>
-                    <!--                    <control type="button" id="423">
-                        <label>script.moviesets</label>
+                    <control type="button" id="423">
+                        <label>script.artwork.downloader</label>
                         <label2>[COLOR red]$LOCALIZE[106][/COLOR]</label2>
                         <include>Default_SettingRadioButtonShort</include>
-                        <onclick>Notification($LOCALIZE[42002],$LOCALIZE[42271])</onclick>
-                        <visible>!System.HasAddon(script.moviesets)</visible>
+                        <onclick>-</onclick>
+                        <visible>!System.HasAddon(script.artwork.downloader)</visible>
                     </control>
                     <control type="button" id="424">
-                        <label>script.moviesets</label>
+                        <label>script.artwork.downloader</label>
                         <label2>[COLOR green]$LOCALIZE[107][/COLOR]</label2>
                         <include>Default_SettingRadioButtonShort</include>
-                        <onclick>Addon.OpenSettings(script.moviesets)</onclick>
-                        <visible>System.HasAddon(script.moviesets)</visible>
-                    </control> -->
+                        <onclick>Addon.OpenSettings(script.artwork.downloader)</onclick>
+                        <visible>System.HasAddon(script.artwork.downloader)</visible>
+                    </control>
                     <control type="button" id="436">
                         <label>script.rssclient</label>
                         <label2>[COLOR red]$LOCALIZE[106][/COLOR]</label2>
@@ -542,12 +532,6 @@
                         <include>Default_SettingRadioButtonShort</include>
                         <onclick>Skin.ToggleSetting(DisableShowCaseVL)</onclick>
                         <selected>!Skin.HasSetting(DisableShowCaseVL)</selected>
-                    </control>
-                    <control type="radiobutton" id="481">
-                        <label>$LOCALIZE[31151]</label>
-                        <include>Default_SettingRadioButtonShort</include>
-                        <onclick>Skin.ToggleSetting(DisableDVDCaseVL)</onclick>
-                        <selected>!Skin.HasSetting(DisableDVDCaseVL)</selected>
                     </control>
                     <control type="radiobutton" id="482">
                         <label>$LOCALIZE[31150]</label>
@@ -646,7 +630,7 @@
                 <control type="grouplist" id="9005">
                     <visible>Container(9000).Hasfocus(9)</visible>
                     <posx>387</posx>
-                    <posy>140</posy>
+                    <posy>160</posy>
                     <width>1469</width>
                     <height>900</height>
                     <itemgap>-1</itemgap>
@@ -665,12 +649,13 @@
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
                         <radioposx>1300</radioposx>
+                        <aligny>bottom</aligny>
                         <textoffsetx>70</textoffsetx>
                     </control>
                     <control type="label">
                         <label>by BigNoid &amp; Phil65</label>
                         <width>1469</width>
-                        <height>74</height>
+                        <height>54</height>
                         <font>Font_Reg15</font>
                         <textcolor>grey2</textcolor>
                         <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
@@ -678,6 +663,7 @@
                         <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
                         <radioposx>1300</radioposx>
                         <textoffsetx>70</textoffsetx>
+                        <aligny>bottom</aligny>
                     </control>
                     <control type="label">
                         <label>42335</label>
@@ -709,6 +695,55 @@
                         <include>Default_SettingRadioButton</include>
                     </control>
                 </control>
+                <control type="grouplist" id="9009">
+                    <visible>Container(9000).Hasfocus(10)</visible>
+                    <posx>387</posx>
+                    <posy>195</posy>
+                    <width>1469</width>
+                    <height>732</height>
+                    <itemgap>-1</itemgap>
+                    <pagecontrol>60</pagecontrol>
+                    <onleft>9000</onleft>
+                    <onright>60</onright>
+                    <onup>9001</onup>
+                    <ondown>9001</ondown>
+                    <control type="button" id="459">
+                        <label>$LOCALIZE[31039] $LOCALIZE[31456]</label>
+                        <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(CDWall_Folder_Path)][/COLOR]</label2>
+                        <include>Default_SettingButton</include>
+                        <onclick>Skin.SetPath(CDWall_Folder_Path)</onclick>
+                    </control>
+                    <control type="button" id="460">
+                        <label>MovieWall Folder</label>
+                        <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(MovieWall_Folder_Path)][/COLOR]</label2>
+                        <include>Default_SettingButton</include>
+                        <onclick>Skin.SetPath(MovieWall_Folder_Path)</onclick>
+                    </control>
+                    <control type="button" id="303">
+                        <include>Default_SettingButton</include>
+                        <label>$LOCALIZE[31678]</label>
+                        <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(WeatherFanartDir)][/COLOR]</label2>
+                        <onclick>Skin.Reset(WeatherFanartDir)</onclick>
+                        <onclick>Skin.SetPath(WeatherFanartDir)</onclick>
+                    </control>
+                    <control type="button" id="306">
+                        <label>$LOCALIZE[31378]</label>
+                        <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(ArtistsLogosPath)][/COLOR]</label2>
+                        <include>Default_SettingButton</include>
+                        <onclick>Skin.Reset(ArtistsLogosPath)</onclick>
+                        <onclick>Skin.SetPath(ArtistsLogosPath)</onclick>
+                    </control>
+                    <control type="button" id="10">
+                        <include>Default_SettingButton</include>
+                        <label>Library Structure</label>
+                        <label2>[COLOR $VAR[FontColorVar]]$VAR[LibraryStructureVar][/COLOR]</label2>
+                        <onclick condition="Stringcompare(Skin.String(LibraryStructure),1) | IsEmpty(Skin.String(LibraryStructure))">Skin.SetString(LibraryStructure,2)</onclick>
+                        <onclick condition="Stringcompare(Skin.String(LibraryStructure),4)">Skin.SetString(LibraryStructure,1)</onclick>
+                        <onclick condition="Stringcompare(Skin.String(LibraryStructure),3)">Skin.SetString(LibraryStructure,4)</onclick>
+                        <onclick condition="Stringcompare(Skin.String(LibraryStructure),2)">Skin.SetString(LibraryStructure,3)</onclick>
+                        <onclick condition="Stringcompare(Skin.String(LibraryStructure),1)">Skin.SetString(LibraryStructure,2)</onclick>
+                    </control>
+                </control>
             </control>
             <control type="group">
                 <visible>Container(9000).Hasfocus(9)</visible>
@@ -732,8 +767,7 @@
         </control>
         <control type="image">
             <include>FullscreenDimensions</include>
-            <colordiffuse>black</colordiffuse>
-            <texture>common/white.png</texture>
+            <texture>common/bgcolor.png</texture>
             <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
             <visible>Window.IsActive(1116)</visible>
             <include>Animation_VisibleChange400</include>
@@ -741,29 +775,7 @@
         <control type="group">
             <include>Animation_HideBreadCrumbs</include>
             <include>Breadcrumbs_BackBar</include>
-            <control type="group">
-                <control type="grouplist">
-                    <posx>22</posx>
-                    <width>750</width>
-                    <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)] + Skin.HasSetting(breadcrumbslabel)</visible>
-                    <orientation>horizontal</orientation>
-                    <control type="image">
-                        <width>54</width>
-                        <height>34</height>
-                        <texture>common/settings_logo.png</texture>
-                        <include>BreadcrumbsIcon</include>
-                        <animation effect="slide" start="0,0" end="-9,2" time="0" condition="true">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <include>BreadcrumbsLabel</include>
-                        <label>$LOCALIZE[5]</label>
-                    </control>
-                    <control type="label">
-                        <include>BreadcrumbsLabel</include>
-                        <label> / $LOCALIZE[20077]</label>
-                    </control>
-                </control>
-            </control>
+            <include>BreadcrumbsContent</include>
             <include>Breadcrumbs_Furniture</include>
         </control>
         <include>Furniture_NowPlayingWidget</include>

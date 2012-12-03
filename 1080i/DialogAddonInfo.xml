@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<window id="10146">
+<window>
     <defaultcontrol always="true">9000</defaultcontrol>
     <animation type="WindowOpen" reversible="false" condition="!Window.Previous(addonsettings)">
         <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" easing="out" />
-        <effect type="fade" start="0" end="100" time="300" />
+        <effect type="fade" end="100" time="300" />
     </animation>
     <animation type="WindowClose" reversible="false" condition="!Window.Next(addonsettings)">
         <effect type="fade" start="100" end="0" time="300" />
@@ -20,7 +20,6 @@
                 <posy>120</posy>
                 <width>1491</width>
                 <font>Font_ShowcaseMainLabel2</font>
-                <include>Animation_CommonFade</include>
                 <label>$INFO[ListItem.Property(Addon.Name),$LOCALIZE[24003] - ]</label>
                 <align>center</align>
             </control>

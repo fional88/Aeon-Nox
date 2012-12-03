@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<window id="10140">
+<window>
     <defaultcontrol always="true">9</defaultcontrol>
     <controls>
         <control type="group">
             <animation type="WindowOpen" reversible="false" condition="!Window.Previous(addoninformation)">
                 <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" easing="out" />
-                <effect type="fade" start="0" end="100" time="300" />
+                <effect type="fade" end="100" time="300" />
             </animation>
             <animation type="WindowClose" reversible="false" condition="!Window.Next(addoninformation)">
                 <effect type="fade" start="100" end="0" time="300" />
@@ -103,10 +103,7 @@
                 <spinposx>12</spinposx>
             </control>
             <control type="image" id="6">
-                <height>0</height>
-                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                <texture>settings/settings_categoryseparator.png</texture>
-                <animation effect="slide" start="0,0" end="0,-3" time="0" condition="true">Conditional</animation>
+                <include>HiddenObject</include>
             </control>
             <control type="label" id="7">
                 <height>60</height>

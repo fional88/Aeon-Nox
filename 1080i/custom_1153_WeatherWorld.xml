@@ -10,30 +10,7 @@
         <control type="group">
             <include>Animation_HideBreadCrumbs</include>
             <include>Breadcrumbs_BackBar</include>
-            <control type="group">
-                <control type="grouplist">
-                    <posx>22</posx>
-                    <width>750</width>
-                    <visible>Skin.HasSetting(breadcrumbslabel)</visible>
-                    <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)]</visible>
-                    <orientation>horizontal</orientation>
-                    <control type="image">
-                        <width>54</width>
-                        <height>38</height>
-                        <texture>common/logo_pics.png</texture>
-                        <include>BreadcrumbsIcon</include>
-                        <animation effect="slide" start="0" end="-9" time="0" condition="true">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <include>BreadcrumbsLabel</include>
-                        <label>$LOCALIZE[8]</label>
-                    </control>
-                    <control type="label">
-                        <label>$INFO[Container.FolderName, / ]</label>
-                        <include>BreadcrumbsLabel</include>
-                    </control>
-                </control>
-            </control>
+            <include>BreadcrumbsContent</include>
             <include>Breadcrumbs_Furniture</include>
         </control>
         <include>Furniture_NowPlayingWidget</include>
@@ -51,7 +28,7 @@
         </control>
         <control type="group">
             <include>Animation_WindowFade200</include>
-            <animation effect="slide" start="0,0" end="-90,0" time="0" condition="system.getbool(input.enablemouse)">Conditional</animation>
+            <animation effect="slide" end="-90,0" time="0" condition="system.getbool(input.enablemouse)">Conditional</animation>
             <control type="label">
                 <posx>40r</posx>
                 <posy>70r</posy>
@@ -94,7 +71,7 @@
                 <include>Media_Menu_Furniture</include>
                 <control type="grouplist" id="9003">
                     <animation type="Conditional" condition="Window.IsActive(1121)">
-                        <effect type="fade" start="100" end="0" time="500" reversible="true" />
+                        <effect type="fade" start="100" end="0" time="500" />
                     </animation>
                     <animation type="Conditional" condition="Window.IsActive(1121) | Window.IsActive(1119)">
                         <effect type="zoom" end="66,100" time="400" easing="in" tween="cubic" />

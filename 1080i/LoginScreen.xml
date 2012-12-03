@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<window id="29">
+<window>
     <defaultcontrol always="true">52</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
@@ -70,7 +70,6 @@
                         <posy>205</posy>
                         <width>340</width>
                         <height>340</height>
-                        <fadetime>200</fadetime>
                         <aspectratio scalediffuse="false" align="right">scale</aspectratio>
                         <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_aa.png</texture>
                         <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
@@ -84,8 +83,8 @@
                         <fadetime>200</fadetime>
                         <texture background="true" flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">$INFO[ListItem.Icon]</texture>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <animation effect="fade" start="100" end="30" time="200" reversible="true">Focus</animation>
-                        <animation effect="fade" start="30" end="100" time="200" reversible="true">UnFocus</animation>
+                        <animation effect="fade" start="100" end="30" time="200">Focus</animation>
+                        <animation effect="fade" start="30" end="100" time="200">UnFocus</animation>
                     </control>
                 </control>
             </itemlayout>
@@ -108,7 +107,6 @@
                         <posy>205</posy>
                         <width>340</width>
                         <height>340</height>
-                        <fadetime>200</fadetime>
                         <aspectratio scalediffuse="false" align="right">scale</aspectratio>
                         <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_aa.png</texture>
                         <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
@@ -122,8 +120,8 @@
                         <fadetime>200</fadetime>
                         <texture background="true" flipy="true" diffuse="thumbs/cdcover_mask_reflect.png">$INFO[ListItem.Icon]</texture>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <animation effect="fade" start="100" end="30" time="200" reversible="true">Focus</animation>
-                        <animation effect="fade" start="30" end="100" time="200" reversible="true">UnFocus</animation>
+                        <animation effect="fade" start="100" end="30" time="200">Focus</animation>
+                        <animation effect="fade" start="30" end="100" time="200">UnFocus</animation>
                     </control>
                 </control>
             </focusedlayout>
@@ -151,28 +149,14 @@
                 <info>ListItem.Label</info>
             </control>
         </control>
+        <control type="label" id="2">
+            <include>HiddenObject</include>
+            <font>-</font>
+        </control>
         <control type="group">
             <include>Animation_HideBreadCrumbs</include>
             <include>Breadcrumbs_BackBar</include>
-            <control type="group">
-                <control type="grouplist">
-                    <posx>22</posx>
-                    <width>750</width>
-                    <visible>Skin.HasSetting(breadcrumbslabel)</visible>
-                    <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)]</visible>
-                    <orientation>horizontal</orientation>
-                    <control type="image">
-                        <width>54</width>
-                        <height>34</height>
-                        <texture>common/settings_logo.png</texture>
-                        <include>BreadcrumbsIcon</include>
-                        <animation effect="slide" start="0,0" end="-9,2" time="0" condition="true">Conditional</animation>
-                    </control>
-                    <control type="label" id="2">
-                        <include>BreadcrumbsLabel</include>
-                    </control>
-                </control>
-            </control>
+            <include>BreadcrumbsContent</include>
             <control type="grouplist">
                 <width>1920</width>
                 <align>center</align>

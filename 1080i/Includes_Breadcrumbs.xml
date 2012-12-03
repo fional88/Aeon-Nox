@@ -1,11 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <includes>
-    <include name="BreadcrumbsIcon">
-        <aspectratio>keep</aspectratio>
-        <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-        <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(7) | Window.IsActive(settings)]">Animation_WindowFade200</include>
-        <visible>Skin.HasSetting(breadcrumbslabel) + ![Skin.HasSetting(GlobalNowPlaying) + Player.HasMedia]</visible>
-    </include>
     <include name="BreadcrumbsLabel">
         <height>38</height>
         <width min="15" max="1920">auto</width>
@@ -13,7 +7,7 @@
         <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
         <shadowcolor>bcshadow</shadowcolor>
         <scroll>false</scroll>
-        <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(7) | Window.IsActive(settings)]">Animation_WindowFade200</include>
+        <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
     </include>
     <include name="Breadcrumbs_BackBar">
         <control type="group">
@@ -38,6 +32,36 @@
         </control>
         <include>LeftBreadcrumbsBackground</include>
     </include>
+    <include name="BreadcrumbsContent">
+        <control type="group">
+            <control type="grouplist">
+                <posx>22</posx>
+                <include condition="!Skin.HasSetting(ClassicTopBar)">TopBarWidthLeftSide</include>
+                <include condition="Skin.HasSetting(ClassicTopBar)">ClassicTopBarWidthLeftSide</include>
+                <orientation>horizontal</orientation>
+                <visible>Skin.HasSetting(breadcrumbslabel)</visible>
+                <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying) + IsEmpty(Window(videolibrary).Property(tvtunesIsAlive))]</visible>
+                <control type="image">
+                    <width>54</width>
+                    <height>38</height>
+                    <texture>$VAR[BreadcrumbsIconVar]</texture>
+                    <aspectratio>keep</aspectratio>
+                    <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                    <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
+                    <visible>Skin.HasSetting(breadcrumbslabel) + ![Skin.HasSetting(GlobalNowPlaying) + Player.HasMedia]</visible>
+                    <animation effect="slide" end="-9,0" time="0" condition="true">Conditional</animation>
+                </control>
+                <control type="label">
+                    <include>BreadcrumbsLabel</include>
+                    <label>$VAR[BreadcrumbsVideoVar]</label>
+                </control>
+                <control type="label">
+                    <include>BreadcrumbsLabel</include>
+                    <label>$INFO[Container.FolderName, / ]</label>
+                </control>
+            </control>
+        </control>
+    </include>
     <include name="Furniture_NowPlayingWidget">
         <control type="group">
             <include>Animation_HideBreadCrumbs</include>
@@ -53,7 +77,7 @@
                     <aspectratio>keep</aspectratio>
                     <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
                     <visible>Player.HasAudio</visible>
-                    <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(7) | Window.IsActive(settings)]">Animation_WindowFade200</include>
+                    <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
                 </control>
                 <control type="image">
                     <width>54</width>
@@ -63,7 +87,7 @@
                     <aspectratio>keep</aspectratio>
                     <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
                     <visible>Player.HasVideo</visible>
-                    <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(7) | Window.IsActive(settings)]">Animation_WindowFade200</include>
+                    <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
                 </control>
                 <control type="grouplist">
                     <orientation>horizontal</orientation>
@@ -125,8 +149,8 @@
             </control>
         </control>
         <control type="group">
-            <animation type="Conditional" reversible="true" condition="Control.HasFocus(110) | Control.HasFocus(195)">
-                <effect type="slide" start="0,0" end="0,-52" time="400" tween="cubic" easing="in" />
+            <animation type="Conditional" condition="Control.HasFocus(110) | Control.HasFocus(109)">
+                <effect type="slide" end="0,-52" time="400" tween="cubic" easing="in" />
             </animation>
             <animation effect="slide" start="-735,0" end="0,0" delay="0" time="300">VisibleChange</animation>
             <visible>Skin.HasSetting(GlobalRSS) + ![Skin.HasSetting(GlobalNowPlaying) + Player.HasMedia]</visible>
@@ -140,7 +164,6 @@
                 <height>32</height>
                 <texture>icon-rss.png</texture>
                 <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-                <include>Animation_VisibleChange400</include>
             </control>
             <control type="rss">
                 <posy>2</posy>
@@ -167,18 +190,18 @@
             <include>Animation_VisibleChange400</include>
             <visible>Skin.HasSetting(ClassicTopBar) + [Skin.HasSetting(breadcrumbslabel) | Skin.HasSetting(GlobalRSS)]</visible>
             <animation effect="slide" start="-750" end="0" time="300">VisibleChange</animation>
-            <animation effect="slide" start="0" end="140" time="300" condition="Container.Content(songs) + ![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)]">Conditional</animation>
-            <animation effect="slide" start="0" end="80" time="300" condition="Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)">Conditional</animation>
+            <animation effect="slide" end="140" time="300" condition="Container.Content(songs) + ![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)]">Conditional</animation>
+            <animation effect="slide" end="80" time="300" condition="Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)">Conditional</animation>
         </control>
     </include>
     <include name="Breadcrumbs_Furniture">
         <control type="group">
-            <visible>!Skin.HasSetting(disabletopbar)</visible>
+            <visible>!Skin.HasSetting(disabletopbar) + !Window.IsVisible(script-globalsearch-main.xml)</visible>
             <control type="button" id="4051">
                 <texture>-</texture>
                 <include>HiddenObject</include>
                 <visible>![Container.Scrolling | Container.OnScrollNext | Container.OnScrollPrevious]</visible>
-                <animation effect="fade" start="0" end="100" time="0">Visible</animation>
+                <animation effect="fade" end="100" time="0">Visible</animation>
                 <animation effect="fade" time="500">Hidden</animation>
             </control>
             <!--right widget -->
@@ -186,12 +209,11 @@
                 <posx>654r</posx>
                 <width>794</width>
                 <height>87</height>
-                <animation effect="slide" start="0" end="145" time="400" condition="!Skin.HasSetting(breadcrumbsweather)">Conditional</animation>
+                <animation effect="slide" end="145" time="400" condition="!Skin.HasSetting(breadcrumbsweather)">Conditional</animation>
                 <texture flipy="true">home/timepanel_mid.png</texture>
                 <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                 <include>Animation_VisibleChange400</include>
                 <visible>Skin.HasSetting(ClassicTopBar)</visible>
-                <visible>!Window.IsVisible(script-globalsearch-main.xml)</visible>
                 <animation effect="slide" start="750" end="0" time="300">VisibleChange</animation>
             </control>
             <control type="grouplist">
@@ -200,7 +222,6 @@
                 <align>center</align>
                 <aligny>center</aligny>
                 <itemgap>10</itemgap>
-                <visible>!Window.IsVisible(script-globalsearch-main.xml)</visible>
                 <visible>!IsEmpty(Container.NumItems) + !Skin.HasSetting(ClassicTopBar)</visible>
                 <orientation>horizontal</orientation>
                 <animation effect="fade" time="400" delay="400">Visible</animation>
@@ -238,7 +259,7 @@
                     <font>Font_Reg17_Caps</font>
                     <shadowcolor>bcshadow</shadowcolor>
                     <scroll>false</scroll>
-                    <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(7) | Window.IsActive(settings)]">Animation_WindowFade200</include>
+                    <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
                     <animation effect="fade" start="100" end="0" time="500" delay="500" condition="Control.IsVisible(4051)">Conditional</animation>
                     <label>$INFO[ListItem.SortLetter]</label>
                     <visible>[SubString(Container.SortMethod,$LOCALIZE[551]) | SubString(Container.SortMethod,$LOCALIZE[561]) | SubString(Container.SortMethod,$LOCALIZE[558]) | SubString(Container.SortMethod,$LOCALIZE[557]) | SubString(Container.SortMethod,$LOCALIZE[556])]</visible>

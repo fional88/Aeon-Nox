@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<window id="3">
+<window>
     <defaultcontrol>20</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
@@ -9,16 +9,7 @@
         <control type="image">
             <include>FullscreenDimensions</include>
             <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
-            <texture>common/black.png</texture>
-            <visible>!Skin.HasTheme(White)</visible>
-            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-            <include>Animation_VisibleChange400</include>
-        </control>
-        <control type="image">
-            <include>FullscreenDimensions</include>
-            <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
-            <texture>common/white.png</texture>
-            <visible>Skin.HasTheme(White)</visible>
+            <texture>common/bgcolor.png</texture>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <include>Animation_VisibleChange400</include>
         </control>
@@ -37,12 +28,12 @@
                 <texture>views/showcase_vignette.png</texture>
                 <colordiffuse>vignette</colordiffuse>
                 <animation type="WindowOpen">
-                    <effect type="fade" start="0" end="100" time="400" easing="inout" tween="cubic" />
+                    <effect type="fade" end="100" time="400" easing="inout" tween="cubic" />
                     <effect type="slide" start="-696,0" end="0,0" time="400" easing="inout" tween="cubic" />
                 </animation>
                 <animation type="WindowClose">
                     <effect type="fade" start="100" end="0" time="400" easing="inout" tween="cubic" />
-                    <effect type="slide" start="0,0" end="-696,0" time="400" easing="inout" tween="cubic" />
+                    <effect type="slide" end="-696,0" time="400" easing="inout" tween="cubic" />
                 </animation>
             </control>
             <control type="image">
@@ -52,12 +43,12 @@
                 <colordiffuse>vignette</colordiffuse>
                 <texture flipx="true">views/showcase_vignette.png</texture>
                 <animation type="WindowOpen">
-                    <effect type="fade" start="0" end="100" time="400" easing="inout" tween="cubic" />
+                    <effect type="fade" end="100" time="400" easing="inout" tween="cubic" />
                     <effect type="slide" start="696,0" end="0,0" time="400" easing="inout" tween="cubic" />
                 </animation>
                 <animation type="WindowClose">
                     <effect type="fade" start="100" end="0" time="400" easing="inout" tween="cubic" />
-                    <effect type="slide" start="0,0" end="696,0" time="400" easing="inout" tween="cubic" />
+                    <effect type="slide" end="696,0" time="400" easing="inout" tween="cubic" />
                 </animation>
             </control>
             <control type="image">
@@ -74,7 +65,7 @@
             <width>930</width>
             <height>970</height>
             <animation effect="slide" start="-960" end="0" time="300" tween="quadratic" easing="out">WindowOpen</animation>
-            <animation effect="slide" start="0" end="-960" time="300" tween="quadratic" easing="in">WindowClose</animation>
+            <animation effect="slide" end="-960" time="300" tween="quadratic" easing="in">WindowClose</animation>
             <control type="group">
                 <include>FileManagerPanels</include>
                 <control type="label" id="101">
@@ -183,7 +174,7 @@
             <width>930</width>
             <height>970</height>
             <animation effect="slide" start="960" end="0" time="300" tween="quadratic" easing="out">WindowOpen</animation>
-            <animation effect="slide" start="0" end="960" time="300" tween="quadratic" easing="in">WindowClose</animation>
+            <animation effect="slide" end="960" time="300" tween="quadratic" easing="in">WindowClose</animation>
             <include>FileManagerPanels</include>
             <control type="label" id="102">
                 <posx>840</posx>
@@ -294,31 +285,7 @@
         <control type="group">
             <include>Animation_HideBreadCrumbs</include>
             <include>Breadcrumbs_BackBar</include>
-            <control type="group">
-                <control type="grouplist">
-                    <posx>22</posx>
-                    <width>750</width>
-                    <visible>Skin.HasSetting(breadcrumbslabel)</visible>
-                    <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)]</visible>
-                    <orientation>horizontal</orientation>
-                    <control type="image">
-                        <width>34</width>
-                        <height>42</height>
-                        <texture>breadcrumbs/items.png</texture>
-                        <aspectratio>keep</aspectratio>
-                        <include>BreadcrumbsIcon</include>
-                        <animation effect="slide" start="0,0" end="-9,-2" time="0" condition="true">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <include>BreadcrumbsLabel</include>
-                        <label>$LOCALIZE[10003]</label>
-                    </control>
-                    <control type="label">
-                        <include>BreadcrumbsLabel</include>
-                        <label>$INFO[Container.FolderName, / ]</label>
-                    </control>
-                </control>
-            </control>
+            <include>BreadcrumbsContent</include>
             <include>Breadcrumbs_Furniture</include>
             <control type="grouplist">
                 <width>1920</width>
@@ -336,7 +303,7 @@
                     <texture>breadcrumbs/items.png</texture>
                     <colordiffuse>$VAR[BreadCrumbsContentColorVar]</colordiffuse>
                     <include>Animation_WindowFade200</include>
-                    <animation effect="slide" start="0,0" end="0,-2" time="0" condition="true">Conditional</animation>
+                    <animation effect="slide" end="0,-2" time="0" condition="true">Conditional</animation>
                 </control>
                 <control type="label">
                     <label>$INFO[Container(20).NumItems] $VAR[ItemLabelVar]</label>
@@ -355,7 +322,7 @@
                     <texture>breadcrumbs/pages.png</texture>
                     <colordiffuse>$VAR[BreadCrumbsContentColorVar]</colordiffuse>
                     <include>Animation_WindowFade200</include>
-                    <animation effect="slide" start="0,0" end="0,-3" time="0" condition="true">Conditional</animation>
+                    <animation effect="slide" end="0,-3" time="0" condition="true">Conditional</animation>
                 </control>
                 <control type="label">
                     <label>$INFO[Container(20).CurrentPage,$LOCALIZE[31024] ]$INFO[Container(20).NumPages,/]</label>

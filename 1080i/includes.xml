@@ -9,7 +9,6 @@
     <include file="Viewtype_LowList.xml" />
     <include file="Viewtype_LowListMusic.xml" />
     <include file="Viewtype_ShowcaseCD.xml" />
-    <include file="Viewtype_ShowcaseDVD.xml" />
     <include file="Viewtype_ShowcaseMovies.xml" />
     <include file="Viewtype_ShowcaseSquare.xml" />
     <include file="Viewtype_TriPanel.xml" />
@@ -22,13 +21,10 @@
     <include file="Viewtype_Stripshow.xml" />
     <include file="Viewtype_Shift.xml" />
     <include file="Viewtype_Panel.xml" />
-    <include file="IncludesHomeRecentlyAdded.xml" />
+    <include file="Includes_Widget1.xml" />
     <include file="Includes_MediaFlags.xml" />
     <include file="Includes_Animations.xml" />
-    <include file="Includes_Showcase.xml" />
     <include file="Includes_MediaMenu.xml" />
-    <include file="Includes_Showcase_Box.xml" />
-    <include file="Includes_Showcase_Cases.xml" />
     <include file="Includes_Music.xml" />
     <include file="Includes_HomeWidgets.xml" />
     <include file="Includes_Visualization.xml" />
@@ -43,7 +39,7 @@
     <include file="Viewtype_FullscreenPanel.xml" />
     <include name="VideoBackground">
         <control type="group">
-            <visible>Player.HasVideo + [Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(506) | Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(514) | Control.IsVisible(516) | Control.IsVisible(500) | Control.IsVisible(510) | Control.IsVisible(57) | [[Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(508)] + !Control.IsVisible(7550)] | [[Control.IsVisible(509) | Control.IsVisible(513)] + !Control.IsVisible(7679)]]</visible>
+            <visible>Player.HasVideo + [Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(506) | Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(514) | Control.IsVisible(516) | Control.IsVisible(500) | Control.IsVisible(510) | Control.IsVisible(57) | [[Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(508)] + !Control.IsVisible(7550)] | [[Control.IsVisible(509) | Control.IsVisible(513)] + !Control.IsVisible(7679)]]</visible>
             <include>Animation_VisibleChange200</include>
             <control type="image">
                 <include>FullscreenDimensions</include>
@@ -78,51 +74,14 @@
         <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
         <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
         <aspectratio align="center" aligny="top">scale</aspectratio>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
-        <animation effect="fade" time="250">Visible</animation>
-        <animation effect="fade" time="250">Hidden</animation>
-    </include>
-    <include name="CommonPictureBackground">
-        <control type="multiimage">
-            <imagepath background="true">special://skin/backgrounds/pictures/</imagepath>
-            <include>CommonFanartVarsSingle</include>
-            <visible>![Substring(Skin.String(PicturesHomeItem.MultiFanart),/) | Substring(Skin.String(PicturesHomeItem.MultiFanart),\)]</visible>
-        </control>
-        <control type="multiimage">
-            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <imagepath fallback="special://skin/backgrounds/pictures/" background="true">$INFO[Skin.String(PicturesHomeItem.MultiFanart)]</imagepath>
-            <aspectratio align="center" aligny="top">scale</aspectratio>
-            <visible>Substring(Skin.String(PicturesHomeItem.MultiFanart),/) | Substring(Skin.String(PicturesHomeItem.MultiFanart),\)</visible>
-        </control>
-    </include>
-    <include name="CommonComicsBackground">
-        <control type="multiimage">
-            <imagepath background="true">special://skin/backgrounds/comics/</imagepath>
-            <include>CommonFanartVarsSingle</include>
-            <visible>![Substring(Skin.String(ComicsHomeItem.MultiFanart),/) | Substring(Skin.String(ComicsHomeItem.MultiFanart),\)]</visible>
-        </control>
-        <control type="multiimage">
-            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <imagepath fallback="special://skin/backgrounds/comics/" background="true">$INFO[Skin.String(ComicsHomeItem.MultiFanart)]</imagepath>
-            <aspectratio align="center" aligny="top">scale</aspectratio>
-            <visible>Substring(Skin.String(ComicsHomeItem.MultiFanart),/) | Substring(Skin.String(ComicsHomeItem.MultiFanart),\)</visible>
-        </control>
+        <include>Animation_WindowFade250</include>
     </include>
     <include name="CommonSettingsBackground">
         <control type="multiimage">
-            <imagepath background="true">special://skin/backgrounds/system/</imagepath>
-            <include>CommonFanartVarsSingle</include>
-            <visible>![Substring(Skin.String(SettingsHomeItem.MultiFanart),/) | Substring(Skin.String(SettingsHomeItem.MultiFanart),\)]</visible>
-        </control>
-        <control type="multiimage">
             <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
             <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <imagepath fallback="special://skin/backgrounds/system/" background="true">$INFO[Skin.String(SettingsHomeItem.MultiFanart)]</imagepath>
+            <imagepath background="true">$VAR[SettingsFanartVar]</imagepath>
             <aspectratio align="center" aligny="top">scale</aspectratio>
-            <visible>Substring(Skin.String(SettingsHomeItem.MultiFanart),/) | Substring(Skin.String(SettingsHomeItem.MultiFanart),\)</visible>
         </control>
     </include>
     <include name="MusicExtraFanartHome">
@@ -193,7 +152,7 @@
             <width>90</width>
             <height>90</height>
             <texture>loader.gif</texture>
-            <colordiffuse>$VAR[SpotColorVar]</colordiffuse>
+            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
         </control>
     </include>
     <include name="Dialogs_Settings">
@@ -243,16 +202,15 @@
         <focusedcolor>white6</focusedcolor>
         <textoffsetx>15</textoffsetx>
         <textoffsety>2</textoffsety>
-        <onleft>Skin.Reset(viewtypeselect)</onleft>
+        <onleft>ClearProperty(viewtypeselect,home)</onleft>
         <onleft>ActivateWindow(1121)</onleft>
         <font>Font_Reg19</font>
-        <include>Animation_CommonFade</include>
         <radiowidth>98</radiowidth>
         <radioposx>308</radioposx>
     </include>
     <include name="Objects_MediaMenuButtonIcons">
         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-        <height>100</height>
+        <height>95</height>
         <width>500</width>
         <texturenofocus>settings/listselect_nf2.png</texturenofocus>
         <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
@@ -260,13 +218,12 @@
         <alttexturefocus>views/tripanel/listselect_fo.png</alttexturefocus>
         <textcolor>grey2</textcolor>
         <focusedcolor>white6</focusedcolor>
-        <textoffsetx>100</textoffsetx>
+        <textoffsetx>96</textoffsetx>
         <textoffsety>28</textoffsety>
-        <onleft>Skin.Reset(viewtypeselect)</onleft>
+        <onleft>ClearProperty(viewtypeselect,home)</onleft>
         <onleft>ActivateWindow(1121)</onleft>
         <aligny>top</aligny>
         <font>Font_Reg18</font>
-        <include>Animation_CommonFade</include>
         <radiowidth>98</radiowidth>
         <radioposx>308</radioposx>
     </include>
@@ -283,7 +240,6 @@
         <textoffsetx>15</textoffsetx>
         <textoffsety>2</textoffsety>
         <font>Font_Reg19</font>
-        <include>Animation_CommonFade</include>
         <radiowidth>98</radiowidth>
         <radioposx>308</radioposx>
     </include>
@@ -303,7 +259,6 @@
         <onright>Dialog.Close(1126)</onright>
         <onright>SetFocus(50)</onright>
         <font>Font_Reg19</font>
-        <include>Animation_CommonFade</include>
         <radiowidth>98</radiowidth>
         <radioposx>378</radioposx>
     </include>
@@ -324,7 +279,6 @@
         <onright>Dialog.Close(1126)</onright>
         <onright>SetFocus(50)</onright>
         <font>Font_Bold15_Caps</font>
-        <include>Animation_CommonFade</include>
         <radiowidth>98</radiowidth>
         <radioposx>508</radioposx>
     </include>
@@ -340,6 +294,18 @@
         <alttexturefocus>dialogs/shutdown_focus_glow.png</alttexturefocus>
         <alttexturenofocus>dialogs/shutdown_nofocus_glow.png</alttexturenofocus>
     </include>
+    <include name="ShutdownNoGlowAlt">
+        <texturenofocus>dialogs/shutdown_nofocus2.png</texturenofocus>
+        <texturefocus>dialogs/shutdown_focus2.png</texturefocus>
+        <alttexturefocus>dialogs/shutdown_focus2.png</alttexturefocus>
+        <alttexturenofocus>dialogs/shutdown_nofocus2.png</alttexturenofocus>
+    </include>
+    <include name="ShutdownGlowAlt">
+        <texturenofocus>dialogs/shutdown_nofocus_glow2.png</texturenofocus>
+        <texturefocus>dialogs/shutdown_focus_glow2.png</texturefocus>
+        <alttexturefocus>dialogs/shutdown_focus_glow2.png</alttexturefocus>
+        <alttexturenofocus>dialogs/shutdown_nofocus_glow2.png</alttexturenofocus>
+    </include>
     <include name="Objects_ContextMenuButton">
         <height>59</height>
         <width>462</width>
@@ -352,8 +318,8 @@
         <font>Font_Reg19_Caps</font>
         <textoffsety>8</textoffsety>
         <textoffsetx>30</textoffsetx>
-        <include condition="!Skin.HasSetting(DisableGlowbar)">ShutdownGlow</include>
-        <include condition="![!Skin.HasSetting(DisableGlowbar)]">ShutdownNoGlow</include>
+        <include condition="!Skin.HasSetting(DisableGlowbar)">ShutdownGlowAlt</include>
+        <include condition="Skin.HasSetting(DisableGlowbar)">ShutdownNoGlowAlt</include>
     </include>
     <include name="Objects_ShutdownMenuButton">
         <height>75</height>
@@ -374,6 +340,7 @@
         <height>63</height>
         <width>67</width>
         <aspectratio aligny="top">scale</aspectratio>
+        <colordiffuse>white2</colordiffuse>
     </include>
     <include name="HiddenObject">
         <posx>-300</posx>
@@ -605,7 +572,7 @@
             <posx>132</posx>
             <width>1665</width>
             <height>543</height>
-            <animation effect="slide" start="0,0" end="0,4" time="0" condition="Window.IsActive(musiclibrary)">Conditional</animation>
+            <animation effect="slide" end="0,4" time="0" condition="Window.IsActive(musiclibrary)">Conditional</animation>
         </control>
     </include>
     <include name="BG_Effect_Wall_Panel">
@@ -703,7 +670,7 @@
         <width>150</width>
         <height>58</height>
         <aspectratio>keep</aspectratio>
-        <texture background="true" fallback="fallback.png">$INFO[ListItem.Property(Path),,logo.png]</texture>
+        <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Property(Art(clearlogo))]</texture>
         <visible>StringCompare(Window(Home).Property(TVGuide.ThumbType),2)</visible>
     </include>
     <include name="NextAiredThumbVars">
@@ -712,7 +679,7 @@
         <width>160</width>
         <height>150</height>
         <aspectratio>keep</aspectratio>
-        <texture background="true">$INFO[ListItem.Thumb]</texture>
+        <texture background="true">$INFO[ListItem.Property(Art(poster))]</texture>
         <visible>StringCompare(Window(Home).Property(TVGuide.ThumbType),0)</visible>
     </include>
     <include name="NextAiredBannerVars">
@@ -721,7 +688,7 @@
         <width>150</width>
         <height>58</height>
         <aspectratio>keep</aspectratio>
-        <texture background="true">$INFO[ListItem.Property(Path),,banner.jpg]</texture>
+        <texture background="true">$INFO[ListItem.Property(Art(banner))]</texture>
         <visible>StringCompare(Window(Home).Property(TVGuide.ThumbType),1)</visible>
     </include>
     <include name="NextAiredLabelVars">
@@ -832,6 +799,7 @@
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(font_settings,FF6db9e5)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(font_PVR,FF6db9e5)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(BackgroundDarkness,A0FFFFFF)</onload>
+        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(LibraryStructure,2)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(alternativerss)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(colordialogs)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(DisableGlowbar)</onload>
@@ -854,7 +822,6 @@
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(newstatus)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(watchedoverlay)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(preferplot)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(usecases)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(useclearcasesinfowall)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(infopanellauncher)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(MoreFullscreenInfo)</onload>
@@ -952,7 +919,6 @@
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(CustomHomeItem4.Disable,1)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(CustomHomeItem5.Disable,1)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(CustomHomeItem6.Disable,1)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(ComicsHomeItem.Disable,1)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(MovieHomeItem.InfoLine,movies)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(TVShowHomeItem.InfoLine,tvshows)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(MusicHomeItem.InfoLine,music)</onload>
@@ -970,8 +936,6 @@
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(MusicHomeItem.SubMenu,music)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(VideosHomeItem.SubMenu,videos)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(LiveTVHomeItem.SubMenu,pvr)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(ProgramsHomeItem.SubMenu,programs)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(WeatherHomeItem.SubMenu,weather)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(ShutdownHomeItem.SubMenu,shutdown)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(SettingsHomeItem.SubMenu,settings)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(CustomHomeItem1.SubMenu,custom1)</onload>
@@ -984,11 +948,11 @@
         <onload>Skin.SetBool(firstrun)</onload>
     </include>
     <include name="DelayAnimations">
-        <animation effect="fade" start="0" end="100" time="150" delay="1333" condition="Stringcompare(Skin.String(InfopanelDelay),1)">Visible</animation>
-        <animation effect="fade" start="0" end="100" time="150" delay="2666" condition="Stringcompare(Skin.String(InfopanelDelay),2)">Visible</animation>
-        <animation effect="fade" start="0" end="100" time="150" delay="4000" condition="Stringcompare(Skin.String(InfopanelDelay),3)">Visible</animation>
-        <animation effect="fade" start="0" end="100" time="150" delay="5333" condition="Stringcompare(Skin.String(InfopanelDelay),4)">Visible</animation>
-        <animation effect="fade" start="0" end="100" time="150" delay="6666" condition="Stringcompare(Skin.String(InfopanelDelay),5)">Visible</animation>
+        <animation effect="fade" end="100" time="150" delay="1333" condition="Stringcompare(Skin.String(InfopanelDelay),1)">Visible</animation>
+        <animation effect="fade" end="100" time="150" delay="2666" condition="Stringcompare(Skin.String(InfopanelDelay),2)">Visible</animation>
+        <animation effect="fade" end="100" time="150" delay="4000" condition="Stringcompare(Skin.String(InfopanelDelay),3)">Visible</animation>
+        <animation effect="fade" end="100" time="150" delay="5333" condition="Stringcompare(Skin.String(InfopanelDelay),4)">Visible</animation>
+        <animation effect="fade" end="100" time="150" delay="6666" condition="Stringcompare(Skin.String(InfopanelDelay),5)">Visible</animation>
     </include>
     <include name="UnwatchedIcon">
         <control type="group">
@@ -1000,7 +964,6 @@
                 <height>35</height>
                 <texture>common/circle.png</texture>
                 <aspectratio>keep</aspectratio>
-                <include>Animation_VisibleChange200</include>
             </control>
             <control type="label">
                 <label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
@@ -1028,7 +991,6 @@
         <textoffsetx>15</textoffsetx>
         <textoffsety>2</textoffsety>
         <font>Font_Reg19</font>
-        <include>Animation_CommonFade</include>
         <radiowidth>98</radiowidth>
         <radioposx>508</radioposx>
     </include>
@@ -1055,7 +1017,7 @@
             <texture>diffuseoverlay.png</texture>
             <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
             <animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(fullscreenvideo)">Conditional</animation>
-            <animation effect="fade" start="0" end="100" time="700">WindowOpen</animation>
+            <animation effect="fade" end="100" time="700">WindowOpen</animation>
             <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
         </control>
     </include>
@@ -1064,7 +1026,7 @@
             <include>FullscreenDimensions</include>
             <texture>diffuseoverlay.png</texture>
             <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
-            <animation effect="fade" start="0" end="100" time="700">WindowOpen</animation>
+            <animation effect="fade" end="100" time="700">WindowOpen</animation>
             <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
             <visible>Window.IsActive(contextmenu)</visible>
             <animation effect="fade" time="700">Visible</animation>
@@ -1075,8 +1037,7 @@
         <item>
             <label fallback="31502">$INFO[Skin.String(QuickNavItem1.Label)]</label>
             <thumb fallback="special://skin/extras/BigIcons/Film.png">$INFO[Skin.String(QuickNavItem1.MultiFanart)]</thumb>
-            <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
-            <onclick>Dialog.Close(1121)</onclick>
+            <onclick>Dialog.Close(all,true)</onclick>
             <onclick condition="IsEmpty(Skin.String(QuickNavItem1.Type))">ReplaceWindow(Videos,MovieTitles,return)</onclick>
             <onclick condition="stringcompare(Skin.String(QuickNavItem1.Type),1) | stringcompare(Skin.String(QuickNavItem1.Type),2) | stringcompare(Skin.String(QuickNavItem1.Type),3) | stringcompare(Skin.String(QuickNavItem1.Type),0)">RunAddon($INFO[Skin.String(QuickNavItem1.Path)])</onclick>
             <onclick condition="stringcompare(Skin.String(QuickNavItem1.Type),4)">ReplaceWindow(Videos,$INFO[Skin.String(QuickNavItem1.Path)],return)</onclick>
@@ -1087,8 +1048,7 @@
         <item>
             <label fallback="31503">$INFO[Skin.String(QuickNavItem2.Label)]</label>
             <thumb fallback="special://skin/extras/BigIcons/Television.png">$INFO[Skin.String(QuickNavItem2.MultiFanart)]</thumb>
-            <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
-            <onclick>Dialog.Close(1121)</onclick>
+            <onclick>Dialog.Close(all,true)</onclick>
             <onclick condition="IsEmpty(Skin.String(QuickNavItem2.Type))">ReplaceWindow(Videos,TVShowTitles,return)</onclick>
             <onclick condition="stringcompare(Skin.String(QuickNavItem2.Type),1) | stringcompare(Skin.String(QuickNavItem2.Type),2) | stringcompare(Skin.String(QuickNavItem2.Type),3) | stringcompare(Skin.String(QuickNavItem2.Type),0)">RunAddon($INFO[Skin.String(QuickNavItem2.Path)])</onclick>
             <onclick condition="stringcompare(Skin.String(QuickNavItem2.Type),4)">ReplaceWindow(Videos,$INFO[Skin.String(QuickNavItem2.Path)],return)</onclick>
@@ -1099,8 +1059,7 @@
         <item>
             <label fallback="31501">$INFO[Skin.String(QuickNavItem3.Label)]</label>
             <thumb fallback="special://skin/extras/BigIcons/Headphone.png">$INFO[Skin.String(QuickNavItem3.MultiFanart)]</thumb>
-            <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
-            <onclick>Dialog.Close(1121)</onclick>
+            <onclick>Dialog.Close(all,true)</onclick>
             <onclick condition="IsEmpty(Skin.String(QuickNavItem3.Type))">ReplaceWindow(Music)</onclick>
             <onclick condition="stringcompare(Skin.String(QuickNavItem3.Type),1) | stringcompare(Skin.String(QuickNavItem3.Type),2) | stringcompare(Skin.String(QuickNavItem3.Type),3) | stringcompare(Skin.String(QuickNavItem3.Type),0)">RunAddon($INFO[Skin.String(QuickNavItem3.Path)])</onclick>
             <onclick condition="stringcompare(Skin.String(QuickNavItem3.Type),4)">ReplaceWindow(Videos,$INFO[Skin.String(QuickNavItem3.Path)],return)</onclick>
@@ -1111,8 +1070,7 @@
         <item>
             <label fallback="20389">$INFO[Skin.String(QuickNavItem4.Label)]</label>
             <thumb fallback="special://skin/extras/BigIcons/Media.png">$INFO[Skin.String(QuickNavItem4.MultiFanart)]</thumb>
-            <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
-            <onclick>Dialog.Close(1121)</onclick>
+            <onclick>Dialog.Close(all,true)</onclick>
             <onclick condition="IsEmpty(Skin.String(QuickNavItem4.Type))">ReplaceWindow(Videos,MusicVideoTitles,return)</onclick>
             <onclick condition="stringcompare(Skin.String(QuickNavItem4.Type),1) | stringcompare(Skin.String(QuickNavItem4.Type),2) | stringcompare(Skin.String(QuickNavItem4.Type),3) | stringcompare(Skin.String(QuickNavItem4.Type),0)">RunAddon($INFO[Skin.String(QuickNavItem4.Path)])</onclick>
             <onclick condition="stringcompare(Skin.String(QuickNavItem4.Type),4)">ReplaceWindow(Videos,$INFO[Skin.String(QuickNavItem4.Path)],return)</onclick>
@@ -1123,8 +1081,7 @@
         <item>
             <label fallback="1036">$INFO[Skin.String(QuickNavItem5.Label)]</label>
             <thumb fallback="special://skin/extras/BigIcons/Star.png">$INFO[Skin.String(QuickNavItem5.MultiFanart)]</thumb>
-            <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
-            <onclick>Dialog.Close(1121)</onclick>
+            <onclick>Dialog.Close(all,true)</onclick>
             <onclick condition="IsEmpty(Skin.String(QuickNavItem5.Type))">ActivateWindow(favourites)</onclick>
             <onclick condition="stringcompare(Skin.String(QuickNavItem5.Type),1) | stringcompare(Skin.String(QuickNavItem5.Type),2) | stringcompare(Skin.String(QuickNavItem5.Type),3) | stringcompare(Skin.String(QuickNavItem5.Type),0)">RunAddon($INFO[Skin.String(QuickNavItem5.Path)])</onclick>
             <onclick condition="stringcompare(Skin.String(QuickNavItem5.Type),4)">ReplaceWindow(Videos,$INFO[Skin.String(QuickNavItem5.Path)],return)</onclick>
@@ -1135,8 +1092,7 @@
         <item>
             <label fallback="1037">$INFO[Skin.String(QuickNavItem6.Label)]</label>
             <thumb fallback="special://skin/extras/BigIcons/Monitor.png">$INFO[Skin.String(QuickNavItem6.MultiFanart)]</thumb>
-            <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
-            <onclick>Dialog.Close(1121)</onclick>
+            <onclick>Dialog.Close(all,true)</onclick>
             <onclick condition="IsEmpty(Skin.String(QuickNavItem6.Type))">ReplaceWindow(Videos,Addons,return)</onclick>
             <onclick condition="stringcompare(Skin.String(QuickNavItem6.Type),1) | stringcompare(Skin.String(QuickNavItem6.Type),2) | stringcompare(Skin.String(QuickNavItem6.Type),3) | stringcompare(Skin.String(QuickNavItem6.Type),0)">RunAddon($INFO[Skin.String(QuickNavItem6.Path)])</onclick>
             <onclick condition="stringcompare(Skin.String(QuickNavItem6.Type),4)">ReplaceWindow(Videos,$INFO[Skin.String(QuickNavItem6.Path)],return)</onclick>
@@ -1147,8 +1103,7 @@
         <item>
             <label fallback="31507">$INFO[Skin.String(QuickNavItem7.Label)]</label>
             <thumb fallback="special://skin/extras/BigIcons/Puzzle.png">$INFO[Skin.String(QuickNavItem7.MultiFanart)]</thumb>
-            <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
-            <onclick>Dialog.Close(1121)</onclick>
+            <onclick>Dialog.Close(all,true)</onclick>
             <onclick condition="IsEmpty(Skin.String(QuickNavItem7.Type))">ReplaceWindow(Programs,addons)</onclick>
             <onclick condition="stringcompare(Skin.String(QuickNavItem7.Type),1) | stringcompare(Skin.String(QuickNavItem7.Type),2) | stringcompare(Skin.String(QuickNavItem7.Type),3) | stringcompare(Skin.String(QuickNavItem7.Type),0)">RunAddon($INFO[Skin.String(QuickNavItem7.Path)])</onclick>
             <onclick condition="stringcompare(Skin.String(QuickNavItem7.Type),4)">ReplaceWindow(Videos,$INFO[Skin.String(QuickNavItem7.Path)],return)</onclick>
@@ -1158,8 +1113,7 @@
         </item>
         <item>
             <label fallback="137">$INFO[Skin.String(QuickNavItem8.Label)]</label>
-            <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
-            <onclick>Dialog.Close(1121)</onclick>
+            <onclick>Dialog.Close(all,true)</onclick>
             <thumb fallback="special://skin/extras/BigIcons/Search.png">$INFO[Skin.String(QuickNavItem8.MultiFanart)]</thumb>
             <onclick condition="IsEmpty(Skin.String(QuickNavItem8.Type))">RunScript(script.globalsearch)</onclick>
             <onclick condition="stringcompare(Skin.String(QuickNavItem8.Type),1) | stringcompare(Skin.String(QuickNavItem8.Type),2) | stringcompare(Skin.String(QuickNavItem8.Type),3) | stringcompare(Skin.String(QuickNavItem8.Type),0)">RunAddon($INFO[Skin.String(QuickNavItem8.Path)])</onclick>
@@ -1171,8 +1125,7 @@
         <item>
             <label fallback="559">$INFO[Skin.String(QuickNavItem9.Label)]</label>
             <thumb fallback="special://skin/extras/BigIcons/Format.png">$INFO[Skin.String(QuickNavItem9.MultiFanart)]</thumb>
-            <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
-            <onclick>Dialog.Close(1121)</onclick>
+            <onclick>Dialog.Close(all,true)</onclick>
             <onclick condition="IsEmpty(Skin.String(QuickNavItem9.Type))">ReplaceWindow(musicplaylist)</onclick>
             <onclick condition="stringcompare(Skin.String(QuickNavItem9.Type),1) | stringcompare(Skin.String(QuickNavItem9.Type),2) | stringcompare(Skin.String(QuickNavItem9.Type),3) | stringcompare(Skin.String(QuickNavItem9.Type),0)">RunAddon($INFO[Skin.String(QuickNavItem9.Path)])</onclick>
             <onclick condition="stringcompare(Skin.String(QuickNavItem9.Type),4)">ReplaceWindow(Videos,$INFO[Skin.String(QuickNavItem9.Path)],return)</onclick>
@@ -1233,7 +1186,7 @@
             <width>1132</width>
             <height>1056</height>
             <texture>wall/wall_bg.png</texture>
-            <icolordiffuse>$VAR[DialogColorVar]</icolordiffuse>
+            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
         </control>
     </include>
     <include name="FullScreenInfoBarLiveTV">
@@ -1242,6 +1195,7 @@
             <width>1920</width>
             <height>180</height>
             <texture>osd/osd_back.png</texture>
+            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
         </control>
         <control type="group" id="1">
             <posy>865</posy>
@@ -1253,7 +1207,7 @@
                 <effect type="slide" start="-450,0" end="0,0" time="600" tween="cubic" easing="out" />
             </animation>
             <animation type="WindowClose">
-                <effect type="slide" start="0,0" end="-450,0" time="600" tween="cubic" easing="out" />
+                <effect type="slide" end="-450,0" time="600" tween="cubic" easing="out" />
                 <effect type="fade" start="100" end="0" time="600" />
             </animation>
             <control type="image" id="1">
@@ -1270,7 +1224,7 @@
                 <effect type="slide" start="450,0" end="0,0" time="600" tween="cubic" easing="out" />
             </animation>
             <animation type="WindowClose">
-                <effect type="slide" start="0,0" end="450,0" time="600" tween="cubic" easing="out" />
+                <effect type="slide" end="450,0" time="600" tween="cubic" easing="out" />
                 <effect type="fade" start="100" end="0" time="600" />
             </animation>
             <control type="label" id="1">
@@ -1340,7 +1294,7 @@
                 <height>38</height>
                 <font>Font_Reg19</font>
                 <textcolor>white6</textcolor>
-                <label>$INFO[VideoPlayer.Time]</label>
+                <label>$INFO[VideoPlayer.StartTime]</label>
             </control>
             <control type="label" id="1">
                 <posy>128</posy>
@@ -1349,20 +1303,20 @@
                 <font>Font_Reg19</font>
                 <align>center</align>
                 <textcolor>white6</textcolor>
-                <label>$INFO[System.Time,, / ]$INFO[Player.FinishTime]</label>
-            </control>
-            <control type="label" id="1">
-                <posx>1530</posx>
-                <posy>128</posy>
-                <width>1140</width>
-                <height>38</height>
-                <font>Font_Reg19</font>
-                <align>right</align>
-                <textcolor>white6</textcolor>
-                <label>$INFO[VideoPlayer.Duration]</label>
+                <label>$INFO[VideoPlayer.Time,, / ]$INFO[VideoPlayer.Duration]</label>
                 <visible>!Skin.HasSetting(PreferRemaining)</visible>
             </control>
             <control type="label" id="1">
+                <posy>128</posy>
+                <width>1920</width>
+                <height>38</height>
+                <font>Font_Reg19</font>
+                <align>center</align>
+                <textcolor>white6</textcolor>
+                <label>$INFO[VideoPlayer.Time,, / ]$INFO[VideoPlayer.TimeRemaining,- ]</label>
+                <visible>Skin.HasSetting(PreferRemaining)</visible>
+            </control>
+            <control type="label" id="1">
                 <posx>1530</posx>
                 <posy>128</posy>
                 <width>1140</width>
@@ -1370,8 +1324,7 @@
                 <font>Font_Reg19</font>
                 <align>right</align>
                 <textcolor>white6</textcolor>
-                <label>$INFO[Player.TimeRemaining,- ]</label>
-                <visible>Skin.HasSetting(PreferRemaining)</visible>
+                <label>$INFO[VideoPlayer.FinishTime]</label>
             </control>
         </control>
     </include>
@@ -1382,54 +1335,19 @@
             <visible>VideoPlayer.Content(episodes) | VideoPlayer.Content(movies)</visible>
             <animation type="WindowOpen">
                 <effect type="slide" start="450,0" end="0,0" time="600" tween="cubic" easing="out" />
-                <effect type="fade" start="0" end="100" time="600" />
+                <effect type="fade" end="100" time="600" />
             </animation>
             <animation type="WindowClose">
-                <effect type="slide" start="0,0" end="450,0" time="600" tween="cubic" easing="out" />
+                <effect type="slide" end="450,0" time="600" tween="cubic" easing="out" />
                 <effect type="fade" start="100" end="0" time="600" />
             </animation>
-            <control type="image" id="1000">
+            <control type="image">
                 <posx>22</posx>
                 <posy>-70</posy>
                 <width>345</width>
                 <height>234</height>
-                <texture background="true" fallback="empty.png">$INFO[Player.FolderPath,,clearart.png]</texture>
+                <texture background="true">$VAR[PlayerArtworkVar]</texture>
                 <aspectratio aligny="bottom">keep</aspectratio>
-            </control>
-            <control type="image" id="1001">
-                <posx>22</posx>
-                <posy>-70</posy>
-                <width>345</width>
-                <height>234</height>
-                <texture background="true" fallback="empty.png">$INFO[Player.FolderPath,,../clearart.png]</texture>
-                <aspectratio aligny="bottom">keep</aspectratio>
-                <visible>StringCompare(Control.GetLabel(1000),empty.png)</visible>
-            </control>
-            <control type="image" id="1002">
-                <posx>22</posx>
-                <posy>-66</posy>
-                <width>345</width>
-                <height>234</height>
-                <texture background="true" fallback="empty.png">$INFO[Player.FolderPath,,logo.png]</texture>
-                <aspectratio>keep</aspectratio>
-                <visible>StringCompare(Control.GetLabel(1000),empty.png) + StringCompare(Control.GetLabel(1001),empty.png)</visible>
-            </control>
-            <control type="image" id="1003">
-                <posx>22</posx>
-                <posy>-66</posy>
-                <width>345</width>
-                <height>234</height>
-                <visible>StringCompare(Control.GetLabel(1000),empty.png) + StringCompare(Control.GetLabel(1001),empty.png) + StringCompare(Control.GetLabel(1002),empty.png)</visible>
-                <texture background="true">$INFO[Player.FolderPath,,../logo.png]</texture>
-                <aspectratio>keep</aspectratio>
-                <animation type="WindowOpen">
-                    <effect type="slide" start="-450,0" end="0,0" time="600" tween="cubic" easing="out" />
-                    <effect type="fade" start="0" end="100" time="600" />
-                </animation>
-                <animation type="WindowClose">
-                    <effect type="slide" start="0,0" end="-450,0" time="600" tween="cubic" easing="out" />
-                    <effect type="fade" start="100" end="0" time="600" />
-                </animation>
             </control>
         </control>
         <control type="image">
@@ -1476,7 +1394,7 @@
                     <effect type="slide" start="-450,0" end="0,0" time="600" tween="cubic" easing="out" />
                 </animation>
                 <animation type="WindowClose">
-                    <effect type="slide" start="0,0" end="-450,0" time="600" tween="cubic" easing="out" />
+                    <effect type="slide" end="-450,0" time="600" tween="cubic" easing="out" />
                     <effect type="fade" start="100" end="0" time="600" />
                 </animation>
                 <control type="image">
@@ -1495,18 +1413,9 @@
                     <posy>600</posy>
                     <width>310</width>
                     <height>465</height>
-                    <texture background="true" diffuse="thumbs/movieposter_mask.png">$INFO[VideoPlayer.Cover]</texture>
+                    <texture background="true" diffuse="thumbs/movieposter_mask.png">$VAR[PlayerPosterVar]</texture>
                     <aspectratio aligny="bottom">stretch</aspectratio>
-                    <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(MusicVideos)</visible>
-                </control>
-                <control type="image">
-                    <posx>25</posx>
-                    <posy>600</posy>
-                    <width>310</width>
-                    <height>465</height>
-                    <texture background="true" diffuse="thumbs/movieposter_mask.png">$INFO[Player.Art(tvshowthumb)]</texture>
-                    <aspectratio aligny="bottom">stretch</aspectratio>
-                    <visible>VideoPlayer.Content(episodes)</visible>
+                    <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(MusicVideos) | VideoPlayer.Content(episodes)</visible>
                 </control>
                 <control type="image">
                     <posx>5</posx>
@@ -1524,7 +1433,7 @@
                     <effect type="slide" start="450,0" end="0,0" time="600" tween="cubic" easing="out" />
                 </animation>
                 <animation type="WindowClose">
-                    <effect type="slide" start="0,0" end="450,0" time="600" tween="cubic" easing="out" />
+                    <effect type="slide" end="450,0" time="600" tween="cubic" easing="out" />
                     <effect type="fade" start="100" end="0" time="600" />
                 </animation>
                 <control type="image">
@@ -1604,7 +1513,7 @@
             <posy>922</posy>
             <control type="group">
                 <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(MusicVideos) | VideoPlayer.Content(episodes)</visible>
-                <animation effect="slide" start="0,0" end="0,30" reversible="true" condition="IsEmpty(VideoPlayer.Rating)">Conditional</animation>
+                <animation effect="slide" end="0,30" condition="IsEmpty(VideoPlayer.Rating)">Conditional</animation>
                 <control type="label">
                     <posx>38</posx>
                     <posy>56</posy>
@@ -1612,7 +1521,18 @@
                     <height>38</height>
                     <align>center</align>
                     <font>Font_OSDTitle2</font>
-                    <label>$INFO[VideoPlayer.Year]$VAR[VideoSeasonVar,S]$VAR[VideoEpisodeVar,E]</label>
+                    <label>$VAR[VideoSeasonVar,S]$VAR[VideoEpisodeVar,E]</label>
+                    <visible>VideoPlayer.Content(episodes)</visible>
+                </control>
+                <control type="label">
+                    <posx>38</posx>
+                    <posy>56</posy>
+                    <width>300</width>
+                    <height>38</height>
+                    <align>center</align>
+                    <font>Font_OSDTitle2</font>
+                    <label>$INFO[VideoPlayer.Year]</label>
+                    <visible>!VideoPlayer.Content(episodes)</visible>
                 </control>
                 <control type="image">
                     <posx>98</posx>
@@ -1672,18 +1592,19 @@
         <control type="group">
             <posy>993</posy>
             <animation type="WindowOpen">
-                <effect type="fade" time="200" start="0" end="100" />
+                <effect type="fade" time="200" end="100" />
                 <effect type="slide" time="200" start="0,98" end="0,0" easing="out" tween="cubic" />
             </animation>
             <animation type="WindowClose">
                 <effect type="fade" time="200" start="100" end="0" />
-                <effect type="slide" time="200" start="0,0" end="0,98" easing="in" tween="cubic" />
+                <effect type="slide" time="200" end="0,98" easing="in" tween="cubic" />
             </animation>
             <control type="image">
                 <posx>-80</posx>
                 <width>2080</width>
                 <height>87</height>
                 <texture border="80,0,80,0">osd/osd_progress_bar_back.png</texture>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
             </control>
             <control type="progress" id="23">
                 <posx>150</posx>
@@ -1948,8 +1869,7 @@
                     <item>
                         <label fallback="31502">$INFO[Skin.String(QuickList1_1.Label)]</label>
                         <thumb fallback="special://skin/extras/BigIcons/Film.png">$INFO[Skin.String(QuickList1_1.MultiFanart)]</thumb>
-                        <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
-                        <onclick>Dialog.Close(1157)</onclick>
+                        <onclick>Dialog.Close(all,true)</onclick>
                         <onclick condition="IsEmpty(Skin.String(QuickList1_1.Type))">ReplaceWindow(Videos,MovieTitles,return)</onclick>
                         <onclick condition="stringcompare(Skin.String(QuickList1_1.Type),1) | stringcompare(Skin.String(QuickList1_1.Type),2) | stringcompare(Skin.String(QuickList1_1.Type),3) | stringcompare(Skin.String(QuickList1_1.Type),0)">RunAddon($INFO[Skin.String(QuickList1_1.Path)])</onclick>
                         <onclick condition="stringcompare(Skin.String(QuickList1_1.Type),4)">ReplaceWindow(Videos,$INFO[Skin.String(QuickList1_1.Path)],return)</onclick>
@@ -1960,8 +1880,7 @@
                     <item>
                         <label fallback="31503">$INFO[Skin.String(QuickList1_2.Label)]</label>
                         <thumb fallback="special://skin/extras/BigIcons/Television.png">$INFO[Skin.String(QuickList1_2.MultiFanart)]</thumb>
-                        <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
-                        <onclick>Dialog.Close(1157)</onclick>
+                        <onclick>Dialog.Close(all,true)</onclick>
                         <onclick condition="IsEmpty(Skin.String(QuickList1_2.Type))">ReplaceWindow(Videos,TVShowTitles,return)</onclick>
                         <onclick condition="stringcompare(Skin.String(QuickList1_2.Type),1) | stringcompare(Skin.String(QuickList1_2.Type),2) | stringcompare(Skin.String(QuickList1_2.Type),3) | stringcompare(Skin.String(QuickList1_2.Type),0)">RunAddon($INFO[Skin.String(QuickList1_2.Path)])</onclick>
                         <onclick condition="stringcompare(Skin.String(QuickList1_2.Type),4)">ReplaceWindow(Videos,$INFO[Skin.String(QuickList1_2.Path)],return)</onclick>
@@ -1972,8 +1891,7 @@
                     <item>
                         <label fallback="31501">$INFO[Skin.String(QuickList1_3.Label)]</label>
                         <thumb fallback="special://skin/extras/BigIcons/Headphone.png">$INFO[Skin.String(QuickList1_3.MultiFanart)]</thumb>
-                        <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
-                        <onclick>Dialog.Close(1157)</onclick>
+                        <onclick>Dialog.Close(all,true)</onclick>
                         <onclick condition="IsEmpty(Skin.String(QuickList1_3.Type))">ReplaceWindow(Music)</onclick>
                         <onclick condition="stringcompare(Skin.String(QuickList1_3.Type),1) | stringcompare(Skin.String(QuickList1_3.Type),2) | stringcompare(Skin.String(QuickList1_3.Type),3) | stringcompare(Skin.String(QuickList1_3.Type),0)">RunAddon($INFO[Skin.String(QuickList1_3.Path)])</onclick>
                         <onclick condition="stringcompare(Skin.String(QuickList1_3.Type),4)">ReplaceWindow(Videos,$INFO[Skin.String(QuickList1_3.Path)],return)</onclick>
@@ -1984,7 +1902,7 @@
                     <item>
                         <label fallback="20389">$INFO[Skin.String(QuickList1_4.Label)]</label>
                         <thumb fallback="special://skin/extras/BigIcons/Media.png">$INFO[Skin.String(QuickList1_4.MultiFanart)]</thumb>
-                        <onclick>Dialog.Close(1157)</onclick>
+                        <onclick>Dialog.Close(all,true)</onclick>
                         <onclick condition="IsEmpty(Skin.String(QuickList1_4.Type))">ReplaceWindow(Videos,MusicVideoTitles,return)</onclick>
                         <onclick condition="stringcompare(Skin.String(QuickList1_4.Type),1) | stringcompare(Skin.String(QuickList1_4.Type),2) | stringcompare(Skin.String(QuickList1_4.Type),3) | stringcompare(Skin.String(QuickList1_4.Type),0)">RunAddon($INFO[Skin.String(QuickList1_4.Path)])</onclick>
                         <onclick condition="stringcompare(Skin.String(QuickList1_4.Type),4)">ReplaceWindow(Videos,$INFO[Skin.String(QuickList1_4.Path)],return)</onclick>
@@ -1995,7 +1913,7 @@
                     <item>
                         <label fallback="1036">$INFO[Skin.String(QuickList1_5.Label)]</label>
                         <thumb fallback="special://skin/extras/BigIcons/Star.png">$INFO[Skin.String(QuickList1_5.MultiFanart)]</thumb>
-                        <onclick>Dialog.Close(1157)</onclick>
+                        <onclick>Dialog.Close(all,true)</onclick>
                         <onclick condition="IsEmpty(Skin.String(QuickList1_5.Type))">ActivateWindow(favourites)</onclick>
                         <onclick condition="stringcompare(Skin.String(QuickList1_5.Type),1) | stringcompare(Skin.String(QuickList1_5.Type),2) | stringcompare(Skin.String(QuickList1_5.Type),3) | stringcompare(Skin.String(QuickList1_5.Type),0)">RunAddon($INFO[Skin.String(QuickList1_5.Path)])</onclick>
                         <onclick condition="stringcompare(Skin.String(QuickList1_5.Type),4)">ReplaceWindow(Videos,$INFO[Skin.String(QuickList1_5.Path)],return)</onclick>
@@ -2006,7 +1924,7 @@
                     <item>
                         <label fallback="1037">$INFO[Skin.String(QuickList1_6.Label)]</label>
                         <thumb fallback="special://skin/extras/BigIcons/Monitor.png">$INFO[Skin.String(QuickList1_6.MultiFanart)]</thumb>
-                        <onclick>Dialog.Close(1157)</onclick>
+                        <onclick>Dialog.Close(all,true)</onclick>
                         <onclick condition="IsEmpty(Skin.String(QuickList1_6.Type))">ReplaceWindow(Videos,Addons,return)</onclick>
                         <onclick condition="stringcompare(Skin.String(QuickList1_6.Type),1) | stringcompare(Skin.String(QuickList1_6.Type),2) | stringcompare(Skin.String(QuickList1_6.Type),3) | stringcompare(Skin.String(QuickList1_6.Type),0)">RunAddon($INFO[Skin.String(QuickList1_6.Path)])</onclick>
                         <onclick condition="stringcompare(Skin.String(QuickList1_6.Type),4)">ReplaceWindow(Videos,$INFO[Skin.String(QuickList1_6.Path)],return)</onclick>
@@ -2017,7 +1935,7 @@
                     <item>
                         <label fallback="31507">$INFO[Skin.String(QuickList1_7.Label)]</label>
                         <thumb fallback="special://skin/extras/BigIcons/Puzzle.png">$INFO[Skin.String(QuickList1_7.MultiFanart)]</thumb>
-                        <onclick>Dialog.Close(1157)</onclick>
+                        <onclick>Dialog.Close(all,true)</onclick>
                         <onclick condition="IsEmpty(Skin.String(QuickList1_7.Type))">ReplaceWindow(Programs,addons)</onclick>
                         <onclick condition="stringcompare(Skin.String(QuickList1_7.Type),1) | stringcompare(Skin.String(QuickList1_7.Type),2) | stringcompare(Skin.String(QuickList1_7.Type),3) | stringcompare(Skin.String(QuickList1_7.Type),0)">RunAddon($INFO[Skin.String(QuickList1_7.Path)])</onclick>
                         <onclick condition="stringcompare(Skin.String(QuickList1_7.Type),4)">ReplaceWindow(Videos,$INFO[Skin.String(QuickList1_7.Path)],return)</onclick>
@@ -2027,7 +1945,7 @@
                     </item>
                     <item>
                         <label fallback="137">$INFO[Skin.String(QuickList1_8.Label)]</label>
-                        <onclick>Dialog.Close(1157)</onclick>
+                        <onclick>Dialog.Close(all,true)</onclick>
                         <thumb fallback="special://skin/extras/BigIcons/Search.png">$INFO[Skin.String(QuickList1_8.MultiFanart)]</thumb>
                         <onclick condition="IsEmpty(Skin.String(QuickList1_8.Type))">RunScript(script.globalsearch)</onclick>
                         <onclick condition="stringcompare(Skin.String(QuickList1_8.Type),1) | stringcompare(Skin.String(QuickList1_8.Type),2) | stringcompare(Skin.String(QuickList1_8.Type),3) | stringcompare(Skin.String(QuickList1_8.Type),0)">RunAddon($INFO[Skin.String(QuickList1_8.Path)])</onclick>
@@ -2039,7 +1957,7 @@
                     <item>
                         <label fallback="559">$INFO[Skin.String(QuickList1_9.Label)]</label>
                         <thumb fallback="special://skin/extras/BigIcons/Format.png">$INFO[Skin.String(QuickList1_9.MultiFanart)]</thumb>
-                        <onclick>Dialog.Close(1157)</onclick>
+                        <onclick>Dialog.Close(all,true)</onclick>
                         <onclick condition="IsEmpty(Skin.String(QuickList1_9.Type))">ReplaceWindow(musicplaylist)</onclick>
                         <onclick condition="stringcompare(Skin.String(QuickList1_9.Type),1) | stringcompare(Skin.String(QuickList1_9.Type),2) | stringcompare(Skin.String(QuickList1_9.Type),3) | stringcompare(Skin.String(QuickList1_9.Type),0)">RunAddon($INFO[Skin.String(QuickList1_9.Path)])</onclick>
                         <onclick condition="stringcompare(Skin.String(QuickList1_9.Type),4)">ReplaceWindow(Videos,$INFO[Skin.String(QuickList1_9.Path)],return)</onclick>
@@ -2135,63 +2053,63 @@
                         <label fallback="31502">$INFO[Skin.String(QuickList1_1.Label)]</label>
                         <thumb fallback="special://skin/extras/BigIcons/Film.png">$INFO[Skin.String(QuickList1_1.MultiFanart)]</thumb>
                         <property name="DisableIcon">$INFO[Skin.String(QuickList1_1.Disable)]</property>
-                        <onclick>Skin.SetString(MenuItem,QuickList1_1)</onclick>
+                        <onclick>SetProperty(MenuItem,QuickList1_1,home)</onclick>
                         <onclick>ActivateWindow(1136)</onclick>
                     </item>
                     <item>
                         <label fallback="31503">$INFO[Skin.String(QuickList1_2.Label)]</label>
                         <thumb fallback="special://skin/extras/BigIcons/Television.png">$INFO[Skin.String(QuickList1_2.MultiFanart)]</thumb>
                         <property name="DisableIcon">$INFO[Skin.String(QuickList1_2.Disable)]</property>
-                        <onclick>Skin.SetString(MenuItem,QuickList1_2)</onclick>
+                        <onclick>SetProperty(MenuItem,QuickList1_2,home)</onclick>
                         <onclick>ActivateWindow(1136)</onclick>
                     </item>
                     <item>
                         <label fallback="31501">$INFO[Skin.String(QuickList1_3.Label)]</label>
                         <thumb fallback="special://skin/extras/BigIcons/Headphone.png">$INFO[Skin.String(QuickList1_3.MultiFanart)]</thumb>
                         <property name="DisableIcon">$INFO[Skin.String(QuickList1_3.Disable)]</property>
-                        <onclick>Skin.SetString(MenuItem,QuickList1_3)</onclick>
+                        <onclick>SetProperty(MenuItem,QuickList1_3,home)</onclick>
                         <onclick>ActivateWindow(1136)</onclick>
                     </item>
                     <item>
                         <label fallback="20389">$INFO[Skin.String(QuickList1_4.Label)]</label>
                         <thumb fallback="special://skin/extras/BigIcons/Media.png">$INFO[Skin.String(QuickList1_4.MultiFanart)]</thumb>
                         <property name="DisableIcon">$INFO[Skin.String(QuickList1_4.Disable)]</property>
-                        <onclick>Skin.SetString(MenuItem,QuickList1_4)</onclick>
+                        <onclick>SetProperty(MenuItem,QuickList1_4,home)</onclick>
                         <onclick>ActivateWindow(1136)</onclick>
                     </item>
                     <item>
                         <label fallback="1036">$INFO[Skin.String(QuickList1_5.Label)]</label>
                         <thumb fallback="special://skin/extras/BigIcons/Star.png">$INFO[Skin.String(QuickList1_5.MultiFanart)]</thumb>
                         <property name="DisableIcon">$INFO[Skin.String(QuickList1_5.Disable)]</property>
-                        <onclick>Skin.SetString(MenuItem,QuickList1_5)</onclick>
+                        <onclick>SetProperty(MenuItem,QuickList1_5,home)</onclick>
                         <onclick>ActivateWindow(1136)</onclick>
                     </item>
                     <item>
                         <label fallback="1037">$INFO[Skin.String(QuickList1_6.Label)]</label>
                         <thumb fallback="special://skin/extras/BigIcons/Monitor.png">$INFO[Skin.String(QuickList1_6.MultiFanart)]</thumb>
                         <property name="DisableIcon">$INFO[Skin.String(QuickList1_6.Disable)]</property>
-                        <onclick>Skin.SetString(MenuItem,QuickList1_6)</onclick>
+                        <onclick>SetProperty(MenuItem,QuickList1_6,home)</onclick>
                         <onclick>ActivateWindow(1136)</onclick>
                     </item>
                     <item>
                         <label fallback="31507">$INFO[Skin.String(QuickList1_7.Label)]</label>
                         <thumb fallback="special://skin/extras/BigIcons/Puzzle.png">$INFO[Skin.String(QuickList1_7.MultiFanart)]</thumb>
                         <property name="DisableIcon">$INFO[Skin.String(QuickList1_7.Disable)]</property>
-                        <onclick>Skin.SetString(MenuItem,QuickList1_7)</onclick>
+                        <onclick>SetProperty(MenuItem,QuickList1_7,home)</onclick>
                         <onclick>ActivateWindow(1136)</onclick>
                     </item>
                     <item>
                         <label fallback="137">$INFO[Skin.String(QuickList1_8.Label)]</label>
                         <thumb fallback="special://skin/extras/BigIcons/Search.png">$INFO[Skin.String(QuickList1_8.MultiFanart)]</thumb>
                         <property name="DisableIcon">$INFO[Skin.String(QuickList1_8.Disable)]</property>
-                        <onclick>Skin.SetString(MenuItem,QuickList1_8)</onclick>
+                        <onclick>SetProperty(MenuItem,QuickList1_8,home)</onclick>
                         <onclick>ActivateWindow(1136)</onclick>
                     </item>
                     <item>
                         <label fallback="559">$INFO[Skin.String(QuickList1_9.Label)]</label>
                         <property name="DisableIcon">$INFO[Skin.String(QuickList1_9.Disable)]</property>
                         <thumb fallback="special://skin/extras/BigIcons/Format.png">$INFO[Skin.String(QuickList1_9.MultiFanart)]</thumb>
-                        <onclick>Skin.SetString(MenuItem,QuickList1_9)</onclick>
+                        <onclick>SetProperty(MenuItem,QuickList1_9,home)</onclick>
                         <onclick>ActivateWindow(1136)</onclick>
                     </item>
                 </content>
@@ -2222,17 +2140,149 @@
                 <onup>800</onup>
                 <ondown>SetFocus(800,0)</ondown>
                 <ondown>800</ondown>
-                <visible>!Skin.HasSetting(viewtypeselect)</visible>
+                <visible>IsEmpty(Window(home).Property(viewtypeselect))</visible>
                 <visible>!Skin.HasSetting(kioskmode)</visible>
             </control>
         </control>
     </include>
     <include name="LiveTVVideoOSD">
-                <!-- LiveTV -->
-            <control type="group">
-                <visible>!Skin.HasSetting(ClassicOSD)</visible>
-                <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
-                <control type="grouplist">
+        <control type="group">
+            <visible>!Skin.HasSetting(ClassicOSD)</visible>
+            <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
+            <control type="grouplist">
+                <posx>50</posx>
+                <posy>11</posy>
+                <width>960</width>
+                <height>135</height>
+                <itemgap>-18</itemgap>
+                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <orientation>horizontal</orientation>
+                <onleft>70013</onleft>
+                <onright>70004</onright>
+                <onup>-</onup>
+                <ondown>-</ondown>
+                <control type="button">
+                    <width>100</width>
+                    <height>100</height>
+                    <colordiffuse>white</colordiffuse>
+                    <texturenofocus>special://skin/extras/BigIcons/Speaker.png</texturenofocus>
+                </control>
+                <control type="button">
+                    <width>100</width>
+                    <height>100</height>
+                    <colordiffuse>white</colordiffuse>
+                    <texturenofocus>special://skin/extras/BigIcons/Camcorder.png</texturenofocus>
+                </control>
+            </control>
+            <control type="grouplist">
+                <posx>460</posx>
+                <posy>11</posy>
+                <width>960</width>
+                <height>135</height>
+                <itemgap>-18</itemgap>
+                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <orientation>horizontal</orientation>
+                <align>center</align>
+                <onleft>70002</onleft>
+                <onright>70011</onright>
+                <onup>-</onup>
+                <ondown>-</ondown>
+                <control type="button">
+                    <width>100</width>
+                    <height>100</height>
+                    <colordiffuse>white</colordiffuse>
+                    <texturenofocus>special://skin/extras/BigIcons/Arrowup.png</texturenofocus>
+                    <visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
+                </control>
+                <control type="button">
+                    <width>100</width>
+                    <height>100</height>
+                    <colordiffuse>white</colordiffuse>
+                    <texturenofocus>special://skin/extras/BigIcons/Arrowdown.png</texturenofocus>
+                    <visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
+                </control>
+                <control type="button">
+                    <width>100</width>
+                    <height>100</height>
+                    <colordiffuse>white</colordiffuse>
+                    <texturenofocus>special://skin/extras/BigIcons/ButtonFRW.png</texturenofocus>
+                    <enable>Player.SeekEnabled</enable>
+                    <animation effect="fade" start="100" end="50" time="100" condition="!Player.SeekEnabled">Conditional</animation>
+                </control>
+                <control type="togglebutton">
+                    <width>100</width>
+                    <height>100</height>
+                    <colordiffuse>white</colordiffuse>
+                    <texturenofocus>special://skin/extras/BigIcons/ButtonPause.png</texturenofocus>
+                    <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+                    <alttexturenofocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturenofocus>
+                </control>
+                <control type="button">
+                    <width>100</width>
+                    <height>100</height>
+                    <colordiffuse>white</colordiffuse>
+                    <texturenofocus>special://skin/extras/BigIcons/ButtonStop.png</texturenofocus>
+                </control>
+                <control type="button">
+                    <width>100</width>
+                    <height>100</height>
+                    <colordiffuse>white</colordiffuse>
+                    <texturenofocus>special://skin/extras/BigIcons/ButtonFFW.png</texturenofocus>
+                    <enable>Player.SeekEnabled</enable>
+                    <animation effect="fade" start="100" end="50" time="100" condition="!Player.SeekEnabled">Conditional</animation>
+                </control>
+                <control type="togglebutton">
+                    <width>100</width>
+                    <height>100</height>
+                    <colordiffuse>white</colordiffuse>
+                    <texturenofocus>special://skin/extras/BigIcons/ButtonRecord.png</texturenofocus>
+                    <usealttexture>Player.Recording</usealttexture>
+                    <alttexturenofocus>special://skin/extras/BigIcons/ButtonRecord.png</alttexturenofocus>
+                    <enable>Player.CanRecord</enable>
+                    <animation effect="fade" start="100" end="50" time="100" condition="!Player.CanRecord">Conditional</animation>
+                </control>
+                <control type="button">
+                    <width>100</width>
+                    <height>100</height>
+                    <colordiffuse>white</colordiffuse>
+                    <texturenofocus>special://skin/extras/BigIcons/ButtonEPG.png</texturenofocus>
+                </control>
+            </control>
+            <control type="grouplist">
+                <posx>910</posx>
+                <posy>11</posy>
+                <width>960</width>
+                <height>135</height>
+                <itemgap>-18</itemgap>
+                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <orientation>horizontal</orientation>
+                <align>right</align>
+                <onleft>70009</onleft>
+                <onright>70001</onright>
+                <onup>-</onup>
+                <ondown>-</ondown>
+                <animation effect="slide" end="412" time="200" condition="Skin.HasSetting(RemoveVideoPlayerControls)">Conditional</animation>
+                <control type="button">
+                    <width>100</width>
+                    <height>100</height>
+                    <colordiffuse>white</colordiffuse>
+                    <texturenofocus>special://skin/extras/BigIcons/ButtonTxt.png</texturenofocus>
+                </control>
+                <control type="button">
+                    <width>100</width>
+                    <height>100</height>
+                    <colordiffuse>white</colordiffuse>
+                    <texturenofocus>special://skin/extras/BigIcons/ButtonPlaylist.png</texturenofocus>
+                </control>
+                <control type="button">
+                    <width>100</width>
+                    <height>100</height>
+                    <colordiffuse>white</colordiffuse>
+                    <texturenofocus>special://skin/extras/BigIcons/Gears.png</texturenofocus>
+                </control>
+            </control>
+            <control type="group" id="703">
+                <control type="grouplist" id="70014">
                     <posx>50</posx>
                     <posy>11</posy>
                     <width>960</width>
@@ -2240,25 +2290,33 @@
                     <itemgap>-18</itemgap>
                     <scrolltime tween="sine" easing="out">200</scrolltime>
                     <orientation>horizontal</orientation>
-                    <onleft>70013</onleft>
-                    <onright>70004</onright>
                     <onup>-</onup>
                     <ondown>-</ondown>
-                    <control type="button">
+                    <onleft>70029</onleft>
+                    <onright>70018</onright>
+                    <control type="button" id="70015">
                         <width>100</width>
                         <height>100</height>
-                        <colordiffuse>white</colordiffuse>
-                        <texturenofocus>special://skin/extras/BigIcons/Speaker.png</texturenofocus>
+                        <label>13396</label>
+                        <font>-</font>
+                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <texturefocus>special://skin/extras/BigIcons/Speaker.png</texturefocus>
+                        <texturenofocus>-</texturenofocus>
+                        <onclick>ActivateWindow(OSDAudioSettings)</onclick>
                     </control>
-                    <control type="button">
+                    <control type="button" id="70016">
                         <width>100</width>
                         <height>100</height>
-                        <colordiffuse>white</colordiffuse>
-                        <texturenofocus>special://skin/extras/BigIcons/Camcorder.png</texturenofocus>
+                        <label>13395</label>
+                        <font>-</font>
+                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <texturefocus>special://skin/extras/BigIcons/Camcorder.png</texturefocus>
+                        <texturenofocus>-</texturenofocus>
+                        <onclick>ActivateWindow(OSDVideoSettings)</onclick>
                     </control>
                 </control>
-                <control type="grouplist">
-                    <posx>450</posx>
+                <control type="grouplist" id="70017">
+                    <posx>460</posx>
                     <posy>11</posy>
                     <width>960</width>
                     <height>135</height>
@@ -2266,599 +2324,44 @@
                     <scrolltime tween="sine" easing="out">200</scrolltime>
                     <orientation>horizontal</orientation>
                     <align>center</align>
-                    <onleft>70002</onleft>
-                    <onright>70011</onright>
                     <onup>-</onup>
                     <ondown>-</ondown>
-                    <control type="button">
+                    <onleft>70016</onleft>
+                    <onright>70027</onright>
+                    <control type="button" id="70018">
                         <width>100</width>
                         <height>100</height>
-                        <colordiffuse>white</colordiffuse>
-                        <texturenofocus>special://skin/extras/BigIcons/Arrowup.png</texturenofocus>
-                        <visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
-                    </control>
-                    <control type="button">
-                        <width>100</width>
-                        <height>100</height>
-                        <colordiffuse>white</colordiffuse>
-                        <texturenofocus>special://skin/extras/BigIcons/Arrowdown.png</texturenofocus>
-                        <visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
-                    </control>
-                    <control type="togglebutton">
-                        <width>100</width>
-                        <height>100</height>
-                        <colordiffuse>white</colordiffuse>
-                        <texturenofocus>special://skin/extras/BigIcons/ButtonPause.png</texturenofocus>
-                        <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-                        <alttexturenofocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturenofocus>
-                    </control>
-                    <control type="button">
-                        <width>100</width>
-                        <height>100</height>
-                        <colordiffuse>white</colordiffuse>
-                        <texturenofocus>special://skin/extras/BigIcons/ButtonStop.png</texturenofocus>
-                    </control>
-                    <control type="togglebutton">
-                        <width>100</width>
-                        <height>100</height>
-                        <colordiffuse>white</colordiffuse>
-                        <texturenofocus>special://skin/extras/BigIcons/ButtonRecord.png</texturenofocus>
-                        <usealttexture>Player.Recording</usealttexture>
-                        <alttexturenofocus>special://skin/extras/BigIcons/ButtonRecord.png</alttexturenofocus>
-                        <enable>Player.CanRecord</enable>
-                        <animation effect="fade" start="100" end="50" time="100" condition="!Player.CanRecord">Conditional</animation>
-                    </control>
-                    <control type="button">
-                        <width>100</width>
-                        <height>100</height>
-                        <colordiffuse>white</colordiffuse>
-                        <texturenofocus>special://skin/extras/BigIcons/ButtonEPG.png</texturenofocus>
-                    </control>
-                </control>
-                <control type="grouplist">
-                    <posx>910</posx>
-                    <posy>11</posy>
-                    <width>960</width>
-                    <height>135</height>
-                    <itemgap>-18</itemgap>
-                    <scrolltime tween="sine" easing="out">200</scrolltime>
-                    <orientation>horizontal</orientation>
-                    <align>right</align>
-                    <onleft>70009</onleft>
-                    <onright>70001</onright>
-                    <onup>-</onup>
-                    <ondown>-</ondown>
-                    <animation effect="slide" start="0" end="412" time="200" condition="Skin.HasSetting(RemoveVideoPlayerControls)">Conditional</animation>
-                    <control type="button">
-                        <width>100</width>
-                        <height>100</height>
-                        <colordiffuse>white</colordiffuse>
-                        <texturenofocus>special://skin/extras/BigIcons/ButtonTxt.png</texturenofocus>
-                    </control>
-                    <control type="button">
-                        <width>100</width>
-                        <height>100</height>
-                        <colordiffuse>white</colordiffuse>
-                        <texturenofocus>special://skin/extras/BigIcons/ButtonPlaylist.png</texturenofocus>
-                    </control>
-                    <control type="button">
-                        <width>100</width>
-                        <height>100</height>
-                        <colordiffuse>white</colordiffuse>
-                        <texturenofocus>special://skin/extras/BigIcons/Gears.png</texturenofocus>
-                    </control>
-                </control>
-                <control type="group" id="703">
-                    <control type="grouplist" id="70014">
-                        <posx>50</posx>
-                        <posy>11</posy>
-                        <width>960</width>
-                        <height>135</height>
-                        <itemgap>-18</itemgap>
-                        <scrolltime tween="sine" easing="out">200</scrolltime>
-                        <orientation>horizontal</orientation>
-                        <onup>-</onup>
-                        <ondown>-</ondown>
-                        <onleft>70027</onleft>
-                        <onright>70018</onright>
-                        <control type="button" id="70015">
-                            <width>100</width>
-                            <height>100</height>
-                            <label>13396</label>
-                            <font>-</font>
-                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                            <texturefocus>special://skin/extras/BigIcons/Speaker.png</texturefocus>
-                            <texturenofocus>-</texturenofocus>
-                            <onclick>ActivateWindow(124)</onclick>
-                        </control>
-                        <control type="button" id="70016">
-                            <width>100</width>
-                            <height>100</height>
-                            <label>13395</label>
-                            <font>-</font>
-                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                            <texturefocus>special://skin/extras/BigIcons/Camcorder.png</texturefocus>
-                            <texturenofocus>-</texturenofocus>
-                            <onclick>ActivateWindow(123)</onclick>
-                        </control>
-                    </control>
-                    <control type="grouplist" id="70017">
-                        <posx>450</posx>
-                        <posy>11</posy>
-                        <width>960</width>
-                        <height>135</height>
-                        <itemgap>-18</itemgap>
-                        <scrolltime tween="sine" easing="out">200</scrolltime>
-                        <orientation>horizontal</orientation>
-                        <align>center</align>
-                        <onup>-</onup>
-                        <ondown>-</ondown>
-                        <onleft>70016</onleft>
-                        <onright>70025</onright>
-                        <control type="button" id="70018">
-                            <width>100</width>
-                            <height>100</height>
-                            <label>52000</label>
-                            <font>-</font>
-                            <texturefocus>special://skin/extras/BigIcons/Arrowup.png</texturefocus>
-                            <texturenofocus>-</texturenofocus>
-                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                            <visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
-                            <onclick>PlayerControl(Next)</onclick>
-                        </control>
-                        <control type="button" id="70019">
-                            <width>100</width>
-                            <height>100</height>
-                            <label>52001</label>
-                            <font>-</font>
-                            <texturefocus>special://skin/extras/BigIcons/Arrowdown.png</texturefocus>
-                            <texturenofocus>-</texturenofocus>
-                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                            <visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
-                            <onclick>PlayerControl(Previous)</onclick>
-                        </control>
-                        <control type="togglebutton" id="70020">
-                            <width>100</width>
-                            <height>100</height>
-                            <label>31351</label>
-                            <altlabel>208</altlabel>
-                            <font>-</font>
-                            <texturefocus>special://skin/extras/BigIcons/ButtonPause.png</texturefocus>
-                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                            <texturenofocus>-</texturenofocus>
-                            <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-                            <alttexturefocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturefocus>
-                            <alttexturenofocus>-</alttexturenofocus>
-                            <onclick>PlayerControl(Play)</onclick>
-                        </control>
-                        <control type="button" id="70021">
-                            <width>100</width>
-                            <height>100</height>
-                            <label>31352</label>
-                            <font>-</font>
-                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                            <texturefocus>special://skin/extras/BigIcons/ButtonStop.png</texturefocus>
-                            <texturenofocus>-</texturenofocus>
-                            <onclick>PlayerControl(Stop)</onclick>
-                        </control>
-                        <control type="togglebutton" id="70022">
-                            <width>100</width>
-                            <height>100</height>
-                            <label>52005</label>
-                            <altlabel>52006</altlabel>
-                            <font>-</font>
-                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                            <texturefocus>special://skin/extras/BigIcons/ButtonRecord.png</texturefocus>
-                            <texturenofocus>-</texturenofocus>
-                            <usealttexture>Player.Recording</usealttexture>
-                            <alttexturefocus>special://skin/extras/BigIcons/ButtonRecord.png</alttexturefocus>
-                            <alttexturenofocus>-</alttexturenofocus>
-                            <onclick>PlayerControl(Record)</onclick>
-                            <enable>Player.CanRecord</enable>
-                            <animation effect="fade" start="100" end="50" time="100" condition="!Player.CanRecord">Conditional</animation>
-                        </control>
-                        <control type="button" id="70023">
-                            <width>100</width>
-                            <height>100</height>
-                            <label>52003</label>
-                            <font>-</font>
-                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                            <texturefocus>special://skin/extras/BigIcons/ButtonEPG.png</texturefocus>
-                            <texturenofocus>-</texturenofocus>
-                            <onclick>ActivateWindow(PVROSDGuide)</onclick>
-                            <onclick>Dialog.Close(VideoOSD)</onclick>
-                        </control>
-                    </control>
-                    <control type="grouplist" id="70024">
-                        <posx>910</posx>
-                        <posy>11</posy>
-                        <width>960</width>
-                        <height>135</height>
-                        <itemgap>-18</itemgap>
-                        <scrolltime tween="sine" easing="out">200</scrolltime>
-                        <orientation>horizontal</orientation>
-                        <align>right</align>
-                        <onup>-</onup>
-                        <ondown>-</ondown>
-                        <onleft>70023</onleft>
-                        <onright>70015</onright>
-                        <animation effect="slide" start="0" end="412" time="200" condition="Skin.HasSetting(RemoveVideoPlayerControls)">Conditional</animation>
-                        <control type="button" id="70025">
-                            <width>100</width>
-                            <height>100</height>
-                            <label>52004</label>
-                            <font>-</font>
-                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                            <texturefocus>special://skin/extras/BigIcons/ButtonTxt.png</texturefocus>
-                            <texturenofocus>-</texturenofocus>
-                            <onclick>ActivateWindow(Teletext)</onclick>
-                            <onclick>Dialog.Close(VideoOSD)</onclick>
-                        </control>
-                        <control type="button" id="70026">
-                            <width>100</width>
-                            <height>100</height>
-                            <label>52002</label>
-                            <font>-</font>
-                            <texturefocus>special://skin/extras/BigIcons/ButtonPlaylist.png</texturefocus>
-                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                            <texturenofocus>-</texturenofocus>
-                            <onclick>ActivateWindow(PVROSDChannels)</onclick>
-                            <onclick>Dialog.Close(VideoOSD)</onclick>
-                        </control>
-                        <control type="button" id="70027">
-                            <width>100</width>
-                            <height>100</height>
-                            <label>31026</label>
-                            <font>-</font>
-                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                            <texturefocus>special://skin/extras/BigIcons/Gears.png</texturefocus>
-                            <texturenofocus>-</texturenofocus>
-                            <onclick>XBMC.ActivateWindow(1118)</onclick>
-                        </control>
-                    </control>
-                </control>
-            </control>
-            <!-- Live-TV Classic OSD -->
-            <control type="group" id="703">
-                <visible>Skin.HasSetting(ClassicOSD)</visible>
-                <control type="grouplist" id="70028">
-                    <posx>495</posx>
-                    <posy>11</posy>
-                    <width>960</width>
-                    <height>135</height>
-                    <onleft>70055</onleft>
-                    <onright>70032</onright>
-                    <onup>-</onup>
-                    <ondown>-</ondown>
-                    <itemgap>-18</itemgap>
-                    <scrolltime tween="sine" easing="out">200</scrolltime>
-                    <orientation>horizontal</orientation>
-                    <control type="button" id="70029">
-                        <width>100</width>
-                        <height>100</height>
-                        <texturefocus>osd/buttons/OSDAudioFO.png</texturefocus>
-                        <texturenofocus>osd/buttons/OSDAudioNF.png</texturenofocus>
-                        <onclick>ActivateWindow(124)</onclick>
-                    </control>
-                    <control type="button" id="70030">
-                        <width>100</width>
-                        <height>100</height>
-                        <texturefocus>osd/buttons/OSDVideoFO.png</texturefocus>
-                        <texturenofocus>osd/buttons/OSDVideoNF.png</texturenofocus>
-                        <onclick>ActivateWindow(123)</onclick>
-                    </control>
-                </control>
-                <control type="grouplist" id="70031">
-                    <posx>480</posx>
-                    <posy>11</posy>
-                    <width>960</width>
-                    <height>135</height>
-                    <itemgap>-18</itemgap>
-                    <onleft>70030</onleft>
-                    <onright>70039</onright>
-                    <onup>-</onup>
-                    <ondown>-</ondown>
-                    <scrolltime tween="sine" easing="out">200</scrolltime>
-                    <orientation>horizontal</orientation>
-                    <align>center</align>
-                    <control type="button" id="70032">
-                        <width>100</width>
-                        <height>100</height>
-                        <colordiffuse>white</colordiffuse>
-                        <texturenofocus>PVR/buttons/UPNOFO.png</texturenofocus>
-                        <texturefocus>PVR/buttons/UPFO.png</texturefocus>
+                        <label>52000</label>
+                        <font>-</font>
+                        <texturefocus>special://skin/extras/BigIcons/Arrowup.png</texturefocus>
+                        <texturenofocus>-</texturenofocus>
+                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
                         <onclick>PlayerControl(Next)</onclick>
                     </control>
-                    <control type="button" id="70033">
+                    <control type="button" id="70019">
                         <width>100</width>
                         <height>100</height>
-                        <texturenofocus>PVR/buttons/DOWNNOFO.png</texturenofocus>
-                        <texturefocus>PVR/buttons/DOWNFO.png</texturefocus>
+                        <label>52001</label>
+                        <font>-</font>
+                        <texturefocus>special://skin/extras/BigIcons/Arrowdown.png</texturefocus>
+                        <texturenofocus>-</texturenofocus>
+                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
                         <onclick>PlayerControl(Previous)</onclick>
                     </control>
-                    <control type="togglebutton" id="70034">
+                    <control type="button" id="70020">
                         <width>100</width>
                         <height>100</height>
-                        <texturenofocus>osd/buttons/OSDPauseNF.png</texturenofocus>
-                        <texturefocus>osd/buttons/OSDPauseFO.png</texturefocus>
-                        <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-                        <alttexturefocus>osd/buttons/OSDPlayFO.png</alttexturefocus>
-                        <alttexturenofocus>osd/buttons/OSDPlayNF.png</alttexturenofocus>
-                        <onclick>PlayerControl(Play)</onclick>
-                    </control>
-                    <control type="button" id="70035">
-                        <width>100</width>
-                        <height>100</height>
-                        <texturefocus>osd/buttons/OSDStopFO.png</texturefocus>
-                        <texturenofocus>osd/buttons/OSDStopNF.png</texturenofocus>
-                        <onclick>PlayerControl(Stop)</onclick>
-                    </control>
-                    <control type="button" id="70036">
-                        <width>100</width>
-                        <height>100</height>
-                        <texturefocus>PVR/buttons/OSDPVRChFO.png</texturefocus>
-                        <texturenofocus>PVR/buttons/OSDPVRChNF.png</texturenofocus>
-                        <onclick>ActivateWindow(PVROSDChannels)</onclick>
-                        <onclick>Dialog.Close(VideoOSD)</onclick>
-                    </control>
-                    <control type="button" id="70037">
-                        <width>100</width>
-                        <height>100</height>
-                        <texturefocus>PVR/buttons/OSDEPGFO.png</texturefocus>
-                        <texturenofocus>PVR/buttons/OSDEPGNOFO.png</texturenofocus>
-                        <onclick>ActivateWindow(PVROSDGuide)</onclick>
-                        <onclick>Dialog.Close(VideoOSD)</onclick>
-                    </control>
-                </control>
-                <control type="grouplist" id="70038">
-                    <posx>540</posx>
-                    <posy>11</posy>
-                    <width>960</width>
-                    <height>135</height>
-                    <itemgap>-18</itemgap>
-                    <onleft>70037</onleft>
-                    <onright>70043</onright>
-                    <onup>-</onup>
-                    <ondown>-</ondown>
-                    <scrolltime tween="sine" easing="out">200</scrolltime>
-                    <orientation>horizontal</orientation>
-                    <align>right</align>
-                    <animation effect="slide" start="0" end="412" time="200" condition="Skin.HasSetting(RemoveVideoPlayerControls)">Conditional</animation>
-                    <control type="button" id="70039">
-                        <width>100</width>
-                        <height>100</height>
-                        <texturenofocus>PVR/buttons/TXTNOFO.png</texturenofocus>
-                        <texturefocus>PVR/buttons/TXTFO.png</texturefocus>
-                        <onclick>ActivateWindow(Teletext)</onclick>
-                        <onclick>Dialog.Close(VideoOSD)</onclick>
-                    </control>
-                    <control type="togglebutton" id="70040">
-                        <width>100</width>
-                        <height>100</height>
-                        <texturefocus>PVR/buttons/RECFO.png</texturefocus>
-                        <texturenofocus>PVR/buttons/RECNOFO.png</texturenofocus>
-                        <usealttexture>Player.Recording</usealttexture>
-                        <alttexturenofocus>PVR/buttons/RECONNOFO.png</alttexturenofocus>
-                        <alttexturefocus>PVR/buttons/RECONFO.png</alttexturefocus>
-                        <onclick>PlayerControl(Record)</onclick>
-                        <enable>Player.CanRecord</enable>
-                        <animation effect="fade" start="100" end="50" time="100" condition="!Player.CanRecord">Conditional</animation>
-                    </control>
-                    <control type="button" id="70041">
-                        <width>100</width>
-                        <height>100</height>
-                        <texturenofocus>osd/buttons/OSDSettingsNF.png</texturenofocus>
-                        <texturefocus>osd/buttons/OSDSettingsFO.png</texturefocus>
-                        <onclick>XBMC.ActivateWindow(1118)</onclick>
-                    </control>
-                </control>
-            </control>
-    </include>
-    <include name="DefaultVideoOSD">
-                <control type="group">
-                <visible>!Skin.HasSetting(ClassicOSD)</visible>
-                <posy>10</posy>
-                <control type="grouplist">
-                    <posx>50</posx>
-                    <posy>11</posy>
-                    <width>960</width>
-                    <height>135</height>
-                    <itemgap>7</itemgap>
-                    <scrolltime tween="sine" easing="out">200</scrolltime>
-                    <orientation>horizontal</orientation>
-                    <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
-                    <control type="button">
-                        <width>100</width>
-                        <height>100</height>
-                        <label>298</label>
-                        <colordiffuse>white</colordiffuse>
-                        <font>-</font>
-                        <texturefocus>special://skin/extras/BigIcons/Book.png</texturefocus>
-                        <texturenofocus>special://skin/extras/BigIcons/Book.png</texturenofocus>
-                        <onclick>ActivateWindow(125)</onclick>
-                    </control>
-                    <control type="button">
-                        <width>100</width>
-                        <height>100</height>
-                        <label>13396</label>
-                        <font>-</font>
-                        <colordiffuse>white</colordiffuse>
-                        <texturefocus>special://skin/extras/BigIcons/Speaker.png</texturefocus>
-                        <texturenofocus>special://skin/extras/BigIcons/Speaker.png</texturenofocus>
-                        <onclick>ActivateWindow(124)</onclick>
-                    </control>
-                    <control type="button">
-                        <width>100</width>
-                        <height>100</height>
-                        <label>13395</label>
-                        <colordiffuse>white</colordiffuse>
-                        <font>-</font>
-                        <texturefocus>special://skin/extras/BigIcons/Camcorder.png</texturefocus>
-                        <texturenofocus>special://skin/extras/BigIcons/Camcorder.png</texturenofocus>
-                        <onclick>ActivateWindow(123)</onclick>
-                    </control>
-                </control>
-                <control type="grouplist">
-                    <visible>!Skin.HasSetting(RemoveVideoPlayerControls)</visible>
-                    <posx>480</posx>
-                    <posy>11</posy>
-                    <width>960</width>
-                    <height>135</height>
-                    <scrolltime tween="sine" easing="out">200</scrolltime>
-                    <orientation>horizontal</orientation>
-                    <align>center</align>
-                    <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
-                    <control type="button">
-                        <colordiffuse>white</colordiffuse>
-                        <width>100</width>
-                        <height>100</height>
-                        <texturenofocus>special://skin/extras/BigIcons/ButtonFirst.png</texturenofocus>
-                    </control>
-                    <control type="button">
-                        <width>100</width>
-                        <height>100</height>
-                        <colordiffuse>white</colordiffuse>
-                        <texturenofocus>special://skin/extras/BigIcons/ButtonFRW.png</texturenofocus>
-                    </control>
-                    <control type="togglebutton">
-                        <width>100</width>
-                        <height>100</height>
-                        <texturenofocus>special://skin/extras/BigIcons/ButtonPause.png</texturenofocus>
-                        <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-                        <colordiffuse>white</colordiffuse>
-                        <alttexturenofocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturenofocus>
-                    </control>
-                    <control type="button">
-                        <width>100</width>
-                        <height>100</height>
-                        <colordiffuse>white</colordiffuse>
-                        <texturenofocus>special://skin/extras/BigIcons/ButtonStop.png</texturenofocus>
-                    </control>
-                    <control type="button">
-                        <width>100</width>
-                        <height>100</height>
-                        <colordiffuse>white</colordiffuse>
-                        <texturenofocus>special://skin/extras/BigIcons/ButtonFFW.png</texturenofocus>
-                    </control>
-                    <control type="button">
-                        <width>100</width>
-                        <height>100</height>
-                        <texturenofocus>special://skin/extras/BigIcons/ButtonEnd.png</texturenofocus>
-                        <colordiffuse>white</colordiffuse>
-                    </control>
-                </control>
-                <control type="grouplist">
-                    <posx>910</posx>
-                    <posy>11</posy>
-                    <width>960</width>
-                    <height>135</height>
-                    <itemgap>7</itemgap>
-                    <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
-                    <scrolltime tween="sine" easing="out">200</scrolltime>
-                    <orientation>horizontal</orientation>
-                    <align>right</align>
-                    <control type="togglebutton">
-                        <width>100</width>
-                        <height>100</height>
-                        <texturenofocus>special://skin/extras/BigIcons/Subtitle.png</texturenofocus>
-                        <alttexturenofocus>special://skin/extras/BigIcons/Subtitle.png</alttexturenofocus>
-                        <usealttexture>IsEmpty(Skin.String(SubtitleScript_Path))</usealttexture>
-                        <colordiffuse>white</colordiffuse>
-                    </control>
-                    <control type="button">
-                        <width>100</width>
-                        <height>100</height>
-                        <texturenofocus>special://skin/extras/BigIcons/dvdmenu.png</texturenofocus>
-                        <enable>VideoPlayer.HasMenu</enable>
-                        <animation effect="fade" start="100" end="50" time="100" condition="!VideoPlayer.HasMenu">Conditional</animation>
-                        <colordiffuse>white</colordiffuse>
-                    </control>
-                    <control type="button">
-                        <width>100</width>
-                        <height>100</height>
-                        <texturenofocus>special://skin/extras/BigIcons/Gears.png</texturenofocus>
-                        <colordiffuse>white</colordiffuse>
-                    </control>
-                </control>
-                <control type="grouplist" id="650">
-                    <posx>50</posx>
-                    <posy>11</posy>
-                    <width>960</width>
-                    <height>135</height>
-                    <itemgap>7</itemgap>
-                    <scrolltime tween="sine" easing="out">200</scrolltime>
-                    <orientation>horizontal</orientation>
-                    <onup>703</onup>
-                    <ondown>701</ondown>
-                    <onleft>705</onleft>
-                    <onright>600</onright>
-                    <control type="button" id="700">
-                        <width>100</width>
-                        <height>100</height>
-                        <label>298</label>
+                        <label>31352</label>
                         <font>-</font>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                        <texturefocus>special://skin/extras/BigIcons/Book.png</texturefocus>
+                        <texturefocus>special://skin/extras/BigIcons/ButtonFFW.png</texturefocus>
                         <texturenofocus>-</texturenofocus>
-                        <onclick>ActivateWindow(125)</onclick>
-                    </control>
-                    <control type="button" id="701">
-                        <width>100</width>
-                        <height>100</height>
-                        <label>13396</label>
-                        <font>-</font>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                        <texturefocus>special://skin/extras/BigIcons/Speaker.png</texturefocus>
-                        <texturenofocus>-</texturenofocus>
-                        <onclick>ActivateWindow(124)</onclick>
-                    </control>
-                    <control type="button" id="702">
-                        <width>100</width>
-                        <height>100</height>
-                        <label>13395</label>
-                        <font>-</font>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                        <texturefocus>special://skin/extras/BigIcons/Camcorder.png</texturefocus>
-                        <texturenofocus>-</texturenofocus>
-                        <onclick>ActivateWindow(123)</onclick>
-                    </control>
-                </control>
-                <control type="grouplist" id="651">
-                    <visible>!Skin.HasSetting(RemoveVideoPlayerControls)</visible>
-                    <posx>480</posx>
-                    <posy>11</posy>
-                    <width>960</width>
-                    <height>135</height>
-                    <scrolltime tween="sine" easing="out">200</scrolltime>
-                    <orientation>horizontal</orientation>
-                    <align>center</align>
-                    <onup>703</onup>
-                    <ondown>701</ondown>
-                    <onleft>702</onleft>
-                    <onright>703</onright>
-                    <control type="button" id="600">
-                        <width>100</width>
-                        <height>100</height>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                        <label>210</label>
-                        <font>-</font>
-                        <texturefocus>special://skin/extras/BigIcons/ButtonFirst.png</texturefocus>
-                        <texturenofocus>-</texturenofocus>
-                        <onclick>PlayerControl(Previous)</onclick>
-                    </control>
-                    <control type="button" id="601">
-                        <width>100</width>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                        <height>100</height>
-                        <label>31354</label>
-                        <font>-</font>
-                        <texturefocus>special://skin/extras/BigIcons/ButtonFRW.png</texturefocus>
-                        <texturenofocus>-</texturenofocus>
+                        <enable>Player.SeekEnabled</enable>
                         <onclick>PlayerControl(Rewind)</onclick>
                     </control>
-                    <control type="togglebutton" id="602">
+                    <control type="togglebutton" id="70021">
                         <width>100</width>
                         <height>100</height>
                         <label>31351</label>
@@ -2872,80 +2375,91 @@
                         <alttexturenofocus>-</alttexturenofocus>
                         <onclick>PlayerControl(Play)</onclick>
                     </control>
-                    <control type="button" id="603">
+                    <control type="button" id="70022">
                         <width>100</width>
                         <height>100</height>
                         <label>31352</label>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <font>-</font>
+                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <texturefocus>special://skin/extras/BigIcons/ButtonStop.png</texturefocus>
                         <texturenofocus>-</texturenofocus>
                         <onclick>PlayerControl(Stop)</onclick>
                     </control>
-                    <control type="button" id="604">
+                    <control type="button" id="70023">
                         <width>100</width>
                         <height>100</height>
-                        <label>31353</label>
-                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <label>31352</label>
                         <font>-</font>
-                        <texturefocus>special://skin/extras/BigIcons/ButtonFFW.png</texturefocus>
+                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <texturefocus>special://skin/extras/BigIcons/ButtonFRW.png</texturefocus>
                         <texturenofocus>-</texturenofocus>
+                        <enable>Player.SeekEnabled</enable>
                         <onclick>PlayerControl(Forward)</onclick>
                     </control>
-                    <control type="button" id="605">
+                    <control type="togglebutton" id="70024">
                         <width>100</width>
                         <height>100</height>
-                        <label>209</label>
+                        <label>52005</label>
+                        <altlabel>52006</altlabel>
                         <font>-</font>
-                        <texturefocus>special://skin/extras/BigIcons/ButtonEnd.png</texturefocus>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <texturefocus>special://skin/extras/BigIcons/ButtonRecord.png</texturefocus>
                         <texturenofocus>-</texturenofocus>
-                        <onclick>PlayerControl(Next)</onclick>
+                        <usealttexture>Player.Recording</usealttexture>
+                        <alttexturefocus>special://skin/extras/BigIcons/ButtonRecord.png</alttexturefocus>
+                        <alttexturenofocus>-</alttexturenofocus>
+                        <onclick>PlayerControl(Record)</onclick>
+                        <enable>Player.CanRecord</enable>
+                    </control>
+                    <control type="button" id="70025">
+                        <width>100</width>
+                        <height>100</height>
+                        <label>52003</label>
+                        <font>-</font>
+                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <texturefocus>special://skin/extras/BigIcons/ButtonEPG.png</texturefocus>
+                        <texturenofocus>-</texturenofocus>
+                        <onclick>ActivateWindow(PVROSDGuide)</onclick>
+                        <onclick>Dialog.Close(VideoOSD)</onclick>
                     </control>
                 </control>
-                <control type="grouplist" id="652">
+                <control type="grouplist" id="70026">
                     <posx>910</posx>
                     <posy>11</posy>
                     <width>960</width>
                     <height>135</height>
-                    <itemgap>7</itemgap>
+                    <itemgap>-18</itemgap>
                     <scrolltime tween="sine" easing="out">200</scrolltime>
                     <orientation>horizontal</orientation>
                     <align>right</align>
-                    <onup>703</onup>
-                    <ondown>701</ondown>
-                    <onleft>605</onleft>
-                    <onright>700</onright>
-                    <control type="togglebutton" id="703">
+                    <onup>-</onup>
+                    <ondown>-</ondown>
+                    <onleft>70025</onleft>
+                    <onright>70015</onright>
+                    <animation effect="slide" end="412" time="200" condition="Skin.HasSetting(RemoveVideoPlayerControls)">Conditional</animation>
+                    <control type="button" id="70027">
                         <width>100</width>
                         <height>100</height>
-                        <label>31356</label>
+                        <label>52004</label>
                         <font>-</font>
-                        <texturefocus>special://skin/extras/BigIcons/Subtitle.png</texturefocus>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <texturefocus>special://skin/extras/BigIcons/ButtonTxt.png</texturefocus>
                         <texturenofocus>-</texturenofocus>
-                        <alttexturefocus>special://skin/extras/BigIcons/Subtitle.png</alttexturefocus>
-                        <alttexturenofocus>-</alttexturenofocus>
-                        <onclick>Close</onclick>
-                        <onclick>XBMC.RunScript($INFO[Skin.String(SubtitleScript_Path)])</onclick>
-                        <altclick>Skin.SetAddon(SubtitleScript_Path,xbmc.python.subtitles)</altclick>
-                        <altclick>Close</altclick>
-                        <altclick>XBMC.RunScript($INFO[Skin.String(SubtitleScript_Path)])</altclick>
-                        <usealttexture>IsEmpty(Skin.String(SubtitleScript_Path))</usealttexture>
+                        <onclick>ActivateWindow(Teletext)</onclick>
+                        <onclick>Dialog.Close(VideoOSD)</onclick>
                     </control>
-                    <control type="button" id="704">
+                    <control type="button" id="70028">
                         <width>100</width>
                         <height>100</height>
-                        <label>31355</label>
+                        <label>52002</label>
                         <font>-</font>
+                        <texturefocus>special://skin/extras/BigIcons/ButtonPlaylist.png</texturefocus>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                        <texturefocus>special://skin/extras/BigIcons/dvdmenu.png</texturefocus>
                         <texturenofocus>-</texturenofocus>
-                        <onclick>PlayerControl(ShowVideoMenu)</onclick>
-                        <enable>VideoPlayer.HasMenu</enable>
-                        <animation effect="fade" start="100" end="50" time="100" condition="!VideoPlayer.HasMenu">Conditional</animation>
+                        <onclick>ActivateWindow(PVROSDChannels)</onclick>
+                        <onclick>Dialog.Close(VideoOSD)</onclick>
                     </control>
-                    <control type="button" id="705">
+                    <control type="button" id="70029">
                         <width>100</width>
                         <height>100</height>
                         <label>31026</label>
@@ -2953,150 +2467,1220 @@
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <texturefocus>special://skin/extras/BigIcons/Gears.png</texturefocus>
                         <texturenofocus>-</texturenofocus>
-                        <onclick>XBMC.ActivateWindow(1118)</onclick>
+                        <onclick>ActivateWindow(1118)</onclick>
                     </control>
                 </control>
             </control>
-            <control type="group">
-                <visible>Skin.HasSetting(ClassicOSD)</visible>
-                <control type="grouplist" id="201">
-                    <posy>6</posy>
-                    <width>1920</width>
-                    <height>135</height>
-                    <itemgap>7</itemgap>
-                    <scrolltime tween="sine" easing="out">200</scrolltime>
-                    <orientation>horizontal</orientation>
-                    <onup>703</onup>
-                    <ondown>701</ondown>
-                    <onleft>705</onleft>
-                    <onright>600</onright>
-                    <align>left</align>
-                    <control type="button" id="700">
-                        <include>ClassicOSDButton</include>
-                        <label>298</label>
-                        <textoffsety>60</textoffsety>
-                        <texturefocus>osd/buttons/OSDBookMarksFO.png</texturefocus>
-                        <texturenofocus>osd/buttons/OSDBookMarksNF.png</texturenofocus>
-                        <onclick>ActivateWindow(125)</onclick>
-                    </control>
-                    <control type="button" id="701">
-                        <include>ClassicOSDButton</include>
-                        <label>13396</label>
-                        <texturefocus>osd/buttons/OSDAudioFO.png</texturefocus>
-                        <texturenofocus>osd/buttons/OSDAudioNF.png</texturenofocus>
-                        <onclick>ActivateWindow(124)</onclick>
-                    </control>
-                    <control type="button" id="702">
-                        <include>ClassicOSDButton</include>
-                        <label>13395</label>
-                        <texturefocus>osd/buttons/OSDVideoFO.png</texturefocus>
-                        <texturenofocus>osd/buttons/OSDVideoNF.png</texturenofocus>
-                        <onclick>ActivateWindow(123)</onclick>
-                    </control>
+        </control>
+        <!-- Live-TV Classic OSD -->
+        <control type="group" id="703">
+            <visible>Skin.HasSetting(ClassicOSD)</visible>
+            <control type="grouplist" id="70030">
+                <posx>355</posx>
+                <posy>11</posy>
+                <width>960</width>
+                <height>135</height>
+                <onleft>70045</onleft>
+                <onright>70034</onright>
+                <onup>-</onup>
+                <ondown>-</ondown>
+                <itemgap>-18</itemgap>
+                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <orientation>horizontal</orientation>
+                <control type="button" id="70031">
+                    <width>100</width>
+                    <height>100</height>
+                    <texturefocus>osd/buttons/OSDAudioFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDAudioNF.png</texturenofocus>
+                    <onclick>ActivateWindow(OSDAudioSettings)</onclick>
                 </control>
-                <control type="grouplist" id="202">
-                    <posy>6</posy>
-                    <width>1920</width>
-                    <height>135</height>
-                    <itemgap>7</itemgap>
-                    <scrolltime tween="sine" easing="out">200</scrolltime>
-                    <orientation>horizontal</orientation>
-                    <onup>703</onup>
-                    <ondown>701</ondown>
-                    <onleft>702</onleft>
-                    <onright>703</onright>
-                    <align>center</align>
-                    <control type="button" id="600">
-                        <include>ClassicOSDButton</include>
-                        <label>210</label>
-                        <texturefocus>osd/buttons/OSDPrevTrackFO.png</texturefocus>
-                        <texturenofocus>osd/buttons/OSDPrevTrackNF.png</texturenofocus>
-                        <onclick>PlayerControl(Previous)</onclick>
-                    </control>
-                    <control type="button" id="601">
-                        <include>ClassicOSDButton</include>
-                        <label>31354</label>
-                        <texturefocus>osd/buttons/OSDRewindFO.png</texturefocus>
-                        <texturenofocus>osd/buttons/OSDRewindNF.png</texturenofocus>
-                        <onclick>PlayerControl(Rewind)</onclick>
-                    </control>
-                    <control type="togglebutton" id="602">
-                        <include>ClassicOSDButton</include>
-                        <label>31351</label>
-                        <altlabel>208</altlabel>
-                        <texturefocus>osd/buttons/OSDPauseFO.png</texturefocus>
-                        <texturenofocus>osd/buttons/OSDPauseNF.png</texturenofocus>
-                        <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-                        <alttexturefocus>osd/buttons/OSDPlayFO.png</alttexturefocus>
-                        <alttexturenofocus>osd/buttons/OSDPlayNF.png</alttexturenofocus>
-                        <onclick>PlayerControl(Play)</onclick>
-                    </control>
-                    <control type="button" id="603">
-                        <include>ClassicOSDButton</include>
-                        <label>31352</label>
-                        <texturefocus>osd/buttons/OSDStopFO.png</texturefocus>
-                        <texturenofocus>osd/buttons/OSDStopNF.png</texturenofocus>
-                        <onclick>PlayerControl(Stop)</onclick>
-                    </control>
-                    <control type="button" id="604">
-                        <include>ClassicOSDButton</include>
-                        <label>31353</label>
-                        <texturefocus>osd/buttons/OSDForwardFO.png</texturefocus>
-                        <texturenofocus>osd/buttons/OSDForwardNF.png</texturenofocus>
-                        <onclick>PlayerControl(Forward)</onclick>
-                    </control>
-                    <control type="button" id="605">
-                        <include>ClassicOSDButton</include>
-                        <label>209</label>
-                        <texturefocus>osd/buttons/OSDNextTrackFO.png</texturefocus>
-                        <texturenofocus>osd/buttons/OSDNextTrackNF.png</texturenofocus>
-                        <onclick>PlayerControl(Next)</onclick>
-                    </control>
+                <control type="button" id="70032">
+                    <width>100</width>
+                    <height>100</height>
+                    <texturefocus>osd/buttons/OSDVideoFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDVideoNF.png</texturenofocus>
+                    <onclick>ActivateWindow(OSDVideoSettings)</onclick>
                 </control>
-                <control type="grouplist" id="203">
-                    <posy>6</posy>
-                    <width>1920</width>
-                    <height>135</height>
-                    <itemgap>7</itemgap>
-                    <scrolltime tween="sine" easing="out">200</scrolltime>
-                    <orientation>horizontal</orientation>
-                    <onup>703</onup>
-                    <ondown>701</ondown>
-                    <onleft>605</onleft>
-                    <onright>700</onright>
+            </control>
+            <control type="grouplist" id="70033">
+                <posx>460</posx>
+                <posy>11</posy>
+                <width>960</width>
+                <height>135</height>
+                <itemgap>-18</itemgap>
+                <onleft>70032</onleft>
+                <onright>70043</onright>
+                <onup>-</onup>
+                <ondown>-</ondown>
+                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <orientation>horizontal</orientation>
+                <align>center</align>
+                <control type="button" id="70034">
+                    <width>100</width>
+                    <height>100</height>
+                    <colordiffuse>white</colordiffuse>
+                    <texturenofocus>osd/buttons/OSDUpNF.png</texturenofocus>
+                    <texturefocus>osd/buttons/OSDUpFO.png</texturefocus>
+                    <visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
+                    <onclick>PlayerControl(Next)</onclick>
+                </control>
+                <control type="button" id="70035">
+                    <width>100</width>
+                    <height>100</height>
+                    <texturenofocus>osd/buttons/OSDDownNF.png</texturenofocus>
+                    <texturefocus>osd/buttons/OSDDownFO.png</texturefocus>
+                    <visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
+                    <onclick>PlayerControl(Previous)</onclick>
+                </control>
+                <control type="button" id="70036">
+                    <width>100</width>
+                    <height>100</height>
+                    <texturefocus>osd/buttons/OSDRewindFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDRewindNF.png</texturenofocus>
+                    <onclick>PlayerControl(Rewind)</onclick>
+                    <enable>Player.SeekEnabled</enable>
+                    <animation effect="fade" start="100" end="50" time="100" condition="!Player.SeekEnabled">Conditional</animation>
+                </control>
+                <control type="togglebutton" id="70037">
+                    <width>100</width>
+                    <height>100</height>
+                    <texturenofocus>osd/buttons/OSDPauseNF.png</texturenofocus>
+                    <texturefocus>osd/buttons/OSDPauseFO.png</texturefocus>
+                    <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+                    <alttexturefocus>osd/buttons/OSDPlayFO.png</alttexturefocus>
+                    <alttexturenofocus>osd/buttons/OSDPlayNF.png</alttexturenofocus>
+                    <onclick>PlayerControl(Play)</onclick>
+                </control>
+                <control type="button" id="70038">
+                    <width>100</width>
+                    <height>100</height>
+                    <texturenofocus>osd/buttons/OSDStopNF.png</texturenofocus>
+                    <texturefocus>osd/buttons/OSDStopFO.png</texturefocus>
+                    <onclick>PlayerControl(Stop)</onclick>
+                </control>
+                <control type="button" id="70039">
+                    <width>100</width>
+                    <height>100</height>
+                    <texturenofocus>osd/buttons/OSDForwardNF.png</texturenofocus>
+                    <texturefocus>osd/buttons/OSDForwardFO.png</texturefocus>
+                    <onclick>PlayerControl(Forward)</onclick>
+                    <enable>Player.SeekEnabled</enable>
+                    <animation effect="fade" start="100" end="50" time="100" condition="!Player.SeekEnabled">Conditional</animation>
+                </control>
+                <control type="button" id="70040">
+                    <width>100</width>
+                    <height>100</height>
+                    <texturenofocus>osd/buttons/OSDPlaylistNF.png</texturenofocus>
+                    <texturefocus>osd/buttons/OSDPlaylistFO.png</texturefocus>
+                    <onclick>ActivateWindow(PVROSDChannels)</onclick>
+                    <onclick>Dialog.Close(VideoOSD)</onclick>
+                </control>
+                <control type="button" id="70041">
+                    <width>100</width>
+                    <height>100</height>
+                    <texturenofocus>osd/buttons/OSDEpgNF.png</texturenofocus>
+                    <texturefocus>osd/buttons/OSDEpgFO.png</texturefocus>
+                    <onclick>ActivateWindow(PVROSDGuide)</onclick>
+                    <onclick>Dialog.Close(VideoOSD)</onclick>
+                </control>
+            </control>
+            <control type="grouplist" id="70042">
+                <posx>655</posx>
+                <posy>11</posy>
+                <width>960</width>
+                <height>135</height>
+                <itemgap>-18</itemgap>
+                <onleft>70041</onleft>
+                <onright>70031</onright>
+                <onup>-</onup>
+                <ondown>-</ondown>
+                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <orientation>horizontal</orientation>
+                <align>right</align>
+                <animation effect="slide" end="412" time="200" condition="Skin.HasSetting(RemoveVideoPlayerControls)">Conditional</animation>
+                <control type="button" id="70043">
+                    <width>100</width>
+                    <height>100</height>
+                    <texturenofocus>osd/buttons/OSDTxtNF.png</texturenofocus>
+                    <texturefocus>osd/buttons/OSDTxtFO.png</texturefocus>
+                    <onclick>ActivateWindow(Teletext)</onclick>
+                    <onclick>Dialog.Close(VideoOSD)</onclick>
+                </control>
+                <control type="togglebutton" id="70044">
+                    <width>100</width>
+                    <height>100</height>
+                    <texturenofocus>osd/buttons/OSDRecordNF.png</texturenofocus>
+                    <texturefocus>osd/buttons/OSDRecordFO.png</texturefocus>
+                    <usealttexture>Player.Recording</usealttexture>
+                    <onclick>PlayerControl(Record)</onclick>
+                    <enable>Player.CanRecord</enable>
+                    <animation effect="fade" start="100" end="50" time="100" condition="!Player.CanRecord">Conditional</animation>
+                </control>
+                <control type="button" id="70045">
+                    <width>100</width>
+                    <height>100</height>
+                    <texturenofocus>osd/buttons/OSDSettingsNF.png</texturenofocus>
+                    <texturefocus>osd/buttons/OSDSettingsFO.png</texturefocus>
+                    <onclick>ActivateWindow(1118)</onclick>
+                </control>
+            </control>
+        </control>
+    </include>
+    <include name="DefaultVideoOSD">
+        <control type="group">
+            <visible>!Skin.HasSetting(ClassicOSD)</visible>
+            <posy>10</posy>
+            <control type="grouplist">
+                <posx>50</posx>
+                <posy>11</posy>
+                <width>960</width>
+                <height>135</height>
+                <itemgap>7</itemgap>
+                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <orientation>horizontal</orientation>
+                <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
+                <control type="button">
+                    <width>100</width>
+                    <height>100</height>
+                    <label>298</label>
+                    <colordiffuse>white</colordiffuse>
+                    <font>-</font>
+                    <texturefocus>special://skin/extras/BigIcons/Book.png</texturefocus>
+                    <texturenofocus>special://skin/extras/BigIcons/Book.png</texturenofocus>
+                    <onclick>ActivateWindow(125)</onclick>
+                </control>
+                <control type="button">
+                    <width>100</width>
+                    <height>100</height>
+                    <label>13396</label>
+                    <font>-</font>
+                    <colordiffuse>white</colordiffuse>
+                    <texturefocus>special://skin/extras/BigIcons/Speaker.png</texturefocus>
+                    <texturenofocus>special://skin/extras/BigIcons/Speaker.png</texturenofocus>
+                    <onclick>ActivateWindow(124)</onclick>
+                </control>
+                <control type="button">
+                    <width>100</width>
+                    <height>100</height>
+                    <label>13395</label>
+                    <colordiffuse>white</colordiffuse>
+                    <font>-</font>
+                    <texturefocus>special://skin/extras/BigIcons/Camcorder.png</texturefocus>
+                    <texturenofocus>special://skin/extras/BigIcons/Camcorder.png</texturenofocus>
+                    <onclick>ActivateWindow(123)</onclick>
+                </control>
+            </control>
+            <control type="grouplist">
+                <visible>!Skin.HasSetting(RemoveVideoPlayerControls)</visible>
+                <posx>480</posx>
+                <posy>11</posy>
+                <width>960</width>
+                <height>135</height>
+                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <orientation>horizontal</orientation>
+                <align>center</align>
+                <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
+                <control type="button">
+                    <colordiffuse>white</colordiffuse>
+                    <width>100</width>
+                    <height>100</height>
+                    <texturenofocus>special://skin/extras/BigIcons/ButtonFirst.png</texturenofocus>
+                </control>
+                <control type="button">
+                    <width>100</width>
+                    <height>100</height>
+                    <colordiffuse>white</colordiffuse>
+                    <texturenofocus>special://skin/extras/BigIcons/ButtonFRW.png</texturenofocus>
+                </control>
+                <control type="togglebutton">
+                    <width>100</width>
+                    <height>100</height>
+                    <texturenofocus>special://skin/extras/BigIcons/ButtonPause.png</texturenofocus>
+                    <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+                    <colordiffuse>white</colordiffuse>
+                    <alttexturenofocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturenofocus>
+                </control>
+                <control type="button">
+                    <width>100</width>
+                    <height>100</height>
+                    <colordiffuse>white</colordiffuse>
+                    <texturenofocus>special://skin/extras/BigIcons/ButtonStop.png</texturenofocus>
+                </control>
+                <control type="button">
+                    <width>100</width>
+                    <height>100</height>
+                    <colordiffuse>white</colordiffuse>
+                    <texturenofocus>special://skin/extras/BigIcons/ButtonFFW.png</texturenofocus>
+                </control>
+                <control type="button">
+                    <width>100</width>
+                    <height>100</height>
+                    <texturenofocus>special://skin/extras/BigIcons/ButtonEnd.png</texturenofocus>
+                    <colordiffuse>white</colordiffuse>
+                </control>
+            </control>
+            <control type="grouplist">
+                <posx>910</posx>
+                <posy>11</posy>
+                <width>960</width>
+                <height>135</height>
+                <itemgap>7</itemgap>
+                <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
+                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <orientation>horizontal</orientation>
+                <align>right</align>
+                <control type="togglebutton">
+                    <width>100</width>
+                    <height>100</height>
+                    <texturenofocus>special://skin/extras/BigIcons/Subtitle.png</texturenofocus>
+                    <alttexturenofocus>special://skin/extras/BigIcons/Subtitle.png</alttexturenofocus>
+                    <usealttexture>IsEmpty(Skin.String(SubtitleScript_Path))</usealttexture>
+                    <colordiffuse>white</colordiffuse>
+                </control>
+                <control type="button">
+                    <width>100</width>
+                    <height>100</height>
+                    <texturenofocus>special://skin/extras/BigIcons/dvdmenu.png</texturenofocus>
+                    <enable>VideoPlayer.HasMenu</enable>
+                    <animation effect="fade" start="100" end="50" time="100" condition="!VideoPlayer.HasMenu">Conditional</animation>
+                    <colordiffuse>white</colordiffuse>
+                </control>
+                <control type="button">
+                    <width>100</width>
+                    <height>100</height>
+                    <texturenofocus>special://skin/extras/BigIcons/Gears.png</texturenofocus>
+                    <colordiffuse>white</colordiffuse>
+                </control>
+            </control>
+            <control type="grouplist" id="650">
+                <posx>50</posx>
+                <posy>11</posy>
+                <width>960</width>
+                <height>135</height>
+                <itemgap>7</itemgap>
+                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <orientation>horizontal</orientation>
+                <onup>703</onup>
+                <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
+                <ondown condition="!Window.IsActive(playercontrols)">701</ondown>
+                <onleft>705</onleft>
+                <onright>600</onright>
+                <control type="button" id="700">
+                    <width>100</width>
+                    <height>100</height>
+                    <label>298</label>
+                    <font>-</font>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <texturefocus>special://skin/extras/BigIcons/Book.png</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                    <onclick>ActivateWindow(125)</onclick>
+                </control>
+                <control type="button" id="701">
+                    <width>100</width>
+                    <height>100</height>
+                    <label>13396</label>
+                    <font>-</font>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <texturefocus>special://skin/extras/BigIcons/Speaker.png</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                    <onclick>ActivateWindow(124)</onclick>
+                </control>
+                <control type="button" id="702">
+                    <width>100</width>
+                    <height>100</height>
+                    <label>13395</label>
+                    <font>-</font>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <texturefocus>special://skin/extras/BigIcons/Camcorder.png</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                    <onclick>ActivateWindow(123)</onclick>
+                </control>
+            </control>
+            <control type="grouplist" id="651">
+                <visible>!Skin.HasSetting(RemoveVideoPlayerControls)</visible>
+                <posx>480</posx>
+                <posy>11</posy>
+                <width>960</width>
+                <height>135</height>
+                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <orientation>horizontal</orientation>
+                <align>center</align>
+                <onup>703</onup>
+                <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
+                <ondown condition="!Window.IsActive(playercontrols)">701</ondown>
+                <onleft>702</onleft>
+                <onright>703</onright>
+                <control type="button" id="600">
+                    <width>100</width>
+                    <height>100</height>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <label>210</label>
+                    <font>-</font>
+                    <texturefocus>special://skin/extras/BigIcons/ButtonFirst.png</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                    <onclick>PlayerControl(Previous)</onclick>
+                </control>
+                <control type="button" id="601">
+                    <width>100</width>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <height>100</height>
+                    <label>31354</label>
+                    <font>-</font>
+                    <texturefocus>special://skin/extras/BigIcons/ButtonFRW.png</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                    <onclick>PlayerControl(Rewind)</onclick>
+                </control>
+                <control type="togglebutton" id="602">
+                    <width>100</width>
+                    <height>100</height>
+                    <label>31351</label>
+                    <altlabel>208</altlabel>
+                    <font>-</font>
+                    <texturefocus>special://skin/extras/BigIcons/ButtonPause.png</texturefocus>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <texturenofocus>-</texturenofocus>
+                    <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+                    <alttexturefocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturefocus>
+                    <alttexturenofocus>-</alttexturenofocus>
+                    <onclick>PlayerControl(Play)</onclick>
+                </control>
+                <control type="button" id="603">
+                    <width>100</width>
+                    <height>100</height>
+                    <label>31352</label>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <font>-</font>
+                    <texturefocus>special://skin/extras/BigIcons/ButtonStop.png</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                    <onclick>PlayerControl(Stop)</onclick>
+                </control>
+                <control type="button" id="604">
+                    <width>100</width>
+                    <height>100</height>
+                    <label>31353</label>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <font>-</font>
+                    <texturefocus>special://skin/extras/BigIcons/ButtonFFW.png</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                    <onclick>PlayerControl(Forward)</onclick>
+                </control>
+                <control type="button" id="605">
+                    <width>100</width>
+                    <height>100</height>
+                    <label>209</label>
+                    <font>-</font>
+                    <texturefocus>special://skin/extras/BigIcons/ButtonEnd.png</texturefocus>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <texturenofocus>-</texturenofocus>
+                    <onclick>PlayerControl(Next)</onclick>
+                </control>
+            </control>
+            <control type="grouplist" id="652">
+                <posx>910</posx>
+                <posy>11</posy>
+                <width>960</width>
+                <height>135</height>
+                <itemgap>7</itemgap>
+                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <orientation>horizontal</orientation>
+                <align>right</align>
+                <onup>703</onup>
+                <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
+                <ondown condition="!Window.IsActive(playercontrols)">701</ondown>
+                <onleft>605</onleft>
+                <onright>700</onright>
+                <control type="togglebutton" id="703">
+                    <width>100</width>
+                    <height>100</height>
+                    <label>31356</label>
+                    <font>-</font>
+                    <texturefocus>special://skin/extras/BigIcons/Subtitle.png</texturefocus>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <texturenofocus>-</texturenofocus>
+                    <alttexturefocus>special://skin/extras/BigIcons/Subtitle.png</alttexturefocus>
+                    <alttexturenofocus>-</alttexturenofocus>
+                    <onclick>Close</onclick>
+                    <onclick>RunScript($INFO[Skin.String(SubtitleScript_Path)])</onclick>
+                    <altclick>Skin.SetAddon(SubtitleScript_Path,xbmc.python.subtitles)</altclick>
+                    <altclick>Close</altclick>
+                    <altclick>RunScript($INFO[Skin.String(SubtitleScript_Path)])</altclick>
+                    <usealttexture>IsEmpty(Skin.String(SubtitleScript_Path))</usealttexture>
+                </control>
+                <control type="button" id="704">
+                    <width>100</width>
+                    <height>100</height>
+                    <label>31355</label>
+                    <font>-</font>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <texturefocus>special://skin/extras/BigIcons/dvdmenu.png</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                    <onclick>PlayerControl(ShowVideoMenu)</onclick>
+                    <enable>VideoPlayer.HasMenu</enable>
+                    <animation effect="fade" start="100" end="50" time="100" condition="!VideoPlayer.HasMenu">Conditional</animation>
+                </control>
+                <control type="button" id="705">
+                    <width>100</width>
+                    <height>100</height>
+                    <label>31026</label>
+                    <font>-</font>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <texturefocus>special://skin/extras/BigIcons/Gears.png</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                    <onclick>ActivateWindow(1118)</onclick>
+                </control>
+            </control>
+        </control>
+        <control type="group">
+            <visible>Skin.HasSetting(ClassicOSD)</visible>
+            <control type="grouplist" id="201">
+                <posy>6</posy>
+                <width>1920</width>
+                <height>135</height>
+                <itemgap>7</itemgap>
+                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <orientation>horizontal</orientation>
+                <onup>703</onup>
+                <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
+                <ondown condition="!Window.IsActive(playercontrols)">701</ondown>
+                <onleft>705</onleft>
+                <onright>600</onright>
+                <align>left</align>
+                <control type="button" id="700">
+                    <include>ClassicOSDButton</include>
+                    <label>298</label>
+                    <textoffsety>60</textoffsety>
+                    <texturefocus>osd/buttons/OSDBookMarksFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDBookMarksNF.png</texturenofocus>
+                    <onclick>ActivateWindow(125)</onclick>
+                </control>
+                <control type="button" id="701">
+                    <include>ClassicOSDButton</include>
+                    <label>13396</label>
+                    <texturefocus>osd/buttons/OSDAudioFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDAudioNF.png</texturenofocus>
+                    <onclick>ActivateWindow(124)</onclick>
+                </control>
+                <control type="button" id="702">
+                    <include>ClassicOSDButton</include>
+                    <label>13395</label>
+                    <texturefocus>osd/buttons/OSDVideoFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDVideoNF.png</texturenofocus>
+                    <onclick>ActivateWindow(123)</onclick>
+                </control>
+            </control>
+            <control type="grouplist" id="202">
+                <posy>6</posy>
+                <width>1920</width>
+                <height>135</height>
+                <itemgap>7</itemgap>
+                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <orientation>horizontal</orientation>
+                <onup>703</onup>
+                <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
+                <ondown condition="!Window.IsActive(playercontrols)">701</ondown>
+                <onleft>702</onleft>
+                <onright>703</onright>
+                <align>center</align>
+                <control type="button" id="600">
+                    <include>ClassicOSDButton</include>
+                    <label>210</label>
+                    <texturefocus>osd/buttons/OSDPrevTrackFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDPrevTrackNF.png</texturenofocus>
+                    <onclick>PlayerControl(Previous)</onclick>
+                </control>
+                <control type="button" id="601">
+                    <include>ClassicOSDButton</include>
+                    <label>31354</label>
+                    <texturefocus>osd/buttons/OSDRewindFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDRewindNF.png</texturenofocus>
+                    <onclick>PlayerControl(Rewind)</onclick>
+                </control>
+                <control type="togglebutton" id="602">
+                    <include>ClassicOSDButton</include>
+                    <label>31351</label>
+                    <altlabel>208</altlabel>
+                    <texturefocus>osd/buttons/OSDPauseFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDPauseNF.png</texturenofocus>
+                    <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+                    <alttexturefocus>osd/buttons/OSDPlayFO.png</alttexturefocus>
+                    <alttexturenofocus>osd/buttons/OSDPlayNF.png</alttexturenofocus>
+                    <onclick>PlayerControl(Play)</onclick>
+                </control>
+                <control type="button" id="603">
+                    <include>ClassicOSDButton</include>
+                    <label>31352</label>
+                    <texturefocus>osd/buttons/OSDStopFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDStopNF.png</texturenofocus>
+                    <onclick>PlayerControl(Stop)</onclick>
+                </control>
+                <control type="button" id="604">
+                    <include>ClassicOSDButton</include>
+                    <label>31353</label>
+                    <texturefocus>osd/buttons/OSDForwardFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDForwardNF.png</texturenofocus>
+                    <onclick>PlayerControl(Forward)</onclick>
+                </control>
+                <control type="button" id="605">
+                    <include>ClassicOSDButton</include>
+                    <label>209</label>
+                    <texturefocus>osd/buttons/OSDNextTrackFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDNextTrackNF.png</texturenofocus>
+                    <onclick>PlayerControl(Next)</onclick>
+                </control>
+            </control>
+            <control type="grouplist" id="203">
+                <posy>6</posy>
+                <width>1920</width>
+                <height>135</height>
+                <itemgap>7</itemgap>
+                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <orientation>horizontal</orientation>
+                <onup>703</onup>
+                <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
+                <ondown condition="!Window.IsActive(playercontrols)">701</ondown>
+                <onleft>605</onleft>
+                <onright>700</onright>
+                <align>right</align>
+                <control type="togglebutton" id="703">
+                    <include>ClassicOSDButton</include>
+                    <label>31356</label>
+                    <texturefocus>osd/buttons/OSDSubtitlesFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDSubtitlesNF.png</texturenofocus>
+                    <alttexturefocus>osd/buttons/OSDSubtitlesFO.png</alttexturefocus>
+                    <alttexturenofocus>osd/buttons/OSDSubtitlesNF.png</alttexturenofocus>
+                    <onclick>Close</onclick>
+                    <onclick>RunScript($INFO[Skin.String(SubtitleScript_Path)])</onclick>
+                    <altclick>Skin.SetAddon(SubtitleScript_Path,xbmc.python.subtitles)</altclick>
+                    <altclick>Close</altclick>
+                    <altclick>RunScript($INFO[Skin.String(SubtitleScript_Path)])</altclick>
+                    <usealttexture>IsEmpty(Skin.String(SubtitleScript_Path))</usealttexture>
+                </control>
+                <control type="button" id="804">
+                    <include>ClassicOSDButton</include>
+                    <label>31355</label>
+                    <texturefocus>osd/buttons/OSDDvdFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDDvdNF.png</texturenofocus>
+                    <onclick>PlayerControl(ShowVideoMenu)</onclick>
+                    <enable>VideoPlayer.HasMenu</enable>
+                    <animation effect="fade" start="100" end="50" time="100" condition="!VideoPlayer.HasMenu">Conditional</animation>
+                </control>
+                <control type="button" id="705">
+                    <label>31026</label>
+                    <include>ClassicOSDButton</include>
+                    <texturefocus>osd/buttons/OSDSettingsFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDSettingsNF.png</texturenofocus>
+                    <onclick>ActivateWindow(1118)</onclick>
+                </control>
+            </control>
+        </control>
+    </include>
+    <include name="ClassicMusicOSD">
+        <control type="group">
+            <control type="grouplist" id="650">
+                <posy>4</posy>
+                <width>640</width>
+                <height>150</height>
+                <itemgap>-25</itemgap>
+                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <orientation>horizontal</orientation>
+                <align>left</align>
+                <onup>707</onup>
+                <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
+                <ondown condition="!Window.IsActive(playercontrols)">5333</ondown>
+                <onleft>709</onleft>
+                <onright>600</onright>
+                <control type="button" id="700">
+                    <include>ClassicOSDButton</include>
+                    <label>10517</label>
+                    <texturefocus>osd/buttons/OSDPlaylistFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDPlaylistNF.png</texturenofocus>
+                    <onclick>ActivateWindow(MusicPlaylist)</onclick>
+                </control>
+                <control type="button" id="500">
+                    <include>ClassicOSDButton</include>
+                    <label>12006</label>
+                    <texturefocus>osd/buttons/OSDVizFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDVizNF.png</texturenofocus>
+                </control>
+                <control type="button" id="701">
+                    <include>ClassicOSDButton</include>
+                    <label>$LOCALIZE[250] $LOCALIZE[21417]</label>
+                    <texturefocus>osd/buttons/OSDSettingsFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDSettingsNF.png</texturenofocus>
+                    <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+                </control>
+                <control type="button" id="702">
+                    <include>ClassicOSDButton</include>
+                    <label>31048</label>
+                    <texturefocus>osd/buttons/OSDVideoFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDVideoNF.png</texturenofocus>
+                    <onclick>ActivateWindow(122)</onclick>
+                </control>
+                <control type="button" id="800">
+                    <include>ClassicOSDButton</include>
+                    <label>$LOCALIZE[15200] $LOCALIZE[31001]</label>
                     <align>right</align>
-                    <control type="togglebutton" id="703">
-                        <include>ClassicOSDButton</include>
-                        <label>31356</label>
-                        <texturefocus>osd/buttons/OSDSubtitlesFO.png</texturefocus>
-                        <texturenofocus>osd/buttons/OSDSubtitlesNF.png</texturenofocus>
-                        <alttexturefocus>osd/buttons/OSDSubtitlesFO.png</alttexturefocus>
-                        <alttexturenofocus>osd/buttons/OSDSubtitlesNF.png</alttexturenofocus>
-                        <onclick>Close</onclick>
-                        <onclick>XBMC.RunScript($INFO[Skin.String(SubtitleScript_Path)])</onclick>
-                        <altclick>Skin.SetAddon(SubtitleScript_Path,xbmc.python.subtitles)</altclick>
-                        <altclick>Close</altclick>
-                        <altclick>XBMC.RunScript($INFO[Skin.String(SubtitleScript_Path)])</altclick>
-                        <usealttexture>IsEmpty(Skin.String(SubtitleScript_Path))</usealttexture>
-                    </control>
-                    <control type="button" id="804">
-                        <include>ClassicOSDButton</include>
-                        <label>31355</label>
-                        <texturefocus>osd/buttons/OSDDvdFO.png</texturefocus>
-                        <texturenofocus>osd/buttons/OSDDvdNF.png</texturenofocus>
-                        <onclick>PlayerControl(ShowVideoMenu)</onclick>
-                        <enable>VideoPlayer.HasMenu</enable>
-                        <animation effect="fade" start="100" end="50" time="100" condition="!VideoPlayer.HasMenu">Conditional</animation>
-                    </control>
-                    <control type="button" id="705">
-                        <label>31026</label>
-                        <include>ClassicOSDButton</include>
-                        <texturefocus>osd/buttons/OSDSettingsFO.png</texturefocus>
-                        <texturenofocus>osd/buttons/OSDSettingsNF.png</texturenofocus>
-                        <onclick>XBMC.ActivateWindow(1118)</onclick>
-                    </control>
+                    <texturefocus>osd/buttons/lastfm-love-focus.png</texturefocus>
+                    <texturenofocus>osd/buttons/lastfm-love-nofocus.png</texturenofocus>
+                    <onclick>LastFM.Love</onclick>
+                    <visible>LastFM.RadioPlaying</visible>
+                </control>
+                <control type="button" id="801">
+                    <include>ClassicOSDButton</include>
+                    <label>$LOCALIZE[15200] $LOCALIZE[31002]</label>
+                    <texturefocus>osd/buttons/lastfm-hate-focus.png</texturefocus>
+                    <texturenofocus>osd/buttons/lastfm-hate-nofocus.png</texturenofocus>
+                    <onclick>LastFM.Ban</onclick>
+                    <visible>LastFM.RadioPlaying</visible>
                 </control>
             </control>
-    
+            <control type="grouplist" id="652">
+                <description>Video settings buttons</description>
+                <posy>4</posy>
+                <width>1920</width>
+                <height>150</height>
+                <itemgap>-25</itemgap>
+                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <orientation>horizontal</orientation>
+                <align>center</align>
+                <onup>707</onup>
+                <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
+                <ondown condition="!Window.IsActive(playercontrols)">5333</ondown>
+                <onleft>801</onleft>
+                <onright>703</onright>
+                <control type="button" id="600">
+                    <include>ClassicOSDButton</include>
+                    <label>210</label>
+                    <texturefocus>osd/buttons/OSDPrevTrackFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDPrevTrackNF.png</texturenofocus>
+                    <onclick>PlayerControl(Previous)</onclick>
+                </control>
+                <control type="button" id="601">
+                    <include>ClassicOSDButton</include>
+                    <label>31354</label>
+                    <texturefocus>osd/buttons/OSDRewindFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDRewindNF.png</texturenofocus>
+                    <onclick>PlayerControl(Rewind)</onclick>
+                </control>
+                <control type="togglebutton" id="602">
+                    <include>ClassicOSDButton</include>
+                    <label>31351</label>
+                    <altlabel>208</altlabel>
+                    <texturefocus>osd/buttons/OSDPauseFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDPauseNF.png</texturenofocus>
+                    <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+                    <alttexturefocus>osd/buttons/OSDPlayFO.png</alttexturefocus>
+                    <alttexturenofocus>osd/buttons/OSDPlayNF.png</alttexturenofocus>
+                    <onclick>PlayerControl(Play)</onclick>
+                </control>
+                <control type="button" id="603">
+                    <include>ClassicOSDButton</include>
+                    <label>31352</label>
+                    <texturefocus>osd/buttons/OSDStopFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDStopNF.png</texturenofocus>
+                    <onclick>PlayerControl(Stop)</onclick>
+                </control>
+                <control type="button" id="604">
+                    <include>ClassicOSDButton</include>
+                    <label>31353</label>
+                    <texturefocus>osd/buttons/OSDForwardFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDForwardNF.png</texturenofocus>
+                    <onclick>PlayerControl(Forward)</onclick>
+                </control>
+                <control type="button" id="605">
+                    <include>ClassicOSDButton</include>
+                    <label>209</label>
+                    <texturefocus>osd/buttons/OSDNextTrackFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDNextTrackNF.png</texturenofocus>
+                    <onclick>PlayerControl(Next)</onclick>
+                </control>
+                <control type="button" id="716">
+                    <include>ClassicOSDButton</include>
+                    <label>264</label>
+                    <texturefocus>osd/buttons/OSDRecordFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDRecordNF.png</texturenofocus>
+                    <onclick>PlayerControl(record)</onclick>
+                    <visible>Player.CanRecord</visible>
+                </control>
+            </control>
+            <control type="grouplist" id="651">
+                <description>Video settings buttons</description>
+                <posy>4</posy>
+                <width>1920</width>
+                <height>150</height>
+                <itemgap>-25</itemgap>
+                <scrolltime tween="sine" easing="out">200</scrolltime>
+                <orientation>horizontal</orientation>
+                <align>right</align>
+                <onup>707</onup>
+                <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
+                <ondown condition="!Window.IsActive(playercontrols)">5333</ondown>
+                <onleft>716</onleft>
+                <onright>700</onright>
+                <control type="togglebutton" id="703">
+                    <include>ClassicOSDButton</include>
+                    <label>31128</label>
+                    <texturefocus>osd/buttons/OSDLyricsFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDLyricsNF.png</texturenofocus>
+                    <alttexturefocus>osd/buttons/OSDLyricsFO.png</alttexturefocus>
+                    <alttexturenofocus>osd/buttons/OSDLyricsNF.png</alttexturenofocus>
+                    <onclick>Close</onclick>
+                    <onclick>RunScript($INFO[Skin.String(LyricScript_Path)])</onclick>
+                    <altclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</altclick>
+                    <altclick>Close</altclick>
+                    <altclick>RunScript($INFO[Skin.String(LyricScript_Path)])</altclick>
+                    <usealttexture>IsEmpty(Skin.String(LyricScript_Path))</usealttexture>
+                </control>
+                <control type="button" id="704">
+                    <width>25</width>
+                    <height>25</height>
+                    <label>$LOCALIZE[486]$INFO[Playlist.Repeat, : ]</label>
+                    <font>-</font>
+                    <texturefocus>-</texturefocus>
+                    <texturenofocus>-</texturenofocus>
+                    <onclick>PlayerControl(Repeat)</onclick>
+                </control>
+                <control type="image" id="715">
+                    <include>ClassicOSDButton</include>
+                    <texture>$VAR[MusicOSDRepeatClassicButtonVar]</texture>
+                    <enable>no</enable>
+                </control>
+                <control type="togglebutton" id="714">
+                    <include>ClassicOSDButton</include>
+                    <label>$LOCALIZE[590]$INFO[Playlist.Random, : ]</label>
+                    <texturefocus>osd/buttons/OSDRandomOffFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDRandomOffNF.png</texturenofocus>
+                    <usealttexture>Playlist.IsRandom</usealttexture>
+                    <alttexturefocus>osd/buttons/OSDRandomOnFO.png</alttexturefocus>
+                    <alttexturenofocus>osd/buttons/OSDRandomOnNF.png</alttexturenofocus>
+                    <onclick>PlayerControl(Random)</onclick>
+                </control>
+                <control type="button" id="708">
+                    <include>ClassicOSDButton</include>
+                    <label>31026</label>
+                    <texturefocus>osd/buttons/OSDSkinFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDSkinNF.png</texturenofocus>
+                    <onclick>ActivateWindow(1117)</onclick>
+                </control>
+                <control type="button" id="709">
+                    <include>ClassicOSDButton</include>
+                    <label>21891</label>
+                    <texturefocus>osd/buttons/OSDInfoFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDInfoNF.png</texturenofocus>
+                    <onclick>ActivateWindow(1112)</onclick>
+                    <ondown>Skin.ToggleSetting(vispanelrotate)</ondown>
+                </control>
+            </control>
+        </control>
+    </include>
+    <include name="DefaultMusicOSD">
+        <control type="grouplist">
+            <posy>21</posy>
+            <width>960</width>
+            <height>135</height>
+            <itemgap>7</itemgap>
+            <scrolltime tween="sine" easing="out">200</scrolltime>
+            <orientation>horizontal</orientation>
+            <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
+            <control type="button">
+                <width>100</width>
+                <height>100</height>
+                <colordiffuse>white</colordiffuse>
+                <texturenofocus>special://skin/extras/BigIcons/Format.png</texturenofocus>
+            </control>
+            <control type="button">
+                <width>100</width>
+                <height>100</height>
+                <colordiffuse>white</colordiffuse>
+                <texturenofocus>special://skin/extras/BigIcons/Oscilloscope.png</texturenofocus>
+            </control>
+            <control type="button">
+                <width>100</width>
+                <height>100</height>
+                <colordiffuse>white</colordiffuse>
+                <texturenofocus>special://skin/extras/BigIcons/Controlpanel.png</texturenofocus>
+            </control>
+            <control type="button">
+                <width>100</width>
+                <height>100</height>
+                <colordiffuse>white</colordiffuse>
+                <texturenofocus>special://skin/extras/BigIcons/Pin.png</texturenofocus>
+            </control>
+            <control type="button">
+                <width>100</width>
+                <height>100</height>
+                <align>right</align>
+                <texturenofocus>special://skin/extras/BigIcons/Heart.png</texturenofocus>
+                <colordiffuse>white</colordiffuse>
+                <visible>LastFM.RadioPlaying</visible>
+            </control>
+            <control type="button">
+                <width>100</width>
+                <height>100</height>
+                <texturenofocus>special://skin/extras/BigIcons/ButtonRemove.png</texturenofocus>
+                <colordiffuse>white</colordiffuse>
+                <visible>LastFM.RadioPlaying</visible>
+            </control>
+        </control>
+        <control type="grouplist" id="650">
+            <posy>21</posy>
+            <width>960</width>
+            <height>135</height>
+            <itemgap>7</itemgap>
+            <scrolltime tween="sine" easing="out">200</scrolltime>
+            <orientation>horizontal</orientation>
+            <onup>707</onup>
+            <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
+            <ondown condition="!Window.IsActive(playercontrols)">5333</ondown>
+            <onleft>707</onleft>
+            <onright>600</onright>
+            <control type="button" id="700">
+                <width>100</width>
+                <height>100</height>
+                <label>10517</label>
+                <font>-</font>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <texturefocus>special://skin/extras/BigIcons/Format.png</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <onclick>ActivateWindow(MusicPlaylist)</onclick>
+            </control>
+            <control type="button" id="500">
+                <width>100</width>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <height>100</height>
+                <label>12006</label>
+                <font>-</font>
+                <texturefocus>special://skin/extras/BigIcons/Oscilloscope.png</texturefocus>
+                <texturenofocus>-</texturenofocus>
+            </control>
+            <control type="button" id="701">
+                <width>100</width>
+                <height>100</height>
+                <label>$LOCALIZE[250] $LOCALIZE[21417]</label>
+                <font>-</font>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <texturefocus>special://skin/extras/BigIcons/Controlpanel.png</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+            </control>
+            <control type="button" id="702">
+                <width>100</width>
+                <height>100</height>
+                <label>31048</label>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <font>-</font>
+                <texturefocus>special://skin/extras/BigIcons/Pin.png</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <onclick>ActivateWindow(122)</onclick>
+            </control>
+            <control type="button" id="800">
+                <width>100</width>
+                <height>100</height>
+                <label>$LOCALIZE[15200] $LOCALIZE[31001]</label>
+                <align>right</align>
+                <font>-</font>
+                <textoffsetx>52</textoffsetx>
+                <textcolor>grey2</textcolor>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <shadowcolor>black</shadowcolor>
+                <texturefocus>special://skin/extras/BigIcons/Heart.png</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <onclick>LastFM.Love</onclick>
+                <visible>LastFM.RadioPlaying</visible>
+            </control>
+            <control type="button" id="801">
+                <width>100</width>
+                <height>100</height>
+                <label>$LOCALIZE[15200] $LOCALIZE[31002]</label>
+                <font>-</font>
+                <textoffsetx>52</textoffsetx>
+                <textcolor>grey2</textcolor>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <shadowcolor>black</shadowcolor>
+                <texturefocus>special://skin/extras/BigIcons/ButtonRemove.png</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <onclick>LastFM.Ban</onclick>
+                <visible>LastFM.RadioPlaying</visible>
+            </control>
+        </control>
+        <control type="grouplist">
+            <visible>!Skin.HasSetting(RemovePlayerControls)</visible>
+            <posx>480</posx>
+            <posy>21</posy>
+            <width>960</width>
+            <height>135</height>
+            <scrolltime tween="sine" easing="out">200</scrolltime>
+            <orientation>horizontal</orientation>
+            <align>center</align>
+            <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
+            <control type="button">
+                <width>100</width>
+                <height>100</height>
+                <texturenofocus>special://skin/extras/BigIcons/ButtonFirst.png</texturenofocus>
+                <colordiffuse>white</colordiffuse>
+            </control>
+            <control type="button">
+                <width>100</width>
+                <height>100</height>
+                <texturenofocus>special://skin/extras/BigIcons/ButtonFRW.png</texturenofocus>
+                <colordiffuse>white</colordiffuse>
+            </control>
+            <control type="togglebutton">
+                <width>100</width>
+                <height>100</height>
+                <texturenofocus>special://skin/extras/BigIcons/ButtonPause.png</texturenofocus>
+                <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+                <alttexturenofocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturenofocus>
+                <colordiffuse>white</colordiffuse>
+            </control>
+            <control type="button">
+                <width>100</width>
+                <height>100</height>
+                <texturenofocus>special://skin/extras/BigIcons/ButtonStop.png</texturenofocus>
+                <colordiffuse>white</colordiffuse>
+            </control>
+            <control type="button">
+                <width>100</width>
+                <height>100</height>
+                <texturenofocus>special://skin/extras/BigIcons/ButtonFFW.png</texturenofocus>
+                <colordiffuse>white</colordiffuse>
+            </control>
+            <control type="button">
+                <width>100</width>
+                <height>100</height>
+                <texturenofocus>special://skin/extras/BigIcons/ButtonEnd.png</texturenofocus>
+                <colordiffuse>white</colordiffuse>
+            </control>
+            <control type="button">
+                <width>100</width>
+                <height>100</height>
+                <texturenofocus>special://skin/extras/BigIcons/Microphone.png</texturenofocus>
+                <visible>Player.CanRecord</visible>
+                <colordiffuse>white</colordiffuse>
+            </control>
+        </control>
+        <control type="grouplist" id="652">
+            <visible>!Skin.HasSetting(RemovePlayerControls)</visible>
+            <posx>480</posx>
+            <posy>21</posy>
+            <width>960</width>
+            <height>135</height>
+            <scrolltime tween="sine" easing="out">200</scrolltime>
+            <orientation>horizontal</orientation>
+            <align>center</align>
+            <onup>707</onup>
+            <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
+            <ondown condition="!Window.IsActive(playercontrols)">5333</ondown>
+            <onleft>801</onleft>
+            <onright>703</onright>
+            <control type="button" id="600">
+                <width>100</width>
+                <height>100</height>
+                <label>210</label>
+                <font>-</font>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <texturefocus>special://skin/extras/BigIcons/ButtonFirst.png</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <onclick>PlayerControl(Previous)</onclick>
+            </control>
+            <control type="button" id="601">
+                <width>100</width>
+                <height>100</height>
+                <label>31354</label>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <font>-</font>
+                <texturefocus>special://skin/extras/BigIcons/ButtonFRW.png</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <onclick>PlayerControl(Rewind)</onclick>
+            </control>
+            <control type="togglebutton" id="602">
+                <width>100</width>
+                <height>100</height>
+                <label>31351</label>
+                <altlabel>208</altlabel>
+                <font>-</font>
+                <texturefocus>special://skin/extras/BigIcons/ButtonPause.png</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+                <alttexturefocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturefocus>
+                <alttexturenofocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturenofocus>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <onclick>PlayerControl(Play)</onclick>
+            </control>
+            <control type="button" id="603">
+                <width>100</width>
+                <height>100</height>
+                <label>31352</label>
+                <font>-</font>
+                <texturefocus>special://skin/extras/BigIcons/ButtonStop.png</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <onclick>down</onclick>
+                <onclick>PlayerControl(Stop)</onclick>
+            </control>
+            <control type="button" id="604">
+                <width>100</width>
+                <height>100</height>
+                <label>31353</label>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <font>-</font>
+                <texturefocus>special://skin/extras/BigIcons/ButtonFFW.png</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <onclick>PlayerControl(Forward)</onclick>
+            </control>
+            <control type="button" id="605">
+                <width>100</width>
+                <height>100</height>
+                <label>209</label>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <font>-</font>
+                <texturefocus>special://skin/extras/BigIcons/ButtonEnd.png</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <onclick>PlayerControl(Next)</onclick>
+            </control>
+            <control type="button" id="706">
+                <width>100</width>
+                <height>100</height>
+                <label>264</label>
+                <font>-</font>
+                <texturefocus>special://skin/extras/BigIcons/Microphone.png</texturefocus>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <texturenofocus>-</texturenofocus>
+                <onclick>PlayerControl(record)</onclick>
+                <visible>Player.CanRecord</visible>
+            </control>
+        </control>
+        <control type="grouplist">
+            <posx>960</posx>
+            <posy>21</posy>
+            <width>960</width>
+            <height>135</height>
+            <itemgap>7</itemgap>
+            <scrolltime tween="sine" easing="out">200</scrolltime>
+            <orientation>horizontal</orientation>
+            <align>right</align>
+            <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
+            <control type="togglebutton">
+                <width>100</width>
+                <height>100</height>
+                <texturenofocus>special://skin/extras/BigIcons/Lyrics.png</texturenofocus>
+                <alttexturenofocus>special://skin/extras/BigIcons/Lyrics.png</alttexturenofocus>
+                <usealttexture>IsEmpty(Skin.String(LyricScript_Path))</usealttexture>
+                <colordiffuse>white</colordiffuse>
+            </control>
+            <control type="button">
+                <width>1</width>
+                <height>1</height>
+                <texturenofocus>-</texturenofocus>
+                <colordiffuse>white</colordiffuse>
+            </control>
+            <control type="image">
+                <width>100</width>
+                <height>100</height>
+                <texture>$VAR[MusicOSDRepeatButtonVar]</texture>
+                <enable>no</enable>
+                <colordiffuse>white</colordiffuse>
+            </control>
+            <control type="togglebutton">
+                <width>100</width>
+                <height>100</height>
+                <texturenofocus>special://skin/extras/BigIcons/ArrowRight.png</texturenofocus>
+                <usealttexture>Playlist.IsRandom</usealttexture>
+                <alttexturenofocus>special://skin/extras/BigIcons/ButtonShuffle.png</alttexturenofocus>
+                <colordiffuse>white</colordiffuse>
+            </control>
+            <control type="button">
+                <width>100</width>
+                <height>100</height>
+                <texturenofocus>special://skin/extras/BigIcons/Gears.png</texturenofocus>
+                <colordiffuse>white</colordiffuse>
+            </control>
+        </control>
+        <control type="grouplist" id="651">
+            <posx>960</posx>
+            <posy>21</posy>
+            <width>960</width>
+            <height>135</height>
+            <itemgap>7</itemgap>
+            <scrolltime tween="sine" easing="out">200</scrolltime>
+            <orientation>horizontal</orientation>
+            <align>right</align>
+            <onup>707</onup>
+            <ondown condition="Window.IsActive(playercontrols)">9011</ondown>
+            <ondown condition="!Window.IsActive(playercontrols)">5333</ondown>
+            <onleft>605</onleft>
+            <onright>700</onright>
+            <control type="togglebutton" id="703">
+                <width>100</width>
+                <height>100</height>
+                <label>24013</label>
+                <font>-</font>
+                <texturefocus>special://skin/extras/BigIcons/Lyrics.png</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <alttexturefocus>special://skin/extras/BigIcons/Lyrics.png</alttexturefocus>
+                <alttexturenofocus>-</alttexturenofocus>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <onclick>Close</onclick>
+                <onclick>RunScript($INFO[Skin.String(LyricScript_Path)])</onclick>
+                <altclick>Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</altclick>
+                <altclick>Close</altclick>
+                <altclick>RunScript($INFO[Skin.String(LyricScript_Path)])</altclick>
+                <usealttexture>IsEmpty(Skin.String(LyricScript_Path))</usealttexture>
+            </control>
+            <control type="button" id="704">
+                <width>1</width>
+                <height>1</height>
+                <label>$LOCALIZE[486]$INFO[Playlist.Repeat, : ]</label>
+                <font>-</font>
+                <texturefocus>-</texturefocus>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <texturenofocus>-</texturenofocus>
+                <onclick>PlayerControl(Repeat)</onclick>
+            </control>
+            <control type="image" id="708">
+                <width>100</width>
+                <height>100</height>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <texture>$VAR[MusicOSDRepeatButtonVar2]</texture>
+                <enable>no</enable>
+            </control>
+            <control type="togglebutton" id="705">
+                <width>100</width>
+                <height>100</height>
+                <label>$LOCALIZE[590]$INFO[Playlist.Random, : ]</label>
+                <font>-</font>
+                <texturefocus>special://skin/extras/BigIcons/ArrowRight.png</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <usealttexture>Playlist.IsRandom</usealttexture>
+                <alttexturefocus>special://skin/extras/BigIcons/ButtonShuffle.png</alttexturefocus>
+                <alttexturenofocus>-</alttexturenofocus>
+                <onclick>PlayerControl(Random)</onclick>
+            </control>
+            <control type="button" id="707">
+                <width>100</width>
+                <height>100</height>
+                <label>31026</label>
+                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                <font>-</font>
+                <texturefocus>special://skin/extras/BigIcons/Gears.png</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <onclick>ActivateWindow(1117)</onclick>
+            </control>
+        </control>
+    </include>
+    <include name="InvisibleIncludeLabels">
+        <control type="label" id="11111">
+            <label> $INFO[Skin.String(MusicVideosHomeItem.Widget)] $INFO[Skin.String(MusicHomeItem.Widget)] $INFO[Skin.String(TVShowHomeItem.Widget)] $INFO[Skin.String(MovieHomeItem.Widget)] $INFO[Skin.String(LiveTVHomeItem.Widget)] $INFO[Skin.String(PicturesHomeItem.Widget)] $INFO[Skin.String(TVGuideHomeItem.Widget)] $INFO[Skin.String(FeaturedHomeItem.Widget)] $INFO[Skin.String(CustomHomeItem1.Widget)] $INFO[Skin.String(CustomHomeItem2.Widget)] $INFO[Skin.String(CustomHomeItem3.Widget)] $INFO[Skin.String(CustomHomeItem4.Widget)] $INFO[Skin.String(CustomHomeItem5.Widget)] $INFO[Skin.String(CustomHomeItem6.Widget)] $INFO[Skin.String(VideosHomeItem.Widget)] $INFO[Skin.String(ProgramsHomeItem.Widget)] $INFO[Skin.String(SettingsHomeItem.Widget)] $INFO[Skin.String(SearchHomeItem.Widget)] $INFO[Skin.String(ShutdownHomeItem.Widget)] $INFO[Skin.String(FavouritesHomeItem.Widget)] $INFO[Skin.String(PlayDiscHomeItem.Widget)] $INFO[Skin.String(WeatherHomeItem.Widget)] $INFO[Skin.String(CustomSub9_1.Widget)] $INFO[Skin.String(CustomSub9_2.Widget)] $INFO[Skin.String(CustomSub9_4.Widget)] $INFO[Skin.String(CustomSub9_5.Widget)] $INFO[Skin.String(CustomSub8_1.Widget)] $INFO[Skin.String(CustomSub8_2.Widget)] $INFO[Skin.String(CustomSub8_3.Widget)] $INFO[Skin.String(CustomSub8_4)] $INFO[Skin.String(CustomSub8_5.Widget)] $INFO[Skin.String(CustomSub11_1.Widget)] $INFO[Skin.String(CustomSub11_2.Widget)] $INFO[Skin.String(CustomSub11_3.Widget)] $INFO[Skin.String(CustomSub11_4.Widget)] $INFO[Skin.String(CustomSub11_5.Widget)] $INFO[Skin.String(CustomSub11_6.Widget)] $INFO[Skin.String(CustomSub11_7.Widget)] $INFO[Skin.String(CustomSub11_8.Widget)] </label>
+        </control>
+        <control type="label" id="11112">
+            <label> $INFO[Skin.String(MusicVideosHomeItem.Widget2)] $INFO[Skin.String(MusicHomeItem.Widget2)] $INFO[Skin.String(TVShowHomeItem.Widget2)] $INFO[Skin.String(MovieHomeItem.Widget2)] $INFO[Skin.String(LiveTVHomeItem.Widget2)] $INFO[Skin.String(PicturesHomeItem.Widget2)] $INFO[Skin.String(TVGuideHomeItem.Widget2)] $INFO[Skin.String(FeaturedHomeItem.Widget2)] $INFO[Skin.String(CustomHomeItem1.Widget2)] $INFO[Skin.String(CustomHomeItem2.Widget2)] $INFO[Skin.String(CustomHomeItem3.Widget2)] $INFO[Skin.String(CustomHomeItem4.Widget2)] $INFO[Skin.String(CustomHomeItem5.Widget2)] $INFO[Skin.String(CustomHomeItem6.Widget2)] $INFO[Skin.String(VideosHomeItem.Widget2)] $INFO[Skin.String(ProgramsHomeItem.Widget2)] $INFO[Skin.String(SettingsHomeItem.Widget2)] $INFO[Skin.String(SearchHomeItem.Widget2)] $INFO[Skin.String(ShutdownHomeItem.Widget2)] $INFO[Skin.String(FavouritesHomeItem.Widget2)] $INFO[Skin.String(PlayDiscHomeItem.Widget2)] $INFO[Skin.String(WeatherHomeItem.Widget2)] </label>
+        </control>
+        <control type="label" id="11113">
+            <label> $INFO[Skin.String(MusicVideosHomeItem.MultiFanart)] $INFO[Skin.String(MusicHomeItem.MultiFanart)] $INFO[Skin.String(TVShowHomeItem.MultiFanart)] $INFO[Skin.String(MovieHomeItem.MultiFanart)] $INFO[Skin.String(LiveTVHomeItem.MultiFanart)] $INFO[Skin.String(PicturesHomeItem.MultiFanart)] $INFO[Skin.String(TVGuideHomeItem.MultiFanart)] $INFO[Skin.String(FeaturedHomeItem.MultiFanart)] $INFO[Skin.String(CustomHomeItem1.MultiFanart)] $INFO[Skin.String(CustomHomeItem2.MultiFanart)] $INFO[Skin.String(CustomHomeItem3.MultiFanart)] $INFO[Skin.String(CustomHomeItem4.MultiFanart)] $INFO[Skin.String(CustomHomeItem5.MultiFanart)] $INFO[Skin.String(CustomHomeItem6.MultiFanart)] $INFO[Skin.String(VideosHomeItem.MultiFanart)] $INFO[Skin.String(ProgramsHomeItem.MultiFanart)] $INFO[Skin.String(SettingsHomeItem.MultiFanart)] $INFO[Skin.String(SearchHomeItem.MultiFanart)] $INFO[Skin.String(ShutdownHomeItem.MultiFanart)] $INFO[Skin.String(FavouritesHomeItem.MultiFanart)] $INFO[Skin.String(PlayDiscHomeItem.MultiFanart)] $INFO[Skin.String(WeatherHomeItem.MultiFanart)] </label>
+        </control>
+        <control type="label" id="11114">
+            <label> $INFO[Skin.String(MusicVideosHomeItem.Submenu)] $INFO[Skin.String(MusicHomeItem.Submenu)] $INFO[Skin.String(TVShowHomeItem.Submenu)] $INFO[Skin.String(MovieHomeItem.Submenu)] $INFO[Skin.String(LiveTVHomeItem.Submenu)] $INFO[Skin.String(PicturesHomeItem.Submenu)] $INFO[Skin.String(TVGuideHomeItem.Submenu)] $INFO[Skin.String(FeaturedHomeItem.Submenu)] $INFO[Skin.String(CustomHomeItem1.Submenu)] $INFO[Skin.String(CustomHomeItem2.Submenu)] $INFO[Skin.String(CustomHomeItem3.Submenu)] $INFO[Skin.String(CustomHomeItem4.Submenu)] $INFO[Skin.String(CustomHomeItem5.Submenu)] $INFO[Skin.String(CustomHomeItem6.Submenu)] $INFO[Skin.String(VideosHomeItem.Submenu)] $INFO[Skin.String(ProgramsHomeItem.Submenu)] $INFO[Skin.String(SettingsHomeItem.Submenu)] $INFO[Skin.String(SearchHomeItem.Submenu)] $INFO[Skin.String(ShutdownHomeItem.Submenu)] $INFO[Skin.String(FavouritesHomeItem.Submenu)] $INFO[Skin.String(PlayDiscHomeItem.Submenu)] $INFO[Skin.String(WeatherHomeItem.Submenu)] </label>
+        </control>
     </include>
 </includes>

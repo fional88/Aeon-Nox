@@ -9,7 +9,7 @@
     </coordinates>
     <controls>
         <control type="group">
-            <visible>!Window.IsVisible(script.pseudotv.AdvancedConfig.xml</visible>
+            <visible>!Window.IsVisible(script.pseudotv.AdvancedConfig.xml)</visible>
             <control type="image">
                 <posx>23</posx>
                 <posy>23</posy>
@@ -162,12 +162,7 @@
                 </control>
             </control>
             <control type="label" id="104">
-                <posy>10</posy>
-                <width>0</width>
-                <height>0</height>
-                <textcolor>-</textcolor>
-                <align>center</align>
-                <label></label>
+                <include>HiddenObject</include>
             </control>
             <!-- Controls for configuring a single channel -->
             <control type="group" id="106">

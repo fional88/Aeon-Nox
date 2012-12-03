@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<window id="610">
+<window>
     <defaultcontrol always="true">11</defaultcontrol>
     <coordinates>
         <system>1</system>
@@ -9,16 +9,16 @@
     <include>Animation_ListSlideRight</include>
     <include>Animation_DialogZoom</include>
     <controls>
-    	<control type="image">
-        	<colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+        <control type="image">
+            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
             <posx>-2</posx>
             <width>697</width>
             <height>1080</height>
             <texture>dialogs/context_middle.png</texture>
-       	</control>
-       	<control type="group">
-        	<posx>55</posx>
-        	<posy>15</posy>
+        </control>
+        <control type="group">
+            <posx>55</posx>
+            <posy>15</posy>
             <control type="label">
                 <width>705</width>
                 <height>40</height>
@@ -37,13 +37,14 @@
                 <textcolor>white6</textcolor>
                 <shadowcolor>black</shadowcolor>
             </control>
-		</control>
-		<control type="image">
-		    <posx>28</posx>
-		    <posy>55</posy>
-		    <width>640</width>
-		    <height>60</height>
+        </control>
+        <control type="image">
+            <posx>28</posx>
+            <posy>55</posy>
+            <width>640</width>
+            <height>60</height>
             <texture>osd/osd_settings_buttonnf.png</texture>
+            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
         </control>
         <control type="list" id="11">
             <posx>18</posx>
@@ -63,6 +64,7 @@
                     <width>640</width>
                     <height>80</height>
                     <texture>osd/osd_settings_buttonnf.png</texture>
+                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 </control>
                 <control type="label">
                     <posx>35</posx>
@@ -82,21 +84,21 @@
                     <label>$INFO[ListItem.Label]</label>
                 </control>
                 <control type="image">
-                	<animation effect="fade" start="100" end="40" time="1200" pulse="true" condition="true">conditional</animation>
+                    <animation effect="fade" start="100" end="40" time="1200" pulse="true" condition="true">conditional</animation>
                     <posx>575</posx>
                     <posy>20</posy>
                     <width>45</width>
                     <height>45</height>
-                    <texture>PVR/PVR-IsRecording.png</texture>
+                    <texture>pvr/PVR-IsRecording.png</texture>
                     <visible>ListItem.IsRecording</visible>
                 </control>
                 <control type="image">
-                	<animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
+                    <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
                     <posx>575</posx>
                     <posy>25</posy>
                     <width>45</width>
                     <height>45</height>
-                    <texture>PVR/PVR-HasTimer.png</texture>
+                    <texture>pvr/PVR-HasTimer.png</texture>
                     <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
                 </control>
             </itemlayout>
@@ -107,6 +109,7 @@
                     <width>640</width>
                     <height>80</height>
                     <texture>osd/osd_settings_buttonnf.png</texture>
+                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 </control>
                 <control type="image">
                     <posx>10</posx>
@@ -115,7 +118,6 @@
                     <texture>views/tripanel/listselect_fo.png</texture>
                     <animation effect="fade" start="100" end="50" time="50" condition="!Control.HasFocus(11)">Conditional</animation>
                     <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                    <include>Animation_VisibleChange200</include>
                 </control>
                 <control type="label">
                     <posx>35</posx>
@@ -135,21 +137,21 @@
                     <label>$INFO[ListItem.Label]</label>
                 </control>
                 <control type="image">
-                	<animation effect="fade" start="100" end="40" time="1200" pulse="true" condition="true">conditional</animation>
+                    <animation effect="fade" start="100" end="40" time="1200" pulse="true" condition="true">conditional</animation>
                     <posx>575</posx>
                     <posy>20</posy>
                     <width>45</width>
                     <height>45</height>
-                    <texture>PVR/PVR-IsRecording.png</texture>
+                    <texture>pvr/PVR-IsRecording.png</texture>
                     <visible>ListItem.IsRecording</visible>
                 </control>
                 <control type="image">
-                	<animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
+                    <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
                     <posx>575</posx>
                     <posy>25</posy>
                     <width>45</width>
                     <height>45</height>
-                    <texture>PVR/PVR-HasTimer.png</texture>
+                    <texture>pvr/PVR-HasTimer.png</texture>
                     <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
                 </control>
             </focusedlayout>

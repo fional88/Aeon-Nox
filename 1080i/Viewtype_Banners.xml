@@ -5,31 +5,29 @@
             <visible>Control.IsVisible(508)</visible>
             <animation effect="slide" tween="cubic" easing="in" time="500" start="0,806" end="0,0">VisibleChange</animation>
             <include>Animation_OpenCloseZoom</include>
-            <control type="group">
-                <include>Animation_VisibleChange400</include>
-                <visible>!Skin.HasSetting(AltBannerPlex)</visible>
-                <control type="image">
-                    <posx>10</posx>
-                    <posy>806</posy>
-                    <width>40</width>
-                    <height>40</height>
-                    <texture>common/arrowleft.png</texture>
-                    <colordiffuse>white2</colordiffuse>
-                    <animation effect="slide" start="-150" end="0" delay="800" time="400" easing="out" tween="cubic">WindowOpen</animation>
-                    <animation effect="slide" start="50" end="0" time="400" easing="out" tween="cubic" condition="![!Container(508).Position(1) + !Container(508).Position(2) + !Container(508).Position(0)]">Conditional</animation>
-                    <visible>[IntegerGreaterThan(Container(508).NumItems,10) + !system.getbool(filelists.showparentdiritems)] | [IntegerGreaterThan(Container(508).NumItems,9) + system.getbool(filelists.showparentdiritems)]</visible>
-                </control>
-                <control type="image">
-                    <posx>1860</posx>
-                    <posy>806</posy>
-                    <width>40</width>
-                    <height>40</height>
-                    <texture>common/arrowright.png</texture>
-                    <colordiffuse>white2</colordiffuse>
-                    <animation effect="slide" start="-50" end="0" time="400" easing="out" tween="cubic" condition="![!Container(508).Position(6) + !Container(508).Position(7) + !Container(508).Position(8)]">Conditional</animation>
-                    <animation effect="slide" start="150" end="0" delay="800" time="400" easing="out" tween="cubic">WindowOpen</animation>
-                    <visible>[IntegerGreaterThan(Container(508).NumItems,10) + !system.getbool(filelists.showparentdiritems)] | [IntegerGreaterThan(Container(508).NumItems,9) + system.getbool(filelists.showparentdiritems)]</visible>
-                </control>
+            <control type="image">
+                <posx>10</posx>
+                <posy>806</posy>
+                <width>40</width>
+                <height>40</height>
+                <texture flipx="true">arrowright.png</texture>
+                <include>Animation_VisibleChange200</include>
+                <colordiffuse>white2</colordiffuse>
+                <animation effect="slide" start="-150" end="0" delay="800" time="400" easing="out" tween="cubic">WindowOpen</animation>
+                <animation effect="slide" start="50" end="0" time="400" easing="out" tween="cubic" condition="![!Container(508).Position(1) + !Container(508).Position(2) + !Container(508).Position(0)] + !Skin.HasSetting(AltBannerPlex)">Conditional</animation>
+                <visible>Container.HasPrevious</visible>
+            </control>
+            <control type="image">
+                <posx>1880</posx>
+                <posy>806</posy>
+                <width>40</width>
+                <height>40</height>
+                <texture>arrowright.png</texture>
+                <colordiffuse>white2</colordiffuse>
+                <include>Animation_VisibleChange200</include>
+                <animation effect="slide" start="-50" end="0" time="400" easing="out" tween="cubic" condition="![!Container(508).Position(6) + !Container(508).Position(7) + !Container(508).Position(8)] + !Skin.HasSetting(AltBannerPlex)">Conditional</animation>
+                <animation effect="slide" start="150" end="0" delay="800" time="400" easing="out" tween="cubic">WindowOpen</animation>
+                <visible>Container.HasNext</visible>
             </control>
             <control type="group">
                 <visible>Skin.HasSetting(AltBannerPlex)</visible>
@@ -54,7 +52,7 @@
                 <posx>117</posx>
                 <posy>622</posy>
                 <width>1686</width>
-                <animation effect="slide" start="0,0" end="0,16" reversible="true" condition="Skin.HasSetting(AltBannerPlex)">Conditional</animation>
+                <animation effect="slide" end="0,16" condition="Skin.HasSetting(AltBannerPlex)">Conditional</animation>
                 <height>360</height>
                 <onleft>508</onleft>
                 <onright>508</onright>
@@ -66,7 +64,7 @@
                 <scrolltime tween="cubic" easing="out">300</scrolltime>
                 <focusposition>2</focusposition>
                 <preloaditems>2</preloaditems>
-                <visible>Container.Content(TVShows) | Container.Content(movies)</visible>
+                <visible>Container.Content(TVShows) | Container.Content(movies) | Container.Content(seasons)</visible>
                 <itemlayout width="562" height="120" condition="!Skin.HasSetting(AltBannerPlex)">
                     <control type="image">
                         <posx>8</posx>
@@ -111,8 +109,7 @@
                         <height>105</height>
                         <animation effect="fade" start="100" end="50" time="50" condition="true">Conditional</animation>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <colordiffuse>black</colordiffuse>
-                        <texture diffuse="thumbs/banner_mask.png">common/white.png</texture>
+                        <texture diffuse="thumbs/banner_mask.png">common/bgcolor.png</texture>
                     </control>
                 </itemlayout>
                 <focusedlayout width="562" height="120" condition="!Skin.HasSetting(AltBannerPlex)">

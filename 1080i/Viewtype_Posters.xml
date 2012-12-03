@@ -1,54 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <includes>
-    <include name="contents510list">
-        <posx>0</posx>
-        <posy>460</posy>
-        <width>1890</width>
-        <height>560</height>
-        <onleft condition="!Skin.HasSetting(posterwrap)">8400</onleft>
-        <onright condition="!Skin.HasSetting(posterwrap)">8401</onright>
-        <onup>5101</onup>
-        <ondown condition="Control.IsVisible(61)">61</ondown>
-        <ondown condition="!Control.IsVisible(61)">109</ondown>
-        <orientation>horizontal</orientation>
-        <viewtype label="31271">Wraplist of Posters</viewtype>
-        <pagecontrol>61</pagecontrol>
-        <focusposition>1</focusposition>
-        <visible>!IsEmpty(Container.FolderPath) + !Container.Content(years)</visible>
-        <visible>!Container.Content(addons) + [!Container.Content(episodes) | SubString(Container.FolderPath,videodb://5/)]</visible>
-        <itemlayout width="210" height="750"></itemlayout>
-        <focusedlayout width="210" height="750"></focusedlayout>
-    </include>
-    <include name="posterwraplist">
-        <control type="wraplist" id="510">
-            <include>contents510list</include>
-        </control>
-    </include>
-    <include name="posterfixedlist">
-        <control type="fixedlist" id="510">
-            <include>contents510list</include>
-        </control>
-        <!-- Invisible buttons for list end animation -->
-        <control type="button" id="8400">
-            <include>HiddenObject</include>
-            <onfocus>SetFocus(510)</onfocus>
-            <visible allowhiddenfocus="true">Control.HasFocus(8400)</visible>
-            <animation effect="fade" time="200">Hidden</animation>
-        </control>
-        <control type="button" id="8401">
-            <include>HiddenObject</include>
-            <onfocus>SetFocus(510)</onfocus>
-            <visible allowhiddenfocus="true">Control.HasFocus(8401)</visible>
-            <animation effect="fade" time="200">Hidden</animation>
-        </control>
-    </include>
     <include name="PostersView">
         <control type="group">
             <animation effect="slide" time="1100" start="1900,0" end="0,0" tween="cubic" easing="out">VisibleChange</animation>
             <visible>Control.IsVisible(510)</visible>
             <animation type="WindowOpen" reversible="false">
                 <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" easing="out" />
-                <effect type="fade" start="0" end="100" time="300" />
+                <effect type="fade" end="100" time="300" />
             </animation>
             <animation type="WindowClose" reversible="false">
                 <effect type="fade" start="100" end="0" time="300" delay="1400" />
@@ -65,7 +23,7 @@
                         <visible>Container(510).OnPrevious</visible>
                         <animation type="Hidden" reversible="false">
                             <effect type="fade" start="100" end="0" time="250" />
-                            <effect type="slide" start="0,0" end="48,0" time="250" />
+                            <effect type="slide" end="48,0" time="250" />
                         </animation>
                         <posx>1731</posx>
                         <posy>498</posy>
@@ -78,6 +36,7 @@
                                 <posy>24</posy>
                                 <width>160</width>
                                 <height>242</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem9Var]</texture>
                             </control>
@@ -86,6 +45,7 @@
                                 <posy>264</posy>
                                 <width>160</width>
                                 <height>242</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem9Var]</texture>
                             </control>
@@ -119,6 +79,7 @@
                                 <posx>33</posx>
                                 <posy>28</posy>
                                 <width>194</width>
+                                <fadetime>0</fadetime>
                                 <height>291</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem8Var]</texture>
@@ -127,6 +88,7 @@
                                 <posx>33</posx>
                                 <posy>318</posy>
                                 <width>194</width>
+                                <fadetime>0</fadetime>
                                 <height>290</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem8Var]</texture>
@@ -159,6 +121,7 @@
                             <visible>!IsEmpty(Container(510).ListItemNoWrap(7).FolderPath) | Skin.HasSetting(posterwrap)</visible>
                             <control type="image">
                                 <posx>39</posx>
+                                <fadetime>0</fadetime>
                                 <posy>33</posy>
                                 <width>226</width>
                                 <height>340</height>
@@ -168,6 +131,7 @@
                             <control type="image">
                                 <posx>39</posx>
                                 <posy>372</posy>
+                                <fadetime>0</fadetime>
                                 <width>226</width>
                                 <height>339</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
@@ -202,6 +166,7 @@
                             <control type="image">
                                 <posx>45</posx>
                                 <posy>39</posy>
+                                <fadetime>0</fadetime>
                                 <width>260</width>
                                 <height>387</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
@@ -212,6 +177,7 @@
                                 <posy>426</posy>
                                 <width>260</width>
                                 <height>387</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem6Var]</texture>
                             </control>
@@ -245,6 +211,7 @@
                                 <posx>50</posx>
                                 <posy>44</posy>
                                 <width>292</width>
+                                <fadetime>0</fadetime>
                                 <height>438</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem5Var]</texture>
@@ -254,6 +221,7 @@
                                 <posy>480</posy>
                                 <width>292</width>
                                 <height>438</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem5Var]</texture>
                             </control>
@@ -288,6 +256,7 @@
                                 <posy>48</posy>
                                 <width>326</width>
                                 <height>488</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem4Var]</texture>
                             </control>
@@ -296,6 +265,7 @@
                                 <posy>534</posy>
                                 <width>326</width>
                                 <height>488</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem4Var]</texture>
                             </control>
@@ -330,6 +300,7 @@
                                 <posy>52</posy>
                                 <width>358</width>
                                 <height>537</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem3Var]</texture>
                             </control>
@@ -338,6 +309,7 @@
                                 <posy>588</posy>
                                 <width>358</width>
                                 <height>537</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem3Var]</texture>
                             </control>
@@ -372,6 +344,7 @@
                                 <posy>57</posy>
                                 <width>392</width>
                                 <height>586</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
                             </control>
@@ -380,6 +353,7 @@
                                 <posy>642</posy>
                                 <width>392</width>
                                 <height>586</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
                             </control>
@@ -414,6 +388,7 @@
                                 <posy>62</posy>
                                 <width>426</width>
                                 <height>636</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
                             </control>
@@ -422,6 +397,7 @@
                                 <posy>698</posy>
                                 <width>426</width>
                                 <height>636</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
                             </control>
@@ -468,10 +444,10 @@
                         <visible>Container(510).OnPrevious</visible>
                         <animation type="Hidden" reversible="false">
                             <effect type="zoom" start="-26,246,570,1334" end="354,278,525,1228" time="250" />
-                            <effect type="fade" start="0" end="100" time="250" />
+                            <effect type="fade" end="100" time="250" />
                         </animation>
                         <animation type="Visible" reversible="false">
-                            <effect type="fade" start="0" end="0" time="0" />
+                            <effect type="fade" end="0" time="0" />
                         </animation>
                         <posx>-26</posx>
                         <posy>246</posy>
@@ -492,10 +468,10 @@
                     <control type="group">
                         <visible>Container(510).OnPrevious</visible>
                         <animation type="Hidden" reversible="false">
-                            <effect type="fade" start="0" end="100" time="250" />
-                            <effect type="slide" start="0,0" end="192,0" time="250" />
+                            <effect type="fade" end="100" time="250" />
+                            <effect type="slide" end="192,0" time="250" />
                         </animation>
-                        <animation effect="fade" start="0" end="0" time="0" reversible="false">Visible</animation>
+                        <animation effect="fade" end="0" time="0" reversible="false">Visible</animation>
                         <posx>-218</posx>
                         <posy>246</posy>
                         <width>570</width>
@@ -507,6 +483,7 @@
                                 <posy>62</posy>
                                 <width>426</width>
                                 <height>636</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
                             </control>
@@ -515,6 +492,7 @@
                                 <posy>698</posy>
                                 <width>426</width>
                                 <height>636</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
                             </control>
@@ -542,10 +520,10 @@
                     <control type="group">
                         <visible>Container(510).OnNext</visible>
                         <animation type="Hidden" reversible="false">
-                            <effect type="fade" start="0" end="100" time="250" />
+                            <effect type="fade" end="100" time="250" />
                             <effect type="slide" start="48,0" end="0,0" time="250" />
                         </animation>
-                        <animation effect="fade" start="0" end="0" time="0" reversible="false">Visible</animation>
+                        <animation effect="fade" end="0" time="0" reversible="false">Visible</animation>
                         <posx>1731</posx>
                         <posy>498</posy>
                         <width>216</width>
@@ -557,6 +535,7 @@
                                 <posy>24</posy>
                                 <width>160</width>
                                 <height>242</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem8Var]</texture>
                             </control>
@@ -565,6 +544,7 @@
                                 <posy>264</posy>
                                 <width>160</width>
                                 <height>242</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem8Var]</texture>
                             </control>
@@ -598,6 +578,7 @@
                                 <posx>27</posx>
                                 <posy>24</posy>
                                 <width>160</width>
+                                <fadetime>0</fadetime>
                                 <height>242</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem7Var]</texture>
@@ -607,6 +588,7 @@
                                 <posy>264</posy>
                                 <width>160</width>
                                 <height>242</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem7Var]</texture>
                             </control>
@@ -641,6 +623,7 @@
                                 <posy>28</posy>
                                 <width>194</width>
                                 <height>291</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem6Var]</texture>
                             </control>
@@ -649,6 +632,7 @@
                                 <posy>318</posy>
                                 <width>194</width>
                                 <height>290</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem6Var]</texture>
                             </control>
@@ -683,6 +667,7 @@
                                 <posy>33</posy>
                                 <width>226</width>
                                 <height>340</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem5Var]</texture>
                             </control>
@@ -691,6 +676,7 @@
                                 <posy>372</posy>
                                 <width>226</width>
                                 <height>339</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem5Var]</texture>
                             </control>
@@ -725,6 +711,7 @@
                                 <posy>39</posy>
                                 <width>260</width>
                                 <height>387</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem4Var]</texture>
                             </control>
@@ -733,6 +720,7 @@
                                 <posy>426</posy>
                                 <width>260</width>
                                 <height>387</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem4Var]</texture>
                             </control>
@@ -767,6 +755,7 @@
                                 <posy>44</posy>
                                 <width>292</width>
                                 <height>438</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem3Var]</texture>
                             </control>
@@ -775,6 +764,7 @@
                                 <posy>480</posy>
                                 <width>292</width>
                                 <height>438</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem3Var]</texture>
                             </control>
@@ -809,6 +799,7 @@
                                 <posy>48</posy>
                                 <width>326</width>
                                 <height>488</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
                             </control>
@@ -817,6 +808,7 @@
                                 <posy>534</posy>
                                 <width>326</width>
                                 <height>488</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
                             </control>
@@ -849,6 +841,7 @@
                             <control type="image">
                                 <posx>62</posx>
                                 <posy>52</posy>
+                                <fadetime>0</fadetime>
                                 <width>358</width>
                                 <height>537</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
@@ -859,6 +852,7 @@
                                 <posy>588</posy>
                                 <width>358</width>
                                 <height>537</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
                             </control>
@@ -893,6 +887,7 @@
                                 <posy>57</posy>
                                 <width>392</width>
                                 <height>586</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
                             </control>
@@ -901,6 +896,7 @@
                                 <posy>642</posy>
                                 <width>392</width>
                                 <height>586</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
                             </control>
@@ -918,10 +914,10 @@
                         <visible>Container(510).OnNext</visible>
                         <animation type="Hidden" reversible="false">
                             <effect type="zoom" start="354,278,525,1228" end="-26,246,570,1334" time="250" />
-                            <effect type="fade" start="0" end="100" time="250" />
+                            <effect type="fade" end="100" time="250" />
                         </animation>
                         <animation type="Visible" reversible="false">
-                            <effect type="fade" start="0" end="0" time="0" />
+                            <effect type="fade" end="0" time="0" />
                         </animation>
                         <posx>354</posx>
                         <posy>278</posy>
@@ -965,7 +961,7 @@
                         <visible>Container(510).OnNext</visible>
                         <animation type="Hidden" reversible="false">
                             <effect type="fade" start="100" end="0" time="250" />
-                            <effect type="slide" start="0,0" end="-192,0" time="250" />
+                            <effect type="slide" end="-192,0" time="250" />
                         </animation>
                         <posx>16</posx>
                         <posy>308</posy>
@@ -977,6 +973,7 @@
                                 <posx>30</posx>
                                 <width>426</width>
                                 <height>636</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-1Var]</texture>
                             </control>
@@ -985,6 +982,7 @@
                                 <posy>636</posy>
                                 <width>426</width>
                                 <height>636</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-1Var]</texture>
                             </control>
@@ -1009,12 +1007,12 @@
                 <control type="group" id="5800">
                     <visible>!Control.IsVisible(5801) + !Control.IsVisible(5802)</visible>
                     <animation type="Conditional" condition="Control.IsVisible(8401) + !Skin.HasSetting(posterwrap)" reversible="false">
-                        <effect type="slide" start="0" end="-30" time="75" tween="sine" easing="out" />
-                        <effect type="slide" start="0" end="30" time="225" tween="sine" delay="100" easing="out" />
+                        <effect type="slide" end="-30" time="75" tween="sine" easing="out" />
+                        <effect type="slide" end="30" time="225" tween="sine" delay="100" easing="out" />
                     </animation>
                     <animation type="Conditional" condition="Control.IsVisible(8400) + !Skin.HasSetting(posterwrap)" reversible="false">
-                        <effect type="slide" start="0" end="30" time="75" tween="sine" easing="out" />
-                        <effect type="slide" start="0" end="-30" time="225" tween="sine" delay="100" easing="out" />
+                        <effect type="slide" end="30" time="75" tween="sine" easing="out" />
+                        <effect type="slide" end="-30" time="225" tween="sine" delay="100" easing="out" />
                     </animation>
                     <!-- Panel 9 -->
                     <control type="group">
@@ -1025,11 +1023,11 @@
                             <effect type="slide" start="-98,0" end="0,0" delay="2000" tween="sine" easing="out" time="200" />
                         </animation>
                         <animation type="Hidden" reversible="false">
-                            <effect type="slide" start="0,0" end="-98,0" delay="0" tween="sine" easing="out" time="100" />
+                            <effect type="slide" end="-98,0" delay="0" tween="sine" easing="out" time="100" />
                             <effect type="fade" start="100" end="0" delay="25" time="50" />
                         </animation>
                         <animation type="WindowClose" reversible="false">
-                            <effect type="slide" start="0,0" end="-98,0" delay="0" tween="sine" easing="out" time="200" />
+                            <effect type="slide" end="-98,0" delay="0" tween="sine" easing="out" time="200" />
                             <effect type="fade" start="100" end="0" delay="100" time="50" />
                         </animation>
                         <posx>1731</posx>
@@ -1043,6 +1041,7 @@
                                 <posy>24</posy>
                                 <width>160</width>
                                 <height>242</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem8Var]</texture>
                             </control>
@@ -1051,6 +1050,7 @@
                                 <posy>264</posy>
                                 <width>160</width>
                                 <height>242</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem8Var]</texture>
                             </control>
@@ -1079,11 +1079,11 @@
                             <effect type="slide" start="-112,0" end="0,0" delay="1800" tween="sine" easing="out" time="200" />
                         </animation>
                         <animation type="Hidden" reversible="false">
-                            <effect type="slide" start="0,0" end="-112,0" delay="50" tween="sine" easing="out" time="100" />
+                            <effect type="slide" end="-112,0" delay="50" tween="sine" easing="out" time="100" />
                             <effect type="fade" start="100" end="0" delay="50" time="50" />
                         </animation>
                         <animation type="WindowClose" reversible="false">
-                            <effect type="slide" start="0,0" end="-112,0" delay="111" tween="sine" easing="out" time="200" />
+                            <effect type="slide" end="-112,0" delay="111" tween="sine" easing="out" time="200" />
                             <effect type="fade" start="100" end="0" delay="200" time="50" />
                         </animation>
                         <posx>1617</posx>
@@ -1097,6 +1097,7 @@
                                 <posy>28</posy>
                                 <width>194</width>
                                 <height>291</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem7Var]</texture>
                             </control>
@@ -1105,6 +1106,7 @@
                                 <posy>318</posy>
                                 <width>194</width>
                                 <height>290</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem7Var]</texture>
                             </control>
@@ -1133,11 +1135,11 @@
                             <effect type="slide" start="-142,0" end="0,0" delay="1600" tween="sine" easing="out" time="200" />
                         </animation>
                         <animation type="Hidden" reversible="false">
-                            <effect type="slide" start="0,0" end="-142,0" delay="100" tween="sine" easing="out" time="100" />
+                            <effect type="slide" end="-142,0" delay="100" tween="sine" easing="out" time="100" />
                             <effect type="fade" start="100" end="0" delay="100" time="50" />
                         </animation>
                         <animation type="WindowClose" reversible="false">
-                            <effect type="slide" start="0,0" end="-142,0" delay="222" tween="sine" easing="out" time="200" />
+                            <effect type="slide" end="-142,0" delay="222" tween="sine" easing="out" time="200" />
                             <effect type="fade" start="100" end="0" delay="300" time="50" />
                         </animation>
                         <posx>1488</posx>
@@ -1151,6 +1153,7 @@
                                 <posy>33</posy>
                                 <width>226</width>
                                 <height>340</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem6Var]</texture>
                             </control>
@@ -1159,6 +1162,7 @@
                                 <posy>372</posy>
                                 <width>226</width>
                                 <height>339</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem6Var]</texture>
                             </control>
@@ -1187,11 +1191,11 @@
                             <effect type="slide" start="-180,0" end="0,0" delay="1400" tween="sine" easing="out" time="200" />
                         </animation>
                         <animation type="Hidden" reversible="false">
-                            <effect type="slide" start="0,0" end="-180,0" delay="300" tween="sine" easing="out" time="100" />
+                            <effect type="slide" end="-180,0" delay="300" tween="sine" easing="out" time="100" />
                             <effect type="fade" start="100" end="0" delay="150" time="50" />
                         </animation>
                         <animation type="WindowClose" reversible="false">
-                            <effect type="slide" start="0,0" end="-180,0" delay="333" tween="sine" easing="out" time="200" />
+                            <effect type="slide" end="-180,0" delay="333" tween="sine" easing="out" time="200" />
                             <effect type="fade" start="100" end="0" delay="300" time="50" />
                         </animation>
                         <posx>1335</posx>
@@ -1206,6 +1210,7 @@
                                 <width>260</width>
                                 <height>387</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
+                                <fadetime>0</fadetime>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem5Var]</texture>
                             </control>
                             <control type="image">
@@ -1213,6 +1218,7 @@
                                 <posy>426</posy>
                                 <width>260</width>
                                 <height>387</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem5Var]</texture>
                             </control>
@@ -1241,11 +1247,11 @@
                             <effect type="slide" start="-225,0" end="0,0" delay="1200" tween="sine" easing="out" time="200" />
                         </animation>
                         <animation type="Hidden" reversible="false">
-                            <effect type="slide" start="0,0" end="-225,0" delay="350" tween="sine" easing="out" time="100" />
+                            <effect type="slide" end="-225,0" delay="350" tween="sine" easing="out" time="100" />
                             <effect type="fade" start="100" end="0" delay="200" time="50" />
                         </animation>
                         <animation type="WindowClose" reversible="false">
-                            <effect type="slide" start="0,0" end="-225,0" delay="444" tween="sine" easing="out" time="200" />
+                            <effect type="slide" end="-225,0" delay="444" tween="sine" easing="out" time="200" />
                             <effect type="fade" start="100" end="0" delay="550" time="50" />
                         </animation>
                         <posx>1152</posx>
@@ -1259,6 +1265,7 @@
                                 <posy>44</posy>
                                 <width>292</width>
                                 <height>438</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem4Var]</texture>
                             </control>
@@ -1266,6 +1273,7 @@
                                 <posx>50</posx>
                                 <posy>480</posy>
                                 <width>292</width>
+                                <fadetime>0</fadetime>
                                 <height>438</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem4Var]</texture>
@@ -1295,11 +1303,11 @@
                             <effect type="slide" start="-278,0" end="0,0" delay="1000" tween="sine" easing="out" time="200" />
                         </animation>
                         <animation type="Hidden" reversible="false">
-                            <effect type="slide" start="0,0" end="-278,0" delay="400" tween="sine" easing="out" time="100" />
+                            <effect type="slide" end="-278,0" delay="400" tween="sine" easing="out" time="100" />
                             <effect type="fade" start="100" end="0" delay="250" time="50" />
                         </animation>
                         <animation type="WindowClose" reversible="false">
-                            <effect type="slide" start="0,0" end="-278,0" delay="555" tween="sine" easing="out" time="200" />
+                            <effect type="slide" end="-278,0" delay="555" tween="sine" easing="out" time="200" />
                             <effect type="fade" start="100" end="0" delay="670" time="50" />
                         </animation>
                         <posx>933</posx>
@@ -1313,6 +1321,7 @@
                                 <posy>48</posy>
                                 <width>326</width>
                                 <height>488</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem3Var]</texture>
                             </control>
@@ -1322,6 +1331,7 @@
                                 <width>326</width>
                                 <height>488</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
+                                <fadetime>0</fadetime>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem3Var]</texture>
                             </control>
                             <control type="image">
@@ -1349,11 +1359,11 @@
                             <effect type="slide" start="-338,0" end="0,0" delay="800" tween="sine" easing="out" time="200" />
                         </animation>
                         <animation type="Hidden" reversible="false">
-                            <effect type="slide" start="0,0" end="-338,0" delay="500" tween="sine" easing="out" time="100" />
+                            <effect type="slide" end="-338,0" delay="500" tween="sine" easing="out" time="100" />
                             <effect type="fade" start="100" end="0" delay="300" time="50" />
                         </animation>
                         <animation type="WindowClose" reversible="false">
-                            <effect type="slide" start="0,0" end="-338,0" delay="666" tween="sine" easing="out" time="200" />
+                            <effect type="slide" end="-338,0" delay="666" tween="sine" easing="out" time="200" />
                             <effect type="fade" start="100" end="0" delay="780" time="50" />
                         </animation>
                         <posx>669</posx>
@@ -1369,12 +1379,14 @@
                                 <height>537</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
+                                <fadetime>0</fadetime>
                             </control>
                             <control type="image">
                                 <posx>62</posx>
                                 <posy>588</posy>
                                 <width>358</width>
                                 <height>537</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
                             </control>
@@ -1403,11 +1415,11 @@
                             <effect type="slide" start="-345,0" end="0,0" delay="600" tween="sine" easing="out" time="200" />
                         </animation>
                         <animation type="Hidden" reversible="false">
-                            <effect type="slide" start="0,0" end="-345,0" delay="550" tween="sine" easing="out" time="100" />
+                            <effect type="slide" end="-345,0" delay="550" tween="sine" easing="out" time="100" />
                             <effect type="fade" start="100" end="0" delay="350" time="50" />
                         </animation>
                         <animation type="WindowClose" reversible="false">
-                            <effect type="slide" start="0,0" end="-345,0" delay="777" tween="sine" easing="out" time="200" />
+                            <effect type="slide" end="-345,0" delay="777" tween="sine" easing="out" time="200" />
                             <effect type="fade" start="100" end="0" delay="900" time="50" />
                         </animation>
                         <posx>354</posx>
@@ -1421,6 +1433,7 @@
                                 <posy>57</posy>
                                 <width>392</width>
                                 <height>586</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
                             </control>
@@ -1429,6 +1442,7 @@
                                 <posy>642</posy>
                                 <width>392</width>
                                 <height>586</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
                             </control>
@@ -1461,19 +1475,19 @@
                             <effect type="fade" delay="100" time="100" />
                         </animation>
                         <animation type="WindowClose" reversible="false">
-                            <effect type="rotatey" start="0" end="90" delay="1000" time="400" />
+                            <effect type="rotatey" end="90" delay="1000" time="400" />
                             <effect type="fade" delay="1000" time="200" />
                         </animation>
                         <animation type="Conditional" condition="Control.HasFocus(5101)" reversible="false">
-                            <effect type="rotatey" center="200" start="0" end="-90" time="450" tween="cubic" easing="in" />
+                            <effect type="rotatey" center="200" end="-90" time="450" tween="cubic" easing="in" />
                             <effect type="rotatey" center="200" start="-90" end="90" time="0" delay="450" />
                             <effect type="fade" start="100" end="0" time="0" delay="450" />
                             <effect type="rotatey" center="200" start="90" end="0" time="450" delay="450" tween="cubic" easing="out" />
                         </animation>
                         <animation type="Conditional" condition="!Control.HasFocus(5101)" reversible="false">
-                            <effect type="rotatey" center="200" start="0" end="90" time="0" tween="cubic" easing="in" delay="450" />
+                            <effect type="rotatey" center="200" end="90" time="0" tween="cubic" easing="in" delay="450" />
                             <effect type="rotatey" center="200" start="90" end="-90" time="0" delay="450" />
-                            <effect type="fade" start="0" end="100" time="200" delay="450" />
+                            <effect type="fade" end="100" time="200" delay="450" />
                             <effect type="rotatey" center="200" start="-90" end="0" time="450" delay="450" tween="cubic" easing="out" />
                         </animation>
                         <posx>-26</posx>
@@ -1487,6 +1501,7 @@
                                 <posy>62</posy>
                                 <width>426</width>
                                 <height>636</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" diffuse="thumbs/posterdiffuse.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
                             </control>
@@ -1495,6 +1510,7 @@
                                 <posy>698</posy>
                                 <width>426</width>
                                 <height>636</height>
+                                <fadetime>0</fadetime>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                                 <texture background="true" flipy="true" diffuse="thumbs/posterreflectiondiffuse2.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
                             </control>
@@ -1518,13 +1534,13 @@
             </control>
             <control type="group" id="4551">
                 <animation type="Visible" reversible="false">
-                    <effect type="rotatey" center="200" start="0" end="-90" time="450" tween="cubic" easing="in" />
+                    <effect type="rotatey" center="200" end="-90" time="450" tween="cubic" easing="in" />
                     <effect type="rotatey" center="200" start="-90" end="90" time="0" delay="450" />
-                    <effect type="fade" start="0" end="100" time="0" delay="450" />
+                    <effect type="fade" end="100" time="0" delay="450" />
                     <effect type="rotatey" center="200" start="90" end="0" time="450" delay="450" tween="cubic" easing="out" />
                 </animation>
                 <animation type="Hidden" reversible="false">
-                    <effect type="rotatey" center="200" start="0" end="90" time="450" tween="cubic" easing="in" />
+                    <effect type="rotatey" center="200" end="90" time="450" tween="cubic" easing="in" />
                     <effect type="rotatey" center="200" start="90" end="-90" time="0" delay="450" />
                     <effect type="fade" start="100" end="0" time="0" delay="450" />
                     <effect type="rotatey" center="200" start="-90" end="0" time="0" delay="450" tween="cubic" easing="out" />
@@ -1552,7 +1568,7 @@
                     <posy>110</posy>
                     <width>360</width>
                     <height>120</height>
-                    <texture background="true" fallback="empty.png">$INFO[ListItem.Path,,logo.png]</texture>
+                    <texture background="true" fallback="empty.png">$INFO[ListItem.Art(clearlogo)]</texture>
                     <aspectratio>keep</aspectratio>
                     <animation effect="fade" delay="300" time="300" reversible="false">Hidden</animation>
                 </control>
@@ -1566,7 +1582,7 @@
                     <scroll>true</scroll>
                     <wrapmultiline>true</wrapmultiline>
                     <label>$INFO[ListItem.Label]</label>
-                    <animation effect="fade" start="0" end="100" time="100" delay="100" reversible="false">Visible</animation>
+                    <animation effect="fade" end="100" time="100" delay="100" reversible="false">Visible</animation>
                     <animation effect="fade" start="100" end="0" time="0" delay="0" reversible="false">Hidden</animation>
                     <visible>Stringcompare(Control.GetLabel(8828),empty.png)</visible>
                 </control>
@@ -1594,8 +1610,38 @@
                 <onclick condition="Container.Content(tvshows) | Container.Content(seasons)">SetFocus(50)</onclick>
                 <visible>!StringCompare(ListItem.Label,..) + Skin.HasSetting(posterviewinfopane)</visible>
             </control>
-            <include condition="Skin.HasSetting(posterwrap)">posterwraplist</include>
-            <include condition="!Skin.HasSetting(posterwrap)">posterfixedlist</include>
+            <control type="fixedlist" id="510">
+                <posx>0</posx>
+                <posy>460</posy>
+                <width>1890</width>
+                <height>560</height>
+                <onleft condition="!Skin.HasSetting(posterwrap)">8400</onleft>
+                <onright condition="!Skin.HasSetting(posterwrap)">8401</onright>
+                <onup>5101</onup>
+                <ondown condition="Control.IsVisible(61)">61</ondown>
+                <ondown condition="!Control.IsVisible(61)">109</ondown>
+                <orientation>horizontal</orientation>
+                <viewtype label="31271">Wraplist of Posters</viewtype>
+                <pagecontrol>61</pagecontrol>
+                <focusposition>1</focusposition>
+                <visible>!IsEmpty(Container.FolderPath) + !Container.Content(years)</visible>
+                <visible>!Container.Content(addons) + [!Container.Content(episodes) | SubString(Container.FolderPath,videodb://5/)]</visible>
+                <itemlayout width="210" height="750"></itemlayout>
+                <focusedlayout width="210" height="750"></focusedlayout>
+            </control>
+            <!-- Invisible buttons for list end animation -->
+            <control type="button" id="8400">
+                <include>HiddenObject</include>
+                <onfocus>SetFocus(510)</onfocus>
+                <visible allowhiddenfocus="true">Control.HasFocus(8400)</visible>
+                <animation effect="fade" time="200">Hidden</animation>
+            </control>
+            <control type="button" id="8401">
+                <include>HiddenObject</include>
+                <onfocus>SetFocus(510)</onfocus>
+                <visible allowhiddenfocus="true">Control.HasFocus(8401)</visible>
+                <animation effect="fade" time="200">Hidden</animation>
+            </control>
         </control>
     </include>
 </includes>

@@ -44,7 +44,7 @@
         <control type="group">
             <posy>280</posy>
             <include>Animation_DialogPopup2</include>
-            <animation effect="slide" start="0,0" end="0,-460" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(movenowplayingwidget)">Conditional</animation>
+            <animation effect="slide" end="0,-460" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(movenowplayingwidget)">Conditional</animation>
             <control type="image">
                 <posx>267</posx>
                 <posy>180</posy>
@@ -105,7 +105,7 @@
                     <alttexturefocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturefocus>
                     <alttexturenofocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturenofocus>
                     <colordiffuse>grey2</colordiffuse>
-                    <onclick>PlayMedia($INFO[Window(Home).Property(RecentAlbum.2.Path)])</onclick>
+                    <onclick>$INFO[Window(Home).Property(RecentAlbum.1.Play)]</onclick>
                     <ondown>450</ondown>
                     <onup>450</onup>
                     <onright>441</onright>
@@ -271,7 +271,6 @@
                 </control>
                 <control type="button" id="452">
                     <include>Objects_NowPlayingSettingsButton</include>
-                    <selected>Skin.HasSetting(nowplayingpanel)</selected>
                     <label>$LOCALIZE[31632]:</label>
                     <label2>[COLOR $VAR[FontColorVar]]$VAR[HomePanelVar][/COLOR]</label2>
                     <onclick condition="!Skin.HasSetting(nowplayingpanel) + !Skin.HasSetting(rotatenowplayingpanel)">Skin.SetBool(nowplayingpanel)</onclick>

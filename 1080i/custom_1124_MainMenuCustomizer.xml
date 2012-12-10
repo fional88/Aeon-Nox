@@ -12,6 +12,7 @@
     <onload>AlarmClock(HomeTile2Left,Control.Move(6001,1),00:07,silent,loop)</onload>
     <onload>AlarmClock(HomeTile2Right,Control.Move(6003,1),00:10,silent,loop)</onload>
     <onload>AlarmClock(HomeTile2Mid,Control.Move(6002,1),00:15,silent,loop)</onload>
+    <onload>SetProperty(MenuName,MenuItem,home)</onload>
     <onunload>CancelAlarm(BGMove,true)</onunload>
     <onunload>CancelAlarm(HomeTileLeft,true)</onunload>
     <onunload>CancelAlarm(HomeTileRight,true)</onunload>
@@ -32,6 +33,23 @@
     </coordinates>
     <controls>
         <include>MainMenuCommonContent</include>
+        <control type="button" id="9006">
+            <include>HiddenObject</include>
+            <onfocus>Skin.Setstring(ItemToEdit.Label,$INFO[Container(9000).ListItem.Label])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.MultiFanart,$INFO[Container(9000).ListItem.Icon])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.Icon,$INFO[Container(9000).ListItem.Property(BigIcon)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.Widget,$INFO[Container(9000).ListItem.Property(Widget)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.Widget2,$INFO[Container(9000).ListItem.Property(Widget2)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.WidgetTitle,$INFO[Container(9000).ListItem.Property(WidgetTitle)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.Widget2Title,$INFO[Container(9000).ListItem.Property(Widget2Title)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.InfoLine,$INFO[Container(9000).ListItem.Property(InfoLine)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.SubMenu,$INFO[Container(9000).ListItem.Property(SubMenu)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.Disable,$INFO[Container(9000).ListItem.Property(DisableIcon)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.Type,$INFO[Container(9000).ListItem.Property(Type)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.Path,$INFO[Container(9000).ListItem.Property(Path)])</onfocus>
+            <onfocus>ActivateWindow(1122)</onfocus>
+            <onfocus>SetFocus(9000)</onfocus>
+        </control>
         <control type="group">
             <animation effect="fade" start="100" end="0" time="0" condition="true">conditional</animation>
             <include>InvisibleIncludeLabels</include>
@@ -39,8 +57,8 @@
         <control type="multiimage">
             <imagepath background="true">$VAR[HomeMainFanartVar]</imagepath>
             <aspectratio align="center" aligny="top">scale</aspectratio>
-            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="7500" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
             <visible>!Substring(Control.GetLabel(4322),dailybabe)</visible>
         </control>
         <include condition="!IsEmpty(Skin.String(CDWall_Folder_Path))">cdwall-musicvisualisation</include>
@@ -50,8 +68,8 @@
             <imagepath background="true">$VAR[HomeMainFanartVar]</imagepath>
             <aspectratio align="center" aligny="top">keep</aspectratio>
             <include>Animation_VisibleChange400</include>
-            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="7500" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
             <visible>!Control.IsVisible(2355) + Substring(Control.GetLabel(4322),dailybabe)</visible>
         </control>
         <control type="image">
@@ -145,18 +163,18 @@
             <posy>472</posy>
             <animation effect="slide" end="0,338" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <animation type="WindowClose">
-                <effect type="fade" start="100" end="0" time="250" tween="quadratic" easing="out" />
-                <effect type="slide" end="0,45" time="250" tween="quadratic" easing="out" />
+                <effect type="fade" start="100" end="0" time="250" tween="quadratic" />
+                <effect type="slide" end="0,45" time="250" tween="quadratic" />
             </animation>
             <animation type="WindowOpen">
-                <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" easing="out" />
+                <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" />
                 <effect type="fade" start="50" end="100" time="300" />
             </animation>
             <control type="image">
                 <posy>-46</posy>
                 <width>1920</width>
                 <height>87</height>
-                <texture>home/nav_back.png</texture>
+                <texture>$VAR[NavBarImageVar]</texture>
                 <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
             </control>
             <control type="grouplist" id="8992">
@@ -168,7 +186,7 @@
                 <itemgap>10</itemgap>
                 <orientation>horizontal</orientation>
                 <usecontrolcoords>true</usecontrolcoords>
-                <scrolltime tween="quadratic" easing="out">200</scrolltime>
+                <scrolltime tween="quadratic">200</scrolltime>
                 <control type="image">
                     <width>30</width>
                     <height>30</height>
@@ -212,7 +230,7 @@
                     <posy>3</posy>
                     <width>1300</width>
                     <height>87</height>
-                    <texture>home/submenubar.png</texture>
+                    <texture>$VAR[SubMenuImageVar]</texture>
                     <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                 </control>
                 <include condition="Skin.HasSetting(submenufixedlist)">SubMenuFixedList</include>

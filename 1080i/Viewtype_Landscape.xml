@@ -80,7 +80,7 @@
         <orientation>horizontal</orientation>
         <viewtype label="$LOCALIZE[31150]">BigWrap</viewtype>
         <pagecontrol>61</pagecontrol>
-        <scrolltime tween="quadratic" easing="out">300</scrolltime>
+        <scrolltime tween="quadratic">300</scrolltime>
         <focusposition>2</focusposition>
         <preloaditems>2</preloaditems>
         <visible>[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Movies) | Container.Content(artists)]</visible>
@@ -91,10 +91,10 @@
         </itemlayout>
         <focusedlayout width="600" height="450" condition="![[Skin.HasSetting(landscapeclearart) | Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]] | [Container.Content(artists) + !Skin.HasSetting(landscapeonelogo)]">
             <control type="group">
-                <animation effect="zoom" center="auto" start="100" end="122" time="300" tween="quadratic" easing="out" reversible="false">Focus</animation>
+                <animation effect="zoom" center="auto" start="100" end="122" time="300" tween="quadratic" reversible="false">Focus</animation>
                 <animation type="UnFocus" condition="Control.HasFocus(503)">
-                    <effect type="slide" end="-57" time="0" tween="quadratic" easing="out" />
-                    <effect type="zoom" center="auto" start="122" end="100" time="300" tween="quadratic" easing="out" />
+                    <effect type="slide" end="-57" time="0" tween="quadratic" />
+                    <effect type="zoom" center="auto" start="122" end="100" time="300" tween="quadratic" />
                 </animation>
                 <posx>57</posx>
                 <include>LandscapeThumbs</include>
@@ -105,8 +105,8 @@
         </itemlayout>
         <focusedlayout width="495" height="450" condition="Skin.HasSetting(landscapelogo) + [Container.Content(tvshows) | Container.Content(movies)]">
             <control type="group">
-                <animation effect="zoom" center="auto" start="100" end="122" time="600" tween="back" easing="out" reversible="false">Focus</animation>
-                <animation effect="zoom" center="auto" start="122" end="100" time="200" tween="back" easing="out" reversible="false">UnFocus</animation>
+                <animation effect="zoom" center="auto" start="100" end="122" time="600" tween="back" reversible="false">Focus</animation>
+                <animation effect="zoom" center="auto" start="122" end="100" time="200" tween="back" reversible="false">UnFocus</animation>
                 <include>LandscapeLogoLayout</include>
             </control>
         </focusedlayout>
@@ -117,8 +117,8 @@
         </itemlayout>
         <focusedlayout width="495" height="450" condition="[Skin.HasSetting(landscapeclearart) + [Container.Content(tvshows) | Container.Content(movies)]]">
             <control type="group">
-                <animation effect="zoom" center="auto" start="100" end="122" time="600" tween="back" easing="out" reversible="false">Focus</animation>
-                <animation effect="zoom" center="auto" start="122" end="100" time="200" tween="back" easing="out" reversible="false">UnFocus</animation>
+                <animation effect="zoom" center="auto" start="100" end="122" time="600" tween="back" reversible="false">Focus</animation>
+                <animation effect="zoom" center="auto" start="122" end="100" time="200" tween="back" reversible="false">UnFocus</animation>
                 <include>LandscapeClearArtLayout</include>
             </control>
         </focusedlayout>
@@ -136,9 +136,11 @@
     <include name="MediaListView3">
         <control type="group">
             <visible>Control.IsVisible(503)</visible>
-            <animation effect="slide" tween="cubic" easing="out" time="500" start="0,806" end="0,0">VisibleChange</animation>
+            <animation effect="slide" tween="cubic" time="500" start="0,806" end="0,0">VisibleChange</animation>
             <include condition="!Skin.HasSetting(showcasewrap)">lsfixed</include>
             <include condition="Skin.HasSetting(showcasewrap)">lswrap</include>
+            <control type="group">
+                        <include>Animation_WindowFade200</include>
             <control type="image" id="8822">
                 <posx>650</posx>
                 <posy>810</posy>
@@ -153,7 +155,6 @@
                 <visible>Control.IsVisible(503) + Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]</visible>
                 <visible>![Container.OnNext | Container.OnPrevious]</visible>
             </control>
-            <control type="group">
                 <control type="label">
                     <animation effect="slide" end="0,-20" time="300" condition="Control.IsVisible(4050) | Control.HasFocus(61)">Conditional</animation>
                     <posx>510</posx>
@@ -221,7 +222,6 @@
                     <label>$VAR[LandscapeLogoLabelVar]</label>
                     <visible>Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]  + !Control.HasFocus(61)</visible>
                 </control>
-            </control>
             <control type="image">
                 <posx>200r</posx>
                 <posy>0</posy>
@@ -231,6 +231,7 @@
                 <visible>[Skin.HasSetting(watchedoverlay) + SubString(ListItem(0).Overlay,OverlayWatched.png)] | [Skin.HasSetting(newstatus) + SubString(ListItem(0).Overlay,OverlayUnWatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(0).Label)]] | [[Container.Content(tvshows) | Container.Content(seasons)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(0).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(0).Title)]]]]</visible>
                 <include>Animation_VisibleChange200</include>
                 <texture>$INFO[ListItem.Overlay,thumbs/]</texture>
+            </control>
             </control>
         </control>
     </include>

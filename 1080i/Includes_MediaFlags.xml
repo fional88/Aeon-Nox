@@ -1,8 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <includes>
     <include name="OSDFlagVars">
-        <width>135</width>
-        <height>90</height>
+        <width>120</width>
+        <height>80</height>
+        <aspectratio>keep</aspectratio>
+        <colordiffuse>white2</colordiffuse>
+        <fadetime>IconCrossfadeTime2</fadetime>
+        <animation effect="fade" time="250">VisibleChange</animation>
+    </include>
+    <include name="HomeInfoWidgetVars">
+        <width>120</width>
+        <height>80</height>
         <aspectratio>keep</aspectratio>
         <colordiffuse>white2</colordiffuse>
         <fadetime>IconCrossfadeTime2</fadetime>
@@ -121,7 +129,7 @@
     </include>
     <include name="MusicMediaFlags">
         <control type="group">
-            <visible>[Control.IsVisible(50) | Control.IsVisible(509) | Control.IsVisible(513) | Control.IsVisible(500) | Control.IsVisible(512) | Control.IsVisible(57)] + [Container.Content(Albums) | Container.Content(Songs)]</visible>
+            <visible>[Control.IsVisible(50) | Control.IsVisible(509) | Control.IsVisible(500) | Control.IsVisible(512) | Control.IsVisible(57)] + [Container.Content(Albums) | Container.Content(Songs)]</visible>
             <include>Animation_WindowFade200</include>
             <posy>8</posy>
             <!-- Rating -->

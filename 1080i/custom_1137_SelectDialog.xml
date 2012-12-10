@@ -38,7 +38,6 @@
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                         <include>PanelGlowFade</include>
-                        <include>Animation_VisibleChange400</include>
                     </control>
                     <control type="image">
                         <width>780</width>
@@ -117,7 +116,7 @@
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white3</focusedcolor>
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                        <onfocus>SetProperty(WidgetType,panel,1124)</onfocus>
+                        <onfocus>SetProperty(WidgetType,panelcover,1124)</onfocus>
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                         <onclick>Dialog.Close(1137)</onclick>
                         <align>center</align>
@@ -166,7 +165,7 @@
                     <control type="button" id="13">
                         <width>175</width>
                         <height>45</height>
-                        <label>Logo</label>
+                        <label>31059</label>
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white3</focusedcolor>
@@ -181,14 +180,14 @@
                     <control type="button" id="14">
                         <width>175</width>
                         <height>45</height>
-                        <label>ClearArt</label>
+                        <label>31086</label>
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white3</focusedcolor>
                         <align>center</align>
                         <textoffsetx>30</textoffsetx>
                         <!-- widget style -->
-                        <onfocus>SetProperty(WidgetType,panelclearart,1124)</onfocus>
+                        <onfocus>SetProperty(WidgetType,panelclearartlayout,1124)</onfocus>
                         <onfocus>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(WidgetSelection)],$INFO[Control.GetLabel(12112)])</onfocus>
                         <onclick>Dialog.Close(1137)</onclick>
                         <visible>SubString(Window(1124).Property(CustomYesNoDialog),movie) | SubString(Window(1124).Property(CustomYesNoDialog),tv)</visible>
@@ -196,7 +195,7 @@
                     <control type="button" id="17">
                         <width>175</width>
                         <height>45</height>
-                        <label>Banner</label>
+                        <label>31058</label>
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white3</focusedcolor>
@@ -211,7 +210,7 @@
                     <control type="button" id="171">
                         <width>175</width>
                         <height>45</height>
-                        <label>Landscape</label>
+                        <label>31150</label>
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <textcolor>grey2</textcolor>
                         <focusedcolor>white3</focusedcolor>
@@ -230,7 +229,7 @@
                     <height>45</height>
                     <onup>5401</onup>
                     <ondown>5400</ondown>
-                    <label>Show Background Panel</label>
+                    <label>31195</label>
                     <posy>240</posy>
                     <animation effect="slide" end="0,60" time="0" condition="SubString(Window(1124).Property(CustomYesNoDialog),movie) | SubString(Window(1124).Property(CustomYesNoDialog),tv)">Conditional</animation>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>

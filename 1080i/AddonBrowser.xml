@@ -3,12 +3,12 @@
     <defaultcontrol>50</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <views>50,57,500,505,509,511,512,53,518</views>
-    <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
+    <include condition="!Skin.HasSetting(firstrun4.0)">AutoConfig</include>
     <onload condition="!Skin.HasSetting(ExplainMediaMenu)">ActivateWindow(1123)</onload>
     <controls>
         <control type="multiimage">
-            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+            <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="7500" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
             <imagepath background="true">$VAR[AddonBrowserFanartVar]</imagepath>
         </control>
         <include>VideoBackground</include>

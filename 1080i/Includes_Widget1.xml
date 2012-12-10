@@ -110,8 +110,8 @@
             <!--Unfocused widget-->
             <control type="group">
                 <visible>!Control.HasFocus(8000)</visible>
-                <animation effect="slide" start="450" end="0" time="300" delay="300" tween="quadratic" easing="out">Visible</animation>
-               <control type="group">
+                <animation effect="slide" start="450" end="0" time="300" delay="300" tween="quadratic">Visible</animation>
+                <control type="group">
                     <visible>!Substring(Control.GetLabel(4321),transparent)</visible>
                     <include>Animation_VisibleChange200</include>
                     <control type="image">
@@ -171,8 +171,8 @@
                     <visible>Substring(Control.GetLabel(4321),tv) + !Substring(Control.GetLabel(4321),featured) + !Substring(Control.GetLabel(4321),panel)</visible>
                 </control>
                 <control type="group">
-                        <posx>7</posx>
-                        <posy>63</posy>
+                    <posx>7</posx>
+                    <posy>63</posy>
                     <control type="image">
                         <texture background="true" fallback="DefaultAlbumCover.png">$INFO[Container(8000).ListItem.Icon]</texture>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
@@ -221,7 +221,7 @@
                 <posx>-3050</posx>
                 <posy>-13</posy>
                 <animation type="Conditional" condition="true">
-                    <effect type="zoom" start="100" end="97" center="960,540" time="300" tween="cubic" easing="out" />
+                    <effect type="zoom" start="100" end="97" center="960,540" time="300" tween="cubic" />
                 </animation>
                 <animation effect="slide" end="1530,0" time="500" easing="inout" tween="cubic" condition="Control.HasFocus(8000)">Conditional</animation>
                 <control type="group">
@@ -529,7 +529,7 @@
                 <posx>513</posx>
                 <posy>-20</posy>
                 <animation type="Conditional" condition="true">
-                    <effect type="zoom" start="100" end="97" center="960,540" time="300" tween="cubic" easing="out" />
+                    <effect type="zoom" start="100" end="97" center="960,540" time="300" tween="cubic" />
                 </animation>
                 <control type="image">
                     <posx>-2</posx>
@@ -608,7 +608,7 @@
                     <onright>8993</onright>
                     <include>NavigationWidget1</include>
                     <preloaditems>2</preloaditems>
-                    <scrolltime tween="quadratic" easing="out">200</scrolltime>
+                    <scrolltime tween="quadratic">200</scrolltime>
                     <itemlayout height="34" width="450">
                         <control type="image">
                             <posx>-15</posx>
@@ -683,6 +683,8 @@
                         <include condition="Substring(Skin.String(widgetlist),rss2 )">RSS2WidgetContent</include>
                         <include condition="Substring(Skin.String(widgetlist),rss3 )">RSS3WidgetContent1124</include>
                         <include condition="Substring(Skin.String(widgetlist),rss3 )">RSS3WidgetContent</include>
+                        <include condition="Substring(Skin.String(widgetlist),nextairedtv )">NextAiredWidgetContent1124</include>
+                        <include condition="Substring(Skin.String(widgetlist),nextairedtv )">NextAiredWidgetContent</include>
                     </content>
                 </control>
             </control>
@@ -691,7 +693,7 @@
                 <onfocus condition="Substring(Control.GetLabel(4321),babe)">SetFocus(22222)</onfocus>
                 <onfocus condition="!Substring(Control.GetLabel(4321),babe)">SetFocus(8020)</onfocus>
             </control>
-    <!--         <control type="button" id="5014">
+            <!--         <control type="button" id="5014">
                 <include>HiddenObject</include>
                 <onfocus condition="Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo) | Substring(Control.GetLabel(4321),actors)">$INFO[Container(5010).ListItem.Property(Path)]</onfocus>
                 <onfocus condition="Substring(Control.GetLabel(4321),tv)">$INFO[Container(5010).ListItem.Property(Path)]</onfocus>
@@ -707,65 +709,72 @@
                 <onfocus condition="Substring(Control.GetLabel(4321),recentpics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=10)</onfocus>
             </control>
  -->            
-                 <control type="grouplist" id="8020">
-                        <posx>-830</posx>
-                        <posy>28</posy>
-                        <width>1373</width>
-                        <onup>8020</onup>
-                        <ondown>8020</ondown>
-                        <include>Animation_Widgets</include>
-                        <visible allowhiddenfocus="true">ControlGroup(8020).HasFocus</visible>
-                        <onback>SetFocus(8000)</onback>
-                        <onleft>SetFocus(8000)</onleft>
-                        <onright>SetFocus(8000)</onright>
-                        <orientation>vertical</orientation>
-                        <control type="image" id="1">
-                            <posy>-39</posy>
-                            <width>462</width>
-                            <height>39</height>
-                            <texture>dialogs/context_top_shutdown.png</texture>
-                        </control>
-                            <control type="button" id="8032">
-                                <label>$LOCALIZE[208]</label>
-                                <include>Objects_ContextMenuButton</include>
-                                <onclick condition="Substring(Control.GetLabel(4321),artist)">ActivateWindow(musiclibrary,$ESCINFO[Container(8000).ListItem.Property(Path)],return)</onclick>
-                                <onclick condition="Substring(Control.GetLabel(4321),album)">Playlist.Clear</onclick>
-                                <onclick condition="!Substring(Control.GetLabel(4321),artist) + !Substring(Control.GetLabel(4321),addons) + !Substring(Control.GetLabel(4321),artists) + !Substring(Control.GetLabel(4321),rss)">$INFO[Container(8000).ListItem.Property(Path)]</onclick>
-                                <onclick condition="Substring(Control.GetLabel(4321),addons)">RunAddon($INFO[Container(8000).ListItem.Property(Path)])</onclick>
-                                <onclick condition="Substring(Control.GetLabel(4321),rss)">PlayMedia($ESCINFO[Container(8000).ListItem.Property(Media)])</onclick>
-                            </control>
-                            <control type="button" id="8016">
-                                <label>$LOCALIZE[20410]</label>
-                                <onclick>PlayMedia($ESCINFO[Container(8000).ListItem.Property(Trailer)])</onclick>
-                                <include>Objects_ContextMenuButton</include>
-                                <visible>!IsEmpty(Container(8000).ListItem.Property(Trailer))</visible>
-                            </control>                 
-                            <control type="button" id="8035">
-                                <label>$LOCALIZE[31087]</label>
-                                <onclick condition="SubString(Control.GetLabel(4321),1custom)">$INFO[Skin.String(SmartPlaylist1.Call)]</onclick>
-                                <onclick condition="SubString(Control.GetLabel(4321),2custom)">$INFO[Skin.String(SmartPlaylist2.Call)]</onclick>
-                                <onclick condition="SubString(Control.GetLabel(4321),3custom)">$INFO[Skin.String(SmartPlaylist3.Call)]</onclick>
-                                <onclick condition="SubString(Control.GetLabel(4321),4custom)">$INFO[Skin.String(SmartPlaylist4.Call)]</onclick>
-                                <onclick condition="SubString(Control.GetLabel(4321),5custom)">$INFO[Skin.String(SmartPlaylist5.Call)]</onclick>
-                                <onclick condition="SubString(Control.GetLabel(4321),6custom)">$INFO[Skin.String(SmartPlaylist6.Call)]</onclick>
-                                <onclick condition="Substring(Control.GetLabel(4321),actors)">RunScript(script.metadata.actors,borntoday,10,random)</onclick>
-                                <onclick condition="Substring(Control.GetLabel(4321),pics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onclick>
-                                <onclick condition="!Substring(Control.GetLabel(4321),custom) + !Substring(Control.GetLabel(4321),pics)">SetProperty(SkinWidgets_RandomItems_Update,true)</onclick>
-                                <include>Objects_ContextMenuButton</include>
-                                <visible>Substring(Control.GetLabel(4321),random) | Substring(Control.GetLabel(4321),actors)</visible>
-                            </control>
-                            <control type="button" id="8023">
-                                <label>$LOCALIZE[31066]</label>
-                                <onclick>SetFocus(8000)</onclick>
-                                <include>Objects_ContextMenuButton</include>
-                            </control>
-                        <control type="image" id="2">
-                            <posy>699</posy>
-                            <width>462</width>
-                            <height>40</height>
-                            <texture>dialogs/context_bottom.png</texture>
-                        </control>
-                    </control>            
+            <control type="grouplist" id="8020">
+                <posx>-830</posx>
+                <posy>28</posy>
+                <width>1373</width>
+                <onup>8020</onup>
+                <ondown>8020</ondown>
+                <animation type="Visible" reversible="false">
+                    <effect type="zoom" start="150" end="100" center="-545,0" time="900" tween="cubic" />
+                    <effect type="fade" end="100" time="900" />
+                </animation>
+                <animation type="Hidden" reversible="false">
+                    <effect type="fade" start="100" end="0" time="300" />
+                    <effect type="zoom" start="100" end="130" center="-545,0" time="300" tween="cubic" easing="in" />
+                </animation>
+                <visible allowhiddenfocus="true">ControlGroup(8020).HasFocus</visible>
+                <onback>SetFocus(8000)</onback>
+                <onleft>SetFocus(8000)</onleft>
+                <onright>SetFocus(8000)</onright>
+                <orientation>vertical</orientation>
+                <control type="image" id="1">
+                    <posy>-39</posy>
+                    <width>462</width>
+                    <height>39</height>
+                    <texture>dialogs/context_top_shutdown.png</texture>
+                </control>
+                <control type="button" id="8032">
+                    <label>$LOCALIZE[208]</label>
+                    <include>Objects_ContextMenuButton</include>
+                    <onclick condition="Substring(Control.GetLabel(4321),artist)">ActivateWindow(musiclibrary,$ESCINFO[Container(8000).ListItem.Property(Path)],return)</onclick>
+                    <onclick condition="Substring(Control.GetLabel(4321),album)">Playlist.Clear</onclick>
+                    <onclick condition="!Substring(Control.GetLabel(4321),artist) + !Substring(Control.GetLabel(4321),addons) + !Substring(Control.GetLabel(4321),artists) + !Substring(Control.GetLabel(4321),rss)">$INFO[Container(8000).ListItem.Property(Path)]</onclick>
+                    <onclick condition="Substring(Control.GetLabel(4321),addons)">RunAddon($INFO[Container(8000).ListItem.Property(Path)])</onclick>
+                    <onclick condition="Substring(Control.GetLabel(4321),rss)">PlayMedia($ESCINFO[Container(8000).ListItem.Property(Media)])</onclick>
+                </control>
+                <control type="button" id="8016">
+                    <label>$LOCALIZE[20410]</label>
+                    <onclick>PlayMedia($ESCINFO[Container(8000).ListItem.Property(Trailer)])</onclick>
+                    <include>Objects_ContextMenuButton</include>
+                    <visible>!IsEmpty(Container(8000).ListItem.Property(Trailer))</visible>
+                </control>                 
+                <control type="button" id="8035">
+                    <label>$LOCALIZE[31087]</label>
+                    <onclick condition="SubString(Control.GetLabel(4321),1custom)">$INFO[Skin.String(SmartPlaylist1.Call)]</onclick>
+                    <onclick condition="SubString(Control.GetLabel(4321),2custom)">$INFO[Skin.String(SmartPlaylist2.Call)]</onclick>
+                    <onclick condition="SubString(Control.GetLabel(4321),3custom)">$INFO[Skin.String(SmartPlaylist3.Call)]</onclick>
+                    <onclick condition="SubString(Control.GetLabel(4321),4custom)">$INFO[Skin.String(SmartPlaylist4.Call)]</onclick>
+                    <onclick condition="SubString(Control.GetLabel(4321),5custom)">$INFO[Skin.String(SmartPlaylist5.Call)]</onclick>
+                    <onclick condition="SubString(Control.GetLabel(4321),6custom)">$INFO[Skin.String(SmartPlaylist6.Call)]</onclick>
+                    <onclick condition="Substring(Control.GetLabel(4321),actors)">RunScript(script.metadata.actors,borntoday,10,random)</onclick>
+                    <onclick condition="Substring(Control.GetLabel(4321),pics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onclick>
+                    <onclick condition="!Substring(Control.GetLabel(4321),custom) + !Substring(Control.GetLabel(4321),pics)">SetProperty(SkinWidgets_RandomItems_Update,true)</onclick>
+                    <include>Objects_ContextMenuButton</include>
+                    <visible>Substring(Control.GetLabel(4321),random) | Substring(Control.GetLabel(4321),actors)</visible>
+                </control>
+                <control type="button" id="8023">
+                    <label>$LOCALIZE[31066]</label>
+                    <onclick>SetFocus(8000)</onclick>
+                    <include>Objects_ContextMenuButton</include>
+                </control>
+                <control type="image" id="2">
+                    <posy>699</posy>
+                    <width>462</width>
+                    <height>40</height>
+                    <texture>dialogs/context_bottom.png</texture>
+                </control>
+            </control>            
         </control>
     </include>
     <include name="Custom1Widget">
@@ -2658,92 +2667,92 @@
     </include>
     <include name="RandomAddonsItems">
         <item>
-            <icon>$INFO[Window(Home).Property(RandomAddon.1.Thumb)]</icon>
+            <icon>$INFO[Window(Home).Property(RandomAddon.1.Art(thumb))]</icon>
             <label>$INFO[Window(Home).Property(RandomAddon.1.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.1.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.1.Version)]</property>
             <property name="Summary">$INFO[Window(Home).Property(RandomAddon.1.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.1.Art(fanart))]</property>
-            <property name="Path">$INFO[Window(Home).Property(RandomAddon.1.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RandomAddon.1.Run)]</property>
             <onclick>SetFocus(5014)</onclick>
             <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
         </item>
         <item>
-            <icon>$INFO[Window(Home).Property(RandomAddon.2.Thumb)]</icon>
+            <icon>$INFO[Window(Home).Property(RandomAddon.2.Art(thumb))]</icon>
             <label>$INFO[Window(Home).Property(RandomAddon.2.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.2.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.2.Version)]</property>
             <property name="Summary">$INFO[Window(Home).Property(RandomAddon.2.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.2.Art(fanart))]</property>
-            <property name="Path">$INFO[Window(Home).Property(RandomAddon.2.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RandomAddon.2.Run)]</property>
             <onclick>SetFocus(5014)</onclick>
             <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
         </item>
         <item>
-            <icon>$INFO[Window(Home).Property(RandomAddon.3.Thumb)]</icon>
+            <icon>$INFO[Window(Home).Property(RandomAddon.3.Art(thumb))]</icon>
             <label>$INFO[Window(Home).Property(RandomAddon.3.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.3.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.3.Version)]</property>
             <property name="Summary">$INFO[Window(Home).Property(RandomAddon.3.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.3.Art(fanart))]</property>
-            <property name="Path">$INFO[Window(Home).Property(RandomAddon.3.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RandomAddon.3.Run)]</property>
             <onclick>SetFocus(5014)</onclick>
             <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
         </item>
         <item>
-            <icon>$INFO[Window(Home).Property(RandomAddon.4.Thumb)]</icon>
+            <icon>$INFO[Window(Home).Property(RandomAddon.4.Art(thumb))]</icon>
             <label>$INFO[Window(Home).Property(RandomAddon.4.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.4.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.4.Version)]</property>
             <property name="Summary">$INFO[Window(Home).Property(RandomAddon.4.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.4.Art(fanart))]</property>
-            <property name="Path">$INFO[Window(Home).Property(RandomAddon.4.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RandomAddon.4.Run)]</property>
             <onclick>SetFocus(5014)</onclick>
             <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
         </item>
         <item>
-            <icon>$INFO[Window(Home).Property(RandomAddon.5.Thumb)]</icon>
+            <icon>$INFO[Window(Home).Property(RandomAddon.5.Art(thumb))]</icon>
             <label>$INFO[Window(Home).Property(RandomAddon.5.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.5.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.5.Version)]</property>
             <property name="Summary">$INFO[Window(Home).Property(RandomAddon.5.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.5.Art(fanart))]</property>
-            <property name="Path">$INFO[Window(Home).Property(RandomAddon.5.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RandomAddon.5.Run)]</property>
             <onclick>SetFocus(5014)</onclick>
             <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
         </item>
     </include>
     <include name="RandomAddonsItemsHome">
         <item>
-            <icon>$INFO[Window(Home).Property(RandomAddon.6.Thumb)]</icon>
+            <icon>$INFO[Window(Home).Property(RandomAddon.6.Art(thumb))]</icon>
             <label>$INFO[Window(Home).Property(RandomAddon.6.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.6.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.6.Version)]</property>
             <property name="Summary">$INFO[Window(Home).Property(RandomAddon.6.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.6.Art(fanart))]</property>
-            <property name="Path">$INFO[Window(Home).Property(RandomAddon.6.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RandomAddon.6.Run)]</property>
             <onclick>SetFocus(5014)</onclick>
             <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
         </item>
         <item>
-            <icon>$INFO[Window(Home).Property(RandomAddon.7.Thumb)]</icon>
+            <icon>$INFO[Window(Home).Property(RandomAddon.7.Art(thumb))]</icon>
             <label>$INFO[Window(Home).Property(RandomAddon.7.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.7.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.7.Version)]</property>
             <property name="Summary">$INFO[Window(Home).Property(RandomAddon.7.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.7.Art(fanart))]</property>
-            <property name="Path">$INFO[Window(Home).Property(RandomAddon.7.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RandomAddon.7.Run)]</property>
             <onclick>SetFocus(5014)</onclick>
             <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
         </item>
         <item>
-            <icon>$INFO[Window(Home).Property(RandomAddon.8.Thumb)]</icon>
+            <icon>$INFO[Window(Home).Property(RandomAddon.8.Art(thumb))]</icon>
             <label>$INFO[Window(Home).Property(RandomAddon.8.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.8.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.8.Version)]</property>
             <property name="Summary">$INFO[Window(Home).Property(RandomAddon.8.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.8.Art(fanart))]</property>
-            <property name="Path">$INFO[Window(Home).Property(RandomAddon.8.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RandomAddon.8.Run)]</property>
             <onclick>SetFocus(5014)</onclick>
             <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
         </item>
@@ -2753,7 +2762,7 @@
             <label>$INFO[Window(Home).Property(RecommendedAlbum.1.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecommendedAlbum.1.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.1.Play)]</property>
-            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.1.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.1.Art(thumb))]</thumb>
             <property name="NavItem">item1.png</property>
             <property name="Description">$INFO[Window(Home).Property(RecommendedAlbum.1.Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedAlbum.1.Rating)]</property>
@@ -2768,7 +2777,7 @@
             <label>$INFO[Window(Home).Property(RecommendedAlbum.2.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecommendedAlbum.2.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.2.Play)]</property>
-            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.2.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.2.Art(thumb))]</thumb>
             <property name="NavItem">item2.png</property>
             <property name="Description">$INFO[Window(Home).Property(RecommendedAlbum.2.Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedAlbum.2.Rating)]</property>
@@ -2783,7 +2792,7 @@
             <label>$INFO[Window(Home).Property(RecommendedAlbum.3.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecommendedAlbum.3.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.3.Play)]</property>
-            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.3.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.3.Art(thumb))]</thumb>
             <property name="NavItem">item3.png</property>
             <property name="Description">$INFO[Window(Home).Property(RecommendedAlbum.3.Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedAlbum.3.Rating)]</property>
@@ -2798,7 +2807,7 @@
             <label>$INFO[Window(Home).Property(RecommendedAlbum.4.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecommendedAlbum.4.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.4.Play)]</property>
-            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.4.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.4.Art(thumb))]</thumb>
             <property name="NavItem">item4.png</property>
             <property name="Description">$INFO[Window(Home).Property(RecommendedAlbum.4.Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedAlbum.4.Rating)]</property>
@@ -2813,7 +2822,7 @@
             <label>$INFO[Window(Home).Property(RecommendedAlbum.5.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecommendedAlbum.5.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.5.Play)]</property>
-            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.5.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.5.Art(thumb))]</thumb>
             <property name="NavItem">item5.png</property>
             <property name="Description">$INFO[Window(Home).Property(RecommendedAlbum.5.Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedAlbum.5.Rating)]</property>
@@ -2830,7 +2839,7 @@
             <label>$INFO[Window(Home).Property(RecommendedAlbum.6.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecommendedAlbum.6.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.6.Play)]</property>
-            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.6.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.6.Art(thumb))]</thumb>
             <property name="NavItem">item6.png</property>
             <property name="Description">$INFO[Window(Home).Property(RecommendedAlbum.6.Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedAlbum.6.Rating)]</property>
@@ -2845,7 +2854,7 @@
             <label>$INFO[Window(Home).Property(RecommendedAlbum.7.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecommendedAlbum.7.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.7.Play)]</property>
-            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.7.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.7.Art(thumb))]</thumb>
             <property name="NavItem">item7.png</property>
             <property name="Description">$INFO[Window(Home).Property(RecommendedAlbum.7.Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedAlbum.7.Rating)]</property>
@@ -2860,7 +2869,7 @@
             <label>$INFO[Window(Home).Property(RecommendedAlbum.8.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecommendedAlbum.8.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.8.Play)]</property>
-            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.8.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.8.Art(thumb))]</thumb>
             <property name="NavItem">item8.png</property>
             <property name="Description">$INFO[Window(Home).Property(RecommendedAlbum.8.Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedAlbum.8.Rating)]</property>
@@ -2875,7 +2884,7 @@
     <include name="RandomAlbumsItems">
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomAlbum.1.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomAlbum.1.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.1.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.1.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.1.Rating)]</property>
@@ -2890,7 +2899,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomAlbum.2.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomAlbum.2.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.2.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.2.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.2.Rating)]</property>
@@ -2905,7 +2914,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomAlbum.3.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomAlbum.3.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.3.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.3.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.3.Rating)]</property>
@@ -2920,7 +2929,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomAlbum.4.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomAlbum.4.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.4.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.4.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.4.Rating)]</property>
@@ -2935,7 +2944,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomAlbum.5.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomAlbum.5.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.5.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.5.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.5.Rating)]</property>
@@ -2952,7 +2961,7 @@
     <include name="RandomAlbumsItemsHome">
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomAlbum.6.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomAlbum.6.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.6.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.6.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.6.Rating)]</property>
@@ -2967,7 +2976,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomAlbum.7.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomAlbum.7.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.7.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.7.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.7.Rating)]</property>
@@ -2982,7 +2991,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomAlbum.8.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomAlbum.8.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.8.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.8.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.8.Rating)]</property>
@@ -2999,7 +3008,7 @@
     <include name="RandomArtistsItems">
         <item>
             <icon>DefaultArtist.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomArtist.1.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomArtist.1.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.1.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.1.Genre)]</label2>
             <property name="Description">$INFO[Window(Home).Property(RandomArtist.1.Artist_Description)]</property>
@@ -3010,7 +3019,7 @@
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomArtist.2.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomArtist.2.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.2.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.2.Genre)]</label2>
             <property name="Description">$INFO[Window(Home).Property(RandomArtist.2.Artist_Description)]</property>
@@ -3021,7 +3030,7 @@
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomArtist.3.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomArtist.3.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.3.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.3.Genre)]</label2>
             <property name="Description">$INFO[Window(Home).Property(RandomArtist.3.Artist_Description)]</property>
@@ -3032,7 +3041,7 @@
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomArtist.4.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomArtist.4.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.4.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.4.Genre)]</label2>
             <property name="Description">$INFO[Window(Home).Property(RandomArtist.4.Artist_Description)]</property>
@@ -3043,7 +3052,7 @@
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomArtist.5.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomArtist.5.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.5.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.5.Genre)]</label2>
             <property name="Description">$INFO[Window(Home).Property(RandomArtist.5.Artist_Description)]</property>
@@ -3056,7 +3065,7 @@
     <include name="RandomArtistsItemsHome">
         <item>
             <icon>DefaultArtist.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomArtist.6.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomArtist.6.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.6.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.6.Genre)]</label2>
             <property name="Description">$INFO[Window(Home).Property(RandomArtist.6.Artist_Description)]</property>
@@ -3067,7 +3076,7 @@
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomArtist.7.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomArtist.7.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.7.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.7.Genre)]</label2>
             <property name="Description">$INFO[Window(Home).Property(RandomArtist.7.Artist_Description)]</property>
@@ -3078,7 +3087,7 @@
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomArtist.8.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomArtist.8.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.8.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.8.Genre)]</label2>
             <property name="Description">$INFO[Window(Home).Property(RandomArtist.8.Artist_Description)]</property>
@@ -3091,7 +3100,7 @@
     <include name="LatestAlbumsItems">
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RecentAlbum.1.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentAlbum.1.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RecentAlbum.1.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentAlbum.1.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RecentAlbum.1.Rating)]</property>
@@ -3107,7 +3116,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RecentAlbum.2.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentAlbum.2.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RecentAlbum.2.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentAlbum.2.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RecentAlbum.2.Rating)]</property>
@@ -3123,7 +3132,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RecentAlbum.3.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentAlbum.3.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RecentAlbum.3.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentAlbum.3.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RecentAlbum.3.Rating)]</property>
@@ -3139,7 +3148,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RecentAlbum.4.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentAlbum.4.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RecentAlbum.4.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentAlbum.4.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RecentAlbum.4.Rating)]</property>
@@ -3155,7 +3164,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RecentAlbum.5.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentAlbum.5.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RecentAlbum.5.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentAlbum.5.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RecentAlbum.5.Rating)]</property>
@@ -3173,7 +3182,7 @@
     <include name="LatestAlbumsItemsHome">
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RecentAlbum.6.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentAlbum.6.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RecentAlbum.6.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentAlbum.6.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RecentAlbum.6.Rating)]</property>
@@ -3189,7 +3198,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RecentAlbum.7.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentAlbum.7.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RecentAlbum.7.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentAlbum.7.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RecentAlbum.7.Rating)]</property>
@@ -3205,7 +3214,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RecentAlbum.8.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentAlbum.8.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RecentAlbum.8.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentAlbum.8.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RecentAlbum.8.Rating)]</property>

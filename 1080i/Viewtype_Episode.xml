@@ -56,7 +56,7 @@
             </control>
             <control type="scrollbar" id="61">
                 <posx>1875</posx>
-                <animation effect="zoom" start="70" end="100" center="auto" easing="out" tween="back" time="400" condition="Control.HasFocus(61)">Conditional</animation>
+                <animation effect="zoom" start="70" end="100" center="auto" tween="back" time="400" condition="Control.HasFocus(61)">Conditional</animation>
                 <posy>100</posy>
                 <width>46</width>
                 <height>910</height>
@@ -264,6 +264,9 @@
                 <width>80</width>
                 <height>45</height>
                 <animation type="Conditional" condition="StringCompare(ListItem.Overlay,OverlayWatched.png)">
+                    <effect type="fade" end="30" time="0" easing="in" tween="cubic" />
+                </animation>
+                <animation type="Conditional" condition="ListItem.IsResumable">
                     <effect type="fade" end="30" time="0" easing="in" tween="cubic" />
                 </animation>
                 <align>center</align>

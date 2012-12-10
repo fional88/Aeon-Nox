@@ -185,7 +185,7 @@
         <value>grey</value>
     </variable>
     <variable name="ExtendedColorVar">
-        <value condition="Skin.HasSetting(ExtendedGlowMode)">$VAR[ColorDiffuseVar]</value>
+        <value condition="Skin.HasSetting(colorpanels)">$VAR[ColorDiffuseVar]</value>
         <value>FFFFFFFF</value>
     </variable>
     <variable name="QuickNavButtonLabelVar">
@@ -325,17 +325,18 @@
     </variable>
     <variable name="NextEpisodeVar">
         <value condition="!IsEmpty(Window(Home).Property(NextAired.Label)) + !IsEmpty(Window(Home).Property(NextAired.NextDate))">$INFO[Window(Home).Property(NextAired.NextDate)]</value>
-        <value>$LOCALIZE[312581]</value>
+        <value>$LOCALIZE[31003]</value>
     </variable>
     <variable name="LastEpisodeVar">
         <value condition="!IsEmpty(Window(Home).Property(NextAired.Label))">$INFO[Window(Home).Property(NextAired.LatestDate)]</value>
-        <value>$LOCALIZE[312581]</value>
+        <value>$LOCALIZE[31003]</value>
     </variable>
     <variable name="ShowStatusVar">
         <value condition="!IsEmpty(Window(Home).Property(NextAired.Label))">$INFO[Window(Home).Property(NextAired.Status)]</value>
         <value>$LOCALIZE[31397]</value>
     </variable>
     <variable name="InfoPanelVar">
+        <value condition="Control.HasFocus(109)">infopaneloff</value>
         <value condition="Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShows)]</value>
         <value condition="Container.Content(movies)">$INFO[Skin.String(InfoPanelMovies)]</value>
         <value condition="Container.Content(seasons)">$INFO[Skin.String(InfoPanelSeasons)]</value>
@@ -465,7 +466,7 @@
     </variable>
     <variable name="FanartPanelDetail1Var">
         <value condition="Container.Content(episodes) | IsEmpty(ListItem.TvShowTitle)">$LOCALIZE[20339]:</value>
-        <value condition="Container.Content(tvshows)">$LOCALIZE[312576]:</value>
+        <value condition="Container.Content(tvshows)">$LOCALIZE[31005]:</value>
         <value condition="Container.Content(seasons)">$LOCALIZE[20364]:</value>
     </variable>
     <variable name="FanartPanelValue1Var">
@@ -621,33 +622,33 @@
     <variable name="WatchedIconVar">
         <value condition="Container.Content(movies) + ListItem.IsFolder + !Stringcompare(ListItem.Label,..)">common/logo_set.png</value>
         <value condition="Container.ListItem.IsResumable">dialogs/circle/$INFO[ListItem.PercentPlayed].png</value>
-        <value condition="[[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [Container.Content(tvshows) + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]">common/star.png</value>
-        <value condition="!IsEmpty(ListItem.Top250)">common/imdb.png</value>
+        <value condition="!StringCompare(ListItem.Overlay,OverlayWatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [Container.Content(tvshows) + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]">common/star.png</value>
+        <value condition="!StringCompare(ListItem.Overlay,OverlayWatched.png) + !IsEmpty(ListItem.Top250)">common/imdb.png</value>
         <value>$INFO[ListItem.Overlay]</value>
     </variable>
     <variable name="VolumeColorVar">
-        <value condition="Stringcompare(Control.GetLabel(20),100)">red</value>
-        <value condition="IntegerGreaterThan(Control.GetLabel(20),95)">blue</value>
-        <value condition="IntegerGreaterThan(Control.GetLabel(20),90)">blue</value>
-        <value condition="IntegerGreaterThan(Control.GetLabel(20),85)">blue</value>
-        <value condition="IntegerGreaterThan(Control.GetLabel(20),80)">blue</value>
-        <value condition="IntegerGreaterThan(Control.GetLabel(20),75)">blue</value>
-        <value condition="IntegerGreaterThan(Control.GetLabel(20),70)">blue</value>
-        <value condition="IntegerGreaterThan(Control.GetLabel(20),65)">blue</value>
-        <value condition="IntegerGreaterThan(Control.GetLabel(20),60)">blue</value>
-        <value condition="IntegerGreaterThan(Control.GetLabel(20),55)">blue</value>
-        <value condition="IntegerGreaterThan(Control.GetLabel(20),50)">blue</value>
-        <value condition="IntegerGreaterThan(Control.GetLabel(20),45)">blue</value>
-        <value condition="IntegerGreaterThan(Control.GetLabel(20),40)">blue</value>
-        <value condition="IntegerGreaterThan(Control.GetLabel(20),35)">blue</value>
-        <value condition="IntegerGreaterThan(Control.GetLabel(20),30)">blue</value>
-        <value condition="IntegerGreaterThan(Control.GetLabel(20),25)">blue</value>
-        <value condition="IntegerGreaterThan(Control.GetLabel(20),20)">blue</value>
-        <value condition="IntegerGreaterThan(Control.GetLabel(20),15)">blue</value>
-        <value condition="IntegerGreaterThan(Control.GetLabel(20),10)">blue</value>
-        <value condition="IntegerGreaterThan(Control.GetLabel(20),5)">blue</value>
-        <value condition="IntegerGreaterThan(Control.GetLabel(20),1)">blue</value>
-        <value>blue</value>
+        <value condition="Stringcompare(Control.GetLabel(20),100)">FFFF2409</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),95)">FFFD3809</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),90)">FFFC4C08</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),85)">FFFB6008</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),80)">FFFA7407</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),75)">FFF88807</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),70)">FFF79C06</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),65)">FFF6B006</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),60)">FFF5C305</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),55)">FFF3D705</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),50)">FFF2EA04</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),45)">FFE4F104</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),40)">FFCFF004</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),35)">FFBAEE03</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),30)">FFA4ED03</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),25)">FF8FEC02</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),20)">FF7AEB02</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),15)">FF65E901</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),10)">FF51E801</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),5)">FF3CE700</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),1)">FF28E600</value>
+        <value>FF13E500</value>
     </variable>
     <variable name="VolumeIconVar">
         <value condition="IntegerGreaterThan(Control.GetLabel(20),9)">dialogs/circle/$INFO[Control.GetLabel(20)].png</value>
@@ -727,6 +728,7 @@
         <value condition="Stringcompare(Control.GetLabel(4326),PVR) + PVR.IsRecording">$LOCALIZE[19158] $INFO[PVR.NowRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] • [B][COLOR=FF48D1CC]$INFO[PVR.NowRecordingTitle][/COLOR][/B] [B][COLOR=white]($INFO[PVR.NowRecordingChannel, ])[/COLOR][/B]</value>
         <value condition="Stringcompare(Control.GetLabel(4326),PVR) + PVR.HasNonRecordingTimer">$LOCALIZE[19157] $INFO[PVR.NextRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] • $INFO[PVR.NextRecordingTitle, [B][COLOR=white],[/COLOR][/B]]$INFO[PVR.NextRecordingChannel, - [B][COLOR=white],[/COLOR][/B]]</value>
         <value condition="Stringcompare(Control.GetLabel(4326),weather)">[COLOR grey]$INFO[Window(Weather).Property(Current.Condition)] • $LOCALIZE[402]: [/COLOR]$INFO[Window(weather).Property(Current.FeelsLike)] $INFO[System.TemperatureUnits][COLOR grey] • $LOCALIZE[406]:[/COLOR] $INFO[Window(weather).Property(Current.Humidity)]</value>
+        <value condition="Stringcompare(Control.GetLabel(4326),programs)">[COLOR grey]$LOCALIZE[20161] $LOCALIZE[24001]:[/COLOR] $INFO[Window(Home).Property(RandomAddon.Count)]</value>
         <value condition="Substring(Control.GetLabel(4326),custom,left)">$VAR[CustomLibraryStatsVar]</value>
         <value condition="Window.IsActive(1131)">$LOCALIZE[31683]</value>
         <value></value>
@@ -779,6 +781,7 @@
         <value condition="Stringcompare(Control.GetLabel(4326),randompics) + System.HasAddon(plugin.image.mypicsdb)">[COLOR grey]$LOCALIZE[42292]:[/COLOR] $INFO[Window(Home).Property(MyPicsDBRandom.Categories)][COLOR grey] • $LOCALIZE[42290]:[/COLOR] $INFO[Window(Home).Property(MyPicsDBRandom.Collections)][COLOR grey] • $LOCALIZE[42291]:[/COLOR] $INFO[Window(Home).Property(MyPicsDBRandom.Folders)]</value>
         <value condition="Stringcompare(Control.GetLabel(4326),recentpics) + System.HasAddon(plugin.image.mypicsdb)">[COLOR grey]$LOCALIZE[42292]:[/COLOR] $INFO[Window(Home).Property(MyPicsDBLatest.Categories)][COLOR grey] • $LOCALIZE[42290]:[/COLOR] $INFO[Window(Home).Property(MyPicsDBLatest.Collections)][COLOR grey] • $LOCALIZE[42291]:[/COLOR] $INFO[Window(Home).Property(MyPicsDBLatest.Folders)]</value>
         <value condition="Stringcompare(Control.GetLabel(4326),weather)">[COLOR grey]$LOCALIZE[402]: [/COLOR]$INFO[Window(weather).Property(Current.FeelsLike)] $INFO[System.TemperatureUnits][COLOR grey] • $LOCALIZE[406]:[/COLOR] $INFO[Window(weather).Property(Current.Humidity)]</value>
+        <value condition="Stringcompare(Control.GetLabel(4326),programs)">[COLOR grey]$LOCALIZE[20161] $LOCALIZE[24001]:[/COLOR] $INFO[Window(Home).Property(RandomAddon.Count)]</value>
         <value condition="Stringcompare(Control.GetLabel(4326),PVR) + PVR.IsRecording">$LOCALIZE[19158] $INFO[PVR.NowRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] • [B][COLOR=FF48D1CC]$INFO[PVR.NowRecordingTitle][/COLOR][/B] [B][COLOR=white]($INFO[PVR.NowRecordingChannel, ])[/COLOR][/B]</value>
         <value condition="Stringcompare(Control.GetLabel(4326),PVR) + PVR.HasNonRecordingTimer">$LOCALIZE[19157] $INFO[PVR.NextRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] • $INFO[PVR.NextRecordingTitle, [B][COLOR=white],[/COLOR][/B]]$INFO[PVR.NextRecordingChannel, - [B][COLOR=white],[/COLOR][/B]]</value>
         <value condition="Substring(Control.GetLabel(4326),custom,left)">$VAR[CustomShortLibraryStatsVar]</value>
@@ -907,19 +910,36 @@
     <variable name="HomeWidgetFanartVar">
         <value condition="[Control.HasFocus(8000) | ControlGroup(8020).HasFocus] + !IsEmpty(Container(8000).ListItem.Property(Fanart))">$INFO[Container(8000).ListItem.Property(Fanart)]</value>
         <value condition="[Control.HasFocus(7000) | ControlGroup(7020).HasFocus] + !IsEmpty(Container(7000).ListItem.Property(Fanart))">$INFO[Container(7000).ListItem.Property(Fanart)]</value>
-        <value condition="[Control.HasFocus(5010) | ControlGroup(5014).HasFocus | ControlGroup(5020).HasFocus | ControlGroup(5021).HasFocus | ControlGroup(5030).HasFocus] + !IsEmpty(Container(5010).ListItem.Property(Fanart))">$INFO[Container(5010).ListItem.Property(Fanart)]</value>
+        <value condition="[Control.HasFocus(5010) | ControlGroup(5014).HasFocus | ControlGroup(5020).HasFocus | ControlGroup(5030).HasFocus] + !IsEmpty(Container(5010).ListItem.Property(Fanart))">$INFO[Container(5010).ListItem.Property(Fanart)]</value>
         <value condition="Control.HasFocus(5010) + Substring(Container(9000).ListItem.Property(Widget),featured) + !IsEmpty(Container(5001).ListItem.Property(Fanart))">$INFO[Container(5001).ListItem.Property(Fanart)]</value>
         <value condition="Control.HasFocus(5012) + !IsEmpty(Container(5003).ListItem.Property(Fanart))">$INFO[Container(5003).ListItem.Property(Fanart)]</value>
         <value condition="Control.HasFocus(5011) + !IsEmpty(Container(5002).ListItem.Property(Fanart))">$INFO[Container(5002).ListItem.Property(Fanart)]</value>
-        <value condition="[Control.HasFocus(6010) | ControlGroup(6014).HasFocus | ControlGroup(6020).HasFocus | ControlGroup(6021).HasFocus | ControlGroup(6030).HasFocus] + !IsEmpty(Container(6010).ListItem.Property(Fanart))">$INFO[Container(6010).ListItem.Property(Fanart)]</value>
+        <value condition="[Control.HasFocus(6010) | ControlGroup(6014).HasFocus | ControlGroup(6020).HasFocus | ControlGroup(6030).HasFocus] + !IsEmpty(Container(6010).ListItem.Property(Fanart))">$INFO[Container(6010).ListItem.Property(Fanart)]</value>
         <value condition="Control.HasFocus(6010) + Substring(Container(9000).ListItem.Property(Widget2),featured) + !IsEmpty(Container(6001).ListItem.Property(Fanart))">$INFO[Container(6001).ListItem.Property(Fanart)]</value>
         <value condition="Control.HasFocus(6012) + !IsEmpty(Container(6003).ListItem.Property(Fanart))">$INFO[Container(6003).ListItem.Property(Fanart)]</value>
         <value condition="Control.HasFocus(6011) + !IsEmpty(Container(6002).ListItem.Property(Fanart))">$INFO[Container(6002).ListItem.Property(Fanart)]</value>
         <value condition="Player.HasAudio + Skin.HasSetting(musicfanarthome) + Window.IsActive(home) + !IsEmpty(Player.Art(fanart))">$INFO[Player.Art(fanart)]</value>
     </variable>
     <variable name="SortImageVar">
-        <value condition="!Substring(Control.GetLabel(4),$LOCALIZE[585])">special://skin/extras/BigIcons/Arrowup.png</value>
+        <value condition="Substring(Control.GetLabel(4),$LOCALIZE[585])">special://skin/extras/BigIcons/Arrowup.png</value>
         <value>special://skin/extras/BigIcons/Arrowdown.png</value>
+    </variable>
+    <variable name="NavBarImageVar">
+        <value condition="Skin.HasSetting(shadowbars)">home/nav_back_shadow.png</value>
+        <value>home/nav_back.png</value>
+    </variable>
+    <variable name="SubMenuImageVar">
+        <value condition="Skin.HasSetting(shadowbars)">home/submenubar_shadow.png</value>
+        <value>home/submenubar.png</value>
+    </variable>
+    <variable name="TimePanelImageVar">
+        <value condition="Skin.HasSetting(shadowbars)">home/timepanel_mid_shadow.png</value>
+        <value>home/timepanel_mid.png</value>
+    </variable>
+    <variable name="BarStyleLabelVar">
+        <value condition="Skin.HasSetting(shadowbars)">Shadow</value>
+        <value condition="Skin.HasSetting(colorpanels)">Coloured</value>
+        <value>Default</value>
     </variable>
     <variable name="RepeatImageVar">
         <value condition="Substring(Control.GetLabel(26),$LOCALIZE[595])">special://skin/extras/BigIcons/ButtonRepeatOff.png</value>
@@ -1156,6 +1176,15 @@
         <value condition="!IsEmpty(ListItem(9).Art(poster))">$INFO[ListItem(9).Art(poster)]</value>
         <value>$INFO[ListItem(9).Icon]</value>
     </variable>
+    <variable name="ShowcaseCasePathVar">
+        <value condition="!Skin.HasSetting(clearcases)">tvshows</value>
+        <value>movies</value>
+    </variable>
+    <variable name="ShowcaseCaseLabelVar">
+        <value condition="Skin.HasSetting(usecases) + Skin.HasSetting(clearcases)">Clear Cases</value>
+        <value condition="Skin.HasSetting(usecases)">BD/DVD Cases</value>
+        <value>No</value>
+    </variable>
     <variable name="ShowcaseCase-7Var">
         <value condition="SubString(Container(501).ListItem(-7).Filename,.3D.)">3d.png</value>
         <value>$INFO[Container(501).ListItem(-7).VideoResolution]p.png</value>
@@ -1345,7 +1374,7 @@
         <value condition="Window.IsActive(weather) | Window.IsActive(1153)">$LOCALIZE[8]</value>
         <value condition="Window.IsActive(pictures)">$LOCALIZE[1213]</value>
         <value condition="Window.IsActive(filemanager)">$LOCALIZE[10003]</value>
-        <value condition="Window.IsActive(PVR)">$LOCALIZE[52502]$INFO[Control.GetLabel(29), / ]$INFO[Control.GetLabel(30), / ]</value>
+        <value condition="Window.IsActive(PVR)">$LOCALIZE[31017]$INFO[Control.GetLabel(29), / ]$INFO[Control.GetLabel(30), / ]</value>
         <value condition="Window.IsActive(script-NextAired-TVGuide.xml)">$LOCALIZE[31290]</value>
         <value condition="Window.IsActive(script-globalsearch-main.xml)">$LOCALIZE[283]</value>
         <value condition="Window.IsActive(script-Rom_Collection_Browser-main.xml)">Rom Collection Browser $INFO[ListItem.Property(romcollection), / ]</value>
@@ -1594,7 +1623,7 @@
     <variable name="TriPanelDetail3Var">
         <value condition="[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(NextAiredInfo) + !IsEmpty(Window(Home).Property(NextAired.NextDate))">$LOCALIZE[31190]:</value>
         <value condition="[Container.Content(tvshows) | Container.Content(seasons)] + !Skin.HasSetting(NextAiredInfo)">$LOCALIZE[31189]:</value>
-        <value condition="Container.Content(tvshows)">$LOCALIZE[312576]:</value>
+        <value condition="Container.Content(tvshows)">$LOCALIZE[31005]:</value>
         <value condition="Container.Content(seasons)">$LOCALIZE[16101]:</value>
         <value condition="Window.IsActive(programs)">$LOCALIZE[31364]:</value>
         <value condition="System.HasAddon(script.metadata.actors) + [Container.Content(actors) | Container.Content(directors)]">$ADDON[script.metadata.actors 32013]:</value>
@@ -1759,6 +1788,7 @@
     <variable name="TopBarTypeLabelVar">
         <value condition="Skin.HasSetting(ClassicTopBar)">$LOCALIZE[31038]</value>
         <value condition="Skin.HasSetting(altbreadcrumbstexture)">$LOCALIZE[31037]</value>
+        <value condition="Skin.HasSetting(FadedTopBar)">$LOCALIZE[31637]</value>
         <value>$LOCALIZE[31036]</value>
     </variable>
     <variable name="EpisodeIconVar">
@@ -1803,7 +1833,7 @@
         <value condition="Substring(Skin.String(ItemToEdit.Submenu),video,left)">$LOCALIZE[31504]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Submenu),movie,left)">$LOCALIZE[31502]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Submenu),tv,left)">$LOCALIZE[31503]</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Submenu),pvr,left)">$LOCALIZE[52502]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Submenu),pvr,left)">$LOCALIZE[31017]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Submenu),shutdown,left)">$LOCALIZE[31508]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Submenu),settings,left)">$LOCALIZE[31506]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Submenu),music,left)">$LOCALIZE[31501]</value>
@@ -1817,7 +1847,7 @@
         <value condition="stringcompare(Skin.String(ItemToEdit.Type),4)">$LOCALIZE[41149]</value>
         <value condition="stringcompare(Skin.String(ItemToEdit.Type),5)">$LOCALIZE[41150]</value>
         <value condition="stringcompare(Skin.String(ItemToEdit.Type),6)">$LOCALIZE[41153]</value>
-        <value condition="stringcompare(Skin.String(ItemToEdit.Type),7)">$LOCALIZE[41151]</value>
+        <value condition="stringcompare(Skin.String(ItemToEdit.Type),7) | stringcompare(Skin.String(ItemToEdit.Type),custom)">$LOCALIZE[41151]</value>
         <value>$LOCALIZE[231]</value>
     </variable>
     <variable name="MenuLabelVar">

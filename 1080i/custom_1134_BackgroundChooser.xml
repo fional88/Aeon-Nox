@@ -22,7 +22,6 @@
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <include>PanelGlowFade</include>
-                <include>Animation_VisibleChange400</include>
             </control>
             <control type="image">
                 <posx>379</posx>
@@ -40,7 +39,6 @@
                 <aligny>center</aligny>
                 <scrolltime>0</scrolltime>
                 <orientation>vertical</orientation>
-                <include>Animation_WindowFade250</include>
                 <itemlayout height="60" width="300">
                     <control type="image">
                         <width>300</width>
@@ -214,13 +212,13 @@
                         <onclick>Dialog.Close(1134)</onclick>
                     </item>
                     <item>
-                        <label>CDWall</label>
+                        <label>31601</label>
                         <onclick>Skin.SetString(ItemToEdit.MultiFanart,cdwall)</onclick>
                         <onclick>Dialog.Close(1134)</onclick>
                         <visible>!IsEmpty(Skin.String(CDWall_Folder_Path))</visible>
                     </item>
                     <item>
-                        <label>MovieWall</label>
+                        <label>31612</label>
                         <onclick>Skin.SetString(ItemToEdit.MultiFanart,moviewall)</onclick>
                         <onclick>Dialog.Close(1134)</onclick>
                         <visible>!IsEmpty(Skin.String(MovieWall_Folder_Path))</visible>
@@ -253,7 +251,7 @@
                         <visible>SubString(Weather.Plugin,weather.google) + System.HasAddon(script.widget.weatherworld)</visible>
                     </item>
                     <item>
-                        <label>Most Played ROMs</label>
+                        <label>31673</label>
                         <onclick>Skin.SetString(ItemToEdit.MultiFanart,mostplayedroms)</onclick>
                         <onclick>Dialog.Close(1134)</onclick>
                         <visible>System.HasAddon(script.games.rom.collection.browser)</visible>

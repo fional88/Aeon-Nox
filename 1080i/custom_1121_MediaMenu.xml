@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="1121">
     <defaultcontrol always="true">9011</defaultcontrol>
-    <onload>ClearProperty(QuickNavSetup,home)</onload>
     <onunload>ClearProperty(quicknavsetup,home)</onunload>
     <onunload>ClearProperty(viewtypeselect,home)</onunload>
     <coordinates>
@@ -200,11 +199,6 @@
                     <onclick>Container.SetViewMode(57)</onclick>
                     <visible>[[Window.IsActive(musicfiles) | Window.IsActive(musiclibrary) | Window.IsActive(musicplaylist) | Window.isActive(programs) | Window.isActive(addonbrowser) | [Window.IsActive(videos) + [!Container.Content(episodes) | SubString(Container.FolderPath,videodb://5/)]]] + !IsEmpty(Container.FolderPath) + !Container.Content(years)] | Window.IsActive(videoplaylist)</visible>
                     <visible>![Window.IsActive(videos) + Skin.HasSetting(DisableShiftVL)]</visible>
-                </item>
-                <item>
-                    <label>$LOCALIZE[31152]</label>
-                    <onclick>Container.SetViewMode(513)</onclick>
-                    <visible>Container.Content(albums) | Container.Content(songs) | Window.IsActive(musicfiles)</visible>
                 </item>
                 <item>
                     <label>$LOCALIZE[31028]</label>

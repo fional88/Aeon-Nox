@@ -201,7 +201,6 @@
         <item>
             <label>$INFO[Skin.String(CustomSub5_2.Label)]</label>
             <thumb>$INFO[Skin.String(CustomSub5_2.MultiFanart)]</thumb>
-
             <onclick condition="stringcompare(Skin.String(CustomSub5_2.Type),0) | Stringcompare(Skin.String(CustomSub5_2.Type),1) | Stringcompare(Skin.String(CustomSub5_2.Type),2) | Stringcompare(Skin.String(CustomSub5_2.Type),3)">RunAddon($INFO[Skin.String(CustomSub5_2.Path)])</onclick>
             <onclick condition="stringcompare(Skin.String(CustomSub5_2.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(CustomSub5_2.Path)],return)</onclick>
             <onclick condition="stringcompare(Skin.String(CustomSub5_2.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(CustomSub5_2.Path)],return)</onclick>
@@ -791,24 +790,6 @@
             <property name="Path" fallback="ActivateWindow(Weather)">$INFO[Skin.String(WeatherHomeItem.Path)]</property>
         </item>
     </include>
-    <include name="PlayDiscMainMenu">
-        <item id="14">
-            <onclick>SetProperty($INFO[Window(home).Property(MenuName)],PlayDiscHomeItem,home)</onclick>
-            <onclick>SetFocus(9006)</onclick>
-            <label fallback="31511">$INFO[Skin.String(PlayDiscHomeItem.Label)]</label>
-            <icon fallback="special://skin/backgrounds/play_disc/">$INFO[Skin.String(PlayDiscHomeItem.MultiFanart)]</icon>
-            <property name="Widget">$INFO[Skin.String(PlayDiscHomeItem.Widget)]</property>
-            <property name="Widget2">$INFO[Skin.String(PlayDiscHomeItem.Widget2)]</property>
-            <property name="WidgetTitle">$INFO[Skin.String(PlayDiscHomeItem.WidgetTitle)]</property>
-            <property name="Widget2Title">$INFO[Skin.String(PlayDiscHomeItem.Widget2Title)]</property>
-            <property name="DisableIcon">$INFO[Skin.String(PlayDiscHomeItem.Disable)]</property>
-            <property name="BigIcon" fallback="special://skin/extras/BigIcons/CD-DVD.png">$INFO[Skin.String(PlayDiscHomeItem.Icon)]</property>
-            <property name="InfoLine">$INFO[Skin.String(PlayDiscHomeItem.InfoLine)]</property>
-            <property name="SubMenu">$INFO[Skin.String(PlayDiscHomeItem.SubMenu)]</property>
-            <property name="Type" fallback="custom">$INFO[Skin.String(PlayDiscHomeItem.Type)]</property>
-            <property name="Path" fallback="PlayDVD()">$INFO[Skin.String(PlayDiscHomeItem.Path)]</property>
-        </item>
-    </include>
     <include name="FavoritesMainMenu">
         <item id="13">
             <onclick>SetProperty($INFO[Window(home).Property(MenuName)],FavouritesHomeItem,home)</onclick>
@@ -1058,7 +1039,7 @@
             <property name="InfoLine">$INFO[Skin.String(FeaturedHomeItem.InfoLine)]</property>
             <property name="SubMenu">$INFO[Skin.String(FeaturedHomeItem.SubMenu)]</property>
             <property name="Type" fallback="custom">$INFO[Skin.String(FeaturedHomeItem.Type)]</property>
-            <property name="Path" fallback="ActivateWindow(1115)">$INFO[Skin.String(FeaturedHomeItem.Path)]</property>
+            <property name="Path" fallback="ActivateWindow(1147)">$INFO[Skin.String(FeaturedHomeItem.Path)]</property>
         </item>
     </include>
     <include name="CustomMainMenuItem1">
@@ -1201,11 +1182,13 @@
         <height>225</height>
         <onleft>9000</onleft>
         <onright>9000</onright>
-        <onup condition="IsEmpty(Window(home).Property(DisableWidgets)) + Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4321))">4444</onup>
-        <onup condition="IsEmpty(Window(home).Property(DisableWidgets)) + Skin.HasSetting(lowermainmenu) + IsEmpty(Control.GetLabel(4321)) + !IsEmpty(Control.GetLabel(4325))">4445</onup>
-        <onup condition="IsEmpty(Window(home).Property(DisableWidgets)) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4325))">4445</onup>
+        <onup condition="Skin.HasSetting(lowermainmenu) + Control.IsVisible(4444)">4444</onup>
+        <onup condition="Skin.HasSetting(lowermainmenu)  + !Control.IsVisible(4444) + Control.IsVisible(4445)">4445</onup>
+        <onup condition="Skin.HasSetting(lowermainmenu)  + !Control.IsVisible(4444) + !Control.IsVisible(4445)">SetFocus(9009)</onup>
+        <onup condition="!Skin.HasSetting(lowermainmenu) + Control.IsVisible(4445)">4445</onup>
+        <onup condition="!Skin.HasSetting(lowermainmenu) + !Control.IsVisible(4445)">SetFocus(9009)</onup>
         <ondown>9010</ondown>
-        <ondown condition="IsEmpty(Window(home).Property(DisableWidgets)) + !IntegerGreaterThan(Container(9010).NumItems,0) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4321))">4444</ondown>
+        <ondown condition="IsEmpty(Window(home).Property(DisableWidgets)) + !IntegerGreaterThan(Container(9010).NumItems,0) + !Skin.HasSetting(lowermainmenu) + Control.IsVisible(4444)">4444</ondown>
         <onback condition="!Skin.HasSetting(DisableWidgetToggle) + IsEmpty(Window(home).Property(DisableWidgets))">SetProperty(DisableWidgets,1,home)</onback>
         <onback condition="!Skin.HasSetting(DisableWidgetToggle) + !IsEmpty(Window(home).Property(DisableWidgets))">ClearProperty(DisableWidgets,home)</onback>
         <scrolltime tween="quadratic">300</scrolltime>
@@ -1331,7 +1314,6 @@
             <include condition="IsEmpty(Skin.String(SearchHomeItem.Disable))">SearchMainMenu</include>
             <include condition="IsEmpty(Skin.String(ShutdownHomeItem.Disable))">ShutdownMainMenu</include>
             <include condition="IsEmpty(Skin.String(FavouritesHomeItem.Disable))">FavoritesMainMenu</include>
-            <include condition="IsEmpty(Skin.String(PlayDiscHomeItem.Disable))">PlayDiscMainMenu</include>
             <include condition="IsEmpty(Skin.String(WeatherHomeItem.Disable))">WeatherMainMenu</include>
         </content>
     </include>
@@ -1349,9 +1331,9 @@
         <scrolltime tween="quadratic">300</scrolltime>
         <onup>9000</onup>
         <onback>SetFocus(9000)</onback>
-        <ondown condition="IsEmpty(Window(home).Property(DisableWidgets)) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4321))">4444</ondown>
-        <ondown condition="!Skin.HasSetting(lowermainmenu) + IsEmpty(Control.GetLabel(4321))">9000</ondown>
-        <ondown condition="Skin.HasSetting(lowermainmenu)">9000</ondown>
+        <ondown condition="!Skin.HasSetting(lowermainmenu) + Control.IsVisible(4444)">4444</ondown>
+        <ondown condition="!Skin.HasSetting(lowermainmenu) + !Control.IsVisible(4444)">SetFocus(9011)</ondown>
+        <ondown condition="Skin.HasSetting(lowermainmenu)">SetFocus(9011)</ondown>
         <itemlayout width="230" height="50">
             <control type="label">
                 <posx>115</posx>
@@ -1468,8 +1450,8 @@
                 <orientation>vertical</orientation>
                 <focusposition>0</focusposition>
                 <scrolltime tween="cubic" easing="inout">1200</scrolltime>
-                <itemlayout width="614" height="30"/>
-                <focusedlayout width="614" height="30"/>
+                <itemlayout width="614" height="30" />
+                <focusedlayout width="614" height="30" />
                 <content>
                     <include>1124Backgrounds</include>
                     <include condition="Substring(Skin.String(backgroundlist),randommovies)">RandomMoviesBackgrounds</include>
@@ -2564,62 +2546,60 @@
         </control>
     </include>
     <include name="MainMenuBottomBar">
-        <control type="grouplist" id="6020">
-            <posy>806</posy>
+        <control type="grouplist" id="2020">
+            <posx>9</posx>
+            <posy>1037</posy>
             <width>1920</width>
-            <onleft>6020</onleft>
-            <onright>6020</onright>
-            <align>center</align>
-            <onback>ClearProperty(PanelWidget2Info,Home)</onback>
-            <onback>SetFocus(6010)</onback>
-            <onup>ClearProperty(PanelWidget2Info,Home)</onup>
-            <onup>SetFocus(6010)</onup>
-            <ondown>ClearProperty(PanelWidget2Info,Home)</ondown>
-            <ondown>SetFocus(6010)</ondown>
+            <onleft condition="!Skin.HasSetting(lowermainmenu) + Control.IsVisible(4444)">SetFocus(4444)</onleft>
+            <onleft condition="!Skin.HasSetting(lowermainmenu) + !Control.IsVisible(4444)">SetFocus(9000)</onleft>
+            <onleft condition="Skin.HasSetting(lowermainmenu)">SetFocus(9000)</onleft>
+            <onright condition="!Skin.HasSetting(lowermainmenu) + Control.IsVisible(4444)">SetFocus(4444)</onright>
+            <onright condition="!Skin.HasSetting(lowermainmenu) + !Control.IsVisible(4444)">SetFocus(9000)</onright>
+            <onright condition="Skin.HasSetting(lowermainmenu)">SetFocus(9000)</onright>
+            <align>left</align>
+            <onback>SetFocus(9000)</onback>
+            <include>Animation_VisibleChange200</include>
+            <include>Animation_WindowFade250</include>
+            <onup condition="!Skin.HasSetting(lowermainmenu) + Control.IsVisible(4444)">SetFocus(4444)</onup>
+            <onup condition="!Skin.HasSetting(lowermainmenu) + !Control.IsVisible(4444)">SetFocus(9000)</onup>
+            <onup condition="Skin.HasSetting(lowermainmenu)">SetFocus(9000)</onup>
+            <ondown>SetFocus(9000)</ondown>
+            <visible>Player.HasMedia | !IsEmpty(System.DVDLabel)</visible>
+            <visible>Skin.HasSetting(bottommenu)</visible>
+            <itemgap>7</itemgap>
             <orientation>horizontal</orientation>
-            <control type="radiobutton" id="6015">
-                <label>Show Widgets</label>
+            <control type="button" id="2017">
+                <label>42231</label>
                 <include>BottomMenuButton</include>
-                <radiowidth>106</radiowidth>
-                <radioheight>74</radioheight>
-                <textureradiofocus>settings/settings_radiobuttononfocus.png</textureradiofocus>
-                <textureradionofocus>settings/settings_radiobuttonon.png</textureradionofocus>
-                <selected>IsEmpty(Window(home).Property(DisableWidgets))</selected>
-                <texturefocus>special://skin/extras/BigIcons/Information.png</texturefocus>
-                <texturenofocus>special://skin/extras/BigIcons/Information.png</texturenofocus>
-                <onclick condition="IsEmpty(Window(home).Property(DisableWidgets))">SetProperty(DisableWidgets,1,home)</onclick>
-                <onclick condition="!IsEmpty(Window(home).Property(DisableWidgets))">ClearProperty(DisableWidgets,home)</onclick>
-                <visible>Player.HasMedia</visible>
-            </control>
-            <control type="button" id="6017">
-                <label>Play DVD</label>
-                <include>BottomMenuButton</include>
-                <texturefocus>special://skin/extras/BigIcons/CD-DVD.png</texturefocus>
-                <texturenofocus>special://skin/extras/BigIcons/CD-DVD.png</texturenofocus>
+                <texturefocus>common/logo_music.png</texturefocus>
+                <texturenofocus>common/logo_music.png</texturenofocus>
                 <visible>!IsEmpty(System.DVDLabel)</visible>
+                <colordiffuse>$VAR[HomeDVDButtonColorVar]</colordiffuse>
+                <animation effect="zoom" center="0,22" start="100" end="120" time="200" tween="quadratic">Focus</animation>
                 <onclick>PlayDVD()</onclick>
             </control>
-            <control type="button" id="6016">
-                <label>FullScreen</label>
+            <control type="button" id="2016">
+                <label>31053</label>
                 <include>BottomMenuButton</include>
-                <texturefocus>special://skin/extras/BigIcons/Fullscreen2.png</texturefocus>
-                <texturenofocus>special://skin/extras/BigIcons/Fullscreen2.png</texturenofocus>
+                <texturefocus>common/logo_pics.png</texturefocus>
+                <texturenofocus>common/logo_pics.png</texturenofocus>
                 <visible>Player.HasMedia</visible>
-                <onclick>FullScreen</onclick>
+                <colordiffuse>$VAR[HomeWidgetButtonColorVar]</colordiffuse>
+                <animation effect="zoom" center="0,22" start="100" end="120" time="200" tween="quadratic">Focus</animation>
+                <onclick condition="IsEmpty(Window(home).Property(DisableWidgets))">SetProperty(DisableWidgets,1,home)</onclick>
+                <onclick condition="!IsEmpty(Window(home).Property(DisableWidgets))">ClearProperty(DisableWidgets,home)</onclick>
             </control>
         </control>
-
     </include>
     <include name="BottomMenuButton">
-        <height>50</height>
+        <width>60</width>
+        <height>40</height>
         <aligny>top</aligny>
         <align>center</align>
-        <width>50</width>
         <aspectratio align="center" aligny="top">scale</aspectratio>
         <font>Font_Reg19_Caps</font>
         <focusedcolor>00000000</focusedcolor>
         <textcolor>00000000</textcolor>
-        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
         <scroll>false</scroll>
     </include>
 </includes>

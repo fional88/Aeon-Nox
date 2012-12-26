@@ -9,7 +9,7 @@
     <controls>
         <control type="image" id="101">
             <include>FullscreenDimensions</include>
-            <texture>pstvSolid.png</texture>
+            <texture>common/white.png</texture>
             <colordiffuse>FF000000</colordiffuse>
         </control>
         <control type="image" id="103">
@@ -91,7 +91,7 @@
                 <aligny>top</aligny>
                 <label>$INFO[Control.Getlabel(505)]</label>
                 <textcolor>white6</textcolor>
-                <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                <autoscroll delay="8000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
             </control>
             <control type="image" id="506">
                 <include>HiddenObject</include>

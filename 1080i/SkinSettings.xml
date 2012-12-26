@@ -110,12 +110,6 @@
                         <onclick>Skin.ToggleSetting(AutoScroll)</onclick>
                         <selected>Skin.HasSetting(AutoScroll)</selected>
                     </control>
-                    <control type="radiobutton" id="127">
-                        <label>42284</label>
-                        <include>Default_SettingRadioButton</include>
-                        <onclick>Skin.ToggleSetting(trailerincontextmenu)</onclick>
-                        <selected>Skin.HasSetting(trailerincontextmenu)</selected>
-                    </control>
                     <control type="radiobutton" id="298">
                         <label>31279</label>
                         <include>Default_SettingRadioButton</include>
@@ -534,7 +528,7 @@
                         <selected>!Skin.HasSetting(DisableShowCaseVL)</selected>
                     </control>
                     <control type="radiobutton" id="481">
-                        <label>$LOCALIZE[31028] (Episodes,Addons)</label>
+                        <label>$LOCALIZE[31028] ($LOCALIZE[20360],$LOCALIZE[24001])</label>
                         <include>Default_SettingRadioButtonShort</include>
                         <onclick>Skin.ToggleSetting(DisableShowCaseSquareVL)</onclick>
                         <selected>!Skin.HasSetting(DisableShowCaseSquareVL)</selected>

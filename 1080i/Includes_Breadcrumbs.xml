@@ -3,7 +3,7 @@
     <include name="FeaturedTopLabel">
         <height>38</height>
         <width min="15" max="1920">auto</width>
-       <font>Font_Reg22_Caps</font>
+        <font>Font_Reg22_Caps</font>
         <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
         <shadowcolor>bcshadow</shadowcolor>
         <scroll>false</scroll>
@@ -25,7 +25,7 @@
                 <width>1920</width>
                 <height>87</height>
                 <visible>Skin.HasSetting(altbreadcrumbstexture)</visible>
-                <texture flipy="true">$VAR[NavBarImageVar]</texture>
+                <texture flipy="true">home/nav_back.png</texture>
                 <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
             </control>
             <control type="image">
@@ -57,6 +57,25 @@
                 <visible>Skin.HasSetting(breadcrumbslabel)</visible>
                 <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying) + IsEmpty(Window(videolibrary).Property(tvtunesIsAlive))]</visible>
                 <control type="image">
+                    <posx>415</posx>
+                    <posy>532</posy>
+                    <width>31</width>
+                    <height>31</height>
+                    <animation effect="rotate" end="-90" center="auto" delay="300" time="800" condition="Window.IsActive(musicinformation) | Control.HasFocus(7000) | Control.IsVisible(508) | Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(516) | Control.IsVisible(509) | [Control.IsVisible(500) + !Skin.HasSetting(WallVertical)]">Conditional</animation>
+                    <animation effect="rotate" end="-180" center="auto" delay="300" time="800" condition="ControlGroup(9000).HasFocus">Conditional</animation>
+                    <animation effect="rotate" start="-90" end="180" center="auto" delay="300" time="800" condition="Control.IsVisible(503) + [Skin.HasSetting(landscapeonelogo) + Container.Content(movies)]">Conditional</animation>
+                    <texture>common/arrowleft.png</texture>
+                    <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                    <include>Animation_VisibleChange400</include>
+                    <visible>Skin.HasSetting(TopBarToolTip)</visible>
+                </control>
+                <control type="image">
+                    <width>20</width>
+                    <height>31</height>
+                    <texture>-</texture>
+                    <visible>Skin.HasSetting(TopBarToolTip)</visible>
+                </control>
+                <control type="image">
                     <width>54</width>
                     <height>38</height>
                     <texture>$VAR[BreadcrumbsIconVar]</texture>
@@ -82,23 +101,34 @@
             <include>Animation_HideBreadCrumbs</include>
             <visible>Skin.HasSetting(GlobalNowPlaying) + Player.HasMedia</visible>
             <include condition="Window.isActive(videos) + system.hasaddon(script.tvtunes)">TvTunesVisibleCondition</include>
-            <posx>-132</posx>
-            <control type="group">
-                <control type="image">
-                    <width>54</width>
-                    <height>38</height>
-                    <texture>common/logo_music.png</texture>
-                    <posx>132</posx>
-                    <aspectratio>keep</aspectratio>
-                    <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-                    <visible>Player.HasAudio</visible>
-                    <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
+                <control type="multiimage">
+                        <posx>10</posx>
+                        <posy>7</posy>
+                        <width>35</width>
+                        <height>28</height>
+                        <imagepath>VisualEqu/</imagepath>
+                        <timeperimage>100</timeperimage>
+                        <randomize>true</randomize>
+                        <fadetime>10</fadetime>
+                        <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
+                        <visible>Player.HasAudio + Player.Playing</visible>
+                        <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
                 </control>
+                <control type="image">
+                        <posx>10</posx>
+                        <posy>7</posy>
+                        <width>35</width>
+                        <height>28</height>
+                        <include condition="![Window.IsActive(skinsettings) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(systeminfo) | Window.IsActive(settings)]">Animation_WindowFade200</include>
+                        <texture>VisualEqu/static/0.png</texture>
+                        <visible>Player.HasAudio + !Player.Playing</visible>
+                        <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                </control>
+                
                 <control type="image">
                     <width>54</width>
                     <height>38</height>
                     <texture>common/logo_movies.png</texture>
-                    <posx>132</posx>
                     <aspectratio>keep</aspectratio>
                     <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
                     <visible>Player.HasVideo</visible>
@@ -106,7 +136,7 @@
                 </control>
                 <control type="grouplist">
                     <orientation>horizontal</orientation>
-                    <posx>200</posx>
+                    <posx>68</posx>
                     <width>600</width>
                     <height>118</height>
                     <itemgap>22</itemgap>
@@ -161,37 +191,6 @@
                         <visible>Player.HasVideo + !IsEmpty(VideoPlayer.ChannelName)</visible>
                     </control>
                 </control>
-            </control>
-        </control>
-        <control type="group">
-            <animation type="Conditional" condition="Control.HasFocus(110) | Control.HasFocus(109)">
-                <effect type="slide" end="0,-52" time="400" tween="cubic" easing="in" />
-            </animation>
-            <animation effect="slide" start="-735,0" end="0,0" delay="0" time="300">VisibleChange</animation>
-            <visible>Skin.HasSetting(GlobalRSS) + ![Skin.HasSetting(GlobalNowPlaying) + Player.HasMedia]</visible>
-            <include>Animation_HideBreadCrumbs</include>
-            <include condition="Window.isActive(videos) + system.hasaddon(script.tvtunes)">TvTunesVisibleCondition</include>
-            <posx>-132</posx>
-            <control type="image">
-                <posx>684</posx>
-                <posy>4</posy>
-                <width>32</width>
-                <height>32</height>
-                <texture>icon-rss.png</texture>
-                <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-            </control>
-            <control type="rss">
-                <posy>2</posy>
-                <width>687</width>
-                <height>38</height>
-                <aligny>center</aligny>
-                <font>Font_Reg17_Caps</font>
-                <urlset>1</urlset>
-                <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
-                <headlinecolor>$VAR[BreadCrumbsContentColorVar]</headlinecolor>
-                <highlightcolor>$VAR[BreadCrumbsContentColorVar]</highlightcolor>
-                <titlecolor>FFFFFFFF</titlecolor>
-            </control>
         </control>
     </include>
     <include name="LeftBreadcrumbsBackground">
@@ -200,10 +199,10 @@
             <posx>-140</posx>
             <width>794</width>
             <height>87</height>
-            <texture flipy="true" flipx="true">$VAR[TimePanelImageVar]</texture>
+            <texture flipy="true" flipx="true">home/timepanel_mid.png</texture>
             <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
             <include>Animation_VisibleChange400</include>
-            <visible>Skin.HasSetting(ClassicTopBar) + [Skin.HasSetting(breadcrumbslabel) | Skin.HasSetting(GlobalRSS)]</visible>
+            <visible>Skin.HasSetting(ClassicTopBar) + Skin.HasSetting(breadcrumbslabel)</visible>
             <animation effect="slide" start="-750" end="0" time="300">VisibleChange</animation>
             <animation effect="slide" end="140" time="300" condition="Container.Content(songs) + ![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)]">Conditional</animation>
             <animation effect="slide" end="80" time="300" condition="Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)">Conditional</animation>
@@ -221,11 +220,11 @@
             </control>
             <!--right widget -->
             <control type="image">
-                <posx>654r</posx>
+                <posx>674r</posx>
                 <width>794</width>
                 <height>87</height>
                 <animation effect="slide" end="145" time="400" condition="!Skin.HasSetting(breadcrumbsweather)">Conditional</animation>
-                <texture flipy="true">$VAR[TimePanelImageVar]</texture>
+                <texture flipy="true">home/timepanel_mid.png</texture>
                 <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                 <include>Animation_VisibleChange400</include>
                 <visible>Skin.HasSetting(ClassicTopBar)</visible>

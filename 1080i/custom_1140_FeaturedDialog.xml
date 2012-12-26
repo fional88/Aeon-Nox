@@ -49,14 +49,14 @@
                         <aspectratio>stretch</aspectratio>
                         <info>ListItem.Icon</info>
                     </control>
-                                <control type="image">
-                                     <posx>45</posx>
-                                   <posy>252</posy>
-                                    <width>300</width>
-                                    <height>53</height>
-                                    <texture>common/bgcolor.png</texture>
-                                    <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
-                                </control>
+                    <control type="image">
+                        <posx>45</posx>
+                        <posy>252</posy>
+                        <width>300</width>
+                        <height>53</height>
+                        <texture>common/bgcolor.png</texture>
+                        <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
+                    </control>
                     <control type="label">
                         <posx>200</posx>
                         <posy>263</posy>
@@ -92,17 +92,17 @@
                         <aspectratio>stretch</aspectratio>
                         <info>ListItem.Icon</info>
                     </control>
-                                <control type="image">
-                                     <posx>45</posx>
-                                   <posy>252</posy>
-                                    <width>300</width>
-                                    <height>53</height>
-                                    <texture>common/bgcolor.png</texture>
-                                    <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
-                                </control>
+                    <control type="image">
+                        <posx>45</posx>
+                        <posy>252</posy>
+                        <width>300</width>
+                        <height>53</height>
+                        <texture>common/bgcolor.png</texture>
+                        <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
+                    </control>
                     <control type="label">
                         <posx>159</posx>
-                        <posy>260</posy>
+                        <posy>263</posy>
                         <width>380</width>
                         <height>50</height>
                         <align>center</align>
@@ -114,13 +114,37 @@
                     </control>
                     <control type="label">
                         <posx>200</posx>
-                        <posy>260</posy>
+                        <posy>263</posy>
                         <width>380</width>
                         <height>50</height>
                         <align>center</align>
                         <font>Font_Reg17</font>
                         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                         <label>$INFO[ListItem.Label]</label>
+                        <textoffsetx>15</textoffsetx>
+                        <visible>Control.HasFocus(8001)</visible>
+                    </control>
+                    <control type="label">
+                        <posx>200</posx>
+                        <posy>238</posy>
+                        <width>310</width>
+                        <height>50</height>
+                        <align>center</align>
+                        <font>Font_Reg17</font>
+                        <textcolor>grey2</textcolor>
+                        <label>$INFO[ListItem.Label2]</label>
+                        <textoffsetx>15</textoffsetx>
+                        <visible>!Control.HasFocus(8001)</visible>
+                    </control>
+                    <control type="label">
+                        <posx>200</posx>
+                        <posy>238</posy>
+                        <width>310</width>
+                        <height>50</height>
+                        <align>center</align>
+                        <font>Font_Reg17</font>
+                        <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+                        <label>$INFO[ListItem.Label2]</label>
                         <textoffsetx>15</textoffsetx>
                         <visible>Control.HasFocus(8001)</visible>
                     </control>
@@ -243,7 +267,6 @@
                 <include condition="Stringcompare(Window(home).Property(Featured),watchlisttv)">WatchListTVItems</include>
                 <include condition="Stringcompare(Window(home).Property(Featured),watchlisttv)">WatchListTVItemsHome</include>
                 <include condition="Stringcompare(Window(home).Property(Featured),watchlistmovies)">WatchlistMoviesItems</include>
-                <include condition="Stringcompare(Window(home).Property(Featured),watchlistmovies)">WatchlistMoviesItemsHome</include>
                 <include condition="Stringcompare(Window(home).Property(Featured),recenttv)">LatestEpisodesItems</include>
                 <include condition="Stringcompare(Window(home).Property(Featured),recenttv)">LatestEpisodesItemsHome</include>
                 <include condition="Stringcompare(Window(home).Property(Featured),randomtv)">RandomEpisodesItems</include>
@@ -351,7 +374,7 @@
                     <font>Font_Reg19</font>
                     <textcolor>white6</textcolor>
                     <label>$INFO[Container(8001).ListItem.Property(Plot)]</label>
-                    <autoscroll delay="5000" time="5000" repeat="8001">Skin.HasSetting(AutoScroll)</autoscroll>
+                    <autoscroll delay="5000" time="4000" repeat="8001">Skin.HasSetting(AutoScroll)</autoscroll>
                 </control>
                 <control type="image">
                     <posx>1295</posx>
@@ -414,7 +437,7 @@
                     <font>Font_Reg19</font>
                     <textcolor>white6</textcolor>
                     <label>$INFO[Container(8001).ListItem.Property(Plot)]</label>
-                    <autoscroll delay="5000" time="5000" repeat="8001">Skin.HasSetting(AutoScroll)</autoscroll>
+                    <autoscroll delay="5000" time="4000" repeat="8001">Skin.HasSetting(AutoScroll)</autoscroll>
                 </control>
                 <control type="image" id="9308">
                     <posx>1295</posx>
@@ -467,7 +490,7 @@
                     <font>Font_Reg19</font>
                     <textcolor>white6</textcolor>
                     <label fallback="414">$VAR[Widget2TextboxVar]</label>
-                    <autoscroll delay="5000" time="5000" repeat="8001">Skin.HasSetting(AutoScroll)</autoscroll>
+                    <autoscroll delay="5000" time="4000" repeat="8001">Skin.HasSetting(AutoScroll)</autoscroll>
                 </control>
                 <control type="image">
                     <posx>1261</posx>

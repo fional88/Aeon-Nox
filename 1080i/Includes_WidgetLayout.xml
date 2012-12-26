@@ -1,9 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?>
+ï»¿<?xml version="1.0" encoding="utf-8"?>
 <includes>
+    <include name="AlternateTimeAndStats">
+        <control type="group">
+            <posy>472</posy>
+            <visible>Skin.HasSetting(AlternateTimeStats) + [!Skin.HasSetting(DisableLibraryStats) | !Skin.HasSetting(DisableTimePanel)]</visible>
+            <animation effect="slide" end="-1860,0" time="300">WindowClose</animation>
+            <animation effect="slide" start="-1860,0" end="0,0" delay="WidgetSlideDelay" time="300" condition="!Window.Previous(startup)">WindowOpen</animation>
+            <animation effect="slide" start="-1860" end="0" time="300">VisibleChange</animation>
+            <animation effect="slide" start="-1860,0" end="0,0" delay="1000" time="600" condition="Window.Previous(startup)">WindowOpen</animation>
+            <animation effect="slide" end="0,338" time="400" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)] + ![Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)]">Conditional</animation>
+            <animation effect="slide" end="0,-472" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)">Conditional</animation>
+            <control type="image">
+                <width>1860</width>
+                <height>87</height>
+                <texture flipy="true" flipx="true" border="0,0,80,0">$VAR[TimePanelImageVar]</texture>
+                <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+                <animation effect="rotatex" end="180" time="400" center="20" tween="cubic" easing="inout" condition="![Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)]">Conditional</animation>
+            </control>
+            <control type="label">
+                <posx>15</posx>
+                <posy>-1</posy>
+                <width>880</width>
+                <height>36</height>
+                <font>Font_Info_Caps</font>
+                <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+                <scroll>true</scroll>
+                <label>$VAR[LibraryStatsVar]</label>
+                <visible>!Skin.HasSetting(DisableLibraryStats) + !StringCompare(Control.GetLabel(4326),mixed)</visible>
+            </control>
+            <control type="fadelabel">
+                <posx>15</posx>
+                <posy>-1</posy>
+                <width>880</width>
+                <height>36</height>
+                <font>Font_Info_Caps</font>
+                <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+				<pauseatend>10000</pauseatend>
+				<resetonlabelchange>false</resetonlabelchange>
+				<label>$INFO[Window(Home).Property(Movies.Count),[COLOR grey]$LOCALIZE[31502]:[/COLOR] ,[COLOR grey]  â€¢  $LOCALIZE[16102]:[/COLOR] ]$INFO[Window(Home).Property(Movies.Watched),,[COLOR grey]  â€¢  $LOCALIZE[16101]:[/COLOR] ]$INFO[Window(Home).Property(Movies.UnWatched)]</label>
+				<label>[COLOR grey]$LOCALIZE[20343]:[/COLOR] $INFO[Window(Home).Property(TVShows.Count)][COLOR grey]  â€¢  $LOCALIZE[20360]:[/COLOR] $INFO[Window(Home).Property(Episodes.Count)][COLOR grey]  â€¢  $LOCALIZE[16101]:[/COLOR] $INFO[Window(Home).Property(Episodes.UnWatched)]</label>
+				<label>[COLOR grey]$LOCALIZE[133]:[/COLOR] $INFO[Window(Home).Property(Music.ArtistsCount)][COLOR grey]  â€¢  $LOCALIZE[132]:[/COLOR] $INFO[Window(Home).Property(Music.AlbumsCount)][COLOR grey]  â€¢  $LOCALIZE[134]:[/COLOR] $INFO[Window(Home).Property(Music.SongsCount)]</label>
+				<label>$INFO[Window(Home).Property(MyPicsDBRandom.Categories),[COLOR grey]$LOCALIZE[42292]:[/COLOR] ]$INFO[Window(Home).Property(MyPicsDBRandom.Collections),[COLOR grey]  â€¢  $LOCALIZE[42290]:[/COLOR] ]$INFO[Window(Home).Property(MyPicsDBRandom.Folders),[COLOR grey]  â€¢  $LOCALIZE[42291]:[/COLOR] ]</label>
+				<label>$INFO[Window(Home).Property(MyPicsDBLatest.Categories),[COLOR grey]$LOCALIZE[42292]:[/COLOR] ]$INFO[Window(Home).Property(MyPicsDBLatest.Collections),[COLOR grey]  â€¢  $LOCALIZE[42290]:[/COLOR] ]$INFO[Window(Home).Property(MyPicsDBLatest.Folders),[COLOR grey]  â€¢  $LOCALIZE[42291]:[/COLOR] ]</label>
+				<label>$INFO[PVR.NowRecordingDateTime,$LOCALIZE[19158]  [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ]$INFO[PVR.NowRecordingTitle, â€¢ [B][COLOR=FF48D1CC],[/COLOR][/B] ]$INFO[PVR.NowRecordingChannel,[B][COLOR=white]( ,)[/COLOR][/B]]</label>
+				<label>$INFO[PVR.NextRecordingDateTime,$LOCALIZE[19157]  [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] -  â€¢ ]$INFO[PVR.NextRecordingTitle, [B][COLOR=white],[/COLOR][/B]]$INFO[PVR.NextRecordingChannel, - [B][COLOR=white],[/COLOR][/B]]</label>
+				<label>$INFO[Window(Weather).Property(Location),[COLOR grey], â€¢ $LOCALIZE[402]: [/COLOR]]$INFO[Window(weather).Property(Current.FeelsLike)] $INFO[System.TemperatureUnits,,[COLOR grey] â€¢ $LOCALIZE[406]:[/COLOR] ]$INFO[Window(weather).Property(Current.Humidity)]</label>
+				<label>$INFO[Window(Home).Property(RandomAddon.Count),[COLOR grey]$LOCALIZE[20161] $LOCALIZE[24001]:[/COLOR] ]</label>
+				<label>$INFO[Window(Home).Property(favourite.count),[COLOR grey]$LOCALIZE[31509]:[/COLOR] ]</label>
+				<label>$INFO[System.CPUUsage,[COLOR grey]$LOCALIZE[13271][/COLOR] ]$INFO[System.memory(used.percent),[COLOR grey] â€¢ $LOCALIZE[31309][/COLOR] ]</label>
+                <visible>!Skin.HasSetting(DisableLibraryStats) + StringCompare(Control.GetLabel(4326),mixed)</visible>
+            </control>
+            <control type="label">
+                <posy>-1</posy>
+                <posx>1776</posx>
+                <width>1000</width>
+                <height>36</height>
+                <align>right</align>
+                <font>Font_Info_Caps</font>
+                <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+                <label>[COLOR grey]$INFO[Window(Weather).Property(Current.Condition)]  â€¢  [/COLOR]$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] [COLOR grey] â€¢  $INFO[System.Date]  â€¢[/COLOR]  $INFO[System.Time]</label>
+				<visible>!Skin.HasSetting(DisableTimePanel)</visible>
+            </control>
+        </control>
+    </include>
     <include name="LibraryStats">
         <control type="group">
             <posy>472</posy>
-            <visible>!Skin.HasSetting(DisableLibraryStats)</visible>
+            <visible>!Skin.HasSetting(DisableLibraryStats) + !Skin.HasSetting(AlternateTimeStats)</visible>
             <visible>!IsEmpty(Control.GetLabel(4323)) | Window.IsActive(1131)</visible>
             <animation effect="slide" end="-750,0" time="300">WindowClose</animation>
             <animation effect="slide" start="-750,0" end="0,0" delay="WidgetSlideDelay" time="300" condition="!Window.Previous(startup)">WindowOpen</animation>
@@ -47,7 +110,7 @@
         <control type="group">
             <posx>748r</posx>
             <posy>472</posy>
-            <visible>!Skin.HasSetting(DisableTimePanel)</visible>
+            <visible>!Skin.HasSetting(DisableTimePanel) + !Skin.HasSetting(AlternateTimeStats)</visible>
             <animation effect="slide" end="750,0" time="300">WindowClose</animation>
             <animation effect="slide" start="750,0" end="0,0" delay="WidgetSlideDelay" time="300" condition="!Window.Previous(startup)">WindowOpen</animation>
             <animation effect="slide" start="750,0" end="0,0" delay="1000" time="600" condition="Window.Previous(startup)">WindowOpen</animation>
@@ -71,7 +134,7 @@
                 <align>right</align>
                 <font>Font_Info_Caps</font>
                 <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                <label>[COLOR grey]$INFO[System.Date]  •[/COLOR]  $INFO[System.Time]</label>
+                <label>[COLOR grey]$INFO[System.Date]  â€¢[/COLOR]  $INFO[System.Time]</label>
             </control>
             <control type="label">
                 <posx>30</posx>
@@ -81,7 +144,7 @@
                 <visible>Weather.IsFetched + !Skin.HasSetting(shorterhomebars)</visible>
                 <include>Animation_VisibleChange400</include>
                 <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] [COLOR grey]• $INFO[Window(Weather).Property(Current.Condition)][/COLOR]</label>
+                <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] [COLOR grey]â€¢ $INFO[Window(Weather).Property(Current.Condition)][/COLOR]</label>
             </control>
         </control>
     </include>
@@ -126,7 +189,7 @@
                         <font>Font_Reg15</font>
                         <textcolor>$VAR[RSSLabelColorVar]</textcolor>
                         <textoffsetx>5</textoffsetx>
-                        <label>$INFO[Window(Home).Property(peopleborntoday.1.name)][COLOR=grey]$INFO[Window.Property(peopleborntoday.1.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.2.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.2.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.3.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.3.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.4.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.4.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.5.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.5.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.6.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.6.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.7.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.7.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.8.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.8.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.9.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.9.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.10.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.10.job), • ][/COLOR]</label>
+                        <label>$INFO[Window(Home).Property(peopleborntoday.1.name)][COLOR=grey]$INFO[Window.Property(peopleborntoday.1.job), â€¢ ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.2.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.2.job), â€¢ ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.3.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.3.job), â€¢ ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.4.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.4.job), â€¢ ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.5.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.5.job), â€¢ ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.6.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.6.job), â€¢ ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.7.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.7.job), â€¢ ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.8.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.8.job), â€¢ ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.9.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.9.job), â€¢ ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.10.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.10.job), â€¢ ][/COLOR]</label>
                         <scroll>true</scroll>
                         <wrapmultiline>false</wrapmultiline>
                         <scrollspeed>40</scrollspeed>
@@ -167,7 +230,7 @@
                     <font>Font_Reg15</font>
                     <textcolor>$VAR[RSSLabelColorVar]</textcolor>
                     <textoffsetx>0</textoffsetx>
-                    <label>$INFO[Window(Home).Property(peopleborntoday.1.name)][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.1.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.2.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.2.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.3.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.3.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.4.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.4.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.5.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.5.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.6.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.6.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.7.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.7.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.8.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.8.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.9.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.9.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.10.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.10.job), • ][/COLOR]</label>
+                    <label>$INFO[Window(Home).Property(peopleborntoday.1.name)][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.1.job), â€¢ ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.2.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.2.job), â€¢ ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.3.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.3.job), â€¢ ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.4.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.4.job), â€¢ ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.5.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.5.job), â€¢ ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.6.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.6.job), â€¢ ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.7.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.7.job), â€¢ ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.8.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.8.job), â€¢ ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.9.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.9.job), â€¢ ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.10.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.10.job), â€¢ ][/COLOR]</label>
                     <scroll>true</scroll>
                     <wrapmultiline>false</wrapmultiline>
                     <scrollspeed>40</scrollspeed>
@@ -187,21 +250,22 @@
                     <scrollspeed>40</scrollspeed>
                     <visible>!Skin.HasSetting(ActorBirthdayRSS)</visible>
                 </control>
-                <control type="image">
-                    <posx>116</posx>
-                    <width>200</width>
-                    <height>40</height>
-                    <texture>home/rssbar_mid_fade.png</texture>
-                    <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-                    <animation effect="rotatex" end="180" time="400" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
-                </control>
-                <control type="image">
-                    <posx>1785</posx>
-                    <width>165</width>
-                    <height>40</height>
-                    <texture>home/rssbar_begin_fade.png</texture>
-                    <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
-                    <animation effect="rotatex" end="180" time="400" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
+                <control type="group">
+                  <animation effect="rotatex" end="180" time="400" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
+                    <control type="image">
+                        <posx>116</posx>
+                        <width>200</width>
+                        <height>40</height>
+                        <texture>home/rssbar_mid_fade.png</texture>
+                        <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>1785</posx>
+                        <width>165</width>
+                        <height>40</height>
+                        <texture>home/rssbar_begin_fade.png</texture>
+                        <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+                    </control>
                 </control>
             </control>
         </control>
@@ -454,14 +518,6 @@
                     <posy>684</posy>
                     <height>363</height>
                     <width>363</width>
-                    <texture diffuse="thumbs/cdcover_mask2.png">$INFO[Player.FolderPath,,folder.jpg]</texture>
-                    <visible>!Skin.HasSetting(NowPlayingFolderJPG)</visible>
-                </control>
-                <control type="image">
-                    <posx>42</posx>
-                    <posy>684</posy>
-                    <height>363</height>
-                    <width>363</width>
                     <aspectratio scalediffuse="false" align="right">scale</aspectratio>
                     <texture diffuse="thumbs/cdcover_mask2.png">thumbs/cdcover_glass_noreflect.png</texture>
                 </control>
@@ -481,14 +537,6 @@
                     <height>363</height>
                     <width>363</width>
                     <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[MusicPlayer.Cover]</texture>
-                </control>
-                <control type="image">
-                    <posx>42</posx>
-                    <posy>684</posy>
-                    <height>363</height>
-                    <width>363</width>
-                    <texture diffuse="thumbs/cdcover_mask.png">$INFO[Player.FolderPath,,folder.jpg]</texture>
-                    <visible>!Skin.HasSetting(NowPlayingFolderJPG)</visible>
                 </control>
                 <control type="image">
                     <posx>22</posx>
@@ -709,7 +757,7 @@
                             <height>260</height>
                             <font>Font_Reg19</font>
                             <label fallback="31006">$INFO[VideoPlayer.Plot]</label>
-                            <autoscroll delay="5000" time="5000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
+                            <autoscroll delay="5000" time="4000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
                         </control>
                     </control>
                 </control>
@@ -775,7 +823,7 @@
                     <font>Font_Reg15</font>
                     <textcolor>white6</textcolor>
                     <label>$VAR[NowPlayingTextBoxLabelVar]</label>
-                    <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                    <autoscroll delay="5000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 </control>
                 <control type="group">
                     <posx>1450</posx>
@@ -1338,8 +1386,8 @@
         <control type="group" id="8998">
             <posx>1542</posx>
             <posy>678</posy>
-            <visible>![!IsEmpty(Window(home).Property(DisableWidgets)) + Window.IsActive(home)]</visible>
-            <visible>!Substring(Control.GetLabel(4321),weather) + !Substring(Control.GetLabel(4321),featured) + !Window.IsActive(1120) + !Substring(Control.GetLabel(4321),panel) + !IsEmpty(Control.GetLabel(4321))</visible>
+            <visible>IsEmpty(Window(home).Property(DisableWidgets))</visible>
+            <visible>Substring(Control.GetLabel(4321),classic) + !Window.IsActive(1120)</visible>
             <include>Animation_Widgets</include>
             <visible>![IsEmpty(Window(Home).Property(NextAired.1.Thumb)) + Substring(Control.GetLabel(4321),nextairedtv)]</visible>
             <visible>![IsEmpty(Window(Home).Property(RecommendedMovie.1.Title)) + Substring(Control.GetLabel(4321),watchlistmovies)]</visible>
@@ -1400,7 +1448,7 @@
                     <posy>264</posy>
                     <height>30</height>
                     <width>330</width>
-                    <label>$INFO[Container(8000).ListItem.Label2] • $INFO[Container(8000).ListItem.Property(EpisodeNumber)]</label>
+                    <label>$INFO[Container(8000).ListItem.Label2] â€¢ $INFO[Container(8000).ListItem.Property(EpisodeNumber)]</label>
                     <align>center</align>
                     <font>Font_Reg15_Caps</font>
                     <textcolor>grey</textcolor>
@@ -1436,8 +1484,8 @@
                     </control>
                 </control>
                 <control type="group">
-                    <visible>Stringcompare(Control.GetLabel(4321),system)</visible>
-                    <include condition="Substring(Skin.String(widgetlist),system)">HomeSystemWidget</include>
+                    <visible>Stringcompare(Control.GetLabel(4321),systemclassic)</visible>
+                    <include condition="Substring(Skin.String(widgetlist),systemclassic)">HomeSystemWidget</include>
                 </control>
                 <control type="label">
                     <posx>15</posx>
@@ -1538,7 +1586,7 @@
                         <font>Font_Reg20</font>
                         <textcolor>white6</textcolor>
                         <label>$INFO[Container(8000).ListItem.Property(Plot)]</label>
-                        <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                        <autoscroll delay="5000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
                 </control>
                 <control type="image">
@@ -1630,7 +1678,7 @@
                         <aligny>top</aligny>
                         <font>Font_Reg20</font>
                         <label>$INFO[Container(8000).ListItem.Property(Plot)]</label>
-                        <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                        <autoscroll delay="5000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
                 </control>
                 <control type="image">
@@ -1882,48 +1930,74 @@
                         </control>
                     </focusedlayout>
                     <content>
-                        <include condition="Substring(Skin.String(widgetlist),recentmovies )">LatestMoviesItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),randommovies )">RandomMoviesItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),recentmusicvideos )">MusicvideoLatestItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),watchlistmusicvideos )">WatchListMusicVideosItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),randommusicvideos )">MusicvideoRandomItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),watchlistmovies )">WatchlistMoviesItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),custom1)">Custom1Widget</include>
-                        <include condition="Substring(Skin.String(widgetlist),custom2)">Custom2Widget</include>
-                        <include condition="Substring(Skin.String(widgetlist),custom3)">Custom3Widget</include>
-                        <include condition="Substring(Skin.String(widgetlist),custom4)">Custom4Widget</include>
-                        <include condition="Substring(Skin.String(widgetlist),custom5)">Custom5Widget</include>
-                        <include condition="Substring(Skin.String(widgetlist),custom6)">Custom6Widget</include>
-                        <include condition="Substring(Skin.String(widgetlist),randomalbums )">RandomAlbumsItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),randomalbums )">RandomAlbumsItemsHome</include>
-                        <include condition="Substring(Skin.String(widgetlist),randomartists )">RandomArtistsItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),randomartists )">RandomArtistsItemsHome</include>
-                        <include condition="Substring(Skin.String(widgetlist),recentalbums )">LatestAlbumsItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),recentalbums )">LatestAlbumsItemsHome</include>
-                        <include condition="Substring(Skin.String(widgetlist),watchlistalbums )">WatchlistMusicItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),watchlistalbums )">WatchlistMusicItemsHome</include>
-                        <include condition="Substring(Skin.String(widgetlist),actors )">BornActorsItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),randomaddons )">RandomAddonsItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),randomaddons )">RandomAddonsItemsHome</include>
-                        <include condition="Substring(Skin.String(widgetlist),recenttv )">LatestEpisodesItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),recenttv )">LatestEpisodesItemsHome</include>
-                        <include condition="Substring(Skin.String(widgetlist),randomtv )">RandomEpisodesItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),randomtv )">RandomEpisodesItemsHome</include>
-                        <include condition="Substring(Skin.String(widgetlist),watchlisttv )">WatchListTVItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),watchlisttv )">WatchListTVItemsHome</include>
-                        <include condition="Substring(Skin.String(widgetlist),randompics )">RandomPicturesItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),randompics )">RandomPicturesItemsHome</include>
-                        <include condition="Substring(Skin.String(widgetlist),recentpics )">LatestPicturesItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),recentpics )">LatestPicturesItemsHome</include>
-                        <include condition="Substring(Skin.String(widgetlist),mostplayedroms )">MostPlayedRomsItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),rss1 )">RSS1WidgetContent1124</include>
-                        <include condition="Substring(Skin.String(widgetlist),rss1 )">RSS1WidgetContent</include>
-                        <include condition="Substring(Skin.String(widgetlist),rss2 )">RSS2WidgetContent1124</include>
-                        <include condition="Substring(Skin.String(widgetlist),rss2 )">RSS2WidgetContent</include>
-                        <include condition="Substring(Skin.String(widgetlist),rss3 )">RSS3WidgetContent1124</include>
-                        <include condition="Substring(Skin.String(widgetlist),rss3 )">RSS3WidgetContent</include>
-                        <include condition="Substring(Skin.String(widgetlist),nextairedtv )">NextAiredWidgetContent1124</include>
-                        <include condition="Substring(Skin.String(widgetlist),nextairedtv )">NextAiredWidgetContent</include>
+                        <include condition="Substring(Skin.String(widgetlist),recentmoviesclassic)">LatestMoviesItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),randommoviesclassic)">RandomMoviesItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),recentmusicvideosclassic)">MusicvideoLatestItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),watchlistmusicvideosclassic)">WatchListMusicVideosItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),randommusicvideosclassic)">MusicvideoRandomItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),watchlistmoviesclassic)">WatchlistMoviesItems</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + Substring(Skin.String(widgetlist),albums1customclassic)">Custom1WidgetMusic</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + Substring(Skin.String(widgetlist),albums1customclassic)">Custom1WidgetMusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + Substring(Skin.String(widgetlist),movies1customclassic)">Custom1Widget</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv1customclassic)">Custom1WidgetEpisodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv1customclassic)">Custom1WidgetEpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums1customclassic)">Custom1WidgetMusic</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums1customclassic)">Custom1WidgetMusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),movies2customclassic)">Custom2Widget</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv2customclassic)">Custom2WidgetEpisodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv2customclassic)">Custom2WidgetEpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums2customclassic)">Custom2WidgetMusic</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums2customclassic)">Custom2WidgetMusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),movies3customclassic)">Custom3Widget</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv3customclassic)">Custom3WidgetEpisodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv3customclassic)">Custom3WidgetEpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums3customclassic)">Custom3WidgetMusic</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums3customclassic)">Custom3WidgetMusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),movies4customclassic)">Custom4Widget</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv4customclassic)">Custom4WidgetEpisodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv4customclassic)">Custom4WidgetEpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums4customclassic)">Custom4WidgetMusic</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums4customclassic)">Custom4WidgetMusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),movies5customclassic)">Custom5Widget</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv5customclassic)">Custom5WidgetEpisodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv5customclassic)">Custom5WidgetEpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums5customclassic)">Custom5WidgetMusic</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums5customclassic)">Custom5WidgetMusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),movies6customclassic)">Custom6Widget</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv6customclassic)">Custom6Widget</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv6customclassic)">Custom6WidgetHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums6customclassic)">Custom6WidgetMusic</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums6customclassic)">Custom6WidgetMusicHome</include>
+                        <include condition="Substring(Skin.String(widgetlist),randomalbumsclassic)">RandomAlbumsItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),randomalbumsclassic)">RandomAlbumsItemsHome</include>
+                        <include condition="Substring(Skin.String(widgetlist),randomartistsclassic)">RandomArtistsItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),randomartistsclassic)">RandomArtistsItemsHome</include>
+                        <include condition="Substring(Skin.String(widgetlist),recentalbumsclassic)">LatestAlbumsItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),recentalbumsclassic)">LatestAlbumsItemsHome</include>
+                        <include condition="Substring(Skin.String(widgetlist),watchlistalbumsclassic)">WatchlistMusicItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),watchlistalbumsclassic)">WatchlistMusicItemsHome</include>
+                        <include condition="Substring(Skin.String(widgetlist),actorsclassic)">BornActorsItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),randomaddonsclassic)">RandomAddonsItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),randomaddonsclassic)">RandomAddonsItemsHome</include>
+                        <include condition="Substring(Skin.String(widgetlist),recenttvclassic)">LatestEpisodesItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),recenttvclassic)">LatestEpisodesItemsHome</include>
+                        <include condition="Substring(Skin.String(widgetlist),randomtvclassic)">RandomEpisodesItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),randomtvclassic)">RandomEpisodesItemsHome</include>
+                        <include condition="Substring(Skin.String(widgetlist),watchlisttvclassic)">WatchListTVItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),watchlisttvclassic)">WatchListTVItemsHome</include>
+                        <include condition="Substring(Skin.String(widgetlist),randompicsclassic)">RandomPicturesItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),randompicsclassic)">RandomPicturesItemsHome</include>
+                        <include condition="Substring(Skin.String(widgetlist),recentpicsclassic)">LatestPicturesItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),recentpicsclassic)">LatestPicturesItemsHome</include>
+                        <include condition="Substring(Skin.String(widgetlist),mostplayedromsclassic)">MostPlayedRomsItems</include>
+                        <include condition="Substring(Skin.String(widgetlist),rss1classic)">RSS1WidgetContent1124</include>
+                        <include condition="Substring(Skin.String(widgetlist),rss1classic)">RSS1WidgetContent</include>
+                        <include condition="Substring(Skin.String(widgetlist),rss2classic)">RSS2WidgetContent1124</include>
+                        <include condition="Substring(Skin.String(widgetlist),rss2classic)">RSS2WidgetContent</include>
+                        <include condition="Substring(Skin.String(widgetlist),rss3classic)">RSS3WidgetContent1124</include>
+                        <include condition="Substring(Skin.String(widgetlist),rss3classic)">RSS3WidgetContent</include>
+                        <include condition="Substring(Skin.String(widgetlist),nextairedtvclassic)">NextAiredWidgetContent1124</include>
+                        <include condition="Substring(Skin.String(widgetlist),nextairedtvclassic)">NextAiredWidgetContent</include>
                     </content>
                 </control>
             </control>
@@ -2660,12 +2734,6 @@
                             <include>WidgetMenuLabel</include>
                             <visible>Substring(Control.GetLabel(4321),actors)</visible>
                         </control>
-                        <control type="button" id="5018">
-                            <label>$LOCALIZE[31087]</label>
-                            <onclick>SetProperty(SkinWidgets_RandomItems_Update,true)</onclick>
-                            <include>WidgetMenuLabel</include>
-                            <visible>Substring(Control.GetLabel(4321),random) + !Substring(Control.GetLabel(4321),custom)</visible>
-                        </control>
                         <control type="button" id="50190">
                             <label>$LOCALIZE[31087]</label>
                             <onclick condition="SubString(Control.GetLabel(4321),1custom)">$INFO[Skin.String(SmartPlaylist1.Call)]</onclick>
@@ -2676,7 +2744,7 @@
                             <onclick condition="SubString(Control.GetLabel(4321),6custom)">$INFO[Skin.String(SmartPlaylist6.Call)]</onclick>
                             <onclick condition="SubString(Control.GetLabel(4321),random) + !SubString(Control.GetLabel(4321),custom)">SetProperty(SkinWidgets_RandomItems_Update,true)</onclick>
                             <include>WidgetMenuLabel</include>
-                            <visible>Substring(Control.GetLabel(4321),random) + Substring(Control.GetLabel(4321),custom)</visible>
+                            <visible>Substring(Control.GetLabel(4321),random) | Substring(Control.GetLabel(4321),custom)</visible>
                         </control>
                         <control type="button" id="5013">
                             <label>$LOCALIZE[31066]</label>
@@ -2762,7 +2830,7 @@
                             <height>30</height>
                             <font>Font_Reg19</font>
                             <textcolor>grey2</textcolor>
-                            <label>$INFO[Container(5010).ListItem.Label2]$INFO[Container(5010).ListItem.Property(EpisodeNumber), • [UPPERCASE],[/UPPERCASE]]</label>
+                            <label>$INFO[Container(5010).ListItem.Label2]$INFO[Container(5010).ListItem.Property(EpisodeNumber), â€¢ [UPPERCASE],[/UPPERCASE]]</label>
                             <textoffsetx>15</textoffsetx>
                             <visible>!IsEmpty(Container(5010).ListItem.Property(EpisodeNumber))</visible>
                         </control>
@@ -2771,7 +2839,7 @@
                             <height>40</height>
                             <font>Font_Reg19</font>
                             <textcolor>grey2</textcolor>
-                            <label>$INFO[Container(5010).ListItem.Property(Year)]$INFO[Container(5010).ListItem.Property(RunningTime), • , $LOCALIZE[12391]]</label>
+                            <label>$INFO[Container(5010).ListItem.Property(Year)]$INFO[Container(5010).ListItem.Property(RunningTime), â€¢ , $LOCALIZE[12391]]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
                     </control>
@@ -2787,7 +2855,7 @@
                             <textcolor>white6</textcolor>
                             <pagecontrol>5019</pagecontrol>
                             <label>$INFO[Container(5010).ListItem.Property(Plot)]</label>
-                            <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                            <autoscroll delay="5000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                             <visible>IsEmpty(Container(5010).ListItem.Property(Discart)) + !Substring(Control.GetLabel(4321),tv)</visible>
                         </control>
                         <control type="textbox" id="5060">
@@ -2797,10 +2865,10 @@
                             <height>308</height>
                             <aligny>top</aligny>
                             <pagecontrol>5019</pagecontrol>
-                           <font>Font_Reg19</font>
+                            <font>Font_Reg19</font>
                             <textcolor>white6</textcolor>
                             <label>$INFO[Container(5010).ListItem.Property(Plot)]</label>
-                            <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                            <autoscroll delay="5000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                             <visible>!IsEmpty(Container(5010).ListItem.Property(Discart))</visible>
                         </control>
                         <control type="textbox" id="5060">
@@ -2809,11 +2877,11 @@
                             <width>860</width>
                             <height>308</height>
                             <aligny>top</aligny>
-                           <pagecontrol>5019</pagecontrol>
-                           <font>Font_Reg19</font>
+                            <pagecontrol>5019</pagecontrol>
+                            <font>Font_Reg19</font>
                             <textcolor>white6</textcolor>
                             <label>$INFO[Container(5010).ListItem.Property(Plot)]</label>
-                            <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                            <autoscroll delay="5000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                             <visible>Substring(Control.GetLabel(4321),tv)</visible>
                         </control>
                     </control>
@@ -2862,14 +2930,6 @@
                     <height>500</height>
                     <visible>Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),album) | Substring(Control.GetLabel(4321),artist) | Substring(Control.GetLabel(4321),pics)</visible>
                     <control type="image">
-                        <posx>5</posx>
-                        <posy>5</posy>
-                        <width>690</width>
-                        <height>690</height>
-                        <texture background="true" fallback="DefaultAlbumCover.png">$INFO[Container(5010).ListItem.Icon]</texture>
-                        <aspectratio>scale</aspectratio>
-                    </control>
-                    <control type="image">
                         <posx>695</posx>
                         <posy>5</posy>
                         <width>1100</width>
@@ -2878,6 +2938,26 @@
                         <colordiffuse>44FFFFFF</colordiffuse>
                         <texture background="true">$INFO[Container(5010).ListItem.Property(Fanart)]</texture>
                         <visible>!IsEmpty(Container(5010).ListItem.Property(Fanart))</visible>
+                    </control>
+                    <control type="image" id="5130">
+                        <posx>1455</posx>
+                        <posy>320</posy>
+                        <width>300</width>
+                        <height>300</height>
+                        <aspectratio>keep</aspectratio>
+                        <animation type="Conditional" condition="!IsEmpty(Window(home).Property(PanelWidgetInfo))" reversible="false">
+                            <effect type="slide" start="-1400,0" end="0,0" delay="1100" time="2000" tween="cubic" />
+                            <effect type="rotate" start="0" center="auto" end="-720" delay="1100" time="2000" tween="cubic" />
+                        </animation>
+                        <texture background="true" fallback="empty.png">$VAR[cdARTWidget1Var]</texture>
+                    </control>
+                    <control type="image">
+                        <posx>5</posx>
+                        <posy>5</posy>
+                        <width>690</width>
+                        <height>690</height>
+                        <texture background="true" fallback="DefaultAlbumCover.png">$INFO[Container(5010).ListItem.Icon]</texture>
+                        <aspectratio>scale</aspectratio>
                     </control>
                     <control type="grouplist">
                         <orientation>vertical</orientation>
@@ -2941,15 +3021,28 @@
                     <control type="textbox">
                         <posx>700</posx>
                         <posy>245</posy>
-                        <width>1421</width>
-                        <height>195</height>
+                        <width>1050</width>
+                        <height>425</height>
                         <aligny>top</aligny>
                         <font>Font_Reg19</font>
                         <textcolor>white6</textcolor>
                         <pagecontrol>5034</pagecontrol>
-                        <label fallback="414">$VAR[Widget2TextboxVar]</label>
-                        <visible>!Substring(Control.GetLabel(4321),pics)</visible>
-                        <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                        <label fallback="414">$VAR[WidgetTextboxVar]</label>
+                        <visible>Substring(Control.GetLabel(5130),empty.png) | IsEmpty(Skin.String(ArtistsLogosPath))</visible>
+                        <autoscroll delay="5000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                    </control>
+                    <control type="textbox">
+                        <posx>700</posx>
+                        <posy>245</posy>
+                        <width>740</width>
+                        <height>425</height>
+                        <aligny>top</aligny>
+                        <font>Font_Reg19</font>
+                        <textcolor>white6</textcolor>
+                        <pagecontrol>5034</pagecontrol>
+                        <label fallback="414">$VAR[WidgetTextboxVar]</label>
+                        <visible>![Substring(Control.GetLabel(5130),empty.png) | IsEmpty(Skin.String(ArtistsLogosPath))]</visible>
+                        <autoscroll delay="5000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
                     <control type="image">
                         <posx>1331</posx>
@@ -3021,7 +3114,7 @@
             <posy>13</posy>
             <animation effect="slide" end="0,40" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <visible>IsEmpty(Window(home).Property(DisableWidgets))</visible>
-            <visible>!Substring(Control.GetLabel(4325),weather) + !Substring(Control.GetLabel(4325),featured) + !Substring(Control.GetLabel(4325),panel) + !IsEmpty(Control.GetLabel(4325))</visible>
+            <visible>Substring(Control.GetLabel(4325),classic) + !Window.IsActive(1120)</visible>
             <animation effect="slide" end="0,25" time="400" tween="cubic" easing="inout" condition="[[Skin.HasSetting(totalshomehigh) + !Skin.HasSetting(DisableLibraryStats)] | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]]">Conditional</animation>
             <visible>![IsEmpty(Window(Home).Property(NextAired.1.Thumb)) + Substring(Control.GetLabel(4325),nextairedtv)]</visible>
             <visible>![IsEmpty(Window(Home).Property(RecommendedMovie.1.Title)) + Substring(Control.GetLabel(4325),watchlistmovies)]</visible>
@@ -3081,7 +3174,7 @@
                     <posy>264</posy>
                     <height>30</height>
                     <width>330</width>
-                    <label>$INFO[Container(7000).ListItem.Label2] • $INFO[Container(7000).ListItem.Property(EpisodeNumber)]</label>
+                    <label>$INFO[Container(7000).ListItem.Label2] â€¢ $INFO[Container(7000).ListItem.Property(EpisodeNumber)]</label>
                     <align>center</align>
                     <font>Font_Reg15_Caps</font>
                     <textcolor>grey</textcolor>
@@ -3117,8 +3210,8 @@
                     <visible>Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),tv) | Substring(Control.GetLabel(4325),rss) | Substring(Control.GetLabel(4325),musicvideo)</visible>
                 </control>
                 <control type="group">
-                    <visible>Stringcompare(Control.GetLabel(4325),system)</visible>
-                    <include condition="Substring(Skin.String(widget2list),system) | Window.IsActive(1124)">HomeSystemWidget</include>
+                    <visible>Stringcompare(Control.GetLabel(4325),systemclassic)</visible>
+                    <include condition="Substring(Skin.String(widget2list),systemclassic) | Window.IsActive(1124)">HomeSystemWidget</include>
                 </control>
                 <control type="label">
                     <posx>15</posx>
@@ -3219,7 +3312,7 @@
                         <font>Font_Reg20</font>
                         <textcolor>white6</textcolor>
                         <label>$INFO[Container(7000).ListItem.Property(Plot)]</label>
-                        <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                        <autoscroll delay="5000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
                 </control>
                 <control type="image">
@@ -3311,7 +3404,7 @@
                         <aligny>top</aligny>
                         <font>Font_Reg20</font>
                         <label>$INFO[Container(7000).ListItem.Property(Plot)]</label>
-                        <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                        <autoscroll delay="5000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
                 </control>
                 <control type="image">
@@ -3563,47 +3656,71 @@
                         </control>
                     </focusedlayout>
                     <content>
-                        <include condition="Substring(Skin.String(widget2list),recentmovies )">LatestMoviesItems2</include>
-                        <include condition="Substring(Skin.String(widget2list),randommovies )">RandomMoviesItems2</include>
-                        <include condition="Substring(Skin.String(widget2list),recentmusicvideos )">MusicvideoLatestItems2</include>
-                        <include condition="Substring(Skin.String(widget2list),randommusicvideos )">MusicvideoRandomItems2</include>
-                        <include condition="Substring(Skin.String(widget2list),watchlistmusicvideos )">WatchListMusicVideosItems2</include>
-                        <include condition="Substring(Skin.String(widget2list),watchlistmovies )">WatchlistMoviesItems2</include>
-                        <include condition="Substring(Skin.String(widget2list),1custom)">Custom1Widget2</include>
-                        <include condition="Substring(Skin.String(widget2list),2custom)">Custom2Widget2</include>
-                        <include condition="Substring(Skin.String(widget2list),3custom)">Custom3Widget2</include>
-                        <include condition="Substring(Skin.String(widget2list),4custom)">Custom4Widget2</include>
-                        <include condition="Substring(Skin.String(widget2list),5custom)">Custom5Widget2</include>
-                        <include condition="Substring(Skin.String(widget2list),6custom)">Custom6Widget2</include>
-                        <include condition="Substring(Skin.String(widget2list),randomalbums )">RandomAlbumsItems2</include>
-                        <include condition="Substring(Skin.String(widget2list),randomalbums )">RandomAlbumsItems2Home</include>
-                        <include condition="Substring(Skin.String(widget2list),randomartists )">RandomArtistsItems2</include>
-                        <include condition="Substring(Skin.String(widget2list),randomartists )">RandomArtistsItems2Home</include>
-                        <include condition="Substring(Skin.String(widget2list),recentalbums )">LatestAlbumsItems2</include>
-                        <include condition="Substring(Skin.String(widget2list),recentalbums )">LatestAlbumsItems2Home</include>
-                        <include condition="Substring(Skin.String(widget2list),watchlistalbums )">WatchlistMusicItems2</include>
-                        <include condition="Substring(Skin.String(widget2list),watchlistalbums )">WatchlistMusicItems2Home</include>
-                        <include condition="Substring(Skin.String(widget2list),actors )">BornActorsItems2</include>
-                        <include condition="Substring(Skin.String(widget2list),randomaddons )">RandomAddonsItems2</include>
-                        <include condition="Substring(Skin.String(widget2list),recenttv )">LatestEpisodesItems2</include>
-                        <include condition="Substring(Skin.String(widget2list),recenttv )">LatestEpisodesItems2Home</include>
-                        <include condition="Substring(Skin.String(widget2list),randomtv )">RandomEpisodesItems2</include>
-                        <include condition="Substring(Skin.String(widget2list),randomtv )">RandomEpisodesItems2Home</include>
-                        <include condition="Substring(Skin.String(widget2list),watchlisttv )">WatchListTVItems2</include>
-                        <include condition="Substring(Skin.String(widget2list),watchlisttv )">WatchListTVItems2Home</include>
+                        <include condition="Substring(Skin.String(widget2list),recentmoviesclassic)">LatestMoviesItems2</include>
+                        <include condition="Substring(Skin.String(widget2list),randommoviesclassic)">RandomMoviesItems2</include>
+                        <include condition="Substring(Skin.String(widget2list),recentmusicvideosclassic)">MusicvideoLatestItems2</include>
+                        <include condition="Substring(Skin.String(widget2list),randommusicvideosclassic)">MusicvideoRandomItems2</include>
+                        <include condition="Substring(Skin.String(widget2list),watchlistmusicvideosclassic)">WatchListMusicVideosItems2</include>
+                        <include condition="Substring(Skin.String(widget2list),watchlistmoviesclassic)">WatchlistMoviesItems2</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),movies7customclassic)">Custom1Widget2</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv7customclassic)">Custom1Widget2Episodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv7customclassic)">Custom1Widget2EpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums7customclassic)">Custom1Widget2Music</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums7customclassic)">Custom1Widget2MusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),movies8customclassic)">Custom2Widget2</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv8customclassic)">Custom2Widget2Episodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv8customclassic)">Custom2Widget2EpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums8customclassic)">Custom2Widget2Music</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums8customclassic)">Custom2Widget2MusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),movies9customclassic)">Custom3Widget2</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv9customclassic)">Custom3Widget2Episodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv9customclassic)">Custom3Widget2EpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums9customclassic)">Custom3Widget2Music</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums9customclassic)">Custom3Widget2MusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),movies10customclassic)">Custom4Widget2</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv10customclassic)">Custom4Widget2Episodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv10customclassic)">Custom4Widget2EpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums10customclassic)">Custom4Widget2Music</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums10customclassic)">Custom4Widget2MusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),movies11customclassic)">Custom5Widget2</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv11customclassic)">Custom5Widget2Episodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv11customclassic)">Custom5Widget2EpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums11customclassic)">Custom5Widget2Music</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums11customclassic)">Custom5Widget2MusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),movies12customclassic)">Custom6Widget2</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv12customclassic)">Custom6Widget2Episodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv12customclassic)">Custom6Widget2EpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums12customclassic)">Custom6Widget2Music</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums12customclassic)">Custom6Widget2MusicHome</include>
+                        <include condition="Substring(Skin.String(widget2list),randomalbumsclassic)">RandomAlbumsItems2</include>
+                        <include condition="Substring(Skin.String(widget2list),randomalbumsclassic)">RandomAlbumsItems2Home</include>
+                        <include condition="Substring(Skin.String(widget2list),randomartistsclassic)">RandomArtistsItems2</include>
+                        <include condition="Substring(Skin.String(widget2list),randomartistsclassic)">RandomArtistsItems2Home</include>
+                        <include condition="Substring(Skin.String(widget2list),recentalbumsclassic)">LatestAlbumsItems2</include>
+                        <include condition="Substring(Skin.String(widget2list),recentalbumsclassic)">LatestAlbumsItems2Home</include>
+                        <include condition="Substring(Skin.String(widget2list),watchlistalbumsclassic)">WatchlistMusicItems2</include>
+                        <include condition="Substring(Skin.String(widget2list),watchlistalbumsclassic)">WatchlistMusicItems2Home</include>
+                        <include condition="Substring(Skin.String(widget2list),actorsclassic)">BornActorsItems2</include>
+                        <include condition="Substring(Skin.String(widget2list),randomaddonsclassic)">RandomAddonsItems2</include>
+                        <include condition="Substring(Skin.String(widget2list),recenttvclassic)">LatestEpisodesItems2</include>
+                        <include condition="Substring(Skin.String(widget2list),recenttvclassic)">LatestEpisodesItems2Home</include>
+                        <include condition="Substring(Skin.String(widget2list),randomtvclassic)">RandomEpisodesItems2</include>
+                        <include condition="Substring(Skin.String(widget2list),randomtvclassic)">RandomEpisodesItems2Home</include>
+                        <include condition="Substring(Skin.String(widget2list),watchlisttvclassic)">WatchListTVItems2</include>
+                        <include condition="Substring(Skin.String(widget2list),watchlisttvclassic)">WatchListTVItems2Home</include>
                         <include condition="Substring(Skin.String(widget2list),randompics)">RandomPicturesItems2</include>
                         <include condition="Substring(Skin.String(widget2list),randompics)">RandomPicturesItems2Home</include>
                         <include condition="Substring(Skin.String(widget2list),recentpics)">LatestPicturesItems2</include>
                         <include condition="Substring(Skin.String(widget2list),recentpics)">LatestPicturesItems2Home</include>
-                        <include condition="Substring(Skin.String(widget2list),mostplayedroms )">MostPlayedRomsItems2</include>
-                        <include condition="Substring(Skin.String(widget2list),rss1 )">RSS1Widget2Content1124</include>
-                        <include condition="Substring(Skin.String(widget2list),rss1 )">RSS1Widget2Content</include>
-                        <include condition="Substring(Skin.String(widget2list),rss2 )">RSS2Widget2Content1124</include>
-                        <include condition="Substring(Skin.String(widget2list),rss2 )">RSS2Widget2Content</include>NextAiredWidget2Content1124
-                        <include condition="Substring(Skin.String(widget2list),rss3 )">RSS3Widget2Content1124</include>
-                        <include condition="Substring(Skin.String(widget2list),rss3 )">RSS3Widget2Content</include>
-                        <include condition="Substring(Skin.String(widget2list),nextairedtv )">NextAiredWidget2Content1124</include>
-                        <include condition="Substring(Skin.String(widget2list),nextairedtv )">NextAiredWidget2Content</include>
+                        <include condition="Substring(Skin.String(widget2list),mostplayedromsclassic)">MostPlayedRomsItems2</include>
+                        <include condition="Substring(Skin.String(widget2list),rss1classic)">RSS1Widget2Content1124</include>
+                        <include condition="Substring(Skin.String(widget2list),rss1classic)">RSS1Widget2Content</include>
+                        <include condition="Substring(Skin.String(widget2list),rss2classic)">RSS2Widget2Content1124</include>
+                        <include condition="Substring(Skin.String(widget2list),rss2classic)">RSS2Widget2Content</include>
+                        <include condition="Substring(Skin.String(widget2list),rss3classic)">RSS3Widget2Content1124</include>
+                        <include condition="Substring(Skin.String(widget2list),rss3classic)">RSS3Widget2Content</include>
+                        <include condition="Substring(Skin.String(widget2list),nextairedtvclassic)">NextAiredWidget2Content1124</include>
+                        <include condition="Substring(Skin.String(widget2list),nextairedtvclassic)">NextAiredWidget2Content</include>
                     </content>
                 </control>
             </control>
@@ -4241,7 +4358,7 @@
                     <texture border="60">featured/panel_featured.png</texture>
                     <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 </control>
-      <control type="group">
+                <control type="group">
                     <posx>-73</posx>
                     <posy>26</posy>
                     <width>1596</width>
@@ -4335,12 +4452,6 @@
                             <include>WidgetMenuLabel</include>
                             <visible>Substring(Control.GetLabel(4325),actors)</visible>
                         </control>
-                        <control type="button" id="6018">
-                            <label>$LOCALIZE[31087]</label>
-                            <onclick>SetProperty(SkinWidgets_RandomItems_Update,true)</onclick>
-                            <include>WidgetMenuLabel</include>
-                            <visible>Substring(Control.GetLabel(4325),random) + !Substring(Control.GetLabel(4325),custom)</visible>
-                        </control>
                         <control type="button" id="60190">
                             <label>$LOCALIZE[31087]</label>
                             <onclick condition="SubString(Control.GetLabel(4325),1custom)">$INFO[Skin.String(SmartPlaylist1.Call)]</onclick>
@@ -4351,7 +4462,7 @@
                             <onclick condition="SubString(Control.GetLabel(4325),6custom)">$INFO[Skin.String(SmartPlaylist6.Call)]</onclick>
                             <onclick condition="SubString(Control.GetLabel(4325),random) + !SubString(Control.GetLabel(4325),custom)">SetProperty(SkinWidgets_RandomItems_Update,true)</onclick>
                             <include>WidgetMenuLabel</include>
-                            <visible>Substring(Control.GetLabel(4325),random) + Substring(Control.GetLabel(4325),custom)</visible>
+                            <visible>Substring(Control.GetLabel(4325),random) | Substring(Control.GetLabel(4325),custom)</visible>
                         </control>
                         <control type="button" id="6013">
                             <label>$LOCALIZE[31066]</label>
@@ -4437,7 +4548,7 @@
                             <height>30</height>
                             <font>Font_Reg19</font>
                             <textcolor>grey2</textcolor>
-                            <label>$INFO[Container(6010).ListItem.Label2]$INFO[Container(6010).ListItem.Property(EpisodeNumber), • [UPPERCASE],[/UPPERCASE]]</label>
+                            <label>$INFO[Container(6010).ListItem.Label2]$INFO[Container(6010).ListItem.Property(EpisodeNumber), â€¢ [UPPERCASE],[/UPPERCASE]]</label>
                             <textoffsetx>15</textoffsetx>
                             <visible>!IsEmpty(Container(6010).ListItem.Property(EpisodeNumber))</visible>
                         </control>
@@ -4446,7 +4557,7 @@
                             <height>40</height>
                             <font>Font_Reg19</font>
                             <textcolor>grey2</textcolor>
-                            <label>$INFO[Container(6010).ListItem.Property(Year)]$INFO[Container(6010).ListItem.Property(RunningTime), • , $LOCALIZE[12391]]</label>
+                            <label>$INFO[Container(6010).ListItem.Property(Year)]$INFO[Container(6010).ListItem.Property(RunningTime), â€¢ , $LOCALIZE[12391]]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
                     </control>
@@ -4462,7 +4573,7 @@
                             <textcolor>white6</textcolor>
                             <pagecontrol>5019</pagecontrol>
                             <label>$INFO[Container(6010).ListItem.Property(Plot)]</label>
-                            <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                            <autoscroll delay="5000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                             <visible>IsEmpty(Container(6010).ListItem.Property(Discart)) + !Substring(Control.GetLabel(4325),tv)</visible>
                         </control>
                         <control type="textbox" id="5060">
@@ -4472,10 +4583,10 @@
                             <height>308</height>
                             <aligny>top</aligny>
                             <pagecontrol>5019</pagecontrol>
-                           <font>Font_Reg19</font>
+                            <font>Font_Reg19</font>
                             <textcolor>white6</textcolor>
                             <label>$INFO[Container(6010).ListItem.Property(Plot)]</label>
-                            <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                            <autoscroll delay="5000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                             <visible>!IsEmpty(Container(6010).ListItem.Property(Discart))</visible>
                         </control>
                         <control type="textbox" id="5060">
@@ -4484,11 +4595,11 @@
                             <width>860</width>
                             <height>308</height>
                             <aligny>top</aligny>
-                           <pagecontrol>5019</pagecontrol>
-                           <font>Font_Reg19</font>
+                            <pagecontrol>5019</pagecontrol>
+                            <font>Font_Reg19</font>
                             <textcolor>white6</textcolor>
                             <label>$INFO[Container(6010).ListItem.Property(Plot)]</label>
-                            <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                            <autoscroll delay="5000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                             <visible>Substring(Control.GetLabel(4325),tv)</visible>
                         </control>
                     </control>
@@ -4537,14 +4648,6 @@
                     <height>500</height>
                     <visible>Substring(Control.GetLabel(4325),addons) | Substring(Control.GetLabel(4325),album) | Substring(Control.GetLabel(4325),artist) | Substring(Control.GetLabel(4325),pics)</visible>
                     <control type="image">
-                        <posx>5</posx>
-                        <posy>5</posy>
-                        <width>690</width>
-                        <height>690</height>
-                        <texture background="true" fallback="DefaultAlbumCover.png">$INFO[Container(6010).ListItem.Icon]</texture>
-                        <aspectratio>scale</aspectratio>
-                    </control>
-                    <control type="image">
                         <posx>695</posx>
                         <posy>5</posy>
                         <width>1100</width>
@@ -4553,6 +4656,26 @@
                         <colordiffuse>44FFFFFF</colordiffuse>
                         <texture background="true">$INFO[Container(6010).ListItem.Property(Fanart)]</texture>
                         <visible>!IsEmpty(Container(6010).ListItem.Property(Fanart))</visible>
+                    </control>
+                    <control type="image" id="6130">
+                        <posx>1455</posx>
+                        <posy>320</posy>
+                        <width>300</width>
+                        <height>300</height>
+                        <aspectratio>keep</aspectratio>
+                        <animation type="Conditional" condition="!IsEmpty(Window(home).Property(PanelWidget2Info))" reversible="false">
+                            <effect type="slide" start="-1400,0" end="0,0" delay="1100" time="2000" tween="cubic" />
+                            <effect type="rotate" start="0" center="auto" end="-720" delay="1100" time="2000" tween="cubic" />
+                        </animation>
+                        <texture background="true" fallback="empty.png">$VAR[cdARTWidget2Var]</texture>
+                    </control>
+                    <control type="image">
+                        <posx>5</posx>
+                        <posy>5</posy>
+                        <width>690</width>
+                        <height>690</height>
+                        <texture background="true" fallback="DefaultAlbumCover.png">$INFO[Container(6010).ListItem.Icon]</texture>
+                        <aspectratio>scale</aspectratio>
                     </control>
                     <control type="grouplist">
                         <orientation>vertical</orientation>
@@ -4616,15 +4739,28 @@
                     <control type="textbox">
                         <posx>700</posx>
                         <posy>245</posy>
-                        <width>1421</width>
-                        <height>195</height>
+                        <width>1050</width>
+                        <height>425</height>
                         <aligny>top</aligny>
                         <font>Font_Reg19</font>
                         <textcolor>white6</textcolor>
                         <pagecontrol>6034</pagecontrol>
                         <label fallback="414">$VAR[Widget2TextboxVar]</label>
-                        <visible>!Substring(Control.GetLabel(4325),pics)</visible>
-                        <autoscroll delay="6000" time="6000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                        <visible>Substring(Control.GetLabel(6130),empty.png) | IsEmpty(Skin.String(ArtistsLogosPath))</visible>
+                        <autoscroll delay="5000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                    </control>
+                    <control type="textbox">
+                        <posx>700</posx>
+                        <posy>245</posy>
+                        <width>740</width>
+                        <height>425</height>
+                        <aligny>top</aligny>
+                        <font>Font_Reg19</font>
+                        <textcolor>white6</textcolor>
+                        <pagecontrol>6034</pagecontrol>
+                        <label fallback="414">$VAR[Widget2TextboxVar]</label>
+                        <visible>![Substring(Control.GetLabel(6130),empty.png) | IsEmpty(Skin.String(ArtistsLogosPath))]</visible>
+                        <autoscroll delay="5000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
                     <control type="image">
                         <posx>1331</posx>
@@ -4731,7 +4867,7 @@
                 <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),roms)">
                     <include condition="[Substring(Skin.String(widgetlist),roms) | Window.IsActive(1124)] + System.HasAddon(script.games.rom.collection.browser)">WidgetRCBLayout</include>
                 </itemlayout>
-                <itemlayout width="228" height="340" condition="Substring(Control.GetLabel(4321),panelcover) + [Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo) | Substring(Control.GetLabel(4321),actors)]">
+                <itemlayout width="228" height="340" condition="Substring(Control.GetLabel(4321),panelcoverposter)">
                     <control type="image">
                         <posx>5</posx>
                         <posy>5</posy>
@@ -4751,7 +4887,7 @@
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
                 </itemlayout>
-                <focusedlayout width="228" height="340" condition="Substring(Control.GetLabel(4321),panelcover) + [Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo) | Substring(Control.GetLabel(4321),actors)]">
+                <focusedlayout width="228" height="340" condition="Substring(Control.GetLabel(4321),panelcoverposter)">
                     <control type="image">
                         <posx>5</posx>
                         <posy>5</posy>
@@ -4807,7 +4943,7 @@
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout width="319" height="360" condition="[Substring(Control.GetLabel(4321),panelcover) + [Substring(Control.GetLabel(4321),babe) | Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),artists)]] | Substring(Control.GetLabel(4321),icon)">
+                <itemlayout width="319" height="360" condition="Substring(Control.GetLabel(4321),panelcoversquare) | Substring(Control.GetLabel(4321),Icon)">
                     <control type="group">
                         <control type="image">
                             <posx>5</posx>
@@ -4841,7 +4977,7 @@
                         </control>
                     </control>
                 </itemlayout>
-                <focusedlayout width="319" height="360" condition="[Substring(Control.GetLabel(4321),panelcover) + [Substring(Control.GetLabel(4321),babe) | Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),artists)]] | Substring(Control.GetLabel(4321),icon)">
+                <focusedlayout width="319" height="360" condition="Substring(Control.GetLabel(4321),panelcoversquare) | Substring(Control.GetLabel(4321),Icon)">
                     <control type="group">
                         <control type="image">
                             <posx>5</posx>
@@ -4885,7 +5021,7 @@
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout width="399" height="340" condition="Substring(Control.GetLabel(4321),panelcover) + [Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),pics) | Substring(Control.GetLabel(4321),rss)]">
+                <itemlayout width="399" height="340" condition="Substring(Control.GetLabel(4321),panelcoverepisode)">
                     <control type="group">
                         <control type="image">
                             <posx>5</posx>
@@ -4909,7 +5045,7 @@
                             <width>389</width>
                             <height>30</height>
                             <font>Font_Reg19</font>
-                            <textcolor>FFe5e5e5</textcolor>
+                            <textcolor>white2</textcolor>
                             <label>$INFO[ListItem.Label2]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -4919,7 +5055,7 @@
                             <width>389</width>
                             <height>40</height>
                             <font>Font_Reg15</font>
-                            <textcolor>FFe5e5e5</textcolor>
+                            <textcolor>white2</textcolor>
                             <label>$INFO[ListItem.Property(Folder),,/]$INFO[ListItem.Property(EpisodeNumber),, - ]$INFO[ListItem.Label]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -4935,7 +5071,7 @@
                         </control>
                     </control>
                 </itemlayout>
-                <focusedlayout width="399" height="340" condition="Substring(Control.GetLabel(4321),panelcover) + [Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),pics) | Substring(Control.GetLabel(4321),rss)]">
+                <focusedlayout width="399" height="340" condition="Substring(Control.GetLabel(4321),panelcoverepisode)">
                     <control type="group">
                         <control type="image">
                             <posx>5</posx>
@@ -4982,10 +5118,10 @@
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout height="450" width="532" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo) | Substring(Control.GetLabel(4321),actors)]">
+                <itemlayout height="450" width="532" condition="Substring(Control.GetLabel(4321),panel2poster,right)">
                     <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(1124)">Panel2WidgetPosterLayout</include>
                 </itemlayout>
-                <focusedlayout height="450" width="532" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo) | Substring(Control.GetLabel(4321),actors)]">
+                <focusedlayout height="450" width="532" condition="Substring(Control.GetLabel(4321),panel2poster,right)">
                     <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(1124)">Panel2WidgetPosterLayout</include>
                     <control type="image">
                         <posy>10</posy>
@@ -4996,10 +5132,10 @@
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout width="798" height="340" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),pics) | Substring(Control.GetLabel(4321),rss)]">
+                <itemlayout width="798" height="340" condition="Substring(Control.GetLabel(4321),panel2episode,right)">
                     <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(1124)">Panel2WidgetEpisodeLayout</include>
                 </itemlayout>
-                <focusedlayout width="798" height="340" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),pics) | Substring(Control.GetLabel(4321),rss)]">
+                <focusedlayout width="798" height="340" condition="Substring(Control.GetLabel(4321),panel2episode,right)">
                     <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(1124)">Panel2WidgetEpisodeLayout</include>
                     <control type="image">
                         <width>798</width>
@@ -5009,10 +5145,10 @@
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),artists)]">
+                <itemlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2square,right)">
                     <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(1124)">Panel2WidgetSquareLayout</include>
                 </itemlayout>
-                <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),artists)]">
+                <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2square,right)">
                     <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(1124)">Panel2WidgetSquareLayout</include>
                     <control type="image">
                         <width>798</width>
@@ -5024,7 +5160,7 @@
                 </focusedlayout>
                 <content>
                     <include condition="Library.HasContent(movies) + [Window.IsActive(1124) | Substring(Skin.String(widgetlist),recentmovies)]">LatestMoviesItems</include>
-                    <!--better would be to check for recentmoviespanel | recentmoviestransparentpanel,but i´m too lazy-->
+                    <!--better would be to check for recentmoviespanel | recentmoviestransparentpanel,but iÂ´m too lazy-->
                     <include condition="Library.HasContent(movies) + [Window.IsActive(1124) | Substring(Skin.String(widgetlist),randommovies)]">RandomMoviesItems</include>
                     <include condition="Library.HasContent(musicvideos) + [Window.IsActive(1124) | Substring(Skin.String(widgetlist),watchlistmusicvideos)]">WatchListMusicVideosItems</include>
                     <include condition="Library.HasContent(musicvideos) + [Window.IsActive(1124) | Substring(Skin.String(widgetlist),recentmusicvideos)]">MusicvideoLatestItems</include>
@@ -5052,13 +5188,36 @@
                     <include condition="System.HasAddon(plugin.image.mypicsdb)">LatestPicturesItems</include>
                     <include condition="System.HasAddon(plugin.image.mypicsdb) + !Window.IsActive(1124) + Substring(Skin.String(widgetlist),recentpics)">LatestPicturesItemsHome</include>
                     <include condition="System.HasAddon(script.games.rom.collection.browser) + [Window.IsActive(1124) | Substring(Skin.String(widgetlist),mostplayedroms)]">MostPlayedRomsItems</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),1custom)">Custom1Widget</include>
-                    <!--needs checking-->
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),2custom)">Custom2Widget</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),3custom)">Custom3Widget</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),4custom)">Custom4Widget</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),5custom)">Custom5Widget</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),6custom)">Custom6Widget</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),movies1custom)]">Custom1Widget</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),tv1custom)]">Custom1WidgetEpisodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),tv1custom)]">Custom1WidgetEpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),albums1custom)]">Custom1WidgetMusic</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),albums1custom)]">Custom1WidgetMusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),movies2custom)]">Custom2Widget</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),tv2custom)]">Custom2WidgetEpisodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),tv2custom)]">Custom2WidgetEpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),albums2custom)]">Custom2WidgetMusic</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),albums2custom)]">Custom2WidgetMusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),movies3custom)]">Custom3Widget</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),tv3custom)]">Custom3WidgetEpisodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),tv3custom)]">Custom3WidgetEpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),albums3custom)]">Custom3WidgetMusic</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),albums3custom)]">Custom3WidgetMusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),movies4custom)]">Custom4Widget</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),tv4custom)]">Custom4WidgetEpisodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),tv4custom)]">Custom4WidgetEpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),albums4custom)]">Custom4WidgetMusic</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),albums4custom)]">Custom4WidgetMusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),movies5custom)]">Custom5Widget</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),tv5custom)]">Custom5WidgetEpisodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),tv5custom)]">Custom5WidgetEpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),albums5custom)]">Custom5WidgetMusic</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),albums5custom)]">Custom5WidgetMusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),movies6custom)]">Custom6Widget</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),tv6custom)]">Custom6WidgetEpisodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),tv6custom)]">Custom6WidgetEpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),albums6custom)]">Custom6WidgetMusic</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),albums6custom)]">Custom6WidgetMusicHome</include>
                     <include condition="Window.IsActive(1124) | Substring(Skin.String(widgetlist),babe)">DailyBabesContent</include>
                     <include condition="Library.HasContent(tvshows) + [Window.IsActive(1124) | Substring(Skin.String(widgetlist),nextaired)]">NextAiredWidgetContent1124</include>
                     <include condition="Library.HasContent(tvshows) + Substring(Skin.String(widgetlist),nextaired) + !Window.IsActive(1124)">NextAiredWidgetContent</include>
@@ -5070,6 +5229,7 @@
                     <include condition="System.HasAddon(script.rssclient) + Substring(Skin.String(widgetlist),rss3) + !Window.IsActive(1124)">RSS3WidgetContent</include>
                     <include condition="Window.IsActive(1124) | Substring(Skin.String(widgetlist),IconPanel1)">IconPanel1Items</include>
                     <include condition="Window.IsActive(1124) | Substring(Skin.String(widgetlist),IconPanel2)">IconPanel2Items</include>
+                    <include condition="Window.IsActive(1124) | Substring(Skin.String(widgetlist),favourite)">FavouritesItems</include>
                 </content>
             </control>
         </control>
@@ -5167,7 +5327,7 @@
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout width="228" height="340" condition="Substring(Control.GetLabel(4325),panelcover) + [Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo) | Substring(Control.GetLabel(4325),actors)]">
+                <itemlayout width="228" height="340" condition="Substring(Control.GetLabel(4325),panelcoverposter)">
                     <control type="image">
                         <posx>5</posx>
                         <posy>5</posy>
@@ -5188,7 +5348,7 @@
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
                 </itemlayout>
-                <focusedlayout width="228" height="340" condition="Substring(Control.GetLabel(4325),panelcover) + [Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo) | Substring(Control.GetLabel(4325),actors)]">
+                <focusedlayout width="228" height="340" condition="Substring(Control.GetLabel(4325),panelcoverposter)">
                     <control type="image">
                         <posx>5</posx>
                         <posy>5</posy>
@@ -5205,7 +5365,7 @@
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout width="319" height="360" condition="[Substring(Control.GetLabel(4325),panelcover) + [Substring(Control.GetLabel(4325),babe) | Substring(Control.GetLabel(4325),addons) | Substring(Control.GetLabel(4325),albums) | Substring(Control.GetLabel(4325),artists)]] | Substring(Control.GetLabel(4325),icon)">
+                <itemlayout width="319" height="360" condition="Substring(Control.GetLabel(4325),panelcoversquare) | Substring(Control.GetLabel(4325),Icon)">
                     <control type="group">
                         <control type="image">
                             <posx>5</posx>
@@ -5239,7 +5399,7 @@
                         </control>
                     </control>
                 </itemlayout>
-                <focusedlayout width="319" height="360" condition="[Substring(Control.GetLabel(4325),panelcover) + [Substring(Control.GetLabel(4325),babe) | Substring(Control.GetLabel(4325),addons) | Substring(Control.GetLabel(4325),albums) | Substring(Control.GetLabel(4325),artists)]] | Substring(Control.GetLabel(4325),icon)">
+                <focusedlayout width="319" height="360" condition="Substring(Control.GetLabel(4325),panelcoversquare) | Substring(Control.GetLabel(4325),Icon)">
                     <control type="group">
                         <control type="image">
                             <posx>5</posx>
@@ -5283,7 +5443,7 @@
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout width="399" height="340" condition="Substring(Control.GetLabel(4325),panelcover) + [Substring(Control.GetLabel(4325),tv) | Substring(Control.GetLabel(4325),pics) | Substring(Control.GetLabel(4325),rss)]">
+                <itemlayout width="399" height="340" condition="Substring(Control.GetLabel(4325),panelcoverepisode)">
                     <control type="group">
                         <control type="image">
                             <posx>5</posx>
@@ -5307,7 +5467,7 @@
                             <width>389</width>
                             <height>30</height>
                             <font>Font_Reg19</font>
-                            <textcolor>FFe5e5e5</textcolor>
+                            <textcolor>white2</textcolor>
                             <label>$INFO[ListItem.Label2]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -5317,7 +5477,7 @@
                             <width>389</width>
                             <height>40</height>
                             <font>Font_Reg15</font>
-                            <textcolor>FFe5e5e5</textcolor>
+                            <textcolor>white2</textcolor>
                             <label>$INFO[ListItem.Property(Folder),,/]$INFO[ListItem.Property(EpisodeNumber),, - ]$INFO[ListItem.Label]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -5333,7 +5493,7 @@
                         </control>
                     </control>
                 </itemlayout>
-                <focusedlayout width="399" height="340" condition="Substring(Control.GetLabel(4325),panelcover) + [Substring(Control.GetLabel(4325),tv) | Substring(Control.GetLabel(4325),pics) | Substring(Control.GetLabel(4325),rss)]">
+                <focusedlayout width="399" height="340" condition="Substring(Control.GetLabel(4325),panelcoverepisode)">
                     <control type="group">
                         <control type="image">
                             <posx>5</posx>
@@ -5380,10 +5540,10 @@
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout height="450" width="532" condition="Substring(Control.GetLabel(4325),panel2,right) + [Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo) | Substring(Control.GetLabel(4325),actors)]">
+                <itemlayout height="450" width="532" condition="Substring(Control.GetLabel(4325),panel2poster,right)">
                     <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1124)">Panel2WidgetPosterLayout</include>
                 </itemlayout>
-                <focusedlayout height="450" width="532" condition="Substring(Control.GetLabel(4325),panel2,right) + [Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo) | Substring(Control.GetLabel(4325),actors)]">
+                <focusedlayout height="450" width="532" condition="Substring(Control.GetLabel(4325),panel2poster,right)">
                     <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1124)">Panel2WidgetPosterLayout</include>
                     <control type="image">
                         <posy>10</posy>
@@ -5394,10 +5554,10 @@
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout width="798" height="340" condition="Substring(Control.GetLabel(4325),panel2,right) + [Substring(Control.GetLabel(4325),tv) | Substring(Control.GetLabel(4325),pics) | Substring(Control.GetLabel(4325),rss)]">
+                <itemlayout width="798" height="340" condition="Substring(Control.GetLabel(4325),panel2episode,right)">
                     <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1124)">Panel2WidgetEpisodeLayout</include>
                 </itemlayout>
-                <focusedlayout width="798" height="340" condition="Substring(Control.GetLabel(4325),panel2,right) + [Substring(Control.GetLabel(4325),tv) | Substring(Control.GetLabel(4325),pics) | Substring(Control.GetLabel(4325),rss)]">
+                <focusedlayout width="798" height="340" condition="Substring(Control.GetLabel(4325),panel2episode,right)">
                     <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1124)">Panel2WidgetEpisodeLayout</include>
                     <control type="image">
                         <width>798</width>
@@ -5407,10 +5567,10 @@
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout width="798" height="360" condition="Substring(Control.GetLabel(4325),panel2,right) + [Substring(Control.GetLabel(4325),addons) | Substring(Control.GetLabel(4325),albums) | Substring(Control.GetLabel(4325),artists)]">
+                <itemlayout width="798" height="360" condition="Substring(Control.GetLabel(4325),panel2square,right)">
                     <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1124)">Panel2WidgetSquareLayout</include>
                 </itemlayout>
-                <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4325),panel2,right) + [Substring(Control.GetLabel(4325),addons) | Substring(Control.GetLabel(4325),albums) | Substring(Control.GetLabel(4325),artists)]">
+                <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4325),panel2square,right)">
                     <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1124)">Panel2WidgetSquareLayout</include>
                     <control type="image">
                         <width>798</width>
@@ -5449,12 +5609,36 @@
                     <include condition="System.HasAddon(plugin.image.mypicsdb)">LatestPicturesItems2</include>
                     <include condition="System.HasAddon(plugin.image.mypicsdb) + !Window.IsActive(1124) + Substring(Skin.String(widget2list),recentpics)">LatestPicturesItems2Home</include>
                     <include condition="System.HasAddon(script.games.rom.collection.browser) + [Window.IsActive(1124) | Substring(Skin.String(widget2list),mostplayedroms)]">MostPlayedRomsItems2</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),1custom)">Custom1Widget2</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),2custom)">Custom2Widget2</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),3custom)">Custom3Widget2</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),4custom)">Custom4Widget2</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),5custom)">Custom5Widget2</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),6custom)">Custom6Widget2</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),movies7custom)]">Custom1Widget2</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),tv7custom)]">Custom1Widget2Episodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),tv7custom)]">Custom1Widget2EpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),albums7custom)]">Custom1Widget2Music</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),albums7custom)]">Custom1Widget2MusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),movies8custom)]">Custom2Widget2</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),tv8custom)]">Custom2Widget2Episodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),tv8custom)]">Custom2Widget2EpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),albums8custom)]">Custom2Widget2Music</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),albums8custom)]">Custom2Widget2MusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),movies9custom)]">Custom3Widget2</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),tv9custom)]">Custom3Widget2Episodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),tv9custom)]">Custom3Widget2EpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),albums9custom)]">Custom3Widget2Music</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),albums9custom)]">Custom3Widget2MusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),movies10custom)]">Custom4Widget2</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),tv10custom)]">Custom4Widget2Episodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),tv10custom)]">Custom4Widget2EpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),albums10custom)]">Custom4Widget2Music</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),albums10custom)]">Custom4Widget2MusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),movies11custom)]">Custom5Widget2</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),tv11custom)]">Custom5Widget2Episodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),tv11custom)]">Custom5Widget2EpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),albums11custom)]">Custom5Widget2Music</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),albums11custom)]">Custom5Widget2MusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),movies12custom)]">Custom6Widget2</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),tv12custom)]">Custom6Widget2Episodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),tv12custom)]">Custom6Widget2EpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),albums12custom)]">Custom6Widget2Music</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),albums12custom)]">Custom6Widget2MusicHome</include>
                     <include condition="Window.IsActive(1124) | Substring(Skin.String(widget2list),babe)">DailyBabesContent2</include>
                     <include condition="Window.IsActive(1124) | Substring(Skin.String(widget2list),nextaired)">NextAiredWidget2Content1124</include>
                     <include condition="Substring(Skin.String(widget2list),nextaired) + !Window.IsActive(1124)">NextAiredWidget2Content</include>
@@ -5466,6 +5650,7 @@
                     <include condition="System.HasAddon(script.rssclient) + Substring(Skin.String(widget2list),rss3)">RSS3Widget2Content</include>
                     <include condition="Window.IsActive(1124) | Substring(Skin.String(widget2list),IconPanel1)">IconPanel1Items2</include>
                     <include condition="Window.IsActive(1124) | Substring(Skin.String(widget2list),IconPanel2)">IconPanel2Items2</include>
+                    <include condition="Window.IsActive(1124) | Substring(Skin.String(widget2list),favourite)">FavouritesItems2</include>
                 </content>
             </control>
         </control>
@@ -6010,7 +6195,7 @@
                 <height>300</height>
                 <align>right</align>
                 <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                <label>$LOCALIZE[404][CR]Sun Length[CR]Sunrise[CR]Sunset[CR]Moonrise[CR]Moon Phase[CR]Sun Diff</label>
+                <label>$LOCALIZE[404][CR]$LOCALIZE[31219][CR]$LOCALIZE[31224][CR]$LOCALIZE[31225][CR]$LOCALIZE[31232][CR]$LOCALIZE[31226][CR]$LOCALIZE[31197]</label>
             </control>
             <control type="label">
                 <posx>570</posx>
@@ -6047,7 +6232,7 @@
                     <height>300</height>
                     <align>right</align>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                    <label>$LOCALIZE[42257][CR]$LOCALIZE[402][CR]$LOCALIZE[406][CR]$LOCALIZE[403][CR]$LOCALIZE[405][CR]$LOCALIZE[42258][CR]Pressure</label>
+                    <label>$LOCALIZE[42257][CR]$LOCALIZE[402][CR]$LOCALIZE[406][CR]$LOCALIZE[403][CR]$LOCALIZE[405][CR]$LOCALIZE[42258][CR]$LOCALIZE[31239]</label>
                 </control>
                 <control type="label">
                     <posx>200</posx>
@@ -6063,7 +6248,7 @@
                     <height>300</height>
                     <align>right</align>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                    <label>$LOCALIZE[404][CR]Visibility[CR]Sunrise[CR]Sunset[CR]Moon Phase[CR]Average Day (Low)[CR]Average Day (High)</label>
+                    <label>$LOCALIZE[404][CR]$LOCALIZE[31223][CR]$LOCALIZE[31224][CR]$LOCALIZE[31225][CR]$LOCALIZE[31226][CR]$LOCALIZE[31237][CR]$LOCALIZE[31238]</label>
                 </control>
                 <control type="label">
                     <posx>610</posx>
@@ -6757,7 +6942,7 @@
                 <height>30</height>
                 <font>Font_Reg19</font>
                 <textcolor>grey2</textcolor>
-                <label>$INFO[ListItem.Property(Year),, • ]$INFO[ListItem.Label2]</label>
+                <label>$INFO[ListItem.Property(Year),, â€¢ ]$INFO[ListItem.Label2]</label>
                 <textoffsetx>15</textoffsetx>
             </control>
             <control type="textbox">
@@ -6841,7 +7026,7 @@
                 <height>30</height>
                 <font>Font_Reg19</font>
                 <textcolor>grey2</textcolor>
-                <label>$INFO[ListItem.Property(EpisodeNumber), • ]</label>
+                <label>$INFO[ListItem.Property(EpisodeNumber), â€¢ ]</label>
                 <textoffsetx>15</textoffsetx>
             </control>
             <control type="image">
@@ -6915,7 +7100,7 @@
             <height>30</height>
             <font>Font_Reg19</font>
             <textcolor>grey2</textcolor>
-            <label>$INFO[ListItem.Property(Year),, • ]</label>
+            <label>$INFO[ListItem.Property(Year),, â€¢ ]</label>
             <visible>!IsEmpty(ListItem.Property(Rating))</visible>
             <textoffsetx>15</textoffsetx>
         </control>
@@ -7216,3 +7401,4 @@
             <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
         </control>
     </include>
+</includes>

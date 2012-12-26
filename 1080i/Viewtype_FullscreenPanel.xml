@@ -533,7 +533,7 @@
                             <height>116</height>
                             <label>$INFO[ListItem.Plot]</label>
                             <visible>IsEmpty(ListItem.Art(characterart))</visible>
-                            <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                            <autoscroll delay="8000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                         </control>
                         <control type="textbox">
                             <posx>410</posx>
@@ -542,7 +542,7 @@
                             <height>116</height>
                             <label>$INFO[ListItem.Plot]</label>
                             <visible>!IsEmpty(ListItem.Art(characterart))</visible>
-                            <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                            <autoscroll delay="8000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                         </control>
                         <control type="image">
                             <posx>1580</posx>
@@ -633,7 +633,7 @@
                             <height>116</height>
                             <label>$INFO[ListItem.Plot]</label>
                             <visible>IsEmpty(ListItem.Art(characterart))</visible>
-                            <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                            <autoscroll delay="8000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                         </control>
                         <control type="textbox">
                             <posx>410</posx>
@@ -642,7 +642,7 @@
                             <height>116</height>
                             <label>$INFO[ListItem.Plot]</label>
                             <visible>!IsEmpty(ListItem.Art(characterart))</visible>
-                            <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                            <autoscroll delay="8000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                         </control>
                         <control type="image">
                             <posx>1580</posx>
@@ -679,7 +679,7 @@
                 <animation effect="slide" end="-813" time="0" condition="Skin.HasSetting(infopanelfanart)">Conditional</animation>
                 <visible>!Skin.HasSetting(infopanelbackground)</visible>
             </control>
-                        <control type="scrollbar" id="68">
+            <control type="scrollbar" id="68">
                 <posx>1877</posx>
                 <animation effect="zoom" start="70" end="100" center="auto" tween="back" time="400" condition="Control.HasFocus(68)">Conditional</animation>
                 <posy>100</posy>
@@ -1189,7 +1189,7 @@
             <width>500</width>
             <height>116</height>
             <label>$INFO[ListItem.Plot]</label>
-            <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+            <autoscroll delay="8000" time="4000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
         </control>
     </include>
     <include name="FSPanelTVItemLayout">
